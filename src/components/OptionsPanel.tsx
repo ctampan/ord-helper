@@ -11,6 +11,8 @@ interface OptionsPanelProps {
   onUiSizeChange: (size: 'small' | 'medium' | 'large') => void;
   isTooltipEnabled: boolean;
   onToggleTooltip: () => void;
+  isWispEnabled: boolean;
+  onToggleWisp: () => void;
   versions: string[];
   currentVersion: string;
   onVersionChange: (version: string) => void;
@@ -28,6 +30,8 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   onUiSizeChange,
   isTooltipEnabled,
   onToggleTooltip,
+  isWispEnabled,
+  onToggleWisp,
   versions,
   currentVersion,
   onVersionChange,
@@ -84,6 +88,14 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             title={`Tooltips: ${isTooltipEnabled ? 'Always ON' : 'Shift to Show'}\nClick to toggle default visibility.`}
           >
             {isTooltipEnabled ? '👁️' : '🗨️'}
+          </button>
+
+          <button
+            className={`${styles.iconBtn} ${isWispEnabled ? styles.active : ''}`}
+            onClick={onToggleWisp}
+            title={`Wisp Calculation: ${isWispEnabled ? 'ON' : 'OFF'}\nClick to toggle wisp usage in calculations.`}
+          >
+            {isWispEnabled ? '👻' : '🚫'}
           </button>
 
           <div className={styles.dividerVertical} />

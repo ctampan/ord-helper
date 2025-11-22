@@ -20,10 +20,18 @@ function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     return (localStorage.getItem('ord_theme') as 'dark' | 'light') || 'dark';
   });
+  const [isWispEnabled, setIsWispEnabled] = useState(() => {
+    return localStorage.getItem('ord_wisp_enabled') !== 'false'; // Default true
+  });
+
   const [isTooltipEnabled, setIsTooltipEnabled] = useState(() => {
     return localStorage.getItem('ord_tooltip_enabled') === 'true';
   });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('ord_wisp_enabled', String(isWispEnabled));
+  }, [isWispEnabled]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -315,6 +323,8 @@ function App() {
             onUiSizeChange={setUiSize}
             isTooltipEnabled={isTooltipEnabled}
             onToggleTooltip={() => setIsTooltipEnabled(!isTooltipEnabled)}
+            isWispEnabled={isWispEnabled}
+            onToggleWisp={() => setIsWispEnabled(!isWispEnabled)}
             versions={versions}
             currentVersion={currentVersion}
             onVersionChange={handleVersionChange}
@@ -332,6 +342,7 @@ function App() {
               onCountChange={handleCountChange}
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
+              isWispEnabled={isWispEnabled}
             />
           )}
           {['Uncommon', 'Random'].map(rarity => unitsByRarity[rarity] && (
@@ -346,6 +357,7 @@ function App() {
               onCountChange={handleCountChange}
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
+              isWispEnabled={isWispEnabled}
             />
           ))}
         </div>
@@ -364,6 +376,7 @@ function App() {
               onCountChange={handleCountChange}
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
+              isWispEnabled={isWispEnabled}
             />
           ))}
         </div>
@@ -381,6 +394,7 @@ function App() {
               onCountChange={handleCountChange}
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
+              isWispEnabled={isWispEnabled}
             />
           )}
         </div>
@@ -399,6 +413,7 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
+              isWispEnabled={isWispEnabled}
             />
           )}
         </div>
@@ -418,6 +433,7 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               subGroupBy={rarity !== 'Alternate' ? "subGroup" : undefined}
+              isWispEnabled={isWispEnabled}
             />
           ))}
         </div>
@@ -437,6 +453,7 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
+              isWispEnabled={isWispEnabled}
             />
           ))}
         </div>
@@ -456,6 +473,7 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
+              isWispEnabled={isWispEnabled}
             />
           ))}
         </div>

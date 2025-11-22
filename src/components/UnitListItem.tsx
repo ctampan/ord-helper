@@ -14,6 +14,7 @@ interface UnitListItemProps {
   onCountChange: (newCount: number) => void;
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
+  isWispEnabled: boolean;
 }
 
 export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
@@ -26,11 +27,17 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
   onRightClick,
   onCountChange,
   isTooltipEnabled,
-  isShiftPressed
+  isShiftPressed,
+  isWispEnabled
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageError, setImageError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const effectiveInventory = useMemo(() => {
+    if (isWispEnabled) return inventory;
+    return { ...inventory, common_wisp: 0 };
+  }, [inventory, isWispEnabled]);
 
   const {
     status,
@@ -40,7 +47,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
     wispProgress,
     wispCost,
     isWispAssisted
-  } = useMemo(() => getUnitDetails(unit.id, unitsMap, inventory, bans), [unit.id, unitsMap, inventory, bans]);
+  } = useMemo(() => getUnitDetails(unit.id, unitsMap, effectiveInventory, bans), [unit.id, unitsMap, effectiveInventory, bans]);
 
   const isBanned = bans.has(unit.id);
 
@@ -94,7 +101,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
           {isBanned && <div className={styles.banOverlay}>BAN</div>}
         </div>
 
-        {progress > 0 && !isBanned && (
+        {progress > 0 && !isBanned && (isWispAssisted || progress < 100) && (
           <div className={styles.progressContainer}>
             {isWispAssisted ? (
               <div className={styles.splitProgress}>
@@ -103,8 +110,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
                 <span className={styles.textOrange}>{Math.round(wispProgress)}%</span>
               </div>
             ) : (
-              // Hide 100% text if complete (green)
-              progress < 100 && <span className={styles.textGreen}>{Math.round(progress)}%</span>
+              <span className={styles.textGreen}>{Math.round(progress)}%</span>
             )}
           </div>
         )}
@@ -129,7 +135,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
             min="0"
             value={count}
             onChange={(e) => onCountChange(parseInt(e.target.value) || 0)}
-            onWheel={(e) => e.stopPropagation()}
+            onWheel={(e) => e.currentTarget.blur()}
             className={styles.input}
           />
         </div>
@@ -142,6 +148,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
         visible={showTooltip}
         parentElement={containerRef.current}
         bans={bans}
+        isWispEnabled={isWispEnabled}
       />
     </div>
   );

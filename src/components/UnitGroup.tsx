@@ -14,6 +14,7 @@ interface UnitGroupProps {
   subGroupBy?: keyof Unit;
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
+  isWispEnabled: boolean;
 }
 
 export const UnitGroup: React.FC<UnitGroupProps> = React.memo(({
@@ -26,7 +27,8 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(({
   onCountChange,
   subGroupBy,
   isTooltipEnabled,
-  isShiftPressed
+  isShiftPressed,
+  isWispEnabled
 }) => {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
 
@@ -52,6 +54,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(({
         onCountChange={(newCount) => onCountChange(unit.id, newCount)}
         isTooltipEnabled={isTooltipEnabled}
         isShiftPressed={isShiftPressed}
+        isWispEnabled={isWispEnabled}
       />
     );
   };

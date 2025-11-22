@@ -1,7 +1,7 @@
-import React, { useState, useLayoutEffect, useRef } from 'react';
+import React, { useState, useLayoutEffect, useRef, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import type { Unit } from '../logic/combination';
-import { calculateMissingBaseUnits } from '../logic/combination';
+import { calculateMissingBaseUnits, getUnitDetails } from '../logic/combination';
 import styles from './RecipeTooltip.module.css';
 
 interface RecipeTooltipProps {
@@ -11,9 +11,10 @@ interface RecipeTooltipProps {
   visible: boolean;
   parentElement: HTMLElement | null;
   bans: Set<string>;
+  isWispEnabled: boolean;
 }
 
-export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, inventory, visible, parentElement, bans }) => {
+export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, inventory, visible, parentElement, bans, isWispEnabled }) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [coords, setCoords] = useState({ top: 0, left: 0 });
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
@@ -41,6 +42,11 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
       setPosition(newPosition);
     }
   }, [visible, parentElement]);
+
+  const effectiveInventory = useMemo(() => {
+    if (isWispEnabled) return inventory;
+    return { ...inventory, common_wisp: 0 };
+  }, [inventory, isWispEnabled]);
 
   if (!visible) return null;
 
@@ -130,18 +136,39 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
             const need = req.count;
             const isEnough = have >= need;
 
+            // Check if ingredient is buildable if we don't have enough
+            let buildStatus: string = 'gray';
+            if (!isEnough) {
+              const details = getUnitDetails(req.unitId, unitsMap, effectiveInventory, bans);
+              buildStatus = details.status;
+            }
+
             return (
               <div key={index} className={styles.ingredient}>
-                <img
-                  src={ingredient.image}
-                  alt={ingredient.name}
-                  className={styles.icon}
-                  style={{
-                    border: `2px solid ${getRarityColor(ingredient.rarity)}`,
-                    borderRadius: '2px',
-                    boxSizing: 'border-box'
-                  }}
-                />
+                <div style={{ position: 'relative', display: 'inline-block' }}>
+                  <img
+                    src={ingredient.image}
+                    alt={ingredient.name}
+                    className={styles.icon}
+                    style={{
+                      border: `2px solid ${getRarityColor(ingredient.rarity)}`,
+                      borderRadius: '2px',
+                      boxSizing: 'border-box'
+                    }}
+                  />
+                  {!isEnough && buildStatus !== 'gray' && buildStatus !== 'red' && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '-2px',
+                      right: '-2px',
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      backgroundColor: buildStatus === 'green' ? '#22c55e' : '#f97316',
+                      border: '1px solid #000'
+                    }} />
+                  )}
+                </div>
                 <span>{ingredient.name} - {ingredient.rarity}</span>
                 <span className={styles.count} style={{ color: isEnough ? 'inherit' : '#ff6b6b' }}>
                   x{need} <span style={{ opacity: 0.7, fontSize: '0.9em' }}>(Have: {have})</span>
@@ -171,6 +198,10 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
                 const baseUnit = unitsMap.get(unitId);
                 if (!baseUnit) return null;
 
+                // Check if base unit is buildable (unlikely for base units, but possible for uncommons etc if they appear here)
+                const details = getUnitDetails(unitId, unitsMap, effectiveInventory, bans);
+                const buildStatus = details.status;
+
                 return (
                   <div key={unitId} style={{ position: 'relative' }}>
                     <img
@@ -186,6 +217,19 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
                         border: `2px solid ${getRarityColor(baseUnit.rarity)}`
                       }}
                     />
+                    {buildStatus !== 'red' && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '-2px',
+                        right: '-2px',
+                        width: '8px',
+                        height: '8px',
+                        borderRadius: '50%',
+                        backgroundColor: buildStatus === 'green' ? '#22c55e' : '#f97316',
+                        border: '1px solid #000',
+                        zIndex: 1
+                      }} />
+                    )}
                     <div style={{
                       position: 'absolute',
                       bottom: 0,
