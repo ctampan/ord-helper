@@ -20,6 +20,7 @@ interface UnitIconProps {
   onRightClick: (e: React.MouseEvent) => void;
   onCountChange: (newCount: number) => void;
   bans: Set<string>;
+  isWispEnabled: boolean;
 }
 
 export const UnitIcon: React.FC<UnitIconProps> = ({
@@ -38,7 +39,8 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
   onClick,
   onRightClick,
   onCountChange,
-  bans
+  bans,
+  isWispEnabled
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -118,6 +120,7 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
         visible={isHovered}
         parentElement={containerRef.current}
         bans={bans}
+        isWispEnabled={isWispEnabled}
       />
     </div>
   );
