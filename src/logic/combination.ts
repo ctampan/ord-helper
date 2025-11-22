@@ -386,7 +386,8 @@ export function consumeMaterials(
   }
 
   if (!consumption) {
-    throw new Error(`Insufficient materials for ${targetUnitId}`);
+    const unit = unitsMap.get(targetUnitId);
+    throw new Error(`Insufficient materials for ${unit?.name} ${unit?.rarity}`);
   }
 
   const newInventory = { ...inventory };

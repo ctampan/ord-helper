@@ -241,8 +241,14 @@ function App() {
 
       try {
         setInventory(prev => {
-          const newInventory = consumeMaterials(unitId, unitsMap, prev);
-          return newInventory;
+          try {
+            const newInventory = consumeMaterials(unitId, unitsMap, prev);
+            return newInventory;
+          } catch (e) {
+            console.warn('Cannot build unit:', e);
+            setNotification(e instanceof Error ? e.message : 'Cannot build unit');
+            return prev;
+          }
         });
       } catch (e) {
 
