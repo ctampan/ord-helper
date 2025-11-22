@@ -37,12 +37,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .iconBtn:hover {
   background-color: var(--bg-secondary);
   border-color: var(--border-color);
+}
+
+.iconBtn:active {
+  transform: scale(0.95);
+  background-color: var(--bg-secondary);
 }
 
 .iconBtn.active {

@@ -4858,19 +4858,23 @@
       "image": "images/rare_hancock.jpg",
       "recipe": [
         {
-          "unitId": "legendary_law",
+          "unitId": "legendary_hancock",
           "count": 1
         },
         {
-          "unitId": "hidden_killer",
+          "unitId": "hidden_tiger",
           "count": 1
         },
         {
-          "unitId": "hidden_rebecca",
+          "unitId": "rare_luffy",
           "count": 1
         },
         {
-          "unitId": "special_kuro",
+          "unitId": "rare_momonga",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
           "count": 1
         }
       ],
