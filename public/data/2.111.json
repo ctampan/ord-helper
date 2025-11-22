@@ -1955,7 +1955,7 @@
     },
     {
       "id": "legendary_kuma",
-      "name": "Kuma",
+      "name": "Kuma - Mana",
       "rarity": "Legendary",
       "image": "images/special_kuma.jpg",
       "recipe": [
@@ -2237,7 +2237,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "// TODO - Target -22 armor, 2000 attack range"
+      "note": "Siege - Target -22 armor, 2000 attack range"
     },
     {
       "id": "legendary_chopper",
@@ -2259,7 +2259,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "// TODO - -18 armor"
+      "note": "Normal - -18 armor"
     },
     {
       "id": "legendary_brulee",
@@ -2285,7 +2285,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "// TODO - Copy legendary"
+      "note": "Normal - Copy legendary"
     },
     {
       "id": "legendary_blackbeard",
@@ -2395,7 +2395,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "// TODO"
+      "note": "Siege"
     },
     {
       "id": "legendary_nightmare",
@@ -2579,7 +2579,7 @@
     },
     {
       "id": "legendary_koby",
-      "name": "Koby - HP // TODO",
+      "name": "Koby - Mana",
       "rarity": "Legendary",
       "image": "images/legendary_koby.jpg",
       "recipe": [
@@ -2961,7 +2961,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "stussy | // TODO - Blink"
+      "note": "stussy | Normal - Blink"
     },
     {
       "id": "hidden_shiryu",
@@ -3223,7 +3223,7 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "blackmaria | // TODO - Stun/Slow/Damage"
+      "note": "blackmaria | Siege - Stun/Slow/Damage"
     },
     {
       "id": "distortion_koala",
@@ -3245,7 +3245,7 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "koala | // TODO - Armor break, mana regen"
+      "note": "koala | Siege - Armor break, mana regen"
     },
     {
       "id": "distortion_queen",
@@ -3267,7 +3267,7 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "queen | // TODO - Armor break, HP + mana regen"
+      "note": "queen | Siege - Armor break, HP + mana regen"
     },
     {
       "id": "distortion_perona",
@@ -3297,7 +3297,7 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "perona | // TODO - Slow, delete"
+      "note": "perona | Normal - Slow, delete"
     },
     {
       "id": "alternate_doflamingo",
@@ -3310,7 +3310,7 @@
           "count": 1
         }
       ],
-      "note": "// TODO - Flying"
+      "note": "Piercing - Flying"
     },
     {
       "id": "alternate_baby5",
@@ -3323,7 +3323,7 @@
           "count": 1
         }
       ],
-      "note": "// TODO"
+      "note": "Normal"
     },
     {
       "id": "alternate_vivi",
@@ -3336,7 +3336,7 @@
           "count": 1
         }
       ],
-      "note": "// TODO - Slow, -11 armor"
+      "note": "Piercing - Slow, -11 armor"
     },
     {
       "id": "alternate_ace",
@@ -3375,7 +3375,7 @@
           "count": 1
         }
       ],
-      "note": "// TODO - Blink"
+      "note": "Normal - Blink"
     },
     {
       "id": "transcendence_doflamingo",
@@ -3439,7 +3439,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "robin tr | Stun, -45 armor"
+      "note": "robin tr | Normal - Stun, -45 armor"
     },
     {
       "id": "transcendence_ryokugyu",
@@ -3765,7 +3765,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "bonney tr | // TODO - Stacking -armor"
+      "note": "bonney tr | Piercing - Stacking -armor"
     },
     {
       "id": "transcendence_tashigi",
@@ -4203,7 +4203,7 @@
     },
     {
       "id": "transcendence_koby",
-      "name": "Koby - // TODO +4",
+      "name": "Koby - HP +4",
       "rarity": "Transcendence",
       "image": "images/transcendence_koby.png",
       "recipe": [
@@ -4229,7 +4229,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "koby tr | // TODO - Flying, blink"
+      "note": "koby tr | Normal - Flying, blink"
     },
     {
       "id": "limited_rebecca",
@@ -4347,7 +4347,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "+4 special points | // TODO - Armor break, -25 armor, knockback"
+      "note": "+4 special points | Siege - Armor break, -25 armor, knockback"
     },
     {
       "id": "limited_marco",
@@ -4615,7 +4615,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "bullet im | // TODO - Item Enhance (Random Enhance when feeding Common unit), single target stun, armor break"
+      "note": "bullet im | Siege - Item Enhance (Random Enhance when feeding Common unit), single target stun, armor break"
     },
     {
       "id": "immortal_dragon",
@@ -5029,7 +5029,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "u-ta et | // TODO - Stun, Slow"
+      "note": "u-ta et | Normal - Stun, Slow"
     },
     {
       "id": "eternal_ryuma",
@@ -5051,7 +5051,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "ryuma et | // TODO Finisher, Wano Synergy (Toki, Shinobu, Kiku)"
+      "note": "ryuma et | Haki - Finisher, Wano Synergy (Toki, Shinobu, Kiku)"
     },
     {
       "id": "mystic_jotaro",
