@@ -54,7 +54,7 @@
 
 .buildableBadge {
   background-color: var(--status-green);
-  color: white;
+  color: black;
   border-radius: 4px;
   padding: 0 4px;
   font-size: 0.6rem;

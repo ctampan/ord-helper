@@ -46,6 +46,8 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
 
   const hasRecipe = unit.recipe && unit.recipe.length > 0;
 
+  if (!hasRecipe) return null;
+
   return createPortal(
     <div
       ref={tooltipRef}
