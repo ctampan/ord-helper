@@ -421,6 +421,10 @@
         {
           "unitId": "uncommon_robin",
           "count": 2
+        },
+        {
+          "unitId": "common_chopper",
+          "count": 1
         }
       ]
     },
@@ -2096,7 +2100,7 @@
           "count": 1
         },
         {
-          "unitId": "rare_magellan",
+          "unitId": "rare_momonga",
           "count": 1
         },
         {
@@ -2794,7 +2798,7 @@
           "count": 1
         },
         {
-          "unitId": "rare_hancock",
+          "unitId": "rare_sugar",
           "count": 1
         }
       ],
@@ -2817,6 +2821,10 @@
         },
         {
           "unitId": "rare_ivankov",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuma",
           "count": 1
         }
       ],
@@ -3749,10 +3757,6 @@
         },
         {
           "unitId": "special_zoro",
-          "count": 1
-        },
-        {
-          "unitId": "special_nami",
           "count": 1
         },
         {
@@ -5004,7 +5008,7 @@
       "image": "images/eternal_uta.png",
       "recipe": [
         {
-          "unitId": "legendary_ace",
+          "unitId": "legendary_shanks",
           "count": 1
         },
         {
@@ -5094,15 +5098,15 @@
           "count": 1
         },
         {
-          "unitId": "legendary_toki",
+          "unitId": "hidden_shiryu",
           "count": 1
         },
         {
-          "unitId": "legendary_sengoku",
+          "unitId": "hidden_ryuma",
           "count": 1
         },
         {
-          "unitId": "special_luffy",
+          "unitId": "legendary_nami",
           "count": 1
         }
       ],
