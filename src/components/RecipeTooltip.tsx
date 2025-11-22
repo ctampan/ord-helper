@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useRef, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import type { Unit } from '../logic/combination';
 import { calculateMissingBaseUnits, getUnitDetails } from '../logic/combination';
+import { getRarityColor } from '../logic/rarityColors';
 import styles from './RecipeTooltip.module.css';
 
 interface RecipeTooltipProps {
@@ -81,26 +82,6 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
   const topTierUnits = Array.from(unitsMap.values()).filter(u =>
     topTierRarities.includes(u.rarity) && findUnitInRecipeTree(u, unit.id)
   );
-
-  // Rarity colors for borders
-  const getRarityColor = (rarity: string): string => {
-    const rarityColors: Record<string, string> = {
-      'Common': '#9ca3af',
-      'Uncommon': '#22c55e',
-      'Rare': '#3b82f6',
-      'Legendary': '#a855f7',
-      'Hidden': '#f59e0b',
-      'Distortion': '#ec4899',
-      'Alternate': '#14b8a6',
-      'Special': '#06b6d4',
-      'Transcendence': '#fbbf24',
-      'Limited': '#f43f5e',
-      'Immortal': '#ef4444',
-      'Eternal': '#8b5cf6',
-      'Mystic': '#d946ef',
-    };
-    return rarityColors[rarity] || '#6b7280';
-  };
 
   return createPortal(
     <div

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { getUnitDetails, type Unit } from '../logic/combination';
+import { getRarityColor } from '../logic/rarityColors';
 import styles from './UnitListItem.module.css';
 import { RecipeTooltip } from './RecipeTooltip';
 
@@ -92,6 +93,10 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
               alt={unit.name}
               className={styles.icon}
               onError={handleImageError}
+              style={{
+                border: `2px solid ${getRarityColor(unit.rarity)}`,
+                boxSizing: 'border-box'
+              }}
             />
           ) : (
             <div className={styles.fallbackIcon}>

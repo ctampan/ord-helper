@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { Unit } from '../logic/combination';
+import { getRarityColor } from '../logic/rarityColors';
 import styles from './UnitIcon.module.css';
 import { RecipeTooltip } from './RecipeTooltip';
 
@@ -70,6 +71,10 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
             alt={unit.name}
             className={styles.image}
             onError={handleImageError}
+            style={{
+              border: `2px solid ${getRarityColor(unit.rarity)}`,
+              boxSizing: 'border-box'
+            }}
           />
         ) : (
           <div className={styles.fallbackIcon}>
