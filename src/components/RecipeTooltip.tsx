@@ -46,10 +46,55 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
 
   const hasRecipe = unit.recipe && unit.recipe.length > 0;
 
-  if (!hasRecipe) return null;
-
-  const missingBaseUnits = calculateMissingBaseUnits(unit.id, unitsMap, inventory, bans);
+  const missingBaseUnits = hasRecipe ? calculateMissingBaseUnits(unit.id, unitsMap, inventory, bans) : {};
   const hasMissing = Object.keys(missingBaseUnits).length > 0;
+
+  // Find units that directly use this unit in their recipe
+  const usedInUnits = Array.from(unitsMap.values()).filter(u =>
+    u.recipe?.some(req => req.unitId === unit.id)
+  );
+
+  // Find top-tier units (Transcendence onward) that eventually need this unit
+  const topTierRarities = ['Transcendence', 'Limited', 'Immortal', 'Eternal', 'Mystic'];
+  const findUnitInRecipeTree = (targetUnit: Unit, searchUnitId: string, visited = new Set<string>()): boolean => {
+    if (visited.has(targetUnit.id)) return false;
+    visited.add(targetUnit.id);
+
+    if (!targetUnit.recipe) return false;
+
+    for (const req of targetUnit.recipe) {
+      if (req.unitId === searchUnitId) return true;
+      const reqUnit = unitsMap.get(req.unitId);
+      if (reqUnit && findUnitInRecipeTree(reqUnit, searchUnitId, visited)) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const topTierUnits = Array.from(unitsMap.values()).filter(u =>
+    topTierRarities.includes(u.rarity) && findUnitInRecipeTree(u, unit.id)
+  );
+
+  // Rarity colors for borders
+  const getRarityColor = (rarity: string): string => {
+    const rarityColors: Record<string, string> = {
+      'Common': '#9ca3af',
+      'Uncommon': '#22c55e',
+      'Rare': '#3b82f6',
+      'Legendary': '#a855f7',
+      'Hidden': '#f59e0b',
+      'Distortion': '#ec4899',
+      'Alternate': '#14b8a6',
+      'Special': '#06b6d4',
+      'Transcendence': '#fbbf24',
+      'Limited': '#f43f5e',
+      'Immortal': '#ef4444',
+      'Eternal': '#8b5cf6',
+      'Mystic': '#d946ef',
+    };
+    return rarityColors[rarity] || '#6b7280';
+  };
 
   return createPortal(
     <div
@@ -61,6 +106,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
         position: 'fixed',
         transform: 'none',
         margin: 0,
+        minWidth: '300px',
         backgroundColor: '#1a1a1a',
         border: '1px solid #404040',
         borderRadius: '8px',
@@ -73,34 +119,37 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
     >
       <div className={styles.title}>{unit.name}</div>
       {unit.note && <div className={styles.note}>{unit.note}</div>}
-      <div className={styles.ingredients}>
-        {unit.recipe!.map((req, index) => {
-          const ingredient = unitsMap.get(req.unitId);
-          if (!ingredient) return null;
 
-          const have = inventory[req.unitId] || 0;
-          const need = req.count;
-          const isEnough = have >= need;
+      {hasRecipe && (
+        <div className={styles.ingredients}>
+          {unit.recipe!.map((req, index) => {
+            const ingredient = unitsMap.get(req.unitId);
+            if (!ingredient) return null;
 
-          return (
-            <div key={index} className={styles.ingredient}>
-              <img src={ingredient.image} alt={ingredient.name} className={styles.icon} />
-              <span>{ingredient.name} - {ingredient.rarity}</span>
-              <span className={styles.count} style={{ color: isEnough ? 'inherit' : '#ff6b6b' }}>
-                x{need} <span style={{ opacity: 0.7, fontSize: '0.9em' }}>(Have: {have})</span>
-              </span>
-            </div>
-          );
-        })}
-      </div>
+            const have = inventory[req.unitId] || 0;
+            const need = req.count;
+            const isEnough = have >= need;
+
+            return (
+              <div key={index} className={styles.ingredient}>
+                <img src={ingredient.image} alt={ingredient.name} className={styles.icon} />
+                <span>{ingredient.name} - {ingredient.rarity}</span>
+                <span className={styles.count} style={{ color: isEnough ? 'inherit' : '#ff6b6b' }}>
+                  x{need} <span style={{ opacity: 0.7, fontSize: '0.9em' }}>(Have: {have})</span>
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {hasMissing && (
         <>
           <div style={{ borderTop: '1px solid #404040', margin: '8px 0' }} />
-          <div style={{ fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '4px', color: '#ff6b6b' }}>
-            Missing Base Units: {Object.values(missingBaseUnits).reduce((sum, count) => sum + count, 0)} total
+          <div style={{ fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '4px', color: '#ff6b6b' }}>
+            Missing Base Units ({Object.values(missingBaseUnits).reduce((sum, count) => sum + count, 0)}):
           </div>
-          <div className={styles.ingredients}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(32px, 1fr))', gap: '4px' }}>
             {Object.entries(missingBaseUnits)
               .sort(([idA], [idB]) => {
                 const unitsArray = Array.from(unitsMap.values());
@@ -108,21 +157,113 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
                 const indexB = unitsArray.findIndex(u => u.id === idB);
                 return indexA - indexB;
               })
+              .slice(0, 15)
               .map(([unitId, count]) => {
                 const baseUnit = unitsMap.get(unitId);
                 if (!baseUnit) return null;
 
                 return (
-                  <div key={unitId} className={styles.ingredient}>
-                    <img src={baseUnit.image} alt={baseUnit.name} className={styles.icon} />
-                    <span>{baseUnit.name}</span>
-                    <span className={styles.count} style={{ color: '#ff6b6b' }}>
+                  <div key={unitId} style={{ position: 'relative' }}>
+                    <img
+                      src={baseUnit.image}
+                      alt={baseUnit.name}
+                      title={`${baseUnit.name} (-${count})`}
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        objectFit: 'cover',
+                        borderRadius: '2px',
+                        cursor: 'help',
+                        border: `2px solid ${getRarityColor(baseUnit.rarity)}`
+                      }}
+                    />
+                    <div style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      right: 0,
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                      color: '#ff6b6b',
+                      fontSize: '0.7rem',
+                      fontWeight: 'bold',
+                      padding: '0 2px',
+                      borderRadius: '2px',
+                      lineHeight: '1'
+                    }}>
                       -{count}
-                    </span>
+                    </div>
                   </div>
                 );
               })}
           </div>
+          {Object.keys(missingBaseUnits).length > 15 && (
+            <div style={{ fontSize: '0.7rem', opacity: 0.6, marginTop: '2px' }}>
+              +{Object.keys(missingBaseUnits).length - 15} more
+            </div>
+          )}
+        </>
+      )}
+
+      {usedInUnits.length > 0 && (
+        <>
+          <div style={{ borderTop: '1px solid #404040', margin: '8px 0' }} />
+          <div style={{ fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '4px', color: '#4ade80' }}>
+            Used In ({usedInUnits.length}):
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(32px, 1fr))', gap: '4px' }}>
+            {usedInUnits.slice(0, 15).map((usedUnit) => (
+              <img
+                key={usedUnit.id}
+                src={usedUnit.image}
+                alt={usedUnit.name}
+                title={`${usedUnit.name} (${usedUnit.rarity})`}
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  objectFit: 'cover',
+                  borderRadius: '2px',
+                  cursor: 'help',
+                  border: `2px solid ${getRarityColor(usedUnit.rarity)}`
+                }}
+              />
+            ))}
+          </div>
+          {usedInUnits.length > 15 && (
+            <div style={{ fontSize: '0.7rem', opacity: 0.6, marginTop: '2px' }}>
+              +{usedInUnits.length - 15} more
+            </div>
+          )}
+        </>
+      )}
+
+      {topTierUnits.length > 0 && (
+        <>
+          <div style={{ borderTop: '1px solid #404040', margin: '8px 0' }} />
+          <div style={{ fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '4px', color: '#fbbf24' }}>
+            Top Tier ({topTierUnits.length}):
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(32px, 1fr))', gap: '4px' }}>
+            {topTierUnits.slice(0, 15).map((topUnit) => (
+              <img
+                key={topUnit.id}
+                src={topUnit.image}
+                alt={topUnit.name}
+                title={`${topUnit.name} (${topUnit.rarity})`}
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  objectFit: 'cover',
+                  borderRadius: '2px',
+                  cursor: 'help',
+                  border: `2px solid ${getRarityColor(topUnit.rarity)}`
+                }}
+              />
+            ))}
+          </div>
+          {topTierUnits.length > 15 && (
+            <div style={{ fontSize: '0.7rem', opacity: 0.6, marginTop: '2px' }}>
+              +{topTierUnits.length - 15} more
+            </div>
+          )}
         </>
       )}
 
