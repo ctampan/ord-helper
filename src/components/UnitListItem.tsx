@@ -12,6 +12,8 @@ interface UnitListItemProps {
   onClick: (e: React.MouseEvent) => void;
   onRightClick: (e: React.MouseEvent) => void;
   onCountChange: (newCount: number) => void;
+  isTooltipEnabled: boolean;
+  isShiftPressed: boolean;
 }
 
 export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
@@ -22,7 +24,9 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
   unitsMap,
   onClick,
   onRightClick,
-  onCountChange
+  onCountChange,
+  isTooltipEnabled,
+  isShiftPressed
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -49,6 +53,13 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
     setImageError(false);
   }, [unit.image]);
 
+  // Determine if tooltip should be shown
+  // Default: off. Toggle on: always show. Shift override: show if off.
+  // Requirement: "default it should be turn off. If user press 'shift' while hovering, it should temporarily toggle the tooltips."
+  // If isTooltipEnabled is true, show on hover.
+  // If isTooltipEnabled is false, show on hover ONLY if Shift is pressed.
+  const showTooltip = isHovered && (isTooltipEnabled || isShiftPressed);
+
   return (
     <div
       ref={containerRef}
@@ -58,73 +69,77 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={styles.iconWrapper}>
-        {!imageError ? (
-          <img
-            src={unit.image}
-            alt={unit.name}
-            className={styles.icon}
-            onError={handleImageError}
-          />
-        ) : (
-          <div className={styles.fallbackIcon}>
-            {unit.name.substring(0, 2)}
-          </div>
-        )}
-        {isBanned && <div className={styles.banOverlay}>BAN</div>}
-      </div>
+      {/* Background Progress Bar */}
+      {progress > 0 && !isBanned && (
+        <div
+          className={`${styles.progressBackground} ${progress < 100 ? styles.gray : ''}`}
+          style={{ width: `${Math.min(progress, 100)}%` }}
+        />
+      )}
 
-      <div className={styles.info}>
-        <div className={styles.nameRow}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, minWidth: 0 }}>
-            <span className={styles.name}>{unit.name}</span>
-            {buildableCount > 0 && !isBanned && (
-              <span className={styles.buildableBadge}>+{buildableCount}</span>
-            )}
-          </div>
-          {status === 'orange' && wispCost > 0 && (
-            <span className={styles.wispCost}>{wispCost} 👻</span>
+      <div className={styles.contentWrapper}>
+        <div className={styles.iconWrapper}>
+          {!imageError ? (
+            <img
+              src={unit.image}
+              alt={unit.name}
+              className={styles.icon}
+              onError={handleImageError}
+            />
+          ) : (
+            <div className={styles.fallbackIcon}>
+              {unit.name.substring(0, 2)}
+            </div>
           )}
+          {isBanned && <div className={styles.banOverlay}>BAN</div>}
         </div>
 
-        {progress > 0 && materialProgress < 100 && !isBanned && (
-          <div className={styles.progressRow}>
-            <div className={styles.progressBar}>
-              <div
-                className={`${styles.progressFill} ${progress < 100 ? styles.progressGray : ''}`}
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <div className={styles.progressText}>
-              {isWispAssisted ? (
-                <>
-                  <span className={progress < 100 ? styles.textGray : styles.textGreen}>{Math.round(materialProgress)}%</span>
-                  <span className={styles.textOrange}> +{Math.round(wispProgress)}%</span>
-                </>
-              ) : (
-                <span className={progress < 100 ? styles.textGray : styles.textGreen}>{Math.round(progress)}%</span>
-              )}
-            </div>
+        {progress > 0 && !isBanned && (
+          <div className={styles.progressContainer}>
+            {isWispAssisted ? (
+              <div className={styles.splitProgress}>
+                <span className={styles.textGreen}>{Math.round(materialProgress)}%</span>
+                <span className={styles.separator}>+</span>
+                <span className={styles.textOrange}>{Math.round(wispProgress)}%</span>
+              </div>
+            ) : (
+              // Hide 100% text if complete (green)
+              progress < 100 && <span className={styles.textGreen}>{Math.round(progress)}%</span>
+            )}
           </div>
         )}
-      </div>
 
-      <div className={styles.controls} onClick={e => e.stopPropagation()}>
-        <input
-          type="number"
-          min="0"
-          value={count}
-          onChange={(e) => onCountChange(parseInt(e.target.value) || 0)}
-          onWheel={(e) => e.stopPropagation()}
-          className={styles.input}
-        />
+        <div className={styles.info}>
+          <div className={styles.nameRow}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, minWidth: 0 }}>
+              <span className={styles.name}>{unit.name}</span>
+              {buildableCount > 0 && !isBanned && (
+                <span className={styles.buildableBadge}>+{buildableCount}</span>
+              )}
+            </div>
+            {status === 'orange' && wispCost > 0 && (
+              <span className={styles.wispCost}>{wispCost} 👻</span>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.controls} onClick={e => e.stopPropagation()}>
+          <input
+            type="number"
+            min="0"
+            value={count}
+            onChange={(e) => onCountChange(parseInt(e.target.value) || 0)}
+            onWheel={(e) => e.stopPropagation()}
+            className={styles.input}
+          />
+        </div>
       </div>
 
       <RecipeTooltip
         unit={unit}
         unitsMap={unitsMap}
         inventory={inventory}
-        visible={isHovered}
+        visible={showTooltip}
         parentElement={containerRef.current}
         bans={bans}
       />

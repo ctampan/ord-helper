@@ -28,6 +28,16 @@
   --bg-progress-track: rgba(255, 255, 255, 0.1);
   --bg-status-green: rgba(34, 197, 94, 0.25);
   --bg-status-orange: rgba(249, 115, 22, 0.08);
+  --bg-status-gray: rgba(255, 255, 255, 0.1);
+  --bg-input: #1a1a1a;
+
+  /* UI Sizing Defaults (Medium) */
+  --unit-height: 36px;
+  --unit-icon-size: 30px;
+  --unit-font-size-name: 0.85rem;
+  --unit-font-size-meta: 0.7rem;
+  --unit-input-width: 32px;
+  --unit-input-height: 24px;
 }
 
 [data-theme='light'] {
@@ -40,10 +50,17 @@
   --border-color: #b0b0b0;
   --bg-progress-track: rgba(0, 0, 0, 0.1);
   --status-green: #15803d;
-  --status-orange: #ea580c;
-  --status-gray: #6b7280;
-  --bg-status-green: rgba(21, 128, 61, 0.35);
-  --bg-status-orange: rgba(234, 88, 12, 0.12);
+  /* Lighter, more vibrant green */
+  --status-orange: #431407;
+  /* Darker orange/brown */
+  --status-gray: #4b5563;
+  --bg-status-green: rgba(21, 128, 61, 0.65);
+  /* Darker green background */
+  --bg-status-orange: rgba(234, 88, 12, 0.4);
+  /* Darker orange background */
+  --bg-status-gray: rgba(107, 114, 128, 0.3);
+  /* Gray background for incomplete */
+  --bg-input: #ffffff;
   --status-red: #d93025;
   color: #1a1a1a;
   background-color: #f0f2f5;

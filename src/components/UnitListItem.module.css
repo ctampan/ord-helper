@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  padding: 1px 3px;
+  padding: 0;
   margin-bottom: 1px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -9,7 +9,7 @@
   cursor: pointer;
   transition: border-color 0.2s, background-color 0.2s;
   position: relative;
-  height: 28px;
+  height: var(--unit-height);
   overflow: hidden;
   box-sizing: border-box;
   user-select: none;
@@ -17,18 +17,15 @@
 
 .container:hover {
   border-color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.05);
   z-index: 10;
 }
 
 .container.green {
   border-color: var(--status-green);
-  background-color: var(--bg-status-green);
 }
 
 .container.orange {
   border-color: var(--status-orange);
-  background-color: var(--bg-status-orange);
 }
 
 .container.banned {
@@ -36,11 +33,39 @@
   filter: grayscale(100%);
 }
 
+.progressBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--bg-status-green);
+  z-index: 0;
+  transition: width 0.3s ease;
+}
+
+.container.orange .progressBackground {
+  background-color: var(--bg-status-orange);
+}
+
+.progressBackground.gray {
+  background-color: var(--bg-status-gray);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 4px;
+}
+
 .iconWrapper {
   position: relative;
-  width: 24px;
-  height: 24px;
-  margin-right: 4px;
+  width: var(--unit-icon-size);
+  height: var(--unit-icon-size);
+  margin-right: 6px;
   flex-shrink: 0;
 }
 
@@ -54,10 +79,11 @@
 
 .buildableBadge {
   background-color: var(--status-green);
-  color: black;
+  color: white;
+  /* White text for better contrast */
   border-radius: 4px;
   padding: 0 4px;
-  font-size: 0.6rem;
+  font-size: var(--unit-font-size-meta);
   font-weight: bold;
   line-height: 1.2;
   white-space: nowrap;
@@ -82,12 +108,12 @@
 }
 
 .name {
-  font-size: 0.7rem;
+  font-size: var(--unit-font-size-name);
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1;
+  line-height: 1.2;
   flex: 1;
   min-width: 0;
   margin-right: 4px;
@@ -95,7 +121,7 @@
 }
 
 .wispCost {
-  font-size: 0.6rem;
+  font-size: var(--unit-font-size-meta);
   color: var(--status-orange);
   margin-left: 0;
   flex-shrink: 0;
@@ -104,42 +130,40 @@
   text-align: right;
 }
 
-.progressRow {
+.progressContainer {
   display: flex;
   align-items: center;
-  gap: 3px;
+  justify-content: flex-start;
+  /* Align left */
+  margin-right: 6px;
+  flex-shrink: 0;
 }
 
-.progressBar {
-  flex: 1;
-  height: 2px;
-  background-color: var(--bg-progress-track);
-  border-radius: 1px;
-  overflow: hidden;
+.splitProgress {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: bold;
+  font-size: calc(var(--unit-font-size-meta) * 1.2);
+  /* Match progressText size exactly */
+  line-height: 1;
 }
 
-.progressFill {
-  height: 100%;
-  background-color: var(--status-green);
-  transition: width 0.3s ease;
-}
-
-.container.orange .progressFill {
-  background-color: var(--status-orange);
-}
-
-.progressGray {
-  background-color: var(--status-gray) !important;
+.separator {
+  color: var(--text-secondary);
+  font-size: 0.8em;
+  margin: 0 1px;
 }
 
 .progressText {
-  font-size: 0.55rem;
+  /* Used for single line progress */
+  font-size: calc(var(--unit-font-size-meta) * 1.2);
+  /* Keep big text */
   white-space: nowrap;
-  line-height: 1;
-  min-width: 75px;
-  width: 75px;
-  text-align: right;
-  flex-shrink: 0;
+  line-height: 1.2;
+  text-align: left;
+  /* Align left */
+  font-weight: bold;
 }
 
 .textGreen {
@@ -150,24 +174,26 @@
   color: var(--status-orange);
 }
 
-.textGray {
-  color: var(--status-gray);
-}
-
 .controls {
-  margin-left: 4px;
+  margin-left: 6px;
+  position: relative;
+  z-index: 2;
+  /* Ensure input is above progress bar */
 }
 
 .input {
-  width: 26px;
+  width: var(--unit-input-width);
   padding: 0 2px;
   border: 1px solid var(--border-color);
   border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-input);
+  /* Solid background */
   color: inherit;
   text-align: center;
-  font-size: 0.7rem;
-  height: 18px;
+  font-size: var(--unit-font-size-name);
+  height: var(--unit-input-height);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
 }
 
 .input:focus {

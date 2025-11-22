@@ -7,6 +7,10 @@ interface OptionsPanelProps {
   onReset: () => void;
   theme: 'dark' | 'light';
   onToggleTheme: () => void;
+  uiSize: 'small' | 'medium' | 'large';
+  onUiSizeChange: (size: 'small' | 'medium' | 'large') => void;
+  isTooltipEnabled: boolean;
+  onToggleTooltip: () => void;
   versions: string[];
   currentVersion: string;
   onVersionChange: (version: string) => void;
@@ -20,6 +24,10 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   onReset,
   theme,
   onToggleTheme,
+  uiSize,
+  onUiSizeChange,
+  isTooltipEnabled,
+  onToggleTooltip,
   versions,
   currentVersion,
   onVersionChange,
@@ -34,6 +42,12 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
     }
     // Reset value so same file can be selected again
     if (e.target) e.target.value = '';
+  };
+
+  const cycleUiSize = () => {
+    const sizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
+    const nextIndex = (sizes.indexOf(uiSize) + 1) % sizes.length;
+    onUiSizeChange(sizes[nextIndex]);
   };
 
   return (
@@ -54,6 +68,22 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
           >
             {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+
+          <button
+            className={styles.iconBtn}
+            onClick={cycleUiSize}
+            title={`UI Size: ${uiSize.charAt(0).toUpperCase() + uiSize.slice(1)}\nClick to cycle size.`}
+          >
+            {uiSize === 'small' ? 'S' : uiSize === 'medium' ? 'M' : 'L'}
+          </button>
+
+          <button
+            className={`${styles.iconBtn} ${isTooltipEnabled ? styles.active : ''}`}
+            onClick={onToggleTooltip}
+            title={`Tooltips: ${isTooltipEnabled ? 'Always ON' : 'Shift to Show'}\nClick to toggle default visibility.`}
+          >
+            {isTooltipEnabled ? '👁️' : '🗨️'}
           </button>
 
           <div className={styles.dividerVertical} />

@@ -20,6 +20,30 @@ function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     return (localStorage.getItem('ord_theme') as 'dark' | 'light') || 'dark';
   });
+  const [isTooltipEnabled, setIsTooltipEnabled] = useState(() => {
+    return localStorage.getItem('ord_tooltip_enabled') === 'true';
+  });
+  const [isShiftPressed, setIsShiftPressed] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Shift') setIsShiftPressed(true);
+    };
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key === 'Shift') setIsShiftPressed(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('ord_tooltip_enabled', String(isTooltipEnabled));
+  }, [isTooltipEnabled]);
+
   const [notification, setNotification] = useState<string | null>(null);
 
   // Save to localStorage
@@ -104,10 +128,41 @@ function App() {
     }
   };
 
+  const [uiSize, setUiSize] = useState<'small' | 'medium' | 'large'>(() => {
+    return (localStorage.getItem('ord_ui_size') as 'small' | 'medium' | 'large') || 'medium';
+  });
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('ord_theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('ord_ui_size', uiSize);
+    const root = document.documentElement;
+    if (uiSize === 'small') {
+      root.style.setProperty('--unit-height', '28px');
+      root.style.setProperty('--unit-icon-size', '24px');
+      root.style.setProperty('--unit-font-size-name', '0.75rem');
+      root.style.setProperty('--unit-font-size-meta', '0.6rem');
+      root.style.setProperty('--unit-input-width', '26px');
+      root.style.setProperty('--unit-input-height', '20px');
+    } else if (uiSize === 'medium') {
+      root.style.setProperty('--unit-height', '36px');
+      root.style.setProperty('--unit-icon-size', '30px');
+      root.style.setProperty('--unit-font-size-name', '0.85rem');
+      root.style.setProperty('--unit-font-size-meta', '0.7rem');
+      root.style.setProperty('--unit-input-width', '32px');
+      root.style.setProperty('--unit-input-height', '24px');
+    } else if (uiSize === 'large') {
+      root.style.setProperty('--unit-height', '44px');
+      root.style.setProperty('--unit-icon-size', '38px');
+      root.style.setProperty('--unit-font-size-name', '1rem');
+      root.style.setProperty('--unit-font-size-meta', '0.8rem');
+      root.style.setProperty('--unit-input-width', '40px');
+      root.style.setProperty('--unit-input-height', '30px');
+    }
+  }, [uiSize]);
 
   const handleExportData = () => {
     if (!data) return;
@@ -256,6 +311,10 @@ function App() {
             }}
             theme={theme}
             onToggleTheme={toggleTheme}
+            uiSize={uiSize}
+            onUiSizeChange={setUiSize}
+            isTooltipEnabled={isTooltipEnabled}
+            onToggleTooltip={() => setIsTooltipEnabled(!isTooltipEnabled)}
             versions={versions}
             currentVersion={currentVersion}
             onVersionChange={handleVersionChange}
@@ -271,7 +330,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
             />
           )}
           {['Uncommon', 'Random'].map(rarity => unitsByRarity[rarity] && (
@@ -284,7 +344,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
             />
           ))}
         </div>
@@ -301,7 +362,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
             />
           ))}
         </div>
@@ -317,7 +379,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
             />
           )}
         </div>
@@ -333,7 +396,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
             />
           )}
@@ -351,7 +415,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
               subGroupBy={rarity !== 'Alternate' ? "subGroup" : undefined}
             />
           ))}
@@ -369,7 +434,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
             />
           ))}
@@ -387,7 +453,8 @@ function App() {
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-
+              isTooltipEnabled={isTooltipEnabled}
+              isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
             />
           ))}

@@ -132,7 +132,16 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
 
             return (
               <div key={index} className={styles.ingredient}>
-                <img src={ingredient.image} alt={ingredient.name} className={styles.icon} />
+                <img
+                  src={ingredient.image}
+                  alt={ingredient.name}
+                  className={styles.icon}
+                  style={{
+                    border: `2px solid ${getRarityColor(ingredient.rarity)}`,
+                    borderRadius: '2px',
+                    boxSizing: 'border-box'
+                  }}
+                />
                 <span>{ingredient.name} - {ingredient.rarity}</span>
                 <span className={styles.count} style={{ color: isEnough ? 'inherit' : '#ff6b6b' }}>
                   x{need} <span style={{ opacity: 0.7, fontSize: '0.9em' }}>(Have: {have})</span>
@@ -183,7 +192,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({ unit, unitsMap, in
                       right: 0,
                       backgroundColor: 'rgba(0, 0, 0, 0.8)',
                       color: '#ff6b6b',
-                      fontSize: '0.7rem',
+                      fontSize: '0.8rem',
                       fontWeight: 'bold',
                       padding: '0 2px',
                       borderRadius: '2px',
