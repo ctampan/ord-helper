@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 80px;
+  position: relative;
+  user-select: none;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallbackIcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.name {
+  margin-top: 4px;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  color: var(--text-secondary);
+}
+
+
+.green .imageWrapper {
+  border-color: var(--status-green);
+}
+
+.orange .imageWrapper {
+  border-color: var(--status-orange);
+}
+
+.red .imageWrapper {
+  border-color: var(--status-red);
+}
+
+.banned .imageWrapper {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.banOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 0 #000;
+  border: 2px solid red;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.buildableBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--status-green);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  z-index: 20;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wispBadge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--status-orange);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 4px;
+  border-top-left-radius: 4px;
+  z-index: 15;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--status-green);
+  transition: width 0.3s ease;
+  z-index: 5;
+}
+
+.progressText {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black, 0 0 2px black;
+  pointer-events: none;
+  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.textOrange {
+  color: var(--status-orange);
+}
+
+.textGreen {
+  color: var(--status-green);
+}

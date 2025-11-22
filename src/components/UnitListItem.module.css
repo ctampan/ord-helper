@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 1px 3px;
+  margin-bottom: 1px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  position: relative;
+  height: 28px;
+  overflow: hidden;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.container:hover {
+  border-color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.container.green {
+  border-color: var(--status-green);
+  background-color: var(--bg-status-green);
+}
+
+.container.orange {
+  border-color: var(--status-orange);
+  background-color: var(--bg-status-orange);
+}
+
+.container.banned {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.iconWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.buildableBadge {
+  background-color: var(--status-green);
+  color: white;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  gap: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.name {
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  flex: 1;
+  min-width: 0;
+  margin-right: 4px;
+  text-align: left;
+}
+
+.wispCost {
+  font-size: 0.6rem;
+  color: var(--status-orange);
+  margin-left: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  width: 30px;
+  text-align: right;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 2px;
+  background-color: var(--bg-progress-track);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--status-green);
+  transition: width 0.3s ease;
+}
+
+.container.orange .progressFill {
+  background-color: var(--status-orange);
+}
+
+.progressText {
+  font-size: 0.55rem;
+  white-space: nowrap;
+  line-height: 1;
+  min-width: 75px;
+  width: 75px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.textGreen {
+  color: var(--status-green);
+}
+
+.textOrange {
+  color: var(--status-orange);
+}
+
+.controls {
+  margin-left: 4px;
+}
+
+.input {
+  width: 26px;
+  padding: 0 2px;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  text-align: center;
+  font-size: 0.7rem;
+  height: 18px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #646cff;
+}

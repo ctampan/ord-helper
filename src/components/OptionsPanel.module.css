@@ -1,0 +1,75 @@
+.panel {
+  background-color: var(--bg-panel);
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.iconBtn {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 2px;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.iconBtn:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.iconBtn.active {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-color: var(--status-red);
+  color: var(--status-red);
+}
+
+.dividerVertical {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color);
+  margin: 0 4px;
+}
+
+.select {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+  height: 28px;
+  width: 100%;
+}
+
+.select option {
+  background-color: #ffffff;
+  color: #000000;
+}

@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.2s;
+  border: 1px solid var(--border-color);
+}
+
+.toggle.active {
+  background: var(--status-red);
+  border-color: var(--status-red);
+}
+
+.knob {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.2s;
+}
+
+.toggle.active .knob {
+  transform: translateX(20px);
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
