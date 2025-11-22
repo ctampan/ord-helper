@@ -128,6 +128,10 @@
   background-color: var(--status-orange);
 }
 
+.progressGray {
+  background-color: var(--status-gray) !important;
+}
+
 .progressText {
   font-size: 0.55rem;
   white-space: nowrap;
@@ -144,6 +148,10 @@
 
 .textOrange {
   color: var(--status-orange);
+}
+
+.textGray {
+  color: var(--status-gray);
 }
 
 .controls {

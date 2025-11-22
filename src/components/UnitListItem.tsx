@@ -91,18 +91,18 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
           <div className={styles.progressRow}>
             <div className={styles.progressBar}>
               <div
-                className={styles.progressFill}
+                className={`${styles.progressFill} ${progress < 100 ? styles.progressGray : ''}`}
                 style={{ width: `${progress}%` }}
               />
             </div>
             <div className={styles.progressText}>
               {isWispAssisted ? (
                 <>
-                  <span className={styles.textGreen}>{Math.round(materialProgress)}%</span>
+                  <span className={progress < 100 ? styles.textGray : styles.textGreen}>{Math.round(materialProgress)}%</span>
                   <span className={styles.textOrange}> +{Math.round(wispProgress)}%</span>
                 </>
               ) : (
-                <span className={styles.textGreen}>{Math.round(progress)}%</span>
+                <span className={progress < 100 ? styles.textGray : styles.textGreen}>{Math.round(progress)}%</span>
               )}
             </div>
           </div>
