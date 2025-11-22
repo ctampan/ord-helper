@@ -1,5 +1,6 @@
 {
   "name": "ord-helper",
+  "homepage": "https://ctampan.github.io/ord-helper/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
