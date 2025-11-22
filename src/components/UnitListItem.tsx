@@ -126,6 +126,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
         inventory={inventory}
         visible={isHovered}
         parentElement={containerRef.current}
+        bans={bans}
       />
     </div>
   );

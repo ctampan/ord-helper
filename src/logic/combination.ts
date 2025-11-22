@@ -401,3 +401,50 @@ export function consumeMaterials(
 
   return newInventory;
 }
+
+/**
+ * Calculates the detailed breakdown of missing base units.
+ * Returns a record of base unit IDs to the count needed.
+ */
+export function calculateMissingBaseUnits(
+  unitId: string,
+  unitsMap: Map<string, Unit>,
+  inventory: Inventory,
+  bans: Bans
+): Record<string, number> {
+  const missingUnits: Record<string, number> = {};
+  const tempInventory = { ...inventory };
+
+  if (tempInventory[unitId]) {
+    tempInventory[unitId] = 0;
+  }
+
+  const calculateRecursive = (id: string, amount: number): void => {
+    if (amount <= 0) return;
+
+    const available = tempInventory[id] || 0;
+    const take = Math.min(available, amount);
+    if (take > 0) {
+      tempInventory[id] -= take;
+      amount -= take;
+    }
+
+    if (amount === 0) return;
+
+    const unit = unitsMap.get(id);
+    if (!unit) return;
+
+    if (!unit.recipe || unit.recipe.length === 0 || bans.has(id)) {
+      missingUnits[id] = (missingUnits[id] || 0) + amount;
+      return;
+    }
+
+    for (const req of unit.recipe) {
+      calculateRecursive(req.unitId, req.count * amount);
+    }
+  };
+
+  calculateRecursive(unitId, 1);
+  return missingUnits;
+}
+

@@ -19,6 +19,7 @@ interface UnitIconProps {
   onClick: (e: React.MouseEvent) => void;
   onRightClick: (e: React.MouseEvent) => void;
   onCountChange: (newCount: number) => void;
+  bans: Set<string>;
 }
 
 export const UnitIcon: React.FC<UnitIconProps> = ({
@@ -36,7 +37,8 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
   inventory,
   onClick,
   onRightClick,
-  onCountChange
+  onCountChange,
+  bans
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -115,6 +117,7 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
         inventory={inventory}
         visible={isHovered}
         parentElement={containerRef.current}
+        bans={bans}
       />
     </div>
   );
