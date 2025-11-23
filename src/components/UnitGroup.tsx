@@ -9,7 +9,7 @@ interface UnitGroupProps {
   inventory: Record<string, number>;
   bans: Set<string>;
   unitsMap: Map<string, Unit>;
-  onUnitClick: (unitId: string, isRightClick: boolean) => void;
+  onUnitClick: (unitId: string, isRightClick: boolean, isCtrlPressed: boolean) => void;
   onCountChange: (unitId: string, newCount: number) => void;
   subGroupBy?: keyof Unit;
   isTooltipEnabled: boolean;
@@ -45,11 +45,11 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(({
         unitsMap={unitsMap}
         onClick={(e) => {
           e.preventDefault();
-          onUnitClick(unit.id, false);
+          onUnitClick(unit.id, false, e.ctrlKey);
         }}
         onRightClick={(e) => {
           e.preventDefault();
-          onUnitClick(unit.id, true);
+          onUnitClick(unit.id, true, e.ctrlKey);
         }}
         onCountChange={(newCount) => onCountChange(unit.id, newCount)}
         isTooltipEnabled={isTooltipEnabled}

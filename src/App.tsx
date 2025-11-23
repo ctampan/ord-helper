@@ -214,9 +214,8 @@ function App() {
     reader.readAsText(file);
   };
 
-  const handleUnitClick = useCallback((unitId: string, isRightClick: boolean) => {
+  const handleUnitClick = useCallback((unitId: string, isRightClick: boolean, isCtrlPressed: boolean) => {
     if (isBanMode) {
-
       setBans(prev => {
         const newBans = new Set(prev);
         if (newBans.has(unitId)) {
@@ -229,38 +228,79 @@ function App() {
       return;
     }
 
-
     if (bans.has(unitId)) {
       return;
     }
 
     if (isRightClick) {
-      // Right click: build unit
-      if (!data) return;
-      const unitsMap = new Map(data.units.map(u => [u.id, u]));
+      if (isCtrlPressed) {
+        // Ctrl + Right Click: Reduce quantity and refund recipe
+        if (!data) return;
 
-      try {
         setInventory(prev => {
-          try {
-            const newInventory = consumeMaterials(unitId, unitsMap, prev);
-            return newInventory;
-          } catch (e) {
-            console.warn('Cannot build unit:', e);
-            setNotification(e instanceof Error ? e.message : 'Cannot build unit');
+          const currentCount = prev[unitId] || 0;
+          if (currentCount <= 0) {
+            setNotification('Cannot reduce: Count is 0');
             return prev;
           }
-        });
-      } catch (e) {
 
-        console.warn('Cannot build unit:', e);
-        setNotification(e instanceof Error ? e.message : 'Cannot build unit');
+          const newInventory = { ...prev };
+          newInventory[unitId] = currentCount - 1;
+
+          const unit = data.units.find(u => u.id === unitId);
+          if (unit && unit.recipe) {
+            unit.recipe.forEach(req => {
+              newInventory[req.unitId] = (newInventory[req.unitId] || 0) + req.count;
+            });
+            setNotification(`Reduced ${unit.name} and refunded materials`);
+          } else {
+            setNotification(`Reduced ${unit?.name || 'unit'}`);
+          }
+          return newInventory;
+        });
+      } else {
+        // Right click: build unit
+        if (!data) return;
+        const unitsMap = new Map(data.units.map(u => [u.id, u]));
+
+        try {
+          setInventory(prev => {
+            try {
+              const newInventory = consumeMaterials(unitId, unitsMap, prev);
+              return newInventory;
+            } catch (e) {
+              console.warn('Cannot build unit:', e);
+              setNotification(e instanceof Error ? e.message : 'Cannot build unit');
+              return prev;
+            }
+          });
+        } catch (e) {
+          console.warn('Cannot build unit:', e);
+          setNotification(e instanceof Error ? e.message : 'Cannot build unit');
+        }
       }
     } else {
-      // Left click: add unit
-      setInventory(prev => ({
-        ...prev,
-        [unitId]: (prev[unitId] || 0) + 1
-      }));
+      if (isCtrlPressed) {
+        // Ctrl + Left Click: Reduce quantity
+        setInventory(prev => {
+          const newCount = Math.max(0, (prev[unitId] || 0) - 1);
+          if (newCount === (prev[unitId] || 0)) {
+            setNotification('Cannot reduce: Count is 0');
+            return prev;
+          }
+          setNotification(`Reduced quantity`);
+          return {
+            ...prev,
+            [unitId]: newCount
+          };
+        });
+      } else {
+        // Left click: add unit
+        setInventory(prev => ({
+          ...prev,
+          [unitId]: (prev[unitId] || 0) + 1
+        }));
+      }
     }
   }, [isBanMode, bans, data]);
 
