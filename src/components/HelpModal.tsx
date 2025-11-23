@@ -59,6 +59,23 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
 
           <div style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-color)', paddingTop: '10px' }}>
             Created by <strong style={{ color: 'var(--text-primary)' }}>Narvaneon</strong>
+            <div style={{ marginTop: '8px' }}>
+              <a
+                href="https://ko-fi.com/narvaneon"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#29abe0',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+              >
+                ☕ Support on Ko-fi
+              </a>
+            </div>
           </div>
         </div>
       </div>
