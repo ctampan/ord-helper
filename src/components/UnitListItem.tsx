@@ -152,15 +152,17 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
         </div>
       </div>
 
-      <RecipeTooltip
-        unit={unit}
-        unitsMap={unitsMap}
-        inventory={inventory}
-        visible={showTooltip}
-        parentElement={containerRef.current}
-        bans={bans}
-        isWispEnabled={isWispEnabled}
-      />
+      {showTooltip && (
+        <RecipeTooltip
+          unit={unit}
+          unitsMap={unitsMap}
+          inventory={inventory}
+          visible={showTooltip}
+          parentElement={containerRef.current}
+          bans={bans}
+          isWispEnabled={isWispEnabled}
+        />
+      )}
     </div>
   );
 });
