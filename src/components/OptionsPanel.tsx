@@ -20,6 +20,8 @@ interface OptionsPanelProps {
   onImport: (file: File) => void;
 }
 
+import { HelpModal } from './HelpModal';
+
 export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   isBanMode,
   onToggleBanMode,
@@ -39,6 +41,15 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   onImport
 }) => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [isHelpOpen, setIsHelpOpen] = React.useState(() => {
+    return !localStorage.getItem('ord_has_seen_help');
+  });
+
+  React.useEffect(() => {
+    if (isHelpOpen) {
+      localStorage.setItem('ord_has_seen_help', 'true');
+    }
+  }, [isHelpOpen]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -119,6 +130,16 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
           <button className={styles.iconBtn} onClick={onReset} title="Reset Inventory & Bans">
             🗑️
           </button>
+
+          <div className={styles.dividerVertical} />
+
+          <button
+            className={styles.iconBtn}
+            onClick={() => setIsHelpOpen(true)}
+            title="Help & Features"
+          >
+            ❓
+          </button>
         </div>
 
         <div className={styles.rightGroup}>
@@ -134,6 +155,8 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
           </select>
         </div>
       </div>
+
+      <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
     </div>
   );
 };
