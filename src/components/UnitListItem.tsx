@@ -112,7 +112,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
           {isBanned && <div className={styles.banOverlay}>BAN</div>}
         </div>
 
-        {progress > 0 && !isBanned && (isWispAssisted || progress < 100) && (
+        {progress > 0 && !isBanned && unit.rarity !== 'Common' && (isWispAssisted || progress < 100) && (
           <div className={styles.progressContainer}>
             {isWispAssisted ? (
               <div className={styles.splitProgress}>
