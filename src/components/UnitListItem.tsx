@@ -10,8 +10,7 @@ interface UnitListItemProps {
   inventory: Record<string, number>;
   bans: Set<string>;
   unitsMap: Map<string, Unit>;
-  onClick: (e: React.MouseEvent) => void;
-  onRightClick: (e: React.MouseEvent) => void;
+  onAction: (unitId: string, isRightClick: boolean, isCtrlPressed: boolean) => void;
   onCountChange: (newCount: number) => void;
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
@@ -24,8 +23,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
   inventory,
   bans,
   unitsMap,
-  onClick,
-  onRightClick,
+  onAction,
   onCountChange,
   isTooltipEnabled,
   isShiftPressed,
@@ -61,19 +59,27 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
     setImageError(false);
   }, [unit.image]);
 
-  // Determine if tooltip should be shown
-  // Default: off. Toggle on: always show. Shift override: show if off.
-  // Requirement: "default it should be turn off. If user press 'shift' while hovering, it should temporarily toggle the tooltips."
-  // If isTooltipEnabled is true, show on hover.
-  // If isTooltipEnabled is false, show on hover ONLY if Shift is pressed.
+  // Determine tooltip visibility
+  // Logic: Default is hidden. Shift key toggles it ON temporarily.
+  // If option is "Always On", then it's always visible on hover.
   const showTooltip = isHovered && (isTooltipEnabled || isShiftPressed);
+
+  const handleLeftClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onAction(unit.id, false, e.ctrlKey);
+  };
+
+  const handleRightClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onAction(unit.id, true, e.ctrlKey);
+  };
 
   return (
     <div
       ref={containerRef}
       className={`${styles.container} ${styles[status]} ${isBanned ? styles.banned : ''}`}
-      onClick={onClick}
-      onContextMenu={onRightClick}
+      onClick={handleLeftClick}
+      onContextMenu={handleRightClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

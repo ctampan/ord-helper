@@ -43,14 +43,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(({
         inventory={inventory}
         bans={bans}
         unitsMap={unitsMap}
-        onClick={(e) => {
-          e.preventDefault();
-          onUnitClick(unit.id, false, e.ctrlKey);
-        }}
-        onRightClick={(e) => {
-          e.preventDefault();
-          onUnitClick(unit.id, true, e.ctrlKey);
-        }}
+        onAction={onUnitClick}
         onCountChange={(newCount) => onCountChange(unit.id, newCount)}
         isTooltipEnabled={isTooltipEnabled}
         isShiftPressed={isShiftPressed}

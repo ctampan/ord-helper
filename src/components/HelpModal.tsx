@@ -41,9 +41,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             <h3>Options</h3>
             <ul>
               <li><strong>Ban Mode (🔒/🔓):</strong> Click units to ban them. Banned units won't be used in calculations.</li>
-              <li><strong>Wisp Mode (👻/🚫):</strong> Toggle whether Common Wisps are used in calculations.</li>
-              <li><strong>Tooltips (👁️/🗨️):</strong> Toggle always-on tooltips vs Shift-to-show.</li>
+              <li><strong>Theme (☀️/🌙):</strong> Toggle between Light and Dark mode.</li>
               <li><strong>UI Size (S/M/L):</strong> Adjust the size of the interface.</li>
+              <li><strong>Tooltips (👁️/🗨️):</strong> Toggle always-on tooltips vs Shift-to-show.</li>
+              <li><strong>Wisp Mode (👻/🚫):</strong> Toggle whether Common Wisps are used in calculations.</li>
             </ul>
           </section>
 
@@ -55,6 +56,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
               <li><strong>Reset (🗑️):</strong> Clear all inventory and bans.</li>
             </ul>
           </section>
+
+          <div style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-color)', paddingTop: '10px' }}>
+            Created by <strong style={{ color: 'var(--text-primary)' }}>Narvaneon</strong>
+          </div>
         </div>
       </div>
     </div>,

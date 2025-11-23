@@ -215,6 +215,7 @@ function App() {
   };
 
   const handleUnitClick = useCallback((unitId: string, isRightClick: boolean, isCtrlPressed: boolean) => {
+    // Handle Ban Mode: Toggling bans takes precedence over other interactions.
     if (isBanMode) {
       setBans(prev => {
         const newBans = new Set(prev);
@@ -228,13 +229,14 @@ function App() {
       return;
     }
 
+    // If a unit is banned, we shouldn't be able to interact with it.
     if (bans.has(unitId)) {
       return;
     }
 
     if (isRightClick) {
       if (isCtrlPressed) {
-        // Ctrl + Right Click: Reduce quantity and refund recipe
+        // Ctrl + Right Click: Reduce quantity and refund recipe materials
         if (!data) return;
 
         setInventory(prev => {
@@ -249,6 +251,7 @@ function App() {
 
           const unit = data.units.find(u => u.id === unitId);
           if (unit && unit.recipe) {
+            // Refund materials
             unit.recipe.forEach(req => {
               newInventory[req.unitId] = (newInventory[req.unitId] || 0) + req.count;
             });
@@ -259,7 +262,7 @@ function App() {
           return newInventory;
         });
       } else {
-        // Right click: build unit
+        // Right click: Build unit (consume materials)
         if (!data) return;
         const unitsMap = new Map(data.units.map(u => [u.id, u]));
 
@@ -281,7 +284,7 @@ function App() {
       }
     } else {
       if (isCtrlPressed) {
-        // Ctrl + Left Click: Reduce quantity
+        // Ctrl + Left Click: Simply reduce quantity without refunding
         setInventory(prev => {
           const newCount = Math.max(0, (prev[unitId] || 0) - 1);
           if (newCount === (prev[unitId] || 0)) {
@@ -295,7 +298,7 @@ function App() {
           };
         });
       } else {
-        // Left click: add unit
+        // Left click: Add unit to inventory
         setInventory(prev => ({
           ...prev,
           [unitId]: (prev[unitId] || 0) + 1
