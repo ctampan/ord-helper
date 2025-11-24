@@ -9,6 +9,7 @@ interface UnitListItemProps {
   count: number;
   inventory: Record<string, number>;
   bans: Set<string>;
+  effectiveBans: Set<string>;
   unitsMap: Map<string, Unit>;
   onAction: (
     unitId: string,
@@ -27,6 +28,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
     count,
     inventory,
     bans,
+    effectiveBans,
     unitsMap,
     onAction,
     onCountChange,
@@ -56,7 +58,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       [unit.id, unitsMap, effectiveInventory, bans]
     );
 
-    const isBanned = bans.has(unit.id);
+    // Use effectiveBans for visual disabling
+    const isBanned = effectiveBans.has(unit.id);
 
     const handleImageError = () => {
       setImageError(true);

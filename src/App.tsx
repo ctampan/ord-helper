@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import type { Data, Inventory, Bans, Unit } from "./logic/combination";
-import { consumeMaterials } from "./logic/combination";
+import { consumeMaterials, getEffectiveBans } from "./logic/combination";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import "./index.css";
@@ -162,12 +162,12 @@ function App() {
     localStorage.setItem("ord_ui_size", uiSize);
     const root = document.documentElement;
     if (uiSize === "small") {
-      root.style.setProperty("--unit-height", "28px");
-      root.style.setProperty("--unit-icon-size", "24px");
-      root.style.setProperty("--unit-font-size-name", "0.75rem");
+      root.style.setProperty("--unit-height", "24px");
+      root.style.setProperty("--unit-icon-size", "20px");
+      root.style.setProperty("--unit-font-size-name", "0.7rem");
       root.style.setProperty("--unit-font-size-meta", "0.6rem");
-      root.style.setProperty("--unit-input-width", "26px");
-      root.style.setProperty("--unit-input-height", "20px");
+      root.style.setProperty("--unit-input-width", "24px");
+      root.style.setProperty("--unit-input-height", "18px");
     } else if (uiSize === "medium") {
       root.style.setProperty("--unit-height", "36px");
       root.style.setProperty("--unit-icon-size", "30px");
@@ -227,6 +227,15 @@ function App() {
     reader.readAsText(file);
   };
 
+  const unitsMap = useMemo(() => {
+    if (!data) return new Map();
+    return new Map(data.units.map((u) => [u.id, u]));
+  }, [data]);
+
+  const effectiveBans = useMemo(() => {
+    return getEffectiveBans(unitsMap, bans);
+  }, [unitsMap, bans]);
+
   const handleUnitClick = useCallback(
     (unitId: string, isRightClick: boolean, isCtrlPressed: boolean) => {
       // Handle Ban Mode: Toggling bans takes precedence over other interactions.
@@ -243,8 +252,12 @@ function App() {
         return;
       }
 
-      // If a unit is banned, we shouldn't be able to interact with it.
-      if (bans.has(unitId)) {
+      // If a unit is explicitly banned, we shouldn't be able to interact with it.
+      // Note: We check explicit bans here because effective bans are for visual disabling and preventing build.
+      // But if a unit is effectively banned (e.g. parent is banned), can we still interact with it?
+      // The user requested: "If a unit is banned, the higher tier should have been disabled too".
+      // So we should prevent interaction if effectively banned.
+      if (effectiveBans.has(unitId)) {
         return;
       }
 
@@ -325,7 +338,7 @@ function App() {
         }
       }
     },
-    [isBanMode, bans, data]
+    [isBanMode, data, effectiveBans]
   );
 
   const handleCountChange = useCallback((unitId: string, newCount: number) => {
@@ -346,11 +359,6 @@ function App() {
       acc[rarity] = data.units.filter((u) => u.rarity === rarity);
       return acc;
     }, {} as Record<string, Unit[]>);
-  }, [data]);
-
-  const unitsMap = useMemo(() => {
-    if (!data) return new Map();
-    return new Map(data.units.map((u) => [u.id, u]));
   }, [data]);
 
   if (!data) return <div className="container">Loading...</div>;
@@ -408,6 +416,7 @@ function App() {
               units={unitsByRarity["Common"]}
               inventory={inventory}
               bans={bans}
+              effectiveBans={effectiveBans}
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
@@ -425,6 +434,7 @@ function App() {
                   units={unitsByRarity[rarity]}
                   inventory={inventory}
                   bans={bans}
+                  effectiveBans={effectiveBans}
                   unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
@@ -447,6 +457,7 @@ function App() {
                   units={unitsByRarity[rarity]}
                   inventory={inventory}
                   bans={bans}
+                  effectiveBans={effectiveBans}
                   unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
@@ -466,6 +477,7 @@ function App() {
               units={unitsByRarity["Rare"]}
               inventory={inventory}
               bans={bans}
+              effectiveBans={effectiveBans}
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
@@ -484,6 +496,7 @@ function App() {
               units={unitsByRarity["Legendary"]}
               inventory={inventory}
               bans={bans}
+              effectiveBans={effectiveBans}
               unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
@@ -506,6 +519,7 @@ function App() {
                   units={unitsByRarity[rarity]}
                   inventory={inventory}
                   bans={bans}
+                  effectiveBans={effectiveBans}
                   unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
@@ -529,6 +543,7 @@ function App() {
                   units={unitsByRarity[rarity]}
                   inventory={inventory}
                   bans={bans}
+                  effectiveBans={effectiveBans}
                   unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
@@ -552,6 +567,7 @@ function App() {
                   units={unitsByRarity[rarity]}
                   inventory={inventory}
                   bans={bans}
+                  effectiveBans={effectiveBans}
                   unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}

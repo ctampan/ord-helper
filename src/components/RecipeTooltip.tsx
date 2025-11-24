@@ -64,6 +64,23 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
     return { ...inventory, common_wisp: 0 };
   }, [inventory, isWispEnabled]);
 
+  // Helper to check if a unit is effectively banned (itself or any dependency)
+  const isEffectivelyBanned = (
+    unitId: string,
+    checked = new Set<string>()
+  ): boolean => {
+    if (checked.has(unitId)) return false; // Avoid cycles
+    checked.add(unitId);
+
+    if (bans.has(unitId)) return true;
+
+    const u = unitsMap.get(unitId);
+    if (!u || !u.recipe) return false;
+
+    // Check if any ingredient is effectively banned
+    return u.recipe.some((req) => isEffectivelyBanned(req.unitId, checked));
+  };
+
   if (!visible) return null;
 
   const hasRecipe = unit.recipe && unit.recipe.length > 0;
@@ -72,6 +89,16 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
     ? calculateMissingBaseUnits(unit.id, unitsMap, inventory, bans)
     : {};
   const hasMissing = Object.keys(missingBaseUnits).length > 0;
+
+  // Calculate missing stats for display
+  let totalMissingCount = 0;
+
+  if (hasMissing) {
+    totalMissingCount = Object.values(missingBaseUnits).reduce(
+      (sum, count) => sum + count,
+      0
+    );
+  }
 
   // Find units that directly use this unit in their recipe
   const usedInUnits = Array.from(unitsMap.values()).filter((u) =>
@@ -146,6 +173,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
             const have = inventory[req.unitId] || 0;
             const need = req.count;
             const isEnough = have >= need;
+            const isBanned = isEffectivelyBanned(req.unitId);
 
             // Check if ingredient is buildable if we don't have enough
             let buildStatus: string = "gray";
@@ -170,6 +198,10 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
                       border: `2px solid ${getRarityColor(ingredient.rarity)}`,
                       borderRadius: "2px",
                       boxSizing: "border-box",
+                      filter: isBanned
+                        ? "grayscale(100%) brightness(0.5)"
+                        : "none",
+                      opacity: isBanned ? 0.6 : 1,
                     }}
                   />
                   {!isEnough &&
@@ -190,7 +222,12 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
                       />
                     )}
                 </div>
-                <span>
+                <span
+                  style={{
+                    color: isBanned ? "#888" : "inherit",
+                    textDecoration: isBanned ? "line-through" : "none",
+                  }}
+                >
                   {ingredient.name} - {ingredient.rarity}
                 </span>
                 <span
@@ -217,14 +254,11 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
               fontWeight: "bold",
               marginBottom: "4px",
               color: "#ff6b6b",
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
-            Missing Base Units (
-            {Object.values(missingBaseUnits).reduce(
-              (sum, count) => sum + count,
-              0
-            )}
-            ):
+            <span>Missing Base Units: {totalMissingCount}</span>
           </div>
           <div
             style={{
@@ -245,7 +279,6 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
                 const baseUnit = unitsMap.get(unitId);
                 if (!baseUnit) return null;
 
-                // Check if base unit is buildable (unlikely for base units, but possible for uncommons etc if they appear here)
                 const details = getUnitDetails(
                   unitId,
                   unitsMap,
@@ -333,22 +366,29 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
               gap: "4px",
             }}
           >
-            {usedInUnits.slice(0, 15).map((usedUnit) => (
-              <img
-                key={usedUnit.id}
-                src={usedUnit.image}
-                alt={usedUnit.name}
-                title={`${usedUnit.name} (${usedUnit.rarity})`}
-                style={{
-                  width: "32px",
-                  height: "32px",
-                  objectFit: "cover",
-                  borderRadius: "2px",
-                  cursor: "help",
-                  border: `2px solid ${getRarityColor(usedUnit.rarity)}`,
-                }}
-              />
-            ))}
+            {usedInUnits.slice(0, 15).map((usedUnit) => {
+              const isBanned = isEffectivelyBanned(usedUnit.id);
+              return (
+                <img
+                  key={usedUnit.id}
+                  src={usedUnit.image}
+                  alt={usedUnit.name}
+                  title={`${usedUnit.name} (${usedUnit.rarity})`}
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    objectFit: "cover",
+                    borderRadius: "2px",
+                    cursor: "help",
+                    border: `2px solid ${getRarityColor(usedUnit.rarity)}`,
+                    filter: isBanned
+                      ? "grayscale(100%) brightness(0.5)"
+                      : "none",
+                    opacity: isBanned ? 0.6 : 1,
+                  }}
+                />
+              );
+            })}
           </div>
           {usedInUnits.length > 15 && (
             <div style={{ fontSize: "0.7rem", opacity: 0.6, marginTop: "2px" }}>
@@ -378,22 +418,29 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
               gap: "4px",
             }}
           >
-            {topTierUnits.slice(0, 15).map((topUnit) => (
-              <img
-                key={topUnit.id}
-                src={topUnit.image}
-                alt={topUnit.name}
-                title={`${topUnit.name} (${topUnit.rarity})`}
-                style={{
-                  width: "32px",
-                  height: "32px",
-                  objectFit: "cover",
-                  borderRadius: "2px",
-                  cursor: "help",
-                  border: `2px solid ${getRarityColor(topUnit.rarity)}`,
-                }}
-              />
-            ))}
+            {topTierUnits.slice(0, 15).map((topUnit) => {
+              const isBanned = isEffectivelyBanned(topUnit.id);
+              return (
+                <img
+                  key={topUnit.id}
+                  src={topUnit.image}
+                  alt={topUnit.name}
+                  title={`${topUnit.name} (${topUnit.rarity})`}
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    objectFit: "cover",
+                    borderRadius: "2px",
+                    cursor: "help",
+                    border: `2px solid ${getRarityColor(topUnit.rarity)}`,
+                    filter: isBanned
+                      ? "grayscale(100%) brightness(0.5)"
+                      : "none",
+                    opacity: isBanned ? 0.6 : 1,
+                  }}
+                />
+              );
+            })}
           </div>
           {topTierUnits.length > 15 && (
             <div style={{ fontSize: "0.7rem", opacity: 0.6, marginTop: "2px" }}>

@@ -8,6 +8,7 @@ interface UnitGroupProps {
   units: Unit[];
   inventory: Record<string, number>;
   bans: Set<string>;
+  effectiveBans: Set<string>;
   unitsMap: Map<string, Unit>;
   onUnitClick: (
     unitId: string,
@@ -27,6 +28,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     units,
     inventory,
     bans,
+    effectiveBans,
     unitsMap,
     onUnitClick,
     onCountChange,
@@ -47,6 +49,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
           count={inventory[unit.id] || 0}
           inventory={inventory}
           bans={bans}
+          effectiveBans={effectiveBans}
           unitsMap={unitsMap}
           onAction={onUnitClick}
           onCountChange={(newCount) => onCountChange(unit.id, newCount)}

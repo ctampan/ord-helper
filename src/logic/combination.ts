@@ -558,3 +558,53 @@ export function calculateMissingBaseUnits(
   calculateRecursive(unitId, 1);
   return missingUnits;
 }
+
+/**
+ * Calculates the set of "effectively banned" units.
+ * A unit is effectively banned if it is explicitly banned OR if any of its required ingredients are effectively banned.
+ */
+export function getEffectiveBans(
+  unitsMap: Map<string, Unit>,
+  explicitBans: Bans
+): Set<string> {
+  const effectiveBans = new Set<string>();
+  const memo = new Map<string, boolean>();
+
+  const isBanned = (unitId: string, visited = new Set<string>()): boolean => {
+    if (memo.has(unitId)) return memo.get(unitId)!;
+    if (visited.has(unitId)) return false; // Cycle detection (shouldn't happen in DAG)
+    visited.add(unitId);
+
+    if (explicitBans.has(unitId)) {
+      memo.set(unitId, true);
+      effectiveBans.add(unitId);
+      return true;
+    }
+
+    const unit = unitsMap.get(unitId);
+    if (!unit || !unit.recipe || unit.recipe.length === 0) {
+      memo.set(unitId, false);
+      return false;
+    }
+
+    // Check dependencies
+    let banned = false;
+    for (const req of unit.recipe) {
+      if (isBanned(req.unitId, visited)) {
+        banned = true;
+        break;
+      }
+    }
+
+    memo.set(unitId, banned);
+    if (banned) effectiveBans.add(unitId);
+    return banned;
+  };
+
+  // Iterate over all units to populate the set
+  for (const unitId of unitsMap.keys()) {
+    isBanned(unitId);
+  }
+
+  return effectiveBans;
+}
