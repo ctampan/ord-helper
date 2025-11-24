@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useRef, useMemo, useDeferredValue } from "react";
 import { getUnitDetails, type Unit } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import styles from "./UnitListItem.module.css";
@@ -40,10 +40,15 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
     const [imageError, setImageError] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    // Defer the inventory and bans updates to prevent blocking the UI
+    // The count (input) will update immediately, but the status colors will update slightly later
+    const deferredInventory = useDeferredValue(inventory);
+    const deferredBans = useDeferredValue(bans);
+
     const effectiveInventory = useMemo(() => {
-      if (isWispEnabled) return inventory;
-      return { ...inventory, common_wisp: 0 };
-    }, [inventory, isWispEnabled]);
+      if (isWispEnabled) return deferredInventory;
+      return { ...deferredInventory, common_wisp: 0 };
+    }, [deferredInventory, isWispEnabled]);
 
     const {
       status,
@@ -54,8 +59,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       wispCost,
       isWispAssisted,
     } = useMemo(
-      () => getUnitDetails(unit.id, unitsMap, effectiveInventory, bans),
-      [unit.id, unitsMap, effectiveInventory, bans]
+      () => getUnitDetails(unit.id, unitsMap, effectiveInventory, deferredBans),
+      [unit.id, unitsMap, effectiveInventory, deferredBans]
     );
 
     // Use effectiveBans for visual disabling
