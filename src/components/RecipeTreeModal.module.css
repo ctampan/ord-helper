@@ -1,0 +1,249 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  flex: 1;
+  overflow: auto;
+  padding: 24px;
+  display: block;
+}
+
+.rootNode {
+  display: inline-block;
+  min-width: min-content;
+}
+
+/* Tree Node Styles */
+.nodeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin: 12px 0;
+}
+
+.nodeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  min-width: 80px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s;
+  margin-right: 24px;
+}
+
+.nodeContent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nodeIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.nodeName {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--text-color);
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nodeCount {
+  font-size: 0.7rem;
+  color: var(--meta-color);
+  margin-top: 2px;
+}
+
+.childrenContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 0;
+}
+
+/* Connecting Lines */
+.childrenContainer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  width: 12px;
+  height: 2px;
+  background-color: var(--border-color);
+  transform: translateY(-50%);
+}
+
+.childrenContainer>.nodeContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--border-color);
+}
+
+.childrenContainer>.nodeContainer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  width: 12px;
+  height: 2px;
+  background-color: var(--border-color);
+}
+
+.childrenContainer>.nodeContainer:first-child::before {
+  top: 50%;
+  height: 50%;
+}
+
+.childrenContainer>.nodeContainer:last-child::before {
+  height: 50%;
+}
+
+.childrenContainer>.nodeContainer:only-child::before {
+  display: none;
+}
+
+.childrenContainer>.nodeContainer:only-child::after {
+  width: 24px;
+  left: -24px;
+}
+
+.rootNode>.nodeContainer {
+  margin: 0;
+}
+
+/* Clickable Node */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: var(--hover-bg);
+}
+
+.toggleIndicator {
+  position: absolute;
+  bottom: -8px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  z-index: 3;
+}
+
+/* Base Ingredients Grid */
+.baseIngredientsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px;
+  padding: 8px;
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.baseIngredientItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.baseIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.baseName {
+  font-size: 0.7rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.baseCount {
+  font-size: 0.7rem;
+  margin-left: auto;
+  font-weight: bold;
+}

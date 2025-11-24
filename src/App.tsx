@@ -3,6 +3,7 @@ import type { Data, Inventory, Bans, Unit } from "./logic/combination";
 import { consumeMaterials, getEffectiveBans } from "./logic/combination";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
+import { RecipeTreeModal } from "./components/RecipeTreeModal";
 import "./index.css";
 import "./App.css";
 
@@ -28,6 +29,10 @@ function App() {
     return localStorage.getItem("ord_tooltip_enabled") === "true";
   });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
+
+  const [selectedUnitForTree, setSelectedUnitForTree] = useState<string | null>(
+    null
+  );
 
   useEffect(() => {
     localStorage.setItem("ord_wisp_enabled", String(isWispEnabled));
@@ -237,7 +242,18 @@ function App() {
   }, [unitsMap, bans]);
 
   const handleUnitClick = useCallback(
-    (unitId: string, isRightClick: boolean, isCtrlPressed: boolean) => {
+    (
+      unitId: string,
+      isRightClick: boolean,
+      isCtrlPressed: boolean,
+      isAltPressed: boolean
+    ) => {
+      // Handle Recipe Tree (Alt + Click)
+      if (isAltPressed) {
+        setSelectedUnitForTree(unitId);
+        return;
+      }
+
       // Handle Ban Mode: Toggling bans takes precedence over other interactions.
       if (isBanMode) {
         setBans((prev) => {
@@ -253,10 +269,6 @@ function App() {
       }
 
       // If a unit is explicitly banned, we shouldn't be able to interact with it.
-      // Note: We check explicit bans here because effective bans are for visual disabling and preventing build.
-      // But if a unit is effectively banned (e.g. parent is banned), can we still interact with it?
-      // The user requested: "If a unit is banned, the higher tier should have been disabled too".
-      // So we should prevent interaction if effectively banned.
       if (effectiveBans.has(unitId)) {
         return;
       }
@@ -382,6 +394,15 @@ function App() {
         >
           {notification}
         </div>
+      )}
+
+      {selectedUnitForTree && (
+        <RecipeTreeModal
+          unitId={selectedUnitForTree}
+          unitsMap={unitsMap}
+          inventory={inventory}
+          onClose={() => setSelectedUnitForTree(null)}
+        />
       )}
 
       <main className="dashboard">

@@ -39,6 +39,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 its recipe materials.
               </li>
               <li>
+                <strong>Alt + Click:</strong> Open Recipe Tree Visualizer (shows
+                full recipe hierarchy).
+              </li>
+              <li>
                 <strong>Shift + Hover:</strong> Temporarily show recipe tooltip
                 (if disabled).
               </li>

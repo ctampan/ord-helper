@@ -14,7 +14,8 @@ interface UnitListItemProps {
   onAction: (
     unitId: string,
     isRightClick: boolean,
-    isCtrlPressed: boolean
+    isCtrlPressed: boolean,
+    isAltPressed: boolean
   ) => void;
   onCountChange: (newCount: number) => void;
   isTooltipEnabled: boolean;
@@ -83,12 +84,12 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
 
     const handleLeftClick = (e: React.MouseEvent) => {
       e.preventDefault();
-      onAction(unit.id, false, e.ctrlKey);
+      onAction(unit.id, false, e.ctrlKey, e.altKey);
     };
 
     const handleRightClick = (e: React.MouseEvent) => {
       e.preventDefault();
-      onAction(unit.id, true, e.ctrlKey);
+      onAction(unit.id, true, e.ctrlKey, false);
     };
 
     return (

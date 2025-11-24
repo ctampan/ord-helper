@@ -13,7 +13,8 @@ interface UnitGroupProps {
   onUnitClick: (
     unitId: string,
     isRightClick: boolean,
-    isCtrlPressed: boolean
+    isCtrlPressed: boolean,
+    isAltPressed: boolean
   ) => void;
   onCountChange: (unitId: string, newCount: number) => void;
   subGroupBy?: keyof Unit;
