@@ -18,7 +18,7 @@ export type Inventory = Record<string, number>;
 export type Bans = Set<string>;
 
 export interface UnitDetails {
-  status: 'green' | 'orange' | 'red';
+  status: "green" | "orange" | "red";
   buildableCount: number;
   progress: number; // Total progress 0 to 100
   materialProgress: number; // 0 to 100
@@ -63,18 +63,16 @@ class SimulationInventory {
     }
     return consumed;
   }
+
+  snapshot(): Map<string, number> {
+    return new Map(this.modified);
+  }
+
+  restore(snapshot: Map<string, number>) {
+    this.modified = new Map(snapshot);
+  }
 }
 
-/**
- * Calculates the materials needed to build a unit, prioritizing existing inventory.
- * Returns a map of unit IDs to the count that needs to be consumed.
- * Returns null if the unit cannot be built.
- */
-/**
- * Calculates the materials needed to build a unit, prioritizing existing inventory.
- * Returns a map of unit IDs to the count that needs to be consumed.
- * Returns null if the unit cannot be built.
- */
 /**
  * Calculates the materials needed to build a unit, prioritizing existing inventory.
  * Returns a map of unit IDs to the count that needs to be consumed.
@@ -115,9 +113,41 @@ export function calculateConsumption(
     const unit = unitsMap.get(id);
     if (!unit) return false;
 
-    // 2. If allowed, use Wisps as a substitute for Common units.
-    if (allowWisp && unit.rarity === 'Common' && id !== 'common_wisp') {
-      const wispId = 'common_wisp';
+    // 2. Try to craft from recipe BEFORE using wisps.
+    // We do this greedily: try to craft as many as possible using base materials.
+    if (unit.recipe && unit.recipe.length > 0 && !bans.has(id)) {
+      // We need to craft 'amount' more units.
+      // We try to craft them one by one. If a craft fails (e.g. missing materials and no wisps allowed/available),
+      // we stop trying to craft and fall through to wisp usage (if applicable).
+
+      let craftedCount = 0;
+      for (let i = 0; i < amount; i++) {
+        const snapshot = simInventory.snapshot();
+        let success = true;
+        for (const req of unit.recipe) {
+          if (!fulfill(req.unitId, req.count)) {
+            success = false;
+            break;
+          }
+        }
+
+        if (success) {
+          craftedCount++;
+        } else {
+          // If we failed to craft this single unit, revert changes for this attempt
+          simInventory.restore(snapshot);
+          break;
+        }
+      }
+      amount -= craftedCount;
+    }
+
+    if (amount === 0) return true;
+
+    // 3. If allowed, use Wisps as a substitute for Common units.
+    // Only use wisps if we couldn't craft enough.
+    if (allowWisp && unit.rarity === "Common" && id !== "common_wisp") {
+      const wispId = "common_wisp";
       const availableWisps = simInventory.get(wispId);
       const takeWisps = Math.min(availableWisps, amount);
 
@@ -129,17 +159,7 @@ export function calculateConsumption(
       if (amount === 0) return true;
     }
 
-    // 3. If still missing materials, try to craft them from their recipes.
-    // If the unit is banned, we cannot craft it.
-    if (bans.has(id)) return false;
-    if (!unit.recipe || unit.recipe.length === 0) return false;
-
-    for (const req of unit.recipe) {
-      if (!fulfill(req.unitId, req.count * amount)) {
-        return false;
-      }
-    }
-    return true;
+    return false;
   };
 
   if (!fulfill(targetUnitId, count)) {
@@ -183,7 +203,14 @@ export function calculateBuildable(
       continue;
     }
 
-    const consumption = calculateConsumption(targetUnitId, unitsMap, inventory, bans, mid, true);
+    const consumption = calculateConsumption(
+      targetUnitId,
+      unitsMap,
+      inventory,
+      bans,
+      mid,
+      true
+    );
     if (consumption) {
       max = mid;
       low = mid + 1;
@@ -301,7 +328,7 @@ export function calculateMissingWispableCost(
 
     if (!unit.recipe || unit.recipe.length === 0 || bans.has(id)) {
       // Count as wispable only if it's a Common unit (and not a wisp itself).
-      return (unit.rarity === 'Common' && id !== 'common_wisp') ? amount : 0;
+      return unit.rarity === "Common" && id !== "common_wisp" ? amount : 0;
     }
 
     let missingWispable = 0;
@@ -325,30 +352,49 @@ export function getUnitDetails(
 ): UnitDetails {
   // 1. Determine Status (Green/Orange/Red)
   // Check if we can build it normally first.
-  const normalConsumption = calculateConsumption(targetUnitId, unitsMap, inventory, bans, 1, false);
+  const normalConsumption = calculateConsumption(
+    targetUnitId,
+    unitsMap,
+    inventory,
+    bans,
+    1,
+    false
+  );
 
   if (normalConsumption) {
     // If we can build it normally, we're done.
-    const buildableCount = calculateBuildable(targetUnitId, unitsMap, inventory, bans);
+    const buildableCount = calculateBuildable(
+      targetUnitId,
+      unitsMap,
+      inventory,
+      bans
+    );
     return {
-      status: 'green',
+      status: "green",
       buildableCount,
       progress: 100,
       materialProgress: 100,
       wispProgress: 0,
       wispCost: 0,
-      isWispAssisted: false
+      isWispAssisted: false,
     };
   }
 
   // If normal build fails, check if we can build with Wisps.
-  let status: 'green' | 'orange' | 'red' = 'red';
+  let status: "green" | "orange" | "red" = "red";
   let wispCost = 0;
-  const wispConsumption = calculateConsumption(targetUnitId, unitsMap, inventory, bans, 1, true);
+  const wispConsumption = calculateConsumption(
+    targetUnitId,
+    unitsMap,
+    inventory,
+    bans,
+    1,
+    true
+  );
 
   if (wispConsumption) {
-    status = 'orange';
-    wispCost = wispConsumption['common_wisp'] || 0;
+    status = "orange";
+    wispCost = wispConsumption["common_wisp"] || 0;
   }
 
   // 2. Calculate Progress
@@ -362,25 +408,35 @@ export function getUnitDetails(
       materialProgress: 0,
       wispProgress: 0,
       wispCost,
-      isWispAssisted: false
+      isWispAssisted: false,
     };
   }
 
-  const missingCost = calculateMissingCost(targetUnitId, unitsMap, inventory, bans);
+  const missingCost = calculateMissingCost(
+    targetUnitId,
+    unitsMap,
+    inventory,
+    bans
+  );
 
   // Calculate wisp contribution.
-  const availableWisps = inventory['common_wisp'] || 0;
-  const missingWispable = calculateMissingWispableCost(targetUnitId, unitsMap, inventory, bans);
+  const availableWisps = inventory["common_wisp"] || 0;
+  const missingWispable = calculateMissingWispableCost(
+    targetUnitId,
+    unitsMap,
+    inventory,
+    bans
+  );
   const wispContribution = Math.min(missingWispable, availableWisps);
 
   const effectiveMissing = Math.max(0, missingCost - wispContribution);
 
   // Calculate percentages.
   let progress = ((totalCost - effectiveMissing) / totalCost) * 100;
-  let materialProgress = ((totalCost - missingCost) / totalCost) * 100;
+  const materialProgress = ((totalCost - missingCost) / totalCost) * 100;
   let wispProgress = (wispContribution / totalCost) * 100;
 
-  if (status === 'orange') {
+  if (status === "orange") {
     progress = 100;
     // materialProgress remains the same to show actual material ownership.
     wispProgress = 100 - materialProgress;
@@ -390,8 +446,13 @@ export function getUnitDetails(
 
   // If status is orange, we need to calculate how many we can build with wisps.
   let buildableCount = 0;
-  if (status === 'orange') {
-    buildableCount = calculateBuildable(targetUnitId, unitsMap, inventory, bans);
+  if (status === "orange") {
+    buildableCount = calculateBuildable(
+      targetUnitId,
+      unitsMap,
+      inventory,
+      bans
+    );
   }
 
   return {
@@ -401,7 +462,7 @@ export function getUnitDetails(
     materialProgress: Math.min(100, Math.max(0, materialProgress)),
     wispProgress: Math.min(100, Math.max(0, wispProgress)),
     wispCost,
-    isWispAssisted
+    isWispAssisted,
   };
 }
 
@@ -414,11 +475,25 @@ export function consumeMaterials(
   inventory: Inventory
 ): Inventory {
   // Try normal consumption first.
-  let consumption = calculateConsumption(targetUnitId, unitsMap, inventory, new Set(), 1, false);
+  let consumption = calculateConsumption(
+    targetUnitId,
+    unitsMap,
+    inventory,
+    new Set(),
+    1,
+    false
+  );
 
   // If that fails, try with wisps.
   if (!consumption) {
-    consumption = calculateConsumption(targetUnitId, unitsMap, inventory, new Set(), 1, true);
+    consumption = calculateConsumption(
+      targetUnitId,
+      unitsMap,
+      inventory,
+      new Set(),
+      1,
+      true
+    );
   }
 
   if (!consumption) {
@@ -483,4 +558,3 @@ export function calculateMissingBaseUnits(
   calculateRecursive(unitId, 1);
   return missingUnits;
 }
-
