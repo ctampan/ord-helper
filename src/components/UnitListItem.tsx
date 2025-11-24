@@ -142,11 +142,15 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(({
 
         <div className={styles.controls} onClick={e => e.stopPropagation()}>
           <input
-            type="number"
-            min="0"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
             value={count}
-            onChange={(e) => onCountChange(parseInt(e.target.value) || 0)}
-            onWheel={(e) => e.currentTarget.blur()}
+            onChange={(e) => {
+              const val = parseInt(e.target.value, 10);
+              onCountChange(isNaN(val) ? 0 : val);
+            }}
+            onFocus={(e) => e.target.select()}
             className={styles.input}
           />
         </div>
