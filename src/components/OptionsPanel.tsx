@@ -9,8 +9,8 @@ interface OptionsPanelProps {
   onReset: () => void;
   theme: "dark" | "light";
   onToggleTheme: () => void;
-  uiSize: "small" | "medium" | "large";
-  onUiSizeChange: (size: "small" | "medium" | "large") => void;
+  uiSize: "xs" | "small" | "medium" | "large" | "xl";
+  onUiSizeChange: (size: "xs" | "small" | "medium" | "large" | "xl") => void;
   isTooltipEnabled: boolean;
   onToggleTooltip: () => void;
   isWispEnabled: boolean;
@@ -62,10 +62,12 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   };
 
   const cycleUiSize = () => {
-    const sizes: ("small" | "medium" | "large")[] = [
+    const sizes: ("xs" | "small" | "medium" | "large" | "xl")[] = [
+      "xs",
       "small",
       "medium",
       "large",
+      "xl",
     ];
     const nextIndex = (sizes.indexOf(uiSize) + 1) % sizes.length;
     onUiSizeChange(sizes[nextIndex]);
@@ -99,10 +101,26 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             className={styles.iconBtn}
             onClick={cycleUiSize}
             title={`UI Size: ${
-              uiSize.charAt(0).toUpperCase() + uiSize.slice(1)
+              uiSize === "xs"
+                ? "Extra Small"
+                : uiSize === "small"
+                ? "Small"
+                : uiSize === "medium"
+                ? "Medium"
+                : uiSize === "large"
+                ? "Large"
+                : "Extra Large"
             }\nClick to cycle size.`}
           >
-            {uiSize === "small" ? "S" : uiSize === "medium" ? "M" : "L"}
+            {uiSize === "xs"
+              ? "XS"
+              : uiSize === "small"
+              ? "S"
+              : uiSize === "medium"
+              ? "M"
+              : uiSize === "large"
+              ? "L"
+              : "XL"}
           </button>
 
           <div className={styles.dividerVertical} />

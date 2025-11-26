@@ -170,7 +170,9 @@ export const ShortcutSettingsModal: React.FC<ShortcutSettingsModalProps> = ({
                 if (!unit) return null;
                 return (
                   <div key={unitId} className={styles.shortcutItem}>
-                    <span className={styles.actionName}>{unit.name}</span>
+                    <span className={styles.actionName}>
+                      {unit.name} - {unit.rarity}
+                    </span>
                     <div className={styles.keyBind}>
                       <div
                         className={`${styles.keyDisplay} ${

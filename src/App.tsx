@@ -178,10 +178,16 @@ function App() {
     }
   };
 
-  const [uiSize, setUiSize] = useState<"small" | "medium" | "large">(() => {
+  const [uiSize, setUiSize] = useState<
+    "xs" | "small" | "medium" | "large" | "xl"
+  >(() => {
     return (
-      (localStorage.getItem("ord_ui_size") as "small" | "medium" | "large") ||
-      "medium"
+      (localStorage.getItem("ord_ui_size") as
+        | "xs"
+        | "small"
+        | "medium"
+        | "large"
+        | "xl") || "medium"
     );
   });
 
@@ -193,7 +199,14 @@ function App() {
   useEffect(() => {
     localStorage.setItem("ord_ui_size", uiSize);
     const root = document.documentElement;
-    if (uiSize === "small") {
+    if (uiSize === "xs") {
+      root.style.setProperty("--unit-height", "20px");
+      root.style.setProperty("--unit-icon-size", "16px");
+      root.style.setProperty("--unit-font-size-name", "0.65rem");
+      root.style.setProperty("--unit-font-size-meta", "0.55rem");
+      root.style.setProperty("--unit-input-width", "20px");
+      root.style.setProperty("--unit-input-height", "16px");
+    } else if (uiSize === "small") {
       root.style.setProperty("--unit-height", "24px");
       root.style.setProperty("--unit-icon-size", "20px");
       root.style.setProperty("--unit-font-size-name", "0.7rem");
@@ -201,19 +214,26 @@ function App() {
       root.style.setProperty("--unit-input-width", "24px");
       root.style.setProperty("--unit-input-height", "18px");
     } else if (uiSize === "medium") {
+      root.style.setProperty("--unit-height", "30px");
+      root.style.setProperty("--unit-icon-size", "25px");
+      root.style.setProperty("--unit-font-size-name", "0.8rem");
+      root.style.setProperty("--unit-font-size-meta", "0.65rem");
+      root.style.setProperty("--unit-input-width", "28px");
+      root.style.setProperty("--unit-input-height", "21px");
+    } else if (uiSize === "large") {
       root.style.setProperty("--unit-height", "36px");
       root.style.setProperty("--unit-icon-size", "30px");
       root.style.setProperty("--unit-font-size-name", "0.85rem");
       root.style.setProperty("--unit-font-size-meta", "0.7rem");
       root.style.setProperty("--unit-input-width", "32px");
       root.style.setProperty("--unit-input-height", "24px");
-    } else if (uiSize === "large") {
-      root.style.setProperty("--unit-height", "44px");
-      root.style.setProperty("--unit-icon-size", "38px");
-      root.style.setProperty("--unit-font-size-name", "1rem");
-      root.style.setProperty("--unit-font-size-meta", "0.8rem");
-      root.style.setProperty("--unit-input-width", "40px");
-      root.style.setProperty("--unit-input-height", "30px");
+    } else if (uiSize === "xl") {
+      root.style.setProperty("--unit-height", "42px");
+      root.style.setProperty("--unit-icon-size", "35px");
+      root.style.setProperty("--unit-font-size-name", "0.95rem");
+      root.style.setProperty("--unit-font-size-meta", "0.75rem");
+      root.style.setProperty("--unit-input-width", "36px");
+      root.style.setProperty("--unit-input-height", "27px");
     }
   }, [uiSize]);
 
