@@ -435,6 +435,13 @@ function App() {
             setIsWispEnabled((prev) => !prev);
             showNotification("Wisp Mode toggled", "info");
             break;
+          case "RESET_INVENTORY":
+            if (confirm("Reset inventory and bans?")) {
+              setInventory({});
+              setBans(new Set());
+              showNotification("Inventory and bans reset", "success");
+            }
+            break;
           // Add other global actions here
         }
         return;
