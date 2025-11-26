@@ -1,4 +1,10 @@
-import React, { useState, useRef, useMemo, useDeferredValue } from "react";
+import React, {
+  useState,
+  useRef,
+  useMemo,
+  useDeferredValue,
+  useEffect,
+} from "react";
 import { getUnitDetails, type Unit } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import styles from "./UnitListItem.module.css";
@@ -92,6 +98,30 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       onAction(unit.id, true, e.ctrlKey, false);
     };
 
+    const [feedback, setFeedback] = useState<{
+      text: string;
+      type: "add" | "remove";
+      id: number;
+    } | null>(null);
+    const prevCountRef = useRef(count);
+
+    useEffect(() => {
+      if (count !== prevCountRef.current) {
+        const diff = count - prevCountRef.current;
+        const type = diff > 0 ? "add" : "remove";
+        const text = diff > 0 ? `+${diff}` : `${diff}`;
+
+        // Use setTimeout to avoid synchronous state update during render phase
+        // and to ensure the animation triggers after the render
+        const timeoutId = setTimeout(() => {
+          setFeedback({ text, type, id: Date.now() });
+        }, 0);
+
+        prevCountRef.current = count;
+        return () => clearTimeout(timeoutId);
+      }
+    }, [count]);
+
     return (
       <div
         ref={containerRef}
@@ -182,6 +212,21 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
           </div>
 
           <div className={styles.controls} onClick={(e) => e.stopPropagation()}>
+            {/* Feedback Animation */}
+            {feedback && (
+              <div key={feedback.id} className={styles.feedbackContainer}>
+                <span
+                  className={`${styles.feedbackText} ${
+                    feedback.type === "add"
+                      ? styles.feedbackAdd
+                      : styles.feedbackRemove
+                  }`}
+                  onAnimationEnd={() => setFeedback(null)}
+                >
+                  {feedback.text}
+                </span>
+              </div>
+            )}
             <input
               type="text"
               inputMode="numeric"

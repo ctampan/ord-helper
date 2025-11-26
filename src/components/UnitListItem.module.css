@@ -10,7 +10,7 @@
   transition: border-color 0.2s, background-color 0.2s, transform 0.05s;
   position: relative;
   height: var(--unit-height);
-  overflow: hidden;
+  /* Removed overflow: hidden to allow feedback to pop out */
   box-sizing: border-box;
   user-select: none;
 }
@@ -45,6 +45,203 @@
   background-color: var(--bg-status-green);
   z-index: 0;
   transition: width 0.3s ease;
+  /* Add border radius to match container since container no longer clips */
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.container.orange .progressBackground {
+  background-color: var(--bg-status-orange);
+}
+
+.progressBackground.gray {
+  background-color: var(--bg-status-gray);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.iconWrapper {
+  position: relative;
+  width: var(--unit-icon-size);
+  height: var(--unit-icon-size);
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.buildableBadge {
+  background-color: var(--status-green);
+  color: white;
+  /* White text for better contrast */
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: var(--unit-font-size-meta);
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  gap: 0;
+  min-width: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.name {
+  font-size: var(--unit-font-size-name);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  flex: 1;
+  min-width: 0;
+  margin-right: 4px;
+  text-align: left;
+}
+
+.wispCost {
+  font-size: var(--unit-font-size-name);
+  color: var(--status-orange);
+  margin-left: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  width: 30px;
+  text-align: right;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Align left */
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.splitProgress {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: bold;
+  font-size: calc(var(--unit-font-size-meta) * 1.2);
+  /* Match progressText size exactly */
+  line-height: 1;
+}
+
+.separator {
+  color: var(--text-secondary);
+  font-size: 0.8em;
+  margin: 0 1px;
+}
+
+.progressText {
+  /* Used for single line progress */
+  font-size: calc(var(--unit-font-size-meta) * 1.2);
+  /* Keep big text */
+  white-space: nowrap;
+  line-height: 1.2;
+  text-align: left;
+  /* Align left */
+  font-weight: bold;
+}
+
+.textGreen {
+  color: var(--status-green);
+  margin: 0;
+}
+
+.textOrange {
+  color: var(--status-orange);
+}
+
+.controls {
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  /* Ensure input is above progress bar */
+}
+
+.input {
+  width: var(--unit-input-width);
+  padding: 0 2px;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  background-color: var(--bg-input);
+  /* Solid background */
+  color: inherit;
+  text-align: center;
+  font-size: var(--unit-font-size-name);
+  height: var(--unit-input-height);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  box-sizing: border-box;
+  /* Subtle shadow for depth */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+/* Hide spin buttons for number input */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container.orange {
+  border-color: var(--status-orange);
+}
+
+.container.banned {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.progressBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--bg-status-green);
+  z-index: 0;
+  transition: width 0.3s ease;
+  /* Add border radius to match container since container no longer clips */
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .container.orange .progressBackground {
@@ -222,4 +419,54 @@
 .input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
+}
+
+/* Feedback Animation */
+@keyframes spiralFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -120%) scale(1.2) rotate(-10deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -250%) scale(1) rotate(10deg);
+  }
+}
+
+.feedbackContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.feedbackText {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: spiralFloat 0.5s ease-out forwards;
+  display: block;
+}
+
+.feedbackAdd {
+  color: #4caf50;
+}
+
+.feedbackRemove {
+  color: #f44336;
 }
