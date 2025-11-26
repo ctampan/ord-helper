@@ -50,6 +50,28 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           </section>
 
           <section>
+            <h3>⌨️ Keyboard Shortcuts</h3>
+            <ul>
+              <li>
+                <strong>Customizable Shortcuts:</strong> Click the keyboard icon
+                (⌨️) in the options panel to configure custom shortcuts
+              </li>
+              <li>
+                <strong>Unit Shortcuts:</strong> Assign keys to quickly
+                add/remove units. Press the key to add, Ctrl+Key to remove
+              </li>
+              <li>
+                <strong>Global Shortcuts:</strong> Default shortcuts include T
+                (tooltip), B (ban mode), W (wisp mode)
+              </li>
+              <li>
+                <strong>Visual Indicators:</strong> Units with assigned
+                shortcuts show the key in a dark overlay on their icon
+              </li>
+            </ul>
+          </section>
+
+          <section>
             <h3>Status Colors</h3>
             <ul>
               <li>

@@ -27,6 +27,7 @@ interface UnitListItemProps {
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
   isWispEnabled: boolean;
+  shortcut?: string;
 }
 
 export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
@@ -42,6 +43,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
     isTooltipEnabled,
     isShiftPressed,
     isWispEnabled,
+    shortcut,
   }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [imageError, setImageError] = useState(false);
@@ -162,6 +164,9 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
               </div>
             )}
             {isBanned && <div className={styles.banOverlay}>BAN</div>}
+            {shortcut && (
+              <div className={styles.shortcutOverlay}>{shortcut}</div>
+            )}
           </div>
 
           {progress > 0 &&

@@ -16,9 +16,6 @@ export const BanToggle: React.FC<BanToggleProps> = ({
       onClick={onToggle}
       title={isBanMode ? "Ban Mode: ON" : "Ban Mode: OFF"}
     >
-      <div className={`${styles.toggle} ${isBanMode ? styles.active : ""}`}>
-        <div className={styles.knob} />
-      </div>
       <span style={{ fontSize: "1.2rem", marginLeft: "4px" }}>
         {isBanMode ? "🔒" : "🔓"}
       </span>

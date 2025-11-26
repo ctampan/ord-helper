@@ -4,6 +4,8 @@ import { consumeMaterials, getEffectiveBans } from "./logic/combination";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import { RecipeTreeModal } from "./components/RecipeTreeModal";
+import { useShortcuts } from "./hooks/useShortcuts";
+import { ShortcutSettingsModal } from "./components/ShortcutSettingsModal";
 import "./index.css";
 import "./App.css";
 
@@ -34,6 +36,21 @@ function App() {
     null
   );
 
+  // Shortcuts Hook
+  const {
+    unitShortcuts,
+    globalShortcuts,
+    setUnitShortcut,
+    setGlobalShortcut,
+    removeUnitShortcut,
+    removeGlobalShortcut,
+    resetShortcuts,
+    getUnitIdByKey,
+    getActionIdByKey,
+  } = useShortcuts();
+
+  const [isShortcutsModalOpen, setIsShortcutsModalOpen] = useState(false);
+
   useEffect(() => {
     localStorage.setItem("ord_wisp_enabled", String(isWispEnabled));
   }, [isWispEnabled]);
@@ -57,7 +74,17 @@ function App() {
     localStorage.setItem("ord_tooltip_enabled", String(isTooltipEnabled));
   }, [isTooltipEnabled]);
 
-  const [notification, setNotification] = useState<string | null>(null);
+  const [notification, setNotification] = useState<{
+    message: string;
+    type: "success" | "error" | "info" | "warning";
+  } | null>(null);
+
+  const showNotification = (
+    message: string,
+    type: "success" | "error" | "info" | "warning" = "info"
+  ) => {
+    setNotification({ message, type });
+  };
 
   // Save to localStorage
   useEffect(() => {
@@ -201,7 +228,7 @@ function App() {
     a.download = `ord-data-${data.version || "custom"}.json`;
     a.click();
     URL.revokeObjectURL(url);
-    setNotification("Game Data exported!");
+    showNotification("Game Data exported!", "success");
   };
 
   const handleImportData = (file: File) => {
@@ -223,10 +250,10 @@ function App() {
         localStorage.setItem("ord_version", "Custom");
 
         setData(importedData);
-        setNotification("Game Data imported!");
+        showNotification("Game Data imported!", "success");
       } catch (err) {
         console.error("Failed to import data:", err);
-        setNotification("Failed to import data");
+        showNotification("Failed to import data", "error");
       }
     };
     reader.readAsText(file);
@@ -281,7 +308,7 @@ function App() {
           setInventory((prev) => {
             const currentCount = prev[unitId] || 0;
             if (currentCount <= 0) {
-              setNotification("Cannot reduce: Count is 0");
+              showNotification("Cannot reduce: Count is 0", "warning");
               return prev;
             }
 
@@ -295,9 +322,12 @@ function App() {
                 newInventory[req.unitId] =
                   (newInventory[req.unitId] || 0) + req.count;
               });
-              setNotification(`Reduced ${unit.name} and refunded materials`);
+              showNotification(
+                `Reduced ${unit.name} and refunded materials`,
+                "success"
+              );
             } else {
-              setNotification(`Reduced ${unit?.name || "unit"}`);
+              showNotification(`Reduced ${unit?.name || "unit"}`, "success");
             }
             return newInventory;
           });
@@ -313,16 +343,18 @@ function App() {
                 return newInventory;
               } catch (e) {
                 console.warn("Cannot build unit:", e);
-                setNotification(
-                  e instanceof Error ? e.message : "Cannot build unit"
+                showNotification(
+                  e instanceof Error ? e.message : "Cannot build unit",
+                  "error"
                 );
                 return prev;
               }
             });
           } catch (e) {
             console.warn("Cannot build unit:", e);
-            setNotification(
-              e instanceof Error ? e.message : "Cannot build unit"
+            showNotification(
+              e instanceof Error ? e.message : "Cannot build unit",
+              "error"
             );
           }
         }
@@ -332,10 +364,10 @@ function App() {
           setInventory((prev) => {
             const newCount = Math.max(0, (prev[unitId] || 0) - 1);
             if (newCount === (prev[unitId] || 0)) {
-              setNotification("Cannot reduce: Count is 0");
+              showNotification("Cannot reduce: Count is 0", "warning");
               return prev;
             }
-            setNotification(`Reduced quantity`);
+            showNotification("Reduced quantity", "success");
             return {
               ...prev,
               [unitId]: newCount,
@@ -352,6 +384,55 @@ function App() {
     },
     [isBanMode, data, effectiveBans]
   );
+
+  // Global Shortcut Listener
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      // Ignore if typing in an input
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement
+      ) {
+        return;
+      }
+
+      const key = e.key.toLowerCase();
+
+      // Check for Global Shortcuts
+      const actionId = getActionIdByKey(key);
+      if (actionId) {
+        e.preventDefault();
+        switch (actionId) {
+          case "TOGGLE_TOOLTIP":
+            setIsTooltipEnabled((prev) => !prev);
+            showNotification("Tooltip toggled", "info");
+            break;
+          case "TOGGLE_BAN_MODE":
+            setIsBanMode((prev) => !prev);
+            showNotification("Ban Mode toggled", "info");
+            break;
+          case "TOGGLE_WISP_MODE":
+            setIsWispEnabled((prev) => !prev);
+            showNotification("Wisp Mode toggled", "info");
+            break;
+          // Add other global actions here
+        }
+        return;
+      }
+
+      // Check for Unit Shortcuts
+      const unitId = getUnitIdByKey(key);
+      if (unitId) {
+        e.preventDefault();
+        // Ctrl + Key = Remove (Right Click Logic with Ctrl)
+        // Key = Add (Left Click Logic)
+        handleUnitClick(unitId, false, e.ctrlKey, false);
+      }
+    };
+
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => window.removeEventListener("keydown", handleGlobalKeyDown);
+  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick]);
 
   const handleCountChange = useCallback((unitId: string, newCount: number) => {
     setInventory((prev) => ({
@@ -384,15 +465,24 @@ function App() {
             top: "20px",
             left: "50%",
             transform: "translateX(-50%)",
-            backgroundColor: "rgba(255, 0, 0, 0.8)",
+            backgroundColor:
+              notification.type === "success"
+                ? "rgba(76, 175, 80, 0.9)"
+                : notification.type === "error"
+                ? "rgba(244, 67, 54, 0.9)"
+                : notification.type === "warning"
+                ? "rgba(255, 152, 0, 0.9)"
+                : "rgba(33, 150, 243, 0.9)",
             color: "white",
             padding: "10px 20px",
             borderRadius: "5px",
             zIndex: 1000,
             pointerEvents: "none",
+            fontWeight: "500",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
           }}
         >
-          {notification}
+          {notification.message}
         </div>
       )}
 
@@ -404,6 +494,19 @@ function App() {
           onClose={() => setSelectedUnitForTree(null)}
         />
       )}
+
+      <ShortcutSettingsModal
+        isOpen={isShortcutsModalOpen}
+        onClose={() => setIsShortcutsModalOpen(false)}
+        unitShortcuts={unitShortcuts}
+        globalShortcuts={globalShortcuts}
+        setUnitShortcut={setUnitShortcut}
+        setGlobalShortcut={setGlobalShortcut}
+        removeUnitShortcut={removeUnitShortcut}
+        removeGlobalShortcut={removeGlobalShortcut}
+        resetShortcuts={resetShortcuts}
+        unitsMap={unitsMap}
+      />
 
       <main className="dashboard">
         {/* Column 1: Options + Common + Uncommon + Random */}
@@ -430,6 +533,7 @@ function App() {
             onVersionChange={handleVersionChange}
             onExport={handleExportData}
             onImport={handleImportData}
+            onOpenShortcuts={() => setIsShortcutsModalOpen(true)}
           />
           {unitsByRarity["Common"] && (
             <UnitGroup
@@ -444,6 +548,7 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               isWispEnabled={isWispEnabled}
+              unitShortcuts={unitShortcuts}
             />
           )}
           {["Uncommon", "Random"].map(
@@ -462,6 +567,7 @@ function App() {
                   isTooltipEnabled={isTooltipEnabled}
                   isShiftPressed={isShiftPressed}
                   isWispEnabled={isWispEnabled}
+                  unitShortcuts={unitShortcuts}
                 />
               )
           )}
@@ -485,6 +591,7 @@ function App() {
                   isTooltipEnabled={isTooltipEnabled}
                   isShiftPressed={isShiftPressed}
                   isWispEnabled={isWispEnabled}
+                  unitShortcuts={unitShortcuts}
                 />
               )
           )}
@@ -505,6 +612,7 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               isWispEnabled={isWispEnabled}
+              unitShortcuts={unitShortcuts}
             />
           )}
         </div>
@@ -525,6 +633,7 @@ function App() {
               isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
               isWispEnabled={isWispEnabled}
+              unitShortcuts={unitShortcuts}
             />
           )}
         </div>
@@ -548,6 +657,7 @@ function App() {
                   isShiftPressed={isShiftPressed}
                   subGroupBy={rarity !== "Alternate" ? "subGroup" : undefined}
                   isWispEnabled={isWispEnabled}
+                  unitShortcuts={unitShortcuts}
                 />
               )
           )}
@@ -572,6 +682,7 @@ function App() {
                   isShiftPressed={isShiftPressed}
                   subGroupBy="subGroup"
                   isWispEnabled={isWispEnabled}
+                  unitShortcuts={unitShortcuts}
                 />
               )
           )}
@@ -596,6 +707,7 @@ function App() {
                   isShiftPressed={isShiftPressed}
                   subGroupBy="subGroup"
                   isWispEnabled={isWispEnabled}
+                  unitShortcuts={unitShortcuts}
                 />
               )
           )}

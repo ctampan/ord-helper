@@ -21,6 +21,7 @@ interface UnitGroupProps {
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
   isWispEnabled: boolean;
+  unitShortcuts: Record<string, string>;
 }
 
 export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
@@ -37,6 +38,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     isTooltipEnabled,
     isShiftPressed,
     isWispEnabled,
+    unitShortcuts,
   }) => {
     const [isCollapsed, setIsCollapsed] = React.useState(false);
 
@@ -57,6 +59,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
           isTooltipEnabled={isTooltipEnabled}
           isShiftPressed={isShiftPressed}
           isWispEnabled={isWispEnabled}
+          shortcut={unitShortcuts[unit.id]}
         />
       );
     };

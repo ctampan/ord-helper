@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./OptionsPanel.module.css";
+import { BanToggle } from "./BanToggle";
+import { HelpModal } from "./HelpModal";
 
 interface OptionsPanelProps {
   isBanMode: boolean;
@@ -18,9 +20,8 @@ interface OptionsPanelProps {
   onVersionChange: (version: string) => void;
   onExport: () => void;
   onImport: (file: File) => void;
+  onOpenShortcuts: () => void;
 }
-
-import { HelpModal } from "./HelpModal";
 
 export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   isBanMode,
@@ -39,6 +40,7 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   onVersionChange,
   onExport,
   onImport,
+  onOpenShortcuts,
 }) => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [isHelpOpen, setIsHelpOpen] = React.useState(() => {
@@ -73,16 +75,19 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
     <div className={styles.panel}>
       <div className={styles.row}>
         <div className={styles.leftGroup}>
+          {/* Group 1: Interactions */}
+          <BanToggle isBanMode={isBanMode} onToggle={onToggleBanMode} />
           <button
-            className={`${styles.iconBtn} ${isBanMode ? styles.active : ""}`}
-            onClick={onToggleBanMode}
-            title={`Ban Mode: ${
-              isBanMode ? "ON" : "OFF"
-            }\nWhen ON, click a unit to ban/unban it.`}
+            className={styles.iconBtn}
+            onClick={onOpenShortcuts}
+            title="Keyboard Shortcuts"
           >
-            {isBanMode ? "🔒" : "🔓"}
+            ⌨️
           </button>
 
+          <div className={styles.dividerVertical} />
+
+          {/* Group 2: Appearance */}
           <button
             className={styles.iconBtn}
             onClick={onToggleTheme}
@@ -90,7 +95,6 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
           >
             {theme === "dark" ? "☀️" : "🌙"}
           </button>
-
           <button
             className={styles.iconBtn}
             onClick={cycleUiSize}
@@ -101,6 +105,9 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             {uiSize === "small" ? "S" : uiSize === "medium" ? "M" : "L"}
           </button>
 
+          <div className={styles.dividerVertical} />
+
+          {/* Group 3: Game Settings */}
           <button
             className={`${styles.iconBtn} ${
               isTooltipEnabled ? styles.active : ""
@@ -112,7 +119,6 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
           >
             {isTooltipEnabled ? "👁️" : "🗨️"}
           </button>
-
           <button
             className={`${styles.iconBtn} ${
               isWispEnabled ? styles.active : ""
@@ -127,6 +133,7 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
 
           <div className={styles.dividerVertical} />
 
+          {/* Group 4: Data Management */}
           <button
             className={styles.iconBtn}
             onClick={onExport}
@@ -148,9 +155,6 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             accept=".json"
             onChange={handleFileChange}
           />
-
-          <div className={styles.dividerVertical} />
-
           <button
             className={styles.iconBtn}
             onClick={onReset}
@@ -161,6 +165,7 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
 
           <div className={styles.dividerVertical} />
 
+          {/* Group 5: Help */}
           <button
             className={styles.iconBtn}
             onClick={() => setIsHelpOpen(true)}
