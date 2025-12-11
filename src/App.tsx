@@ -110,7 +110,7 @@ function App() {
 
   // Load versions
   useEffect(() => {
-    fetch("/versions.json")
+    fetch(`${import.meta.env.BASE_URL}versions.json`)
       .then((res) => res.json())
       .then((vs: string[]) => {
         const hasCustom = !!localStorage.getItem("ord_custom_data");
@@ -146,7 +146,7 @@ function App() {
       return;
     }
 
-    fetch(`/data/${currentVersion}.json`)
+    fetch(`${import.meta.env.BASE_URL}data/${currentVersion}.json`)
       .then((res) => res.json())
       .then((d: Data) => {
         setData(d);
@@ -156,7 +156,7 @@ function App() {
           `Failed to load data for version ${currentVersion}:`,
           err
         );
-        fetch("/data.json")
+        fetch(`${import.meta.env.BASE_URL}data.json`)
           .then((res) => res.json())
           .then(setData)
           .catch((e) => console.error("Fatal:", e));
