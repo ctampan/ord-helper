@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORD Helper</title>
+  <script>
+    // Single Page App redirect for GitHub Pages
+    // Redirects 404 requests to index.html with the path as a query parameter
+    const path = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+    
+    // Redirect to the base path with the original path info
+    window.location.replace('/ord-helper/' + '?p=' + encodeURIComponent(path + search + hash));
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
