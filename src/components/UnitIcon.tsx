@@ -3,6 +3,7 @@ import type { Unit } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import styles from "./UnitIcon.module.css";
 import { RecipeTooltip } from "./RecipeTooltip";
+import { CachedImage } from "./CachedImage";
 
 interface UnitIconProps {
   unit: Unit;
@@ -70,7 +71,7 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
     >
       <div className={styles.imageWrapper}>
         {!imageError ? (
-          <img
+          <CachedImage
             src={unit.image}
             alt={unit.name}
             className={styles.image}

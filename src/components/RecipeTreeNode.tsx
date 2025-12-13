@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { Unit } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import styles from "./RecipeTreeModal.module.css";
+import { CachedImage } from "./CachedImage";
 
 interface RecipeTreeNodeProps {
   unitId: string;
@@ -62,7 +63,7 @@ export const RecipeTreeNode: React.FC<RecipeTreeNodeProps> = ({
           opacity: isOwned ? 1 : 0.9,
         }}
       >
-        <img
+        <CachedImage
           src={unit.image}
           alt={unit.name}
           className={styles.nodeIcon}
@@ -117,7 +118,7 @@ export const RecipeTreeNode: React.FC<RecipeTreeNodeProps> = ({
                         opacity: reqIsOwned ? 1 : 0.8,
                       }}
                     >
-                      <img
+                      <CachedImage
                         src={reqUnit.image}
                         className={styles.baseIcon}
                         style={{ border: `1px solid ${reqRarityColor}` }}

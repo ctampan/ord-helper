@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect, useRef, useMemo } from "react";
 import { createPortal } from "react-dom";
+import { CachedImage } from "./CachedImage";
 import type { Unit } from "../logic/combination";
 import {
   calculateMissingBaseUnits,
@@ -190,7 +191,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
             return (
               <div key={index} className={styles.ingredient}>
                 <div style={{ position: "relative", display: "inline-block" }}>
-                  <img
+                  <CachedImage
                     src={ingredient.image}
                     alt={ingredient.name}
                     className={styles.icon}
@@ -289,7 +290,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
 
                 return (
                   <div key={unitId} style={{ position: "relative" }}>
-                    <img
+                    <CachedImage
                       src={baseUnit.image}
                       alt={baseUnit.name}
                       title={`${baseUnit.name} (-${count})`}
@@ -369,7 +370,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
             {usedInUnits.slice(0, 15).map((usedUnit) => {
               const isBanned = isEffectivelyBanned(usedUnit.id);
               return (
-                <img
+                <CachedImage
                   key={usedUnit.id}
                   src={usedUnit.image}
                   alt={usedUnit.name}
@@ -421,7 +422,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
             {topTierUnits.slice(0, 15).map((topUnit) => {
               const isBanned = isEffectivelyBanned(topUnit.id);
               return (
-                <img
+                <CachedImage
                   key={topUnit.id}
                   src={topUnit.image}
                   alt={topUnit.name}

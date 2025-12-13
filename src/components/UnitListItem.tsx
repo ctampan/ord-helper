@@ -1,14 +1,15 @@
 import React, {
-  useState,
-  useRef,
-  useMemo,
   useDeferredValue,
   useEffect,
+  useMemo,
+  useRef,
+  useState,
 } from "react";
 import { getUnitDetails, type Unit } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
-import styles from "./UnitListItem.module.css";
+import { CachedImage } from "./CachedImage";
 import { RecipeTooltip } from "./RecipeTooltip";
+import styles from "./UnitListItem.module.css";
 
 interface UnitListItemProps {
   unit: Unit;
@@ -148,7 +149,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
         <div className={styles.contentWrapper}>
           <div className={styles.iconWrapper}>
             {!imageError ? (
-              <img
+              <CachedImage
                 src={unit.image}
                 alt={unit.name}
                 className={styles.icon}
