@@ -1,0 +1,5419 @@
+﻿{
+  "version": "2.111",
+  "units": [
+    {
+      "id": "common_wisp",
+      "name": "Common Wisp",
+      "rarity": "Common",
+      "image": "images/common_wisp.png"
+    },
+    {
+      "id": "common_luffy",
+      "name": "Luffy",
+      "rarity": "Common",
+      "image": "images/common_luffy.jpg"
+    },
+    {
+      "id": "common_zoro",
+      "name": "Zoro",
+      "rarity": "Common",
+      "image": "images/common_zoro.jpg"
+    },
+    {
+      "id": "common_nami",
+      "name": "Nami",
+      "rarity": "Common",
+      "image": "images/common_nami.jpg"
+    },
+    {
+      "id": "common_usopp",
+      "name": "Usopp",
+      "rarity": "Common",
+      "image": "images/common_usopp.jpg"
+    },
+    {
+      "id": "common_sanji",
+      "name": "Sanji",
+      "rarity": "Common",
+      "image": "images/common_sanji.jpg"
+    },
+    {
+      "id": "common_chopper",
+      "name": "Chopper",
+      "rarity": "Common",
+      "image": "images/common_chopper.jpg"
+    },
+    {
+      "id": "common_buggy",
+      "name": "Buggy",
+      "rarity": "Common",
+      "image": "images/common_buggy.jpg"
+    },
+    {
+      "id": "common_gunman",
+      "name": "Gunman",
+      "rarity": "Common",
+      "image": "images/common_gunman.png"
+    },
+    {
+      "id": "common_swordsman",
+      "name": "Swordsman",
+      "rarity": "Common",
+      "image": "images/common_swordsman.png"
+    },
+    {
+      "id": "uncommon_blueno",
+      "name": "Blueno",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_blueno.jpg",
+      "recipe": [
+        {
+          "unitId": "common_gunman",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "uncommon_fukuro",
+      "name": "Fukuro",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_fukuro.jpg",
+      "recipe": [
+        {
+          "unitId": "common_swordsman",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "uncommon_robin",
+      "name": "Robin",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_robin.jpg",
+      "recipe": [
+        {
+          "unitId": "common_nami",
+          "count": 1
+        },
+        {
+          "unitId": "common_sanji",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_brook",
+      "name": "Brook",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_brook.jpg",
+      "recipe": [
+        {
+          "unitId": "common_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "common_chopper",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_bepo",
+      "name": "Bepo",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_bepo.jpg",
+      "recipe": [
+        {
+          "unitId": "common_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "common_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_inazuma",
+      "name": "Inazuma",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_inazuma.jpg",
+      "recipe": [
+        {
+          "unitId": "common_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "common_zoro",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_ace",
+      "name": "Ace",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_ace.jpg",
+      "recipe": [
+        {
+          "unitId": "common_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "common_gunman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_sogeking",
+      "name": "Soge King",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_sogeking.jpg",
+      "recipe": [
+        {
+          "unitId": "common_usopp",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "uncommon_chopper",
+      "name": "Chopper",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_chopper.jpg",
+      "recipe": [
+        {
+          "unitId": "common_chopper",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "uncommon_tashigi",
+      "name": "Tashigi",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_tashigi.png",
+      "recipe": [
+        {
+          "unitId": "common_swordsman",
+          "count": 1
+        },
+        {
+          "unitId": "common_gunman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_perona",
+      "name": "Perona",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_perona.jpg",
+      "recipe": [
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "common_nami",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_franky",
+      "name": "Franky",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_franky.jpg",
+      "recipe": [
+        {
+          "unitId": "common_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "common_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "uncommon_hacchan",
+      "name": "Hacchan",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_hacchan.jpg",
+      "recipe": [
+        {
+          "unitId": "common_gunman",
+          "count": 1
+        },
+        {
+          "unitId": "common_nami",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "random_k",
+      "name": "K",
+      "rarity": "Random",
+      "image": "images/random_k.png",
+      "note": "Stun"
+    },
+    {
+      "id": "random_naruto",
+      "name": "Naruto",
+      "rarity": "Random",
+      "image": "images/random_naruto.png",
+      "note": "Stun"
+    },
+    {
+      "id": "random_paimon",
+      "name": "Paimon",
+      "rarity": "Random",
+      "image": "images/random_paimon.png"
+    },
+    {
+      "id": "random_yotsuba",
+      "name": "Yotsuba",
+      "rarity": "Random",
+      "image": "images/random_yotsuba.png",
+      "note": "Summon wisp, mana regen"
+    },
+    {
+      "id": "random_sento",
+      "name": "Sento Isuzu",
+      "rarity": "Random",
+      "image": "images/random_sento.png",
+      "note": "Sniper long range"
+    },
+    {
+      "id": "random_touma",
+      "name": "Kamijou Touma",
+      "rarity": "Random",
+      "image": "images/random_touma.png"
+    },
+    {
+      "id": "random_elizabeth",
+      "name": "Elizabeth",
+      "rarity": "Random",
+      "image": "images/random_elizabeth.png",
+      "note": "Summon token, stun"
+    },
+    {
+      "id": "random_yomi",
+      "name": "Isayama Yomi",
+      "rarity": "Random",
+      "image": "images/random_yomi.png"
+    },
+    {
+      "id": "random_ichigo",
+      "name": "Kurosaki Ichigo",
+      "rarity": "Random",
+      "image": "images/random_ichigo.png"
+    },
+    {
+      "id": "random_tsubasa",
+      "name": "Hanekawa Tsubasa",
+      "rarity": "Random",
+      "image": "images/random_tsubasa.png",
+      "note": "Slow"
+    },
+    {
+      "id": "random_light",
+      "name": "Yagami Light",
+      "rarity": "Random",
+      "image": "images/random_light.png",
+      "note": "Stun"
+    },
+    {
+      "id": "random_yan",
+      "name": "Yan",
+      "rarity": "Random",
+      "image": "images/random_yan.png"
+    },
+    {
+      "id": "random_bronya",
+      "name": "Bronya",
+      "rarity": "Random",
+      "image": "images/random_bronya.png"
+    },
+    {
+      "id": "random_megumin",
+      "name": "Megumin",
+      "rarity": "Random",
+      "image": "images/random_megumin.png"
+    },
+    {
+      "id": "special_xdrake",
+      "name": "X Drake",
+      "rarity": "Special",
+      "image": "images/special_xdrake.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_fukuro",
+          "count": 1
+        },
+        {
+          "unitId": "common_chopper",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_enel",
+      "name": "Enel",
+      "rarity": "Special",
+      "image": "images/special_enel.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_sogeking",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_bepo",
+          "count": 1
+        },
+        {
+          "unitId": "common_sanji",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_moria",
+      "name": "Gecko Moria",
+      "rarity": "Special",
+      "image": "images/special_moria.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_brook",
+          "count": 2
+        },
+        {
+          "unitId": "common_sanji",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_nami",
+      "name": "Nami",
+      "rarity": "Special",
+      "image": "images/common_nami.jpg",
+      "recipe": [
+        {
+          "unitId": "common_nami",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "special_robin",
+      "name": "Robin",
+      "rarity": "Special",
+      "image": "images/uncommon_robin.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_robin",
+          "count": 2
+        },
+        {
+          "unitId": "common_chopper",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_law",
+      "name": "Law",
+      "rarity": "Special",
+      "image": "images/special_law.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_bepo",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_lucci",
+      "name": "Rob Lucci",
+      "rarity": "Special",
+      "image": "images/special_lucci.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_fukuro",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_robin",
+          "count": 1
+        },
+        {
+          "unitId": "common_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_luffy",
+      "name": "Luffy",
+      "rarity": "Special",
+      "image": "images/common_luffy.jpg",
+      "recipe": [
+        {
+          "unitId": "common_luffy",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "special_marco",
+      "name": "Marco",
+      "rarity": "Special",
+      "image": "images/special_marco.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_blueno",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "common_sanji",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_hawkins",
+      "name": "Hawkins",
+      "rarity": "Special",
+      "image": "images/special_hawkins.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_blueno",
+          "count": 1
+        },
+        {
+          "unitId": "common_usopp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_buggy",
+      "name": "Buggy",
+      "rarity": "Special",
+      "image": "images/common_buggy.jpg",
+      "recipe": [
+        {
+          "unitId": "common_buggy",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "special_bonkurei",
+      "name": "Bonkurei",
+      "rarity": "Special",
+      "image": "images/special_bonkurei.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_inazuma",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_robin",
+          "count": 1
+        },
+        {
+          "unitId": "common_nami",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_sanji",
+      "name": "Sanji",
+      "rarity": "Special",
+      "image": "images/common_sanji.jpg",
+      "recipe": [
+        {
+          "unitId": "common_sanji",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "special_smoker",
+      "name": "Smoker",
+      "rarity": "Special",
+      "image": "images/special_smoker.png",
+      "recipe": [
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "common_swordsman",
+          "count": 1
+        },
+        {
+          "unitId": "common_gunman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_squard",
+      "name": "Squard",
+      "rarity": "Special",
+      "image": "images/special_squard.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_franky",
+          "count": 1
+        },
+        {
+          "unitId": "common_nami",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_arlong",
+      "name": "Arlong",
+      "rarity": "Special",
+      "image": "images/special_arlong.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_hacchan",
+          "count": 2
+        },
+        {
+          "unitId": "common_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_absalom",
+      "name": "Absalom",
+      "rarity": "Special",
+      "image": "images/special_absalom.jpg",
+      "recipe": [
+        {
+          "unitId": "common_nami",
+          "count": 1
+        }
+      ],
+      "note": "Flying"
+    },
+    {
+      "id": "special_ace",
+      "name": "Ace",
+      "rarity": "Special",
+      "image": "images/uncommon_ace.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_ace",
+          "count": 2
+        },
+        {
+          "unitId": "common_usopp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_usopp",
+      "name": "Usopp",
+      "rarity": "Special",
+      "image": "images/common_usopp.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_sogeking",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "special_inazuma",
+      "name": "Inazuma",
+      "rarity": "Special",
+      "image": "images/uncommon_inazuma.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_inazuma",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "special_zoro",
+      "name": "Zoro",
+      "rarity": "Special",
+      "image": "images/special_zoro.jpg",
+      "recipe": [
+        {
+          "unitId": "common_zoro",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "special_jinbe",
+      "name": "Jinbe",
+      "rarity": "Special",
+      "image": "images/special_jinbe.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_fukuro",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_chaka",
+      "name": "Chaka",
+      "rarity": "Special",
+      "image": "images/special_chaka.png",
+      "recipe": [
+        {
+          "unitId": "uncommon_blueno",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_fukuro",
+          "count": 1
+        },
+        {
+          "unitId": "common_chopper",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_chopperbrain",
+      "name": "Chopper Brain Point",
+      "rarity": "Special",
+      "image": "images/special_chopperbrain.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_robin",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_chopperguard",
+      "name": "Chopper Guard Point",
+      "rarity": "Special",
+      "image": "images/special_chopperguard.png",
+      "recipe": [
+        {
+          "unitId": "uncommon_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_inazuma",
+          "count": 1
+        },
+        {
+          "unitId": "common_swordsman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_capone",
+      "name": "Capone Gang Bege",
+      "rarity": "Special",
+      "image": "images/special_capone.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_fukuro",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "common_gunman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_kuro",
+      "name": "Captain Kuro",
+      "rarity": "Special",
+      "image": "images/special_kuro.png",
+      "recipe": [
+        {
+          "unitId": "uncommon_hacchan",
+          "count": 1
+        },
+        {
+          "unitId": "common_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "common_swordsman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_kuma",
+      "name": "Kuma",
+      "rarity": "Special",
+      "image": "images/special_kuma.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_bepo",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_franky",
+          "count": 1
+        },
+        {
+          "unitId": "common_zoro",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_crocodile",
+      "name": "Crocodile",
+      "rarity": "Special",
+      "image": "images/special_crocodile.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_franky",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_sogeking",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_kid",
+      "name": "Kid",
+      "rarity": "Special",
+      "image": "images/special_kid.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_bepo",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_killer",
+      "name": "Killer",
+      "rarity": "Special",
+      "image": "images/special_killer.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_brook",
+          "count": 1
+        },
+        {
+          "unitId": "common_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_docking",
+      "name": "Pirate Docking 5",
+      "rarity": "Special",
+      "image": "images/special_docking.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_franky",
+          "count": 2
+        },
+        {
+          "unitId": "common_zoro",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "special_helmeppo",
+      "name": "Helmeppo",
+      "rarity": "Special",
+      "image": "images/special_helmeppo.png",
+      "recipe": [
+        {
+          "unitId": "uncommon_brook",
+          "count": 1
+        },
+        {
+          "unitId": "common_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "common_sanji",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "item_nika",
+      "name": "Trace of the Sun God [Nika]",
+      "rarity": "Combination Item",
+      "image": "images/item_nika.png",
+      "note": "Has a chance to appear after defeating Boss Enel on Round 30"
+    },
+    {
+      "id": "item_uta",
+      "name": "Uta's Headset [Uta]",
+      "rarity": "Combination Item",
+      "image": "images/item_uta.png",
+      "note": "Has a chance to appear after clearing Shabondy Archipelago 6th stage"
+    },
+    {
+      "id": "item_marco",
+      "name": "Phoenix Feather [Marco]",
+      "rarity": "Combination Item",
+      "image": "images/item_marco.png",
+      "note": "Has a chance to appear after clearing Marineford stage 8"
+    },
+    {
+      "id": "other_rayleigh",
+      "name": "Rayleigh",
+      "rarity": "Other",
+      "image": "images/other_rayleigh.jpg"
+    },
+    {
+      "id": "other_pirateship",
+      "name": "Pirate Ship",
+      "rarity": "Other",
+      "image": "images/other_pirateship.jpg"
+    },
+    {
+      "id": "other_kuma",
+      "name": "Transcendent Kuma",
+      "rarity": "Other",
+      "image": "images/special_kuma.jpg"
+    },
+    {
+      "id": "other_ancientship",
+      "name": "Ancient Ship",
+      "rarity": "Other",
+      "image": "images/other_ancientship.png"
+    },
+    {
+      "id": "rare_perona",
+      "name": "Perona",
+      "rarity": "Rare",
+      "image": "images/uncommon_perona.jpg",
+      "recipe": [
+        {
+          "unitId": "special_absalom",
+          "count": 1
+        },
+        {
+          "unitId": "special_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "special_chopperbrain",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_kid",
+      "name": "Kid",
+      "rarity": "Rare",
+      "image": "images/special_kid.jpg",
+      "recipe": [
+        {
+          "unitId": "special_kid",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        },
+        {
+          "unitId": "special_killer",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_crocodile",
+      "name": "Crocodile",
+      "rarity": "Rare",
+      "image": "images/special_crocodile.jpg",
+      "recipe": [
+        {
+          "unitId": "special_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "special_bonkurei",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_aokiji",
+      "name": "Aokiji",
+      "rarity": "Rare",
+      "image": "images/rare_aokiji.jpg",
+      "recipe": [
+        {
+          "unitId": "special_robin",
+          "count": 1
+        },
+        {
+          "unitId": "special_squard",
+          "count": 1
+        },
+        {
+          "unitId": "special_enel",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_xdrake",
+      "name": "X Drake",
+      "rarity": "Rare",
+      "image": "images/rare_xdrake.png",
+      "recipe": [
+        {
+          "unitId": "special_xdrake",
+          "count": 1
+        },
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_garp",
+      "name": "Garp",
+      "rarity": "Rare",
+      "image": "images/rare_garp.jpg",
+      "recipe": [
+        {
+          "unitId": "special_smoker",
+          "count": 1
+        },
+        {
+          "unitId": "special_xdrake",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_blackbeard",
+      "name": "Blackbeard",
+      "rarity": "Rare",
+      "image": "images/rare_blackbeard.jpg",
+      "recipe": [
+        {
+          "unitId": "special_ace",
+          "count": 1
+        },
+        {
+          "unitId": "special_squard",
+          "count": 1
+        },
+        {
+          "unitId": "special_xdrake",
+          "count": 1
+        }
+      ],
+      "note": "Pull Enemy"
+    },
+    {
+      "id": "rare_doflamingo",
+      "name": "Doflamingo",
+      "rarity": "Rare",
+      "image": "images/rare_doflamingo.jpg",
+      "recipe": [
+        {
+          "unitId": "special_chopperguard",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "special_lucci",
+          "count": 1
+        }
+      ],
+      "note": "Flying"
+    },
+    {
+      "id": "rare_law",
+      "name": "Law",
+      "rarity": "Rare",
+      "image": "images/special_law.jpg",
+      "recipe": [
+        {
+          "unitId": "special_law",
+          "count": 1
+        },
+        {
+          "unitId": "special_docking",
+          "count": 1
+        },
+        {
+          "unitId": "special_chopperbrain",
+          "count": 1
+        }
+      ],
+      "note": "W skill: 50s cooldown, grants +120% single-target attack speed for 8 seconds, blink"
+    },
+    {
+      "id": "rare_luffy",
+      "name": "Luffy",
+      "rarity": "Rare",
+      "image": "images/common_luffy.jpg",
+      "recipe": [
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "special_bonkurei",
+          "count": 1
+        },
+        {
+          "unitId": "special_enel",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_ryuma",
+      "name": "Ryuma",
+      "rarity": "Rare",
+      "image": "images/rare_ryuma.jpg",
+      "recipe": [
+        {
+          "unitId": "special_moria",
+          "count": 1
+        },
+        {
+          "unitId": "special_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_sogeking",
+          "count": 1
+        },
+        {
+          "unitId": "common_swordsman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_marco",
+      "name": "Marco",
+      "rarity": "Rare",
+      "image": "images/special_marco.jpg",
+      "recipe": [
+        {
+          "unitId": "special_marco",
+          "count": 1
+        },
+        {
+          "unitId": "special_chaka",
+          "count": 1
+        },
+        {
+          "unitId": "special_chopperguard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_magellan",
+      "name": "Magellan",
+      "rarity": "Rare",
+      "image": "images/rare_magellan.jpg",
+      "recipe": [
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "special_ace",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_momonga",
+      "name": "Momonga",
+      "rarity": "Rare",
+      "image": "images/rare_momonga.png",
+      "recipe": [
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "special_helmeppo",
+          "count": 1
+        },
+        {
+          "unitId": "special_smoker",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_mihawk",
+      "name": "Mihawk",
+      "rarity": "Rare",
+      "image": "images/rare_mihawk.jpg",
+      "recipe": [
+        {
+          "unitId": "special_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuro",
+          "count": 1
+        },
+        {
+          "unitId": "special_xdrake",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_bartolomeo",
+      "name": "Bartolomeo",
+      "rarity": "Rare",
+      "image": "images/rare_bartolomeo.png",
+      "recipe": [
+        {
+          "unitId": "special_kuro",
+          "count": 1
+        },
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        },
+        {
+          "unitId": "special_docking",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_burgess",
+      "name": "Burgess",
+      "rarity": "Rare",
+      "image": "images/rare_burgess.png",
+      "recipe": [
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "special_marco",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_hawkins",
+      "name": "Hawkins",
+      "rarity": "Rare",
+      "image": "images/rare_hawkins.jpg",
+      "recipe": [
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "special_killer",
+          "count": 1
+        },
+        {
+          "unitId": "special_law",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_decken",
+      "name": "Van Der Decken",
+      "rarity": "Rare",
+      "image": "images/rare_decken.jpg",
+      "recipe": [
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        },
+        {
+          "unitId": "special_helmeppo",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        }
+      ],
+      "note": "Flying"
+    },
+    {
+      "id": "rare_baby5",
+      "name": "Baby 5",
+      "rarity": "Rare",
+      "image": "images/rare_baby5.png",
+      "recipe": [
+        {
+          "unitId": "special_docking",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "special_lucci",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_benbeckman",
+      "name": "Ben Beckman",
+      "rarity": "Rare",
+      "image": "images/rare_benbeckman.jpg",
+      "recipe": [
+        {
+          "unitId": "special_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "special_smoker",
+          "count": 1
+        },
+        {
+          "unitId": "special_enel",
+          "count": 1
+        }
+      ],
+      "note": "Blink"
+    },
+    {
+      "id": "rare_brook",
+      "name": "Brook",
+      "rarity": "Rare",
+      "image": "images/uncommon_brook.jpg",
+      "recipe": [
+        {
+          "unitId": "uncommon_brook",
+          "count": 1
+        },
+        {
+          "unitId": "special_moria",
+          "count": 1
+        },
+        {
+          "unitId": "special_lucci",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_vivi",
+      "name": "Vivi",
+      "rarity": "Rare",
+      "image": "images/rare_vivi.png",
+      "recipe": [
+        {
+          "unitId": "special_chaka",
+          "count": 1
+        },
+        {
+          "unitId": "special_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_sabo",
+      "name": "Sabo",
+      "rarity": "Rare",
+      "image": "images/rare_sabo.png",
+      "recipe": [
+        {
+          "unitId": "special_inazuma",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "special_marco",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_sanji",
+      "name": "Sanji",
+      "rarity": "Rare",
+      "image": "images/common_sanji.jpg",
+      "recipe": [
+        {
+          "unitId": "special_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "special_chopperguard",
+          "count": 1
+        },
+        {
+          "unitId": "special_kid",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_shanks",
+      "name": "Shanks",
+      "rarity": "Rare",
+      "image": "images/rare_shanks.jpg",
+      "recipe": [
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "special_usopp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_sentomaru",
+      "name": "Sentomaru",
+      "rarity": "Rare",
+      "image": "images/rare_sentomaru.png",
+      "recipe": [
+        {
+          "unitId": "special_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "special_chopperbrain",
+          "count": 1
+        },
+        {
+          "unitId": "special_capone",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_sugar",
+      "name": "Sugar",
+      "rarity": "Rare",
+      "image": "images/rare_sugar.png",
+      "recipe": [
+        {
+          "unitId": "special_chopperbrain",
+          "count": 1
+        },
+        {
+          "unitId": "special_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "common_usopp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_shiryu",
+      "name": "Shiryu",
+      "rarity": "Rare",
+      "image": "images/rare_shiryu.png",
+      "recipe": [
+        {
+          "unitId": "special_capone",
+          "count": 1
+        },
+        {
+          "unitId": "special_xdrake",
+          "count": 1
+        },
+        {
+          "unitId": "special_sanji",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_akainu",
+      "name": "Akainu",
+      "rarity": "Rare",
+      "image": "images/rare_akainu.jpg",
+      "recipe": [
+        {
+          "unitId": "special_ace",
+          "count": 1
+        },
+        {
+          "unitId": "special_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "special_inazuma",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_oars",
+      "name": "Oars",
+      "rarity": "Rare",
+      "image": "images/rare_oars.jpg",
+      "recipe": [
+        {
+          "unitId": "special_moria",
+          "count": 2
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_wyper",
+      "name": "Wyper",
+      "rarity": "Rare",
+      "image": "images/rare_wyper.png",
+      "recipe": [
+        {
+          "unitId": "special_enel",
+          "count": 1
+        },
+        {
+          "unitId": "special_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "special_usopp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_usopp",
+      "name": "Usopp",
+      "rarity": "Rare",
+      "image": "images/common_usopp.jpg",
+      "recipe": [
+        {
+          "unitId": "special_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "special_capone",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        }
+      ],
+      "note": "Blink"
+    },
+    {
+      "id": "rare_ivankov",
+      "name": "Ivankov",
+      "rarity": "Rare",
+      "image": "images/rare_ivankov.jpg",
+      "recipe": [
+        {
+          "unitId": "special_inazuma",
+          "count": 1
+        },
+        {
+          "unitId": "special_robin",
+          "count": 1
+        },
+        {
+          "unitId": "special_crocodile",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_zeff",
+      "name": "Zeff",
+      "rarity": "Rare",
+      "image": "images/rare_zeff.jpg",
+      "recipe": [
+        {
+          "unitId": "special_bonkurei",
+          "count": 1
+        },
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "special_inazuma",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_zoro",
+      "name": "Zoro",
+      "rarity": "Rare",
+      "image": "images/special_zoro.jpg",
+      "recipe": [
+        {
+          "unitId": "special_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "special_moria",
+          "count": 1
+        },
+        {
+          "unitId": "special_smoker",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_jozu",
+      "name": "Jozu",
+      "rarity": "Rare",
+      "image": "images/rare_jozu.jpg",
+      "recipe": [
+        {
+          "unitId": "special_squard",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuro",
+          "count": 1
+        },
+        {
+          "unitId": "special_capone",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_chopper",
+      "name": "Chopper",
+      "rarity": "Rare",
+      "image": "images/rare_chopper.png",
+      "recipe": [
+        {
+          "unitId": "special_chopperguard",
+          "count": 1
+        },
+        {
+          "unitId": "special_helmeppo",
+          "count": 1
+        },
+        {
+          "unitId": "special_law",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_kaku",
+      "name": "Kaku",
+      "rarity": "Rare",
+      "image": "images/rare_kaku.jpg",
+      "recipe": [
+        {
+          "unitId": "special_lucci",
+          "count": 1
+        },
+        {
+          "unitId": "special_chaka",
+          "count": 1
+        },
+        {
+          "unitId": "special_robin",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_kizaru",
+      "name": "Kizaru",
+      "rarity": "Rare",
+      "image": "images/rare_kizaru.jpg",
+      "recipe": [
+        {
+          "unitId": "special_helmeppo",
+          "count": 1
+        },
+        {
+          "unitId": "special_law",
+          "count": 1
+        },
+        {
+          "unitId": "special_kid",
+          "count": 1
+        }
+      ],
+      "note": "Blink"
+    },
+    {
+      "id": "rare_kinemon",
+      "name": "Kinemon",
+      "rarity": "Rare",
+      "image": "images/rare_kinemon.jpg",
+      "recipe": [
+        {
+          "unitId": "special_killer",
+          "count": 1
+        },
+        {
+          "unitId": "special_ace",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuro",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rare_hancock",
+      "name": "Hancock",
+      "rarity": "Rare",
+      "image": "images/rare_hancock.jpg",
+      "recipe": [
+        {
+          "unitId": "special_nami",
+          "count": 1
+        },
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "legendary_dragon",
+      "name": "Dragon",
+      "rarity": "Legendary",
+      "image": "images/legendary_dragon.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_ivankov",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sabo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_vivi",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Normal - Story mode: -45 armor"
+    },
+    {
+      "id": "legendary_laboon",
+      "name": "Laboon",
+      "rarity": "Legendary",
+      "image": "images/legendary_laboon.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        },
+        {
+          "unitId": "rare_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shiryu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Siege - Swimming"
+    },
+    {
+      "id": "legendary_bartolomeo",
+      "name": "Bartolomeo",
+      "rarity": "Legendary",
+      "image": "images/rare_bartolomeo.png",
+      "recipe": [
+        {
+          "unitId": "rare_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "rare_usopp",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Normal"
+    },
+    {
+      "id": "legendary_shanks",
+      "name": "Shanks",
+      "rarity": "Legendary",
+      "image": "images/rare_shanks.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "rare_benbeckman",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sanji",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Haki"
+    },
+    {
+      "id": "legendary_shiki",
+      "name": "Shiki",
+      "rarity": "Legendary",
+      "image": "images/legendary_shiki.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_wyper",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        },
+        {
+          "unitId": "rare_magellan",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Normal - Flying"
+    },
+    {
+      "id": "legendary_fujitora",
+      "name": "Fujitora",
+      "rarity": "Legendary",
+      "image": "images/legendary_fujitora.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_kinemon",
+          "count": 1
+        },
+        {
+          "unitId": "rare_doflamingo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_crocodile",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Siege"
+    },
+    {
+      "id": "legendary_kuma",
+      "name": "Kuma - Mana",
+      "rarity": "Legendary",
+      "image": "images/special_kuma.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_sentomaru",
+          "count": 1
+        },
+        {
+          "unitId": "rare_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "rare_chopper",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun Area",
+      "note": "Siege - Teleport"
+    },
+    {
+      "id": "legendary_rayleigh",
+      "name": "Rayleigh - Mana",
+      "rarity": "Legendary",
+      "image": "images/other_rayleigh.jpg",
+      "recipe": [
+        {
+          "unitId": "other_rayleigh",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sentomaru",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Piercing - Consume 5 woods, armor break, stun, -20 armor"
+    },
+    {
+      "id": "legendary_marco",
+      "name": "Marco - HP",
+      "rarity": "Legendary",
+      "image": "images/special_marco.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_marco",
+          "count": 1
+        },
+        {
+          "unitId": "rare_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hancock",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Piercing - Slow, flying"
+    },
+    {
+      "id": "legendary_sengoku",
+      "name": "Sengoku",
+      "rarity": "Legendary",
+      "image": "images/legendary_sengoku.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_akainu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_aokiji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Siege"
+    },
+    {
+      "id": "legendary_smoker",
+      "name": "Smoker - Mana",
+      "rarity": "Legendary",
+      "image": "images/special_smoker.png",
+      "recipe": [
+        {
+          "unitId": "rare_garp",
+          "count": 1
+        },
+        {
+          "unitId": "rare_momonga",
+          "count": 1
+        },
+        {
+          "unitId": "rare_magellan",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Siege - Slow"
+    },
+    {
+      "id": "legendary_caesar",
+      "name": "Caesar",
+      "rarity": "Legendary",
+      "image": "images/legendary_caesar.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_doflamingo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "rare_garp",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Normal - -30 armor"
+    },
+    {
+      "id": "legendary_ace",
+      "name": "Ace",
+      "rarity": "Legendary",
+      "image": "images/uncommon_ace.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_marco",
+          "count": 1
+        },
+        {
+          "unitId": "rare_momonga",
+          "count": 1
+        },
+        {
+          "unitId": "rare_blackbeard",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Normal"
+    },
+    {
+      "id": "legendary_ulti",
+      "name": "Ulti - HP",
+      "rarity": "Legendary",
+      "image": "images/legendary_ulti.png",
+      "recipe": [
+        {
+          "unitId": "rare_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "rare_benbeckman",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sentomaru",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Siege - -27 armor"
+    },
+    {
+      "id": "legendary_kalgara",
+      "name": "Kalgara - Mana",
+      "rarity": "Legendary",
+      "image": "images/legendary_kalgara.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "rare_wyper",
+          "count": 1
+        },
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Piercing - Flying, target -15 armor, boss -40 armor, story & line -25 armor"
+    },
+    {
+      "id": "legendary_cracker",
+      "name": "Cracker",
+      "rarity": "Legendary",
+      "image": "images/legendary_cracker.png",
+      "recipe": [
+        {
+          "unitId": "rare_zeff",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kinemon",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sugar",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Siege - Permanent buff, -25 armor"
+    },
+    {
+      "id": "legendary_king",
+      "name": "King",
+      "rarity": "Legendary",
+      "image": "images/legendary_king.png",
+      "recipe": [
+        {
+          "unitId": "rare_xdrake",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "rare_doflamingo",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Normal - Flying, slow, area -10 armor, targer -20 armor"
+    },
+    {
+      "id": "legendary_whitebeard",
+      "name": "Whitebeard - HP",
+      "rarity": "Legendary",
+      "image": "images/legendary_whitebeard.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_jozu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_marco",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kinemon",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Haki - Slow, -15 armor, Boss & Story -30 armor"
+    },
+    {
+      "id": "legendary_hibari",
+      "name": "Hibari",
+      "rarity": "Legendary",
+      "image": "images/legendary_hibari.png",
+      "recipe": [
+        {
+          "unitId": "rare_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        },
+        {
+          "unitId": "rare_akainu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Siege - Target -22 armor, 2000 attack range"
+    },
+    {
+      "id": "legendary_chopper",
+      "name": "Chopper",
+      "rarity": "Legendary",
+      "image": "images/legendary_chopper.png",
+      "recipe": [
+        {
+          "unitId": "rare_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "rare_burgess",
+          "count": 1
+        },
+        {
+          "unitId": "rare_decken",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Normal - -18 armor"
+    },
+    {
+      "id": "legendary_brulee",
+      "name": "Brulee",
+      "rarity": "Legendary",
+      "image": "images/legendary_brulee.png",
+      "recipe": [
+        {
+          "unitId": "rare_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "rare_vivi",
+          "count": 1
+        },
+        {
+          "unitId": "other_rayleigh",
+          "count": 1
+        },
+        {
+          "unitId": "special_absalom",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "Normal - Copy legendary"
+    },
+    {
+      "id": "legendary_blackbeard",
+      "name": "Blackbeard - HP",
+      "rarity": "Legendary",
+      "image": "images/rare_blackbeard.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_blackbeard",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shiryu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_burgess",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Piercing"
+    },
+    {
+      "id": "legendary_nami",
+      "name": "Nami - HP",
+      "rarity": "Legendary",
+      "image": "images/legendary_nami.png",
+      "recipe": [
+        {
+          "unitId": "rare_vivi",
+          "count": 1
+        },
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        },
+        {
+          "unitId": "rare_perona",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Normal - Slow, improve treasure searching, increase gold gain"
+    },
+    {
+      "id": "legendary_neko",
+      "name": "Nekomamushi - HP",
+      "rarity": "Legendary",
+      "image": "images/legendary_neko.png",
+      "recipe": [
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "rare_xdrake",
+          "count": 1
+        },
+        {
+          "unitId": "rare_wyper",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Normal - Slow"
+    },
+    {
+      "id": "legendary_law",
+      "name": "Law",
+      "rarity": "Legendary",
+      "image": "images/special_law.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_law",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sentomaru",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Piercing - Teleport"
+    },
+    {
+      "id": "legendary_blackmaria",
+      "name": "Black Maria",
+      "rarity": "Legendary",
+      "image": "images/legendary_blackmaria.png",
+      "recipe": [
+        {
+          "unitId": "rare_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        },
+        {
+          "unitId": "rare_xdrake",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Siege"
+    },
+    {
+      "id": "legendary_nightmare",
+      "name": "Nightmare Luffy",
+      "rarity": "Legendary",
+      "image": "images/legendary_nightmare.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_oars",
+          "count": 1
+        },
+        {
+          "unitId": "rare_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "rare_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "special_absalom",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Piercing - Flying"
+    },
+    {
+      "id": "legendary_moria",
+      "name": "Gecko Moria",
+      "rarity": "Legendary",
+      "image": "images/legendary_moria.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_oars",
+          "count": 1
+        },
+        {
+          "unitId": "rare_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "rare_perona",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Normal - Delete unit"
+    },
+    {
+      "id": "legendary_sugar",
+      "name": "Sugar",
+      "rarity": "Legendary",
+      "image": "images/rare_sugar.png",
+      "recipe": [
+        {
+          "unitId": "rare_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "rare_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hawkins",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Normal - Delete unit (R), generate misc item"
+    },
+    {
+      "id": "legendary_z",
+      "name": "Z",
+      "rarity": "Legendary",
+      "image": "images/legendary_z.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_burgess",
+          "count": 1
+        },
+        {
+          "unitId": "rare_aokiji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sabo",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Siege"
+    },
+    {
+      "id": "legendary_jinbe",
+      "name": "Jinbe - Mana",
+      "rarity": "Legendary",
+      "image": "images/special_jinbe.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_decken",
+          "count": 1
+        },
+        {
+          "unitId": "rare_law",
+          "count": 1
+        },
+        {
+          "unitId": "rare_akainu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Siege - Swimming, mana regen"
+    },
+    {
+      "id": "legendary_toki",
+      "name": "Toki",
+      "rarity": "Legendary",
+      "image": "images/legendary_toki.png",
+      "recipe": [
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "rare_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "other_ancientship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Normal - Consume 5 woods"
+    },
+    {
+      "id": "legendary_reiju",
+      "name": "Reiju",
+      "rarity": "Legendary",
+      "image": "images/legendary_reiju.png",
+      "recipe": [
+        {
+          "unitId": "rare_magellan",
+          "count": 1
+        },
+        {
+          "unitId": "rare_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "rare_crocodile",
+          "count": 1
+        }
+      ],
+      "subGroup": "Single Target",
+      "note": "Piercing - Flying, slow"
+    },
+    {
+      "id": "legendary_lucci",
+      "name": "Rob Lucci",
+      "rarity": "Legendary",
+      "image": "images/legendary_lucci.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        },
+        {
+          "unitId": "rare_law",
+          "count": 1
+        },
+        {
+          "unitId": "rare_garp",
+          "count": 1
+        }
+      ],
+      "subGroup": "Single Target",
+      "note": "Siege"
+    },
+    {
+      "id": "legendary_koby",
+      "name": "Koby - Mana",
+      "rarity": "Legendary",
+      "image": "images/legendary_koby.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_shiryu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "rare_zeff",
+          "count": 1
+        }
+      ],
+      "subGroup": "Single Target",
+      "note": "Siege - HP Mana regen"
+    },
+    {
+      "id": "legendary_sanji",
+      "name": "Sanji",
+      "rarity": "Legendary",
+      "image": "images/common_sanji.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_ivankov",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hawkins",
+          "count": 1
+        }
+      ],
+      "subGroup": "Single Target",
+      "note": "Siege - Splash"
+    },
+    {
+      "id": "legendary_shinobu",
+      "name": "Shinobu",
+      "rarity": "Legendary",
+      "image": "images/legendary_shinobu.png",
+      "recipe": [
+        {
+          "unitId": "rare_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "rare_blackbeard",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kinemon",
+          "count": 1
+        }
+      ],
+      "subGroup": "Final Damage",
+      "note": "Normal - Locate treasures"
+    },
+    {
+      "id": "legendary_zoro",
+      "name": "Zoro",
+      "rarity": "Legendary",
+      "image": "images/common_zoro.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "rare_perona",
+          "count": 1
+        },
+        {
+          "unitId": "rare_mihawk",
+          "count": 1
+        }
+      ],
+      "subGroup": "Final Damage",
+      "note": "Piercing - Executes a single target if its HP is 25% or below"
+    },
+    {
+      "id": "legendary_hancock",
+      "name": "Hancock",
+      "rarity": "Legendary",
+      "image": "images/rare_hancock.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_mihawk",
+          "count": 1
+        }
+      ],
+      "subGroup": "Final Damage",
+      "note": "Haki"
+    },
+    {
+      "id": "hidden_bonkurei",
+      "name": "Bonkurei",
+      "rarity": "Hidden",
+      "image": "images/special_bonkurei.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "special_bonkurei",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "special_inazuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun",
+      "note": "bonkurei | Siege - -11 armor"
+    },
+    {
+      "id": "hidden_aokiji",
+      "name": "Aokiji",
+      "rarity": "Hidden",
+      "image": "images/rare_aokiji.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_aokiji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_jozu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_momonga",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun",
+      "note": "aokiji | Normal - Slow"
+    },
+    {
+      "id": "hidden_ivankov",
+      "name": "Ivankov",
+      "rarity": "Hidden",
+      "image": "images/rare_ivankov.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_ivankov",
+          "count": 1
+        },
+        {
+          "unitId": "rare_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun",
+      "note": "ivankov | Normal - HP regen"
+    },
+    {
+      "id": "hidden_tiger",
+      "name": "Fisher Tiger",
+      "rarity": "Hidden",
+      "image": "images/hidden_tiger.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_decken",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "special_docking",
+          "count": 1
+        },
+        {
+          "unitId": "other_rayleigh",
+          "count": 1
+        }
+      ],
+      "subGroup": "Stun",
+      "note": "tiger | Siege - Can move everywhere"
+    },
+    {
+      "id": "hidden_rebecca",
+      "name": "Rebecca",
+      "rarity": "Hidden",
+      "image": "images/hidden_rebecca.png",
+      "recipe": [
+        {
+          "unitId": "rare_burgess",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sugar",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "rebecca | Piercing - -18 armor"
+    },
+    {
+      "id": "hidden_ryokugyu",
+      "name": "Ryokugyu - Mana",
+      "rarity": "Hidden",
+      "image": "images/hidden_ryokugyu.png",
+      "recipe": [
+        {
+          "unitId": "rare_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "rare_ivankov",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "ryokugyu | Piercing - -25 armor, slow"
+    },
+    {
+      "id": "hidden_mihawk",
+      "name": "Mihawk",
+      "rarity": "Hidden",
+      "image": "images/rare_mihawk.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "rare_jozu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "mihawk | Piercing - -25 armor"
+    },
+    {
+      "id": "hidden_vergo",
+      "name": "Vergo - Mana",
+      "rarity": "Hidden",
+      "image": "images/hidden_vergo.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "special_smoker",
+          "count": 1
+        },
+        {
+          "unitId": "special_law",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "vergo | Siege - Armor break"
+    },
+    {
+      "id": "hidden_sabo",
+      "name": "Sabo",
+      "rarity": "Hidden",
+      "image": "images/rare_sabo.png",
+      "recipe": [
+        {
+          "unitId": "rare_oars",
+          "count": 1
+        },
+        {
+          "unitId": "rare_law",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sabo",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "sabo | Haki - -25 armor"
+    },
+    {
+      "id": "hidden_killer",
+      "name": "Killer",
+      "rarity": "Hidden",
+      "image": "images/special_killer.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "special_helmeppo",
+          "count": 1
+        },
+        {
+          "unitId": "special_killer",
+          "count": 1
+        },
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "killer | Piercing - -12 armor"
+    },
+    {
+      "id": "hidden_ryuma",
+      "name": "Ryuma",
+      "rarity": "Hidden",
+      "image": "images/rare_ryuma.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "rare_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_brook",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "ryuma | Piercing"
+    },
+    {
+      "id": "hidden_stussy",
+      "name": "Stussy",
+      "rarity": "Hidden",
+      "image": "images/hidden_stussy.png",
+      "recipe": [
+        {
+          "unitId": "rare_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sentomaru",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "stussy | Normal - Blink"
+    },
+    {
+      "id": "hidden_shiryu",
+      "name": "Shiryu - Mana",
+      "rarity": "Hidden",
+      "image": "images/hidden_shiryu.png",
+      "recipe": [
+        {
+          "unitId": "rare_shiryu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_magellan",
+          "count": 1
+        },
+        {
+          "unitId": "rare_benbeckman",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "shiryu | Piercing"
+    },
+    {
+      "id": "hidden_akainu",
+      "name": "Akainu - HP",
+      "rarity": "Hidden",
+      "image": "images/rare_akainu.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_akainu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_decken",
+          "count": 1
+        },
+        {
+          "unitId": "special_killer",
+          "count": 1
+        },
+        {
+          "unitId": "special_squard",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "akainu | Siege"
+    },
+    {
+      "id": "hidden_carrot",
+      "name": "Carrot",
+      "rarity": "Hidden",
+      "image": "images/hidden_carrot.png",
+      "recipe": [
+        {
+          "unitId": "other_rayleigh",
+          "count": 1
+        },
+        {
+          "unitId": "rare_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "special_enel",
+          "count": 1
+        },
+        {
+          "unitId": "special_absalom",
+          "count": 2
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "carrot | Piercing"
+    },
+    {
+      "id": "hidden_kiku",
+      "name": "Kiku - Mana",
+      "rarity": "Hidden",
+      "image": "images/hidden_kiku.png",
+      "recipe": [
+        {
+          "unitId": "rare_kinemon",
+          "count": 1
+        },
+        {
+          "unitId": "rare_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "special_kid",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "kiku | Normal"
+    },
+    {
+      "id": "hidden_redforce",
+      "name": "Red Force",
+      "rarity": "Hidden",
+      "image": "images/hidden_redforce.png",
+      "recipe": [
+        {
+          "unitId": "legendary_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Ship",
+      "note": "redforce | Haki - Flying, -20 armor"
+    },
+    {
+      "id": "hidden_mobydick",
+      "name": "Moby Dick",
+      "rarity": "Hidden",
+      "image": "images/hidden_mobydick.png",
+      "recipe": [
+        {
+          "unitId": "rare_jozu",
+          "count": 1
+        },
+        {
+          "unitId": "special_marco",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Ship",
+      "note": "mobydick | Haki - Flying, slow, HP regen"
+    },
+    {
+      "id": "hidden_decken",
+      "name": "Vander Decken - Mana",
+      "rarity": "Hidden",
+      "image": "images/rare_decken.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_decken",
+          "count": 1
+        },
+        {
+          "unitId": "rare_blackbeard",
+          "count": 1
+        },
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Ship",
+      "note": "decken | Normal - Swimming, long range (can hit top right objective)"
+    },
+    {
+      "id": "hidden_baratie",
+      "name": "Baratie",
+      "rarity": "Hidden",
+      "image": "images/hidden_baratie.png",
+      "recipe": [
+        {
+          "unitId": "rare_zeff",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Ship",
+      "note": "baratie | Hidden - Attack speed + Q skill"
+    },
+    {
+      "id": "hidden_maxim",
+      "name": "Ark Maxim - Mana",
+      "rarity": "Hidden",
+      "image": "images/hidden_maxim.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_wyper",
+          "count": 1
+        },
+        {
+          "unitId": "rare_usopp",
+          "count": 1
+        },
+        {
+          "unitId": "special_capone",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Ship",
+      "note": "maxim | Normal - Flying"
+    },
+    {
+      "id": "hidden_sunny",
+      "name": "Thousand Sunny",
+      "rarity": "Hidden",
+      "image": "images/hidden_sunny.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Ship",
+      "note": "sunny | Normal - Flying, area stun, mana skill if there's Franky Tr"
+    },
+    {
+      "id": "distortion_blackmaria",
+      "name": "Black Maria",
+      "rarity": "Distortion",
+      "image": "images/distortion_blackmaria.png",
+      "recipe": [
+        {
+          "unitId": "legendary_blackmaria",
+          "count": 1
+        },
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        },
+        {
+          "unitId": "special_robin",
+          "count": 1
+        }
+      ],
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "note": "blackmaria | Siege - Stun/Slow/Damage"
+    },
+    {
+      "id": "distortion_koala",
+      "name": "Koala - Mana",
+      "rarity": "Distortion",
+      "image": "images/distortion_koala.png",
+      "recipe": [
+        {
+          "unitId": "legendary_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "rare_vivi",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_robin",
+          "count": 1
+        }
+      ],
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "note": "koala | Siege - Armor break, mana regen"
+    },
+    {
+      "id": "distortion_queen",
+      "name": "Queen - Mana",
+      "rarity": "Distortion",
+      "image": "images/distortion_queen.png",
+      "recipe": [
+        {
+          "unitId": "legendary_king",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_franky",
+          "count": 1
+        }
+      ],
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "note": "queen | Siege - Armor break, HP + mana regen"
+    },
+    {
+      "id": "distortion_perona",
+      "name": "Perona - Mana",
+      "rarity": "Distortion",
+      "image": "images/distortion_perona.png",
+      "recipe": [
+        {
+          "unitId": "legendary_moria",
+          "count": 1
+        },
+        {
+          "unitId": "rare_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "special_absalom",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_sogeking",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        }
+      ],
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "note": "perona | Normal - Slow, delete"
+    },
+    {
+      "id": "alternate_doflamingo",
+      "name": "Doflamingo",
+      "rarity": "Alternate",
+      "image": "images/rare_doflamingo.jpg",
+      "recipe": [
+        {
+          "unitId": "rare_doflamingo",
+          "count": 1
+        }
+      ],
+      "note": "Piercing - Flying"
+    },
+    {
+      "id": "alternate_baby5",
+      "name": "Baby 5",
+      "rarity": "Alternate",
+      "image": "images/rare_baby5.png",
+      "recipe": [
+        {
+          "unitId": "rare_baby5",
+          "count": 1
+        }
+      ],
+      "note": "Normal"
+    },
+    {
+      "id": "alternate_vivi",
+      "name": "Vivi",
+      "rarity": "Alternate",
+      "image": "images/rare_vivi.png",
+      "recipe": [
+        {
+          "unitId": "rare_vivi",
+          "count": 1
+        }
+      ],
+      "note": "Piercing - Slow, -11 armor"
+    },
+    {
+      "id": "alternate_ace",
+      "name": "Ace - Mana",
+      "rarity": "Alternate",
+      "image": "images/uncommon_ace.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_ace",
+          "count": 1
+        }
+      ],
+      "note": "Normal - Slow"
+    },
+    {
+      "id": "alternate_carrot",
+      "name": "Carrot",
+      "rarity": "Alternate",
+      "image": "images/alternate_carrot.png",
+      "recipe": [
+        {
+          "unitId": "hidden_carrot",
+          "count": 1
+        }
+      ],
+      "note": "Piercing - Flying"
+    },
+    {
+      "id": "alternate_kaku",
+      "name": "Kaku",
+      "rarity": "Alternate",
+      "image": "images/alternate_kaku.png",
+      "recipe": [
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        }
+      ],
+      "note": "Normal - Blink"
+    },
+    {
+      "id": "transcendence_doflamingo",
+      "name": "Doflamingo - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/rare_doflamingo.jpg",
+      "recipe": [
+        {
+          "unitId": "hidden_vergo",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_doflamingo",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_sogeking",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "joker tr | Piercing - Flying, slow"
+    },
+    {
+      "id": "transcendence_robin",
+      "name": "Robin - HP +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_robin.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_lucci",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_blackmaria",
+          "count": 1
+        },
+        {
+          "unitId": "special_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_robin",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "robin tr | Normal - Stun, -45 armor"
+    },
+    {
+      "id": "transcendence_ryokugyu",
+      "name": "Ryokugyu - Mana",
+      "rarity": "Transcendence",
+      "image": "images/hidden_ryokugyu.png",
+      "recipe": [
+        {
+          "unitId": "legendary_fujitora",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ryokugyu",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "ryokugyu tr | Normal - -35 armor"
+    },
+    {
+      "id": "transcendence_luffy",
+      "name": "Luffy - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_luffy.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_nightmare",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_wyper",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "luffy tr | Siege - Stun, Armor Break"
+    },
+    {
+      "id": "transcendence_hawkins",
+      "name": "Basil Hawkins - HP&Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_hawkins.png",
+      "recipe": [
+        {
+          "unitId": "legendary_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_koby",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "hawkins tr | Normal - Wisp gambling, -25 armor, upgraded unit can fly"
+    },
+    {
+      "id": "transcendence_sabo",
+      "name": "Sabo - HP&Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_sabo.png",
+      "recipe": [
+        {
+          "unitId": "legendary_marco",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_sabo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_burgess",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "sabo tr | Siege - Slow, -30 armor"
+    },
+    {
+      "id": "transcendence_usopp",
+      "name": "Usopp - Mana",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_usopp.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_kalgara",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "rare_benbeckman",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "usopp tr | Piercing - Global -8 armor, -22 armor, Usopp Hammer (W)"
+    },
+    {
+      "id": "transcendence_zoro",
+      "name": "Zoro - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_zoro.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "rare_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "zoro tr | Piercing - Stun, Slow, -30(35-40) armor, item upgrade"
+    },
+    {
+      "id": "transcendence_jinbe",
+      "name": "Jinbe - Mana",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_jinbe.png",
+      "recipe": [
+        {
+          "unitId": "legendary_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_laboon",
+          "count": 1
+        },
+        {
+          "unitId": "special_ace",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "jinbe tr | Siege - Swimming, armor Break, Mana Regen 3"
+    },
+    {
+      "id": "transcendence_chopper",
+      "name": "Chopper - Mana +2",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_chopper.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_ulti",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "common_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "chopper tr | Normal - -50 armor"
+    },
+    {
+      "id": "transcendence_fujitora",
+      "name": "Fujitora - Mana",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_fujitora.png",
+      "recipe": [
+        {
+          "unitId": "legendary_fujitora",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_kiku",
+          "count": 1
+        },
+        {
+          "unitId": "rare_momonga",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "fujitora tr | Siege - Stun, Slow, Armor Break"
+    },
+    {
+      "id": "transcendence_yamato",
+      "name": "Yamato - HP",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_yamato.png",
+      "recipe": [
+        {
+          "unitId": "legendary_ulti",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_toki",
+          "count": 1
+        },
+        {
+          "unitId": "rare_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        },
+        {
+          "unitId": "special_ace",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "yamato tr | Haki - Slow, -25 armor"
+    },
+    {
+      "id": "transcendence_bonney",
+      "name": "Jewelry Bonney - HP&Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_bonney.png",
+      "recipe": [
+        {
+          "unitId": "legendary_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "special_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "special_capone",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "bonney tr | Piercing - Stacking -armor"
+    },
+    {
+      "id": "transcendence_tashigi",
+      "name": "Tashigi - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/uncommon_tashigi.png",
+      "recipe": [
+        {
+          "unitId": "legendary_caesar",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_koby",
+          "count": 1
+        },
+        {
+          "unitId": "special_smoker",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "tashigi tr | Piercing - Armor Break"
+    },
+    {
+      "id": "transcendence_blackbeard",
+      "name": "Blackbeard - HP +4",
+      "rarity": "Transcendence",
+      "image": "images/rare_blackbeard.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_blackbeard",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_whitebeard",
+          "count": 1
+        },
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "teach tr | Piercing - Slow, pull"
+    },
+    {
+      "id": "transcendence_nami",
+      "name": "Nami +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_nami.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_nami",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_shiki",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        },
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "nami tr | Normal - Slow"
+    },
+    {
+      "id": "transcendence_law",
+      "name": "Law - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_law.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_law",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_caesar",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_bepo",
+          "count": 2
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "law tr | Piercing - Teleport, slow"
+    },
+    {
+      "id": "transcendence_lucci",
+      "name": "Lucci +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_lucci.png",
+      "recipe": [
+        {
+          "unitId": "legendary_lucci",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_sabo",
+          "count": 1
+        },
+        {
+          "unitId": "special_robin",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "lucci tr | Siege - Teleport, single target, upgrade to gain manual skill (transform)"
+    },
+    {
+      "id": "transcendence_brook",
+      "name": "Brook - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_brook.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_laboon",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "rare_perona",
+          "count": 1
+        },
+        {
+          "unitId": "special_moria",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "brook tr | Normal - Flying, global Slow, slow, upgrade summon baby laboon"
+    },
+    {
+      "id": "transcendence_sanji",
+      "name": "Sanji - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_sanji.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_cracker",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "sanji tr | Siege - Flying, blink, slow"
+    },
+    {
+      "id": "transcendence_shanks",
+      "name": "Shanks - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/rare_shanks.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "shanks tr | Haki - Stun, upgrade to gain manual skill (Kamusari)"
+    },
+    {
+      "id": "transcendence_snakeman",
+      "name": "Snakeman - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_snakeman.png",
+      "recipe": [
+        {
+          "unitId": "legendary_nightmare",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_redforce",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sabo",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "snakeman tr | Piercing - Flying"
+    },
+    {
+      "id": "transcendence_shirahoshi",
+      "name": "Shirahoshi - Mana",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_shirahoshi.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_decken",
+          "count": 1
+        },
+        {
+          "unitId": "rare_vivi",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "shirahoshi tr | Normal - Flying, stun"
+    },
+    {
+      "id": "transcendence_aokiji",
+      "name": "Aokiji - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_aokiji.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_z",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_aokiji",
+          "count": 1
+        },
+        {
+          "unitId": "special_robin",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_tashigi",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "aokiji tr | Piercing - Slow, stun, upgrade to gain flying"
+    },
+    {
+      "id": "transcendence_akainu",
+      "name": "Akainu - HP&Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_akainu.png",
+      "recipe": [
+        {
+          "unitId": "legendary_hibari",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_akainu",
+          "count": 1
+        },
+        {
+          "unitId": "special_ace",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "akainu tr | Siege - Damage dealer"
+    },
+    {
+      "id": "transcendence_kid",
+      "name": "Kid - HP +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_kid.png",
+      "recipe": [
+        {
+          "unitId": "legendary_neko",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_killer",
+          "count": 1
+        },
+        {
+          "unitId": "rare_law",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "special_kid",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "kid tr | Siege - Slow"
+    },
+    {
+      "id": "transcendence_kizaru",
+      "name": "Kizaru - Mana",
+      "rarity": "Transcendence",
+      "image": "images/rare_kizaru.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_fujitora",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_rayleigh",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "special_arlong",
+          "count": 1
+        },
+        {
+          "unitId": "special_hawkins",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "kizaru tr | Piercing - Stun, 3500 range blink (can go to top right)"
+    },
+    {
+      "id": "transcendence_franky",
+      "name": "Franky - Mana +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_franky.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kaku",
+          "count": 1
+        },
+        {
+          "unitId": "special_docking",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "franky tr | Siege - Mana Regen 5 (Excluding Self), shipwright (Sunny Craft 2, Wood 10)"
+    },
+    {
+      "id": "transcendence_koby",
+      "name": "Koby - HP +4",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_koby.png",
+      "recipe": [
+        {
+          "unitId": "legendary_hibari",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_koby",
+          "count": 1
+        },
+        {
+          "unitId": "rare_garp",
+          "count": 1
+        },
+        {
+          "unitId": "special_helmeppo",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "koby tr | Normal - Flying, blink"
+    },
+    {
+      "id": "limited_rebecca",
+      "name": "Rebecca +4",
+      "rarity": "Limited",
+      "image": "images/hidden_rebecca.png",
+      "recipe": [
+        {
+          "unitId": "hidden_rebecca",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_doflamingo",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "5.000g + 5w | Piercing - -38 armor"
+    },
+    {
+      "id": "limited_katakuri",
+      "name": "Katakuri - HP +4",
+      "rarity": "Limited",
+      "image": "images/limited_katakuri.png",
+      "recipe": [
+        {
+          "unitId": "legendary_cracker",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "rare_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "special_capone",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "35.000g + 5w |Siege - HP regen, -30 armor"
+    },
+    {
+      "id": "limited_crocodile",
+      "name": "Crocodile - HP +4",
+      "rarity": "Limited",
+      "image": "images/limited_crocodile.png",
+      "recipe": [
+        {
+          "unitId": "rare_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_akainu",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_vivi",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "5.000g + 5w | Piercing - Stun, slow, -25 armor, upgrade gain hp skill & armor break"
+    },
+    {
+      "id": "limited_king",
+      "name": "King - Mana +4",
+      "rarity": "Limited",
+      "image": "images/limited_king.png",
+      "recipe": [
+        {
+          "unitId": "legendary_king",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_blackbeard",
+          "count": 1
+        },
+        {
+          "unitId": "other_ancientship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "5.000g + 5w | Normal - Flying, armor break"
+    },
+    {
+      "id": "limited_alvida",
+      "name": "Alvida - Mana",
+      "rarity": "Limited",
+      "image": "images/limited_alvida.png",
+      "recipe": [
+        {
+          "unitId": "legendary_blackmaria",
+          "count": 1
+        },
+        {
+          "unitId": "rare_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "rare_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "+4 special points | Siege - Armor break, -25 armor, knockback"
+    },
+    {
+      "id": "limited_marco",
+      "name": "Marco - HP +4",
+      "rarity": "Limited",
+      "image": "images/limited_marco.png",
+      "recipe": [
+        {
+          "unitId": "legendary_marco",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "item_marco",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "5.000g + 5w | Piercing - Flying, slow, human single - phoenix area"
+    },
+    {
+      "id": "limited_redfield",
+      "name": "Redfield +4",
+      "rarity": "Limited",
+      "image": "images/limited_redfield.png",
+      "recipe": [
+        {
+          "unitId": "legendary_chopper",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_bonkurei",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "5.000g + 5w, can only be combined before Round 41 | Haki - Blink"
+    },
+    {
+      "id": "limited_shinobu",
+      "name": "Shinobu - HP +4",
+      "rarity": "Limited",
+      "image": "images/limited_shinobu.png",
+      "recipe": [
+        {
+          "unitId": "legendary_shinobu",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "5.000g + 5w | Normal - Additional treasure search"
+    },
+    {
+      "id": "limited_ain",
+      "name": "Ain",
+      "rarity": "Limited",
+      "image": "images/limited_ain.png",
+      "recipe": [
+        {
+          "unitId": "rare_aokiji",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_vergo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_benbeckman",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "2 tokens + 5.000g + 8w | Piercing - Blink, delete"
+    },
+    {
+      "id": "limited_enel",
+      "name": "Enel - Mana +4",
+      "rarity": "Limited",
+      "image": "images/special_enel.jpg",
+      "recipe": [
+        {
+          "unitId": "hidden_maxim",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_caesar",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "5.000g + 5w | Normal - Teleport, mana regen"
+    },
+    {
+      "id": "immortal_garp",
+      "name": "Garp - Mana +4",
+      "rarity": "Immortal",
+      "image": "images/immortal_garp.png",
+      "recipe": [
+        {
+          "unitId": "legendary_smoker",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_koby",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_dragon",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "garp im | Siege - Stun, +15 armor"
+    },
+    {
+      "id": "immortal_rayleigh",
+      "name": "Rayleigh - Mana",
+      "rarity": "Immortal",
+      "image": "images/other_rayleigh.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_rayleigh",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_nightmare",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "rayleigh im | Piercing - Armor break, generate misc item"
+    },
+    {
+      "id": "immortal_roger",
+      "name": "Roger - Mana",
+      "rarity": "Immortal",
+      "image": "images/immortal_roger.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_sengoku",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_ace",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_smoker",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "roger im | Haki - Slow, -60 armor"
+    },
+    {
+      "id": "immortal_gaban",
+      "name": "Scopper Gaban - Mana +4",
+      "rarity": "Immortal",
+      "image": "images/immortal_gaban.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_reiju",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_zoro",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_shanks",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "gaban im | Piercing - Single target -70 armor, high attack, upgrade to get blink"
+    },
+    {
+      "id": "immortal_kaido",
+      "name": "Kaido - HP",
+      "rarity": "Immortal",
+      "image": "images/immortal_kaido.png",
+      "recipe": [
+        {
+          "unitId": "legendary_moria",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_dragon",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_king",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "kaido im | Haki - Flying, slow"
+    },
+    {
+      "id": "immortal_whitebeard",
+      "name": "Whitebeard - HP +4",
+      "rarity": "Immortal",
+      "image": "images/legendary_whitebeard.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_whitebeard",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_bartolomeo",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_marco",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "newgate im | Haki - Stun, slow, -45 armor"
+    },
+    {
+      "id": "immortal_bullet",
+      "name": "Bullet",
+      "rarity": "Immortal",
+      "image": "images/immortal_bullet.png",
+      "recipe": [
+        {
+          "unitId": "legendary_shiki",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_smoker",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_blackbeard",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "bullet im | Siege - Item Enhance (Random Enhance when feeding Common unit), single target stun, armor break"
+    },
+    {
+      "id": "immortal_dragon",
+      "name": "Dragon - Mana +4",
+      "rarity": "Immortal",
+      "image": "images/legendary_dragon.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_dragon",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_neko",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "dragon im | Normal - Stun, upgrade to get delete skill"
+    },
+    {
+      "id": "immortal_bigmom",
+      "name": "Big Mom - HP +4",
+      "rarity": "Immortal",
+      "image": "images/immortal_bigmom.png",
+      "recipe": [
+        {
+          "unitId": "legendary_reiju",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_cracker",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_ulti",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "bigmom im | Sige - Flying, slow"
+    },
+    {
+      "id": "immortal_sengoku",
+      "name": "Sengoku - HP +4",
+      "rarity": "Immortal",
+      "image": "images/legendary_sengoku.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_sengoku",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_reiju",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_lucci",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "sengoku im | Haki - Stun, global attack buff"
+    },
+    {
+      "id": "immortal_shiki",
+      "name": "Shiki - Mana +4",
+      "rarity": "Immortal",
+      "image": "images/legendary_shiki.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_shiki",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_kalgara",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "shiki im | Normal - Flying, stun, upgrade 4 (consume pirate ship to enhance skill)"
+    },
+    {
+      "id": "immortal_z",
+      "name": "Z - Mana",
+      "rarity": "Immortal",
+      "image": "images/immortal_z.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_z",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_blackmaria",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_sugar",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "z im | Siege - Blink"
+    },
+    {
+      "id": "eternal_nikaluffy",
+      "name": "Nika [Luffy] - HP&Mana",
+      "rarity": "Eternal",
+      "image": "images/eternal_nika.png",
+      "recipe": [
+        {
+          "unitId": "transcendence_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_law",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "item_nika",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "nika et | Haki - Flying, stun, -35 armor"
+    },
+    {
+      "id": "eternal_nikasnakeman",
+      "name": "Nika [Snakeman] - HP&Mana",
+      "rarity": "Eternal",
+      "image": "images/eternal_nika.png",
+      "recipe": [
+        {
+          "unitId": "transcendence_snakeman",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_law",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kid",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_ace",
+          "count": 1
+        },
+        {
+          "unitId": "item_nika",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "nika et | Haki - Flying, stun, -35 armor"
+    },
+    {
+      "id": "eternal_buggy",
+      "name": "Buggy",
+      "rarity": "Eternal",
+      "image": "images/common_buggy.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_nami",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ivankov",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "rare_magellan",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        },
+        {
+          "unitId": "special_bonkurei",
+          "count": 1
+        },
+        {
+          "unitId": "special_absalom",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "buggy et | Piercing - Stun, slow, summon units"
+    },
+    {
+      "id": "eternal_cavendish",
+      "name": "Cavendish - Mana",
+      "rarity": "Eternal",
+      "image": "images/eternal_cavendish.png",
+      "recipe": [
+        {
+          "unitId": "legendary_law",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_killer",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_rebecca",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuro",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "cavendish et | Normal - Armor break"
+    },
+    {
+      "id": "eternal_hancock",
+      "name": "Hancock - Mana",
+      "rarity": "Eternal",
+      "image": "images/rare_hancock.jpg",
+      "recipe": [
+        {
+          "unitId": "legendary_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_tiger",
+          "count": 1
+        },
+        {
+          "unitId": "rare_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "rare_momonga",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "hancock et | Haki - Stun, -45(50) armor"
+    },
+    {
+      "id": "eternal_mihawk",
+      "name": "Mihawk - Mana",
+      "rarity": "Eternal",
+      "image": "images/eternal_mihawk.png",
+      "recipe": [
+        {
+          "unitId": "distortion_perona",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shiryu",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 2
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "mihawk et | Piercing - Slow"
+    },
+    {
+      "id": "eternal_vivi",
+      "name": "Vivi - Mana",
+      "rarity": "Eternal",
+      "image": "images/eternal_vivi.png",
+      "recipe": [
+        {
+          "unitId": "limited_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_vivi",
+          "count": 1
+        },
+        {
+          "unitId": "rare_benbeckman",
+          "count": 1
+        },
+        {
+          "unitId": "rare_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "special_robin",
+          "count": 1
+        },
+        {
+          "unitId": "special_docking",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "vivi et | Piercing - Finisher, enhance (Random Wisp 3, Wood 2)"
+    },
+    {
+      "id": "eternal_ace",
+      "name": "Ace - Mana +4",
+      "rarity": "Eternal",
+      "image": "images/uncommon_ace.jpg",
+      "recipe": [
+        {
+          "unitId": "alternate_ace",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_marco",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "special_squard",
+          "count": 1
+        },
+        {
+          "unitId": "special_buggy",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "ace et | Normal - Slow, upgrade 4 (Single Stun/Skill Instant Dmg)"
+    },
+    {
+      "id": "eternal_oden",
+      "name": "Oden - Mana +4",
+      "rarity": "Eternal",
+      "image": "images/eternal_oden.png",
+      "recipe": [
+        {
+          "unitId": "legendary_toki",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_shinobu",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_kiku",
+          "count": 1
+        },
+        {
+          "unitId": "rare_marco",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "oden et | Haki - Upgrade to summon Kinemon"
+    },
+    {
+      "id": "eternal_uta",
+      "name": "Uta - HP&Mana",
+      "rarity": "Eternal",
+      "image": "images/eternal_uta.png",
+      "recipe": [
+        {
+          "unitId": "legendary_shanks",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_moria",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_bonkurei",
+          "count": 1
+        },
+        {
+          "unitId": "other_rayleigh",
+          "count": 1
+        },
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        },
+        {
+          "unitId": "common_luffy",
+          "count": 1
+        },
+        {
+          "unitId": "item_uta",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "u-ta et | Normal - Stun, Slow"
+    },
+    {
+      "id": "eternal_ryuma",
+      "name": "Ryuma - Mana +4",
+      "rarity": "Eternal",
+      "image": "images/eternal_ryuma.png",
+      "recipe": [
+        {
+          "unitId": "legendary_law",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_shiryu",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ryuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "ryuma et | Haki - Finisher, Wano Synergy (Toki, Shinobu, Kiku)"
+    },
+    {
+      "id": "eternal_tesoro",
+      "name": "Tesoro - HP +4",
+      "rarity": "Eternal",
+      "image": "images/eternal_tesoro.png",
+      "recipe": [
+        {
+          "unitId": "legendary_kalgara",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ryokugyu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "tesoro et | Haki - Additional damage proportional to gold"
+    },
+    {
+      "id": "mystic_jotaro",
+      "name": "Kujo Jotaro",
+      "rarity": "Mystic",
+      "image": "images/mystic_jotaro.png",
+      "recipe": [
+        {
+          "unitId": "random_touma",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_toki",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_sengoku",
+          "count": 1
+        },
+        {
+          "unitId": "special_luffy",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_shiki",
+      "name": "Ryogi Shiki",
+      "rarity": "Mystic",
+      "image": "images/mystic_shiki.png",
+      "recipe": [
+        {
+          "unitId": "random_yomi",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_shiryu",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ryuma",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_nami",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_tatsumaki",
+      "name": "Tatsumaki",
+      "rarity": "Mystic",
+      "image": "images/mystic_tatsumaki.png",
+      "recipe": [
+        {
+          "unitId": "random_yotsuba",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_king",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "10.000g + 7w + 1 token | Flying"
+    },
+    {
+      "id": "mystic_youmu",
+      "name": "Konpaku Youmu",
+      "rarity": "Mystic",
+      "image": "images/mystic_youmu.png",
+      "recipe": [
+        {
+          "unitId": "random_yan",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_z",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_vivi",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_sans",
+      "name": "Sans",
+      "rarity": "Mystic",
+      "image": "images/mystic_sans.png",
+      "recipe": [
+        {
+          "unitId": "random_megumin",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_vergo",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_aokiji",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_kaku",
+          "count": 1
+        }
+      ],
+      "subGroup": "Physical Damage",
+      "note": "10.000g + 7w + 1 token | Flying, upgrade bone using brook"
+    },
+    {
+      "id": "mystic_bronya",
+      "name": "Bronya",
+      "rarity": "Mystic",
+      "image": "images/mystic_bronya.png",
+      "recipe": [
+        {
+          "unitId": "random_bronya",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_reiju",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_baby5",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_sunny",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token | Flying"
+    },
+    {
+      "id": "mystic_minato",
+      "name": "Namikaze Minato",
+      "rarity": "Mystic",
+      "image": "images/mystic_minato.png",
+      "recipe": [
+        {
+          "unitId": "random_naruto",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_carrot",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_shinobu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token | 3500 range blink"
+    },
+    {
+      "id": "mystic_nezuko",
+      "name": "Nezuko",
+      "rarity": "Mystic",
+      "image": "images/mystic_nezuko.png",
+      "recipe": [
+        {
+          "unitId": "random_tsubasa",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_lucci",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_rebecca",
+          "count": 1
+        },
+        {
+          "unitId": "rare_brook",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_byakuya",
+      "name": "Kuchiki Byakuya",
+      "rarity": "Mystic",
+      "image": "images/mystic_byakuya.png",
+      "recipe": [
+        {
+          "unitId": "random_ichigo",
+          "count": 1
+        },
+        {
+          "unitId": "alternate_ace",
+          "count": 1
+        },
+        {
+          "unitId": "rare_mihawk",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_higuma",
+      "name": "Higuma",
+      "rarity": "Mystic",
+      "image": "images/mystic_higuma.png",
+      "recipe": [
+        {
+          "unitId": "random_sento",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_neko",
+          "count": 1
+        },
+        {
+          "unitId": "rare_shanks",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_yukari",
+      "name": "Yakumo Yukari",
+      "rarity": "Mystic",
+      "image": "images/mystic_yukari.png",
+      "recipe": [
+        {
+          "unitId": "random_light",
+          "count": 1
+        },
+        {
+          "unitId": "distortion_perona",
+          "count": 1
+        },
+        {
+          "unitId": "special_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token | Teleport"
+    },
+    {
+      "id": "mystic_gojo",
+      "name": "Gojo Satoru",
+      "rarity": "Mystic",
+      "image": "images/mystic_gojo.png",
+      "recipe": [
+        {
+          "unitId": "random_k",
+          "count": 1
+        },
+        {
+          "unitId": "distortion_koala",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_akainu",
+          "count": 1
+        },
+        {
+          "unitId": "rare_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "other_pirateship",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token"
+    },
+    {
+      "id": "mystic_anya",
+      "name": "Anya Forger",
+      "rarity": "Mystic",
+      "image": "images/mystic_anya.png",
+      "recipe": [
+        {
+          "unitId": "random_elizabeth",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_sugar",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "10.000g + 7w + 1 token"
+    }
+  ],
+  "rarities": [
+    "Common",
+    "Uncommon",
+    "Random",
+    "Special",
+    "Combination Item",
+    "Other",
+    "Rare",
+    "Legendary",
+    "Hidden",
+    "Distortion",
+    "Alternate",
+    "Transcendence",
+    "Limited",
+    "Immortal",
+    "Eternal",
+    "Mystic"
+  ]
+}
