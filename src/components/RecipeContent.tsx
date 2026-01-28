@@ -51,7 +51,18 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
     return u.recipe.some((req) => isEffectivelyBanned(req.unitId, checked));
   };
 
-  const hasRecipe = unit.recipe && unit.recipe.length > 0;
+  // Special handling for Common units and Common Wisp
+  const isWisp = unit.id === "common_wisp";
+  const isCommon = unit.rarity === "Common" && !isWisp;
+
+  const displayRecipe = useMemo(() => {
+    if (isCommon) {
+      return [{ unitId: "common_wisp", count: 1 }];
+    }
+    return unit.recipe;
+  }, [unit, isCommon]);
+
+  const hasRecipe = displayRecipe && displayRecipe.length > 0;
 
   const missingBaseUnits = hasRecipe
     ? calculateMissingBaseUnits(unit.id, unitsMap, inventory, bans)
@@ -69,9 +80,20 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
   }
 
   // Find units that directly use this unit in their recipe
-  const usedInUnits = Array.from(unitsMap.values()).filter((u) =>
-    u.recipe?.some((req) => req.unitId === unit.id),
-  );
+  const usedInUnits = useMemo(() => {
+    const baseUsedIn = Array.from(unitsMap.values()).filter((u) =>
+      u.recipe?.some((req) => req.unitId === unit.id),
+    );
+
+    if (isWisp) {
+      const otherCommons = Array.from(unitsMap.values()).filter(
+        (u) => u.rarity === "Common" && u.id !== "common_wisp",
+      );
+      return [...baseUsedIn, ...otherCommons];
+    }
+
+    return baseUsedIn;
+  }, [unit.id, unitsMap, isWisp]);
 
   // Find top-tier units (Transcendence onward) that eventually need this unit
   const topTierRarities = [
@@ -113,7 +135,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
 
       {hasRecipe && (
         <div className={styles.ingredients}>
-          {unit.recipe!.map((req, index) => {
+          {displayRecipe!.map((req, index) => {
             const ingredient = unitsMap.get(req.unitId);
             if (!ingredient) return null;
 
@@ -220,80 +242,106 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
               gap: "8px",
             }}
           >
-            {Object.entries(missingBaseUnits)
-              .sort(([idA], [idB]) => {
-                const unitsArray = Array.from(unitsMap.values());
-                const indexA = unitsArray.findIndex((u) => u.id === idA);
-                const indexB = unitsArray.findIndex((u) => u.id === idB);
-                return indexA - indexB;
-              })
-              .map(([unitId, count]) => {
-                const baseUnit = unitsMap.get(unitId);
-                if (!baseUnit) return null;
+            {(() => {
+              const sortedEntries = Object.entries(missingBaseUnits).sort(
+                ([idA], [idB]) => {
+                  const unitsArray = Array.from(unitsMap.values());
+                  const indexA = unitsArray.findIndex((u) => u.id === idA);
+                  const indexB = unitsArray.findIndex((u) => u.id === idB);
+                  return indexA - indexB;
+                },
+              );
+              const limit = 15;
+              const displayEntries = isLarge
+                ? sortedEntries
+                : sortedEntries.slice(0, limit);
+              const moreCount = sortedEntries.length - displayEntries.length;
 
-                const details = getUnitDetails(
-                  unitId,
-                  unitsMap,
-                  effectiveInventory,
-                  bans,
-                );
-                const buildStatus = details.status;
+              return (
+                <>
+                  {displayEntries.map(([unitId, count]) => {
+                    const baseUnit = unitsMap.get(unitId);
+                    if (!baseUnit) return null;
 
-                return (
-                  <div
-                    key={unitId}
-                    style={{ position: "relative" }}
-                    className={onUnitClick ? styles.clickable : ""}
-                    onClick={() => onUnitClick?.(baseUnit)}
-                  >
-                    <CachedImage
-                      src={baseUnit.image}
-                      alt={baseUnit.name}
-                      title={`${baseUnit.name} (-${count})`}
-                      style={{
-                        width: isLarge ? "48px" : "32px",
-                        height: isLarge ? "48px" : "32px",
-                        objectFit: "cover",
-                        borderRadius: "4px",
-                        cursor: "pointer",
-                        border: `2px solid ${getRarityColor(baseUnit.rarity)}`,
-                      }}
-                    />
-                    {buildStatus !== "red" && (
+                    const details = getUnitDetails(
+                      unitId,
+                      unitsMap,
+                      effectiveInventory,
+                      bans,
+                    );
+                    const buildStatus = details.status;
+
+                    return (
                       <div
-                        style={{
-                          position: "absolute",
-                          top: "-4px",
-                          right: "-4px",
-                          width: isLarge ? "12px" : "8px",
-                          height: isLarge ? "12px" : "8px",
-                          borderRadius: "50%",
-                          backgroundColor:
-                            buildStatus === "green" ? "#22c55e" : "#f97316",
-                          border: "1px solid #000",
-                          zIndex: 1,
-                        }}
-                      />
-                    )}
+                        key={unitId}
+                        style={{ position: "relative" }}
+                        className={onUnitClick ? styles.clickable : ""}
+                        onClick={() => onUnitClick?.(baseUnit)}
+                      >
+                        <CachedImage
+                          src={baseUnit.image}
+                          alt={baseUnit.name}
+                          title={`${baseUnit.name} (-${count})`}
+                          style={{
+                            width: isLarge ? "48px" : "32px",
+                            height: isLarge ? "48px" : "32px",
+                            objectFit: "cover",
+                            borderRadius: "4px",
+                            cursor: "pointer",
+                            border: `2px solid ${getRarityColor(baseUnit.rarity)}`,
+                          }}
+                        />
+                        {buildStatus !== "red" && (
+                          <div
+                            style={{
+                              position: "absolute",
+                              top: "-4px",
+                              right: "-4px",
+                              width: isLarge ? "12px" : "8px",
+                              height: isLarge ? "12px" : "8px",
+                              borderRadius: "50%",
+                              backgroundColor:
+                                buildStatus === "green" ? "#22c55e" : "#f97316",
+                              border: "1px solid #000",
+                              zIndex: 1,
+                            }}
+                          />
+                        )}
+                        <div
+                          style={{
+                            position: "absolute",
+                            bottom: 0,
+                            right: 0,
+                            backgroundColor: "rgba(0, 0, 0, 0.8)",
+                            color: "#ff6b6b",
+                            fontSize: isLarge ? "1rem" : "0.8rem",
+                            fontWeight: "bold",
+                            padding: "0 4px",
+                            borderRadius: "2px",
+                            lineHeight: "1",
+                          }}
+                        >
+                          -{count}
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {moreCount > 0 && (
                     <div
                       style={{
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                        backgroundColor: "rgba(0, 0, 0, 0.8)",
-                        color: "#ff6b6b",
-                        fontSize: isLarge ? "1rem" : "0.8rem",
-                        fontWeight: "bold",
-                        padding: "0 4px",
-                        borderRadius: "2px",
-                        lineHeight: "1",
+                        display: "flex",
+                        alignItems: "center",
+                        fontSize: "0.8rem",
+                        color: "#888",
+                        paddingLeft: "4px",
                       }}
                     >
-                      -{count}
+                      +{moreCount} more
                     </div>
-                  </div>
-                );
-              })}
+                  )}
+                </>
+              );
+            })()}
           </div>
         </>
       )}
@@ -316,36 +364,62 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
               display: "grid",
               gridTemplateColumns: `repeat(auto-fill, minmax(${isLarge ? "48px" : "32px"}, 1fr))`,
               gap: "8px",
+              alignItems: "center",
             }}
           >
-            {usedInUnits.map((usedUnit) => {
-              const isBanned = isEffectivelyBanned(usedUnit.id);
+            {(() => {
+              const limit = 15;
+              const displayUnits = isLarge
+                ? usedInUnits
+                : usedInUnits.slice(0, limit);
+              const moreCount = usedInUnits.length - displayUnits.length;
+
               return (
-                <div
-                  key={usedUnit.id}
-                  className={onUnitClick ? styles.clickable : ""}
-                  onClick={() => onUnitClick?.(usedUnit)}
-                >
-                  <CachedImage
-                    src={usedUnit.image}
-                    alt={usedUnit.name}
-                    title={`${usedUnit.name} (${usedUnit.rarity})`}
-                    style={{
-                      width: isLarge ? "48px" : "32px",
-                      height: isLarge ? "48px" : "32px",
-                      objectFit: "cover",
-                      borderRadius: "4px",
-                      cursor: "pointer",
-                      border: `2px solid ${getRarityColor(usedUnit.rarity)}`,
-                      filter: isBanned
-                        ? "grayscale(100%) brightness(0.5)"
-                        : "none",
-                      opacity: isBanned ? 0.6 : 1,
-                    }}
-                  />
-                </div>
+                <>
+                  {displayUnits.map((usedUnit) => {
+                    const isBanned = isEffectivelyBanned(usedUnit.id);
+                    return (
+                      <div
+                        key={usedUnit.id}
+                        className={onUnitClick ? styles.clickable : ""}
+                        onClick={() => onUnitClick?.(usedUnit)}
+                      >
+                        <CachedImage
+                          src={usedUnit.image}
+                          alt={usedUnit.name}
+                          title={`${usedUnit.name} (${usedUnit.rarity})`}
+                          style={{
+                            width: isLarge ? "48px" : "32px",
+                            height: isLarge ? "48px" : "32px",
+                            objectFit: "cover",
+                            borderRadius: "4px",
+                            cursor: "pointer",
+                            border: `2px solid ${getRarityColor(
+                              usedUnit.rarity,
+                            )}`,
+                            filter: isBanned
+                              ? "grayscale(100%) brightness(0.5)"
+                              : "none",
+                            opacity: isBanned ? 0.6 : 1,
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
+                  {moreCount > 0 && (
+                    <div
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "#888",
+                        paddingLeft: "4px",
+                      }}
+                    >
+                      +{moreCount} more
+                    </div>
+                  )}
+                </>
               );
-            })}
+            })()}
           </div>
         </>
       )}
@@ -368,36 +442,62 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
               display: "grid",
               gridTemplateColumns: `repeat(auto-fill, minmax(${isLarge ? "48px" : "32px"}, 1fr))`,
               gap: "8px",
+              alignItems: "center",
             }}
           >
-            {topTierUnits.map((topUnit) => {
-              const isBanned = isEffectivelyBanned(topUnit.id);
+            {(() => {
+              const limit = 15;
+              const displayUnits = isLarge
+                ? topTierUnits
+                : topTierUnits.slice(0, limit);
+              const moreCount = topTierUnits.length - displayUnits.length;
+
               return (
-                <div
-                  key={topUnit.id}
-                  className={onUnitClick ? styles.clickable : ""}
-                  onClick={() => onUnitClick?.(topUnit)}
-                >
-                  <CachedImage
-                    src={topUnit.image}
-                    alt={topUnit.name}
-                    title={`${topUnit.name} (${topUnit.rarity})`}
-                    style={{
-                      width: isLarge ? "48px" : "32px",
-                      height: isLarge ? "48px" : "32px",
-                      objectFit: "cover",
-                      borderRadius: "4px",
-                      cursor: "pointer",
-                      border: `2px solid ${getRarityColor(topUnit.rarity)}`,
-                      filter: isBanned
-                        ? "grayscale(100%) brightness(0.5)"
-                        : "none",
-                      opacity: isBanned ? 0.6 : 1,
-                    }}
-                  />
-                </div>
+                <>
+                  {displayUnits.map((topUnit) => {
+                    const isBanned = isEffectivelyBanned(topUnit.id);
+                    return (
+                      <div
+                        key={topUnit.id}
+                        className={onUnitClick ? styles.clickable : ""}
+                        onClick={() => onUnitClick?.(topUnit)}
+                      >
+                        <CachedImage
+                          src={topUnit.image}
+                          alt={topUnit.name}
+                          title={`${topUnit.name} (${topUnit.rarity})`}
+                          style={{
+                            width: isLarge ? "48px" : "32px",
+                            height: isLarge ? "48px" : "32px",
+                            objectFit: "cover",
+                            borderRadius: "4px",
+                            cursor: "pointer",
+                            border: `2px solid ${getRarityColor(
+                              topUnit.rarity,
+                            )}`,
+                            filter: isBanned
+                              ? "grayscale(100%) brightness(0.5)"
+                              : "none",
+                            opacity: isBanned ? 0.6 : 1,
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
+                  {moreCount > 0 && (
+                    <div
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "#888",
+                        paddingLeft: "4px",
+                      }}
+                    >
+                      +{moreCount} more
+                    </div>
+                  )}
+                </>
               );
-            })}
+            })()}
           </div>
         </>
       )}

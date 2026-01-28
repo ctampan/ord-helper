@@ -20,15 +20,23 @@
   position: relative;
   max-width: 650px;
   width: 95%;
-  max-height: 90vh;
+  height: 85vh;
   overflow-y: auto;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.closeBtn {
+.modalActions {
   position: absolute;
   top: 12px;
   right: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  z-index: 10;
+}
+
+.closeBtn,
+.backBtn {
   background: none;
   border: none;
   color: #aaa;
@@ -37,8 +45,12 @@
   line-height: 1;
   padding: 4px;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.closeBtn:hover {
+.closeBtn:hover,
+.backBtn:hover {
   color: #fff;
 }
