@@ -1343,7 +1343,7 @@
     },
     {
       "id": "rare_decken",
-      "name": "Van Der Decken",
+      "name": "Vander Decken",
       "rarity": "Rare",
       "image": "images/rare_decken.jpg",
       "recipe": [
@@ -4535,7 +4535,7 @@
     },
     {
       "id": "immortal_gaban",
-      "name": "Scopper Gaban - Mana +4",
+      "name": "Gaban - Mana +4",
       "rarity": "Immortal",
       "image": "images/immortal_gaban.jpg",
       "recipe": [
