@@ -19,6 +19,8 @@ interface OptionsPanelProps {
   onToggleRemoveSubGroup: () => void;
   sortByAlphabetical: boolean;
   onToggleSortByAlphabetical: () => void;
+  showRecipeButtons: boolean;
+  onToggleRecipeButtons: () => void;
   versions: string[];
   currentVersion: string;
   onVersionChange: (version: string) => void;
@@ -43,6 +45,8 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   onToggleRemoveSubGroup,
   sortByAlphabetical,
   onToggleSortByAlphabetical,
+  showRecipeButtons,
+  onToggleRecipeButtons,
   versions,
   currentVersion,
   onVersionChange,
@@ -176,6 +180,15 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
               title={`Alphabetical Sort: ${sortByAlphabetical ? "ON" : "OFF"}`}
             >
               {sortByAlphabetical ? "🔤" : "🔢"}
+            </button>
+            <button
+              className={`${styles.iconBtn} ${
+                showRecipeButtons ? styles.active : ""
+              }`}
+              onClick={onToggleRecipeButtons}
+              title={`Recipe Icons: ${showRecipeButtons ? "ON" : "OFF"}`}
+            >
+              {showRecipeButtons ? "📖" : "📕"}
             </button>
 
             <div className={styles.dividerVertical} />

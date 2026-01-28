@@ -1,0 +1,93 @@
+.recipeContent {
+  color: #fff;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 8px;
+  font-style: italic;
+  white-space: pre-wrap;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ingredient {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.count {
+  margin-left: auto;
+  color: #aaa;
+}
+
+/* Large styles for Modal */
+
+.large .title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.large .note {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.large .ingredients {
+  gap: 12px;
+}
+
+.large .ingredient {
+  gap: 16px;
+  font-size: 1.25rem;
+}
+
+.large .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.large .count {
+  font-size: 1.1rem;
+}
+
+.clickable {
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.clickable:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.clickable:active {
+  transform: translateY(0) scale(0.98);
+}

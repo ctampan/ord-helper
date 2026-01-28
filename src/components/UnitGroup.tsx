@@ -23,7 +23,10 @@ interface UnitGroupProps {
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
   isWispEnabled: boolean;
+  showRecipeButtons: boolean;
   unitShortcuts: Record<string, string>;
+  activeHoveredId: string | null;
+  onHoverChange: (unitId: string | null) => void;
 }
 
 export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
@@ -42,7 +45,10 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     isTooltipEnabled,
     isShiftPressed,
     isWispEnabled,
+    showRecipeButtons,
     unitShortcuts,
+    activeHoveredId,
+    onHoverChange,
   }) => {
     const [isCollapsed, setIsCollapsed] = React.useState(false);
 
@@ -63,7 +69,10 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
           isTooltipEnabled={isTooltipEnabled}
           isShiftPressed={isShiftPressed}
           isWispEnabled={isWispEnabled}
+          showRecipeButtons={showRecipeButtons}
           shortcut={unitShortcuts[unit.id]}
+          activeHoveredId={activeHoveredId}
+          onHoverChange={onHoverChange}
         />
       );
     };

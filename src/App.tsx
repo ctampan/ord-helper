@@ -36,7 +36,11 @@ function App() {
   const [sortByAlphabetical, setSortByAlphabetical] = useState(() => {
     return localStorage.getItem("ord_sort_alphabetical") === "true";
   });
+  const [showRecipeButtons, setShowRecipeButtons] = useState(() => {
+    return localStorage.getItem("ord_show_recipe_icons") !== "false";
+  });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
+  const [activeHoveredId, setActiveHoveredId] = useState<string | null>(null);
 
   const [selectedUnitForTree, setSelectedUnitForTree] = useState<string | null>(
     null,
@@ -87,6 +91,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem("ord_sort_alphabetical", String(sortByAlphabetical));
   }, [sortByAlphabetical]);
+
+  useEffect(() => {
+    localStorage.setItem("ord_show_recipe_icons", String(showRecipeButtons));
+  }, [showRecipeButtons]);
 
   const [notification, setNotification] = useState<{
     message: string;
@@ -560,6 +568,10 @@ function App() {
             onToggleSortByAlphabetical={() =>
               setSortByAlphabetical(!sortByAlphabetical)
             }
+            showRecipeButtons={showRecipeButtons}
+            onToggleRecipeButtons={() =>
+              setShowRecipeButtons(!showRecipeButtons)
+            }
             versions={versions}
             currentVersion={currentVersion}
             onVersionChange={handleVersionChange}
@@ -582,7 +594,10 @@ function App() {
               isWispEnabled={isWispEnabled}
               removeSubGroup={removeSubGroup}
               sortByAlphabetical={false}
+              showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
+              activeHoveredId={activeHoveredId}
+              onHoverChange={setActiveHoveredId}
             />
           )}
           {["Uncommon", "Random"].map(
@@ -603,7 +618,10 @@ function App() {
                   isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
+                  showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
+                  activeHoveredId={activeHoveredId}
+                  onHoverChange={setActiveHoveredId}
                 />
               ),
           )}
@@ -629,7 +647,10 @@ function App() {
                   isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
+                  showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
+                  activeHoveredId={activeHoveredId}
+                  onHoverChange={setActiveHoveredId}
                 />
               ),
           )}
@@ -652,7 +673,10 @@ function App() {
               isWispEnabled={isWispEnabled}
               removeSubGroup={removeSubGroup}
               sortByAlphabetical={sortByAlphabetical}
+              showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
+              activeHoveredId={activeHoveredId}
+              onHoverChange={setActiveHoveredId}
             />
           )}
         </div>
@@ -675,7 +699,10 @@ function App() {
               isWispEnabled={isWispEnabled}
               removeSubGroup={removeSubGroup}
               sortByAlphabetical={sortByAlphabetical}
+              showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
+              activeHoveredId={activeHoveredId}
+              onHoverChange={setActiveHoveredId}
             />
           )}
         </div>
@@ -701,7 +728,10 @@ function App() {
                   isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
+                  showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
+                  activeHoveredId={activeHoveredId}
+                  onHoverChange={setActiveHoveredId}
                 />
               ),
           )}
@@ -728,7 +758,10 @@ function App() {
                   isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
+                  showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
+                  activeHoveredId={activeHoveredId}
+                  onHoverChange={setActiveHoveredId}
                 />
               ),
           )}
@@ -755,7 +788,10 @@ function App() {
                   isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
+                  showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
+                  activeHoveredId={activeHoveredId}
+                  onHoverChange={setActiveHoveredId}
                 />
               ),
           )}

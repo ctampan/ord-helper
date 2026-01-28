@@ -9,6 +9,7 @@ import { getUnitDetails, type Unit } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import { CachedImage } from "./CachedImage";
 import { RecipeTooltip } from "./RecipeTooltip";
+import { RecipeModal } from "./RecipeModal";
 import styles from "./UnitListItem.module.css";
 
 interface UnitListItemProps {
@@ -22,13 +23,16 @@ interface UnitListItemProps {
     unitId: string,
     isRightClick: boolean,
     isCtrlPressed: boolean,
-    isAltPressed: boolean
+    isAltPressed: boolean,
   ) => void;
   onCountChange: (newCount: number) => void;
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
   isWispEnabled: boolean;
+  showRecipeButtons: boolean;
   shortcut?: string;
+  activeHoveredId: string | null;
+  onHoverChange: (unitId: string | null) => void;
 }
 
 export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
@@ -44,10 +48,14 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
     isTooltipEnabled,
     isShiftPressed,
     isWispEnabled,
+    showRecipeButtons,
     shortcut,
+    activeHoveredId,
+    onHoverChange,
   }) => {
-    const [isHovered, setIsHovered] = useState(false);
+    const isHovered = activeHoveredId === unit.id;
     const [imageError, setImageError] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Defer the inventory and bans updates to prevent blocking the UI
@@ -70,7 +78,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       isWispAssisted,
     } = useMemo(
       () => getUnitDetails(unit.id, unitsMap, effectiveInventory, deferredBans),
-      [unit.id, unitsMap, effectiveInventory, deferredBans]
+      [unit.id, unitsMap, effectiveInventory, deferredBans],
     );
 
     // Use effectiveBans for visual disabling
@@ -87,9 +95,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
     }
 
     // Determine tooltip visibility
-    // Logic: Default is hidden. Shift key toggles it ON temporarily.
-    // If option is "Always On", then it's always visible on hover.
-    const showTooltip = isHovered && (isTooltipEnabled || isShiftPressed);
+    const showTooltip =
+      isHovered && !isModalOpen && (isTooltipEnabled || isShiftPressed);
 
     const handleLeftClick = (e: React.MouseEvent) => {
       e.preventDefault();
@@ -133,8 +140,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
         }`}
         onClick={handleLeftClick}
         onContextMenu={handleRightClick}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => onHoverChange(unit.id)}
+        onMouseLeave={() => onHoverChange(null)}
       >
         {/* Background Progress Bar */}
         {progress > 0 && !isBanned && (
@@ -245,6 +252,19 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
               onFocus={(e) => e.target.select()}
               className={styles.input}
             />
+            {showRecipeButtons && (
+              <button
+                className={styles.recipeBtn}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onHoverChange(null);
+                  setIsModalOpen(true);
+                }}
+                title="Show Recipe"
+              >
+                📖
+              </button>
+            )}
           </div>
         </div>
 
@@ -259,7 +279,17 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
             isWispEnabled={isWispEnabled}
           />
         )}
+
+        <RecipeModal
+          unit={unit}
+          unitsMap={unitsMap}
+          inventory={inventory}
+          bans={bans}
+          isWispEnabled={isWispEnabled}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     );
-  }
+  },
 );
