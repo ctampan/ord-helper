@@ -68,7 +68,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
   // Helper to check if a unit is effectively banned (itself or any dependency)
   const isEffectivelyBanned = (
     unitId: string,
-    checked = new Set<string>()
+    checked = new Set<string>(),
   ): boolean => {
     if (checked.has(unitId)) return false; // Avoid cycles
     checked.add(unitId);
@@ -97,13 +97,13 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
   if (hasMissing) {
     totalMissingCount = Object.values(missingBaseUnits).reduce(
       (sum, count) => sum + count,
-      0
+      0,
     );
   }
 
   // Find units that directly use this unit in their recipe
   const usedInUnits = Array.from(unitsMap.values()).filter((u) =>
-    u.recipe?.some((req) => req.unitId === unit.id)
+    u.recipe?.some((req) => req.unitId === unit.id),
   );
 
   // Find top-tier units (Transcendence onward) that eventually need this unit
@@ -117,7 +117,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
   const findUnitInRecipeTree = (
     targetUnit: Unit,
     searchUnitId: string,
-    visited = new Set<string>()
+    visited = new Set<string>(),
   ): boolean => {
     if (visited.has(targetUnit.id)) return false;
     visited.add(targetUnit.id);
@@ -136,7 +136,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
 
   const topTierUnits = Array.from(unitsMap.values()).filter(
     (u) =>
-      topTierRarities.includes(u.rarity) && findUnitInRecipeTree(u, unit.id)
+      topTierRarities.includes(u.rarity) && findUnitInRecipeTree(u, unit.id),
   );
 
   return createPortal(
@@ -183,7 +183,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
                 req.unitId,
                 unitsMap,
                 effectiveInventory,
-                bans
+                bans,
               );
               buildStatus = details.status;
             }
@@ -205,23 +205,25 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
                       opacity: isBanned ? 0.6 : 1,
                     }}
                   />
-                  {!isEnough &&
-                    buildStatus !== "gray" &&
-                    buildStatus !== "red" && (
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "-2px",
-                          right: "-2px",
-                          width: "8px",
-                          height: "8px",
-                          borderRadius: "50%",
-                          backgroundColor:
-                            buildStatus === "green" ? "#22c55e" : "#f97316",
-                          border: "1px solid #000",
-                        }}
-                      />
-                    )}
+                  {(isEnough ||
+                    (buildStatus !== "gray" && buildStatus !== "red")) && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "-2px",
+                        right: "-2px",
+                        width: "8px",
+                        height: "8px",
+                        borderRadius: "50%",
+                        backgroundColor: isEnough
+                          ? "#3b82f6"
+                          : buildStatus === "green"
+                            ? "#22c55e"
+                            : "#f97316",
+                        border: "1px solid #000",
+                      }}
+                    />
+                  )}
                 </div>
                 <span
                   style={{
@@ -284,7 +286,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
                   unitId,
                   unitsMap,
                   effectiveInventory,
-                  bans
+                  bans,
                 );
                 const buildStatus = details.status;
 
@@ -457,6 +459,6 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
         }`}
       />
     </div>,
-    document.body
+    document.body,
   );
 };
