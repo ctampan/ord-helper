@@ -46,6 +46,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 <strong>Shift + Hover:</strong> Temporarily show recipe tooltip
                 (if disabled).
               </li>
+              <li>
+                <strong>Recipe Button (📖):</strong> Open the interactive recipe
+                modal for detailed navigation and history.
+              </li>
             </ul>
           </section>
 
@@ -86,6 +90,20 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           </section>
 
           <section>
+            <h3>🔍 Recipe Explorer</h3>
+            <ul>
+              <li>
+                <strong>Interactive Recipes:</strong> Click any unit icon inside
+                a tooltip or modal to instantly view its recipe.
+              </li>
+              <li>
+                <strong>Navigation History (↩):</strong> Use the back button in
+                the recipe modal to return to previously viewed units.
+              </li>
+            </ul>
+          </section>
+
+          <section>
             <h3>Options</h3>
             <ul>
               <li>
@@ -97,8 +115,9 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 mode.
               </li>
               <li>
-                <strong>UI Size (S/M/L):</strong> Adjust the size of the
-                interface.
+                <strong>UI Size (XX%):</strong> Adjust the scale of the entire
+                interface. <strong>Left Click</strong> to increase (+5%),{" "}
+                <strong>Right Click</strong> to decrease (-5%).
               </li>
               <li>
                 <strong>Tooltips (👁️/🗨️):</strong> Toggle always-on tooltips vs
@@ -107,6 +126,25 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
               <li>
                 <strong>Wisp Mode (👻/🚫):</strong> Toggle whether Common Wisps
                 are used in calculations.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>🗄️ Sorting & Grouping</h3>
+            <ul>
+              <li>
+                <strong>Remove Subgroups (📦/📁):</strong> Toggle between
+                viewing units in sub-categories (like Straw Hat, Navy, etc.) or
+                as a single flat list.
+              </li>
+              <li>
+                <strong>Sort Order (🔤/🔢):</strong> Toggle between Alphabetical
+                sort and the Default game order.
+              </li>
+              <li>
+                <strong>Recipe Icons (📖/📕):</strong> Show or hide the tiny
+                book icons used to manually open recipe modals.
               </li>
             </ul>
           </section>
@@ -160,6 +198,6 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         </div>
       </div>
     </div>,
-    document.body
+    document.body,
   );
 };
