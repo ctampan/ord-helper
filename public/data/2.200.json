@@ -3503,7 +3503,7 @@
     },
     {
       "id": "transcendence_hawkins",
-      "name": "Basil Hawkins - HP&Mana +4",
+      "name": "Hawkins - HP&Mana +4",
       "rarity": "Transcendence",
       "image": "images/transcendence_hawkins.png",
       "recipe": [
@@ -3743,7 +3743,7 @@
     },
     {
       "id": "transcendence_bonney",
-      "name": "Jewelry Bonney - HP&Mana +4",
+      "name": "Bonney - HP&Mana +4",
       "rarity": "Transcendence",
       "image": "images/transcendence_bonney.png",
       "recipe": [

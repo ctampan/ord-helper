@@ -14,10 +14,12 @@ interface UnitGroupProps {
     unitId: string,
     isRightClick: boolean,
     isCtrlPressed: boolean,
-    isAltPressed: boolean
+    isAltPressed: boolean,
   ) => void;
   onCountChange: (unitId: string, newCount: number) => void;
   subGroupBy?: keyof Unit;
+  removeSubGroup: boolean;
+  sortByAlphabetical: boolean;
   isTooltipEnabled: boolean;
   isShiftPressed: boolean;
   isWispEnabled: boolean;
@@ -35,6 +37,8 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     onUnitClick,
     onCountChange,
     subGroupBy,
+    removeSubGroup,
+    sortByAlphabetical,
     isTooltipEnabled,
     isShiftPressed,
     isWispEnabled,
@@ -67,25 +71,41 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     const renderContent = () => {
       if (isCollapsed) return null;
 
-      if (subGroupBy) {
+      const unitsToRender = [...units];
+      if (sortByAlphabetical) {
+        unitsToRender.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      if (subGroupBy && !removeSubGroup) {
+        // 1. Determine original subgroup order
+        const subGroupOrder: string[] = [];
+        units.forEach((u) => {
+          const key = (u[subGroupBy] as string) || "Other";
+          if (!subGroupOrder.includes(key)) subGroupOrder.push(key);
+        });
+
+        // 2. Group units (unitsToRender is already sorted if needed)
         const groups: Record<string, Unit[]> = {};
-        units.forEach((unit) => {
+        unitsToRender.forEach((unit) => {
           const key = (unit[subGroupBy] as string) || "Other";
           if (!groups[key]) groups[key] = [];
           groups[key].push(unit);
         });
 
-        const sortedKeys = Object.keys(groups);
+        return subGroupOrder.map((key) => {
+          const groupUnits = groups[key];
+          if (!groupUnits || groupUnits.length === 0) return null;
 
-        return sortedKeys.map((key) => (
-          <div key={key} className={styles.subGroup}>
-            <h4 className={styles.subTitle}>{key}</h4>
-            <div className={styles.list}>{groups[key].map(renderUnit)}</div>
-          </div>
-        ));
+          return (
+            <div key={key} className={styles.subGroup}>
+              <h4 className={styles.subTitle}>{key}</h4>
+              <div className={styles.list}>{groupUnits.map(renderUnit)}</div>
+            </div>
+          );
+        });
       }
 
-      return <div className={styles.list}>{units.map(renderUnit)}</div>;
+      return <div className={styles.list}>{unitsToRender.map(renderUnit)}</div>;
     };
 
     return (
@@ -109,5 +129,5 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
         {renderContent()}
       </div>
     );
-  }
+  },
 );

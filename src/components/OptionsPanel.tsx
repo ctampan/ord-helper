@@ -9,12 +9,16 @@ interface OptionsPanelProps {
   onReset: () => void;
   theme: "dark" | "light";
   onToggleTheme: () => void;
-  uiSize: "xs" | "small" | "medium" | "large" | "xl";
-  onUiSizeChange: (size: "xs" | "small" | "medium" | "large" | "xl") => void;
+  uiSize: number;
+  onUiSizeChange: (size: number) => void;
   isTooltipEnabled: boolean;
   onToggleTooltip: () => void;
   isWispEnabled: boolean;
   onToggleWisp: () => void;
+  removeSubGroup: boolean;
+  onToggleRemoveSubGroup: () => void;
+  sortByAlphabetical: boolean;
+  onToggleSortByAlphabetical: () => void;
   versions: string[];
   currentVersion: string;
   onVersionChange: (version: string) => void;
@@ -35,6 +39,10 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   onToggleTooltip,
   isWispEnabled,
   onToggleWisp,
+  removeSubGroup,
+  onToggleRemoveSubGroup,
+  sortByAlphabetical,
+  onToggleSortByAlphabetical,
   versions,
   currentVersion,
   onVersionChange,
@@ -62,15 +70,8 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   };
 
   const cycleUiSize = () => {
-    const sizes: ("xs" | "small" | "medium" | "large" | "xl")[] = [
-      "xs",
-      "small",
-      "medium",
-      "large",
-      "xl",
-    ];
-    const nextIndex = (sizes.indexOf(uiSize) + 1) % sizes.length;
-    onUiSizeChange(sizes[nextIndex]);
+    const nextSize = (uiSize + 5) % 105; // 0, 5, ..., 100
+    onUiSizeChange(nextSize);
   };
 
   return (
@@ -100,27 +101,11 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
           <button
             className={styles.iconBtn}
             onClick={cycleUiSize}
-            title={`UI Size: ${
-              uiSize === "xs"
-                ? "Extra Small"
-                : uiSize === "small"
-                ? "Small"
-                : uiSize === "medium"
-                ? "Medium"
-                : uiSize === "large"
-                ? "Large"
-                : "Extra Large"
-            }\nClick to cycle size.`}
+            title={`UI Zoom: ${uiSize}%\nClick to cycle (+5%).`}
           >
-            {uiSize === "xs"
-              ? "XS"
-              : uiSize === "small"
-              ? "S"
-              : uiSize === "medium"
-              ? "M"
-              : uiSize === "large"
-              ? "L"
-              : "XL"}
+            <span style={{ fontSize: "0.75rem", fontWeight: "bold" }}>
+              {uiSize}%
+            </span>
           </button>
 
           <div className={styles.dividerVertical} />
@@ -147,6 +132,28 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             }\nClick to toggle wisp usage in calculations.`}
           >
             {isWispEnabled ? "👻" : "🚫"}
+          </button>
+
+          <div className={styles.dividerVertical} />
+
+          {/* Group 4: Sorting & Grouping */}
+          <button
+            className={`${styles.iconBtn} ${
+              removeSubGroup ? styles.active : ""
+            }`}
+            onClick={onToggleRemoveSubGroup}
+            title={`Remove Subgroups: ${removeSubGroup ? "ON" : "OFF"}`}
+          >
+            {removeSubGroup ? "📦" : "📁"}
+          </button>
+          <button
+            className={`${styles.iconBtn} ${
+              sortByAlphabetical ? styles.active : ""
+            }`}
+            onClick={onToggleSortByAlphabetical}
+            title={`Alphabetical Sort: ${sortByAlphabetical ? "ON" : "OFF"}`}
+          >
+            {sortByAlphabetical ? "🔤" : "🔢"}
           </button>
 
           <div className={styles.dividerVertical} />

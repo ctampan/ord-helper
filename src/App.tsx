@@ -30,10 +30,16 @@ function App() {
   const [isTooltipEnabled, setIsTooltipEnabled] = useState(() => {
     return localStorage.getItem("ord_tooltip_enabled") === "true";
   });
+  const [removeSubGroup, setRemoveSubGroup] = useState(() => {
+    return localStorage.getItem("ord_remove_subgroup") === "true";
+  });
+  const [sortByAlphabetical, setSortByAlphabetical] = useState(() => {
+    return localStorage.getItem("ord_sort_alphabetical") === "true";
+  });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
 
   const [selectedUnitForTree, setSelectedUnitForTree] = useState<string | null>(
-    null
+    null,
   );
 
   // Shortcuts Hook
@@ -74,6 +80,14 @@ function App() {
     localStorage.setItem("ord_tooltip_enabled", String(isTooltipEnabled));
   }, [isTooltipEnabled]);
 
+  useEffect(() => {
+    localStorage.setItem("ord_remove_subgroup", String(removeSubGroup));
+  }, [removeSubGroup]);
+
+  useEffect(() => {
+    localStorage.setItem("ord_sort_alphabetical", String(sortByAlphabetical));
+  }, [sortByAlphabetical]);
+
   const [notification, setNotification] = useState<{
     message: string;
     type: "success" | "error" | "info" | "warning";
@@ -81,7 +95,7 @@ function App() {
 
   const showNotification = (
     message: string,
-    type: "success" | "error" | "info" | "warning" = "info"
+    type: "success" | "error" | "info" | "warning" = "info",
   ) => {
     setNotification({ message, type });
   };
@@ -154,7 +168,7 @@ function App() {
       .catch((err) => {
         console.error(
           `Failed to load data for version ${currentVersion}:`,
-          err
+          err,
         );
         fetch(`${import.meta.env.BASE_URL}data.json`)
           .then((res) => res.json())
@@ -168,7 +182,7 @@ function App() {
 
     if (
       confirm(
-        "Changing version will reset your inventory and bans. Are you sure?"
+        "Changing version will reset your inventory and bans. Are you sure?",
       )
     ) {
       setCurrentVersion(ver);
@@ -178,17 +192,17 @@ function App() {
     }
   };
 
-  const [uiSize, setUiSize] = useState<
-    "xs" | "small" | "medium" | "large" | "xl"
-  >(() => {
-    return (
-      (localStorage.getItem("ord_ui_size") as
-        | "xs"
-        | "small"
-        | "medium"
-        | "large"
-        | "xl") || "medium"
-    );
+  const [uiSize, setUiSize] = useState<number>(() => {
+    const saved = localStorage.getItem("ord_ui_size");
+    if (!saved) return 50;
+    // Migrate from old string values
+    if (saved === "xs") return 0;
+    if (saved === "small") return 25;
+    if (saved === "medium") return 50;
+    if (saved === "large") return 75;
+    if (saved === "xl") return 100;
+    const parsed = parseInt(saved, 10);
+    return isNaN(parsed) ? 50 : parsed;
   });
 
   useEffect(() => {
@@ -197,44 +211,23 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    localStorage.setItem("ord_ui_size", uiSize);
+    localStorage.setItem("ord_ui_size", String(uiSize));
     const root = document.documentElement;
-    if (uiSize === "xs") {
-      root.style.setProperty("--unit-height", "20px");
-      root.style.setProperty("--unit-icon-size", "16px");
-      root.style.setProperty("--unit-font-size-name", "0.65rem");
-      root.style.setProperty("--unit-font-size-meta", "0.55rem");
-      root.style.setProperty("--unit-input-width", "20px");
-      root.style.setProperty("--unit-input-height", "16px");
-    } else if (uiSize === "small") {
-      root.style.setProperty("--unit-height", "24px");
-      root.style.setProperty("--unit-icon-size", "20px");
-      root.style.setProperty("--unit-font-size-name", "0.7rem");
-      root.style.setProperty("--unit-font-size-meta", "0.6rem");
-      root.style.setProperty("--unit-input-width", "24px");
-      root.style.setProperty("--unit-input-height", "18px");
-    } else if (uiSize === "medium") {
-      root.style.setProperty("--unit-height", "30px");
-      root.style.setProperty("--unit-icon-size", "25px");
-      root.style.setProperty("--unit-font-size-name", "0.8rem");
-      root.style.setProperty("--unit-font-size-meta", "0.65rem");
-      root.style.setProperty("--unit-input-width", "28px");
-      root.style.setProperty("--unit-input-height", "21px");
-    } else if (uiSize === "large") {
-      root.style.setProperty("--unit-height", "36px");
-      root.style.setProperty("--unit-icon-size", "30px");
-      root.style.setProperty("--unit-font-size-name", "0.85rem");
-      root.style.setProperty("--unit-font-size-meta", "0.7rem");
-      root.style.setProperty("--unit-input-width", "32px");
-      root.style.setProperty("--unit-input-height", "24px");
-    } else if (uiSize === "xl") {
-      root.style.setProperty("--unit-height", "42px");
-      root.style.setProperty("--unit-icon-size", "35px");
-      root.style.setProperty("--unit-font-size-name", "0.95rem");
-      root.style.setProperty("--unit-font-size-meta", "0.75rem");
-      root.style.setProperty("--unit-input-width", "36px");
-      root.style.setProperty("--unit-input-height", "27px");
-    }
+    const p = uiSize / 100;
+
+    const h = 20 + 22 * p;
+    const icon = 16 + 19 * p;
+    const name = 0.65 + 0.3 * p;
+    const meta = 0.55 + 0.2 * p;
+    const inputW = 20 + 16 * p;
+    const inputH = 16 + 11 * p;
+
+    root.style.setProperty("--unit-height", `${h}px`);
+    root.style.setProperty("--unit-icon-size", `${icon}px`);
+    root.style.setProperty("--unit-font-size-name", `${name}rem`);
+    root.style.setProperty("--unit-font-size-meta", `${meta}rem`);
+    root.style.setProperty("--unit-input-width", `${inputW}px`);
+    root.style.setProperty("--unit-input-height", `${inputH}px`);
   }, [uiSize]);
 
   const handleExportData = () => {
@@ -293,7 +286,7 @@ function App() {
       unitId: string,
       isRightClick: boolean,
       isCtrlPressed: boolean,
-      isAltPressed: boolean
+      isAltPressed: boolean,
     ) => {
       // Handle Recipe Tree (Alt + Click)
       if (isAltPressed) {
@@ -344,7 +337,7 @@ function App() {
               });
               showNotification(
                 `Reduced ${unit.name} and refunded materials`,
-                "success"
+                "success",
               );
             } else {
               showNotification(`Reduced ${unit?.name || "unit"}`, "success");
@@ -365,7 +358,7 @@ function App() {
                 console.warn("Cannot build unit:", e);
                 showNotification(
                   e instanceof Error ? e.message : "Cannot build unit",
-                  "error"
+                  "error",
                 );
                 return prev;
               }
@@ -374,7 +367,7 @@ function App() {
             console.warn("Cannot build unit:", e);
             showNotification(
               e instanceof Error ? e.message : "Cannot build unit",
-              "error"
+              "error",
             );
           }
         }
@@ -402,7 +395,7 @@ function App() {
         }
       }
     },
-    [isBanMode, data, effectiveBans]
+    [isBanMode, data, effectiveBans],
   );
 
   // Global Shortcut Listener
@@ -478,10 +471,13 @@ function App() {
   // Memoize expensive computations
   const unitsByRarity = useMemo(() => {
     if (!data) return {};
-    return data.rarities.reduce((acc, rarity) => {
-      acc[rarity] = data.units.filter((u) => u.rarity === rarity);
-      return acc;
-    }, {} as Record<string, Unit[]>);
+    return data.rarities.reduce(
+      (acc, rarity) => {
+        acc[rarity] = data.units.filter((u) => u.rarity === rarity);
+        return acc;
+      },
+      {} as Record<string, Unit[]>,
+    );
   }, [data]);
 
   if (!data) return <div className="container">Loading...</div>;
@@ -499,10 +495,10 @@ function App() {
               notification.type === "success"
                 ? "rgba(76, 175, 80, 0.9)"
                 : notification.type === "error"
-                ? "rgba(244, 67, 54, 0.9)"
-                : notification.type === "warning"
-                ? "rgba(255, 152, 0, 0.9)"
-                : "rgba(33, 150, 243, 0.9)",
+                  ? "rgba(244, 67, 54, 0.9)"
+                  : notification.type === "warning"
+                    ? "rgba(255, 152, 0, 0.9)"
+                    : "rgba(33, 150, 243, 0.9)",
             color: "white",
             padding: "10px 20px",
             borderRadius: "5px",
@@ -558,6 +554,12 @@ function App() {
             onToggleTooltip={() => setIsTooltipEnabled(!isTooltipEnabled)}
             isWispEnabled={isWispEnabled}
             onToggleWisp={() => setIsWispEnabled(!isWispEnabled)}
+            removeSubGroup={removeSubGroup}
+            onToggleRemoveSubGroup={() => setRemoveSubGroup(!removeSubGroup)}
+            sortByAlphabetical={sortByAlphabetical}
+            onToggleSortByAlphabetical={() =>
+              setSortByAlphabetical(!sortByAlphabetical)
+            }
             versions={versions}
             currentVersion={currentVersion}
             onVersionChange={handleVersionChange}
@@ -578,6 +580,8 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               isWispEnabled={isWispEnabled}
+              removeSubGroup={removeSubGroup}
+              sortByAlphabetical={false}
               unitShortcuts={unitShortcuts}
             />
           )}
@@ -597,9 +601,11 @@ function App() {
                   isTooltipEnabled={isTooltipEnabled}
                   isShiftPressed={isShiftPressed}
                   isWispEnabled={isWispEnabled}
+                  removeSubGroup={removeSubGroup}
+                  sortByAlphabetical={sortByAlphabetical}
                   unitShortcuts={unitShortcuts}
                 />
-              )
+              ),
           )}
         </div>
 
@@ -621,9 +627,11 @@ function App() {
                   isTooltipEnabled={isTooltipEnabled}
                   isShiftPressed={isShiftPressed}
                   isWispEnabled={isWispEnabled}
+                  removeSubGroup={removeSubGroup}
+                  sortByAlphabetical={sortByAlphabetical}
                   unitShortcuts={unitShortcuts}
                 />
-              )
+              ),
           )}
         </div>
 
@@ -642,6 +650,8 @@ function App() {
               isTooltipEnabled={isTooltipEnabled}
               isShiftPressed={isShiftPressed}
               isWispEnabled={isWispEnabled}
+              removeSubGroup={removeSubGroup}
+              sortByAlphabetical={sortByAlphabetical}
               unitShortcuts={unitShortcuts}
             />
           )}
@@ -663,6 +673,8 @@ function App() {
               isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
               isWispEnabled={isWispEnabled}
+              removeSubGroup={removeSubGroup}
+              sortByAlphabetical={sortByAlphabetical}
               unitShortcuts={unitShortcuts}
             />
           )}
@@ -687,9 +699,11 @@ function App() {
                   isShiftPressed={isShiftPressed}
                   subGroupBy={rarity !== "Alternate" ? "subGroup" : undefined}
                   isWispEnabled={isWispEnabled}
+                  removeSubGroup={removeSubGroup}
+                  sortByAlphabetical={sortByAlphabetical}
                   unitShortcuts={unitShortcuts}
                 />
-              )
+              ),
           )}
         </div>
 
@@ -712,9 +726,11 @@ function App() {
                   isShiftPressed={isShiftPressed}
                   subGroupBy="subGroup"
                   isWispEnabled={isWispEnabled}
+                  removeSubGroup={removeSubGroup}
+                  sortByAlphabetical={sortByAlphabetical}
                   unitShortcuts={unitShortcuts}
                 />
-              )
+              ),
           )}
         </div>
 
@@ -737,9 +753,11 @@ function App() {
                   isShiftPressed={isShiftPressed}
                   subGroupBy="subGroup"
                   isWispEnabled={isWispEnabled}
+                  removeSubGroup={removeSubGroup}
+                  sortByAlphabetical={sortByAlphabetical}
                   unitShortcuts={unitShortcuts}
                 />
-              )
+              ),
           )}
         </div>
       </main>
