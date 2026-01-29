@@ -320,7 +320,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                             bottom: 0,
                             right: 0,
                             backgroundColor: "rgba(0, 0, 0, 0.7)",
-                            color: "var(--bg-status-orange)",
+                            color: "#ff9b9b",
                             fontSize: isLarge ? "1rem" : "0.8rem",
                             fontWeight: "bold",
                             padding: "0 4px",
