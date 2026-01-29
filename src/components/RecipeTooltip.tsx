@@ -73,14 +73,15 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
         transform: "none",
         margin: 0,
         minWidth: "300px",
-        backgroundColor: "#1a1a1a",
-        border: "1px solid #404040",
+        backgroundColor: "var(--bg-panel)",
+        border: "1px solid var(--border-color)",
         borderRadius: "8px",
         padding: "12px",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
         zIndex: 9999,
         opacity: visible ? 1 : 0,
         height: "fit-content",
+        color: "var(--text-primary)",
       }}
     >
       <RecipeContent

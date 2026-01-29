@@ -223,12 +223,12 @@ function App() {
     const root = document.documentElement;
     const p = uiSize / 100;
 
-    const h = 20 + 22 * p;
-    const icon = 16 + 19 * p;
-    const name = 0.65 + 0.3 * p;
-    const meta = 0.55 + 0.2 * p;
-    const inputW = 20 + 16 * p;
-    const inputH = 16 + 11 * p;
+    const h = 18 + 24 * p;
+    const icon = 14 + 18 * p;
+    const name = 0.6 + 0.35 * p;
+    const meta = 0.5 + 0.25 * p;
+    const inputW = 18 + 18 * p;
+    const inputH = 14 + 13 * p;
 
     root.style.setProperty("--unit-height", `${h}px`);
     root.style.setProperty("--unit-icon-size", `${icon}px`);

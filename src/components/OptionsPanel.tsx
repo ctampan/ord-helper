@@ -73,13 +73,15 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
     if (e.target) e.target.value = "";
   };
 
-  const cycleUiSize = (isRightClick = false) => {
+  const cycleUiSize = (isRightClick = false, isCtrlPressed = false) => {
+    const step = isCtrlPressed ? 5 : 1;
     let nextSize;
     if (isRightClick) {
-      nextSize = uiSize - 5;
+      nextSize = uiSize - step;
       if (nextSize < 0) nextSize = 100;
     } else {
-      nextSize = (uiSize + 5) % 105;
+      nextSize = (uiSize + step) % (100 + step);
+      if (nextSize > 100) nextSize = 0;
     }
     onUiSizeChange(nextSize);
   };
@@ -122,12 +124,12 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             </button>
             <button
               className={styles.iconBtn}
-              onClick={() => cycleUiSize(false)}
+              onClick={(e) => cycleUiSize(false, e.ctrlKey)}
               onContextMenu={(e) => {
                 e.preventDefault();
-                cycleUiSize(true);
+                cycleUiSize(true, e.ctrlKey);
               }}
-              title={`UI Zoom: ${uiSize}%\nLeft Click: +5%\nRight Click: -5%`}
+              title={`UI Zoom: ${uiSize}%\nLeft Click: +1% | Right Click: -1%\nCtrl + Click: ±5%`}
             >
               <span style={{ fontSize: "0.75rem", fontWeight: "bold" }}>
                 {uiSize}%

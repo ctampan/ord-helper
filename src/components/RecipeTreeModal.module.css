@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--bg-overlay);
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@
 }
 
 .modal {
-  background-color: var(--bg-color);
+  background-color: var(--bg-modal);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   width: 90vw;
@@ -37,13 +37,13 @@
 .title {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
 
 .closeButton {
   background: none;
   border: none;
-  color: var(--text-color);
+  color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
   padding: 4px 8px;
@@ -108,7 +108,7 @@
 .nodeName {
   font-size: 0.75rem;
   text-align: center;
-  color: var(--text-color);
+  color: var(--text-primary);
   white-space: nowrap;
   max-width: 120px;
   overflow: hidden;
@@ -117,7 +117,7 @@
 
 .nodeCount {
   font-size: 0.7rem;
-  color: var(--meta-color);
+  color: var(--text-secondary);
   margin-top: 2px;
 }
 
@@ -143,7 +143,7 @@
 }
 
 /* Vertical Line connecting children */
-.childrenContainer>.nodeContainer::before {
+.childrenContainer > .nodeContainer::before {
   content: "";
   position: absolute;
   top: 0;
@@ -154,7 +154,7 @@
 }
 
 /* Horizontal line from Vertical Line to Child */
-.childrenContainer>.nodeContainer::after {
+.childrenContainer > .nodeContainer::after {
   content: "";
   position: absolute;
   top: 43px;
@@ -166,27 +166,27 @@
 }
 
 /* Fix vertical line height for first and last child */
-.childrenContainer>.nodeContainer:first-child::before {
+.childrenContainer > .nodeContainer:first-child::before {
   top: 43px;
   height: calc(100% - 43px);
 }
 
-.childrenContainer>.nodeContainer:last-child::before {
+.childrenContainer > .nodeContainer:last-child::before {
   height: 43px;
 }
 
 /* Single child special case */
-.childrenContainer>.nodeContainer:only-child::before {
+.childrenContainer > .nodeContainer:only-child::before {
   display: none;
 }
 
-.childrenContainer>.nodeContainer:only-child::after {
+.childrenContainer > .nodeContainer:only-child::after {
   width: 48px;
   /* Full width connector */
   left: -48px;
 }
 
-.rootNode>.nodeContainer {
+.rootNode > .nodeContainer {
   margin: 0;
 }
 
@@ -211,7 +211,7 @@
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  color: var(--text-color);
+  color: var(--text-primary);
   z-index: 3;
 }
 
@@ -246,7 +246,7 @@
 
 .baseName {
   font-size: 0.7rem;
-  color: var(--text-color);
+  color: var(--text-primary);
   white-space: nowrap;
   max-width: 80px;
   overflow: hidden;

@@ -116,8 +116,9 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
               </li>
               <li>
                 <strong>UI Size (XX%):</strong> Adjust the scale of the entire
-                interface. <strong>Left Click</strong> to increase (+5%),{" "}
-                <strong>Right Click</strong> to decrease (-5%).
+                interface. <strong>Left Click:</strong> +1%,{" "}
+                <strong>Right Click:</strong> -1%,{" "}
+                <strong>Ctrl + Click:</strong> ±5% (Power Zoom).
               </li>
               <li>
                 <strong>Tooltips (👁️/🗨️):</strong> Toggle always-on tooltips vs

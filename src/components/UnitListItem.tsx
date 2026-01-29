@@ -177,6 +177,13 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
             )}
           </div>
 
+          <div className={styles.info}>
+            <span className={styles.name}>{unit.name}</span>
+            {buildableCount > 0 && !isBanned && (
+              <span className={styles.buildableBadge}>+{buildableCount}</span>
+            )}
+          </div>
+
           {progress > 0 &&
             !isBanned &&
             unit.rarity !== "Common" &&
@@ -200,29 +207,9 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
               </div>
             )}
 
-          <div className={styles.info}>
-            <div className={styles.nameRow}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                  flex: 1,
-                  minWidth: 0,
-                }}
-              >
-                <span className={styles.name}>{unit.name}</span>
-                {buildableCount > 0 && !isBanned && (
-                  <span className={styles.buildableBadge}>
-                    +{buildableCount}
-                  </span>
-                )}
-              </div>
-              {status === "orange" && wispCost > 0 && (
-                <span className={styles.wispCost}>{wispCost} 👻</span>
-              )}
-            </div>
-          </div>
+          {status === "orange" && wispCost > 0 && (
+            <span className={styles.wispCost}>{wispCost} 👻</span>
+          )}
 
           <div className={styles.controls} onClick={(e) => e.stopPropagation()}>
             {/* Feedback Animation */}

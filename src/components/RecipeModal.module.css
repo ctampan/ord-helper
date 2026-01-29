@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--bg-overlay);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +13,9 @@
 }
 
 .modal {
-  background-color: #1a1a1a;
-  border: 1px solid #404040;
+  background-color: var(--bg-modal);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
   border-radius: 12px;
   padding: 32px;
   position: relative;
@@ -39,7 +40,7 @@
 .backBtn {
   background: none;
   border: none;
-  color: #aaa;
+  color: var(--text-secondary);
   font-size: 24px;
   cursor: pointer;
   line-height: 1;
@@ -52,5 +53,5 @@
 
 .closeBtn:hover,
 .backBtn:hover {
-  color: #fff;
+  color: var(--text-primary);
 }

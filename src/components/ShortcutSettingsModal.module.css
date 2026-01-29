@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--bg-overlay);
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
@@ -13,8 +13,9 @@
 }
 
 .modal {
-  background-color: var(--bg-color);
+  background-color: var(--bg-modal);
   border: 1px solid var(--border-color);
+  color: var(--text-primary);
   border-radius: 8px;
   width: 600px;
   max-width: 90vw;
@@ -37,13 +38,11 @@
 .title {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
 
 .closeButton {
-  background: none;
-  border: none;
-  color: var(--text-color);
+  color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
   padding: 4px 8px;
@@ -72,7 +71,7 @@
 .sectionTitle {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--text-primary);
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 8px;
 }
@@ -95,7 +94,7 @@
 
 .actionName {
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
 
 .keyBind {
@@ -111,7 +110,7 @@
   padding: 4px 8px;
   font-family: monospace;
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: var(--text-primary);
   min-width: 30px;
   text-align: center;
   cursor: pointer;
@@ -165,7 +164,7 @@
   background-color: var(--bg-input);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  color: var(--text-color);
+  color: var(--text-primary);
 }
 
 .footer {

@@ -59,7 +59,7 @@ export const RecipeTreeNode: React.FC<RecipeTreeNodeProps> = ({
         }`}
         onClick={handleToggle}
         style={{
-          borderColor: isOwned ? "#4ade80" : "var(--border-color)",
+          borderColor: isOwned ? "var(--status-green)" : "var(--border-color)",
           opacity: isOwned ? 1 : 0.9,
         }}
       >
@@ -72,7 +72,9 @@ export const RecipeTreeNode: React.FC<RecipeTreeNodeProps> = ({
         <span className={styles.nodeName}>{unit.name}</span>
         <span
           className={styles.nodeCount}
-          style={{ color: isOwned ? "#4ade80" : "#ef4444" }}
+          style={{
+            color: isOwned ? "var(--status-green)" : "var(--status-red)",
+          }}
         >
           {ownedCount} / {count}
         </span>
@@ -113,7 +115,7 @@ export const RecipeTreeNode: React.FC<RecipeTreeNodeProps> = ({
                       className={styles.baseIngredientItem}
                       style={{
                         borderColor: reqIsOwned
-                          ? "#4ade80"
+                          ? "var(--status-green)"
                           : "var(--border-color)",
                         opacity: reqIsOwned ? 1 : 0.8,
                       }}
@@ -126,7 +128,11 @@ export const RecipeTreeNode: React.FC<RecipeTreeNodeProps> = ({
                       <span className={styles.baseName}>{reqUnit.name}</span>
                       <span
                         className={styles.baseCount}
-                        style={{ color: reqIsOwned ? "#4ade80" : "#ef4444" }}
+                        style={{
+                          color: reqIsOwned
+                            ? "var(--status-green)"
+                            : "var(--status-red)",
+                        }}
                       >
                         {reqOwned}/{reqCount}
                       </span>

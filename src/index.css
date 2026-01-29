@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -30,6 +30,11 @@
   --bg-status-orange: rgba(249, 115, 22, 0.08);
   --bg-status-gray: rgba(255, 255, 255, 0.1);
   --bg-input: #1a1a1a;
+  --bg-modal: #1a1a1a;
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+  --header-bg: #242424;
+  --card-bg: #2a2a2a;
+  --text-muted: #aaa;
 
   /* UI Sizing Defaults (Medium) */
   --unit-height: 36px;
@@ -40,39 +45,41 @@
   --unit-input-height: 24px;
 }
 
-[data-theme='light'] {
-  --bg-primary: #f0f2f5;
+[data-theme="light"] {
+  --bg-primary: #ccc;
   --bg-panel: #ffffff;
   --bg-card: #ffffff;
   --text-primary: #1a1a1a;
-  --text-secondary: #5f6368;
+  --text-secondary: #333;
   --accent-color: #1a73e8;
-  --border-color: #b0b0b0;
+  --border-color: #ccc;
   --bg-progress-track: rgba(0, 0, 0, 0.1);
-  --status-green: #15803d;
-  /* Lighter, more vibrant green */
-  --status-orange: #431407;
-  /* Darker orange/brown */
+  --status-green: #065f46;
+  --status-orange: #9a3412;
   --status-gray: #4b5563;
-  --bg-status-green: rgba(21, 128, 61, 0.65);
-  /* Darker green background */
-  --bg-status-orange: rgba(234, 88, 12, 0.4);
-  /* Darker orange background */
-  --bg-status-gray: rgba(107, 114, 128, 0.3);
-  /* Gray background for incomplete */
+  --bg-status-green: #4eff93;
+  --bg-status-orange: #ffdb6b;
+  --bg-status-gray: #ccc;
   --bg-input: #ffffff;
+  --bg-modal: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --header-bg: #f0f0f0;
+  --card-bg: #f9f9f9;
+  --text-muted: #666;
   --status-red: #d93025;
   color: #1a1a1a;
-  background-color: #f0f2f5;
-  --card-hover: #f8f9fa;
+  background-color: #ccc;
+  --card-hover: #f0f0f0;
 }
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   user-select: none;
 }
 
@@ -81,14 +88,16 @@ input,
 select,
 textarea,
 .btn {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 input,
 textarea {
   user-select: text;
 }
-
 
 .container {
   max-width: 100%;

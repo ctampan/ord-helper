@@ -16,7 +16,7 @@
 
 .dashboard {
   display: flex;
-  gap: 4px;
+  gap: 12px;
   overflow-x: auto;
   padding-bottom: 8px;
   align-items: flex-start;
@@ -60,7 +60,7 @@
   z-index: 2001;
 }
 
-.header-trigger:hover~.header-hover {
+.header-trigger:hover ~ .header-hover {
   transform: translateY(0);
 }
 

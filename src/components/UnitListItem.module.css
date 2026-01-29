@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  padding: 0 2px;
+  padding: 0;
   margin-bottom: 1px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -15,6 +15,7 @@
   height: var(--unit-height);
   box-sizing: border-box;
   user-select: none;
+  overflow: hidden;
 }
 
 .container:hover {
@@ -30,8 +31,16 @@
   border-color: var(--status-green);
 }
 
+[data-theme="light"] .container.green {
+  border-color: var(--bg-status-green);
+}
+
 .container.orange {
   border-color: var(--status-orange);
+}
+
+[data-theme="light"] .container.orange {
+  border-color: var(--bg-status-orange);
 }
 
 .container.banned {
@@ -66,7 +75,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 0 4px;
+  padding: 0 3px;
   box-sizing: border-box;
 }
 
@@ -74,8 +83,11 @@
   position: relative;
   width: var(--unit-icon-size);
   height: var(--unit-icon-size);
-  margin-right: 6px;
+  margin-right: 4px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
@@ -109,24 +121,17 @@
   line-height: 1.2;
   white-space: nowrap;
   display: inline-block;
+  margin-right: 4px;
 }
 
 .info {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  gap: 0;
-  min-width: 0;
-}
-
-.nameRow {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0;
-  width: 100%;
+  overflow: hidden;
+  gap: 4px;
+  min-width: 0;
+  margin-right: 4px;
 }
 
 .name {
@@ -136,27 +141,23 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2;
-  flex: 1;
-  min-width: 0;
-  margin-right: 4px;
-  text-align: left;
 }
 
 .wispCost {
   font-size: var(--unit-font-size-name);
   color: var(--status-orange);
-  margin-left: 0;
+  margin-left: 4px;
   flex-shrink: 0;
   white-space: nowrap;
-  width: 30px;
   text-align: right;
 }
 
 .progressContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-right: 6px;
+  justify-content: center;
+  margin-left: 4px;
+  margin-right: 4px;
   flex-shrink: 0;
 }
 
@@ -181,6 +182,12 @@
   line-height: 1.2;
   text-align: left;
   font-weight: bold;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .progressText {
+  color: white;
+  text-shadow: 0 0 2px black;
 }
 
 .textGreen {
@@ -188,16 +195,24 @@
   margin: 0;
 }
 
+[data-theme="light"] .textGreen {
+  color: #065f46; /* High contrast green for light mode */
+}
+
 .textOrange {
   color: var(--status-orange);
 }
 
+[data-theme="light"] .textOrange {
+  color: #c2410c; /* High contrast orange for light mode */
+}
+
 .controls {
-  margin-left: auto;
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .input {
@@ -322,9 +337,10 @@
 .recipeBtn {
   background: none;
   border: none;
-  padding: 0 2px 0 6px;
+  padding: 0 0 0 4px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: calc(var(--unit-font-size-name) * 1.1);
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;

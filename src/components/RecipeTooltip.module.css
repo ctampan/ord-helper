@@ -3,7 +3,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: var(--bg-panel);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 12px;
@@ -12,10 +12,12 @@
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition:
+    opacity 0.2s,
+    visibility 0.2s;
   pointer-events: none;
   margin-bottom: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .tooltip.visible {
@@ -26,15 +28,15 @@
 .title {
   font-weight: bold;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 4px;
 }
 
 .note {
   font-size: 0.85rem;
-  color: #aaa;
+  color: var(--text-secondary);
   margin-bottom: 8px;
   font-style: italic;
   white-space: pre-wrap;
@@ -44,7 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .ingredient {
@@ -63,7 +65,7 @@
 
 .count {
   margin-left: auto;
-  color: #aaa;
+  color: var(--text-secondary);
 }
 
 .tooltip.bottom {
@@ -83,10 +85,10 @@
 
 .arrow.top {
   top: 100%;
-  border-color: rgba(0, 0, 0, 0.95) transparent transparent transparent;
+  border-color: var(--bg-panel) transparent transparent transparent;
 }
 
 .arrow.bottom {
   bottom: 100%;
-  border-color: transparent transparent rgba(0, 0, 0, 0.95) transparent;
+  border-color: transparent transparent var(--bg-panel) transparent;
 }

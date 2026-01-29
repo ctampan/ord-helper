@@ -199,7 +199,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                 </div>
                 <span
                   style={{
-                    color: isBanned ? "#888" : "inherit",
+                    color: isBanned ? "var(--text-muted)" : "inherit",
                     textDecoration: isBanned ? "line-through" : "none",
                   }}
                 >
@@ -207,7 +207,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                 </span>
                 <span
                   className={styles.count}
-                  style={{ color: isEnough ? "inherit" : "#ff6b6b" }}
+                  style={{ color: isEnough ? "inherit" : "var(--status-red)" }}
                 >
                   x{need}{" "}
                   <span style={{ opacity: 0.7, fontSize: "0.9em" }}>
@@ -222,13 +222,18 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
 
       {hasMissing && (
         <>
-          <div style={{ borderTop: "1px solid #404040", margin: "12px 0" }} />
+          <div
+            style={{
+              borderTop: "1px solid var(--border-color)",
+              margin: "12px 0",
+            }}
+          />
           <div
             style={{
               fontSize: isLarge ? "1.1rem" : "0.75rem",
               fontWeight: "bold",
               marginBottom: "8px",
-              color: "#ff6b6b",
+              color: "var(--status-red)",
               display: "flex",
               justifyContent: "space-between",
             }}
@@ -301,7 +306,9 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                               height: isLarge ? "12px" : "8px",
                               borderRadius: "50%",
                               backgroundColor:
-                                buildStatus === "green" ? "#22c55e" : "#f97316",
+                                buildStatus === "green"
+                                  ? "var(--status-green)"
+                                  : "var(--status-orange)",
                               border: "1px solid #000",
                               zIndex: 1,
                             }}
@@ -312,13 +319,14 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                             position: "absolute",
                             bottom: 0,
                             right: 0,
-                            backgroundColor: "rgba(0, 0, 0, 0.8)",
-                            color: "#ff6b6b",
+                            backgroundColor: "rgba(0, 0, 0, 0.7)",
+                            color: "var(--bg-status-orange)",
                             fontSize: isLarge ? "1rem" : "0.8rem",
                             fontWeight: "bold",
                             padding: "0 4px",
                             borderRadius: "2px",
                             lineHeight: "1",
+                            textShadow: "0 0 2px black",
                           }}
                         >
                           -{count}
@@ -332,7 +340,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                         display: "flex",
                         alignItems: "center",
                         fontSize: "0.8rem",
-                        color: "#888",
+                        color: "var(--text-muted)",
                         paddingLeft: "4px",
                       }}
                     >
@@ -348,13 +356,18 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
 
       {usedInUnits.length > 0 && (
         <>
-          <div style={{ borderTop: "1px solid #404040", margin: "12px 0" }} />
+          <div
+            style={{
+              borderTop: "1px solid var(--border-color)",
+              margin: "12px 0",
+            }}
+          />
           <div
             style={{
               fontSize: isLarge ? "1.1rem" : "0.75rem",
               fontWeight: "bold",
               marginBottom: "8px",
-              color: "#4ade80",
+              color: "var(--status-green)",
             }}
           >
             Used In ({usedInUnits.length}):
@@ -410,7 +423,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                     <div
                       style={{
                         fontSize: "0.8rem",
-                        color: "#888",
+                        color: "var(--text-muted)",
                         paddingLeft: "4px",
                       }}
                     >
@@ -426,13 +439,18 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
 
       {topTierUnits.length > 0 && (
         <>
-          <div style={{ borderTop: "1px solid #404040", margin: "12px 0" }} />
+          <div
+            style={{
+              borderTop: "1px solid var(--border-color)",
+              margin: "12px 0",
+            }}
+          />
           <div
             style={{
               fontSize: isLarge ? "1.1rem" : "0.75rem",
               fontWeight: "bold",
               marginBottom: "8px",
-              color: "#fbbf24",
+              color: "var(--status-orange)",
             }}
           >
             Top Tier ({topTierUnits.length}):
@@ -488,7 +506,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
                     <div
                       style={{
                         fontSize: "0.8rem",
-                        color: "#888",
+                        color: "var(--text-muted)",
                         paddingLeft: "4px",
                       }}
                     >
