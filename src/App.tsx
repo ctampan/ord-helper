@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import type { Data, Inventory, Bans, Unit } from "./logic/combination";
 import { consumeMaterials, getEffectiveBans } from "./logic/combination";
+import { isGameData, loadGameData, retainValidState } from "./logic/data";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import { RecipeTreeModal } from "./components/RecipeTreeModal";
@@ -121,6 +122,9 @@ function App() {
   const [currentVersion, setCurrentVersion] = useState<string>(() => {
     return localStorage.getItem("ord_version") || "";
   });
+  const [requestedVersion, setRequestedVersion] = useState(currentVersion);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [loadAttempt, setLoadAttempt] = useState(0);
 
   // Auto-clear notifications
   useEffect(() => {
@@ -130,60 +134,42 @@ function App() {
     }
   }, [notification]);
 
-  // Load versions
+  // Resolve retired versions before fetching, and commit migration only on success.
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}versions.json`)
-      .then((res) => res.json())
-      .then((vs: string[]) => {
-        const hasCustom = !!localStorage.getItem("ord_custom_data");
-        const allVersions = hasCustom ? [...vs, "Custom"] : vs;
-        setVersions(allVersions);
-
-        if (!currentVersion && vs.length > 0) {
-          const latest = vs[vs.length - 1];
-          setCurrentVersion(latest);
-          localStorage.setItem("ord_version", latest);
-        } else if (currentVersion && !allVersions.includes(currentVersion)) {
-          const latest = vs[vs.length - 1];
-          setCurrentVersion(latest);
-          localStorage.setItem("ord_version", latest);
+    const controller = new AbortController();
+    loadGameData(
+      import.meta.env.BASE_URL,
+      requestedVersion,
+      localStorage.getItem("ord_custom_data"),
+      controller.signal,
+    )
+      .then(({ data: loaded, version, versions: available, migrated }) => {
+        if (controller.signal.aborted) return;
+        if (migrated) {
+          setInventory((previous) =>
+            retainValidState(loaded, previous, new Set()).inventory,
+          );
+          setBans((previous) => retainValidState(loaded, {}, previous).bans);
+          setNotification({
+            message: `Updated to ${version}. Inventory and bans for available units were preserved.`,
+            type: "info",
+          });
         }
-      })
-      .catch((err) => console.error("Failed to load versions:", err));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    if (!currentVersion) return;
-
-    if (currentVersion === "Custom") {
-      const savedData = localStorage.getItem("ord_custom_data");
-      if (savedData) {
-        try {
-          setData(JSON.parse(savedData));
-        } catch (e) {
-          console.error("Failed to load custom data:", e);
-        }
-      }
-      return;
-    }
-
-    fetch(`${import.meta.env.BASE_URL}data/${currentVersion}.json`)
-      .then((res) => res.json())
-      .then((d: Data) => {
-        setData(d);
+        setVersions(available);
+        setData(loaded);
+        setLoadError(null);
+        setCurrentVersion(version);
+        localStorage.setItem("ord_version", version);
       })
       .catch((err) => {
-        console.error(
-          `Failed to load data for version ${currentVersion}:`,
-          err,
+        if (controller.signal.aborted) return;
+        console.error("Failed to load game data:", err);
+        setLoadError(
+          "Unable to load game data. Check your connection and try again.",
         );
-        fetch(`${import.meta.env.BASE_URL}data.json`)
-          .then((res) => res.json())
-          .then(setData)
-          .catch((e) => console.error("Fatal:", e));
       });
-  }, [currentVersion]);
+    return () => controller.abort();
+  }, [requestedVersion, loadAttempt]);
 
   const handleVersionChange = (ver: string) => {
     if (ver === currentVersion) return;
@@ -193,8 +179,10 @@ function App() {
         "Changing version will reset your inventory and bans. Are you sure?",
       )
     ) {
+      setLoadError(null);
+      setData(null);
       setCurrentVersion(ver);
-      localStorage.setItem("ord_version", ver);
+      setRequestedVersion(ver);
       setInventory({});
       setBans(new Set());
     }
@@ -258,7 +246,7 @@ function App() {
       try {
         const importedData = JSON.parse(e.target?.result as string);
 
-        if (!importedData.units || !Array.isArray(importedData.units)) {
+        if (!isGameData(importedData)) {
           throw new Error("Invalid data format");
         }
 
@@ -268,9 +256,11 @@ function App() {
           setVersions([...versions, "Custom"]);
         }
         setCurrentVersion("Custom");
+        setRequestedVersion("Custom");
         localStorage.setItem("ord_version", "Custom");
 
         setData(importedData);
+        setLoadError(null);
         showNotification("Game Data imported!", "success");
       } catch (err) {
         console.error("Failed to import data:", err);
@@ -296,6 +286,7 @@ function App() {
       isCtrlPressed: boolean,
       isAltPressed: boolean,
     ) => {
+      if (!data?.units.some((unit) => unit.id === unitId)) return;
       // Handle Recipe Tree (Alt + Click)
       if (isAltPressed) {
         setSelectedUnitForTree(unitId);
@@ -453,7 +444,7 @@ function App() {
 
       // Check for Unit Shortcuts
       const unitId = getUnitIdByKey(key);
-      if (unitId) {
+      if (unitId && data?.units.some((unit) => unit.id === unitId)) {
         e.preventDefault();
         // Ctrl + Key = Remove (Right Click Logic with Ctrl)
         // Key = Add (Left Click Logic)
@@ -463,7 +454,7 @@ function App() {
 
     window.addEventListener("keydown", handleGlobalKeyDown);
     return () => window.removeEventListener("keydown", handleGlobalKeyDown);
-  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick]);
+  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, data]);
 
   const handleCountChange = useCallback((unitId: string, newCount: number) => {
     setInventory((prev) => ({
@@ -488,6 +479,21 @@ function App() {
     );
   }, [data]);
 
+  if (loadError) {
+    return (
+      <div className="container" role="alert">
+        <p>{loadError}</p>
+        <button
+          onClick={() => {
+            setLoadError(null);
+            setLoadAttempt((attempt) => attempt + 1);
+          }}
+        >
+          Try again
+        </button>
+      </div>
+    );
+  }
   if (!data) return <div className="container">Loading...</div>;
 
   return (
@@ -707,9 +713,9 @@ function App() {
           )}
         </div>
 
-        {/* Column 5: Hidden + Distortion + Alternate */}
+        {/* Column 5: Hidden + Distortion + Alternate + Seraphim */}
         <div className="column">
-          {["Hidden", "Distortion", "Alternate"].map(
+          {["Hidden", "Distortion", "Alternate", "Seraphim"].map(
             (rarity) =>
               unitsByRarity[rarity] && (
                 <UnitGroup
@@ -724,7 +730,11 @@ function App() {
                   onCountChange={handleCountChange}
                   isTooltipEnabled={isTooltipEnabled}
                   isShiftPressed={isShiftPressed}
-                  subGroupBy={rarity !== "Alternate" ? "subGroup" : undefined}
+                  subGroupBy={
+                    rarity === "Alternate" || rarity === "Seraphim"
+                      ? undefined
+                      : "subGroup"
+                  }
                   isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}

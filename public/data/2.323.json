@@ -1,5 +1,5 @@
-﻿{
-  "version": "2.111",
+{
+  "version": "2.323",
   "units": [
     {
       "id": "common_wisp",
@@ -62,30 +62,6 @@
       "image": "images/common_swordsman.png"
     },
     {
-      "id": "uncommon_blueno",
-      "name": "Blueno",
-      "rarity": "Uncommon",
-      "image": "images/uncommon_blueno.jpg",
-      "recipe": [
-        {
-          "unitId": "common_gunman",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "id": "uncommon_fukuro",
-      "name": "Fukuro",
-      "rarity": "Uncommon",
-      "image": "images/uncommon_fukuro.jpg",
-      "recipe": [
-        {
-          "unitId": "common_swordsman",
-          "count": 2
-        }
-      ]
-    },
-    {
       "id": "uncommon_robin",
       "name": "Robin",
       "rarity": "Uncommon",
@@ -116,6 +92,19 @@
           "count": 1
         }
       ]
+    },
+    {
+      "id": "uncommon_blueno",
+      "name": "Blueno",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_blueno.jpg",
+      "recipe": [
+        {
+          "unitId": "common_gunman",
+          "count": 2
+        }
+      ],
+      "note": "Teleport."
     },
     {
       "id": "uncommon_bepo",
@@ -187,7 +176,8 @@
           "unitId": "common_chopper",
           "count": 2
         }
-      ]
+      ],
+      "note": "Attack +5."
     },
     {
       "id": "uncommon_tashigi",
@@ -203,7 +193,8 @@
           "unitId": "common_gunman",
           "count": 1
         }
-      ]
+      ],
+      "note": "Movement slow 6."
     },
     {
       "id": "uncommon_perona",
@@ -254,57 +245,72 @@
       ]
     },
     {
+      "id": "uncommon_fukuro",
+      "name": "Fukuro",
+      "rarity": "Uncommon",
+      "image": "images/uncommon_fukuro.jpg",
+      "recipe": [
+        {
+          "unitId": "common_swordsman",
+          "count": 2
+        }
+      ]
+    },
+    {
       "id": "random_k",
       "name": "K",
       "rarity": "Random",
       "image": "images/random_k.png",
-      "note": "Stun"
+      "note": "Stun 0.4s."
     },
     {
       "id": "random_naruto",
       "name": "Naruto",
       "rarity": "Random",
       "image": "images/random_naruto.png",
-      "note": "Stun"
+      "note": "Sage Mode; stun 0.7s."
     },
     {
       "id": "random_paimon",
       "name": "Paimon",
       "rarity": "Random",
-      "image": "images/random_paimon.png"
+      "image": "images/random_paimon.png",
+      "note": "Whirlwind skill: magic damage amplification 10."
     },
     {
       "id": "random_yotsuba",
       "name": "Yotsuba",
       "rarity": "Random",
       "image": "images/random_yotsuba.png",
-      "note": "Summon wisp, mana regen"
+      "note": "Summons a Wisp every 90s; mana regeneration."
     },
     {
       "id": "random_sento",
       "name": "Sento Isuzu",
       "rarity": "Random",
       "image": "images/random_sento.png",
-      "note": "Sniper long range"
+      "note": "Long-range sniper; single-target armor reduction 50 and magic damage amplification 18."
     },
     {
       "id": "random_touma",
       "name": "Kamijou Touma",
       "rarity": "Random",
-      "image": "images/random_touma.png"
+      "image": "images/random_touma.png",
+      "note": "Attack buff."
     },
     {
       "id": "random_elizabeth",
       "name": "Elizabeth",
       "rarity": "Random",
       "image": "images/random_elizabeth.png",
-      "note": "Summon token, stun"
+      "note": "Combat Penguin; single-target stun; summons a token every 105s."
     },
     {
       "id": "random_yomi",
       "name": "Isayama Yomi",
       "rarity": "Random",
-      "image": "images/random_yomi.png"
+      "image": "images/random_yomi.png",
+      "note": "Armor reduction 20."
     },
     {
       "id": "random_ichigo",
@@ -317,14 +323,14 @@
       "name": "Hanekawa Tsubasa",
       "rarity": "Random",
       "image": "images/random_tsubasa.png",
-      "note": "Slow"
+      "note": "Movement slow; attack speed +10."
     },
     {
       "id": "random_light",
       "name": "Yagami Light",
       "rarity": "Random",
       "image": "images/random_light.png",
-      "note": "Stun"
+      "note": "Single-target effect 0.5 (source does not specify the effect's unit)."
     },
     {
       "id": "random_yan",
@@ -342,7 +348,8 @@
       "id": "random_megumin",
       "name": "Megumin",
       "rarity": "Random",
-      "image": "images/random_megumin.png"
+      "image": "images/random_megumin.png",
+      "note": "Explosion: 15% of total HP plus fixed damage."
     },
     {
       "id": "special_xdrake",
@@ -362,7 +369,8 @@
           "unitId": "common_chopper",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_enel",
@@ -382,7 +390,8 @@
           "unitId": "common_sanji",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_moria",
@@ -398,7 +407,8 @@
           "unitId": "common_sanji",
           "count": 1
         }
-      ]
+      ],
+      "note": "Creates zombies when killing lane enemies. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_nami",
@@ -410,7 +420,8 @@
           "unitId": "common_nami",
           "count": 3
         }
-      ]
+      ],
+      "note": "Clima-Tact; triggered movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_robin",
@@ -426,7 +437,8 @@
           "unitId": "common_chopper",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_law",
@@ -446,7 +458,8 @@
           "unitId": "common_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "W: single-target attack speed +100% for 7s; cooldown 50s. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_lucci",
@@ -466,7 +479,8 @@
           "unitId": "common_luffy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_luffy",
@@ -478,7 +492,8 @@
           "unitId": "common_luffy",
           "count": 3
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_marco",
@@ -498,7 +513,8 @@
           "unitId": "common_sanji",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_hawkins",
@@ -518,7 +534,8 @@
           "unitId": "common_usopp",
           "count": 1
         }
-      ]
+      ],
+      "note": "Armor reduction 3. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_buggy",
@@ -530,7 +547,8 @@
           "unitId": "common_buggy",
           "count": 3
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_bonkurei",
@@ -550,7 +568,8 @@
           "unitId": "common_nami",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_sanji",
@@ -562,7 +581,8 @@
           "unitId": "common_sanji",
           "count": 3
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_smoker",
@@ -582,7 +602,8 @@
           "unitId": "common_gunman",
           "count": 1
         }
-      ]
+      ],
+      "note": "Movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_squard",
@@ -602,7 +623,8 @@
           "unitId": "common_nami",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_arlong",
@@ -618,7 +640,8 @@
           "unitId": "common_luffy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_absalom",
@@ -631,7 +654,7 @@
           "count": 1
         }
       ],
-      "note": "Flying"
+      "note": "Requires 3 zombies created by Special Moria's lane kills and 1 Nami. Zombies are an additional in-game requirement, not inventory recipe units. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_ace",
@@ -647,7 +670,8 @@
           "unitId": "common_usopp",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_usopp",
@@ -659,7 +683,8 @@
           "unitId": "uncommon_sogeking",
           "count": 2
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_inazuma",
@@ -671,7 +696,8 @@
           "unitId": "uncommon_inazuma",
           "count": 2
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_zoro",
@@ -683,7 +709,8 @@
           "unitId": "common_zoro",
           "count": 3
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_jinbe",
@@ -703,7 +730,8 @@
           "unitId": "common_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_chaka",
@@ -723,7 +751,8 @@
           "unitId": "common_chopper",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_chopperbrain",
@@ -743,7 +772,8 @@
           "unitId": "common_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Brain Point; armor reduction 3. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_chopperguard",
@@ -763,7 +793,8 @@
           "unitId": "common_swordsman",
           "count": 1
         }
-      ]
+      ],
+      "note": "Guard Point; attack +8. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_capone",
@@ -783,7 +814,8 @@
           "unitId": "common_gunman",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_kuro",
@@ -803,7 +835,8 @@
           "unitId": "common_swordsman",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_kuma",
@@ -823,7 +856,8 @@
           "unitId": "common_zoro",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_crocodile",
@@ -843,7 +877,8 @@
           "unitId": "common_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_kid",
@@ -863,7 +898,8 @@
           "unitId": "common_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_killer",
@@ -883,7 +919,8 @@
           "unitId": "common_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_docking",
@@ -899,7 +936,8 @@
           "unitId": "common_zoro",
           "count": 1
         }
-      ]
+      ],
+      "note": "Pirate Docking 5. Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "special_helmeppo",
@@ -919,34 +957,36 @@
           "unitId": "common_sanji",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: maximum movement slow 107%; Weather Change 10%."
     },
     {
       "id": "item_nika",
       "name": "Trace of the Sun God [Nika]",
       "rarity": "Combination Item",
       "image": "images/item_nika.png",
-      "note": "Has a chance to appear after defeating Boss Enel on Round 30"
+      "note": "Trace of the Sun God [Nika]; attack +15. Chance to drop after defeating the round 30 boss Enel."
     },
     {
       "id": "item_uta",
       "name": "Uta's Headset [Uta]",
       "rarity": "Combination Item",
       "image": "images/item_uta.png",
-      "note": "Has a chance to appear after clearing Shabondy Archipelago 6th stage"
+      "note": "Uta's Headset [Uta]; attack speed +12. Chance to drop after clearing stage 6, Sabaody Archipelago."
     },
     {
       "id": "item_marco",
       "name": "Phoenix Feather [Marco]",
       "rarity": "Combination Item",
       "image": "images/item_marco.png",
-      "note": "Has a chance to appear after clearing Marineford stage 8"
+      "note": "Phoenix Feather [Marco]; HP regeneration +0.3. Chance to drop after clearing stage 8, Marineford."
     },
     {
       "id": "other_rayleigh",
       "name": "Rayleigh",
       "rarity": "Other",
-      "image": "images/other_rayleigh.jpg"
+      "image": "images/other_rayleigh.jpg",
+      "note": "Hidden Rayleigh."
     },
     {
       "id": "other_pirateship",
@@ -967,88 +1007,17 @@
       "image": "images/other_ancientship.png"
     },
     {
-      "id": "rare_perona",
-      "name": "Perona",
-      "rarity": "Rare",
-      "image": "images/uncommon_perona.jpg",
-      "recipe": [
-        {
-          "unitId": "special_absalom",
-          "count": 1
-        },
-        {
-          "unitId": "special_sanji",
-          "count": 1
-        },
-        {
-          "unitId": "special_chopperbrain",
-          "count": 1
-        },
-        {
-          "unitId": "uncommon_perona",
-          "count": 1
-        }
-      ]
+      "id": "other_greenblood",
+      "name": "Green Blood",
+      "rarity": "Other",
+      "image": "images/other_greenblood.png"
     },
     {
-      "id": "rare_kid",
-      "name": "Kid",
-      "rarity": "Rare",
-      "image": "images/special_kid.jpg",
-      "recipe": [
-        {
-          "unitId": "special_kid",
-          "count": 1
-        },
-        {
-          "unitId": "special_nami",
-          "count": 1
-        },
-        {
-          "unitId": "special_killer",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "id": "rare_crocodile",
-      "name": "Crocodile",
-      "rarity": "Rare",
-      "image": "images/special_crocodile.jpg",
-      "recipe": [
-        {
-          "unitId": "special_crocodile",
-          "count": 1
-        },
-        {
-          "unitId": "special_jinbe",
-          "count": 1
-        },
-        {
-          "unitId": "special_bonkurei",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "id": "rare_aokiji",
-      "name": "Aokiji",
-      "rarity": "Rare",
-      "image": "images/rare_aokiji.jpg",
-      "recipe": [
-        {
-          "unitId": "special_robin",
-          "count": 1
-        },
-        {
-          "unitId": "special_squard",
-          "count": 1
-        },
-        {
-          "unitId": "special_enel",
-          "count": 1
-        }
-      ]
+      "id": "other_seraphim",
+      "name": "Seraphim [Vegapunk Material]",
+      "rarity": "Other",
+      "image": "images/other_seraphim.png",
+      "note": "Seraphim material for crafting Vegapunk."
     },
     {
       "id": "rare_xdrake",
@@ -1068,7 +1037,8 @@
           "unitId": "special_arlong",
           "count": 1
         }
-      ]
+      ],
+      "note": "Movement slow 10; armor reduction 5. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_garp",
@@ -1088,7 +1058,8 @@
           "unitId": "special_luffy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_blackbeard",
@@ -1109,7 +1080,7 @@
           "count": 1
         }
       ],
-      "note": "Pull Enemy"
+      "note": "Pulls enemies. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_doflamingo",
@@ -1130,7 +1101,7 @@
           "count": 1
         }
       ],
-      "note": "Flying"
+      "note": "Can transform into Alternate Doflamingo. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_law",
@@ -1151,7 +1122,7 @@
           "count": 1
         }
       ],
-      "note": "W skill: 50s cooldown, grants +120% single-target attack speed for 8 seconds, blink"
+      "note": "W: single-target attack speed +120% for 8s; cooldown 50s. Blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_luffy",
@@ -1171,7 +1142,8 @@
           "unitId": "special_enel",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_ryuma",
@@ -1199,7 +1171,8 @@
           "unitId": "common_swordsman",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_marco",
@@ -1219,7 +1192,8 @@
           "unitId": "special_chopperguard",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_magellan",
@@ -1239,7 +1213,8 @@
           "unitId": "special_ace",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_momonga",
@@ -1259,7 +1234,8 @@
           "unitId": "special_smoker",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_mihawk",
@@ -1279,7 +1255,8 @@
           "unitId": "special_xdrake",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_bartolomeo",
@@ -1299,7 +1276,8 @@
           "unitId": "special_docking",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_burgess",
@@ -1319,7 +1297,8 @@
           "unitId": "special_buggy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Stun 0.15s. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_hawkins",
@@ -1339,7 +1318,8 @@
           "unitId": "special_law",
           "count": 1
         }
-      ]
+      ],
+      "note": "Armor reduction 10. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_decken",
@@ -1360,7 +1340,7 @@
           "count": 1
         }
       ],
-      "note": "Flying"
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_baby5",
@@ -1380,7 +1360,8 @@
           "unitId": "special_lucci",
           "count": 1
         }
-      ]
+      ],
+      "note": "Can transform into Alternate Baby 5. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_benbeckman",
@@ -1401,7 +1382,7 @@
           "count": 1
         }
       ],
-      "note": "Blink"
+      "note": "Blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_brook",
@@ -1421,7 +1402,8 @@
           "unitId": "special_lucci",
           "count": 1
         }
-      ]
+      ],
+      "note": "Attack speed +10. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_vivi",
@@ -1441,7 +1423,8 @@
           "unitId": "special_nami",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_sabo",
@@ -1461,7 +1444,8 @@
           "unitId": "special_marco",
           "count": 1
         }
-      ]
+      ],
+      "note": "Armor reduction 10. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_sanji",
@@ -1481,7 +1465,8 @@
           "unitId": "special_kid",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_shanks",
@@ -1501,7 +1486,8 @@
           "unitId": "special_usopp",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_sentomaru",
@@ -1521,7 +1507,8 @@
           "unitId": "special_capone",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_sugar",
@@ -1545,7 +1532,8 @@
           "unitId": "common_usopp",
           "count": 1
         }
-      ]
+      ],
+      "note": "Mana regeneration 0.6. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_shiryu",
@@ -1565,7 +1553,29 @@
           "unitId": "special_sanji",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
+    },
+    {
+      "id": "rare_aokiji",
+      "name": "Aokiji",
+      "rarity": "Rare",
+      "image": "images/rare_aokiji.jpg",
+      "recipe": [
+        {
+          "unitId": "special_robin",
+          "count": 1
+        },
+        {
+          "unitId": "special_squard",
+          "count": 1
+        },
+        {
+          "unitId": "special_enel",
+          "count": 1
+        }
+      ],
+      "note": "Movement slow 10; stun 0.15s. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_akainu",
@@ -1585,7 +1595,8 @@
           "unitId": "special_inazuma",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_oars",
@@ -1601,7 +1612,8 @@
           "unitId": "special_luffy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Single-target stun. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_wyper",
@@ -1621,7 +1633,8 @@
           "unitId": "special_usopp",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_usopp",
@@ -1642,7 +1655,7 @@
           "count": 1
         }
       ],
-      "note": "Blink"
+      "note": "Stun 0.17s; blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_ivankov",
@@ -1662,7 +1675,8 @@
           "unitId": "special_crocodile",
           "count": 1
         }
-      ]
+      ],
+      "note": "Stun 0.15s; Q: attack +35. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_zeff",
@@ -1682,7 +1696,8 @@
           "unitId": "special_inazuma",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_zoro",
@@ -1702,7 +1717,8 @@
           "unitId": "special_smoker",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_jozu",
@@ -1722,7 +1738,8 @@
           "unitId": "special_capone",
           "count": 1
         }
-      ]
+      ],
+      "note": "Stun 0.13s. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_chopper",
@@ -1742,7 +1759,8 @@
           "unitId": "special_law",
           "count": 1
         }
-      ]
+      ],
+      "note": "Horn Point; attack +30. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_kaku",
@@ -1762,7 +1780,50 @@
           "unitId": "special_robin",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
+    },
+    {
+      "id": "rare_kid",
+      "name": "Kid",
+      "rarity": "Rare",
+      "image": "images/special_kid.jpg",
+      "recipe": [
+        {
+          "unitId": "special_kid",
+          "count": 1
+        },
+        {
+          "unitId": "special_nami",
+          "count": 1
+        },
+        {
+          "unitId": "special_killer",
+          "count": 1
+        }
+      ],
+      "note": "Movement slow 15. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
+    },
+    {
+      "id": "rare_crocodile",
+      "name": "Crocodile",
+      "rarity": "Rare",
+      "image": "images/special_crocodile.jpg",
+      "recipe": [
+        {
+          "unitId": "special_crocodile",
+          "count": 1
+        },
+        {
+          "unitId": "special_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "special_bonkurei",
+          "count": 1
+        }
+      ],
+      "note": "Movement slow 15; Q: attack +20. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_kizaru",
@@ -1783,7 +1844,7 @@
           "count": 1
         }
       ],
-      "note": "Blink"
+      "note": "Blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_kinemon",
@@ -1803,7 +1864,33 @@
           "unitId": "special_kuro",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
+    },
+    {
+      "id": "rare_perona",
+      "name": "Perona",
+      "rarity": "Rare",
+      "image": "images/uncommon_perona.jpg",
+      "recipe": [
+        {
+          "unitId": "special_absalom",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_perona",
+          "count": 1
+        },
+        {
+          "unitId": "special_sanji",
+          "count": 1
+        },
+        {
+          "unitId": "special_chopperbrain",
+          "count": 1
+        }
+      ],
+      "note": "Movement slow 20. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "rare_hancock",
@@ -1823,7 +1910,8 @@
           "unitId": "special_luffy",
           "count": 1
         }
-      ]
+      ],
+      "note": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211."
     },
     {
       "id": "legendary_dragon",
@@ -1844,8 +1932,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Normal - Story mode: -45 armor"
+      "subGroup": "Stun",
+      "note": "Normal; stun 0.9s; movement slow 10; armor reduction 10; attack speed +5; attack +25. Additional armor reduction 45 against story enemies."
     },
     {
       "id": "legendary_laboon",
@@ -1866,8 +1954,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Siege - Swimming"
+      "subGroup": "Stun",
+      "note": "Siege; stun 0.9s; attack speed +17; 100% area damage; swimming."
     },
     {
       "id": "legendary_bartolomeo",
@@ -1888,8 +1976,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Normal"
+      "subGroup": "Stun",
+      "note": "Normal; stun 1s; single-target stun; armor reduction 12."
     },
     {
       "id": "legendary_shanks",
@@ -1910,8 +1998,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Haki"
+      "subGroup": "Stun",
+      "note": "Haki; stun 0.7s; single-target stun; Haki damage: 3% of total HP. Can defeat Burgess with the departure skill at 20 armor reduction."
     },
     {
       "id": "legendary_shiki",
@@ -1932,8 +2020,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Normal - Flying"
+      "subGroup": "Stun",
+      "note": "Normal; stun 1s; Armor Break 1; flying."
     },
     {
       "id": "legendary_fujitora",
@@ -1954,12 +2042,12 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Siege"
+      "subGroup": "Stun",
+      "note": "Siege; stun 0.7s; movement slow 25; magic resistance reduction 1%."
     },
     {
       "id": "legendary_kuma",
-      "name": "Kuma - Mana",
+      "name": "Kuma",
       "rarity": "Legendary",
       "image": "images/special_kuma.jpg",
       "recipe": [
@@ -1976,12 +2064,12 @@
           "count": 1
         }
       ],
-      "subGroup": "Stun Area",
-      "note": "Siege - Teleport"
+      "subGroup": "Stun",
+      "note": "Siege; W: area magnet, cooldown 60s. Source title lists stun 0.5s; description lists 0.4s."
     },
     {
       "id": "legendary_rayleigh",
-      "name": "Rayleigh - Mana",
+      "name": "Rayleigh",
       "rarity": "Legendary",
       "image": "images/other_rayleigh.jpg",
       "recipe": [
@@ -1999,11 +2087,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Piercing - Consume 5 woods, armor break, stun, -20 armor"
+      "note": "Piercing; armor reduction 20; attack +25; splash; single-target stun. Mana skill: Armor Break 3 and stun 3s. Additional crafting cost: 5 wood."
     },
     {
       "id": "legendary_marco",
-      "name": "Marco - HP",
+      "name": "Marco",
       "rarity": "Legendary",
       "image": "images/special_marco.jpg",
       "recipe": [
@@ -2021,7 +2109,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Piercing - Slow, flying"
+      "note": "Piercing; movement slow 30; supporting damage; HP skill; 80% area damage; critical hits; flying. Can defeat Burgess at 15 armor reduction."
     },
     {
       "id": "legendary_sengoku",
@@ -2043,11 +2131,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Siege"
+      "note": "Siege; movement slow 20; triggered armor reduction 18; triggered attack +40; supporting damage; splash."
     },
     {
       "id": "legendary_smoker",
-      "name": "Smoker - Mana",
+      "name": "Smoker",
       "rarity": "Legendary",
       "image": "images/special_smoker.png",
       "recipe": [
@@ -2065,7 +2153,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Siege - Slow"
+      "note": "Siege; movement slow 50; Armor Break; single-target stun; mana skill: Armor Break."
     },
     {
       "id": "legendary_caesar",
@@ -2087,7 +2175,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Normal - -30 armor"
+      "note": "Normal; armor reduction 30; ignores terrain / flying."
     },
     {
       "id": "legendary_ace",
@@ -2109,11 +2197,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Normal"
+      "note": "Normal; armor reduction 33; single-target stun; can transform."
     },
     {
       "id": "legendary_ulti",
-      "name": "Ulti - HP",
+      "name": "Ulti",
       "rarity": "Legendary",
       "image": "images/legendary_ulti.png",
       "recipe": [
@@ -2131,11 +2219,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Siege - -27 armor"
+      "note": "Siege; armor reduction 27; HP skill: Armor Break 1; splash."
     },
     {
       "id": "legendary_kalgara",
-      "name": "Kalgara - Mana",
+      "name": "Kalgara",
       "rarity": "Legendary",
       "image": "images/legendary_kalgara.jpg",
       "recipe": [
@@ -2153,7 +2241,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Piercing - Flying, target -15 armor, boss -40 armor, story & line -25 armor"
+      "note": "Piercing; single-target stun; boss armor reduction 40; mana skill: self attack speed buff; flying. Source title lists armor reduction 20 and story/lane armor reduction 20; description lists armor reduction 15 and story/lane armor reduction 25."
     },
     {
       "id": "legendary_cracker",
@@ -2175,7 +2263,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Siege - Permanent buff, -25 armor"
+      "note": "Siege; armor reduction 25. B: permanent attack +19 and attack speed +9."
     },
     {
       "id": "legendary_king",
@@ -2197,11 +2285,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Normal - Flying, slow, area -10 armor, targer -20 armor"
+      "note": "Normal; movement slow 10; armor reduction 5; triggered armor reduction 30 (poison-style 20 plus area 10); single-target slow 45%; flying; splash."
     },
     {
       "id": "legendary_whitebeard",
-      "name": "Whitebeard - HP",
+      "name": "Whitebeard",
       "rarity": "Legendary",
       "image": "images/legendary_whitebeard.jpg",
       "recipe": [
@@ -2219,7 +2307,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Haki - Slow, -15 armor, Boss & Story -30 armor"
+      "note": "Haki; armor reduction 15; triggered movement slow 35; supporting damage; HP skill; splash. Additional armor reduction 30 against bosses and story enemies."
     },
     {
       "id": "legendary_hibari",
@@ -2241,7 +2329,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Siege - Target -22 armor, 2000 attack range"
+      "note": "Armor reduction 22; single-target stun; activates every 4 basic attacks. Source title lists total-HP damage 7.5% against bosses/berserk enemies and 22.5% against normal enemies; description lists additional boss damage 6% of total HP and 2,000,000 magic damage against story enemies."
     },
     {
       "id": "legendary_chopper",
@@ -2263,7 +2351,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Normal - -18 armor"
+      "note": "Heavy Point; armor reduction 18; attack speed +20. Attack speed effect does not stack with Transcendence Chopper."
     },
     {
       "id": "legendary_brulee",
@@ -2289,11 +2377,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "Normal - Copy legendary"
+      "note": "Transforms into a selected Legendary unit only."
     },
     {
       "id": "legendary_blackbeard",
-      "name": "Blackbeard - HP",
+      "name": "Blackbeard",
       "rarity": "Legendary",
       "image": "images/rare_blackbeard.jpg",
       "recipe": [
@@ -2311,11 +2399,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Piercing"
+      "note": "Piercing; single-target magic damage amplification 8; all damage received +10; HP skill: area damage equal to 1% of current HP. Removes berserk armor buffs and deals additional damage."
     },
     {
       "id": "legendary_nami",
-      "name": "Nami - HP",
+      "name": "Nami",
       "rarity": "Legendary",
       "image": "images/legendary_nami.png",
       "recipe": [
@@ -2333,11 +2421,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Normal - Slow, improve treasure searching, increase gold gain"
+      "note": "Normal; magic damage amplification 1; triggered movement slow 42; HP skill. Larger treasure search radius, more treasure chests, 50% chance for double treasure rewards, and gold income +60%."
     },
     {
       "id": "legendary_neko",
-      "name": "Nekomamushi - HP",
+      "name": "Nekomamushi",
       "rarity": "Legendary",
       "image": "images/legendary_neko.png",
       "recipe": [
@@ -2355,7 +2443,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Normal - Slow"
+      "note": "Normal; movement slow 30; attack +32%; total-HP damage; HP skill. Additional damage against berserk enemies: 7.5% of total HP."
     },
     {
       "id": "legendary_law",
@@ -2377,7 +2465,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Piercing - Teleport"
+      "note": "Piercing; current-HP damage; additional damage against berserk enemies. W: single-target attack speed +150% for 12s; cooldown 50s; single-target slow 99%."
     },
     {
       "id": "legendary_blackmaria",
@@ -2399,7 +2487,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Siege"
+      "note": "Explosion damage; single-target stun."
     },
     {
       "id": "legendary_nightmare",
@@ -2425,7 +2513,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Piercing - Flying"
+      "note": "Piercing; single-target stun; flying. Additional fixed damage against bosses and berserk enemies: 0.5% of total HP."
     },
     {
       "id": "legendary_moria",
@@ -2447,7 +2535,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Normal - Delete unit"
+      "note": "Normal; explosion damage; movement slow 30. Deletes an enemy and creates a General Zombie; absolute cooldown 8.5s."
     },
     {
       "id": "legendary_sugar",
@@ -2469,7 +2557,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Normal - Delete unit (R), generate misc item"
+      "note": "Normal; mana regeneration 1.25. R: deletion/transforms an enemy into a toy robot, cooldown 100s; toy has single-target stun. Can sell junk."
     },
     {
       "id": "legendary_z",
@@ -2491,11 +2579,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Siege"
+      "note": "Siege; resistance-ignoring single-target stun; additional fixed damage against berserk enemies; boss damage equal to 2% of current HP."
     },
     {
       "id": "legendary_jinbe",
-      "name": "Jinbe - Mana",
+      "name": "Jinbe",
       "rarity": "Legendary",
       "image": "images/special_jinbe.jpg",
       "recipe": [
@@ -2513,7 +2601,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Siege - Swimming, mana regen"
+      "note": "Siege; mana regeneration 2.5; single-target stun; mana skill: area magic damage; swimming."
     },
     {
       "id": "legendary_toki",
@@ -2535,7 +2623,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "Normal - Consume 5 woods"
+      "note": "Normal; movement slow 25; attack speed +20. Every 9s, grants attack speed +35 to 2 random units within 450 range. Additional crafting cost: 5 wood."
     },
     {
       "id": "legendary_reiju",
@@ -2557,7 +2645,7 @@
         }
       ],
       "subGroup": "Single Target",
-      "note": "Piercing - Flying, slow"
+      "note": "Piercing; movement slow 35; single-target current-HP damage; flying. Attack story enemies from a little distance."
     },
     {
       "id": "legendary_lucci",
@@ -2579,11 +2667,11 @@
         }
       ],
       "subGroup": "Single Target",
-      "note": "Siege"
+      "note": "Siege; single-target current-HP damage and stun."
     },
     {
       "id": "legendary_koby",
-      "name": "Koby - Mana",
+      "name": "Koby",
       "rarity": "Legendary",
       "image": "images/legendary_koby.jpg",
       "recipe": [
@@ -2601,7 +2689,7 @@
         }
       ],
       "subGroup": "Single Target",
-      "note": "Siege - HP Mana regen"
+      "note": "Siege; single-target current-HP damage. Mana skill: attack +20, mana regeneration +1, HP regeneration +1."
     },
     {
       "id": "legendary_sanji",
@@ -2623,7 +2711,7 @@
         }
       ],
       "subGroup": "Single Target",
-      "note": "Siege - Splash"
+      "note": "Siege; single-target magic damage. Guaranteed explosion damage equal to 2.9% of current HP."
     },
     {
       "id": "legendary_shinobu",
@@ -2644,8 +2732,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Final Damage",
-      "note": "Normal - Locate treasures"
+      "subGroup": "Finisher",
+      "note": "Normal; finisher 7; single-target stun. R: treasure search within 1800 range of the player's own area."
     },
     {
       "id": "legendary_zoro",
@@ -2666,8 +2754,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Final Damage",
-      "note": "Piercing - Executes a single target if its HP is 25% or below"
+      "subGroup": "Finisher",
+      "note": "Piercing; finisher 10; single-target stun. Source title lists execution of lane enemies below 13% HP; description lists guaranteed execution/deletion of a single enemy at 12% HP or below."
     },
     {
       "id": "legendary_hancock",
@@ -2688,8 +2776,8 @@
           "count": 1
         }
       ],
-      "subGroup": "Final Damage",
-      "note": "Haki"
+      "subGroup": "Finisher",
+      "note": "Haki; finisher 7; single-target stun."
     },
     {
       "id": "hidden_bonkurei",
@@ -2715,7 +2803,7 @@
         }
       ],
       "subGroup": "Stun",
-      "note": "bonkurei | Siege - -11 armor"
+      "note": "Command: bonkurei. Siege; stun 0.35s; armor reduction 11. Armor reduction does not stack with Ivankov."
     },
     {
       "id": "hidden_aokiji",
@@ -2737,7 +2825,7 @@
         }
       ],
       "subGroup": "Stun",
-      "note": "aokiji | Normal - Slow"
+      "note": "Command: aokiji. Normal; stun 0.5s; movement slow 35; explosion damage amplification +10%; single-target slow 50."
     },
     {
       "id": "hidden_ivankov",
@@ -2759,7 +2847,7 @@
         }
       ],
       "subGroup": "Stun",
-      "note": "ivankov | Normal - HP regen"
+      "note": "Command: ivankov. Normal; stun 0.55s; armor reduction 11. Q: single-target attack +45 and HP regeneration +1; while holding position, buffs the farthest unit in range. Armor reduction does not stack with Bonkurei."
     },
     {
       "id": "hidden_tiger",
@@ -2785,7 +2873,7 @@
         }
       ],
       "subGroup": "Stun",
-      "note": "tiger | Siege - Can move everywhere"
+      "note": "Command: tiger. Siege; stun 1s; attack +35%; single-target stun; ignores all terrain; additional damage against berserk enemies."
     },
     {
       "id": "hidden_rebecca",
@@ -2803,11 +2891,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "rebecca | Piercing - -18 armor"
+      "note": "Command: rebecca. Piercing; armor reduction 18; single-target stun; splash."
     },
     {
       "id": "hidden_ryokugyu",
-      "name": "Ryokugyu - Mana",
+      "name": "Ryokugyu",
       "rarity": "Hidden",
       "image": "images/hidden_ryokugyu.png",
       "recipe": [
@@ -2829,7 +2917,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "ryokugyu | Piercing - -25 armor, slow"
+      "note": "Ryokugyu combination; armor reduction 25; mana skill: armor reduction 15; triggered movement slow 20."
     },
     {
       "id": "hidden_mihawk",
@@ -2851,11 +2939,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "mihawk | Piercing - -25 armor"
+      "note": "Command: mihawk. Piercing; armor reduction 25; splash."
     },
     {
       "id": "hidden_vergo",
-      "name": "Vergo - Mana",
+      "name": "Vergo",
       "rarity": "Hidden",
       "image": "images/hidden_vergo.jpg",
       "recipe": [
@@ -2868,16 +2956,16 @@
           "count": 1
         },
         {
-          "unitId": "special_smoker",
+          "unitId": "special_bonkurei",
           "count": 1
         },
         {
-          "unitId": "special_law",
+          "unitId": "special_usopp",
           "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "vergo | Siege - Armor break"
+      "note": "Command: vergo. Siege; Armor Break; single-target stun and armor reduction. Mana skill: armor reduction 30 for 5s and stun 2.5s; mana skill armor reduction increases with Siege upgrades, up to 30."
     },
     {
       "id": "hidden_sabo",
@@ -2899,7 +2987,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "sabo | Haki - -25 armor"
+      "note": "Command: sabo. Haki; movement slow 25; armor reduction 20. Easter egg: defeats Burgess in one hit."
     },
     {
       "id": "hidden_killer",
@@ -2925,7 +3013,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "killer | Piercing - -12 armor"
+      "note": "Command: killer. Piercing; armor reduction 12; single-target stun; boss damage 0.9% of current HP; additional berserk damage 5.75% of total HP."
     },
     {
       "id": "hidden_ryuma",
@@ -2947,7 +3035,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "ryuma | Piercing"
+      "note": "Command: ryuma. Piercing; single-target effect 0.8; single-target damage value 19; single-target stun. Upgrade material for Transcendence Zoro."
     },
     {
       "id": "hidden_stussy",
@@ -2969,11 +3057,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "stussy | Normal - Blink"
+      "note": "Command: stussy. Single-target current-HP damage, effect 0.5; blink range 1500, cooldown 5s."
     },
     {
       "id": "hidden_shiryu",
-      "name": "Shiryu - Mana",
+      "name": "Shiryu",
       "rarity": "Hidden",
       "image": "images/hidden_shiryu.png",
       "recipe": [
@@ -2991,11 +3079,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "shiryu | Piercing"
+      "note": "Command: shiryu. Piercing; finisher 7; mana skill; single-target stun. Can defeat Burgess with Wood Upgrade 2 + Docking 1, or Docking 2 + Wood Upgrade 1."
     },
     {
       "id": "hidden_akainu",
-      "name": "Akainu - HP",
+      "name": "Akainu",
       "rarity": "Hidden",
       "image": "images/rare_akainu.jpg",
       "recipe": [
@@ -3017,7 +3105,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "akainu | Siege"
+      "note": "Command: akainu. Siege; HP skill; single-target stun; triggered movement slow 10; fixed damage amplification +5%; triggered magic resistance reduction 10; additional damage against berserk enemies."
     },
     {
       "id": "hidden_carrot",
@@ -3043,11 +3131,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "carrot | Piercing"
+      "note": "Command: carrot. Piercing; magic damage amplification; single-target stun."
     },
     {
       "id": "hidden_kiku",
-      "name": "Kiku - Mana",
+      "name": "Kiku",
       "rarity": "Hidden",
       "image": "images/hidden_kiku.png",
       "recipe": [
@@ -3065,7 +3153,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "kiku | Normal"
+      "note": "Command: kiku. Normal; mana skill; single-target stun 2s; additional boss damage 1% of current HP and berserk damage 5% of total HP."
     },
     {
       "id": "hidden_redforce",
@@ -3087,7 +3175,7 @@
         }
       ],
       "subGroup": "Ship",
-      "note": "redforce | Haki - Flying, -20 armor"
+      "note": "Command: redforce. Haki; armor reduction 20; attack +35; boss damage 1.75% of total HP; berserk damage 7.5% of total HP; single-target stun 0.7s; flying."
     },
     {
       "id": "hidden_mobydick",
@@ -3113,11 +3201,11 @@
         }
       ],
       "subGroup": "Ship",
-      "note": "mobydick | Haki - Flying, slow, HP regen"
+      "note": "Command: mobydick. Haki; movement slow 40; HP regeneration 1.25; flying."
     },
     {
       "id": "hidden_decken",
-      "name": "Vander Decken - Mana",
+      "name": "Vander Decken",
       "rarity": "Hidden",
       "image": "images/rare_decken.jpg",
       "recipe": [
@@ -3139,7 +3227,7 @@
         }
       ],
       "subGroup": "Ship",
-      "note": "decken | Normal - Swimming, long range (can hit top right objective)"
+      "note": "Command: decken. Normal; supporting magic damage; mana skill: damage equal to 4% of missing HP and stun 1.5s; single-target stun; swimming."
     },
     {
       "id": "hidden_baratie",
@@ -3161,11 +3249,11 @@
         }
       ],
       "subGroup": "Ship",
-      "note": "baratie | Hidden - Attack speed + Q skill"
+      "note": "Command: baratie. Normal; attack speed +20; Q: single-target attack speed +200. Upgrade material for Transcendence Sanji."
     },
     {
       "id": "hidden_maxim",
-      "name": "Ark Maxim - Mana",
+      "name": "Ark Maxim",
       "rarity": "Hidden",
       "image": "images/hidden_maxim.jpg",
       "recipe": [
@@ -3187,7 +3275,7 @@
         }
       ],
       "subGroup": "Ship",
-      "note": "maxim | Normal - Flying"
+      "note": "Command: maxim. Normal; explosion damage amplification +10%; triggered movement slow 30; flying. Mana skill: magic resistance reduction 6 and stun 1.2s."
     },
     {
       "id": "hidden_sunny",
@@ -3209,7 +3297,7 @@
         }
       ],
       "subGroup": "Ship",
-      "note": "sunny | Normal - Flying, area stun, mana skill if there's Franky Tr"
+      "note": "Command: sunny. Normal; area stun (source title: 0.7s; description: 0.5s). Transcendence Franky enables the Gaon Cannon mana skill."
     },
     {
       "id": "distortion_blackmaria",
@@ -3231,18 +3319,14 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "blackmaria | Siege - Stun/Slow/Damage"
+      "note": "Command: blackmaria (Bewitching Marionette). Stun 0.7s; single-target stun. Choose area stun with 5s cooldown, movement slow 40, or missing-HP damage 3 with 5s cooldown. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
     },
     {
       "id": "distortion_koala",
-      "name": "Koala - Mana",
+      "name": "Koala",
       "rarity": "Distortion",
       "image": "images/distortion_koala.png",
       "recipe": [
-        {
-          "unitId": "legendary_jinbe",
-          "count": 1
-        },
         {
           "unitId": "rare_vivi",
           "count": 1
@@ -3250,14 +3334,18 @@
         {
           "unitId": "uncommon_robin",
           "count": 1
+        },
+        {
+          "unitId": "legendary_jinbe",
+          "count": 1
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "koala | Siege - Armor break, mana regen"
+      "note": "Revolutionary Army's Acting Instructor; mana regeneration; resistance-ignoring single-target stun; effective against berserk enemies and bosses. Armor Break 1; mana skill: Armor Break 3. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
     },
     {
       "id": "distortion_queen",
-      "name": "Queen - Mana",
+      "name": "Queen",
       "rarity": "Distortion",
       "image": "images/distortion_queen.png",
       "recipe": [
@@ -3275,11 +3363,11 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "queen | Siege - Armor break, HP + mana regen"
+      "note": "Cyborg of the Plague; stun 0.4s; triggered armor reduction 20; Armor Break 1; mana skill: Armor Break 3; HP regeneration +1; mana regeneration +1. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
     },
     {
       "id": "distortion_perona",
-      "name": "Perona - Mana",
+      "name": "Perona",
       "rarity": "Distortion",
       "image": "images/distortion_perona.png",
       "recipe": [
@@ -3305,7 +3393,55 @@
         }
       ],
       "subGroup": "Combination Cost: 3, 8, 13, 18",
-      "note": "perona | Normal - Slow, delete"
+      "note": "Ghost Princess; movement slow 45; deletion every 7.5s; mana skill; explosion damage amplification 10. All skills deal explosion damage; amplification also applies to Eternal Mihawk. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
+    },
+    {
+      "id": "distortion_burgess",
+      "name": "Burgess",
+      "rarity": "Distortion",
+      "image": "images/distortion_burgess.png",
+      "recipe": [
+        {
+          "unitId": "hidden_sabo",
+          "count": 1
+        },
+        {
+          "unitId": "rare_burgess",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_fukuro",
+          "count": 1
+        },
+        {
+          "unitId": "uncommon_hacchan",
+          "count": 1
+        }
+      ],
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "note": "Champion of Great Strength; stun; single-target damage; effective against berserk enemies and bosses; underwater movement. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
+    },
+    {
+      "id": "distortion_ace",
+      "name": "Ace",
+      "rarity": "Distortion",
+      "image": "images/distortion_ace.png",
+      "recipe": [
+        {
+          "unitId": "legendary_ace",
+          "count": 1
+        },
+        {
+          "unitId": "rare_magellan",
+          "count": 1
+        },
+        {
+          "unitId": "special_squard",
+          "count": 1
+        }
+      ],
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "note": "Son of the Pirate King; armor reduction 40; movement slow 25; attack +25%. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
     },
     {
       "id": "alternate_doflamingo",
@@ -3318,7 +3454,7 @@
           "count": 1
         }
       ],
-      "note": "Piercing - Flying"
+      "note": "Piercing; single-target effect 0.6 and damage value 20; flying."
     },
     {
       "id": "alternate_baby5",
@@ -3331,7 +3467,7 @@
           "count": 1
         }
       ],
-      "note": "Normal"
+      "note": "Normal; physical damage; same performance as Baratie plus an acceleration skill; Armor Break 1; additional damage against berserk enemies."
     },
     {
       "id": "alternate_vivi",
@@ -3344,20 +3480,7 @@
           "count": 1
         }
       ],
-      "note": "Piercing - Slow, -11 armor"
-    },
-    {
-      "id": "alternate_ace",
-      "name": "Ace - Mana",
-      "rarity": "Alternate",
-      "image": "images/uncommon_ace.jpg",
-      "recipe": [
-        {
-          "unitId": "legendary_ace",
-          "count": 1
-        }
-      ],
-      "note": "Normal - Slow"
+      "note": "Piercing; movement slow 20; armor reduction 11."
     },
     {
       "id": "alternate_carrot",
@@ -3370,7 +3493,7 @@
           "count": 1
         }
       ],
-      "note": "Piercing - Flying"
+      "note": "Piercing; explosion damage amplification 1; randomly moves when attacking; single-target stun; flying."
     },
     {
       "id": "alternate_kaku",
@@ -3383,11 +3506,79 @@
           "count": 1
         }
       ],
-      "note": "Normal - Blink"
+      "note": "Finisher; blink range 1500; self attack speed +33. Transformation costs an additional 10 wood."
+    },
+    {
+      "id": "seraphim_ssnake",
+      "name": "S-Snake",
+      "rarity": "Seraphim",
+      "image": "images/seraphim_ssnake.png",
+      "recipe": [
+        {
+          "unitId": "legendary_hancock",
+          "count": 1
+        },
+        {
+          "unitId": "other_greenblood",
+          "count": 1
+        }
+      ],
+      "note": "Explosion damage amplification +3%; area total-HP damage; finisher. All Seraphim have single-target stun and can fly."
+    },
+    {
+      "id": "seraphim_shawk",
+      "name": "S-Hawk",
+      "rarity": "Seraphim",
+      "image": "images/seraphim_shawk.png",
+      "recipe": [
+        {
+          "unitId": "hidden_mihawk",
+          "count": 1
+        },
+        {
+          "unitId": "other_greenblood",
+          "count": 1
+        }
+      ],
+      "note": "Effective against berserk enemies and bosses; armor reduction 32; Armor Break. All Seraphim have single-target stun and can fly."
+    },
+    {
+      "id": "seraphim_sshark",
+      "name": "S-Shark",
+      "rarity": "Seraphim",
+      "image": "images/seraphim_sshark.png",
+      "recipe": [
+        {
+          "unitId": "legendary_jinbe",
+          "count": 1
+        },
+        {
+          "unitId": "other_greenblood",
+          "count": 1
+        }
+      ],
+      "note": "HP skill: Armor Break; armor reduction 20; attack +55%; HP regeneration. All Seraphim have single-target stun and can fly."
+    },
+    {
+      "id": "seraphim_sbear",
+      "name": "S-Bear",
+      "rarity": "Seraphim",
+      "image": "images/seraphim_sbear.png",
+      "recipe": [
+        {
+          "unitId": "legendary_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "other_greenblood",
+          "count": 1
+        }
+      ],
+      "note": "Magic resistance reduction 1%; magic damage amplification +4%; W: area magnet; teleport. All Seraphim have single-target stun and can fly."
     },
     {
       "id": "transcendence_doflamingo",
-      "name": "Doflamingo - Mana +4",
+      "name": "Doflamingo",
       "rarity": "Transcendence",
       "image": "images/rare_doflamingo.jpg",
       "recipe": [
@@ -3417,11 +3608,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "joker tr | Piercing - Flying, slow"
+      "note": "Command: joker tr (Dark Joker). Piercing; triggered movement slow 136 and a separate ground-area triggered slow 45; 50% area damage. Mana skill: armor reduction 60 for 4.5s. Upgrade 4 adds critical hits; source description lists Upgrade 3 extending awakening from 4.5s to 6s."
     },
     {
       "id": "transcendence_robin",
-      "name": "Robin - HP +4",
+      "name": "Robin",
       "rarity": "Transcendence",
       "image": "images/transcendence_robin.jpg",
       "recipe": [
@@ -3447,11 +3638,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "robin tr | Normal - Stun, -45 armor"
+      "note": "Command: robin tr (Devil Child). Normal; stun 1.1s; armor reduction 45; attack +25; HP skill: physical damage equal to 1% of current HP; single-target stun; Upgrade 4."
     },
     {
       "id": "transcendence_ryokugyu",
-      "name": "Ryokugyu - Mana",
+      "name": "Ryokugyu",
       "rarity": "Transcendence",
       "image": "images/hidden_ryokugyu.png",
       "recipe": [
@@ -3473,11 +3664,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "ryokugyu tr | Normal - -35 armor"
+      "note": "Command: ryokugyu tr (New Marine Admiral Green Bull). Normal; armor reduction 35; triggered armor reduction 15. Mana skill: transformation and armor reduction 10. Triggered movement slow 35 from a specific skill and 12 from all skills; special upgrade available."
     },
     {
       "id": "transcendence_luffy",
-      "name": "Luffy - Mana +4",
+      "name": "Luffy",
       "rarity": "Transcendence",
       "image": "images/transcendence_luffy.jpg",
       "recipe": [
@@ -3499,11 +3690,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "luffy tr | Siege - Stun, Armor Break"
+      "note": "Command: luffy tr (The Man Who Will Become Pirate King). Siege; stun 0.4s; triggered movement slow 35; percentage area damage; mana skill: Armor Break; single-target stun. Upgrade 4 strengthens stun."
     },
     {
       "id": "transcendence_hawkins",
-      "name": "Hawkins - HP&Mana +4",
+      "name": "Hawkins",
       "rarity": "Transcendence",
       "image": "images/transcendence_hawkins.png",
       "recipe": [
@@ -3529,11 +3720,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "hawkins tr | Normal - Wisp gambling, -25 armor, upgraded unit can fly"
+      "note": "Command: hawkins tr (Magician of Fate). Normal; armor reduction 25; damage +8% per enemy buff/debuff; HP and mana skills; single-target stun. Upgrade 4 summons a cursed doll with fortune-telling, movement slow and armor reduction 7, and single-target slow 7."
     },
     {
       "id": "transcendence_sabo",
-      "name": "Sabo - HP&Mana +4",
+      "name": "Sabo",
       "rarity": "Transcendence",
       "image": "images/transcendence_sabo.png",
       "recipe": [
@@ -3542,32 +3733,20 @@
           "count": 1
         },
         {
-          "unitId": "hidden_sabo",
-          "count": 1
-        },
-        {
-          "unitId": "rare_burgess",
-          "count": 1
-        },
-        {
-          "unitId": "uncommon_ace",
-          "count": 1
-        },
-        {
-          "unitId": "other_pirateship",
-          "count": 1
-        },
-        {
           "unitId": "other_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "distortion_burgess",
           "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "sabo tr | Siege - Slow, -30 armor"
+      "note": "Command: sabo tr (Revolutionary Army Chief of Staff). Siege; movement slow 35; armor reduction 30; triggered movement slow 30; splash; damage increases per buff; single-target stun. Mana skill: physical area damage equal to 1.5% of current HP and stun 3s; Upgrade 4."
     },
     {
       "id": "transcendence_usopp",
-      "name": "Usopp - Mana",
+      "name": "Usopp",
       "rarity": "Transcendence",
       "image": "images/transcendence_usopp.jpg",
       "recipe": [
@@ -3593,11 +3772,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "usopp tr | Piercing - Global -8 armor, -22 armor, Usopp Hammer (W)"
+      "note": "Command: usopp tr (Warrior of the Sea). Piercing; armor reduction 22; global armor reduction 8; splash; W: Usopp Hammer; single-target stun. Mana skill: area damage equal to 2% of total HP. Upgrade 4 summons plants."
     },
     {
       "id": "transcendence_zoro",
-      "name": "Zoro - Mana +4",
+      "name": "Zoro",
       "rarity": "Transcendence",
       "image": "images/transcendence_zoro.jpg",
       "recipe": [
@@ -3623,11 +3802,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "zoro tr | Piercing - Stun, Slow, -30(35-40) armor, item upgrade"
+      "note": "Command: zoro tr (Strongest Swordsman). Piercing; stun 0.39s; movement slow 30 (35-42); armor reduction 30 (35-42); single-target stun. Mana skill: stun 3s. Upgrade 4 enhances abilities; acquiring Shusui strengthens him and changes skills."
     },
     {
       "id": "transcendence_jinbe",
-      "name": "Jinbe - Mana",
+      "name": "Jinbe",
       "rarity": "Transcendence",
       "image": "images/transcendence_jinbe.png",
       "recipe": [
@@ -3649,11 +3828,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "jinbe tr | Siege - Swimming, armor Break, Mana Regen 3"
+      "note": "Command: jinbe tr (Knight of the Sea). Siege; Armor Break; triggered movement slow 50; attack speed +20; mana regeneration 3; splash; mana skill; single-target stun; swimming. Skill damage +1% per Armor Break stack; special upgrade available."
     },
     {
       "id": "transcendence_chopper",
-      "name": "Chopper - Mana +2",
+      "name": "Chopper",
       "rarity": "Transcendence",
       "image": "images/transcendence_chopper.jpg",
       "recipe": [
@@ -3675,11 +3854,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "chopper tr | Normal - -50 armor"
+      "note": "Command: chopper tr (Reindeer Doctor). Normal; armor reduction 50; attack speed +30; attack +80. Mana skill: transforms into Monster Point; Upgrade 4."
     },
     {
       "id": "transcendence_fujitora",
-      "name": "Fujitora - Mana",
+      "name": "Fujitora",
       "rarity": "Transcendence",
       "image": "images/transcendence_fujitora.png",
       "recipe": [
@@ -3705,11 +3884,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "fujitora tr | Siege - Stun, Slow, Armor Break"
+      "note": "Command: fujitora tr (Raging Tiger). Siege; stun 1s; movement slow 55; Armor Break; 80% area damage. Mana skill: triggered movement slow 99; Upgrade 4."
     },
     {
       "id": "transcendence_yamato",
-      "name": "Yamato - HP",
+      "name": "Yamato",
       "rarity": "Transcendence",
       "image": "images/transcendence_yamato.png",
       "recipe": [
@@ -3739,20 +3918,20 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "yamato tr | Haki - Slow, -25 armor"
+      "note": "Command: yamato tr (Oni Princess). Haki; enemy movement speed +15; armor reduction 25; percentage area damage and fixed area damage; HP skill; single-target stun. Thunder Bagua damage and percentage area magic damage increase near maximum slow; special upgrade available."
     },
     {
       "id": "transcendence_bonney",
-      "name": "Bonney - HP&Mana +4",
+      "name": "Bonney",
       "rarity": "Transcendence",
       "image": "images/transcendence_bonney.png",
       "recipe": [
         {
-          "unitId": "legendary_kuma",
+          "unitId": "hidden_stussy",
           "count": 1
         },
         {
-          "unitId": "hidden_stussy",
+          "unitId": "legendary_kuma",
           "count": 1
         },
         {
@@ -3762,18 +3941,14 @@
         {
           "unitId": "special_capone",
           "count": 1
-        },
-        {
-          "unitId": "other_kuma",
-          "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "bonney tr | Piercing - Stacking -armor"
+      "note": "Command: bonney tr (Distorted Future). Stun 0.6s; stacking armor reduction up to 40; current-HP damage. Mana skill: Nika transformation with a 2s incapacitation penalty. Upgrade 4 removes the penalty."
     },
     {
       "id": "transcendence_tashigi",
-      "name": "Tashigi - Mana +4",
+      "name": "Tashigi",
       "rarity": "Transcendence",
       "image": "images/uncommon_tashigi.png",
       "recipe": [
@@ -3799,11 +3974,115 @@
         }
       ],
       "subGroup": "Hybrid",
-      "note": "tashigi tr | Piercing - Armor Break"
+      "note": "Command: tashigi tr (Marine Heroine). Piercing; Armor Break; area magic damage; mana skill; single-target stun. Upgrade 4 enhances skill damage."
+    },
+    {
+      "id": "transcendence_vegapunk_ssnake",
+      "name": "Vegapunk [S-Snake]",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_vegapunk.png",
+      "recipe": [
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        },
+        {
+          "unitId": "seraphim_ssnake",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood."
+    },
+    {
+      "id": "transcendence_vegapunk_shawk",
+      "name": "Vegapunk [S-Hawk]",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_vegapunk.png",
+      "recipe": [
+        {
+          "unitId": "seraphim_shawk",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood."
+    },
+    {
+      "id": "transcendence_vegapunk_sshark",
+      "name": "Vegapunk [S-Shark]",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_vegapunk.png",
+      "recipe": [
+        {
+          "unitId": "seraphim_sshark",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood."
+    },
+    {
+      "id": "transcendence_vegapunk_sbear",
+      "name": "Vegapunk [S-Bear]",
+      "rarity": "Transcendence",
+      "image": "images/transcendence_vegapunk.png",
+      "recipe": [
+        {
+          "unitId": "seraphim_sbear",
+          "count": 1
+        },
+        {
+          "unitId": "rare_kizaru",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
+          "count": 1
+        }
+      ],
+      "subGroup": "Hybrid",
+      "note": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood."
     },
     {
       "id": "transcendence_blackbeard",
-      "name": "Blackbeard - HP +4",
+      "name": "Blackbeard",
       "rarity": "Transcendence",
       "image": "images/rare_blackbeard.jpg",
       "recipe": [
@@ -3825,11 +4104,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "teach tr | Piercing - Slow, pull"
+      "note": "Command: teach tr (Cunning and Despicable Darkness). Piercing; triggered movement slow 70; single-target magic damage amplification 10 and all damage received +10; pull. HP skill: area damage equal to 2.5% of current HP. Removes berserk buffs and deals additional damage. Upgrade 4 strengthens Black Vortex."
     },
     {
       "id": "transcendence_nami",
-      "name": "Nami +4",
+      "name": "Nami",
       "rarity": "Transcendence",
       "image": "images/transcendence_nami.jpg",
       "recipe": [
@@ -3855,11 +4134,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "nami tr | Normal - Slow"
+      "note": "Command: nami tr (Clear Weather). Normal; triggered movement slow 45; total-HP damage; magic damage amplification 2; gold income +20%; Upgrade 4."
     },
     {
       "id": "transcendence_law",
-      "name": "Law - Mana +4",
+      "name": "Law",
       "rarity": "Transcendence",
       "image": "images/transcendence_law.jpg",
       "recipe": [
@@ -3881,11 +4160,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "law tr | Piercing - Teleport, slow"
+      "note": "Command: law tr (The Man Who Offered One Hundred Hearts). Piercing; triggered movement slow 35; explosion damage; current-HP damage; single-target boss slow 99; additional damage against berserk enemies. Mana skill: movement slow 45 and attack +20; Upgrade 4."
     },
     {
       "id": "transcendence_lucci",
-      "name": "Lucci +4",
+      "name": "Lucci",
       "rarity": "Transcendence",
       "image": "images/transcendence_lucci.png",
       "recipe": [
@@ -3907,11 +4186,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "lucci tr | Siege - Teleport, single target, upgrade to gain manual skill (transform)"
+      "note": "Command: lucci tr (White Bird Pursuing Dark Justice). Siege; single-target magic damage (values 23, 40); single-target stun; explosion damage amplification +10%. Upgrade 4 awakens the Devil Fruit."
     },
     {
       "id": "transcendence_brook",
-      "name": "Brook - Mana +4",
+      "name": "Brook",
       "rarity": "Transcendence",
       "image": "images/transcendence_brook.jpg",
       "recipe": [
@@ -3937,11 +4216,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "brook tr | Normal - Flying, global Slow, slow, upgrade summon baby laboon"
+      "note": "Command: brook tr (Soul King). Normal; movement slow 15; global slow 5; magic resistance reduction 3; finisher; single-target stun; creep-related effect; flying. Mana skill: magic damage amplification 8 and stun 3s. Upgrade 4 summons Baby Laboon."
     },
     {
       "id": "transcendence_sanji",
-      "name": "Sanji - Mana +4",
+      "name": "Sanji",
       "rarity": "Transcendence",
       "image": "images/transcendence_sanji.jpg",
       "recipe": [
@@ -3963,11 +4242,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "sanji tr | Siege - Flying, blink, slow"
+      "note": "Command: sanji tr (The Man Returned from Hell). Siege; single-target magic damage; triggered movement slow 50 (55); mana skill; flying; blink range 800; Upgrade 4."
     },
     {
       "id": "transcendence_shanks",
-      "name": "Shanks - Mana +4",
+      "name": "Shanks",
       "rarity": "Transcendence",
       "image": "images/rare_shanks.jpg",
       "recipe": [
@@ -3993,11 +4272,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "shanks tr | Haki - Stun, upgrade to gain manual skill (Kamusari)"
+      "note": "Command: shanks tr (The Man Who Ended the Paramount War). Haki; stun 2s; Haki stun; mana skill; single-target stun; self attack speed +20. Upgrade 4 unlocks Divine Departure; additional damage against berserk enemies. Departure can defeat Burgess with some luck."
     },
     {
       "id": "transcendence_snakeman",
-      "name": "Snakeman - Mana +4",
+      "name": "Snakeman",
       "rarity": "Transcendence",
       "image": "images/transcendence_snakeman.png",
       "recipe": [
@@ -4023,11 +4302,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "snakeman tr | Piercing - Flying"
+      "note": "Command: snakeman tr (Fifth Emperor). Haki; explosion damage; mana skill; single-target stun; flying; damage increases with enemy movement speed. Upgrade 4 extends resistance-ignoring single-target stun by 0.5s and adds boss/berserk damage."
     },
     {
       "id": "transcendence_shirahoshi",
-      "name": "Shirahoshi - Mana",
+      "name": "Shirahoshi",
       "rarity": "Transcendence",
       "image": "images/transcendence_shirahoshi.jpg",
       "recipe": [
@@ -4049,11 +4328,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "shirahoshi tr | Normal - Flying, stun"
+      "note": "Command: shirahoshi tr (Mermaid Princess Who Rules the Sea Kings). Normal; stun 1.2s; splash; flying. Mana skill: area damage equal to 6% of missing HP multiplied by 1-1.5, and stun 3s; special upgrade available."
     },
     {
       "id": "transcendence_aokiji",
-      "name": "Aokiji - Mana +4",
+      "name": "Aokiji",
       "rarity": "Transcendence",
       "image": "images/transcendence_aokiji.jpg",
       "recipe": [
@@ -4079,11 +4358,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "aokiji tr | Piercing - Slow, stun, upgrade to gain flying"
+      "note": "Command: aokiji tr (Former Marine Admiral Blue Pheasant). Piercing; stun 1.2s; movement slow 70 (80); single-target slow 15; mana skill. Upgrade 4 adds slow 10, explosion damage amplification 5, flying, and self mana regeneration."
     },
     {
       "id": "transcendence_akainu",
-      "name": "Akainu - HP&Mana +4",
+      "name": "Akainu",
       "rarity": "Transcendence",
       "image": "images/transcendence_akainu.png",
       "recipe": [
@@ -4105,11 +4384,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "akainu tr | Siege - Damage dealer"
+      "note": "Command: akainu tr (Marine Fleet Admiral Red Dog). Siege; triggered movement slow 12; HP and mana skills; single-target stun; triggered magic resistance reduction 10; additional damage against berserk enemies. One skill does not stack with Eternal Ace. Upgrade 4 adjusts meteor density and adds strength-based damage."
     },
     {
       "id": "transcendence_kid",
-      "name": "Kid - HP +4",
+      "name": "Kid",
       "rarity": "Transcendence",
       "image": "images/transcendence_kid.png",
       "recipe": [
@@ -4139,11 +4418,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "kid tr | Siege - Slow"
+      "note": "Command: kid tr (Heretic of the New Generation). Siege; movement slow 35; HP skill; area stun 0.18s; single-target stun. Deals more damage to clustered enemies; Upgrade 4."
     },
     {
       "id": "transcendence_kizaru",
-      "name": "Kizaru - Mana",
+      "name": "Kizaru",
       "rarity": "Transcendence",
       "image": "images/rare_kizaru.jpg",
       "recipe": [
@@ -4173,11 +4452,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "kizaru tr | Piercing - Stun, 3500 range blink (can go to top right)"
+      "note": "Command: kizaru tr (Marine Admiral Yellow Monkey). Piercing; stun 0.9s; mana skill; single-target stun; blink range 3500; special upgrade available."
     },
     {
       "id": "transcendence_franky",
-      "name": "Franky - Mana +4",
+      "name": "Franky",
       "rarity": "Transcendence",
       "image": "images/transcendence_franky.jpg",
       "recipe": [
@@ -4203,11 +4482,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "franky tr | Siege - Mana Regen 5 (Excluding Self), shipwright (Sunny Craft 2, Wood 10)"
+      "note": "Command: franky tr (Invincible Iron Pirates). Siege; mana regeneration 5 excluding self. Mana skill: General Franky transformation lasting 6s. Damage increases per nearby Sunny. Shipwright can craft 2 Sunny ships; source title lists cost 8 wood, description lists 10 wood. Upgrade 4."
     },
     {
       "id": "transcendence_koby",
-      "name": "Koby - HP +4",
+      "name": "Koby",
       "rarity": "Transcendence",
       "image": "images/transcendence_koby.png",
       "recipe": [
@@ -4233,11 +4512,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "koby tr | Normal - Flying, blink"
+      "note": "Command: koby tr (Future of the Marines). Summons clones; source title lists explosion damage and description lists armor-ignoring damage. Flying; lane explosion-damage reduction debuff 10%; self attack speed increases every 5 rounds, up to level 6; Upgrade 4."
     },
     {
       "id": "limited_rebecca",
-      "name": "Rebecca +4",
+      "name": "Rebecca",
       "rarity": "Limited",
       "image": "images/hidden_rebecca.png",
       "recipe": [
@@ -4255,11 +4534,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "5.000g + 5w | Piercing - -38 armor"
+      "note": "Piercing; armor reduction 38; triggered movement slow 50; splash; leveling; single-target stun. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 adds Repeated Training; gains 2 levels when using the mana skill."
     },
     {
       "id": "limited_katakuri",
-      "name": "Katakuri - HP +4",
+      "name": "Katakuri",
       "rarity": "Limited",
       "image": "images/limited_katakuri.png",
       "recipe": [
@@ -4281,11 +4560,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "35.000g + 5w |Siege - HP regen, -30 armor"
+      "note": "Siege; armor reduction 30; HP regeneration 2.85; 75% area damage; HP skill; single-target stun. Additional crafting cost: 35,000 gold and 5 wood. Every attack deals 6x critical damage to bosses/story enemies; 20% Haki proc grants Armor Break 6. Upgrade 4 enhances skills."
     },
     {
       "id": "limited_crocodile",
-      "name": "Crocodile - HP +4",
+      "name": "Crocodile",
       "rarity": "Limited",
       "image": "images/limited_crocodile.png",
       "recipe": [
@@ -4303,11 +4582,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "5.000g + 5w | Piercing - Stun, slow, -25 armor, upgrade gain hp skill & armor break"
+      "note": "Piercing; stun 0.54s (0.6s upgraded); movement slow 40; armor reduction 25. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 adds Armor Break and a short-stun skill."
     },
     {
       "id": "limited_king",
-      "name": "King - Mana +4",
+      "name": "King",
       "rarity": "Limited",
       "image": "images/limited_king.png",
       "recipe": [
@@ -4325,11 +4604,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "5.000g + 5w | Normal - Flying, armor break"
+      "note": "Normal; triggered armor reduction 34; poison-style armor reduction 25 plus area reduction 10; single-target Armor Break; splash; single-target slow 15%; flying. Mana skill: Executioner at Armor Break 50 or higher, enhancing attacks and applying nearby Armor Break. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 upgrades Wildfire to Karyudon."
     },
     {
       "id": "limited_alvida",
-      "name": "Alvida - Mana",
+      "name": "Alvida",
       "rarity": "Limited",
       "image": "images/limited_alvida.png",
       "recipe": [
@@ -4351,11 +4630,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "+4 special points | Siege - Armor break, -25 armor, knockback"
+      "note": "Armor reduction 25; mana skill: missing-HP damage, Armor Break 10, and area stun; guaranteed single-target stun; all skills knock back. Crafting consumes 4 additional special upgrade points."
     },
     {
       "id": "limited_marco",
-      "name": "Marco - HP +4",
+      "name": "Marco",
       "rarity": "Limited",
       "image": "images/limited_marco.png",
       "recipe": [
@@ -4373,11 +4652,11 @@
         }
       ],
       "subGroup": "Hybrid",
-      "note": "5.000g + 5w | Piercing - Flying, slow, human single - phoenix area"
+      "note": "Piercing; movement slow 45; HP regeneration 3; splash; single-target damage; HP skill; flying. Human form: single-target explosion damage equal to 20% of current HP. Phoenix form: area splash and 3x physical critical damage. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 raises HP regeneration to 4 and slow to 60."
     },
     {
       "id": "limited_redfield",
-      "name": "Redfield +4",
+      "name": "Redfield",
       "rarity": "Limited",
       "image": "images/limited_redfield.png",
       "recipe": [
@@ -4395,11 +4674,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "5.000g + 5w, can only be combined before Round 41 | Haki - Blink"
+      "note": "Haki; total-HP damage; magic finisher; single-target stun; blink range 1500. Additional crafting cost: 5,000 gold and 5 wood; can only be crafted before round 41. Upgrade 4 adds the Blood Explosion skill."
     },
     {
       "id": "limited_shinobu",
-      "name": "Shinobu - HP +4",
+      "name": "Shinobu",
       "rarity": "Limited",
       "image": "images/limited_shinobu.png",
       "recipe": [
@@ -4417,7 +4696,7 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "5.000g + 5w | Normal - Additional treasure search"
+      "note": "Normal; movement slow 30; finisher; HP skill; single-target stun; additional damage against berserk enemies. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 strengthens clones."
     },
     {
       "id": "limited_ain",
@@ -4436,23 +4715,27 @@
         {
           "unitId": "rare_benbeckman",
           "count": 1
+        },
+        {
+          "unitId": "special_absalom",
+          "count": 3
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "2 tokens + 5.000g + 8w | Piercing - Blink, delete"
+      "note": "Piercing; reduces enemy level and deletes enemies; blink range 1500; additional damage against berserk enemies; special upgrade available. Requires 3 Absalom, 5,000 gold, and 5 wood in addition to the other recipe ingredients."
     },
     {
       "id": "limited_enel",
-      "name": "Enel - Mana +4",
+      "name": "Enel",
       "rarity": "Limited",
       "image": "images/special_enel.jpg",
       "recipe": [
         {
-          "unitId": "hidden_maxim",
+          "unitId": "legendary_caesar",
           "count": 1
         },
         {
-          "unitId": "legendary_caesar",
+          "unitId": "hidden_maxim",
           "count": 1
         },
         {
@@ -4465,11 +4748,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "5.000g + 5w | Normal - Teleport, mana regen"
+      "note": "Normal; mana regeneration 1.5; single-target stun and total-HP damage; additional damage against berserk enemies. Mana skill: area damage equal to 2% of total HP, magic resistance reduction 18, and stun 3s. Additional crafting cost: 5,000 gold and 5 wood. Normal upgrades strengthen skills; Upgrade 4 enhances Discharge."
     },
     {
       "id": "immortal_garp",
-      "name": "Garp - Mana +4",
+      "name": "Garp",
       "rarity": "Immortal",
       "image": "images/immortal_garp.png",
       "recipe": [
@@ -4487,11 +4770,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "garp im | Siege - Stun, +15 armor"
+      "note": "Command: garp im (Marine Hero Garp). Siege; stun 1.1s; armor +15; percentage area damage; single-target physical damage; damage increases per buff; single-target stun. Mana skill: area damage equal to 5% of total HP."
     },
     {
       "id": "immortal_rayleigh",
-      "name": "Rayleigh - Mana",
+      "name": "Rayleigh",
       "rarity": "Immortal",
       "image": "images/other_rayleigh.jpg",
       "recipe": [
@@ -4509,11 +4792,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "rayleigh im | Piercing - Armor break, generate misc item"
+      "note": "Command: rayleigh im (Dark King Silvers Rayleigh). Piercing; armor reduction 20 (25); attack speed +45; 100% area damage; persuades allied units; single-target stun. Mana skill: Armor Break 5, stun 3s, and allied-unit persuasion. Can sell junk; special upgrade available."
     },
     {
       "id": "immortal_roger",
-      "name": "Roger - Mana",
+      "name": "Roger",
       "rarity": "Immortal",
       "image": "images/immortal_roger.jpg",
       "recipe": [
@@ -4531,11 +4814,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "roger im | Haki - Slow, -60 armor"
+      "note": "Command: roger im (Pirate King Gol D. Roger). Haki; movement slow 50; armor reduction 60; attack +60; single-target stun. Mana skill: movement slow 115; special upgrade: Divine Departure."
     },
     {
       "id": "immortal_gaban",
-      "name": "Gaban - Mana +4",
+      "name": "Gaban",
       "rarity": "Immortal",
       "image": "images/immortal_gaban.jpg",
       "recipe": [
@@ -4553,11 +4836,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "gaban im | Piercing - Single target -70 armor, high attack, upgrade to get blink"
+      "note": "Mountain Eater; Piercing; single-target armor reduction 60; mana skill: finisher; single-target stun. Special upgrade adds attack-buff-based extra hits and additional boss armor reduction. Upgrade 4 enhances skills and adds high-speed movement."
     },
     {
       "id": "immortal_kaido",
-      "name": "Kaido - HP",
+      "name": "Kaido",
       "rarity": "Immortal",
       "image": "images/immortal_kaido.png",
       "recipe": [
@@ -4575,11 +4858,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "kaido im | Haki - Flying, slow"
+      "note": "Command: kaido im (King of the Beasts). Haki; movement slow 60; splash; percentage area damage; single-target armor reduction 45; F: transformation; HP skill; flying. Skill procs apply armor reduction 3, up to single-target reduction 145 and area reduction 30. Debuff reduces attack by 75%, excluding Kaido."
     },
     {
       "id": "immortal_whitebeard",
-      "name": "Whitebeard - HP +4",
+      "name": "Whitebeard",
       "rarity": "Immortal",
       "image": "images/legendary_whitebeard.jpg",
       "recipe": [
@@ -4597,7 +4880,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "newgate im | Haki - Stun, slow, -45 armor"
+      "note": "Command: newgate im (Great Pirate Whitebeard). Haki; stun 0.57s (0.6s upgraded); armor reduction 45; triggered movement slow 60; splash; HP skill; single-target stun. Upgrade 4 enhances Quake Strike."
     },
     {
       "id": "immortal_bullet",
@@ -4619,11 +4902,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "bullet im | Siege - Item Enhance (Random Enhance when feeding Common unit), single target stun, armor break"
+      "note": "Command: bullet im (Heir of the Monster). Single-target stun; feeding Common units randomly enhances items."
     },
     {
       "id": "immortal_dragon",
-      "name": "Dragon - Mana +4",
+      "name": "Dragon",
       "rarity": "Immortal",
       "image": "images/legendary_dragon.jpg",
       "recipe": [
@@ -4641,11 +4924,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "dragon im | Normal - Stun, upgrade to get delete skill"
+      "note": "Command: dragon im (Wind That Brings the Storm). Normal; stun 1.4s; attack speed +20; mana skill; skill damage scales with attack speed; explosion damage amplification +20% against normal lane enemies. Upgrade 4: automatic deletion every 9s. Without the upgrade, requires Docking twice to defeat Burgess. Cutting Wind is a single-target skill dealing 40% less damage to non-lane enemies."
     },
     {
       "id": "immortal_bigmom",
-      "name": "Big Mom - HP +4",
+      "name": "Big Mom",
       "rarity": "Immortal",
       "image": "images/immortal_bigmom.png",
       "recipe": [
@@ -4663,11 +4946,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "bigmom im | Sige - Flying, slow"
+      "note": "Gluttonous Iron Balloon; Siege; movement slow 70; 66% area magic damage; flying. HP skill: area damage equal to 1% of total HP, 7 hits. One Docking allows defeating Burgess; special upgrade available."
     },
     {
       "id": "immortal_sengoku",
-      "name": "Sengoku - HP +4",
+      "name": "Sengoku",
       "rarity": "Immortal",
       "image": "images/legendary_sengoku.jpg",
       "recipe": [
@@ -4685,11 +4968,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "sengoku im | Haki - Stun, global attack buff"
+      "note": "Command: sengoku im (Buddha Sengoku). Haki; stun 1.1s (1.8s upgraded); global attack +11; attack +22; explosion damage; current-HP damage. HP skill: area damage equal to 1.5% of current HP; special upgrade increases this by 0.5%."
     },
     {
       "id": "immortal_shiki",
-      "name": "Shiki - Mana +4",
+      "name": "Shiki",
       "rarity": "Immortal",
       "image": "images/legendary_shiki.jpg",
       "recipe": [
@@ -4707,11 +4990,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "shiki im | Normal - Flying, stun, upgrade 4 (consume pirate ship to enhance skill)"
+      "note": "Command: shiki im (Heavenly Golden Lion). Normal; stun 1.8s; triggered armor reduction 7; flying. Mana skill: magic damage amplification 15. Upgrade 4 enables skill enhancement by consuming Pirate Ships, up to 3 enhancements."
     },
     {
       "id": "immortal_z",
-      "name": "Z - Mana",
+      "name": "Z",
       "rarity": "Immortal",
       "image": "images/immortal_z.jpg",
       "recipe": [
@@ -4729,11 +5012,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "z im | Siege - Blink"
+      "note": "Command: z im (Black Arm Zephyr of Conviction). Siege; movement slow 35; mana skill: missing-HP damage; single-target stun; blink range 2000; additional damage against berserk enemies; special upgrade available."
     },
     {
       "id": "eternal_nikaluffy",
-      "name": "Nika [Luffy] - HP&Mana",
+      "name": "Nika [Luffy]",
       "rarity": "Eternal",
       "image": "images/eternal_nika.png",
       "recipe": [
@@ -4759,11 +5042,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "nika et | Haki - Flying, stun, -35 armor"
+      "note": "Command: nika et (Sun God). Haki; stun 1s; armor reduction 35; attack speed +25; attack +15; self attack +25; splash; HP and mana skills; ignores terrain. Damage increases with enemy movement speed; uses Transcendence upgrades."
     },
     {
       "id": "eternal_nikasnakeman",
-      "name": "Nika [Snakeman] - HP&Mana",
+      "name": "Nika [Snakeman]",
       "rarity": "Eternal",
       "image": "images/eternal_nika.png",
       "recipe": [
@@ -4789,7 +5072,7 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "nika et | Haki - Flying, stun, -35 armor"
+      "note": "Command: nika et (Sun God). Haki; stun 1s; armor reduction 35; attack speed +25; attack +15; self attack +25; splash; HP and mana skills; ignores terrain. Damage increases with enemy movement speed; uses Transcendence upgrades."
     },
     {
       "id": "eternal_buggy",
@@ -4827,11 +5110,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "buggy et | Piercing - Stun, slow, summon units"
+      "note": "Command: buggy et (Thousand-Coin Clown). Piercing; stun 0.3s; movement slow 25; armor reduction 30 (41); attack speed +65; attack +78; single-target stun; gold enhancement; additional attack +15,000. Listed stats include the summoned Ivankov. Upgrade 4 adds summons."
     },
     {
       "id": "eternal_cavendish",
-      "name": "Cavendish - Mana",
+      "name": "Cavendish",
       "rarity": "Eternal",
       "image": "images/eternal_cavendish.png",
       "recipe": [
@@ -4853,11 +5136,11 @@
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "cavendish et | Normal - Armor break"
+      "note": "Command: cavendish et (Pirate Prince). Normal; stun 0.8s; armor reduction 35; splash 25%; single-target stun; mana skill; special upgrade available. Requires Legendary Law, Hidden Killer, Hidden Rebecca, Captain Kuro, and an additional 5 wood."
     },
     {
       "id": "eternal_hancock",
-      "name": "Hancock - Mana",
+      "name": "Hancock",
       "rarity": "Eternal",
       "image": "images/rare_hancock.jpg",
       "recipe": [
@@ -4883,18 +5166,14 @@
         }
       ],
       "subGroup": "Hybrid",
-      "note": "hancock et | Haki - Stun, -45(50) armor"
+      "note": "Command: hancock et (Empress of Amazon Lily). Haki; stun 0.8s (1.1s upgraded); armor reduction 35 (40); magic resistance reduction 5; triggered movement slow 60; mana skill; single-target stun; finisher. Upgrade 4 strengthens stun, adds area explosion damage, and adds armor reduction 5."
     },
     {
       "id": "eternal_mihawk",
-      "name": "Mihawk - Mana",
+      "name": "Mihawk",
       "rarity": "Eternal",
       "image": "images/eternal_mihawk.png",
       "recipe": [
-        {
-          "unitId": "distortion_perona",
-          "count": 1
-        },
         {
           "unitId": "hidden_mihawk",
           "count": 1
@@ -4906,14 +5185,18 @@
         {
           "unitId": "other_pirateship",
           "count": 2
+        },
+        {
+          "unitId": "distortion_perona",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "mihawk et | Piercing - Slow"
+      "note": "Command: mihawk et (Hawk-Eyes). Piercing; movement slow 45; explosion and magic damage; splash; armor-ignoring damage; mana skill; single-target stun; Upgrade 4."
     },
     {
       "id": "eternal_vivi",
-      "name": "Vivi - Mana",
+      "name": "Vivi",
       "rarity": "Eternal",
       "image": "images/eternal_vivi.png",
       "recipe": [
@@ -4943,41 +5226,29 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "vivi et | Piercing - Finisher, enhance (Random Wisp 3, Wood 2)"
+      "note": "Command: vivi et (Pirate Princess). Piercing; finisher; mana skill; single-target stun; special upgrade available. Enhance skills with 3 Random Wisps and 2 wood; description also mentions basic Wisps and wood."
     },
     {
       "id": "eternal_ace",
-      "name": "Ace - Mana +4",
+      "name": "Ace",
       "rarity": "Eternal",
       "image": "images/uncommon_ace.jpg",
       "recipe": [
-        {
-          "unitId": "alternate_ace",
-          "count": 1
-        },
         {
           "unitId": "legendary_marco",
           "count": 1
         },
         {
-          "unitId": "special_jinbe",
-          "count": 1
-        },
-        {
-          "unitId": "special_squard",
-          "count": 1
-        },
-        {
-          "unitId": "special_buggy",
+          "unitId": "distortion_ace",
           "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "ace et | Normal - Slow, upgrade 4 (Single Stun/Skill Instant Dmg)"
+      "note": "Command: ace et (Fire Fist Ace). Normal; movement slow 45; mana skill: area damage equal to 2% of total HP multiplied by 1-2; single-target stun. Upgrade 4 strengthens single-target stun and instant skill damage."
     },
     {
       "id": "eternal_oden",
-      "name": "Oden - Mana +4",
+      "name": "Oden",
       "rarity": "Eternal",
       "image": "images/eternal_oden.png",
       "recipe": [
@@ -4999,11 +5270,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "oden et | Haki - Upgrade to summon Kinemon"
+      "note": "Command: oden et (True Hero). Haki; magic damage amplification; attack +50; mana skill; single-target stun; additional basic-attack damage for Legendary and higher units. Upgrade 4 summons Legendary Kinemon."
     },
     {
       "id": "eternal_uta",
-      "name": "Uta - HP&Mana",
+      "name": "Uta",
       "rarity": "Eternal",
       "image": "images/eternal_uta.png",
       "recipe": [
@@ -5037,11 +5308,11 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "u-ta et | Normal - Stun, Slow"
+      "note": "Command: u-ta et (Diva of the World). Stun 0.6s; movement slow 45; attack +30; attack speed +27; mana skill; finisher; special upgrade available. Loses HP when attacking; sleeps for 3s when HP falls to 10 or below. Mana skill: magic resistance reduction 10% and explosion damage amplification 10%."
     },
     {
       "id": "eternal_ryuma",
-      "name": "Ryuma - Mana +4",
+      "name": "Ryuma",
       "rarity": "Eternal",
       "image": "images/eternal_ryuma.png",
       "recipe": [
@@ -5059,7 +5330,29 @@
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "ryuma et | Haki - Finisher, Wano Synergy (Toki, Shinobu, Kiku)"
+      "note": "Legendary Samurai; finisher; mana skill; stack-based damage; Wano synergy. Upgrade 4 enhances Shadow Swordsmanship. Requires Legendary Law, Hidden Shiryu, Hidden Ryuma, and an additional 5 wood."
+    },
+    {
+      "id": "eternal_tesoro",
+      "name": "Tesoro",
+      "rarity": "Eternal",
+      "image": "images/eternal_tesoro.png",
+      "recipe": [
+        {
+          "unitId": "legendary_kalgara",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_stussy",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ryokugyu",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Command: tesoro et (Greatest Entertainer). Stun 1.3s; finisher; can deal single-target damage. Upgrade 4: deletion or 20% damage against berserk enemies/bosses. Additional crafting cost: 5 wood."
     },
     {
       "id": "mystic_jotaro",
@@ -5067,10 +5360,6 @@
       "rarity": "Mystic",
       "image": "images/mystic_jotaro.png",
       "recipe": [
-        {
-          "unitId": "random_touma",
-          "count": 1
-        },
         {
           "unitId": "legendary_toki",
           "count": 1
@@ -5082,10 +5371,14 @@
         {
           "unitId": "special_luffy",
           "count": 1
+        },
+        {
+          "unitId": "random_touma",
+          "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Attack +20%; single-target stun; armor reduction 25; Armor Break, with damage increasing per Armor Break stack. Requires Kamijou Touma, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_shiki",
@@ -5093,10 +5386,6 @@
       "rarity": "Mystic",
       "image": "images/mystic_shiki.png",
       "recipe": [
-        {
-          "unitId": "random_yomi",
-          "count": 1
-        },
         {
           "unitId": "hidden_shiryu",
           "count": 1
@@ -5108,10 +5397,14 @@
         {
           "unitId": "legendary_nami",
           "count": 1
+        },
+        {
+          "unitId": "random_yomi",
+          "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Armor reduction 44; single-target stun. Requires Isayama Yomi, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_tatsumaki",
@@ -5120,20 +5413,20 @@
       "image": "images/mystic_tatsumaki.png",
       "recipe": [
         {
-          "unitId": "random_yotsuba",
-          "count": 1
-        },
-        {
           "unitId": "legendary_king",
           "count": 1
         },
         {
           "unitId": "legendary_kuma",
           "count": 1
+        },
+        {
+          "unitId": "random_yotsuba",
+          "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "10.000g + 7w + 1 token | Flying"
+      "note": "Stun 0.9s; HP/mana skill: Armor Break; movement slow 50. Requires Yotsuba, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_youmu",
@@ -5142,20 +5435,20 @@
       "image": "images/mystic_youmu.png",
       "recipe": [
         {
-          "unitId": "random_yan",
-          "count": 1
-        },
-        {
           "unitId": "legendary_z",
           "count": 1
         },
         {
           "unitId": "alternate_vivi",
           "count": 1
+        },
+        {
+          "unitId": "random_yan",
+          "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Single-target armor reduction 40; triggered movement slow 50; HP and mana skills. Requires Yan, 1 additional Random unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_sans",
@@ -5163,10 +5456,6 @@
       "rarity": "Mystic",
       "image": "images/mystic_sans.png",
       "recipe": [
-        {
-          "unitId": "random_megumin",
-          "count": 1
-        },
         {
           "unitId": "hidden_vergo",
           "count": 1
@@ -5178,10 +5467,14 @@
         {
           "unitId": "alternate_kaku",
           "count": 1
+        },
+        {
+          "unitId": "random_megumin",
+          "count": 1
         }
       ],
       "subGroup": "Physical Damage",
-      "note": "10.000g + 7w + 1 token | Flying, upgrade bone using brook"
+      "note": "Moves across all terrain; armor reduction 20 (30); movement slow 30 (40). Requires Megumin, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_bronya",
@@ -5189,10 +5482,6 @@
       "rarity": "Mystic",
       "image": "images/mystic_bronya.png",
       "recipe": [
-        {
-          "unitId": "random_bronya",
-          "count": 1
-        },
         {
           "unitId": "legendary_reiju",
           "count": 1
@@ -5204,10 +5493,14 @@
         {
           "unitId": "hidden_sunny",
           "count": 1
+        },
+        {
+          "unitId": "random_bronya",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token | Flying"
+      "note": "Effective against berserk enemies; finisher; mana regeneration. Requires Herrscher of Reason, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_minato",
@@ -5216,20 +5509,20 @@
       "image": "images/mystic_minato.png",
       "recipe": [
         {
-          "unitId": "random_naruto",
-          "count": 1
-        },
-        {
           "unitId": "alternate_carrot",
           "count": 1
         },
         {
           "unitId": "legendary_shinobu",
           "count": 1
+        },
+        {
+          "unitId": "random_naruto",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token | 3500 range blink"
+      "note": "Stun 2.2s; finisher; Docking; effective against bosses. Requires Naruto Sage Mode, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_nezuko",
@@ -5237,10 +5530,6 @@
       "rarity": "Mystic",
       "image": "images/mystic_nezuko.png",
       "recipe": [
-        {
-          "unitId": "random_tsubasa",
-          "count": 1
-        },
         {
           "unitId": "legendary_lucci",
           "count": 1
@@ -5252,10 +5541,14 @@
         {
           "unitId": "rare_brook",
           "count": 1
+        },
+        {
+          "unitId": "random_tsubasa",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Single-target damage; explosion damage amplification +4%; resistance-ignoring single-target stun 1s; area total-HP damage. Requires Hanekawa Tsubasa, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_byakuya",
@@ -5264,20 +5557,20 @@
       "image": "images/mystic_byakuya.png",
       "recipe": [
         {
+          "unitId": "rare_mihawk",
+          "count": 1
+        },
+        {
           "unitId": "random_ichigo",
           "count": 1
         },
         {
-          "unitId": "alternate_ace",
-          "count": 1
-        },
-        {
-          "unitId": "rare_mihawk",
+          "unitId": "distortion_ace",
           "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Movement slow 20; finisher; mana skill. Requires Kurosaki Ichigo, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_higuma",
@@ -5286,20 +5579,20 @@
       "image": "images/mystic_higuma.png",
       "recipe": [
         {
-          "unitId": "random_sento",
-          "count": 1
-        },
-        {
           "unitId": "legendary_neko",
           "count": 1
         },
         {
           "unitId": "rare_shanks",
           "count": 1
+        },
+        {
+          "unitId": "random_sento",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Bandit King; movement slow 30; HP skill: wood +1. Requires Sento Isuzu, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_yukari",
@@ -5308,20 +5601,20 @@
       "image": "images/mystic_yukari.png",
       "recipe": [
         {
-          "unitId": "random_light",
-          "count": 1
-        },
-        {
           "unitId": "distortion_perona",
           "count": 1
         },
         {
           "unitId": "special_kuma",
           "count": 1
+        },
+        {
+          "unitId": "random_light",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token | Teleport"
+      "note": "Movement slow 45; deletion; mana skill: damage and stun; map-wide teleport; explosion damage 10%. Requires Yagami Light, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_gojo",
@@ -5329,10 +5622,6 @@
       "rarity": "Mystic",
       "image": "images/mystic_gojo.png",
       "recipe": [
-        {
-          "unitId": "random_k",
-          "count": 1
-        },
         {
           "unitId": "distortion_koala",
           "count": 1
@@ -5348,10 +5637,14 @@
         {
           "unitId": "other_pirateship",
           "count": 1
+        },
+        {
+          "unitId": "random_k",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Stun 0.6s; movement slow 30; triggered movement slow 20; mana skill: total-HP damage. Requires K, 1 additional Random unit, Pirate Ship, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
       "id": "mystic_anya",
@@ -5360,20 +5653,42 @@
       "image": "images/mystic_anya.png",
       "recipe": [
         {
-          "unitId": "random_elizabeth",
-          "count": 1
-        },
-        {
           "unitId": "legendary_sugar",
           "count": 1
         },
         {
           "unitId": "hidden_stussy",
           "count": 1
+        },
+        {
+          "unitId": "random_elizabeth",
+          "count": 1
         }
       ],
       "subGroup": "Magic Damage",
-      "note": "10.000g + 7w + 1 token"
+      "note": "Movement slow 40; mana skill: damage; HP skill: movement slow 30; Docking; magic resistance reduction; HP regeneration, mana regeneration, and attack speed buffs. Requires Elizabeth, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
+    },
+    {
+      "id": "mystic_yujiro",
+      "name": "Yujiro Hanma",
+      "rarity": "Mystic",
+      "image": "images/mystic_yujiro.png",
+      "recipe": [
+        {
+          "unitId": "random_paimon",
+          "count": 1
+        },
+        {
+          "unitId": "legendary_nightmare",
+          "count": 1
+        },
+        {
+          "unitId": "hidden_ivankov",
+          "count": 1
+        }
+      ],
+      "subGroup": "Magic Damage",
+      "note": "Requires over-reduction of armor to 250 for maximum damage. Requires Paimon, 1 additional Random unit, 10,000 gold, 1 Lucky Token, and 7 wood in addition to the other recipe ingredients."
     }
   ],
   "rarities": [
@@ -5388,6 +5703,7 @@
     "Hidden",
     "Distortion",
     "Alternate",
+    "Seraphim",
     "Transcendence",
     "Limited",
     "Immortal",

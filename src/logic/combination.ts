@@ -224,12 +224,17 @@ export function calculateBuildable(
 /**
  * Calculates the total "base unit cost" of a unit.
  */
-const totalCostCache = new Map<string, number>();
+const totalCostCaches = new WeakMap<Map<string, Unit>, Map<string, number>>();
 
 export function calculateTotalCost(
   unitId: string,
   unitsMap: Map<string, Unit>
 ): number {
+  let totalCostCache = totalCostCaches.get(unitsMap);
+  if (!totalCostCache) {
+    totalCostCache = new Map();
+    totalCostCaches.set(unitsMap, totalCostCache);
+  }
   if (totalCostCache.has(unitId)) {
     return totalCostCache.get(unitId)!;
   }

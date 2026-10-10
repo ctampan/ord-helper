@@ -7,6 +7,7 @@ export const RARITY_COLORS: Record<string, string> = {
   Hidden: "#facc15", // Gold
   Distortion: "#ec4899", // Hot Pink
   Alternate: "#14b8a6", // Teal
+  Seraphim: "#22d3ee", // Cyan
   Special: "#f97316", // Orange
   Transcendence: "#eab308", // Yellow
   Limited: "#e11d48", // Crimson
