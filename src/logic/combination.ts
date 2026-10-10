@@ -1,4 +1,5 @@
 import type { Capability } from "./capabilities";
+import { getRecipeIndex } from "./recipeIndex.ts";
 
 export interface Unit {
   id: string;
@@ -31,14 +32,11 @@ export interface UnitDetails {
   isWispAssisted: boolean;
 }
 
-/**
- * Calculates the materials needed to build a unit, prioritizing existing inventory.
- * Returns a map of unit IDs to the count that needs to be consumed.
- * Returns null if the unit cannot be built.
- */
+/** Reversible inventory changes avoid copying the whole simulation per attempt. */
 class SimulationInventory {
   private base: Inventory;
   private modified: Map<string, number>;
+  private changes: [string, number | undefined][] = [];
 
   constructor(base: Inventory) {
     this.base = base;
@@ -54,6 +52,7 @@ class SimulationInventory {
 
   remove(id: string, amount: number) {
     const current = this.get(id);
+    this.changes.push([id, this.modified.get(id)]);
     this.modified.set(id, current - amount);
   }
 
@@ -68,28 +67,27 @@ class SimulationInventory {
     return consumed;
   }
 
-  snapshot(): Map<string, number> {
-    return new Map(this.modified);
+  snapshot(): number {
+    return this.changes.length;
   }
 
-  restore(snapshot: Map<string, number>) {
-    this.modified = new Map(snapshot);
+  restore(snapshot: number) {
+    while (this.changes.length > snapshot) {
+      const [id, previous] = this.changes.pop()!;
+      if (previous === undefined) this.modified.delete(id);
+      else this.modified.set(id, previous);
+    }
   }
 }
 
-/**
- * Calculates the materials needed to build a unit, prioritizing existing inventory.
- * Returns a map of unit IDs to the count that needs to be consumed.
- * Returns null if the unit cannot be built.
- */
-export function calculateConsumption(
+/** Keep ingredient ordering and Wisp fallback identical for single/batch crafting. */
+function createCraftSimulation(
   targetUnitId: string,
   unitsMap: Map<string, Unit>,
   inventory: Inventory,
   bans: Bans,
-  count: number = 1,
   allowWisp: boolean = false
-): Inventory | null {
+) {
   const simInventory = new SimulationInventory(inventory);
 
   // We temporarily remove the target unit from the inventory simulation.
@@ -166,6 +164,18 @@ export function calculateConsumption(
     return false;
   };
 
+  return { simInventory, fulfill };
+}
+
+export function calculateConsumption(
+  targetUnitId: string,
+  unitsMap: Map<string, Unit>,
+  inventory: Inventory,
+  bans: Bans,
+  count: number = 1,
+  allowWisp: boolean = false,
+): Inventory | null {
+  const { simInventory, fulfill } = createCraftSimulation(targetUnitId, unitsMap, inventory, bans, allowWisp);
   if (!fulfill(targetUnitId, count)) {
     return null;
   }
@@ -190,39 +200,30 @@ export function calculateBuildable(
   inventory: Inventory,
   bans: Bans
 ): number {
-  // Optimization: Check if we can build at least one before doing more work.
-  if (!calculateConsumption(targetUnitId, unitsMap, inventory, bans, 1, true)) {
-    return 0;
-  }
-
-  // Use binary search to efficiently find the maximum buildable amount.
-  let low = 1;
-  let high = 100;
-  let max = 1;
-
-  while (low <= high) {
-    const mid = Math.floor((low + high) / 2);
-    if (mid <= max) {
-      low = mid + 1;
-      continue;
+  // Legacy Custom permits craftable Common units. Bulk Wisp fallback can choose
+  // different ingredients there, so retain its original batch-search semantics.
+  if (getRecipeIndex(unitsMap).batchCraftTargets.has(targetUnitId)) {
+    if (!calculateConsumption(targetUnitId, unitsMap, inventory, bans, 1, true)) return 0;
+    let low = 1;
+    let high = 100;
+    let max = 1;
+    while (low <= high) {
+      const mid = Math.floor((low + high) / 2);
+      if (mid <= max) {
+        low = mid + 1;
+      } else if (calculateConsumption(targetUnitId, unitsMap, inventory, bans, mid, true)) {
+        max = mid;
+        low = mid + 1;
+      } else high = mid - 1;
     }
-
-    const consumption = calculateConsumption(
-      targetUnitId,
-      unitsMap,
-      inventory,
-      bans,
-      mid,
-      true
-    );
-    if (consumption) {
-      max = mid;
-      low = mid + 1;
-    } else {
-      high = mid - 1;
-    }
+    return max;
   }
-  return max;
+  // Reuse one simulation instead of replaying all earlier crafts for each search.
+  // Keep the existing greedy ingredient order and the dashboard's 100-unit cap.
+  const { fulfill } = createCraftSimulation(targetUnitId, unitsMap, inventory, bans, true);
+  let count = 0;
+  while (count < 100 && fulfill(targetUnitId, 1)) count++;
+  return count;
 }
 
 /**
@@ -259,95 +260,44 @@ export function calculateTotalCost(
   return total;
 }
 
-/**
- * Calculates the "missing cost" - how many base units are still needed.
- */
-export function calculateMissingCost(
-  unitId: string,
-  unitsMap: Map<string, Unit>,
-  inventory: Inventory,
-  bans: Bans
-): number {
+/** Missing totals share the same inventory traversal and ingredient ordering. */
+function calculateMissingCosts(
+  unitId: string, unitsMap: Map<string, Unit>, inventory: Inventory, bans: Bans,
+): { missingCost: number; missingWispable: number } {
   const simInventory = new SimulationInventory(inventory);
-  // Ignore the target unit in inventory so we calculate the cost for a new one.
-  if (simInventory.get(unitId) > 0) {
-    simInventory.remove(unitId, simInventory.get(unitId));
-  }
-
-  const calculateRecursive = (id: string, amount: number): number => {
-    if (amount <= 0) return 0;
-
-    // Use available inventory first.
-    const available = simInventory.get(id);
-    const take = Math.min(available, amount);
+  if (simInventory.get(unitId) > 0) simInventory.remove(unitId, simInventory.get(unitId));
+  let missingCost = 0;
+  let missingWispable = 0;
+  const visit = (id: string, amount: number) => {
+    if (amount <= 0) return;
+    const take = Math.min(simInventory.get(id), amount);
     if (take > 0) {
       simInventory.remove(id, take);
       amount -= take;
     }
-
-    if (amount === 0) return 0;
-
+    if (amount === 0) return;
     const unit = unitsMap.get(id);
-    if (!unit) return amount;
-
-    // If we can't craft it (no recipe or banned), the remaining amount is missing.
-    if (!unit.recipe || unit.recipe.length === 0 || bans.has(id)) {
-      return amount;
+    if (!unit?.recipe?.length || bans.has(id)) {
+      missingCost += amount;
+      if (unit?.rarity === "Common" && id !== "common_wisp") missingWispable += amount;
+      return;
     }
-
-    // Otherwise, calculate missing materials for the recipe.
-    let missing = 0;
-    for (const req of unit.recipe) {
-      missing += calculateRecursive(req.unitId, req.count * amount);
-    }
-    return missing;
+    for (const req of unit.recipe) visit(req.unitId, req.count * amount);
   };
-
-  return calculateRecursive(unitId, 1);
+  visit(unitId, 1);
+  return { missingCost, missingWispable };
 }
 
-/**
- * Calculates the "missing wispable cost" - how many missing base units are Common.
- */
-export function calculateMissingWispableCost(
-  unitId: string,
-  unitsMap: Map<string, Unit>,
-  inventory: Inventory,
-  bans: Bans
+export function calculateMissingCost(
+  unitId: string, unitsMap: Map<string, Unit>, inventory: Inventory, bans: Bans,
 ): number {
-  const simInventory = new SimulationInventory(inventory);
-  if (simInventory.get(unitId) > 0) {
-    simInventory.remove(unitId, simInventory.get(unitId));
-  }
+  return calculateMissingCosts(unitId, unitsMap, inventory, bans).missingCost;
+}
 
-  const calculateRecursive = (id: string, amount: number): number => {
-    if (amount <= 0) return 0;
-
-    const available = simInventory.get(id);
-    const take = Math.min(available, amount);
-    if (take > 0) {
-      simInventory.remove(id, take);
-      amount -= take;
-    }
-
-    if (amount === 0) return 0;
-
-    const unit = unitsMap.get(id);
-    if (!unit) return 0;
-
-    if (!unit.recipe || unit.recipe.length === 0 || bans.has(id)) {
-      // Count as wispable only if it's a Common unit (and not a wisp itself).
-      return unit.rarity === "Common" && id !== "common_wisp" ? amount : 0;
-    }
-
-    let missingWispable = 0;
-    for (const req of unit.recipe) {
-      missingWispable += calculateRecursive(req.unitId, req.count * amount);
-    }
-    return missingWispable;
-  };
-
-  return calculateRecursive(unitId, 1);
+export function calculateMissingWispableCost(
+  unitId: string, unitsMap: Map<string, Unit>, inventory: Inventory, bans: Bans,
+): number {
+  return calculateMissingCosts(unitId, unitsMap, inventory, bans).missingWispable;
 }
 
 /**
@@ -421,21 +371,10 @@ export function getUnitDetails(
     };
   }
 
-  const missingCost = calculateMissingCost(
-    targetUnitId,
-    unitsMap,
-    inventory,
-    bans
+  const { missingCost, missingWispable } = calculateMissingCosts(
+    targetUnitId, unitsMap, inventory, bans,
   );
-
-  // Calculate wisp contribution.
   const availableWisps = inventory["common_wisp"] || 0;
-  const missingWispable = calculateMissingWispableCost(
-    targetUnitId,
-    unitsMap,
-    inventory,
-    bans
-  );
   const wispContribution = Math.min(missingWispable, availableWisps);
 
   const effectiveMissing = Math.max(0, missingCost - wispContribution);

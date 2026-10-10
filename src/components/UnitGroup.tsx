@@ -1,5 +1,5 @@
 import React from "react";
-import type { Unit } from "../logic/combination";
+import type { Unit, UnitDetails } from "../logic/combination";
 import { UnitListItem } from "./UnitListItem";
 import styles from "./UnitGroup.module.css";
 
@@ -8,9 +8,8 @@ interface UnitGroupProps {
   units: Unit[];
   visibleUnitIds?: ReadonlySet<string>;
   inventory: Record<string, number>;
-  bans: Set<string>;
+  details: ReadonlyMap<string, UnitDetails>;
   effectiveBans: Set<string>;
-  unitsMap: Map<string, Unit>;
   onUnitClick: (
     unitId: string,
     isRightClick: boolean,
@@ -21,13 +20,10 @@ interface UnitGroupProps {
   subGroupBy?: keyof Unit;
   removeSubGroup: boolean;
   sortByAlphabetical: boolean;
-  isTooltipEnabled: boolean;
-  isShiftPressed: boolean;
-  isWispEnabled: boolean;
   showRecipeButtons: boolean;
   unitShortcuts: Record<string, string>;
-  activeHoveredId: string | null;
-  onHoverChange: (unitId: string | null) => void;
+  onHoverChange: (unitId: string | null, anchor?: HTMLElement) => void;
+  onShowRecipe: (unitId: string) => void;
 }
 
 export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
@@ -36,26 +32,36 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     units,
     visibleUnitIds,
     inventory,
-    bans,
+    details,
     effectiveBans,
-    unitsMap,
     onUnitClick,
     onCountChange,
     subGroupBy,
     removeSubGroup,
     sortByAlphabetical,
-    isTooltipEnabled,
-    isShiftPressed,
-    isWispEnabled,
     showRecipeButtons,
     unitShortcuts,
-    activeHoveredId,
     onHoverChange,
+    onShowRecipe,
   }) => {
     const [isCollapsed, setIsCollapsed] = React.useState(false);
 
-    const visibleUnits = visibleUnitIds ? units.filter((unit) => visibleUnitIds.has(unit.id)) : units;
-    if (visibleUnits.length === 0) return null;
+    const orderedGroups = React.useMemo(() => {
+      const ordered = sortByAlphabetical ? [...units].sort((a, b) => a.name.localeCompare(b.name)) : units;
+      if (!subGroupBy || removeSubGroup) return [{ name: null, units: ordered }];
+      const groupOrder = [...new Set(units.map((unit) => (unit[subGroupBy] as string) || "Other"))];
+      const grouped = new Map<string, Unit[]>();
+      for (const unit of ordered) {
+        const name = (unit[subGroupBy] as string) || "Other";
+        if (!grouped.has(name)) grouped.set(name, []);
+        grouped.get(name)!.push(unit);
+      }
+      return groupOrder.map((name) => ({ name, units: grouped.get(name)! }));
+    }, [units, sortByAlphabetical, subGroupBy, removeSubGroup]);
+    const visibleGroups = React.useMemo(() => orderedGroups.map((group) => ({
+      ...group, units: visibleUnitIds ? group.units.filter((unit) => visibleUnitIds.has(unit.id)) : group.units,
+    })).filter((group) => group.units.length), [orderedGroups, visibleUnitIds]);
+    if (!visibleGroups.length) return null;
 
     const renderUnit = (unit: Unit) => {
       return (
@@ -63,61 +69,16 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
           key={unit.id}
           unit={unit}
           count={inventory[unit.id] || 0}
-          inventory={inventory}
-          bans={bans}
-          effectiveBans={effectiveBans}
-          unitsMap={unitsMap}
+          details={details.get(unit.id)!}
+          isBanned={effectiveBans.has(unit.id)}
           onAction={onUnitClick}
-          onCountChange={(newCount) => onCountChange(unit.id, newCount)}
-          isTooltipEnabled={isTooltipEnabled}
-          isShiftPressed={isShiftPressed}
-          isWispEnabled={isWispEnabled}
+          onCountChange={onCountChange}
           showRecipeButtons={showRecipeButtons}
           shortcut={unitShortcuts[unit.id]}
-          activeHoveredId={activeHoveredId}
           onHoverChange={onHoverChange}
+          onShowRecipe={onShowRecipe}
         />
       );
-    };
-
-    const renderContent = () => {
-      if (isCollapsed) return null;
-
-      const unitsToRender = [...visibleUnits];
-      if (sortByAlphabetical) {
-        unitsToRender.sort((a, b) => a.name.localeCompare(b.name));
-      }
-
-      if (subGroupBy && !removeSubGroup) {
-        // 1. Determine original subgroup order
-        const subGroupOrder: string[] = [];
-        units.forEach((u) => {
-          const key = (u[subGroupBy] as string) || "Other";
-          if (!subGroupOrder.includes(key)) subGroupOrder.push(key);
-        });
-
-        // 2. Group units (unitsToRender is already sorted if needed)
-        const groups: Record<string, Unit[]> = {};
-        unitsToRender.forEach((unit) => {
-          const key = (unit[subGroupBy] as string) || "Other";
-          if (!groups[key]) groups[key] = [];
-          groups[key].push(unit);
-        });
-
-        return subGroupOrder.map((key) => {
-          const groupUnits = groups[key];
-          if (!groupUnits || groupUnits.length === 0) return null;
-
-          return (
-            <div key={key} className={styles.subGroup}>
-              <h4 className={styles.subTitle}>{key}</h4>
-              <div className={styles.list}>{groupUnits.map(renderUnit)}</div>
-            </div>
-          );
-        });
-      }
-
-      return <div className={styles.list}>{unitsToRender.map(renderUnit)}</div>;
     };
 
     return (
@@ -138,7 +99,12 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
             {isCollapsed ? "▼" : "▲"}
           </span>
         </h3>
-        {renderContent()}
+        {!isCollapsed && visibleGroups.map((group) => group.name === null ?
+          <div key="ungrouped" className={styles.list}>{group.units.map(renderUnit)}</div> :
+          <div key={group.name} className={styles.subGroup}>
+            <h4 className={styles.subTitle}>{group.name}</h4>
+            <div className={styles.list}>{group.units.map(renderUnit)}</div>
+          </div>)}
       </div>
     );
   },

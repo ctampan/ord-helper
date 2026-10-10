@@ -1,88 +1,46 @@
 import React, {
-  useDeferredValue,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
-import { getUnitDetails, type Unit } from "../logic/combination";
+import type { Unit, UnitDetails } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import { CachedImage } from "./CachedImage";
-import { RecipeTooltip } from "./RecipeTooltip";
-import { RecipeModal } from "./RecipeModal";
 import styles from "./UnitListItem.module.css";
 
 interface UnitListItemProps {
   unit: Unit;
   count: number;
-  inventory: Record<string, number>;
-  bans: Set<string>;
-  effectiveBans: Set<string>;
-  unitsMap: Map<string, Unit>;
+  details: UnitDetails;
+  isBanned: boolean;
   onAction: (
     unitId: string,
     isRightClick: boolean,
     isCtrlPressed: boolean,
     isAltPressed: boolean,
   ) => void;
-  onCountChange: (newCount: number) => void;
-  isTooltipEnabled: boolean;
-  isShiftPressed: boolean;
-  isWispEnabled: boolean;
+  onCountChange: (unitId: string, newCount: number) => void;
   showRecipeButtons: boolean;
   shortcut?: string;
-  activeHoveredId: string | null;
-  onHoverChange: (unitId: string | null) => void;
+  onHoverChange: (unitId: string | null, anchor?: HTMLElement) => void;
+  onShowRecipe: (unitId: string) => void;
 }
 
 export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
   ({
     unit,
     count,
-    inventory,
-    bans,
-    effectiveBans,
-    unitsMap,
+    details,
+    isBanned,
     onAction,
     onCountChange,
-    isTooltipEnabled,
-    isShiftPressed,
-    isWispEnabled,
     showRecipeButtons,
     shortcut,
-    activeHoveredId,
     onHoverChange,
+    onShowRecipe,
   }) => {
-    const isHovered = activeHoveredId === unit.id;
     const [imageError, setImageError] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    // Defer the inventory and bans updates to prevent blocking the UI
-    // The count (input) will update immediately, but the status colors will update slightly later
-    const deferredInventory = useDeferredValue(inventory);
-    const deferredBans = useDeferredValue(bans);
-
-    const effectiveInventory = useMemo(() => {
-      if (isWispEnabled) return deferredInventory;
-      return { ...deferredInventory, common_wisp: 0 };
-    }, [deferredInventory, isWispEnabled]);
-
-    const {
-      status,
-      buildableCount,
-      progress,
-      materialProgress,
-      wispProgress,
-      wispCost,
-      isWispAssisted,
-    } = useMemo(
-      () => getUnitDetails(unit.id, unitsMap, effectiveInventory, deferredBans),
-      [unit.id, unitsMap, effectiveInventory, deferredBans],
-    );
-
-    // Use effectiveBans for visual disabling
-    const isBanned = effectiveBans.has(unit.id);
+    const { status, buildableCount, progress, materialProgress, wispProgress, wispCost, isWispAssisted } = details;
 
     const handleImageError = () => {
       setImageError(true);
@@ -93,10 +51,6 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       setPrevImage(unit.image);
       setImageError(false);
     }
-
-    // Determine tooltip visibility
-    const showTooltip =
-      isHovered && !isModalOpen && (isTooltipEnabled || isShiftPressed);
 
     const handleLeftClick = (e: React.MouseEvent) => {
       e.preventDefault();
@@ -134,14 +88,13 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
 
     return (
       <div
-        ref={containerRef}
         data-unit-id={unit.id}
         className={`${styles.container} ${styles[status]} ${
           isBanned ? styles.banned : ""
         }`}
         onClick={handleLeftClick}
         onContextMenu={handleRightClick}
-        onMouseEnter={() => onHoverChange(unit.id)}
+        onMouseEnter={(event) => onHoverChange(unit.id, event.currentTarget)}
         onMouseLeave={(event) => {
           if (event.relatedTarget instanceof Element &&
             event.relatedTarget.closest("[data-tooltip-unit-id]")?.getAttribute("data-tooltip-unit-id") === unit.id) return;
@@ -239,7 +192,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
               value={count}
               onChange={(e) => {
                 const val = parseInt(e.target.value, 10);
-                onCountChange(isNaN(val) ? 0 : val);
+                onCountChange(unit.id, isNaN(val) ? 0 : val);
               }}
               onFocus={(e) => e.target.select()}
               className={styles.input}
@@ -249,8 +202,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
                 className={styles.recipeBtn}
                 onClick={(e) => {
                   e.stopPropagation();
-                  onHoverChange(null);
-                  setIsModalOpen(true);
+                  onShowRecipe(unit.id);
                 }}
                 title="Show Recipe"
               >
@@ -260,28 +212,6 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
           </div>
         </div>
 
-        {showTooltip && (
-          <RecipeTooltip
-            unit={unit}
-            unitsMap={unitsMap}
-            inventory={inventory}
-            visible={showTooltip}
-            parentElement={containerRef}
-            bans={bans}
-            isWispEnabled={isWispEnabled}
-            onHoverChange={onHoverChange}
-          />
-        )}
-
-        <RecipeModal
-          unit={unit}
-          unitsMap={unitsMap}
-          inventory={inventory}
-          bans={bans}
-          isWispEnabled={isWispEnabled}
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
       </div>
     );
   },

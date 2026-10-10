@@ -4,8 +4,10 @@ import { displayAbilityText } from "../logic/capabilities";
 import type { Unit } from "../logic/combination";
 import {
   calculateMissingBaseUnits,
+  getEffectiveBans,
   getUnitDetails,
 } from "../logic/combination";
+import { getRecipeIndex } from "../logic/recipeIndex";
 import { getRarityColor } from "../logic/rarityColors";
 import styles from "./RecipeContent.module.css";
 
@@ -27,7 +29,7 @@ export function RecipeHeader({ unit, size = "small" }: { unit: Unit; size?: "sma
   </div>;
 }
 
-export const RecipeContent: React.FC<RecipeContentProps> = ({
+export const RecipeContent: React.FC<RecipeContentProps> = React.memo(({
   unit,
   unitsMap,
   inventory,
@@ -44,22 +46,8 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
     return { ...inventory, common_wisp: 0 };
   }, [inventory, isWispEnabled]);
 
-  // Helper to check if a unit is effectively banned (itself or any dependency)
-  const isEffectivelyBanned = (
-    unitId: string,
-    checked = new Set<string>(),
-  ): boolean => {
-    if (checked.has(unitId)) return false; // Avoid cycles
-    checked.add(unitId);
-
-    if (bans.has(unitId)) return true;
-
-    const u = unitsMap.get(unitId);
-    if (!u || !u.recipe) return false;
-
-    // Check if any ingredient is effectively banned
-    return u.recipe.some((req) => isEffectivelyBanned(req.unitId, checked));
-  };
+  const effectiveBans = useMemo(() => getEffectiveBans(unitsMap, bans), [unitsMap, bans]);
+  const isEffectivelyBanned = (unitId: string) => effectiveBans.has(unitId);
 
   // Special handling for Common units and Common Wisp
   const isWisp = unit.id === "common_wisp";
@@ -74,9 +62,9 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
 
   const hasRecipe = displayRecipe && displayRecipe.length > 0;
 
-  const missingBaseUnits = hasRecipe
-    ? calculateMissingBaseUnits(unit.id, unitsMap, inventory, bans)
-    : {};
+  const missingBaseUnits = useMemo(() => hasRecipe
+    ? calculateMissingBaseUnits(unit.id, unitsMap, inventory, bans) : {},
+  [hasRecipe, unit.id, unitsMap, inventory, bans]);
   const hasMissing = Object.keys(missingBaseUnits).length > 0;
 
   // Calculate missing stats for display
@@ -89,54 +77,9 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
     ) as number;
   }
 
-  // Find units that directly use this unit in their recipe
-  const usedInUnits = useMemo(() => {
-    const baseUsedIn = Array.from(unitsMap.values()).filter((u) =>
-      u.recipe?.some((req) => req.unitId === unit.id),
-    );
-
-    if (isWisp) {
-      const otherCommons = Array.from(unitsMap.values()).filter(
-        (u) => u.rarity === "Common" && u.id !== "common_wisp",
-      );
-      return [...baseUsedIn, ...otherCommons];
-    }
-
-    return baseUsedIn;
-  }, [unit.id, unitsMap, isWisp]);
-
-  // Find top-tier units (Transcendence onward) that eventually need this unit
-  const topTierRarities = [
-    "Transcendence",
-    "Limited",
-    "Immortal",
-    "Eternal",
-    "Mystic",
-  ];
-  const findUnitInRecipeTree = (
-    targetUnit: Unit,
-    searchUnitId: string,
-    visited = new Set<string>(),
-  ): boolean => {
-    if (visited.has(targetUnit.id)) return false;
-    visited.add(targetUnit.id);
-
-    if (!targetUnit.recipe) return false;
-
-    for (const req of targetUnit.recipe) {
-      if (req.unitId === searchUnitId) return true;
-      const reqUnit = unitsMap.get(req.unitId);
-      if (reqUnit && findUnitInRecipeTree(reqUnit, searchUnitId, visited)) {
-        return true;
-      }
-    }
-    return false;
-  };
-
-  const topTierUnits = Array.from(unitsMap.values()).filter(
-    (u) =>
-      topTierRarities.includes(u.rarity) && findUnitInRecipeTree(u, unit.id),
-  );
+  const recipeIndex = getRecipeIndex(unitsMap);
+  const usedInUnits = recipeIndex.usedIn.get(unit.id) || [];
+  const topTierUnits = recipeIndex.topTier.get(unit.id) || [];
 
   return (
     <div className={`${styles.recipeContent} ${isLarge ? styles.large : ""}`}>
@@ -529,4 +472,4 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
       )}
     </div>
   );
-};
+});

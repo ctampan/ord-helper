@@ -1,8 +1,11 @@
-import { useEffect, useState, useMemo, useCallback, useRef } from "react";
+import { useEffect, useState, useMemo, useCallback, useDeferredValue } from "react";
 import type { Data, Inventory, Bans, Unit } from "./logic/combination";
 import { consumeMaterials, getEffectiveBans } from "./logic/combination";
 import { isGameData, resolveGameData, retainValidState } from "./logic/data";
 import { bundledCatalog } from "./logic/bundledData";
+import { getDashboardDetails } from "./logic/dashboardDetails";
+import { createUnitOverlayStore } from "./logic/unitOverlays";
+import { UnitOverlays } from "./components/UnitOverlays";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import { CapabilityFilters } from "./components/CapabilityFilters";
@@ -60,14 +63,7 @@ function App() {
     return localStorage.getItem("ord_show_recipe_icons") !== "false";
   });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
-  const [activeHoveredId, setActiveHoveredId] = useState<string | null>(null);
-  const hoverTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const handleHoverChange = useCallback((unitId: string | null) => {
-    clearTimeout(hoverTimer.current);
-    if (unitId) setActiveHoveredId(unitId);
-    else hoverTimer.current = setTimeout(() => setActiveHoveredId(null), 150);
-  }, []);
-  useEffect(() => () => clearTimeout(hoverTimer.current), []);
+  const [overlayStore] = useState(createUnitOverlayStore);
   const [isFilterExpanded, setIsFilterExpanded] = useState(() =>
     readCapabilityExpanded(localStorage.getItem(CAPABILITY_EXPANDED_STORAGE_KEY)),
   );
@@ -186,7 +182,7 @@ function App() {
     setVersions(loaded.versions);
     setCurrentVersion(loaded.version);
     setSelectedUnitForTree(null);
-    setActiveHoveredId(null);
+    overlayStore.clear();
     setInventory((previous) =>
       retainValidState(loaded.data, previous, new Set()).inventory,
     );
@@ -265,7 +261,7 @@ function App() {
 
         setData(importedData);
         setSelectedUnitForTree(null);
-        setActiveHoveredId(null);
+        overlayStore.clear();
         showNotification("Game Data imported!", "success");
       } catch (err) {
         console.error("Failed to import data:", err);
@@ -275,14 +271,20 @@ function App() {
     reader.readAsText(file);
   };
 
-  const unitsMap = useMemo(() => {
-    if (!data) return new Map();
+  const unitsMap = useMemo<Map<string, Unit>>(() => {
     return new Map(data.units.map((u) => [u.id, u]));
   }, [data]);
 
   const effectiveBans = useMemo(() => {
     return getEffectiveBans(unitsMap, bans);
   }, [unitsMap, bans]);
+
+  const deferredInventory = useDeferredValue(inventory);
+  const deferredBans = useDeferredValue(bans);
+  const effectiveInventory = useMemo(() => isWispEnabled ? deferredInventory :
+    { ...deferredInventory, common_wisp: 0 }, [deferredInventory, isWispEnabled]);
+  const dashboardDetails = useMemo(() => getDashboardDetails(unitsMap, effectiveInventory, deferredBans),
+    [unitsMap, effectiveInventory, deferredBans]);
 
   const handleUnitClick = useCallback(
     (
@@ -291,7 +293,7 @@ function App() {
       isCtrlPressed: boolean,
       isAltPressed: boolean,
     ) => {
-      if (!data?.units.some((unit) => unit.id === unitId)) return;
+      if (!unitsMap.has(unitId)) return;
       // Handle Recipe Tree (Alt + Click)
       if (isAltPressed) {
         setSelectedUnitForTree(unitId);
@@ -332,7 +334,7 @@ function App() {
             const newInventory = { ...prev };
             newInventory[unitId] = currentCount - 1;
 
-            const unit = data.units.find((u) => u.id === unitId);
+            const unit = unitsMap.get(unitId);
             if (unit && unit.recipe) {
               // Refund materials
               unit.recipe.forEach((req) => {
@@ -351,7 +353,6 @@ function App() {
         } else {
           // Right click: Build unit (consume materials)
           if (!data) return;
-          const unitsMap = new Map(data.units.map((u) => [u.id, u]));
 
           try {
             setInventory((prev) => {
@@ -399,7 +400,7 @@ function App() {
         }
       }
     },
-    [isBanMode, data, effectiveBans],
+    [isBanMode, data, effectiveBans, unitsMap],
   );
 
   // Global Shortcut Listener
@@ -449,7 +450,7 @@ function App() {
 
       // Check for Unit Shortcuts
       const unitId = getUnitIdByKey(key);
-      if (unitId && data?.units.some((unit) => unit.id === unitId)) {
+      if (unitId && unitsMap.has(unitId)) {
         e.preventDefault();
         // Ctrl + Key = Remove (Right Click Logic with Ctrl)
         // Key = Add (Left Click Logic)
@@ -459,7 +460,7 @@ function App() {
 
     window.addEventListener("keydown", handleGlobalKeyDown);
     return () => window.removeEventListener("keydown", handleGlobalKeyDown);
-  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, data]);
+  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, unitsMap]);
 
   const handleCountChange = useCallback((unitId: string, newCount: number) => {
     setInventory((prev) => ({
@@ -493,6 +494,9 @@ function App() {
 
   return (
     <div className="container">
+      <UnitOverlays store={overlayStore} unitsMap={unitsMap} inventory={inventory} bans={bans}
+        isWispEnabled={isWispEnabled} isTooltipEnabled={isTooltipEnabled}
+        isShiftPressed={isShiftPressed} visibleUnitIds={visibleUnitIds} />
       {notification && (
         <div
           style={{
@@ -551,7 +555,7 @@ function App() {
           preferences={capabilityFilters}
           resultCount={visibleUnits.length}
           onChange={(preferences) => {
-            setActiveHoveredId(null);
+            overlayStore.clear();
             setCapabilityFilters(preferences);
           }}
         />
@@ -563,7 +567,7 @@ function App() {
             isFilterExpanded={isFilterExpanded}
             activeFilterCount={capabilityFilters.selected.length}
             onToggleFilter={() => {
-              setActiveHoveredId(null);
+              overlayStore.clear();
               setIsFilterExpanded((previous) => !previous);
             }}
             isBanMode={isBanMode}
@@ -605,20 +609,16 @@ function App() {
               units={unitsByRarity["Common"]}
               visibleUnitIds={visibleUnitIds}
               inventory={inventory}
-              bans={bans}
               effectiveBans={effectiveBans}
-              unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-              isTooltipEnabled={isTooltipEnabled}
-              isShiftPressed={isShiftPressed}
-              isWispEnabled={isWispEnabled}
               removeSubGroup={removeSubGroup}
               sortByAlphabetical={false}
               showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
-              activeHoveredId={activeHoveredId}
-              onHoverChange={handleHoverChange}
+              onHoverChange={overlayStore.hover}
+              onShowRecipe={overlayStore.showRecipe}
+              details={dashboardDetails}
             />
           )}
           {["Uncommon", "Random"].map(
@@ -630,20 +630,16 @@ function App() {
                   units={unitsByRarity[rarity]}
                   visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
-                  bans={bans}
                   effectiveBans={effectiveBans}
-                  unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
-                  isTooltipEnabled={isTooltipEnabled}
-                  isShiftPressed={isShiftPressed}
-                  isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
-                  activeHoveredId={activeHoveredId}
-                  onHoverChange={handleHoverChange}
+                  onHoverChange={overlayStore.hover}
+                  onShowRecipe={overlayStore.showRecipe}
+                  details={dashboardDetails}
                 />
               ),
           )}
@@ -660,20 +656,16 @@ function App() {
                   units={unitsByRarity[rarity]}
                   visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
-                  bans={bans}
                   effectiveBans={effectiveBans}
-                  unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
-                  isTooltipEnabled={isTooltipEnabled}
-                  isShiftPressed={isShiftPressed}
-                  isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
-                  activeHoveredId={activeHoveredId}
-                  onHoverChange={handleHoverChange}
+                  onHoverChange={overlayStore.hover}
+                  onShowRecipe={overlayStore.showRecipe}
+                  details={dashboardDetails}
                 />
               ),
           )}
@@ -687,20 +679,16 @@ function App() {
               units={unitsByRarity["Rare"]}
               visibleUnitIds={visibleUnitIds}
               inventory={inventory}
-              bans={bans}
               effectiveBans={effectiveBans}
-              unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-              isTooltipEnabled={isTooltipEnabled}
-              isShiftPressed={isShiftPressed}
-              isWispEnabled={isWispEnabled}
               removeSubGroup={removeSubGroup}
               sortByAlphabetical={sortByAlphabetical}
               showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
-              activeHoveredId={activeHoveredId}
-              onHoverChange={handleHoverChange}
+              onHoverChange={overlayStore.hover}
+              onShowRecipe={overlayStore.showRecipe}
+              details={dashboardDetails}
             />
           )}
         </div>
@@ -713,21 +701,17 @@ function App() {
               units={unitsByRarity["Legendary"]}
               visibleUnitIds={visibleUnitIds}
               inventory={inventory}
-              bans={bans}
               effectiveBans={effectiveBans}
-              unitsMap={unitsMap}
               onUnitClick={handleUnitClick}
               onCountChange={handleCountChange}
-              isTooltipEnabled={isTooltipEnabled}
-              isShiftPressed={isShiftPressed}
               subGroupBy="subGroup"
-              isWispEnabled={isWispEnabled}
               removeSubGroup={removeSubGroup}
               sortByAlphabetical={sortByAlphabetical}
               showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
-              activeHoveredId={activeHoveredId}
-              onHoverChange={handleHoverChange}
+              onHoverChange={overlayStore.hover}
+              onShowRecipe={overlayStore.showRecipe}
+              details={dashboardDetails}
             />
           )}
         </div>
@@ -743,25 +727,21 @@ function App() {
                   units={unitsByRarity[rarity]}
                   visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
-                  bans={bans}
                   effectiveBans={effectiveBans}
-                  unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
-                  isTooltipEnabled={isTooltipEnabled}
-                  isShiftPressed={isShiftPressed}
                   subGroupBy={
                     rarity === "Alternate" || rarity === "Seraphim"
                       ? undefined
                       : "subGroup"
                   }
-                  isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
-                  activeHoveredId={activeHoveredId}
-                  onHoverChange={handleHoverChange}
+                  onHoverChange={overlayStore.hover}
+                  onShowRecipe={overlayStore.showRecipe}
+                  details={dashboardDetails}
                 />
               ),
           )}
@@ -778,21 +758,17 @@ function App() {
                   units={unitsByRarity[rarity]}
                   visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
-                  bans={bans}
                   effectiveBans={effectiveBans}
-                  unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
-                  isTooltipEnabled={isTooltipEnabled}
-                  isShiftPressed={isShiftPressed}
                   subGroupBy="subGroup"
-                  isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
-                  activeHoveredId={activeHoveredId}
-                  onHoverChange={handleHoverChange}
+                  onHoverChange={overlayStore.hover}
+                  onShowRecipe={overlayStore.showRecipe}
+                  details={dashboardDetails}
                 />
               ),
           )}
@@ -809,21 +785,17 @@ function App() {
                   units={unitsByRarity[rarity]}
                   visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
-                  bans={bans}
                   effectiveBans={effectiveBans}
-                  unitsMap={unitsMap}
                   onUnitClick={handleUnitClick}
                   onCountChange={handleCountChange}
-                  isTooltipEnabled={isTooltipEnabled}
-                  isShiftPressed={isShiftPressed}
                   subGroupBy="subGroup"
-                  isWispEnabled={isWispEnabled}
                   removeSubGroup={removeSubGroup}
                   sortByAlphabetical={sortByAlphabetical}
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
-                  activeHoveredId={activeHoveredId}
-                  onHoverChange={handleHoverChange}
+                  onHoverChange={overlayStore.hover}
+                  onShowRecipe={overlayStore.showRecipe}
+                  details={dashboardDetails}
                 />
               ),
           )}
