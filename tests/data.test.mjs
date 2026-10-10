@@ -2,32 +2,21 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import test from 'node:test';
 import { calculateConsumption, calculateTotalCost, getEffectiveBans, getUnitDetails } from '../src/logic/combination.ts';
-import { isGameData, loadGameData, readCustomData, retainValidState } from '../src/logic/data.ts';
+import { createGameCatalog, isGameData, resolveGameData, readCustomData, retainValidState } from '../src/logic/data.ts';
 
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, import.meta.url), 'utf8'));
 const data = await readJson('../public/data/2.323.json');
+const catalog = createGameCatalog({ '2.323.json': data });
 const units = new Map(data.units.map((unit) => [unit.id, unit]));
 const custom = {
   version: 'test-custom', rarities: ['Common'],
   units: [{ id: 'common_wisp', name: 'Wisp', rarity: 'Common', image: 'images/common_wisp.png' }],
 };
-const base = '/ord-helper/';
-function mockFetch({ failPath, body = data, manifest = ['2.323'] } = {}) {
-  const calls = [];
-  const fetcher = async (url, options) => {
-    calls.push(url);
-    options?.signal?.throwIfAborted();
-    if (url === failPath) return new Response('Unavailable', { status: 503 });
-    if (url === `${base}versions.json`) return Response.json(manifest);
-    if (url === `${base}data/2.323.json`) return Response.json(body);
-    throw new Error(`Unexpected request: ${url}`);
-  };
-  return { calls, fetcher };
-}
 
-test('only 2.323 is shipped, with the complete validated unit graph', async () => {
-  assert.deepEqual(await readJson('../public/versions.json'), ['2.323']);
-  assert.deepEqual(await readdir(new URL('../public/data/', import.meta.url)), ['2.323.json']);
+test('all shipped datasets are discoverable and 2.323 has the complete validated unit graph', async () => {
+  const files = (await readdir(new URL('../public/data/', import.meta.url))).filter((file) => file.endsWith('.json'));
+  const sources = Object.fromEntries(await Promise.all(files.map(async (file) => [file, await readJson(`../public/data/${file}`)])));
+  assert.equal(createGameCatalog(sources).size, files.length);
   assert.equal(data.version, '2.323');
   assert.equal(data.units.length, 278);
   assert.equal(data.rarities.length, 17);
@@ -89,17 +78,17 @@ test('cost cache is isolated when IDs are reused by Custom', () => {
   assert.equal(calculateTotalCost('target', first), 2);
 });
 
-test('first visit and every retired version resolve directly to 2.323', async () => {
+test('first visit and every retired version resolve immediately to bundled 2.323', () => {
   for (const version of ['', '2.111', '2.200-2.211', '2.220', '2.323']) {
-    const { calls, fetcher } = mockFetch();
-    const loaded = await loadGameData(base, version, null, undefined, fetcher);
+    const loaded = resolveGameData(version, null, catalog);
     assert.equal(loaded.version, '2.323');
     assert.equal(loaded.migrated, !!version && version !== '2.323');
-    assert.deepEqual(calls, [`${base}versions.json`, `${base}data/2.323.json`]);
+    assert.deepEqual(loaded.data, data);
+    assert.deepEqual(loaded.versions, ['2.323']);
   }
 });
 
-test('migration preserves valid inventory and bans, including on reload', async () => {
+test('migration preserves valid inventory and bans, including on reload', () => {
   const original = { common_luffy: 4, alternate_ace: 3, nonexistent: 1, legendary_ace: 2 };
   const bans = new Set(['common_luffy', 'alternate_ace']);
   const state = retainValidState(data, original, bans);
@@ -107,26 +96,22 @@ test('migration preserves valid inventory and bans, including on reload', async 
   assert.deepEqual([...state.bans], ['common_luffy']);
   assert.equal(original.alternate_ace, 3);
   assert.ok(bans.has('alternate_ace'));
-  const { fetcher } = mockFetch();
-  const reloaded = await loadGameData(base, '2.323', null, undefined, fetcher);
+  const reloaded = resolveGameData('2.323', null, catalog);
   assert.equal(reloaded.migrated, false);
   assert.deepEqual(retainValidState(reloaded.data, state.inventory, state.bans), state);
 });
 
-test('valid Custom persists and does not request the built-in dataset', async () => {
-  const { calls, fetcher } = mockFetch();
-  const loaded = await loadGameData(base, 'Custom', JSON.stringify(custom), undefined, fetcher);
+test('valid Custom persists and resolves immediately from storage', () => {
+  const loaded = resolveGameData('Custom', JSON.stringify(custom), catalog);
   assert.deepEqual(loaded.data, custom);
   assert.deepEqual(loaded.versions, ['2.323', 'Custom']);
   assert.equal(loaded.migrated, false);
-  assert.deepEqual(calls, [`${base}versions.json`]);
 });
 
-test('invalid Custom is excluded and safely falls back to 2.323', async () => {
+test('invalid Custom is excluded and safely falls back to bundled 2.323', () => {
   for (const invalid of [null, '{', '{}', JSON.stringify({ units: [] })]) {
     assert.equal(readCustomData(invalid), null);
-    const { fetcher } = mockFetch();
-    const loaded = await loadGameData(base, 'Custom', invalid, undefined, fetcher);
+    const loaded = resolveGameData('Custom', invalid, catalog);
     assert.equal(loaded.migrated, true);
     assert.deepEqual(loaded.versions, ['2.323']);
   }
@@ -139,23 +124,46 @@ test('invalid Custom is excluded and safely falls back to 2.323', async () => {
   assert.equal(isGameData(cyclic), false);
 });
 
-test('load errors reject without migration or a legacy fallback; retry can succeed', async () => {
-  for (const failPath of [`${base}versions.json`, `${base}data/2.323.json`]) {
-    const { calls, fetcher } = mockFetch({ failPath });
-    await assert.rejects(loadGameData(base, '2.220', null, undefined, fetcher), /HTTP 503/);
-    assert.ok(calls.every((url) => !url.endsWith('data.json') && !url.includes('2.220')));
+test('startup, migration and Custom switches work even when all fetch calls fail', () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = () => { throw new Error('Network unavailable'); };
+  try {
+    const savedCustom = JSON.stringify(custom);
+    for (const version of ['', '2.220', 'Custom', '2.323', 'Custom']) {
+      const loaded = resolveGameData(version, savedCustom, catalog);
+      assert.equal(loaded.data.units.length, version === 'Custom' ? 1 : 278);
+      assert.equal(loaded.data instanceof Promise, false);
+    }
+  } finally {
+    globalThis.fetch = originalFetch;
   }
-  for (const body of [{ units: [] }, { ...data, version: '2.111' }]) {
-    const { fetcher } = mockFetch({ body });
-    await assert.rejects(loadGameData(base, '2.220', null, undefined, fetcher), /Invalid game data/);
-  }
-  const { fetcher } = mockFetch();
-  assert.equal((await loadGameData(base, '2.220', null, undefined, fetcher)).migrated, true);
 });
 
-test('aborted loads do not resolve stale data', async () => {
-  const { fetcher } = mockFetch();
-  const controller = new AbortController();
-  controller.abort();
-  await assert.rejects(loadGameData(base, '2.220', null, controller.signal, fetcher), { name: 'AbortError' });
+
+test('new files appear automatically, newest is the initial default, saved choices persist', () => {
+  const sources = Object.fromEntries(['2.9', '2.324', '2.10', '2.323'].map((version) => [
+    `../../public/data/${version}.json`, { ...custom, version },
+  ]));
+  const discovered = createGameCatalog(sources);
+  assert.deepEqual([...discovered.keys()], ['2.324', '2.323', '2.10', '2.9']);
+  assert.equal(resolveGameData('', null, discovered).version, '2.324');
+  assert.equal(resolveGameData('2.323', null, discovered).version, '2.323');
+  assert.equal(resolveGameData('2.220', null, discovered).version, '2.324');
+  assert.equal(resolveGameData('Custom', JSON.stringify(custom), discovered).version, 'Custom');
+  for (const version of discovered.keys()) {
+    const loaded = resolveGameData(version, null, discovered);
+    assert.equal(loaded.version, version);
+    assert.equal(loaded.migrated, false);
+    const state = retainValidState(loaded.data, { common_wisp: 7, removed: 2 }, new Set(['common_wisp', 'removed']));
+    assert.deepEqual(state.inventory, { common_wisp: 7 });
+    assert.deepEqual([...state.bans], ['common_wisp']);
+  }
+});
+
+test('catalog rejects malformed files, metadata mismatches and duplicate or reserved versions', () => {
+  assert.throws(() => createGameCatalog({}));
+  assert.throws(() => createGameCatalog({ '2.324.json': data }));
+  assert.throws(() => createGameCatalog({ 'broken.json': {} }));
+  assert.throws(() => createGameCatalog({ 'Custom.json': { ...custom, version: 'Custom' } }));
+  assert.throws(() => createGameCatalog({ 'a/2.323.json': data, 'b/2.323.json': data }));
 });

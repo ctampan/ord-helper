@@ -154,6 +154,12 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             <h3>Data Management</h3>
             <ul>
               <li>
+                <strong>Version:</strong> New visitors start with the latest
+                version. Choose another version from the dropdown anytime;
+                inventory and bans for available units are kept. Your choice
+                is remembered on your next visit.
+              </li>
+              <li>
                 <strong>Export (💾):</strong> Save your current game
                 data/version to a JSON file.
               </li>

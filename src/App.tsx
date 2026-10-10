@@ -1,7 +1,8 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import type { Data, Inventory, Bans, Unit } from "./logic/combination";
 import { consumeMaterials, getEffectiveBans } from "./logic/combination";
-import { isGameData, loadGameData, retainValidState } from "./logic/data";
+import { isGameData, resolveGameData, retainValidState } from "./logic/data";
+import { bundledCatalog } from "./logic/bundledData";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import { RecipeTreeModal } from "./components/RecipeTreeModal";
@@ -11,14 +12,27 @@ import "./index.css";
 import "./App.css";
 
 function App() {
-  const [data, setData] = useState<Data | null>(null);
+  const [initialLoad] = useState(() =>
+    resolveGameData(
+      localStorage.getItem("ord_version") || "",
+      localStorage.getItem("ord_custom_data"),
+      bundledCatalog,
+    ),
+  );
+  const [data, setData] = useState<Data>(initialLoad.data);
   const [inventory, setInventory] = useState<Inventory>(() => {
     const saved = localStorage.getItem("ord_inventory");
-    return saved ? JSON.parse(saved) : {};
+    const previous = saved ? JSON.parse(saved) : {};
+    return initialLoad.migrated
+      ? retainValidState(initialLoad.data, previous, new Set()).inventory
+      : previous;
   });
   const [bans, setBans] = useState<Bans>(() => {
     const saved = localStorage.getItem("ord_bans");
-    return saved ? new Set(JSON.parse(saved)) : new Set();
+    const previous = saved ? new Set<string>(JSON.parse(saved)) : new Set<string>();
+    return initialLoad.migrated
+      ? retainValidState(initialLoad.data, {}, previous).bans
+      : previous;
   });
   const [isBanMode, setIsBanMode] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">(() => {
@@ -100,7 +114,10 @@ function App() {
   const [notification, setNotification] = useState<{
     message: string;
     type: "success" | "error" | "info" | "warning";
-  } | null>(null);
+  } | null>(() => initialLoad.migrated ? {
+    message: `Updated to ${initialLoad.version}. Inventory and bans for available units were preserved.`,
+    type: "info",
+  } : null);
 
   const showNotification = (
     message: string,
@@ -118,13 +135,12 @@ function App() {
     localStorage.setItem("ord_bans", JSON.stringify(Array.from(bans)));
   }, [bans]);
 
-  const [versions, setVersions] = useState<string[]>([]);
-  const [currentVersion, setCurrentVersion] = useState<string>(() => {
-    return localStorage.getItem("ord_version") || "";
-  });
-  const [requestedVersion, setRequestedVersion] = useState(currentVersion);
-  const [loadError, setLoadError] = useState<string | null>(null);
-  const [loadAttempt, setLoadAttempt] = useState(0);
+  const [versions, setVersions] = useState(initialLoad.versions);
+  const [currentVersion, setCurrentVersion] = useState(initialLoad.version);
+
+  useEffect(() => {
+    localStorage.setItem("ord_version", currentVersion);
+  }, [currentVersion]);
 
   // Auto-clear notifications
   useEffect(() => {
@@ -134,58 +150,22 @@ function App() {
     }
   }, [notification]);
 
-  // Resolve retired versions before fetching, and commit migration only on success.
-  useEffect(() => {
-    const controller = new AbortController();
-    loadGameData(
-      import.meta.env.BASE_URL,
-      requestedVersion,
-      localStorage.getItem("ord_custom_data"),
-      controller.signal,
-    )
-      .then(({ data: loaded, version, versions: available, migrated }) => {
-        if (controller.signal.aborted) return;
-        if (migrated) {
-          setInventory((previous) =>
-            retainValidState(loaded, previous, new Set()).inventory,
-          );
-          setBans((previous) => retainValidState(loaded, {}, previous).bans);
-          setNotification({
-            message: `Updated to ${version}. Inventory and bans for available units were preserved.`,
-            type: "info",
-          });
-        }
-        setVersions(available);
-        setData(loaded);
-        setLoadError(null);
-        setCurrentVersion(version);
-        localStorage.setItem("ord_version", version);
-      })
-      .catch((err) => {
-        if (controller.signal.aborted) return;
-        console.error("Failed to load game data:", err);
-        setLoadError(
-          "Unable to load game data. Check your connection and try again.",
-        );
-      });
-    return () => controller.abort();
-  }, [requestedVersion, loadAttempt]);
-
   const handleVersionChange = (ver: string) => {
     if (ver === currentVersion) return;
-
-    if (
-      confirm(
-        "Changing version will reset your inventory and bans. Are you sure?",
-      )
-    ) {
-      setLoadError(null);
-      setData(null);
-      setCurrentVersion(ver);
-      setRequestedVersion(ver);
-      setInventory({});
-      setBans(new Set());
-    }
+    const loaded = resolveGameData(
+      ver,
+      localStorage.getItem("ord_custom_data"),
+      bundledCatalog,
+    );
+    setData(loaded.data);
+    setVersions(loaded.versions);
+    setCurrentVersion(loaded.version);
+    setSelectedUnitForTree(null);
+    setActiveHoveredId(null);
+    setInventory((previous) =>
+      retainValidState(loaded.data, previous, new Set()).inventory,
+    );
+    setBans((previous) => retainValidState(loaded.data, {}, previous).bans);
   };
 
   const [uiSize, setUiSize] = useState<number>(() => {
@@ -256,11 +236,11 @@ function App() {
           setVersions([...versions, "Custom"]);
         }
         setCurrentVersion("Custom");
-        setRequestedVersion("Custom");
         localStorage.setItem("ord_version", "Custom");
 
         setData(importedData);
-        setLoadError(null);
+        setSelectedUnitForTree(null);
+        setActiveHoveredId(null);
         showNotification("Game Data imported!", "success");
       } catch (err) {
         console.error("Failed to import data:", err);
@@ -478,23 +458,6 @@ function App() {
       {} as Record<string, Unit[]>,
     );
   }, [data]);
-
-  if (loadError) {
-    return (
-      <div className="container" role="alert">
-        <p>{loadError}</p>
-        <button
-          onClick={() => {
-            setLoadError(null);
-            setLoadAttempt((attempt) => attempt + 1);
-          }}
-        >
-          Try again
-        </button>
-      </div>
-    );
-  }
-  if (!data) return <div className="container">Loading...</div>;
 
   return (
     <div className="container">

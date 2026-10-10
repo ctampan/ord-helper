@@ -64,39 +64,40 @@ export function retainValidState(data: Data, inventory: Inventory, bans: Bans) {
   };
 }
 
-/** Loading has no storage side effects: callers commit migration only on success. */
-export async function loadGameData(
-  baseUrl: string,
+/** Filename and metadata agree; numeric sorting keeps 2.10 newer than 2.9. */
+export function createGameCatalog(sources: Record<string, unknown>): Map<string, Data> {
+  const datasets = Object.entries(sources).map(([path, value]) => {
+    const filenameVersion = path.split(/[\\/]/).pop()?.replace(/\.json$/, "");
+    if (!isGameData(value) || value.version !== filenameVersion || value.version === "Custom") {
+      throw new Error(`Invalid bundled dataset: ${path}`);
+    }
+    return value;
+  });
+  const order = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+  datasets.sort((first, second) => order.compare(second.version, first.version));
+  const catalog = new Map(datasets.map((data) => [data.version, data]));
+  if (!catalog.size || catalog.size !== datasets.length) {
+    throw new Error("Bundled datasets must have unique versions and include at least one version");
+  }
+  return catalog;
+}
+
+/** All discovered versions are bundled and switch without network requests. */
+export function resolveGameData(
   requestedVersion: string,
   savedCustom: string | null,
-  signal?: AbortSignal,
-  fetcher: typeof fetch = fetch,
+  catalog: ReadonlyMap<string, Data>,
 ) {
-  const response = await fetcher(`${baseUrl}versions.json`, { signal });
-  if (!response.ok) throw new Error(`Version list: HTTP ${response.status}`);
-  const versions: unknown = await response.json();
-  if (
-    !Array.isArray(versions) || !versions.length ||
-    !versions.every((version) => typeof version === "string" && /^\d[\d.-]*$/.test(version))
-  ) throw new Error("Invalid version list");
-
   const custom = readCustomData(savedCustom);
-  const availableVersions: string[] = custom ? [...versions, "Custom"] : versions;
-  const version = availableVersions.includes(requestedVersion) ? requestedVersion : versions[0];
-  let data: Data;
-  if (version === "Custom" && custom) {
-    data = custom;
-  } else {
-    const result = await fetcher(`${baseUrl}data/${version}.json`, { signal });
-    if (!result.ok) throw new Error(`Game data: HTTP ${result.status}`);
-    const parsed: unknown = await result.json();
-    if (!isGameData(parsed) || parsed.version !== version) throw new Error("Invalid game data");
-    data = parsed;
-  }
+  const builtInVersions = [...catalog.keys()];
+  if (!builtInVersions.length) throw new Error("No bundled game data available");
+  const versions = custom ? [...builtInVersions, "Custom"] : builtInVersions;
+  const version = versions.includes(requestedVersion) ? requestedVersion : builtInVersions[0];
+  const data = version === "Custom" && custom ? custom : catalog.get(version)!;
   return {
     data,
     version,
-    versions: availableVersions,
+    versions,
     migrated: !!requestedVersion && version !== requestedVersion,
   };
 }
