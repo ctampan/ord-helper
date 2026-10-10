@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import {
   CAPABILITIES, filterUnitsByCapabilities, hasBaseCapability, readCapabilityFilters,
-  readCapabilityExpanded, displayAbilityText,
+  readCapabilityVisible, displayAbilityText,
 } from '../src/logic/capabilities.ts';
 import { isGameData, readCustomData, retainValidState } from '../src/logic/data.ts';
 
@@ -93,10 +93,10 @@ test('All/Any, empty selection, disabled filters, and unclassified Custom units'
 });
 
 test('saved filter choices survive close/reload and corrupt or retired preferences are sanitized', () => {
-  assert.equal(readCapabilityExpanded(null), true);
-  assert.equal(readCapabilityExpanded('true'), true);
-  assert.equal(readCapabilityExpanded('false'), false);
-  assert.equal(readCapabilityExpanded('broken'), true);
+  assert.equal(readCapabilityVisible(null), true);
+  assert.equal(readCapabilityVisible('true'), true);
+  assert.equal(readCapabilityVisible('false'), false);
+  assert.equal(readCapabilityVisible('broken'), true);
   const saved = JSON.stringify({ selected: ['shield', 'slow'], mode: 'any' });
   assert.deepEqual(readCapabilityFilters(saved), { selected: ['shield', 'slow'], mode: 'any' });
   assert.deepEqual(readCapabilityFilters(JSON.stringify({ selected: ['shield', 'invalid', 'shield', null], mode: 'other' })), { selected: ['shield'], mode: 'all' });

@@ -23,9 +23,11 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           <section>
             <h3>Ability Filters</h3>
             <p>
-              Expand Ability filters above the dashboard or use the funnel in Config.
-              Match All or Any selected categories. Collapsing keeps filters active;
-              Clear shows every unit. The panel starts expanded and remembers your choice.
+              Use the funnel in Config to show or hide the entire filter panel.
+              The panel is shown by default and remembers both visibility and
+              expand/collapse choices after refresh.
+              Match All or Any selected categories. Hiding or collapsing keeps filters
+              active; show the panel and use Clear to show every unit.
             </p>
             <p>
               Filters use base abilities. Compact ability panels show effect values

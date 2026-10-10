@@ -1,6 +1,7 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   CAPABILITIES, CAPABILITY_GROUPS,
+  CAPABILITY_PANEL_EXPANDED_STORAGE_KEY,
   type CapabilityFilterPreferences, type CapabilityId,
 } from "../logic/capabilities";
 import type { Unit } from "../logic/combination";
@@ -11,15 +12,19 @@ const groups = CAPABILITY_GROUPS.map((group) => ({
 }));
 
 interface Props {
-  expanded: boolean;
-  onToggleExpanded: () => void;
   units: Unit[];
   preferences: CapabilityFilterPreferences;
   resultCount: number;
   onChange: (preferences: CapabilityFilterPreferences) => void;
 }
 
-export function CapabilityFilters({ units, preferences, resultCount, onChange, expanded, onToggleExpanded }: Props) {
+export function CapabilityFilters({ units, preferences, resultCount, onChange }: Props) {
+  const [expanded, setExpanded] = useState(() =>
+    localStorage.getItem(CAPABILITY_PANEL_EXPANDED_STORAGE_KEY) !== "false",
+  );
+  useEffect(() => {
+    localStorage.setItem(CAPABILITY_PANEL_EXPANDED_STORAGE_KEY, JSON.stringify(expanded));
+  }, [expanded]);
   const counts = useMemo(() => {
     const totals = new Map<CapabilityId, number>();
     for (const unit of units) {
@@ -39,7 +44,7 @@ export function CapabilityFilters({ units, preferences, resultCount, onChange, e
     <section id="capability-filters" className={styles.panel} aria-label="Unit ability filters">
       <div className={styles.toolbar}>
         <button type="button" className={styles.expand} aria-expanded={expanded}
-          aria-controls="capability-filter-choices" onClick={onToggleExpanded}>
+          aria-controls="capability-filter-choices" onClick={() => setExpanded((previous) => !previous)}>
           <span aria-hidden="true">{expanded ? "▾" : "▸"}</span> Ability filters
         </button>
         <span className={styles.selection}>{preferences.selected.length} selected</span>

@@ -4,7 +4,7 @@ import { BanToggle } from "./BanToggle";
 import { HelpModal } from "./HelpModal";
 
 interface OptionsPanelProps {
-  isFilterExpanded: boolean;
+  showCapabilityFilters: boolean;
   activeFilterCount: number;
   onToggleFilter: () => void;
   isBanMode: boolean;
@@ -33,7 +33,7 @@ interface OptionsPanelProps {
 }
 
 export const OptionsPanel: React.FC<OptionsPanelProps> = ({
-  isFilterExpanded,
+  showCapabilityFilters,
   activeFilterCount,
   onToggleFilter,
   isBanMode,
@@ -173,12 +173,12 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             {/* Group 4: Sorting & Grouping */}
             <button
               type="button"
-              className={`${styles.iconBtn} ${isFilterExpanded || activeFilterCount ? styles.active : ""}`}
+              className={`${styles.iconBtn} ${showCapabilityFilters ? styles.active : ""}`}
               onClick={onToggleFilter}
               aria-label="Toggle ability filters"
-              aria-expanded={isFilterExpanded}
+              aria-pressed={showCapabilityFilters}
               aria-controls="capability-filters"
-              title={`Ability filters: ${isFilterExpanded ? "expanded" : "collapsed"}${activeFilterCount ? ` · ${activeFilterCount} active` : ""}`}
+              title={`Ability filters: ${showCapabilityFilters ? "shown" : "hidden"}${activeFilterCount ? ` · ${activeFilterCount} active` : ""}`}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M3 4h18l-7 8v7l-4 2v-9z" />

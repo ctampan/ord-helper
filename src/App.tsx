@@ -10,8 +10,8 @@ import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import { CapabilityFilters } from "./components/CapabilityFilters";
 import {
-  CAPABILITY_FILTER_STORAGE_KEY, CAPABILITY_EXPANDED_STORAGE_KEY,
-  filterUnitsByCapabilities, readCapabilityFilters, readCapabilityExpanded,
+  CAPABILITY_FILTER_STORAGE_KEY, CAPABILITY_VISIBLE_STORAGE_KEY,
+  filterUnitsByCapabilities, readCapabilityFilters, readCapabilityVisible,
 } from "./logic/capabilities";
 import { RecipeTreeModal } from "./components/RecipeTreeModal";
 import { useShortcuts } from "./hooks/useShortcuts";
@@ -64,8 +64,8 @@ function App() {
   });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
   const [overlayStore] = useState(createUnitOverlayStore);
-  const [isFilterExpanded, setIsFilterExpanded] = useState(() =>
-    readCapabilityExpanded(localStorage.getItem(CAPABILITY_EXPANDED_STORAGE_KEY)),
+  const [showCapabilityFilters, setShowCapabilityFilters] = useState(() =>
+    readCapabilityVisible(localStorage.getItem(CAPABILITY_VISIBLE_STORAGE_KEY)),
   );
   const [capabilityFilters, setCapabilityFilters] = useState(() =>
     readCapabilityFilters(localStorage.getItem(CAPABILITY_FILTER_STORAGE_KEY)),
@@ -75,8 +75,8 @@ function App() {
     localStorage.setItem(CAPABILITY_FILTER_STORAGE_KEY, JSON.stringify(capabilityFilters));
   }, [capabilityFilters]);
   useEffect(() => {
-    localStorage.setItem(CAPABILITY_EXPANDED_STORAGE_KEY, JSON.stringify(isFilterExpanded));
-  }, [isFilterExpanded]);
+    localStorage.setItem(CAPABILITY_VISIBLE_STORAGE_KEY, JSON.stringify(showCapabilityFilters));
+  }, [showCapabilityFilters]);
 
   const [selectedUnitForTree, setSelectedUnitForTree] = useState<string | null>(
     null,
@@ -547,10 +547,8 @@ function App() {
         unitsMap={unitsMap}
       />
 
-      {(
+      {showCapabilityFilters && (
         <CapabilityFilters
-          expanded={isFilterExpanded}
-          onToggleExpanded={() => setIsFilterExpanded((previous) => !previous)}
           units={data.units}
           preferences={capabilityFilters}
           resultCount={visibleUnits.length}
@@ -564,11 +562,11 @@ function App() {
         {/* Column 1: Options + Common + Uncommon + Random */}
         <div className="column">
           <OptionsPanel
-            isFilterExpanded={isFilterExpanded}
+            showCapabilityFilters={showCapabilityFilters}
             activeFilterCount={capabilityFilters.selected.length}
             onToggleFilter={() => {
               overlayStore.clear();
-              setIsFilterExpanded((previous) => !previous);
+              setShowCapabilityFilters((previous) => !previous);
             }}
             isBanMode={isBanMode}
             onToggleBanMode={() => setIsBanMode(!isBanMode)}

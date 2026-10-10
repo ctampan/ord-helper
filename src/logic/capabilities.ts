@@ -43,9 +43,11 @@ export interface CapabilityFilterPreferences {
   mode: FilterMode;
 }
 export const CAPABILITY_FILTER_STORAGE_KEY = "ord_capability_filters";
-export const CAPABILITY_EXPANDED_STORAGE_KEY = "ord_capability_filters_expanded";
+// Keep the legacy key so existing saved false values hide the panel.
+export const CAPABILITY_VISIBLE_STORAGE_KEY = "ord_capability_filters_expanded";
+export const CAPABILITY_PANEL_EXPANDED_STORAGE_KEY = "ord_capability_filter_choices_expanded";
 
-export function readCapabilityExpanded(saved: string | null): boolean {
+export function readCapabilityVisible(saved: string | null): boolean {
   return saved !== "false";
 }
 
