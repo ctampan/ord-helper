@@ -1,0 +1,3305 @@
+{
+  "sources": {
+    "ordsearch": "https://ordsearch.net/mix/helper",
+    "sions": "https://sions.kr/bbs/board.php?bo_table=mk_helper&wr_id=13347"
+  },
+  "snapshotSha256": {
+    "ordsearch": "fcc4bebd5fa6c57bd6cf1700a33016945d357023267c822fc1f5a2755e688cfb",
+    "sions": "bc598cbc6391634dc39cec0cddcd3bb8ff47db642fede6e048a6a56875ae0c32"
+  },
+  "units": {
+    "common_wisp": {
+      "sionsId": 0,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_luffy": {
+      "sionsId": 1,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_zoro": {
+      "sionsId": 2,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_nami": {
+      "sionsId": 3,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_usopp": {
+      "sionsId": 4,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_sanji": {
+      "sionsId": 5,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_chopper": {
+      "sionsId": 6,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_buggy": {
+      "sionsId": 9,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_gunman": {
+      "sionsId": 8,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "common_swordsman": {
+      "sionsId": 7,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_robin": {
+      "sionsId": 12,
+      "ordsearchId": "23",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_brook": {
+      "sionsId": 14,
+      "ordsearchId": "13",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_blueno": {
+      "sionsId": 10,
+      "ordsearchId": "12",
+      "ordsearchFlags": [],
+      "originalNote": "Teleport.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_bepo": {
+      "sionsId": 13,
+      "ordsearchId": "29",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_inazuma": {
+      "sionsId": 17,
+      "ordsearchId": "14",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_ace": {
+      "sionsId": 16,
+      "ordsearchId": "25",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_sogeking": {
+      "sionsId": 18,
+      "ordsearchId": "24",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_chopper": {
+      "sionsId": 19,
+      "ordsearchId": "30",
+      "ordsearchFlags": [],
+      "originalNote": "Attack +5.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_tashigi": {
+      "sionsId": 15,
+      "ordsearchId": "27",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Movement slow 6.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_perona": {
+      "sionsId": 20,
+      "ordsearchId": "28",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_franky": {
+      "sionsId": 21,
+      "ordsearchId": "22",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_hacchan": {
+      "sionsId": 22,
+      "ordsearchId": "20",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "uncommon_fukuro": {
+      "sionsId": 11,
+      "ordsearchId": "26",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_k": {
+      "sionsId": 324,
+      "ordsearchId": "244",
+      "ordsearchFlags": [
+        "stun",
+        "blink"
+      ],
+      "originalNote": "Stun 0.4s.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_naruto": {
+      "sionsId": 325,
+      "ordsearchId": "230",
+      "ordsearchFlags": [
+        "stun"
+      ],
+      "originalNote": "Sage Mode; stun 0.7s.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_paimon": {
+      "sionsId": 326,
+      "ordsearchId": "241",
+      "ordsearchFlags": [
+        "sky",
+        "docking"
+      ],
+      "originalNote": "Whirlwind skill: magic damage amplification 10.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_yotsuba": {
+      "sionsId": 327,
+      "ordsearchId": "231",
+      "ordsearchFlags": [
+        "regen"
+      ],
+      "originalNote": "Summons a Wisp every 90s; mana regeneration.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_sento": {
+      "sionsId": 328,
+      "ordsearchId": "232",
+      "ordsearchFlags": [
+        "sstun",
+        "docking",
+        "shield"
+      ],
+      "originalNote": "Long-range sniper; single-target armor reduction 50 and magic damage amplification 18.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_touma": {
+      "sionsId": 329,
+      "ordsearchId": "238",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun",
+        "regen",
+        "boss",
+        "life"
+      ],
+      "originalNote": "Attack buff.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_elizabeth": {
+      "sionsId": 330,
+      "ordsearchId": "242",
+      "ordsearchFlags": [
+        "sky",
+        "sstun",
+        "slow"
+      ],
+      "originalNote": "Combat Penguin; single-target stun; summons a token every 105s.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_yomi": {
+      "sionsId": 331,
+      "ordsearchId": "243",
+      "ordsearchFlags": [
+        "shield",
+        "splash"
+      ],
+      "originalNote": "Armor reduction 20.",
+      "subGroup": null,
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "random_ichigo": {
+      "sionsId": 332,
+      "ordsearchId": "293",
+      "ordsearchFlags": [
+        "last"
+      ],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_tsubasa": {
+      "sionsId": 333,
+      "ordsearchId": "239",
+      "ordsearchFlags": [
+        "speedb",
+        "slow"
+      ],
+      "originalNote": "Movement slow; attack speed +10.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_light": {
+      "sionsId": 334,
+      "ordsearchId": "240",
+      "ordsearchFlags": [
+        "single"
+      ],
+      "originalNote": "Single-target effect 0.5 (source does not specify the effect's unit).",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_yan": {
+      "sionsId": 335,
+      "ordsearchId": "281",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_bronya": {
+      "sionsId": 336,
+      "ordsearchId": "278",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "random_megumin": {
+      "sionsId": 337,
+      "ordsearchId": "235",
+      "ordsearchFlags": [
+        "rangetlpd"
+      ],
+      "originalNote": "Explosion: 15% of total HP plus fixed damage.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_xdrake": {
+      "sionsId": 23,
+      "ordsearchId": "53",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_enel": {
+      "sionsId": 24,
+      "ordsearchId": "33",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_moria": {
+      "sionsId": 25,
+      "ordsearchId": "49",
+      "ordsearchFlags": [],
+      "originalNote": "Creates zombies when killing lane enemies. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_nami": {
+      "sionsId": 26,
+      "ordsearchId": "38",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Clima-Tact; triggered movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_robin": {
+      "sionsId": 28,
+      "ordsearchId": "43",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_law": {
+      "sionsId": 29,
+      "ordsearchId": "48",
+      "ordsearchFlags": [
+        "speedb"
+      ],
+      "originalNote": "W: single-target attack speed +100% for 7s; cooldown 50s. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_lucci": {
+      "sionsId": 27,
+      "ordsearchId": "40",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_luffy": {
+      "sionsId": 30,
+      "ordsearchId": "51",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_marco": {
+      "sionsId": 31,
+      "ordsearchId": "60",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_hawkins": {
+      "sionsId": 32,
+      "ordsearchId": "45",
+      "ordsearchFlags": [
+        "shield"
+      ],
+      "originalNote": "Armor reduction 3. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_buggy": {
+      "sionsId": 33,
+      "ordsearchId": "41",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_bonkurei": {
+      "sionsId": 34,
+      "ordsearchId": "58",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_sanji": {
+      "sionsId": 35,
+      "ordsearchId": "52",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_smoker": {
+      "sionsId": 53,
+      "ordsearchId": "62",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_squard": {
+      "sionsId": 36,
+      "ordsearchId": "57",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_arlong": {
+      "sionsId": 37,
+      "ordsearchId": "54",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_absalom": {
+      "sionsId": 38,
+      "ordsearchId": "15",
+      "ordsearchFlags": [],
+      "originalNote": "Requires 3 zombies created by Special Moria's lane kills and 1 Nami. Zombies are an additional in-game requirement, not inventory recipe units. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_ace": {
+      "sionsId": 39,
+      "ordsearchId": "59",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_usopp": {
+      "sionsId": 40,
+      "ordsearchId": "36",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_inazuma": {
+      "sionsId": 41,
+      "ordsearchId": "55",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_zoro": {
+      "sionsId": 42,
+      "ordsearchId": "44",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_jinbe": {
+      "sionsId": 44,
+      "ordsearchId": "37",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_chaka": {
+      "sionsId": 45,
+      "ordsearchId": "61",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_chopperbrain": {
+      "sionsId": 46,
+      "ordsearchId": "35",
+      "ordsearchFlags": [
+        "shield"
+      ],
+      "originalNote": "Brain Point; armor reduction 3. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_chopperguard": {
+      "sionsId": 47,
+      "ordsearchId": "34",
+      "ordsearchFlags": [
+        "damageb"
+      ],
+      "originalNote": "Guard Point; attack +8. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_capone": {
+      "sionsId": 48,
+      "ordsearchId": "47",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_kuro": {
+      "sionsId": 43,
+      "ordsearchId": "21",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_kuma": {
+      "sionsId": 49,
+      "ordsearchId": "56",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_crocodile": {
+      "sionsId": 50,
+      "ordsearchId": "50",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_kid": {
+      "sionsId": 51,
+      "ordsearchId": "42",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Movement slow 5. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_killer": {
+      "sionsId": 52,
+      "ordsearchId": "46",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_docking": {
+      "sionsId": 54,
+      "ordsearchId": "32",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "mshield"
+      ],
+      "originalNote": "Pirate Docking 5. Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "special_helmeppo": {
+      "sionsId": 55,
+      "ordsearchId": "39",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: maximum movement slow 107%; Weather Change 10%.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "item_nika": {
+      "sionsId": 283,
+      "ordsearchId": "304",
+      "ordsearchFlags": [],
+      "originalNote": "Trace of the Sun God [Nika]; attack +15. Chance to drop after defeating the round 30 boss Enel.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "item_uta": {
+      "sionsId": 284,
+      "ordsearchId": "307",
+      "ordsearchFlags": [],
+      "originalNote": "Uta's Headset [Uta]; attack speed +12. Chance to drop after clearing stage 6, Sabaody Archipelago.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "item_marco": {
+      "sionsId": 287,
+      "ordsearchId": "325",
+      "ordsearchFlags": [],
+      "originalNote": "Phoenix Feather [Marco]; HP regeneration +0.3. Chance to drop after clearing stage 8, Marineford.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "other_rayleigh": {
+      "sionsId": 62,
+      "ordsearchId": "124",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Hidden Rayleigh.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "other_pirateship": {
+      "sionsId": 63,
+      "ordsearchId": "168",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "other_kuma": {
+      "sionsId": 64,
+      "ordsearchId": "188",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "other_ancientship": {
+      "sionsId": 244,
+      "ordsearchId": "144",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "other_greenblood": {
+      "sionsId": 341,
+      "ordsearchId": "361",
+      "ordsearchFlags": [],
+      "originalNote": "",
+      "subGroup": null,
+      "warnings": []
+    },
+    "other_seraphim": {
+      "sionsId": 347,
+      "ordsearchId": null,
+      "ordsearchFlags": [],
+      "originalNote": "Seraphim material for crafting Vegapunk.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_xdrake": {
+      "sionsId": 259,
+      "ordsearchId": "274",
+      "ordsearchFlags": [
+        "shield",
+        "slow"
+      ],
+      "originalNote": "Movement slow 10; armor reduction 5. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_garp": {
+      "sionsId": 95,
+      "ordsearchId": "72",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "splash",
+        "armorbreak"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_blackbeard": {
+      "sionsId": 66,
+      "ordsearchId": "80",
+      "ordsearchFlags": [
+        "docking"
+      ],
+      "originalNote": "Pulls enemies. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_doflamingo": {
+      "sionsId": 75,
+      "ordsearchId": "89",
+      "ordsearchFlags": [
+        "sky"
+      ],
+      "originalNote": "Can transform into Alternate Doflamingo. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_law": {
+      "sionsId": 76,
+      "ordsearchId": "81",
+      "ordsearchFlags": [
+        "speedb",
+        "blink"
+      ],
+      "originalNote": "W: single-target attack speed +120% for 8s; cooldown 50s. Blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_luffy": {
+      "sionsId": 77,
+      "ordsearchId": "63",
+      "ordsearchFlags": [
+        "sstun",
+        "splash"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_ryuma": {
+      "sionsId": 78,
+      "ordsearchId": "85",
+      "ordsearchFlags": [
+        "rangenlpd"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_marco": {
+      "sionsId": 79,
+      "ordsearchId": "95",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_magellan": {
+      "sionsId": 80,
+      "ordsearchId": "73",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_momonga": {
+      "sionsId": 81,
+      "ordsearchId": "74",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_mihawk": {
+      "sionsId": 82,
+      "ordsearchId": "66",
+      "ordsearchFlags": [
+        "splash"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_bartolomeo": {
+      "sionsId": 83,
+      "ordsearchId": "97",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_burgess": {
+      "sionsId": 84,
+      "ordsearchId": "83",
+      "ordsearchFlags": [
+        "stun",
+        "splash"
+      ],
+      "originalNote": "Stun 0.15s. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_hawkins": {
+      "sionsId": 85,
+      "ordsearchId": "82",
+      "ordsearchFlags": [
+        "shield"
+      ],
+      "originalNote": "Armor reduction 10. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_decken": {
+      "sionsId": 86,
+      "ordsearchId": "98",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_baby5": {
+      "sionsId": 112,
+      "ordsearchId": "70",
+      "ordsearchFlags": [],
+      "originalNote": "Can transform into Alternate Baby 5. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_benbeckman": {
+      "sionsId": 87,
+      "ordsearchId": "92",
+      "ordsearchFlags": [
+        "sstun",
+        "single",
+        "blink"
+      ],
+      "originalNote": "Blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_brook": {
+      "sionsId": 88,
+      "ordsearchId": "88",
+      "ordsearchFlags": [
+        "speedb",
+        "sstun"
+      ],
+      "originalNote": "Attack speed +10. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_vivi": {
+      "sionsId": 89,
+      "ordsearchId": "69",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_sabo": {
+      "sionsId": 90,
+      "ordsearchId": "94",
+      "ordsearchFlags": [
+        "shield"
+      ],
+      "originalNote": "Armor reduction 10. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_sanji": {
+      "sionsId": 91,
+      "ordsearchId": "64",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_shanks": {
+      "sionsId": 92,
+      "ordsearchId": "91",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_sentomaru": {
+      "sionsId": 93,
+      "ordsearchId": "71",
+      "ordsearchFlags": [
+        "splash"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_sugar": {
+      "sionsId": 94,
+      "ordsearchId": "87",
+      "ordsearchFlags": [
+        "regen"
+      ],
+      "originalNote": "Mana regeneration 0.6. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_shiryu": {
+      "sionsId": 96,
+      "ordsearchId": "75",
+      "ordsearchFlags": [
+        "sstun",
+        "single"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_aokiji": {
+      "sionsId": 97,
+      "ordsearchId": "77",
+      "ordsearchFlags": [
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Movement slow 10; stun 0.15s. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_akainu": {
+      "sionsId": 98,
+      "ordsearchId": "79",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_oars": {
+      "sionsId": 99,
+      "ordsearchId": "84",
+      "ordsearchFlags": [
+        "sstun",
+        "splash"
+      ],
+      "originalNote": "Single-target stun. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_wyper": {
+      "sionsId": 65,
+      "ordsearchId": "99",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_usopp": {
+      "sionsId": 100,
+      "ordsearchId": "114",
+      "ordsearchFlags": [
+        "stun",
+        "blink"
+      ],
+      "originalNote": "Stun 0.17s; blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_ivankov": {
+      "sionsId": 101,
+      "ordsearchId": "93",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun"
+      ],
+      "originalNote": "Stun 0.15s; Q: attack +35. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_zeff": {
+      "sionsId": 102,
+      "ordsearchId": "100",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_zoro": {
+      "sionsId": 103,
+      "ordsearchId": "65",
+      "ordsearchFlags": [
+        "sstun"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_jozu": {
+      "sionsId": 104,
+      "ordsearchId": "96",
+      "ordsearchFlags": [
+        "stun"
+      ],
+      "originalNote": "Stun 0.13s. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_chopper": {
+      "sionsId": 105,
+      "ordsearchId": "90",
+      "ordsearchFlags": [
+        "damageb"
+      ],
+      "originalNote": "Horn Point; attack +30. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_kaku": {
+      "sionsId": 106,
+      "ordsearchId": "249",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_kid": {
+      "sionsId": 108,
+      "ordsearchId": "102",
+      "ordsearchFlags": [
+        "sstun",
+        "slow"
+      ],
+      "originalNote": "Movement slow 15. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_crocodile": {
+      "sionsId": 107,
+      "ordsearchId": "68",
+      "ordsearchFlags": [
+        "damageb",
+        "slow"
+      ],
+      "originalNote": "Movement slow 15; Q: attack +20. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_kizaru": {
+      "sionsId": 109,
+      "ordsearchId": "78",
+      "ordsearchFlags": [
+        "blink"
+      ],
+      "originalNote": "Blink. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_kinemon": {
+      "sionsId": 110,
+      "ordsearchId": "101",
+      "ordsearchFlags": [],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_perona": {
+      "sionsId": 111,
+      "ordsearchId": "86",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Movement slow 20. Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "rare_hancock": {
+      "sionsId": 113,
+      "ordsearchId": "67",
+      "ordsearchFlags": [
+        "sstun",
+        "single"
+      ],
+      "originalNote": "Group reference: full armor reduction on God difficulty 201; poison 20; Nightmare full armor reduction 211.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "legendary_dragon": {
+      "sionsId": 117,
+      "ordsearchId": "107",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "shield",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Normal; stun 0.9s; movement slow 10; armor reduction 10; attack speed +5; attack +25. Additional armor reduction 45 against story enemies.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_laboon": {
+      "sionsId": 118,
+      "ordsearchId": "116",
+      "ordsearchFlags": [
+        "speedb",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Siege; stun 0.9s; attack speed +17; 100% area damage; swimming.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_bartolomeo": {
+      "sionsId": 126,
+      "ordsearchId": "117",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Normal; stun 1s; single-target stun; armor reduction 12.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_shanks": {
+      "sionsId": 128,
+      "ordsearchId": "111",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "stun"
+      ],
+      "originalNote": "Haki; stun 0.7s; single-target stun; Haki damage: 3% of total HP. Can defeat Burgess with the departure skill at 20 armor reduction.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_shiki": {
+      "sionsId": 132,
+      "ordsearchId": "109",
+      "ordsearchFlags": [
+        "sky",
+        "shield",
+        "stun",
+        "armorbreak"
+      ],
+      "originalNote": "Normal; stun 1s; Armor Break 1; flying.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_fujitora": {
+      "sionsId": 143,
+      "ordsearchId": "122",
+      "ordsearchFlags": [
+        "mshield",
+        "slow"
+      ],
+      "originalNote": "Siege; stun 0.7s; movement slow 25; magic resistance reduction 1%.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_kuma": {
+      "sionsId": 141,
+      "ordsearchId": "128",
+      "ordsearchFlags": [
+        "rangellpd",
+        "stun",
+        "blink"
+      ],
+      "originalNote": "Siege; W: area magnet, cooldown 60s. Source title lists stun 0.5s; description lists 0.4s.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "legendary_rayleigh": {
+      "sionsId": 120,
+      "ordsearchId": "125",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun",
+        "shield",
+        "stun",
+        "splash",
+        "armorbreak"
+      ],
+      "originalNote": "Piercing; armor reduction 20; attack +25; splash; single-target stun. Mana skill: Armor Break 3 and stun 3s. Additional crafting cost: 5 wood.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_marco": {
+      "sionsId": 125,
+      "ordsearchId": "137",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Piercing; movement slow 30; supporting damage; HP skill; 80% area damage; critical hits; flying. Can defeat Burgess at 15 armor reduction.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_sengoku": {
+      "sionsId": 129,
+      "ordsearchId": "110",
+      "ordsearchFlags": [
+        "damageb",
+        "shield",
+        "splash",
+        "slow"
+      ],
+      "originalNote": "Siege; movement slow 20; triggered armor reduction 18; triggered attack +40; supporting damage; splash.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "legendary_smoker": {
+      "sionsId": 67,
+      "ordsearchId": "106",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Siege; movement slow 50; Armor Break; single-target stun; mana skill: Armor Break.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_caesar": {
+      "sionsId": 131,
+      "ordsearchId": "131",
+      "ordsearchFlags": [
+        "shield"
+      ],
+      "originalNote": "Normal; armor reduction 30; ignores terrain / flying.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_ace": {
+      "sionsId": 133,
+      "ordsearchId": "133",
+      "ordsearchFlags": [
+        "sstun",
+        "shield"
+      ],
+      "originalNote": "Normal; armor reduction 33; single-target stun; can transform.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_ulti": {
+      "sionsId": 138,
+      "ordsearchId": "136",
+      "ordsearchFlags": [
+        "shield",
+        "boss",
+        "armorbreak"
+      ],
+      "originalNote": "Siege; armor reduction 27; HP skill: Armor Break 1; splash.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_kalgara": {
+      "sionsId": 139,
+      "ordsearchId": "115",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "boss"
+      ],
+      "originalNote": "Piercing; single-target stun; boss armor reduction 40; mana skill: self attack speed buff; flying. Source title lists armor reduction 20 and story/lane armor reduction 20; description lists armor reduction 15 and story/lane armor reduction 25.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "legendary_cracker": {
+      "sionsId": 135,
+      "ordsearchId": "255",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "shield"
+      ],
+      "originalNote": "Siege; armor reduction 25. B: permanent attack +19 and attack speed +9.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_king": {
+      "sionsId": 261,
+      "ordsearchId": "290",
+      "ordsearchFlags": [
+        "sky",
+        "shield",
+        "slow"
+      ],
+      "originalNote": "Normal; movement slow 10; armor reduction 5; triggered armor reduction 30 (poison-style 20 plus area 10); single-target slow 45%; flying; splash.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "legendary_whitebeard": {
+      "sionsId": 144,
+      "ordsearchId": "112",
+      "ordsearchFlags": [
+        "berserk",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "splash",
+        "slow"
+      ],
+      "originalNote": "Haki; armor reduction 15; triggered movement slow 35; supporting damage; HP skill; splash. Additional armor reduction 30 against bosses and story enemies.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ",
+        "slow values differ"
+      ]
+    },
+    "legendary_hibari": {
+      "sionsId": 299,
+      "ordsearchId": "349",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "last",
+        "shield",
+        "boss"
+      ],
+      "originalNote": "Armor reduction 22; single-target stun; activates every 4 basic attacks. Source title lists total-HP damage 7.5% against bosses/berserk enemies and 22.5% against normal enemies; description lists additional boss damage 6% of total HP and 2,000,000 magic damage against story enemies.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_chopper": {
+      "sionsId": 145,
+      "ordsearchId": "135",
+      "ordsearchFlags": [
+        "speedb",
+        "shield",
+        "blink",
+        "splash"
+      ],
+      "originalNote": "Heavy Point; armor reduction 18; attack speed +20. Attack speed effect does not stack with Transcendence Chopper.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_brulee": {
+      "sionsId": 338,
+      "ordsearchId": "358",
+      "ordsearchFlags": [],
+      "originalNote": "Transforms into a selected Legendary unit only.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "legendary_blackbeard": {
+      "sionsId": 114,
+      "ordsearchId": "129",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "docking",
+        "rangenlpd",
+        "boss"
+      ],
+      "originalNote": "Piercing; single-target magic damage amplification 8; all damage received +10; HP skill: area damage equal to 1% of current HP. Removes berserk armor buffs and deals additional damage.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_nami": {
+      "sionsId": 116,
+      "ordsearchId": "130",
+      "ordsearchFlags": [
+        "docking",
+        "slow"
+      ],
+      "originalNote": "Normal; magic damage amplification 1; triggered movement slow 42; HP skill. Larger treasure search radius, more treasure chests, 50% chance for double treasure rewards, and gold income +60%.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_neko": {
+      "sionsId": 258,
+      "ordsearchId": "275",
+      "ordsearchFlags": [
+        "damageb",
+        "berserk",
+        "rangetlpd",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Normal; movement slow 30; attack +32%; total-HP damage; HP skill. Additional damage against berserk enemies: 7.5% of total HP.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_law": {
+      "sionsId": 122,
+      "ordsearchId": "134",
+      "ordsearchFlags": [
+        "speedb",
+        "berserk",
+        "rangenlpd",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Piercing; current-HP damage; additional damage against berserk enemies. W: single-target attack speed +150% for 12s; cooldown 50s; single-target slow 99%.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_blackmaria": {
+      "sionsId": 123,
+      "ordsearchId": "123",
+      "ordsearchFlags": [
+        "sstun",
+        "rangetlpd"
+      ],
+      "originalNote": "Explosion damage; single-target stun.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_nightmare": {
+      "sionsId": 124,
+      "ordsearchId": "104",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "boss"
+      ],
+      "originalNote": "Piercing; single-target stun; flying. Additional fixed damage against bosses and berserk enemies: 0.5% of total HP.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_moria": {
+      "sionsId": 115,
+      "ordsearchId": "103",
+      "ordsearchFlags": [
+        "udelete",
+        "slow"
+      ],
+      "originalNote": "Normal; explosion damage; movement slow 30. Deletes an enemy and creates a General Zombie; absolute cooldown 8.5s.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_sugar": {
+      "sionsId": 130,
+      "ordsearchId": "126",
+      "ordsearchFlags": [
+        "sstun",
+        "regen",
+        "boss",
+        "udelete"
+      ],
+      "originalNote": "Normal; mana regeneration 1.25. R: deletion/transforms an enemy into a toy robot, cooldown 100s; toy has single-target stun. Can sell junk.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_z": {
+      "sionsId": 134,
+      "ordsearchId": "132",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "boss"
+      ],
+      "originalNote": "Siege; resistance-ignoring single-target stun; additional fixed damage against berserk enemies; boss damage equal to 2% of current HP.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_jinbe": {
+      "sionsId": 137,
+      "ordsearchId": "105",
+      "ordsearchFlags": [
+        "sstun",
+        "regen"
+      ],
+      "originalNote": "Siege; mana regeneration 2.5; single-target stun; mana skill: area magic damage; swimming.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_toki": {
+      "sionsId": 248,
+      "ordsearchId": "267",
+      "ordsearchFlags": [
+        "speedb",
+        "slow"
+      ],
+      "originalNote": "Normal; movement slow 25; attack speed +20. Every 9s, grants attack speed +35 to 2 random units within 450 range. Additional crafting cost: 5 wood.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "legendary_reiju": {
+      "sionsId": 119,
+      "ordsearchId": "113",
+      "ordsearchFlags": [
+        "sky",
+        "single",
+        "slow"
+      ],
+      "originalNote": "Piercing; movement slow 35; single-target current-HP damage; flying. Attack story enemies from a little distance.",
+      "subGroup": "Single Target",
+      "warnings": []
+    },
+    "legendary_lucci": {
+      "sionsId": 121,
+      "ordsearchId": "119",
+      "ordsearchFlags": [
+        "sstun",
+        "rangenlpd"
+      ],
+      "originalNote": "Siege; single-target current-HP damage and stun.",
+      "subGroup": "Single Target",
+      "warnings": []
+    },
+    "legendary_koby": {
+      "sionsId": 140,
+      "ordsearchId": "121",
+      "ordsearchFlags": [
+        "damageb",
+        "berserk",
+        "sstun",
+        "single",
+        "regen",
+        "boss",
+        "life"
+      ],
+      "originalNote": "Siege; single-target current-HP damage. Mana skill: attack +20, mana regeneration +1, HP regeneration +1.",
+      "subGroup": "Single Target",
+      "warnings": []
+    },
+    "legendary_sanji": {
+      "sionsId": 127,
+      "ordsearchId": "120",
+      "ordsearchFlags": [
+        "single"
+      ],
+      "originalNote": "Siege; single-target magic damage. Guaranteed explosion damage equal to 2.9% of current HP.",
+      "subGroup": "Single Target",
+      "warnings": []
+    },
+    "legendary_shinobu": {
+      "sionsId": 246,
+      "ordsearchId": "268",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "boss"
+      ],
+      "originalNote": "Normal; finisher 7; single-target stun. R: treasure search within 1800 range of the player's own area.",
+      "subGroup": "Finisher",
+      "warnings": []
+    },
+    "legendary_zoro": {
+      "sionsId": 136,
+      "ordsearchId": "118",
+      "ordsearchFlags": [
+        "sstun",
+        "boss",
+        "udelete"
+      ],
+      "originalNote": "Piercing; finisher 10; single-target stun. Source title lists execution of lane enemies below 13% HP; description lists guaranteed execution/deletion of a single enemy at 12% HP or below.",
+      "subGroup": "Finisher",
+      "warnings": []
+    },
+    "legendary_hancock": {
+      "sionsId": 142,
+      "ordsearchId": "108",
+      "ordsearchFlags": [
+        "sstun",
+        "last"
+      ],
+      "originalNote": "Haki; finisher 7; single-target stun.",
+      "subGroup": "Finisher",
+      "warnings": []
+    },
+    "hidden_bonkurei": {
+      "sionsId": 154,
+      "ordsearchId": "163",
+      "ordsearchFlags": [
+        "shield",
+        "stun"
+      ],
+      "originalNote": "Command: bonkurei. Siege; stun 0.35s; armor reduction 11. Armor reduction does not stack with Ivankov.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "hidden_aokiji": {
+      "sionsId": 158,
+      "ordsearchId": "165",
+      "ordsearchFlags": [
+        "stun",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Command: aokiji. Normal; stun 0.5s; movement slow 35; explosion damage amplification +10%; single-target slow 50.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "hidden_ivankov": {
+      "sionsId": 160,
+      "ordsearchId": "149",
+      "ordsearchFlags": [
+        "damageb",
+        "shield",
+        "stun",
+        "life"
+      ],
+      "originalNote": "Command: ivankov. Normal; stun 0.55s; armor reduction 11. Q: single-target attack +45 and HP regeneration +1; while holding position, buffs the farthest unit in range. Armor reduction does not stack with Bonkurei.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "hidden_tiger": {
+      "sionsId": 168,
+      "ordsearchId": "151",
+      "ordsearchFlags": [
+        "damageb",
+        "berserk",
+        "sstun",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Command: tiger. Siege; stun 1s; attack +35%; single-target stun; ignores all terrain; additional damage against berserk enemies.",
+      "subGroup": "Stun",
+      "warnings": []
+    },
+    "hidden_rebecca": {
+      "sionsId": 146,
+      "ordsearchId": "155",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "splash"
+      ],
+      "originalNote": "Command: rebecca. Piercing; armor reduction 18; single-target stun; splash.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "hidden_ryokugyu": {
+      "sionsId": 279,
+      "ordsearchId": "302",
+      "ordsearchFlags": [
+        "shield",
+        "slow"
+      ],
+      "originalNote": "Ryokugyu combination; armor reduction 25; mana skill: armor reduction 15; triggered movement slow 20.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "hidden_mihawk": {
+      "sionsId": 149,
+      "ordsearchId": "156",
+      "ordsearchFlags": [
+        "shield",
+        "splash"
+      ],
+      "originalNote": "Command: mihawk. Piercing; armor reduction 25; splash.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "hidden_vergo": {
+      "sionsId": 153,
+      "ordsearchId": "148",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "stun",
+        "armorbreak"
+      ],
+      "originalNote": "Command: vergo. Siege; Armor Break; single-target stun and armor reduction. Mana skill: armor reduction 30 for 5s and stun 2.5s; mana skill armor reduction increases with Siege upgrades, up to 30.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "hidden_sabo": {
+      "sionsId": 155,
+      "ordsearchId": "160",
+      "ordsearchFlags": [
+        "berserk",
+        "last",
+        "shield",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: sabo. Haki; movement slow 25; armor reduction 20. Easter egg: defeats Burgess in one hit.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "hidden_killer": {
+      "sionsId": 165,
+      "ordsearchId": "166",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "boss"
+      ],
+      "originalNote": "Command: killer. Piercing; armor reduction 12; single-target stun; boss damage 0.9% of current HP; additional berserk damage 5.75% of total HP.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "hidden_ryuma": {
+      "sionsId": 147,
+      "ordsearchId": "164",
+      "ordsearchFlags": [
+        "sstun",
+        "single",
+        "boss"
+      ],
+      "originalNote": "Command: ryuma. Piercing; single-target effect 0.8; single-target damage value 19; single-target stun. Upgrade material for Transcendence Zoro.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "hidden_stussy": {
+      "sionsId": 289,
+      "ordsearchId": "329",
+      "ordsearchFlags": [
+        "single",
+        "blink"
+      ],
+      "originalNote": "Command: stussy. Single-target current-HP damage, effect 0.5; blink range 1500, cooldown 5s.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "hidden_shiryu": {
+      "sionsId": 156,
+      "ordsearchId": "154",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "rangetlpd"
+      ],
+      "originalNote": "Command: shiryu. Piercing; finisher 7; mana skill; single-target stun. Can defeat Burgess with Wood Upgrade 2 + Docking 1, or Docking 2 + Wood Upgrade 1.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "hidden_akainu": {
+      "sionsId": 159,
+      "ordsearchId": "161",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: akainu. Siege; HP skill; single-target stun; triggered movement slow 10; fixed damage amplification +5%; triggered magic resistance reduction 10; additional damage against berserk enemies.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "hidden_carrot": {
+      "sionsId": 213,
+      "ordsearchId": "253",
+      "ordsearchFlags": [
+        "sstun",
+        "single",
+        "docking"
+      ],
+      "originalNote": "Command: carrot. Piercing; magic damage amplification; single-target stun.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "hidden_kiku": {
+      "sionsId": 164,
+      "ordsearchId": "150",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "last",
+        "boss"
+      ],
+      "originalNote": "Command: kiku. Normal; mana skill; single-target stun 2s; additional boss damage 1% of current HP and berserk damage 5% of total HP.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "hidden_redforce": {
+      "sionsId": 68,
+      "ordsearchId": "139",
+      "ordsearchFlags": [
+        "damageb",
+        "berserk",
+        "sstun",
+        "shield",
+        "boss"
+      ],
+      "originalNote": "Command: redforce. Haki; armor reduction 20; attack +35; boss damage 1.75% of total HP; berserk damage 7.5% of total HP; single-target stun 0.7s; flying.",
+      "subGroup": "Ship",
+      "warnings": []
+    },
+    "hidden_mobydick": {
+      "sionsId": 148,
+      "ordsearchId": "147",
+      "ordsearchFlags": [
+        "slow",
+        "life"
+      ],
+      "originalNote": "Command: mobydick. Haki; movement slow 40; HP regeneration 1.25; flying.",
+      "subGroup": "Ship",
+      "warnings": []
+    },
+    "hidden_decken": {
+      "sionsId": 150,
+      "ordsearchId": "158",
+      "ordsearchFlags": [
+        "sstun",
+        "rangellpd",
+        "stun"
+      ],
+      "originalNote": "Command: decken. Normal; supporting magic damage; mana skill: damage equal to 4% of missing HP and stun 1.5s; single-target stun; swimming.",
+      "subGroup": "Ship",
+      "warnings": []
+    },
+    "hidden_baratie": {
+      "sionsId": 151,
+      "ordsearchId": "152",
+      "ordsearchFlags": [
+        "speedb"
+      ],
+      "originalNote": "Command: baratie. Normal; attack speed +20; Q: single-target attack speed +200. Upgrade material for Transcendence Sanji.",
+      "subGroup": "Ship",
+      "warnings": []
+    },
+    "hidden_maxim": {
+      "sionsId": 152,
+      "ordsearchId": "146",
+      "ordsearchFlags": [
+        "mshield",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Command: maxim. Normal; explosion damage amplification +10%; triggered movement slow 30; flying. Mana skill: magic resistance reduction 6 and stun 1.2s.",
+      "subGroup": "Ship",
+      "warnings": []
+    },
+    "hidden_sunny": {
+      "sionsId": 157,
+      "ordsearchId": "145",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Command: sunny. Normal; area stun (source title: 0.7s; description: 0.5s). Transcendence Franky enables the Gaon Cannon mana skill.",
+      "subGroup": "Ship",
+      "warnings": []
+    },
+    "distortion_blackmaria": {
+      "sionsId": 303,
+      "ordsearchId": "353",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "rangellpd",
+        "rangetlpd",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: blackmaria (Bewitching Marionette). Stun 0.7s; single-target stun. Choose area stun with 5s cooldown, movement slow 40, or missing-HP damage 3 with 5s cooldown. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "warnings": []
+    },
+    "distortion_koala": {
+      "sionsId": 304,
+      "ordsearchId": "153",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "regen",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Revolutionary Army's Acting Instructor; mana regeneration; resistance-ignoring single-target stun; effective against berserk enemies and bosses. Armor Break 1; mana skill: Armor Break 3. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "warnings": []
+    },
+    "distortion_queen": {
+      "sionsId": 306,
+      "ordsearchId": "348",
+      "ordsearchFlags": [
+        "berserk",
+        "regen",
+        "shield",
+        "stun",
+        "boss",
+        "armorbreak",
+        "life"
+      ],
+      "originalNote": "Cyborg of the Plague; stun 0.4s; triggered armor reduction 20; Armor Break 1; mana skill: Armor Break 3; HP regeneration +1; mana regeneration +1. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "warnings": []
+    },
+    "distortion_perona": {
+      "sionsId": 307,
+      "ordsearchId": "141",
+      "ordsearchFlags": [
+        "sky",
+        "stun",
+        "udelete",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Ghost Princess; movement slow 45; deletion every 7.5s; mana skill; explosion damage amplification 10. All skills deal explosion damage; amplification also applies to Eternal Mihawk. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "warnings": []
+    },
+    "distortion_burgess": {
+      "sionsId": 348,
+      "ordsearchId": "366",
+      "ordsearchFlags": [
+        "single",
+        "stun"
+      ],
+      "originalNote": "Champion of Great Strength; stun; single-target damage; effective against berserk enemies and bosses; underwater movement. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "warnings": []
+    },
+    "distortion_ace": {
+      "sionsId": 349,
+      "ordsearchId": "367",
+      "ordsearchFlags": [
+        "damageb",
+        "shield",
+        "slow"
+      ],
+      "originalNote": "Son of the Pirate King; armor reduction 40; movement slow 25; attack +25%. Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
+      "subGroup": "Combination Cost: 3, 8, 13, 18",
+      "warnings": []
+    },
+    "alternate_doflamingo": {
+      "sionsId": 70,
+      "ordsearchId": "170",
+      "ordsearchFlags": [
+        "sky",
+        "single"
+      ],
+      "originalNote": "Piercing; single-target effect 0.6 and damage value 20; flying.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "alternate_baby5": {
+      "sionsId": 243,
+      "ordsearchId": "266",
+      "ordsearchFlags": [
+        "speedb",
+        "shield",
+        "armorbreak"
+      ],
+      "originalNote": "Normal; physical damage; same performance as Baratie plus an acceleration skill; Armor Break 1; additional damage against berserk enemies.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "alternate_vivi": {
+      "sionsId": 191,
+      "ordsearchId": "173",
+      "ordsearchFlags": [
+        "shield",
+        "slow"
+      ],
+      "originalNote": "Piercing; movement slow 20; armor reduction 11.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "alternate_carrot": {
+      "sionsId": 214,
+      "ordsearchId": "254",
+      "ordsearchFlags": [
+        "sky",
+        "sstun",
+        "bombup"
+      ],
+      "originalNote": "Piercing; explosion damage amplification 1; randomly moves when attacking; single-target stun; flying.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "alternate_kaku": {
+      "sionsId": 298,
+      "ordsearchId": "347",
+      "ordsearchFlags": [
+        "last",
+        "blink"
+      ],
+      "originalNote": "Finisher; blink range 1500; self attack speed +33. Transformation costs an additional 10 wood.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "seraphim_ssnake": {
+      "sionsId": 342,
+      "ordsearchId": "365",
+      "ordsearchFlags": [
+        "sky",
+        "sstun",
+        "last",
+        "rangetlpd",
+        "bombup"
+      ],
+      "originalNote": "Explosion damage amplification +3%; area total-HP damage; finisher. All Seraphim have single-target stun and can fly.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "seraphim_shawk": {
+      "sionsId": 343,
+      "ordsearchId": "362",
+      "ordsearchFlags": [
+        "sky",
+        "berserk",
+        "sstun",
+        "shield",
+        "boss",
+        "armorbreak"
+      ],
+      "originalNote": "Effective against berserk enemies and bosses; armor reduction 32; Armor Break. All Seraphim have single-target stun and can fly.",
+      "subGroup": null,
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "seraphim_sshark": {
+      "sionsId": 344,
+      "ordsearchId": "364",
+      "ordsearchFlags": [
+        "damageb",
+        "sky",
+        "sstun",
+        "shield",
+        "splash",
+        "armorbreak",
+        "life"
+      ],
+      "originalNote": "HP skill: Armor Break; armor reduction 20; attack +55%; HP regeneration. All Seraphim have single-target stun and can fly.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "seraphim_sbear": {
+      "sionsId": 345,
+      "ordsearchId": "363",
+      "ordsearchFlags": [
+        "sky",
+        "berserk",
+        "sstun",
+        "docking",
+        "mshield",
+        "rangellpd",
+        "stun",
+        "boss",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Magic resistance reduction 1%; magic damage amplification +4%; W: area magnet; teleport. All Seraphim have single-target stun and can fly.",
+      "subGroup": null,
+      "warnings": []
+    },
+    "transcendence_doflamingo": {
+      "sionsId": 170,
+      "ordsearchId": "208",
+      "ordsearchFlags": [
+        "sky",
+        "shield",
+        "rangenlpd",
+        "slow"
+      ],
+      "originalNote": "Command: joker tr (Dark Joker). Piercing; triggered movement slow 136 and a separate ground-area triggered slow 45; 50% area damage. Mana skill: armor reduction 60 for 4.5s. Upgrade 4 adds critical hits; source description lists Upgrade 3 extending awakening from 4.5s to 6s.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "transcendence_robin": {
+      "sionsId": 171,
+      "ordsearchId": "197",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun",
+        "shield",
+        "rangetlpd",
+        "stun"
+      ],
+      "originalNote": "Command: robin tr (Devil Child). Normal; stun 1.1s; armor reduction 45; attack +25; HP skill: physical damage equal to 1% of current HP; single-target stun; Upgrade 4.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_ryokugyu": {
+      "sionsId": 280,
+      "ordsearchId": "303",
+      "ordsearchFlags": [
+        "shield",
+        "splash",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Command: ryokugyu tr (New Marine Admiral Green Bull). Normal; armor reduction 35; triggered armor reduction 15. Mana skill: transformation and armor reduction 10. Triggered movement slow 35 from a specific skill and 12 from all skills; special upgrade available.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ",
+        "slow values differ"
+      ]
+    },
+    "transcendence_luffy": {
+      "sionsId": 173,
+      "ordsearchId": "189",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Command: luffy tr (The Man Who Will Become Pirate King). Siege; stun 0.4s; triggered movement slow 35; percentage area damage; mana skill: Armor Break; single-target stun. Upgrade 4 strengthens stun.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "transcendence_hawkins": {
+      "sionsId": 251,
+      "ordsearchId": "270",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: hawkins tr (Magician of Fate). Normal; armor reduction 25; damage +8% per enemy buff/debuff; HP and mana skills; single-target stun. Upgrade 4 summons a cursed doll with fortune-telling, movement slow and armor reduction 7, and single-target slow 7.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_sabo": {
+      "sionsId": 177,
+      "ordsearchId": "216",
+      "ordsearchFlags": [
+        "speedb",
+        "sstun",
+        "last",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: sabo tr (Revolutionary Army Chief of Staff). Siege; movement slow 35; armor reduction 30; triggered movement slow 30; splash; damage increases per buff; single-target stun. Mana skill: physical area damage equal to 1.5% of current HP and stun 3s; Upgrade 4.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "transcendence_usopp": {
+      "sionsId": 183,
+      "ordsearchId": "195",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "splash",
+        "udelete"
+      ],
+      "originalNote": "Command: usopp tr (Warrior of the Sea). Piercing; armor reduction 22; global armor reduction 8; splash; W: Usopp Hammer; single-target stun. Mana skill: area damage equal to 2% of total HP. Upgrade 4 summons plants.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_zoro": {
+      "sionsId": 184,
+      "ordsearchId": "191",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: zoro tr (Strongest Swordsman). Piercing; stun 0.39s; movement slow 30 (35-42); armor reduction 30 (35-42); single-target stun. Mana skill: stun 3s. Upgrade 4 enhances abilities; acquiring Shusui strengthens him and changes skills.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_jinbe": {
+      "sionsId": 253,
+      "ordsearchId": "272",
+      "ordsearchFlags": [
+        "speedb",
+        "sstun",
+        "regen",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "splash",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Command: jinbe tr (Knight of the Sea). Siege; Armor Break; triggered movement slow 50; attack speed +20; mana regeneration 3; splash; mana skill; single-target stun; swimming. Skill damage +1% per Armor Break stack; special upgrade available.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_chopper": {
+      "sionsId": 185,
+      "ordsearchId": "196",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "shield",
+        "splash"
+      ],
+      "originalNote": "Command: chopper tr (Reindeer Doctor). Normal; armor reduction 50; attack speed +30; attack +80. Mana skill: transforms into Monster Point; Upgrade 4.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_fujitora": {
+      "sionsId": 189,
+      "ordsearchId": "207",
+      "ordsearchFlags": [
+        "shield",
+        "stun",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Command: fujitora tr (Raging Tiger). Siege; stun 1s; movement slow 55; Armor Break; 80% area damage. Mana skill: triggered movement slow 99; Upgrade 4.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_yamato": {
+      "sionsId": 275,
+      "ordsearchId": "299",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "stun"
+      ],
+      "originalNote": "Command: yamato tr (Oni Princess). Haki; enemy movement speed +15; armor reduction 25; percentage area damage and fixed area damage; HP skill; single-target stun. Thunder Bagua damage and percentage area magic damage increase near maximum slow; special upgrade available.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_bonney": {
+      "sionsId": 291,
+      "ordsearchId": "330",
+      "ordsearchFlags": [
+        "last",
+        "single",
+        "shield",
+        "rangetlpd",
+        "rangenlpd",
+        "stun"
+      ],
+      "originalNote": "Command: bonney tr (Distorted Future). Stun 0.6s; stacking armor reduction up to 40; current-HP damage. Mana skill: Nika transformation with a 2s incapacitation penalty. Upgrade 4 removes the penalty.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "transcendence_tashigi": {
+      "sionsId": 187,
+      "ordsearchId": "209",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "rangetlpd",
+        "boss",
+        "armorbreak"
+      ],
+      "originalNote": "Command: tashigi tr (Marine Heroine). Piercing; Armor Break; area magic damage; mana skill; single-target stun. Upgrade 4 enhances skill damage.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "transcendence_vegapunk_ssnake": {
+      "sionsId": 340,
+      "ordsearchId": "368",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "berserk",
+        "sstun",
+        "last",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "transcendence_vegapunk_shawk": {
+      "sionsId": 351,
+      "ordsearchId": "371",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "berserk",
+        "sstun",
+        "last",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "transcendence_vegapunk_sshark": {
+      "sionsId": 352,
+      "ordsearchId": "370",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "berserk",
+        "sstun",
+        "last",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "transcendence_vegapunk_sbear": {
+      "sionsId": 353,
+      "ordsearchId": "369",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "berserk",
+        "sstun",
+        "last",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: vegapunk tr (World's Greatest Scientist). Movement slow 40; attack +40%; attack speed +40%; mana skill. Upgrade 4 summons York with stun 1s. D: Punk Records; choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "transcendence_blackbeard": {
+      "sionsId": 69,
+      "ordsearchId": "204",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "docking",
+        "rangenlpd",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: teach tr (Cunning and Despicable Darkness). Piercing; triggered movement slow 70; single-target magic damage amplification 10 and all damage received +10; pull. HP skill: area damage equal to 2.5% of current HP. Removes berserk buffs and deals additional damage. Upgrade 4 strengthens Black Vortex.",
+      "subGroup": "Magic Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "transcendence_nami": {
+      "sionsId": 169,
+      "ordsearchId": "192",
+      "ordsearchFlags": [
+        "docking",
+        "slow"
+      ],
+      "originalNote": "Command: nami tr (Clear Weather). Normal; triggered movement slow 45; total-HP damage; magic damage amplification 2; gold income +20%; Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_law": {
+      "sionsId": 172,
+      "ordsearchId": "206",
+      "ordsearchFlags": [
+        "berserk",
+        "rangenlpd",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Command: law tr (The Man Who Offered One Hundred Hearts). Piercing; triggered movement slow 35; explosion damage; current-HP damage; single-target boss slow 99; additional damage against berserk enemies. Mana skill: movement slow 45 and attack +20; Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "transcendence_lucci": {
+      "sionsId": 174,
+      "ordsearchId": "250",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "last",
+        "single",
+        "boss",
+        "blink",
+        "bombup"
+      ],
+      "originalNote": "Command: lucci tr (White Bird Pursuing Dark Justice). Siege; single-target magic damage (values 23, 40); single-target stun; explosion damage amplification +10%. Upgrade 4 awakens the Devil Fruit.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_brook": {
+      "sionsId": 175,
+      "ordsearchId": "199",
+      "ordsearchFlags": [
+        "speedb",
+        "sstun",
+        "last",
+        "regen",
+        "docking",
+        "mshield",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: brook tr (Soul King). Normal; movement slow 15; global slow 5; magic resistance reduction 3; finisher; single-target stun; creep-related effect; flying. Mana skill: magic damage amplification 8 and stun 3s. Upgrade 4 summons Baby Laboon.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_sanji": {
+      "sionsId": 178,
+      "ordsearchId": "190",
+      "ordsearchFlags": [
+        "speedb",
+        "sky",
+        "sstun",
+        "single",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Command: sanji tr (The Man Returned from Hell). Siege; single-target magic damage; triggered movement slow 50 (55); mana skill; flying; blink range 800; Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_shanks": {
+      "sionsId": 179,
+      "ordsearchId": "205",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "last",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: shanks tr (The Man Who Ended the Paramount War). Haki; stun 2s; Haki stun; mana skill; single-target stun; self attack speed +20. Upgrade 4 unlocks Divine Departure; additional damage against berserk enemies. Departure can defeat Burgess with some luck.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_snakeman": {
+      "sionsId": 255,
+      "ordsearchId": "273",
+      "ordsearchFlags": [
+        "sky",
+        "berserk",
+        "sstun",
+        "boss"
+      ],
+      "originalNote": "Command: snakeman tr (Fifth Emperor). Haki; explosion damage; mana skill; single-target stun; flying; damage increases with enemy movement speed. Upgrade 4 extends resistance-ignoring single-target stun by 0.5s and adds boss/berserk damage.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_shirahoshi": {
+      "sionsId": 180,
+      "ordsearchId": "200",
+      "ordsearchFlags": [
+        "sky",
+        "rangellpd",
+        "stun",
+        "splash"
+      ],
+      "originalNote": "Command: shirahoshi tr (Mermaid Princess Who Rules the Sea Kings). Normal; stun 1.2s; splash; flying. Mana skill: area damage equal to 6% of missing HP multiplied by 1-1.5, and stun 3s; special upgrade available.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_aokiji": {
+      "sionsId": 181,
+      "ordsearchId": "202",
+      "ordsearchFlags": [
+        "sky",
+        "stun",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Command: aokiji tr (Former Marine Admiral Blue Pheasant). Piercing; stun 1.2s; movement slow 70 (80); single-target slow 15; mana skill. Upgrade 4 adds slow 10, explosion damage amplification 5, flying, and self mana regeneration.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_akainu": {
+      "sionsId": 182,
+      "ordsearchId": "201",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: akainu tr (Marine Fleet Admiral Red Dog). Siege; triggered movement slow 12; HP and mana skills; single-target stun; triggered magic resistance reduction 10; additional damage against berserk enemies. One skill does not stack with Eternal Ace. Upgrade 4 adjusts meteor density and adds strength-based damage.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_kid": {
+      "sionsId": 263,
+      "ordsearchId": "292",
+      "ordsearchFlags": [
+        "sstun",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: kid tr (Heretic of the New Generation). Siege; movement slow 35; HP skill; area stun 0.18s; single-target stun. Deals more damage to clustered enemies; Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_kizaru": {
+      "sionsId": 186,
+      "ordsearchId": "203",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "stun",
+        "boss",
+        "blink"
+      ],
+      "originalNote": "Command: kizaru tr (Marine Admiral Yellow Monkey). Piercing; stun 0.9s; mana skill; single-target stun; blink range 3500; special upgrade available.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_franky": {
+      "sionsId": 188,
+      "ordsearchId": "198",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "regen",
+        "rangetlpd",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Command: franky tr (Invincible Iron Pirates). Siege; mana regeneration 5 excluding self. Mana skill: General Franky transformation lasting 6s. Damage increases per nearby Sunny. Shipwright can craft 2 Sunny ships; source title lists cost 8 wood, description lists 10 wood. Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "transcendence_koby": {
+      "sionsId": 300,
+      "ordsearchId": "350",
+      "ordsearchFlags": [
+        "speedb",
+        "sky",
+        "sstun",
+        "rangetlpd",
+        "blink"
+      ],
+      "originalNote": "Command: koby tr (Future of the Marines). Summons clones; source title lists explosion damage and description lists armor-ignoring damage. Flying; lane explosion-damage reduction debuff 10%; self attack speed increases every 5 rounds, up to level 6; Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "limited_rebecca": {
+      "sionsId": 207,
+      "ordsearchId": "193",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "boss",
+        "splash",
+        "slow"
+      ],
+      "originalNote": "Piercing; armor reduction 38; triggered movement slow 50; splash; leveling; single-target stun. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 adds Repeated Training; gains 2 levels when using the mana skill.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "limited_katakuri": {
+      "sionsId": 211,
+      "ordsearchId": "251",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "stun",
+        "boss",
+        "armorbreak",
+        "life"
+      ],
+      "originalNote": "Siege; armor reduction 30; HP regeneration 2.85; 75% area damage; HP skill; single-target stun. Additional crafting cost: 35,000 gold and 5 wood. Every attack deals 6x critical damage to bosses/story enemies; 20% Haki proc grants Armor Break 6. Upgrade 4 enhances skills.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "limited_crocodile": {
+      "sionsId": 209,
+      "ordsearchId": "187",
+      "ordsearchFlags": [
+        "shield",
+        "stun",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Piercing; stun 0.54s (0.6s upgraded); movement slow 40; armor reduction 25. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 adds Armor Break and a short-stun skill.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "limited_king": {
+      "sionsId": 262,
+      "ordsearchId": "291",
+      "ordsearchFlags": [
+        "sky",
+        "shield",
+        "splash",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Normal; triggered armor reduction 34; poison-style armor reduction 25 plus area reduction 10; single-target Armor Break; splash; single-target slow 15%; flying. Mana skill: Executioner at Armor Break 50 or higher, enhancing attacks and applying nearby Armor Break. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 upgrades Wildfire to Karyudon.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "limited_alvida": {
+      "sionsId": 290,
+      "ordsearchId": "331",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun",
+        "shield",
+        "rangellpd",
+        "stun",
+        "armorbreak"
+      ],
+      "originalNote": "Armor reduction 25; mana skill: missing-HP damage, Armor Break 10, and area stun; guaranteed single-target stun; all skills knock back. Crafting consumes 4 additional special upgrade points.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "limited_marco": {
+      "sionsId": 286,
+      "ordsearchId": "326",
+      "ordsearchFlags": [
+        "sky",
+        "sstun",
+        "single",
+        "slow",
+        "life"
+      ],
+      "originalNote": "Piercing; movement slow 45; HP regeneration 3; splash; single-target damage; HP skill; flying. Human form: single-target explosion damage equal to 20% of current HP. Phoenix form: area splash and 3x physical critical damage. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 raises HP regeneration to 4 and slow to 60.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "limited_redfield": {
+      "sionsId": 73,
+      "ordsearchId": "214",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "rangellpd",
+        "rangetlpd",
+        "boss",
+        "blink"
+      ],
+      "originalNote": "Haki; total-HP damage; magic finisher; single-target stun; blink range 1500. Additional crafting cost: 5,000 gold and 5 wood; can only be crafted before round 41. Upgrade 4 adds the Blood Explosion skill.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "limited_shinobu": {
+      "sionsId": 247,
+      "ordsearchId": "269",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "last",
+        "boss",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Normal; movement slow 30; finisher; HP skill; single-target stun; additional damage against berserk enemies. Additional crafting cost: 5,000 gold and 5 wood. Upgrade 4 strengthens clones.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "limited_ain": {
+      "sionsId": 210,
+      "ordsearchId": "142",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "blink"
+      ],
+      "originalNote": "Piercing; reduces enemy level and deletes enemies; blink range 1500; additional damage against berserk enemies; special upgrade available. Requires 3 Absalom, 5,000 gold, and 5 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "limited_enel": {
+      "sionsId": 208,
+      "ordsearchId": "215",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "regen",
+        "mshield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Normal; mana regeneration 1.5; single-target stun and total-HP damage; additional damage against berserk enemies. Mana skill: area damage equal to 2% of total HP, magic resistance reduction 18, and stun 3s. Additional crafting cost: 5,000 gold and 5 wood. Normal upgrades strengthen skills; Upgrade 4 enhances Discharge.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "immortal_garp": {
+      "sionsId": 71,
+      "ordsearchId": "182",
+      "ordsearchFlags": [
+        "sstun",
+        "single",
+        "rangetlpd",
+        "stun"
+      ],
+      "originalNote": "Command: garp im (Marine Hero Garp). Siege; stun 1.1s; armor +15; percentage area damage; single-target physical damage; damage increases per buff; single-target stun. Mana skill: area damage equal to 5% of total HP.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "immortal_rayleigh": {
+      "sionsId": 195,
+      "ordsearchId": "176",
+      "ordsearchFlags": [
+        "speedb",
+        "berserk",
+        "sstun",
+        "shield",
+        "stun",
+        "armorbreak",
+        "udelete"
+      ],
+      "originalNote": "Command: rayleigh im (Dark King Silvers Rayleigh). Piercing; armor reduction 20 (25); attack speed +45; 100% area damage; persuades allied units; single-target stun. Mana skill: Armor Break 5, stun 3s, and allied-unit persuasion. Can sell junk; special upgrade available.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "immortal_roger": {
+      "sionsId": 196,
+      "ordsearchId": "177",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun",
+        "shield",
+        "stun",
+        "boss",
+        "slow"
+      ],
+      "originalNote": "Command: roger im (Pirate King Gol D. Roger). Haki; movement slow 50; armor reduction 60; attack +60; single-target stun. Mana skill: movement slow 115; special upgrade: Divine Departure.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "immortal_gaban": {
+      "sionsId": 198,
+      "ordsearchId": "178",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "last",
+        "shield",
+        "boss"
+      ],
+      "originalNote": "Mountain Eater; Piercing; single-target armor reduction 60; mana skill: finisher; single-target stun. Special upgrade adds attack-buff-based extra hits and additional boss armor reduction. Upgrade 4 enhances skills and adds high-speed movement.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "immortal_kaido": {
+      "sionsId": 215,
+      "ordsearchId": "257",
+      "ordsearchFlags": [
+        "sstun",
+        "docking",
+        "shield",
+        "stun",
+        "splash",
+        "slow"
+      ],
+      "originalNote": "Command: kaido im (King of the Beasts). Haki; movement slow 60; splash; percentage area damage; single-target armor reduction 45; F: transformation; HP skill; flying. Skill procs apply armor reduction 3, up to single-target reduction 145 and area reduction 30. Debuff reduces attack by 75%, excluding Kaido.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "shield values differ"
+      ]
+    },
+    "immortal_whitebeard": {
+      "sionsId": 201,
+      "ordsearchId": "180",
+      "ordsearchFlags": [
+        "berserk",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "splash",
+        "slow"
+      ],
+      "originalNote": "Command: newgate im (Great Pirate Whitebeard). Haki; stun 0.57s (0.6s upgraded); armor reduction 45; triggered movement slow 60; splash; HP skill; single-target stun. Upgrade 4 enhances Quake Strike.",
+      "subGroup": "Physical Damage",
+      "warnings": [
+        "slow values differ"
+      ]
+    },
+    "immortal_bullet": {
+      "sionsId": 323,
+      "ordsearchId": "356",
+      "ordsearchFlags": [
+        "sstun",
+        "shield",
+        "rangellpd",
+        "rangetlpd",
+        "rangenlpd",
+        "stun",
+        "boss",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Command: bullet im (Heir of the Monster). Single-target stun; feeding Common units randomly enhances items.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "immortal_dragon": {
+      "sionsId": 194,
+      "ordsearchId": "183",
+      "ordsearchFlags": [
+        "speedb",
+        "last",
+        "stun",
+        "boss",
+        "udelete",
+        "bombup"
+      ],
+      "originalNote": "Command: dragon im (Wind That Brings the Storm). Normal; stun 1.4s; attack speed +20; mana skill; skill damage scales with attack speed; explosion damage amplification +20% against normal lane enemies. Upgrade 4: automatic deletion every 9s. Without the upgrade, requires Docking twice to defeat Burgess. Cutting Wind is a single-target skill dealing 40% less damage to non-lane enemies.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "immortal_bigmom": {
+      "sionsId": 254,
+      "ordsearchId": "211",
+      "ordsearchFlags": [
+        "sky",
+        "sstun",
+        "rangetlpd",
+        "stun",
+        "udelete",
+        "slow"
+      ],
+      "originalNote": "Gluttonous Iron Balloon; Siege; movement slow 70; 66% area magic damage; flying. HP skill: area damage equal to 1% of total HP, 7 hits. One Docking allows defeating Burgess; special upgrade available.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "immortal_sengoku": {
+      "sionsId": 197,
+      "ordsearchId": "179",
+      "ordsearchFlags": [
+        "damageb",
+        "rangenlpd",
+        "stun"
+      ],
+      "originalNote": "Command: sengoku im (Buddha Sengoku). Haki; stun 1.1s (1.8s upgraded); global attack +11; attack +22; explosion damage; current-HP damage. HP skill: area damage equal to 1.5% of current HP; special upgrade increases this by 0.5%.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "immortal_shiki": {
+      "sionsId": 199,
+      "ordsearchId": "175",
+      "ordsearchFlags": [
+        "sky",
+        "sstun",
+        "docking",
+        "shield",
+        "stun",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Command: shiki im (Heavenly Golden Lion). Normal; stun 1.8s; triggered armor reduction 7; flying. Mana skill: magic damage amplification 15. Upgrade 4 enables skill enhancement by consuming Pirate Ships, up to 3 enhancements.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "immortal_z": {
+      "sionsId": 200,
+      "ordsearchId": "181",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "rangellpd",
+        "rangetlpd",
+        "stun",
+        "boss",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Command: z im (Black Arm Zephyr of Conviction). Siege; movement slow 35; mana skill: missing-HP damage; single-target stun; blink range 2000; additional damage against berserk enemies; special upgrade available.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_nikaluffy": {
+      "sionsId": 281,
+      "ordsearchId": "305",
+      "ordsearchFlags": [
+        "speedb",
+        "sstun",
+        "shield",
+        "stun",
+        "splash"
+      ],
+      "originalNote": "Command: nika et (Sun God). Haki; stun 1s; armor reduction 35; attack speed +25; attack +15; self attack +25; splash; HP and mana skills; ignores terrain. Damage increases with enemy movement speed; uses Transcendence upgrades.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "eternal_nikasnakeman": {
+      "sionsId": 282,
+      "ordsearchId": "306",
+      "ordsearchFlags": [
+        "speedb",
+        "sstun",
+        "shield",
+        "stun",
+        "splash"
+      ],
+      "originalNote": "Command: nika et (Sun God). Haki; stun 1s; armor reduction 35; attack speed +25; attack +15; self attack +25; splash; HP and mana skills; ignores terrain. Damage increases with enemy movement speed; uses Transcendence upgrades.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "eternal_buggy": {
+      "sionsId": 202,
+      "ordsearchId": "219",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "berserk",
+        "sstun",
+        "shield",
+        "stun",
+        "boss",
+        "splash",
+        "slow"
+      ],
+      "originalNote": "Command: buggy et (Thousand-Coin Clown). Piercing; stun 0.3s; movement slow 25; armor reduction 30 (41); attack speed +65; attack +78; single-target stun; gold enhancement; additional attack +15,000. Listed stats include the summoned Ivankov. Upgrade 4 adds summons.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "eternal_cavendish": {
+      "sionsId": 204,
+      "ordsearchId": "220",
+      "ordsearchFlags": [
+        "berserk",
+        "sstun",
+        "shield",
+        "rangenlpd",
+        "stun",
+        "boss",
+        "armorbreak",
+        "udelete"
+      ],
+      "originalNote": "Command: cavendish et (Pirate Prince). Normal; stun 0.8s; armor reduction 35; splash 25%; single-target stun; mana skill; special upgrade available. Requires Legendary Law, Hidden Killer, Hidden Rebecca, Captain Kuro, and an additional 5 wood.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "eternal_hancock": {
+      "sionsId": 203,
+      "ordsearchId": "222",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "mshield",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: hancock et (Empress of Amazon Lily). Haki; stun 0.8s (1.1s upgraded); armor reduction 35 (40); magic resistance reduction 5; triggered movement slow 60; mana skill; single-target stun; finisher. Upgrade 4 strengthens stun, adds area explosion damage, and adds armor reduction 5.",
+      "subGroup": "Hybrid",
+      "warnings": []
+    },
+    "eternal_mihawk": {
+      "sionsId": 206,
+      "ordsearchId": "221",
+      "ordsearchFlags": [
+        "sstun",
+        "rangetlpd",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Command: mihawk et (Hawk-Eyes). Piercing; movement slow 45; explosion and magic damage; splash; armor-ignoring damage; mana skill; single-target stun; Upgrade 4.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_vivi": {
+      "sionsId": 205,
+      "ordsearchId": "218",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "single",
+        "rangetlpd",
+        "stun",
+        "blink"
+      ],
+      "originalNote": "Command: vivi et (Pirate Princess). Piercing; finisher; mana skill; single-target stun; special upgrade available. Enhance skills with 3 Random Wisps and 2 wood; description also mentions basic Wisps and wood.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_ace": {
+      "sionsId": 72,
+      "ordsearchId": "217",
+      "ordsearchFlags": [
+        "sstun",
+        "rangetlpd",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Command: ace et (Fire Fist Ace). Normal; movement slow 45; mana skill: area damage equal to 2% of total HP multiplied by 1-2; single-target stun. Upgrade 4 strengthens single-target stun and instant skill damage.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_oden": {
+      "sionsId": 257,
+      "ordsearchId": "276",
+      "ordsearchFlags": [
+        "damageb",
+        "berserk",
+        "sstun",
+        "docking",
+        "stun"
+      ],
+      "originalNote": "Command: oden et (True Hero). Haki; magic damage amplification; attack +50; mana skill; single-target stun; additional basic-attack damage for Legendary and higher units. Upgrade 4 summons Legendary Kinemon.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_uta": {
+      "sionsId": 285,
+      "ordsearchId": "308",
+      "ordsearchFlags": [
+        "damageb",
+        "speedb",
+        "last",
+        "mshield",
+        "rangenlpd",
+        "stun",
+        "boss",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Command: u-ta et (Diva of the World). Stun 0.6s; movement slow 45; attack +30; attack speed +27; mana skill; finisher; special upgrade available. Loses HP when attacking; sleeps for 3s when HP falls to 10 or below. Mana skill: magic resistance reduction 10% and explosion damage amplification 10%.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_ryuma": {
+      "sionsId": 296,
+      "ordsearchId": "346",
+      "ordsearchFlags": [
+        "rangetlpd",
+        "stun",
+        "boss"
+      ],
+      "originalNote": "Legendary Samurai; finisher; mana skill; stack-based damage; Wano synergy. Upgrade 4 enhances Shadow Swordsmanship. Requires Legendary Law, Hidden Shiryu, Hidden Ryuma, and an additional 5 wood.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "eternal_tesoro": {
+      "sionsId": 339,
+      "ordsearchId": "359",
+      "ordsearchFlags": [
+        "speedb",
+        "berserk",
+        "sstun",
+        "last",
+        "rangellpd",
+        "stun",
+        "boss",
+        "udelete"
+      ],
+      "originalNote": "Command: tesoro et (Greatest Entertainer). Stun 1.3s; finisher; can deal single-target damage. Upgrade 4: deletion or 20% damage against berserk enemies/bosses. Additional crafting cost: 5 wood.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_jotaro": {
+      "sionsId": 309,
+      "ordsearchId": "285",
+      "ordsearchFlags": [
+        "damageb",
+        "sstun",
+        "shield",
+        "rangellpd",
+        "stun",
+        "armorbreak"
+      ],
+      "originalNote": "Attack +20%; single-target stun; armor reduction 25; Armor Break, with damage increasing per Armor Break stack. Requires Kamijou Touma, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "mystic_shiki": {
+      "sionsId": 310,
+      "ordsearchId": "284",
+      "ordsearchFlags": [
+        "sstun",
+        "shield"
+      ],
+      "originalNote": "Armor reduction 44; single-target stun. Requires Isayama Yomi, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "mystic_tatsumaki": {
+      "sionsId": 311,
+      "ordsearchId": "300",
+      "ordsearchFlags": [
+        "sky",
+        "shield",
+        "stun",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Stun 0.9s; HP/mana skill: Armor Break; movement slow 50. Requires Yotsuba, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "mystic_youmu": {
+      "sionsId": 312,
+      "ordsearchId": "340",
+      "ordsearchFlags": [
+        "last",
+        "shield",
+        "rangetlpd",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Single-target armor reduction 40; triggered movement slow 50; HP and mana skills. Requires Yan, 1 additional Random unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "mystic_sans": {
+      "sionsId": 314,
+      "ordsearchId": "357",
+      "ordsearchFlags": [
+        "shield",
+        "slow"
+      ],
+      "originalNote": "Moves across all terrain; armor reduction 20 (30); movement slow 30 (40). Requires Megumin, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Physical Damage",
+      "warnings": []
+    },
+    "mystic_bronya": {
+      "sionsId": 315,
+      "ordsearchId": "282",
+      "ordsearchFlags": [
+        "last",
+        "regen"
+      ],
+      "originalNote": "Effective against berserk enemies; finisher; mana regeneration. Requires Herrscher of Reason, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_minato": {
+      "sionsId": 316,
+      "ordsearchId": "283",
+      "ordsearchFlags": [
+        "last",
+        "mshield",
+        "stun",
+        "blink"
+      ],
+      "originalNote": "Stun 2.2s; finisher; Docking; effective against bosses. Requires Naruto Sage Mode, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_nezuko": {
+      "sionsId": 317,
+      "ordsearchId": "279",
+      "ordsearchFlags": [
+        "sstun",
+        "single",
+        "rangetlpd",
+        "rangenlpd",
+        "bombup"
+      ],
+      "originalNote": "Single-target damage; explosion damage amplification +4%; resistance-ignoring single-target stun 1s; area total-HP damage. Requires Hanekawa Tsubasa, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_byakuya": {
+      "sionsId": 318,
+      "ordsearchId": "298",
+      "ordsearchFlags": [
+        "last",
+        "rangetlpd",
+        "blink",
+        "slow"
+      ],
+      "originalNote": "Movement slow 20; finisher; mana skill. Requires Kurosaki Ichigo, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_higuma": {
+      "sionsId": 319,
+      "ordsearchId": "288",
+      "ordsearchFlags": [
+        "slow"
+      ],
+      "originalNote": "Bandit King; movement slow 30; HP skill: wood +1. Requires Sento Isuzu, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_yukari": {
+      "sionsId": 320,
+      "ordsearchId": "289",
+      "ordsearchFlags": [
+        "stun",
+        "blink",
+        "udelete",
+        "slow",
+        "bombup"
+      ],
+      "originalNote": "Movement slow 45; deletion; mana skill: damage and stun; map-wide teleport; explosion damage 10%. Requires Yagami Light, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_gojo": {
+      "sionsId": 321,
+      "ordsearchId": "339",
+      "ordsearchFlags": [
+        "rangetlpd",
+        "stun",
+        "slow"
+      ],
+      "originalNote": "Stun 0.6s; movement slow 30; triggered movement slow 20; mana skill: total-HP damage. Requires K, 1 additional Random unit, Pirate Ship, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_anya": {
+      "sionsId": 322,
+      "ordsearchId": "341",
+      "ordsearchFlags": [
+        "speedb",
+        "sky",
+        "regen",
+        "docking",
+        "mshield",
+        "slow",
+        "life"
+      ],
+      "originalNote": "Movement slow 40; mana skill: damage; HP skill: movement slow 30; Docking; magic resistance reduction; HP regeneration, mana regeneration, and attack speed buffs. Requires Elizabeth, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    },
+    "mystic_yujiro": {
+      "sionsId": 354,
+      "ordsearchId": "386",
+      "ordsearchFlags": [
+        "sstun",
+        "last",
+        "shield",
+        "armorbreak",
+        "slow"
+      ],
+      "originalNote": "Requires over-reduction of armor to 250 for maximum damage. Requires Paimon, 1 additional Random unit, 10,000 gold, 1 Lucky Token, and 7 wood in addition to the other recipe ingredients.",
+      "subGroup": "Magic Damage",
+      "warnings": []
+    }
+  }
+}

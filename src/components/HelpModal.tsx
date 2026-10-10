@@ -21,6 +21,20 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         </div>
         <div className={styles.content}>
           <section>
+            <h3>Ability Filters</h3>
+            <p>
+              Expand Ability filters above the dashboard or use the funnel in Config.
+              Match All or Any selected categories. Collapsing keeps filters active;
+              Clear shows every unit. The panel starts expanded and remembers your choice.
+            </p>
+            <p>
+              Filters use base abilities. Compact ability panels show effect values
+              and upgrade or form requirements beside recipe tooltips. On narrow screens,
+              expand Abilities below the recipe. Longer descriptions are already open in
+              tooltips; use More ability details to expand them in the recipe modal.
+            </p>
+          </section>
+          <section>
             <h3>Unit Interaction</h3>
             <ul>
               <li>

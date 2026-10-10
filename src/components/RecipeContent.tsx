@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { CachedImage } from "./CachedImage";
+import { displayAbilityText } from "../logic/capabilities";
 import type { Unit } from "../logic/combination";
 import {
   calculateMissingBaseUnits,
@@ -16,6 +17,14 @@ interface RecipeContentProps {
   isWispEnabled: boolean;
   onUnitClick?: (unit: Unit) => void;
   size?: "small" | "large";
+  showHeader?: boolean;
+}
+
+export function RecipeHeader({ unit, size = "small" }: { unit: Unit; size?: "small" | "large" }) {
+  return <div className={`${styles.recipeContent} ${size === "large" ? styles.large : ""}`}>
+    <div className={styles.title}>{unit.name}</div>
+    {unit.note && <div className={styles.note}>{displayAbilityText(unit.note)}</div>}
+  </div>;
 }
 
 export const RecipeContent: React.FC<RecipeContentProps> = ({
@@ -26,6 +35,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
   isWispEnabled,
   onUnitClick,
   size = "small",
+  showHeader = true,
 }) => {
   const isLarge = size === "large";
 
@@ -130,9 +140,7 @@ export const RecipeContent: React.FC<RecipeContentProps> = ({
 
   return (
     <div className={`${styles.recipeContent} ${isLarge ? styles.large : ""}`}>
-      <div className={styles.title}>{unit.name}</div>
-      {unit.note && <div className={styles.note}>{unit.note}</div>}
-
+      {showHeader && <RecipeHeader unit={unit} size={size} />}
       {hasRecipe && (
         <div className={styles.ingredients}>
           {displayRecipe!.map((req, index) => {

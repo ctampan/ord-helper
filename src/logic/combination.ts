@@ -1,3 +1,5 @@
+import type { Capability } from "./capabilities";
+
 export interface Unit {
   id: string;
   name: string;
@@ -6,6 +8,8 @@ export interface Unit {
   recipe?: { unitId: string; count: number }[];
   subGroup?: string;
   note?: string;
+  capabilities?: Capability[];
+  abilityDetails?: string;
 }
 
 export interface Data {

@@ -1,10 +1,15 @@
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import type { Data, Inventory, Bans, Unit } from "./logic/combination";
 import { consumeMaterials, getEffectiveBans } from "./logic/combination";
 import { isGameData, resolveGameData, retainValidState } from "./logic/data";
 import { bundledCatalog } from "./logic/bundledData";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
+import { CapabilityFilters } from "./components/CapabilityFilters";
+import {
+  CAPABILITY_FILTER_STORAGE_KEY, CAPABILITY_EXPANDED_STORAGE_KEY,
+  filterUnitsByCapabilities, readCapabilityFilters, readCapabilityExpanded,
+} from "./logic/capabilities";
 import { RecipeTreeModal } from "./components/RecipeTreeModal";
 import { useShortcuts } from "./hooks/useShortcuts";
 import { ShortcutSettingsModal } from "./components/ShortcutSettingsModal";
@@ -56,6 +61,26 @@ function App() {
   });
   const [isShiftPressed, setIsShiftPressed] = useState(false);
   const [activeHoveredId, setActiveHoveredId] = useState<string | null>(null);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const handleHoverChange = useCallback((unitId: string | null) => {
+    clearTimeout(hoverTimer.current);
+    if (unitId) setActiveHoveredId(unitId);
+    else hoverTimer.current = setTimeout(() => setActiveHoveredId(null), 150);
+  }, []);
+  useEffect(() => () => clearTimeout(hoverTimer.current), []);
+  const [isFilterExpanded, setIsFilterExpanded] = useState(() =>
+    readCapabilityExpanded(localStorage.getItem(CAPABILITY_EXPANDED_STORAGE_KEY)),
+  );
+  const [capabilityFilters, setCapabilityFilters] = useState(() =>
+    readCapabilityFilters(localStorage.getItem(CAPABILITY_FILTER_STORAGE_KEY)),
+  );
+
+  useEffect(() => {
+    localStorage.setItem(CAPABILITY_FILTER_STORAGE_KEY, JSON.stringify(capabilityFilters));
+  }, [capabilityFilters]);
+  useEffect(() => {
+    localStorage.setItem(CAPABILITY_EXPANDED_STORAGE_KEY, JSON.stringify(isFilterExpanded));
+  }, [isFilterExpanded]);
 
   const [selectedUnitForTree, setSelectedUnitForTree] = useState<string | null>(
     null,
@@ -448,6 +473,13 @@ function App() {
   };
 
   // Memoize expensive computations
+  const visibleUnits = useMemo(() => filterUnitsByCapabilities(
+    data.units, capabilityFilters.selected, capabilityFilters.mode,
+  ), [data, capabilityFilters]);
+  const visibleUnitIds = useMemo(() => capabilityFilters.selected.length
+    ? new Set(visibleUnits.map((unit) => unit.id)) : undefined,
+  [visibleUnits, capabilityFilters.selected.length]);
+
   const unitsByRarity = useMemo(() => {
     if (!data) return {};
     return data.rarities.reduce(
@@ -511,10 +543,29 @@ function App() {
         unitsMap={unitsMap}
       />
 
+      {(
+        <CapabilityFilters
+          expanded={isFilterExpanded}
+          onToggleExpanded={() => setIsFilterExpanded((previous) => !previous)}
+          units={data.units}
+          preferences={capabilityFilters}
+          resultCount={visibleUnits.length}
+          onChange={(preferences) => {
+            setActiveHoveredId(null);
+            setCapabilityFilters(preferences);
+          }}
+        />
+      )}
       <main className="dashboard">
         {/* Column 1: Options + Common + Uncommon + Random */}
         <div className="column">
           <OptionsPanel
+            isFilterExpanded={isFilterExpanded}
+            activeFilterCount={capabilityFilters.selected.length}
+            onToggleFilter={() => {
+              setActiveHoveredId(null);
+              setIsFilterExpanded((previous) => !previous);
+            }}
             isBanMode={isBanMode}
             onToggleBanMode={() => setIsBanMode(!isBanMode)}
             onReset={() => {
@@ -552,6 +603,7 @@ function App() {
             <UnitGroup
               title="Common"
               units={unitsByRarity["Common"]}
+              visibleUnitIds={visibleUnitIds}
               inventory={inventory}
               bans={bans}
               effectiveBans={effectiveBans}
@@ -566,7 +618,7 @@ function App() {
               showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
               activeHoveredId={activeHoveredId}
-              onHoverChange={setActiveHoveredId}
+              onHoverChange={handleHoverChange}
             />
           )}
           {["Uncommon", "Random"].map(
@@ -576,6 +628,7 @@ function App() {
                   key={rarity}
                   title={rarity}
                   units={unitsByRarity[rarity]}
+                  visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
                   bans={bans}
                   effectiveBans={effectiveBans}
@@ -590,7 +643,7 @@ function App() {
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
                   activeHoveredId={activeHoveredId}
-                  onHoverChange={setActiveHoveredId}
+                  onHoverChange={handleHoverChange}
                 />
               ),
           )}
@@ -605,6 +658,7 @@ function App() {
                   key={rarity}
                   title={rarity}
                   units={unitsByRarity[rarity]}
+                  visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
                   bans={bans}
                   effectiveBans={effectiveBans}
@@ -619,7 +673,7 @@ function App() {
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
                   activeHoveredId={activeHoveredId}
-                  onHoverChange={setActiveHoveredId}
+                  onHoverChange={handleHoverChange}
                 />
               ),
           )}
@@ -631,6 +685,7 @@ function App() {
             <UnitGroup
               title="Rare"
               units={unitsByRarity["Rare"]}
+              visibleUnitIds={visibleUnitIds}
               inventory={inventory}
               bans={bans}
               effectiveBans={effectiveBans}
@@ -645,7 +700,7 @@ function App() {
               showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
               activeHoveredId={activeHoveredId}
-              onHoverChange={setActiveHoveredId}
+              onHoverChange={handleHoverChange}
             />
           )}
         </div>
@@ -656,6 +711,7 @@ function App() {
             <UnitGroup
               title="Legendary"
               units={unitsByRarity["Legendary"]}
+              visibleUnitIds={visibleUnitIds}
               inventory={inventory}
               bans={bans}
               effectiveBans={effectiveBans}
@@ -671,7 +727,7 @@ function App() {
               showRecipeButtons={showRecipeButtons}
               unitShortcuts={unitShortcuts}
               activeHoveredId={activeHoveredId}
-              onHoverChange={setActiveHoveredId}
+              onHoverChange={handleHoverChange}
             />
           )}
         </div>
@@ -685,6 +741,7 @@ function App() {
                   key={rarity}
                   title={rarity}
                   units={unitsByRarity[rarity]}
+                  visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
                   bans={bans}
                   effectiveBans={effectiveBans}
@@ -704,7 +761,7 @@ function App() {
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
                   activeHoveredId={activeHoveredId}
-                  onHoverChange={setActiveHoveredId}
+                  onHoverChange={handleHoverChange}
                 />
               ),
           )}
@@ -719,6 +776,7 @@ function App() {
                   key={rarity}
                   title={rarity}
                   units={unitsByRarity[rarity]}
+                  visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
                   bans={bans}
                   effectiveBans={effectiveBans}
@@ -734,7 +792,7 @@ function App() {
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
                   activeHoveredId={activeHoveredId}
-                  onHoverChange={setActiveHoveredId}
+                  onHoverChange={handleHoverChange}
                 />
               ),
           )}
@@ -749,6 +807,7 @@ function App() {
                   key={rarity}
                   title={rarity}
                   units={unitsByRarity[rarity]}
+                  visibleUnitIds={visibleUnitIds}
                   inventory={inventory}
                   bans={bans}
                   effectiveBans={effectiveBans}
@@ -764,7 +823,7 @@ function App() {
                   showRecipeButtons={showRecipeButtons}
                   unitShortcuts={unitShortcuts}
                   activeHoveredId={activeHoveredId}
-                  onHoverChange={setActiveHoveredId}
+                  onHoverChange={handleHoverChange}
                 />
               ),
           )}

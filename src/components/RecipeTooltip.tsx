@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import type { Unit } from "../logic/combination";
 import { RecipeContent } from "./RecipeContent";
+import { UnitCapabilities } from "./UnitCapabilities";
 import styles from "./RecipeTooltip.module.css";
 
 interface RecipeTooltipProps {
@@ -12,92 +13,79 @@ interface RecipeTooltipProps {
   parentElement: HTMLElement | null | React.RefObject<HTMLElement | null>;
   bans: Set<string>;
   isWispEnabled: boolean;
+  onHoverChange?: (unitId: string | null) => void;
 }
 
 export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
-  unit,
-  unitsMap,
-  inventory,
-  visible,
-  parentElement,
-  bans,
-  isWispEnabled,
+  unit, unitsMap, inventory, visible, parentElement, bans, isWispEnabled, onHoverChange,
 }) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const [coords, setCoords] = useState({ top: 0, left: 0 });
-  const [position, setPosition] = useState<"top" | "bottom">("top");
+  const [layout, setLayout] = useState({ top: 10, left: 10, side: "below", sideWidth: 280 });
+  const hasAbilities = !!(unit.capabilities?.length || unit.abilityDetails);
 
   useLayoutEffect(() => {
-    const targetElement =
-      parentElement && "current" in parentElement
-        ? parentElement.current
-        : parentElement;
-    if (visible && targetElement && tooltipRef.current) {
-      const parentRect = targetElement.getBoundingClientRect();
-      const tooltipRect = tooltipRef.current.getBoundingClientRect();
-
-      let top = parentRect.top - tooltipRect.height - 10;
-      let left = parentRect.left + parentRect.width / 2 - tooltipRect.width / 2;
-      let newPosition: "top" | "bottom" = "top";
-
-      if (top < 10) {
-        top = parentRect.bottom + 10;
-        newPosition = "bottom";
-      }
-
-      if (left < 10) left = 10;
-      if (left + tooltipRect.width > window.innerWidth - 10) {
-        left = window.innerWidth - tooltipRect.width - 10;
-      }
-
-      setCoords((prev) => {
-        if (prev.top === top && prev.left === left) return prev;
-        return { top, left };
-      });
-      setPosition((prev) => (prev === newPosition ? prev : newPosition));
-    }
-  }, [visible, parentElement]);
+    const target = parentElement && "current" in parentElement ? parentElement.current : parentElement;
+    const tooltip = tooltipRef.current;
+    if (!visible || !target || !tooltip) return;
+    let frame = 0;
+    const update = () => {
+      const anchor = target.getBoundingClientRect();
+      const rect = tooltip.getBoundingClientRect();
+      const left = Math.max(10, Math.min(anchor.left + anchor.width / 2 - rect.width / 2,
+        window.innerWidth - rect.width - 10));
+      let top = anchor.top - rect.height - 10;
+      if (top < 10) top = anchor.bottom + 10;
+      top = Math.max(10, Math.min(top, window.innerHeight - rect.height - 10));
+      const rightSpace = window.innerWidth - (left + rect.width) - 18;
+      const leftSpace = left - 18;
+      const side = rightSpace >= 220 ? "right" : leftSpace >= 220 ? "left" : "below";
+      const sideWidth = Math.min(280, side === "right" ? rightSpace : leftSpace);
+      setLayout((previous) => previous.top === top && previous.left === left &&
+        previous.side === side && previous.sideWidth === sideWidth ? previous :
+        { top, left, side, sideWidth });
+    };
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); };
+    update();
+    const observer = new ResizeObserver(schedule);
+    observer.observe(tooltip);
+    observer.observe(target);
+    window.addEventListener("resize", schedule);
+    window.addEventListener("scroll", schedule, true);
+    return () => {
+      observer.disconnect(); cancelAnimationFrame(frame);
+      window.removeEventListener("resize", schedule);
+      window.removeEventListener("scroll", schedule, true);
+    };
+  }, [visible, parentElement, unit.id]);
 
   if (!visible) return null;
-
   return createPortal(
-    <div
-      ref={tooltipRef}
-      className={`${styles.tooltip} ${visible ? styles.visible : ""} ${
-        position === "bottom" ? styles.bottom : ""
-      }`}
-      style={{
-        top: coords.top,
-        left: coords.left,
-        position: "fixed",
-        transform: "none",
-        margin: 0,
-        minWidth: "300px",
-        backgroundColor: "var(--bg-panel)",
-        border: "1px solid var(--border-color)",
-        borderRadius: "8px",
-        padding: "12px",
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-        zIndex: 9999,
-        opacity: visible ? 1 : 0,
-        height: "fit-content",
-        color: "var(--text-primary)",
-      }}
-    >
-      <RecipeContent
-        unit={unit}
-        unitsMap={unitsMap}
-        inventory={inventory}
-        bans={bans}
-        isWispEnabled={isWispEnabled}
-      />
-
-      <div
-        className={`${styles.arrow} ${
-          position === "bottom" ? styles.bottom : styles.top
-        }`}
-      />
-    </div>,
-    document.body,
+    <div ref={tooltipRef} data-tooltip-unit-id={unit.id} data-ability-position={layout.side}
+      className={styles.tooltip} style={{ top: layout.top, left: layout.left }}
+      onClick={(event) => event.stopPropagation()}
+      onContextMenu={(event) => event.stopPropagation()}
+      onMouseEnter={() => onHoverChange?.(unit.id)}
+      onMouseLeave={(event) => {
+        if (event.relatedTarget instanceof Element &&
+          event.relatedTarget.closest("[data-unit-id]")?.getAttribute("data-unit-id") === unit.id) return;
+        onHoverChange?.(null);
+      }}>
+      <div className={styles.recipePanel}>
+        <RecipeContent unit={unit} unitsMap={unitsMap} inventory={inventory}
+          bans={bans} isWispEnabled={isWispEnabled} />
+      </div>
+      {hasAbilities && layout.side !== "below" && <span aria-hidden="true" className={styles.hoverBridge}
+        style={layout.side === "right" ? { left: "100%" } : { right: "100%" }} />}
+      {hasAbilities && (layout.side === "below" ?
+        <details key={unit.id + "-fallback"} className={styles.fallback}>
+          <summary>Abilities</summary>
+          <div className={styles.fallbackContent}><UnitCapabilities unit={unit} expandedDetails /></div>
+        </details> :
+        <aside aria-label="Ability panel" className={styles.abilityPanel}
+          style={{ width: layout.sideWidth, maxHeight: "calc(100vh - " + (layout.top + 10) + "px)",
+            ...(layout.side === "right" ? { left: "calc(100% + 8px)" } : { right: "calc(100% + 8px)" }) }}>
+          <UnitCapabilities unit={unit} expandedDetails />
+        </aside>)}
+    </div>, document.body,
   );
 };

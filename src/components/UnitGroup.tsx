@@ -6,6 +6,7 @@ import styles from "./UnitGroup.module.css";
 interface UnitGroupProps {
   title: string;
   units: Unit[];
+  visibleUnitIds?: ReadonlySet<string>;
   inventory: Record<string, number>;
   bans: Set<string>;
   effectiveBans: Set<string>;
@@ -33,6 +34,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
   ({
     title,
     units,
+    visibleUnitIds,
     inventory,
     bans,
     effectiveBans,
@@ -52,7 +54,8 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
   }) => {
     const [isCollapsed, setIsCollapsed] = React.useState(false);
 
-    if (units.length === 0) return null;
+    const visibleUnits = visibleUnitIds ? units.filter((unit) => visibleUnitIds.has(unit.id)) : units;
+    if (visibleUnits.length === 0) return null;
 
     const renderUnit = (unit: Unit) => {
       return (
@@ -80,7 +83,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     const renderContent = () => {
       if (isCollapsed) return null;
 
-      const unitsToRender = [...units];
+      const unitsToRender = [...visibleUnits];
       if (sortByAlphabetical) {
         unitsToRender.sort((a, b) => a.name.localeCompare(b.name));
       }
@@ -118,7 +121,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
     };
 
     return (
-      <div className={styles.group}>
+      <div className={styles.group} data-rarity={title}>
         <h3
           className={styles.title}
           onClick={() => setIsCollapsed(!isCollapsed)}

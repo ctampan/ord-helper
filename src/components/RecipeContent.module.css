@@ -12,6 +12,7 @@
 }
 
 .note {
+  margin-top: 8px;
   font-size: 0.85rem;
   color: var(--text-secondary);
   margin-bottom: 8px;
@@ -40,9 +41,11 @@
 }
 
 .count {
+  flex-shrink: 0;
   margin-left: auto;
   color: var(--text-secondary);
 }
+.ingredient > span:not(.count) { min-width: 0; flex: 1; overflow-wrap: anywhere; }
 
 /* Large styles for Modal */
 

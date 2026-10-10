@@ -135,13 +135,18 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
     return (
       <div
         ref={containerRef}
+        data-unit-id={unit.id}
         className={`${styles.container} ${styles[status]} ${
           isBanned ? styles.banned : ""
         }`}
         onClick={handleLeftClick}
         onContextMenu={handleRightClick}
         onMouseEnter={() => onHoverChange(unit.id)}
-        onMouseLeave={() => onHoverChange(null)}
+        onMouseLeave={(event) => {
+          if (event.relatedTarget instanceof Element &&
+            event.relatedTarget.closest("[data-tooltip-unit-id]")?.getAttribute("data-tooltip-unit-id") === unit.id) return;
+          onHoverChange(null);
+        }}
       >
         {/* Background Progress Bar */}
         {progress > 0 && !isBanned && (
@@ -264,6 +269,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
             parentElement={containerRef}
             bans={bans}
             isWispEnabled={isWispEnabled}
+            onHoverChange={onHoverChange}
           />
         )}
 

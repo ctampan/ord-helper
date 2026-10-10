@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import type { Unit } from "../logic/combination";
-import { RecipeContent } from "./RecipeContent";
+import { RecipeContent, RecipeHeader } from "./RecipeContent";
+import { UnitCapabilities } from "./UnitCapabilities";
 import styles from "./RecipeModal.module.css";
 
 interface RecipeModalProps {
@@ -63,7 +64,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
 
   return createPortal(
     <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.modal} role="dialog" aria-modal="true" aria-label="Recipe details" onClick={(e) => e.stopPropagation()}>
         <div className={styles.modalActions}>
           {history.length > 0 && (
             <button
@@ -74,10 +75,12 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               ↩
             </button>
           )}
-          <button className={styles.closeBtn} onClick={handleClose}>
+          <button className={styles.closeBtn} aria-label="Close recipe" onClick={handleClose}>
             ×
           </button>
         </div>
+        <RecipeHeader unit={currentUnit} size="large" />
+        <UnitCapabilities unit={currentUnit} />
         <RecipeContent
           unit={currentUnit}
           unitsMap={unitsMap}
@@ -86,6 +89,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
           isWispEnabled={isWispEnabled}
           onUnitClick={handleUnitClick}
           size="large"
+          showHeader={false}
         />
       </div>
     </div>,

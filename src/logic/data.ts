@@ -1,4 +1,5 @@
 import type { Bans, Data, Inventory } from "./combination";
+import { isCapability } from "./capabilities.ts";
 
 /** Validate imported data before recipe traversal or treating Custom as available. */
 export function isGameData(value: unknown): value is Data {
@@ -20,6 +21,9 @@ export function isGameData(value: unknown): value is Data {
       typeof unit.name !== "string" || typeof unit.image !== "string" ||
       !data.rarities.includes(unit.rarity) ||
       (unit.note !== undefined && typeof unit.note !== "string") ||
+      (unit.abilityDetails !== undefined && typeof unit.abilityDetails !== "string") ||
+      (unit.capabilities !== undefined &&
+        (!Array.isArray(unit.capabilities) || !unit.capabilities.every(isCapability))) ||
       (unit.subGroup !== undefined && typeof unit.subGroup !== "string") ||
       (unit.recipe !== undefined && !Array.isArray(unit.recipe))
     ) return false;

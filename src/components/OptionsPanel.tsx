@@ -4,6 +4,9 @@ import { BanToggle } from "./BanToggle";
 import { HelpModal } from "./HelpModal";
 
 interface OptionsPanelProps {
+  isFilterExpanded: boolean;
+  activeFilterCount: number;
+  onToggleFilter: () => void;
   isBanMode: boolean;
   onToggleBanMode: () => void;
   onReset: () => void;
@@ -30,6 +33,9 @@ interface OptionsPanelProps {
 }
 
 export const OptionsPanel: React.FC<OptionsPanelProps> = ({
+  isFilterExpanded,
+  activeFilterCount,
+  onToggleFilter,
   isBanMode,
   onToggleBanMode,
   onReset,
@@ -165,6 +171,19 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             <div className={styles.dividerVertical} />
 
             {/* Group 4: Sorting & Grouping */}
+            <button
+              type="button"
+              className={`${styles.iconBtn} ${isFilterExpanded || activeFilterCount ? styles.active : ""}`}
+              onClick={onToggleFilter}
+              aria-label="Toggle ability filters"
+              aria-expanded={isFilterExpanded}
+              aria-controls="capability-filters"
+              title={`Ability filters: ${isFilterExpanded ? "expanded" : "collapsed"}${activeFilterCount ? ` · ${activeFilterCount} active` : ""}`}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M3 4h18l-7 8v7l-4 2v-9z" />
+              </svg>
+            </button>
             <button
               className={`${styles.iconBtn} ${
                 removeSubGroup ? styles.active : ""

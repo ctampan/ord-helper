@@ -10,6 +10,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+__pycache__/
+# Local source material for the offline Warcraft audit.
+/ref/
 *.local
 
 # Editor directories and files

@@ -23,7 +23,13 @@ test('all shipped datasets are discoverable and 2.323 has the complete validated
   assert.equal(isGameData(data), true);
   assert.equal(units.has('alternate_ace'), false);
   assert.equal(data.units.filter((unit) => unit.rarity === 'Seraphim').length, 4);
-  assert.equal(data.units.filter((unit) => unit.note).length, 251);
+  const audit = await readJson('../docs/capability-audit-2.323.json');
+  assert.equal(Object.values(audit.units).filter(({ originalNote }) => originalNote).length, 251);
+  for (const unit of data.units) {
+    const note = audit.units[unit.id].originalNote.replace(/Group reference:\s*.*?(?:\.(?=\s|$)|$)/gi, '').trim();
+    if (note) assert.ok(unit.capabilities?.length || unit.abilityDetails || unit.note, unit.id);
+    assert.doesNotMatch(unit.note || '', /Group reference:/);
+  }
   for (const unit of data.units) {
     assert.doesNotMatch(unit.name + (unit.note || ''), /[\uac00-\ud7af]/);
     assert.match(unit.image, /^images\/[a-z]+_[a-z0-9]+\.(png|jpg)$/);
@@ -51,8 +57,8 @@ test('new recipes and all four independent Vegapunk variants use the source ingr
       hidden_stussy: 1, rare_kizaru: 1, other_kuma: 1, [`seraphim_${form}`]: 1,
     });
     assert.equal(unit.image, 'images/transcendence_vegapunk.png');
-    assert.match(unit.note, /Punk Records/);
-    assert.match(units.get(`seraphim_${form}`).note, /single-target stun and can fly/);
+    assert.match(unit.abilityDetails, /Punk Records/);
+    assert.match(JSON.stringify(units.get(`seraphim_${form}`).capabilities), /single-target stun and can fly/);
   }
 });
 
