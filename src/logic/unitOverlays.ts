@@ -24,12 +24,26 @@ export function createUnitOverlayStore() {
     hover: (unitId: string | null, anchor?: HTMLElement) => {
       clearTimeout(timer);
       if (unitId) {
-        if (snapshot.hovered?.unitId === unitId || snapshot.recipeUnitId) return;
+        if (snapshot.recipeUnitId || (snapshot.hovered?.unitId === unitId &&
+          (!anchor || snapshot.hovered.anchor === anchor))) return;
         if (anchor) publish({ ...snapshot, hovered: { unitId, anchor } });
       } else {
         timer = setTimeout(() => {
           if (snapshot.hovered) publish({ ...snapshot, hovered: null });
         }, 150);
+      }
+    },
+    synchronizeHover: (anchor: HTMLElement | null, tooltipUnitId: string | null = null) => {
+      clearTimeout(timer);
+      if (snapshot.recipeUnitId) return;
+      const unitId = anchor?.dataset.unitId;
+      if (unitId && anchor) {
+        if (snapshot.hovered?.unitId !== unitId || snapshot.hovered.anchor !== anchor) {
+          publish({ ...snapshot, hovered: { unitId, anchor } });
+        }
+      } else if (!tooltipUnitId || tooltipUnitId !== snapshot.hovered?.unitId ||
+        !snapshot.hovered.anchor.isConnected) {
+        if (snapshot.hovered) publish({ ...snapshot, hovered: null });
       }
     },
     showRecipe: (unitId: string) => {

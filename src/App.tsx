@@ -103,18 +103,40 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Shift") setIsShiftPressed(true);
+      if (e.key === "Shift" && !e.repeat) {
+        // Resolve the actual pointer target before enabling a Shift-only tooltip.
+        // A pending handoff timer must never resurrect the previous unit.
+        overlayStore.synchronizeHover(
+          document.querySelector<HTMLElement>("main [data-unit-id]:hover"),
+          document.querySelector<HTMLElement>("[data-tooltip-unit-id]:hover")?.dataset.tooltipUnitId || null,
+        );
+        setIsShiftPressed(true);
+      }
     };
     const handleKeyUp = (e: KeyboardEvent) => {
-      if (e.key === "Shift") setIsShiftPressed(false);
+      if (e.key === "Shift") {
+        setIsShiftPressed(false);
+        if (!isTooltipEnabled) overlayStore.clearHover();
+      }
+    };
+    const handleBlur = () => {
+      setIsShiftPressed(false);
+      overlayStore.clearHover();
+    };
+    const handleVisibilityChange = () => {
+      if (document.hidden) handleBlur();
     };
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener("blur", handleBlur);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener("blur", handleBlur);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, []);
+  }, [overlayStore, isTooltipEnabled]);
 
   useEffect(() => {
     localStorage.setItem("ord_tooltip_enabled", String(isTooltipEnabled));

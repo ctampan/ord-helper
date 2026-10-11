@@ -250,29 +250,32 @@
 /* Feedback Animation */
 @keyframes spiralFloat {
   0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.9);
   }
 
-  20% {
+  15% {
     opacity: 1;
-    transform: translate(-50%, -120%) scale(1.2) rotate(-10deg);
+    transform: translate(-50%, -90%) scale(1.1);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translate(-50%, -150%) scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: translate(-50%, -250%) scale(1) rotate(10deg);
+    transform: translate(-50%, -210%) scale(1);
   }
 }
 
 .feedbackContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
   width: auto;
   height: auto;
   pointer-events: none;
-  z-index: 100;
+  z-index: 10000;
   white-space: nowrap;
 }
 
@@ -285,7 +288,7 @@
     -1px 1px 0 #000,
     1px 1px 0 #000,
     2px 2px 4px rgba(0, 0, 0, 0.5);
-  animation: spiralFloat 0.5s ease-out forwards;
+  animation: spiralFloat 1.2s ease-out forwards;
   display: block;
 }
 
@@ -295,6 +298,15 @@
 
 .feedbackRemove {
   color: #f44336;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedbackText { animation-name: feedbackFade; }
+}
+
+@keyframes feedbackFade {
+  0%, 65% { opacity: 1; transform: translate(-50%, -100%); }
+  100% { opacity: 0; transform: translate(-50%, -100%); }
 }
 
 .banOverlay {

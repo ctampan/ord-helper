@@ -20,7 +20,7 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
   unit, unitsMap, inventory, visible, parentElement, bans, isWispEnabled, onHoverChange,
 }) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const [layout, setLayout] = useState({ top: 10, left: 10, side: "below", sideWidth: 280 });
+  const [layout, setLayout] = useState({ top: 10, left: 10, side: "below", sideWidth: 280, ready: false });
   const hasAbilities = !!(unit.capabilities?.length || unit.abilityDetails);
 
   useLayoutEffect(() => {
@@ -39,10 +39,12 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
       const rightSpace = window.innerWidth - (left + rect.width) - 18;
       const leftSpace = left - 18;
       const side = rightSpace >= 220 ? "right" : leftSpace >= 220 ? "left" : "below";
-      const sideWidth = Math.min(280, side === "right" ? rightSpace : leftSpace);
+      const sideWidth = side === "below" ? 280 : Math.min(280, side === "right" ? rightSpace : leftSpace);
       setLayout((previous) => previous.top === top && previous.left === left &&
-        previous.side === side && previous.sideWidth === sideWidth ? previous :
-        { top, left, side, sideWidth });
+        previous.side === side && previous.sideWidth === sideWidth && previous.ready ? previous :
+        { top, left, side, sideWidth,
+          // Re-measure the final side/fallback markup before its first paint.
+          ready: previous.side === side && previous.sideWidth === sideWidth });
     };
     const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); };
     update();
@@ -56,12 +58,13 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
       window.removeEventListener("resize", schedule);
       window.removeEventListener("scroll", schedule, true);
     };
-  }, [visible, parentElement, unit.id]);
+  }, [visible, parentElement, unit.id, layout.side, layout.sideWidth]);
 
   if (!visible) return null;
   return createPortal(
     <div ref={tooltipRef} data-tooltip-unit-id={unit.id} data-ability-position={layout.side}
-      className={styles.tooltip} style={{ top: layout.top, left: layout.left }}
+      className={styles.tooltip} style={{ top: layout.top, left: layout.left,
+        visibility: layout.ready ? "visible" : "hidden" }}
       onClick={(event) => event.stopPropagation()}
       onContextMenu={(event) => event.stopPropagation()}
       onMouseEnter={() => onHoverChange?.(unit.id)}

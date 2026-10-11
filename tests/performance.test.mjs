@@ -133,3 +133,32 @@ test('hover controller keeps tooltip handoff alive and cancels pending dismissal
   assert.deepEqual(store.getSnapshot(), { hovered: null, recipeUnitId: null });
   unsubscribe();
 });
+
+test('Shift synchronization replaces stale hover and cancels delayed dismissal', async () => {
+  const store = createUnitOverlayStore();
+  const unsubscribe = store.subscribe(() => {});
+  const a = { dataset: { unitId: 'a' }, isConnected: true };
+  const b = { dataset: { unitId: 'b' }, isConnected: true };
+  store.hover('a', a);
+  store.hover(null);
+  store.synchronizeHover(b);
+  assert.deepEqual(store.getSnapshot().hovered, { unitId: 'b', anchor: b });
+  await new Promise((resolve) => setTimeout(resolve, 170));
+  assert.equal(store.getSnapshot().hovered.anchor, b);
+  store.synchronizeHover(null, 'b');
+  assert.equal(store.getSnapshot().hovered.anchor, b);
+  store.synchronizeHover(null, 'a');
+  assert.equal(store.getSnapshot().hovered, null);
+  store.hover('a', a);
+  const replacement = { dataset: { unitId: 'a' }, isConnected: true };
+  store.hover('a', replacement);
+  assert.equal(store.getSnapshot().hovered.anchor, replacement);
+  replacement.isConnected = false;
+  store.synchronizeHover(null, 'a');
+  assert.equal(store.getSnapshot().hovered, null);
+  store.showRecipe('a');
+  store.synchronizeHover(b);
+  assert.equal(store.getSnapshot().recipeUnitId, 'a');
+  assert.equal(store.getSnapshot().hovered, null);
+  unsubscribe();
+});

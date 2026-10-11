@@ -6,6 +6,7 @@ import React, {
 import type { Unit, UnitDetails } from "../logic/combination";
 import { getRarityColor } from "../logic/rarityColors";
 import { CachedImage } from "./CachedImage";
+import { CountFeedback } from "./CountFeedback";
 import styles from "./UnitListItem.module.css";
 
 interface UnitListItemProps {
@@ -68,6 +69,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       id: number;
     } | null>(null);
     const prevCountRef = useRef(count);
+    const feedbackSequence = useRef(0);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
       if (count !== prevCountRef.current) {
@@ -78,7 +81,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
         // Use setTimeout to avoid synchronous state update during render phase
         // and to ensure the animation triggers after the render
         const timeoutId = setTimeout(() => {
-          setFeedback({ text, type, id: Date.now() });
+          setFeedback({ text, type, id: ++feedbackSequence.current });
         }, 0);
 
         prevCountRef.current = count;
@@ -170,22 +173,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
           )}
 
           <div className={styles.controls} onClick={(e) => e.stopPropagation()}>
-            {/* Feedback Animation */}
-            {feedback && (
-              <div key={feedback.id} className={styles.feedbackContainer}>
-                <span
-                  className={`${styles.feedbackText} ${
-                    feedback.type === "add"
-                      ? styles.feedbackAdd
-                      : styles.feedbackRemove
-                  }`}
-                  onAnimationEnd={() => setFeedback(null)}
-                >
-                  {feedback.text}
-                </span>
-              </div>
-            )}
             <input
+              ref={inputRef}
               type="text"
               inputMode="numeric"
               pattern="[0-9]*"
@@ -211,7 +200,9 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
             )}
           </div>
         </div>
-
+        {feedback && <CountFeedback key={feedback.id} anchor={inputRef} unitId={unit.id}
+          text={feedback.text} type={feedback.type} onComplete={() => setFeedback((current) =>
+            current?.id === feedback.id ? null : current)} />}
       </div>
     );
   },
