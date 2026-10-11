@@ -1,5 +1,20 @@
 # Warcraft map capability audit
 
+The map-only resource/mobility supplement is reproducible without the website snapshots:
+
+```powershell
+python scripts/extract-warcraft-map.py 'ref/ORDR_S2_2.323[R]_english.w3x' --library 'C:/path/to/StormLib.dll' --output ref/map-2.323.json
+python scripts/map_skill_requirements.py
+```
+
+It adds three categories to the original 25: `hp-skill`, `mana-skill`, and `swimming`. Explicit level-1 activation clauses establish 31 base HP-skill units and 75 base Mana-skill units. Resource thresholds, costs, proc chances, recovery context, alternative triggers, and adjacent activation limits are retained verbatim apart from display normalization (`Health` to `HP`). Regeneration, enemy HP damage, maximum mana, and higher-level descriptions do not establish resource requirements. Ordinary resource thresholds are detail text, not upgrade conditions, so these skills remain filterable.
+
+Six playable units explicitly use amphibious movement (`war3map.w3u`, `umvt = amph`): Rare Decken, Legendary Laboon, Legendary Jinbe, Hidden Decken, Distortion Burgess, and Transcendence Jinbe. Fisher Tiger's Flying classification follows the user's correction; map ability `A0DZ` independently verifies terrain-ignoring traversal. Swimming is not inferred from Flying or character identity.
+
+`capability-map-skills-2.323.json` audits all 278 entries with raw object identities, reviewed base forms, previous/replacement values, field/level, original quotations and acquisition evidence. This supplement preserves the previous numeric audit. Reviewed base objects distinguish Chopper's permanent upgrade, Franky's acquired transformation, Marco's Phoenix form, cosmetic variants, and non-playable visual shells. Franky's acquired skill and Marco's Phoenix-form cost retain their separate conditions. Sunny's Mana skill requires Vegapunk's Knowledge and is excluded from base-only filtering. Unresolved non-base abilities remain in the audit instead of being guessed.
+
+Three old annotations cannot be established from the readable map objects: HP skills for Hidden/Transcendence Akainu, and Mana skill for Mystic Gojo. They remain in the original source audit and are explicitly marked unverified in the supplement. Neither a character's maximum HP/mana nor an old marker is substituted for missing trigger evidence.
+
 The supplied `ORDR_S2_2.323[R]_english.w3x` has SHA-256 `6de87277d89edccb359b442f1498f69a5e675c0c3d7479bb37c91dabd30ab8ca`. The offline extractor opens it read-only with the official [StormLib](https://github.com/ladislav-zezula/StormLib/releases/tag/v9.40) library; neither the game nor map scripts are executed.
 
 Readable data comprises 1,519 unit objects, 1,680 ability objects, 110 upgrade objects, 15 item objects, and 11,088 string records. Every modification retains its field ID, level, data pointer, original text, and a cleaned display value. `war3map.j` could not be read (error 1392); trigger-computed mechanics remain unverified.

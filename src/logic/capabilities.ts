@@ -1,7 +1,7 @@
 import type { Unit } from "./combination";
 
-// IDs match the ORDSearch skill-filter snapshot; labels follow the app language.
-export const CAPABILITY_GROUPS = ["Support", "Control", "Damage", "Specialist & mobility"] as const;
+// Preserve ORDSearch IDs; additional activation/mobility categories use map evidence.
+export const CAPABILITY_GROUPS = ["Support", "Control", "Damage", "Specialist & mobility", "Skill activation"] as const;
 export const CAPABILITIES = [
   { id: "damageb", label: "Attack buff", group: "Support" },
   { id: "speedb", label: "Attack speed buff", group: "Support" },
@@ -28,6 +28,9 @@ export const CAPABILITIES = [
   { id: "berserk", label: "Berserk specialist", group: "Specialist & mobility" },
   { id: "sky", label: "Flying", group: "Specialist & mobility" },
   { id: "blink", label: "Blink / teleport", group: "Specialist & mobility" },
+  { id: "swimming", label: "Swimming", group: "Specialist & mobility" },
+  { id: "hp-skill", label: "HP skill", group: "Skill activation" },
+  { id: "mana-skill", label: "Mana skill", group: "Skill activation" },
 ] as const;
 
 export type CapabilityId = typeof CAPABILITIES[number]["id"];

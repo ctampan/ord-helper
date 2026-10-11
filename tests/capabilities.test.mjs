@@ -11,12 +11,13 @@ const readJson = async (path) => JSON.parse(await readFile(new URL(path, import.
 const data = await readJson('../public/data/2.323.json');
 const audit = await readJson('../docs/capability-audit-2.323.json');
 const mapAudit = await readJson('../docs/capability-map-audit-2.323.json');
+const skillAudit = await readJson('../docs/capability-map-skills-2.323.json');
 const units = new Map(data.units.map((unit) => [unit.id, unit]));
 const effects = (id, category) => (units.get(id).capabilities || []).filter((effect) => effect.category === category);
 
 test('all 278 units are audited and preserve their subgroups and original numeric information', () => {
-  assert.equal(CAPABILITIES.length, 25);
-  assert.equal(new Set(CAPABILITIES.map(({ id }) => id)).size, 25);
+  assert.equal(CAPABILITIES.length, 28);
+  assert.equal(new Set(CAPABILITIES.map(({ id }) => id)).size, 28);
   assert.equal(Object.keys(audit.units).length, 278);
   assert.equal(isGameData(data), true);
   for (const unit of data.units) {
@@ -90,6 +91,66 @@ test('All/Any, empty selection, disabled filters, and unclassified Custom units'
   const oldCustom = [{ id: 'old', name: 'Old', rarity: 'Common', image: '' }];
   assert.deepEqual(filterUnitsByCapabilities(oldCustom, ['shield'], 'all'), []);
   assert.equal(filterUnitsByCapabilities(oldCustom, [], 'all'), oldCustom);
+});
+
+test('resource and swimming filters preserve explicit requirements and exclude acquired skills', () => {
+  assert.equal(filterUnitsByCapabilities(data.units, ['hp-skill'], 'all').length, 31);
+  assert.equal(filterUnitsByCapabilities(data.units, ['mana-skill'], 'all').length, 75);
+  assert.equal(hasBaseCapability(units.get('rare_sugar'), 'regen'), true);
+  assert.equal(hasBaseCapability(units.get('rare_sugar'), 'mana-skill'), false);
+  assert.equal(hasBaseCapability(units.get('legendary_shanks'), 'hp-skill'), false);
+  assert.match(effects('legendary_nami', 'hp-skill')[0].detail, /8\.8%.*or 35 HP/);
+  assert.match(effects('limited_katakuri', 'hp-skill')[0].detail, /35.*15%.*consume 17 HP/);
+  assert.match(effects('transcendence_aokiji', 'mana-skill')[0].detail, /Consumes 40 mana.*50/);
+  assert.match(effects('transcendence_kizaru', 'mana-skill')[0].detail, /Consumes 50 mana.*75/);
+  assert.match(effects('transcendence_law', 'hp-skill')[0].detail, /250.*50.*only once/);
+  assert.match(effects('transcendence_shanks', 'mana-skill')[0].detail, /35 mana.*14\.25/);
+  assert.equal(hasBaseCapability(units.get('transcendence_franky'), 'mana-skill'), true);
+  assert.match(effects('transcendence_franky', 'mana-skill')[1].condition, /Upgrade 4/);
+  assert.equal(hasBaseCapability(units.get('hidden_sunny'), 'mana-skill'), false);
+  assert.match(effects('hidden_sunny', 'mana-skill')[0].condition, /Vegapunk/);
+  assert.match(effects('limited_marco', 'hp-skill')[1].condition, /Phoenix form/);
+  assert.deepEqual(filterUnitsByCapabilities(data.units, ['swimming'], 'all').map(({ id }) => id).sort(),
+    ['rare_decken', 'legendary_laboon', 'legendary_jinbe', 'hidden_decken', 'distortion_burgess', 'transcendence_jinbe'].sort());
+  assert.equal(hasBaseCapability(units.get('hidden_tiger'), 'sky'), true);
+  assert.equal(hasBaseCapability(units.get('hidden_tiger'), 'swimming'), false);
+  const both = filterUnitsByCapabilities(data.units, ['hp-skill', 'mana-skill'], 'all');
+  assert.ok(both.some(({ id }) => id === 'mystic_anya'));
+  assert.ok(both.every((unit) => hasBaseCapability(unit, 'hp-skill') && hasBaseCapability(unit, 'mana-skill')));
+  assert.deepEqual(readCapabilityFilters('{"selected":["hp-skill","mana-skill","swimming"],"mode":"any"}'),
+    { selected: ['hp-skill', 'mana-skill', 'swimming'], mode: 'any' });
+});
+
+test('restored skill annotations retain map identity, field, level and original evidence', () => {
+  assert.equal(skillAudit.sha256, mapAudit.sha256);
+  assert.equal(Object.keys(skillAudit.units).length, 278);
+  for (const [id, category] of [['hidden_akainu', 'hp-skill'], ['transcendence_akainu', 'hp-skill'], ['mystic_gojo', 'mana-skill']]) {
+    assert.equal(hasBaseCapability(units.get(id), category), false);
+    assert.ok(skillAudit.units[id].unverified.some((record) => record.category === category && record.originalNote), id);
+  }
+  for (const [id, record] of Object.entries(skillAudit.units)) {
+    for (const addition of record.additions) {
+      assert.ok(effects(id, addition.replacement.category).some((c) => JSON.stringify(c) === JSON.stringify(addition.replacement)), id);
+      assert.ok(addition.evidence.length, id);
+      for (const evidence of addition.evidence) {
+        if (evidence.file === 'war3map.w3u') {
+          assert.equal(evidence.field, 'umvt');
+          assert.equal(evidence.value, 'amph');
+          assert.deepEqual(evidence.rawUnitIds, record.baseUnitIds);
+        } else {
+          const ability = mapAudit.units[id].abilities.find((a) => a.rawId === evidence.rawAbilityId);
+          assert.equal(evidence.level, 1);
+          assert.ok(ability.textFields.some((f) => f.field === evidence.field && f.level === 1 && f.text.includes(evidence.quote)), id);
+          assert.equal(typeof evidence.originalText, 'string');
+          if (evidence.acquisition) {
+            const acquired = mapAudit.units[id].abilities.find((a) => a.rawId === evidence.acquisition.rawAbilityId);
+            assert.ok(acquired.textFields.some((f) => f.text.includes(evidence.acquisition.quote)), id);
+            assert.ok(addition.replacement.condition, id);
+          }
+        }
+      }
+    }
+  }
 });
 
 test('saved filter choices survive close/reload and corrupt or retired preferences are sanitized', () => {

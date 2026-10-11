@@ -1,0 +1,5093 @@
+{
+  "map": "ORDR_S2_2.323[R]_english.w3x",
+  "sha256": "6de87277d89edccb359b442f1498f69a5e675c0c3d7479bb37c91dabd30ab8ca",
+  "unavailable": {
+    "war3map.j": "[Errno 1392] Cannot read war3map.j"
+  },
+  "units": {
+    "common_wisp": {
+      "rawUnitIds": [
+        "e018"
+      ],
+      "baseUnitIds": [
+        "e018"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_luffy": {
+      "rawUnitIds": [
+        "h003"
+      ],
+      "baseUnitIds": [
+        "h003"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_zoro": {
+      "rawUnitIds": [
+        "h002"
+      ],
+      "baseUnitIds": [
+        "h002"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_nami": {
+      "rawUnitIds": [
+        "h001"
+      ],
+      "baseUnitIds": [
+        "h001"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_usopp": {
+      "rawUnitIds": [
+        "h007"
+      ],
+      "baseUnitIds": [
+        "h007"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_sanji": {
+      "rawUnitIds": [
+        "h004"
+      ],
+      "baseUnitIds": [
+        "h004"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_chopper": {
+      "rawUnitIds": [
+        "h008"
+      ],
+      "baseUnitIds": [
+        "h008"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_buggy": {
+      "rawUnitIds": [
+        "h005"
+      ],
+      "baseUnitIds": [
+        "h005"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_gunman": {
+      "rawUnitIds": [
+        "h009"
+      ],
+      "baseUnitIds": [
+        "h009"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "common_swordsman": {
+      "rawUnitIds": [
+        "h006"
+      ],
+      "baseUnitIds": [
+        "h006"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_robin": {
+      "rawUnitIds": [
+        "h00O"
+      ],
+      "baseUnitIds": [
+        "h00O"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_brook": {
+      "rawUnitIds": [
+        "h00D"
+      ],
+      "baseUnitIds": [
+        "h00D"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_blueno": {
+      "rawUnitIds": [
+        "h00M"
+      ],
+      "baseUnitIds": [
+        "h00M"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_bepo": {
+      "rawUnitIds": [
+        "h00C"
+      ],
+      "baseUnitIds": [
+        "h00C"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_inazuma": {
+      "rawUnitIds": [
+        "h00I"
+      ],
+      "baseUnitIds": [
+        "h00I"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_ace": {
+      "rawUnitIds": [
+        "h00K"
+      ],
+      "baseUnitIds": [
+        "h00K"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_sogeking": {
+      "rawUnitIds": [
+        "h00N"
+      ],
+      "baseUnitIds": [
+        "h00N"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_chopper": {
+      "rawUnitIds": [
+        "h00G"
+      ],
+      "baseUnitIds": [
+        "h00G"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_tashigi": {
+      "rawUnitIds": [
+        "h00E"
+      ],
+      "baseUnitIds": [
+        "h00E"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_perona": {
+      "rawUnitIds": [
+        "h00J"
+      ],
+      "baseUnitIds": [
+        "h00J"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_franky": {
+      "rawUnitIds": [
+        "h00L"
+      ],
+      "baseUnitIds": [
+        "h00L"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_hacchan": {
+      "rawUnitIds": [
+        "h00F"
+      ],
+      "baseUnitIds": [
+        "h00F"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "uncommon_fukuro": {
+      "rawUnitIds": [
+        "h00A"
+      ],
+      "baseUnitIds": [
+        "h00A"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_k": {
+      "rawUnitIds": [
+        "h06U"
+      ],
+      "baseUnitIds": [
+        "h06U"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_naruto": {
+      "rawUnitIds": [
+        "h06V"
+      ],
+      "baseUnitIds": [
+        "h06V"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_paimon": {
+      "rawUnitIds": [
+        "h06T"
+      ],
+      "baseUnitIds": [
+        "h06T"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Super Paimon Whirlwind",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0YC",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DThis is Paimon's special move, burning with motivation.|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9180 million Magic Damage|r\n|cffffdead◎Additional Effect|r : Target range |cff87cefaMagic damage amplified by 10%|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "random_yotsuba": {
+      "rawUnitIds": [
+        "h06W"
+      ],
+      "baseUnitIds": [
+        "h06W"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_sento": {
+      "rawUnitIds": [
+        "h06X"
+      ],
+      "baseUnitIds": [
+        "h06X"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_touma": {
+      "rawUnitIds": [
+        "h06Y"
+      ],
+      "baseUnitIds": [
+        "h06Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_elizabeth": {
+      "rawUnitIds": [
+        "h06Z"
+      ],
+      "baseUnitIds": [
+        "h06Z"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_yomi": {
+      "rawUnitIds": [
+        "h070"
+      ],
+      "baseUnitIds": [
+        "h070"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_ichigo": {
+      "rawUnitIds": [
+        "h071"
+      ],
+      "baseUnitIds": [
+        "h071"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_tsubasa": {
+      "rawUnitIds": [
+        "h072"
+      ],
+      "baseUnitIds": [
+        "h072"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_light": {
+      "rawUnitIds": [
+        "h073"
+      ],
+      "baseUnitIds": [
+        "h073"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_yan": {
+      "rawUnitIds": [
+        "h09K"
+      ],
+      "baseUnitIds": [
+        "h09K"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_bronya": {
+      "rawUnitIds": [
+        "h09L"
+      ],
+      "baseUnitIds": [
+        "h09L"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "random_megumin": {
+      "rawUnitIds": [
+        "h065"
+      ],
+      "baseUnitIds": [
+        "h065"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_xdrake": {
+      "rawUnitIds": [
+        "h01K"
+      ],
+      "baseUnitIds": [
+        "h01K"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_enel": {
+      "rawUnitIds": [
+        "h00Q"
+      ],
+      "baseUnitIds": [
+        "h00Q"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_moria": {
+      "rawUnitIds": [
+        "h00B"
+      ],
+      "baseUnitIds": [
+        "h00B"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_nami": {
+      "rawUnitIds": [
+        "h00P"
+      ],
+      "baseUnitIds": [
+        "h00P"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_robin": {
+      "rawUnitIds": [
+        "h00S"
+      ],
+      "baseUnitIds": [
+        "h00S"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_law": {
+      "rawUnitIds": [
+        "h01H"
+      ],
+      "baseUnitIds": [
+        "h01H"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_lucci": {
+      "rawUnitIds": [
+        "h00R"
+      ],
+      "baseUnitIds": [
+        "h00R"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_luffy": {
+      "rawUnitIds": [
+        "h00U"
+      ],
+      "baseUnitIds": [
+        "h00U"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_marco": {
+      "rawUnitIds": [
+        "h00T"
+      ],
+      "baseUnitIds": [
+        "h00T"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_hawkins": {
+      "rawUnitIds": [
+        "h016"
+      ],
+      "baseUnitIds": [
+        "h016"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_buggy": {
+      "rawUnitIds": [
+        "h015"
+      ],
+      "baseUnitIds": [
+        "h015"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_bonkurei": {
+      "rawUnitIds": [
+        "h014"
+      ],
+      "baseUnitIds": [
+        "h014"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_sanji": {
+      "rawUnitIds": [
+        "h013"
+      ],
+      "baseUnitIds": [
+        "h013"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_smoker": {
+      "rawUnitIds": [
+        "h01F"
+      ],
+      "baseUnitIds": [
+        "h01F"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_squard": {
+      "rawUnitIds": [
+        "h012"
+      ],
+      "baseUnitIds": [
+        "h012"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_arlong": {
+      "rawUnitIds": [
+        "h011"
+      ],
+      "baseUnitIds": [
+        "h011"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_absalom": {
+      "rawUnitIds": [
+        "h010"
+      ],
+      "baseUnitIds": [
+        "h010"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_ace": {
+      "rawUnitIds": [
+        "h01J"
+      ],
+      "baseUnitIds": [
+        "h01J"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_usopp": {
+      "rawUnitIds": [
+        "h00Z"
+      ],
+      "baseUnitIds": [
+        "h00Z"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_inazuma": {
+      "rawUnitIds": [
+        "h00X"
+      ],
+      "baseUnitIds": [
+        "h00X"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_zoro": {
+      "rawUnitIds": [
+        "h00W"
+      ],
+      "baseUnitIds": [
+        "h00W"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_jinbe": {
+      "rawUnitIds": [
+        "h018"
+      ],
+      "baseUnitIds": [
+        "h018"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_chaka": {
+      "rawUnitIds": [
+        "h019"
+      ],
+      "baseUnitIds": [
+        "h019"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_chopperbrain": {
+      "rawUnitIds": [
+        "h01E"
+      ],
+      "baseUnitIds": [
+        "h01E"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_chopperguard": {
+      "rawUnitIds": [
+        "h01D"
+      ],
+      "baseUnitIds": [
+        "h01D"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_capone": {
+      "rawUnitIds": [
+        "h01C"
+      ],
+      "baseUnitIds": [
+        "h01C"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_kuro": {
+      "rawUnitIds": [
+        "h00V"
+      ],
+      "baseUnitIds": [
+        "h00V"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_kuma": {
+      "rawUnitIds": [
+        "h017"
+      ],
+      "baseUnitIds": [
+        "h017"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_crocodile": {
+      "rawUnitIds": [
+        "h01A"
+      ],
+      "baseUnitIds": [
+        "h01A"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_kid": {
+      "rawUnitIds": [
+        "h00Y"
+      ],
+      "baseUnitIds": [
+        "h00Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_killer": {
+      "rawUnitIds": [
+        "h01B"
+      ],
+      "baseUnitIds": [
+        "h01B"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_docking": {
+      "rawUnitIds": [
+        "h01G"
+      ],
+      "baseUnitIds": [
+        "h01G"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "special_helmeppo": {
+      "rawUnitIds": [
+        "h01I"
+      ],
+      "baseUnitIds": [
+        "h01I"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "item_nika": {
+      "rawUnitIds": [],
+      "baseUnitIds": [],
+      "additions": [],
+      "unverified": []
+    },
+    "item_uta": {
+      "rawUnitIds": [],
+      "baseUnitIds": [],
+      "additions": [],
+      "unverified": []
+    },
+    "item_marco": {
+      "rawUnitIds": [],
+      "baseUnitIds": [],
+      "additions": [],
+      "unverified": []
+    },
+    "other_rayleigh": {
+      "rawUnitIds": [
+        "h05X"
+      ],
+      "baseUnitIds": [
+        "h05X"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "other_pirateship": {
+      "rawUnitIds": [
+        "h060"
+      ],
+      "baseUnitIds": [
+        "h060"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "other_kuma": {
+      "rawUnitIds": [
+        "h04S"
+      ],
+      "baseUnitIds": [
+        "h04S"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "other_ancientship": {
+      "rawUnitIds": [
+        "h05Y"
+      ],
+      "baseUnitIds": [
+        "h05Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "other_greenblood": {
+      "rawUnitIds": [
+        "h0A4"
+      ],
+      "baseUnitIds": [
+        "h0A4"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "other_seraphim": {
+      "rawUnitIds": [
+        "h0AN"
+      ],
+      "baseUnitIds": [
+        "h0AN"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_xdrake": {
+      "rawUnitIds": [
+        "h09X"
+      ],
+      "baseUnitIds": [
+        "h09X"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_garp": {
+      "rawUnitIds": [
+        "h01Q"
+      ],
+      "baseUnitIds": [
+        "h01Q"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_blackbeard": {
+      "rawUnitIds": [
+        "h021"
+      ],
+      "baseUnitIds": [
+        "h021"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_doflamingo": {
+      "rawUnitIds": [
+        "h01L"
+      ],
+      "baseUnitIds": [
+        "h01L"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_law": {
+      "rawUnitIds": [
+        "h02L"
+      ],
+      "baseUnitIds": [
+        "h02L"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_luffy": {
+      "rawUnitIds": [
+        "h01X"
+      ],
+      "baseUnitIds": [
+        "h01X"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_ryuma": {
+      "rawUnitIds": [
+        "h025"
+      ],
+      "baseUnitIds": [
+        "h025"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_marco": {
+      "rawUnitIds": [
+        "h022"
+      ],
+      "baseUnitIds": [
+        "h022"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_magellan": {
+      "rawUnitIds": [
+        "h01Z"
+      ],
+      "baseUnitIds": [
+        "h01Z"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_momonga": {
+      "rawUnitIds": [
+        "h01Y"
+      ],
+      "baseUnitIds": [
+        "h01Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_mihawk": {
+      "rawUnitIds": [
+        "h04H"
+      ],
+      "baseUnitIds": [
+        "h04H"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_bartolomeo": {
+      "rawUnitIds": [
+        "h01W"
+      ],
+      "baseUnitIds": [
+        "h01W"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_burgess": {
+      "rawUnitIds": [
+        "h01V"
+      ],
+      "baseUnitIds": [
+        "h01V"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_hawkins": {
+      "rawUnitIds": [
+        "h01U"
+      ],
+      "baseUnitIds": [
+        "h01U"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_decken": {
+      "rawUnitIds": [
+        "h01T"
+      ],
+      "baseUnitIds": [
+        "h01T"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "swimming",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3u",
+              "rawUnitIds": [
+                "h01T"
+              ],
+              "field": "umvt",
+              "value": "amph",
+              "originalValues": [
+                "amph"
+              ]
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "rare_baby5": {
+      "rawUnitIds": [
+        "h02M"
+      ],
+      "baseUnitIds": [
+        "h02M"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_benbeckman": {
+      "rawUnitIds": [
+        "h01S"
+      ],
+      "baseUnitIds": [
+        "h01S"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_brook": {
+      "rawUnitIds": [
+        "h01N"
+      ],
+      "baseUnitIds": [
+        "h01N"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_vivi": {
+      "rawUnitIds": [
+        "h01O"
+      ],
+      "baseUnitIds": [
+        "h01O"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_sabo": {
+      "rawUnitIds": [
+        "h05L"
+      ],
+      "baseUnitIds": [
+        "h05L"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_sanji": {
+      "rawUnitIds": [
+        "h02I"
+      ],
+      "baseUnitIds": [
+        "h02I"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_shanks": {
+      "rawUnitIds": [
+        "h029"
+      ],
+      "baseUnitIds": [
+        "h029"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_sentomaru": {
+      "rawUnitIds": [
+        "h028"
+      ],
+      "baseUnitIds": [
+        "h028"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_sugar": {
+      "rawUnitIds": [
+        "h027"
+      ],
+      "baseUnitIds": [
+        "h027"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_shiryu": {
+      "rawUnitIds": [
+        "h026"
+      ],
+      "baseUnitIds": [
+        "h026"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_aokiji": {
+      "rawUnitIds": [
+        "h02B"
+      ],
+      "baseUnitIds": [
+        "h02B"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_akainu": {
+      "rawUnitIds": [
+        "h01P"
+      ],
+      "baseUnitIds": [
+        "h01P"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_oars": {
+      "rawUnitIds": [
+        "h020"
+      ],
+      "baseUnitIds": [
+        "h020"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_wyper": {
+      "rawUnitIds": [
+        "h024"
+      ],
+      "baseUnitIds": [
+        "h024"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_usopp": {
+      "rawUnitIds": [
+        "h02C"
+      ],
+      "baseUnitIds": [
+        "h02C"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_ivankov": {
+      "rawUnitIds": [
+        "h02A"
+      ],
+      "baseUnitIds": [
+        "h02A"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_zeff": {
+      "rawUnitIds": [
+        "h02G"
+      ],
+      "baseUnitIds": [
+        "h02G"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_zoro": {
+      "rawUnitIds": [
+        "h02F"
+      ],
+      "baseUnitIds": [
+        "h02F"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_jozu": {
+      "rawUnitIds": [
+        "h02E"
+      ],
+      "baseUnitIds": [
+        "h02E"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_chopper": {
+      "rawUnitIds": [
+        "h02K"
+      ],
+      "baseUnitIds": [
+        "h02K"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_kaku": {
+      "rawUnitIds": [
+        "h023"
+      ],
+      "baseUnitIds": [
+        "h023"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_kid": {
+      "rawUnitIds": [
+        "h02D"
+      ],
+      "baseUnitIds": [
+        "h02D"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_crocodile": {
+      "rawUnitIds": [
+        "h02H"
+      ],
+      "baseUnitIds": [
+        "h02H"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_kizaru": {
+      "rawUnitIds": [
+        "h01R"
+      ],
+      "baseUnitIds": [
+        "h01R"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_kinemon": {
+      "rawUnitIds": [
+        "h02J"
+      ],
+      "baseUnitIds": [
+        "h02J"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_perona": {
+      "rawUnitIds": [
+        "h05K"
+      ],
+      "baseUnitIds": [
+        "h05K"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "rare_hancock": {
+      "rawUnitIds": [
+        "h01M"
+      ],
+      "baseUnitIds": [
+        "h01M"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_dragon": {
+      "rawUnitIds": [
+        "h02W"
+      ],
+      "baseUnitIds": [
+        "h02W"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_laboon": {
+      "rawUnitIds": [
+        "h02Q"
+      ],
+      "baseUnitIds": [
+        "h02Q"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "swimming",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3u",
+              "rawUnitIds": [
+                "h02Q"
+              ],
+              "field": "umvt",
+              "value": "amph",
+              "originalValues": [
+                "amph"
+              ]
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_bartolomeo": {
+      "rawUnitIds": [
+        "h02Z"
+      ],
+      "baseUnitIds": [
+        "h02Z"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_shanks": {
+      "rawUnitIds": [
+        "h035"
+      ],
+      "baseUnitIds": [
+        "h035"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_shiki": {
+      "rawUnitIds": [
+        "h039"
+      ],
+      "baseUnitIds": [
+        "h039"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_fujitora": {
+      "rawUnitIds": [
+        "h031"
+      ],
+      "baseUnitIds": [
+        "h031"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_kuma": {
+      "rawUnitIds": [
+        "h030"
+      ],
+      "baseUnitIds": [
+        "h030"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 · Ursus Shock",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A09B",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115",
+              "originalText": "|cffFAED7DGathers air with both arms, compresses it, and then explodes it to release a powerful shockwave.|r\n\n|cffffdead◎Activation Condition|r : Mana 115\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9245 million + 4% of missing health magic damage|r\n|cffffdead◎Additional Effect|r : 1.05 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_rayleigh": {
+      "rawUnitIds": [
+        "h03A"
+      ],
+      "baseUnitIds": [
+        "h03A"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 · Pluto's Haunting Spirit :: Lv.1",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06Q",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115",
+              "originalText": "|cffFAED7DUses a powerful Haki that even ordinary people find difficult to handle.|r\n\n|cffffdead◎Basic Effect|r: Reduces enemy defense by 20 within a 900 range\n\n|cffc68a12Empowerment|r\n|cffffdead◎Activation Condition|r : Mana 115\n|cffffdead◎Range|r : 600 range centered on the enemy\n|cffffdead◎Damage|r : |cffF15F5F1 million(x1~1.5) physical damage|r + |cff4374D91.2 million magical damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the affected area and |cffff8c003's Armor Break|r (stacks up to 75)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_marco": {
+      "rawUnitIds": [
+        "h02T",
+        "h0BQ"
+      ],
+      "baseUnitIds": [
+        "h02T",
+        "h0BQ"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 25 (Base healing 0.5 / +1 on attack) · Feather Bombardment",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0A3",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 25 (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7D Bombards with Phoenix Feathers.|r\n\n|cffffdead◎Activation Condition|r : Health 25 (Base healing 0.5 / +1 on attack)\n|cffffdead◎range|r : 525\n|cffffdead◎Damage|r : 4.75 times basic attack damage + |cffF15F5F475,000 physical damage|r\n|cffffdead　▶|r Deals |cffA566FF 40% of this skill's damage as additional true damage to a single enemy|r\n|cffffdead◎Additional Effect|r : When activated, deals |cff4374D9.4 million magic damage|r to up to 7 additional enemies\n|cffffdead　▶|r Critical hits may apply.|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_sengoku": {
+      "rawUnitIds": [
+        "h036"
+      ],
+      "baseUnitIds": [
+        "h036"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_smoker": {
+      "rawUnitIds": [
+        "h02V"
+      ],
+      "baseUnitIds": [
+        "h02V"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 50 (Base recovery 0.5 / Attack +0.5) · White Out",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06W",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 50 (Base recovery 0.5 / Attack +0.5)",
+              "originalText": "|cffFAED7DBinds enemies with visualized smoke.|r\n\n|cffffdead◎Activation Condition|r : Mana 50 (Base recovery 0.5 / Attack +0.5)\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cff4374D945 million(x1~1.5) Magic Damage|r\n|cffffdead　▶|r Double damage to single enemy + 0.5 second stagger\n|cffffdead◎Additional Effect|r : Armor Break of the corresponding range |cffff8c003|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_caesar": {
+      "rawUnitIds": [
+        "h038"
+      ],
+      "baseUnitIds": [
+        "h038"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_ace": {
+      "rawUnitIds": [
+        "h02O"
+      ],
+      "baseUnitIds": [
+        "h02O"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_ulti": {
+      "rawUnitIds": [
+        "h03S"
+      ],
+      "baseUnitIds": [
+        "h03S"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 35 (Base healing 0.5 / +1 on attack) · Wool Hood",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06D",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 35 (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7DPerforms a headbutt attack filled with spirit.|r\n\n|cffffdead◎Activation Condition|r : 15% chance on attack\n|cffffdead◎range|r : 425\n|cffffdead◎Damage|r : |cffF15F5F85% of base attack damage + 115,000 physical damage|r\n\n|cffc68a12Meteor Wool Hood|r\n|cffffdead◎Activation Condition|r : Health 35 (Base healing 0.5 / +1 on attack)\n|cffffdead◎range|r : 450\n|cffffdead◎Damage|r : |cffA566FF170% of base attack damage + 230,000 fixed damage|r\n|cffffdead　▶|r 2x damage to bosses / 3x damage to story\n|cffffdead◎Additional Effect|r : |cffff8c001's Armor Break|r (Stacks up to 75)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_kalgara": {
+      "rawUnitIds": [
+        "h03F"
+      ],
+      "baseUnitIds": [
+        "h03F"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "40 Mana · Shandian's Spear(Q)",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A08G",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 40 Mana",
+              "originalText": "|cffFAED7DAs a Shandian Warlord, unleash merciless attacks on enemies.|r\n\n|cffffdead◎Activation Condition|r : 40 Mana\n|cffffdead◎Basic Effect|r : Max Attack Speed for 5.25 seconds"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_cracker": {
+      "rawUnitIds": [
+        "h03H"
+      ],
+      "baseUnitIds": [
+        "h03H"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_king": {
+      "rawUnitIds": [
+        "h0AH"
+      ],
+      "baseUnitIds": [
+        "h0AH"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_whitebeard": {
+      "rawUnitIds": [
+        "h03B"
+      ],
+      "baseUnitIds": [
+        "h03B"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 115 (Base healing 0.8 / +1 on attack) · Seizing the initiative",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06G",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 115 (Base healing 0.8 / +1 on attack)",
+              "originalText": "|cffFAED7D Strikes the enemy first with a fist imbued with the power of an earthquake.|r\n\n|cffffdead◎Activation Condition|r : Health 115 (Base healing 0.8 / +1 on attack)\n|cffffdead◎Quick: |r Bosses and Berserk Units |cffff69b41 times limited condition-ignoring activation|r\n|cffffdead　▶|r Does not overlap with other fast breaks.\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cffF15F5F1.25 million + 2% of total HP physical damage|r\n|cffffdead　▶|r Deals 50% additional fixed damage to a single enemy |cffA566FF skill damage|r\n|cffffdead◎Additional Effect|r : Stun for 3 seconds in the affected area (ignores 50% resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_hibari": {
+      "rawUnitIds": [
+        "h0CM"
+      ],
+      "baseUnitIds": [
+        "h0CM"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_chopper": {
+      "rawUnitIds": [
+        "h03K"
+      ],
+      "baseUnitIds": [
+        "h03K"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_brulee": {
+      "rawUnitIds": [
+        "h08S"
+      ],
+      "baseUnitIds": [
+        "h08S"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_blackbeard": {
+      "rawUnitIds": [
+        "h02U"
+      ],
+      "baseUnitIds": [
+        "h02U"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 40 (Base healing 0.5 / +1 on attack) · Dark-Dark Fruit :: Debrision",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0A0",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 40 (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7D Deals massive damage to enemies within range using the power of the Dark-Dark Fruit.|r\n\n|cffffdead◎Activation Condition|r : Health 40 (Base healing 0.5 / +1 on attack)\n|cffffdead◎Range|r : 700 range centered on the enemy\n|cffffdead◎Damage|r : |cff4374D91% of current HP Magic Damage + 500,000 Magic Damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_nami": {
+      "rawUnitIds": [
+        "h02P"
+      ],
+      "baseUnitIds": [
+        "h02P"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "8.8% chance on attack or 35 HP (+1 on attack) · Clima Tect :: Lv.2",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0AL",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 8.8% chance on attack or 35 Health (+1 on attack)",
+              "originalText": "|cffFAED7DUses a Clima Tact modified with a Sky Island dial.|r\n\n|cffffdead◎Activation Condition|r : 8.8% chance on attack or 35 Health (+1 on attack)\n|cffffdead◎range|r : 575\n|cffffdead◎Damage|r : |cff4374D9225000(x1~1.5) Magic Damage|r\n|cffffdead◎Additional Effect|r : Increases magic damage by 1% against enemies in the affected area|r\n|cffffdead◎Aftershock|r : Reduces movement speed by 42% for 3 seconds within the affected area."
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_neko": {
+      "rawUnitIds": [
+        "h09Z"
+      ],
+      "baseUnitIds": [
+        "h09Z"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 30 (Base Recovery 2) · Light",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0AH",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 30 (Base Recovery 2)",
+              "originalText": "|cffFAED7D You are angry.|r\n\n|cffffdead◎Activation Condition|r : Health 30 (Base Recovery 2)\n|cffffdead◎Target|r : Use Frenzy immediately upon attacking a boss\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cffA566FF2 million + 5% of total HP fixed damage|r\n|cffffdead　▶|r Target range |cff4374D9.5 million + 0.25% of total HP magic damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_law": {
+      "rawUnitIds": [
+        "h03C"
+      ],
+      "baseUnitIds": [
+        "h03C"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_blackmaria": {
+      "rawUnitIds": [
+        "h02X"
+      ],
+      "baseUnitIds": [
+        "h02X"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_nightmare": {
+      "rawUnitIds": [
+        "h02Y"
+      ],
+      "baseUnitIds": [
+        "h02Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_moria": {
+      "rawUnitIds": [
+        "h02N"
+      ],
+      "baseUnitIds": [
+        "h02N"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_sugar": {
+      "rawUnitIds": [
+        "h037"
+      ],
+      "baseUnitIds": [
+        "h037"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_z": {
+      "rawUnitIds": [
+        "h03I"
+      ],
+      "baseUnitIds": [
+        "h03I"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_jinbe": {
+      "rawUnitIds": [
+        "h03G"
+      ],
+      "baseUnitIds": [
+        "h03G"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "85 Mana · The Ultimate Fishman Karate",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A063",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 85 Mana",
+              "originalText": "|cffFAED7DAttacks the enemy with Fishman Karate that has reached the ultimate level.|r\n\n|cffffdead◎Activation Condition|r : 85 Mana\n|cffffdead◎range|r : 750\n|cffffdead◎Damage|r : |cff4374D9120 million Magic Damage|r\n|cffffdead　▶|r Deals |cff4374D9.6 million additional magic damage to a single enemy|r\n|cffffdead◎Additional Effect|r : Target area |cffff8c00Armor Break|r Enemies with 10 or more |cffff69b4Defense reduced by 25|r\n|cffffdead　▶|r This effect applies only once and does not stack with Jinbe Transcendence."
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "swimming",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3u",
+              "rawUnitIds": [
+                "h03G"
+              ],
+              "field": "umvt",
+              "value": "amph",
+              "originalValues": [
+                "amph"
+              ]
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_toki": {
+      "rawUnitIds": [
+        "h087"
+      ],
+      "baseUnitIds": [
+        "h087"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_reiju": {
+      "rawUnitIds": [
+        "h033"
+      ],
+      "baseUnitIds": [
+        "h033"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_lucci": {
+      "rawUnitIds": [
+        "h02R"
+      ],
+      "baseUnitIds": [
+        "h02R"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_koby": {
+      "rawUnitIds": [
+        "h03E"
+      ],
+      "baseUnitIds": [
+        "h03E"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 · Cry of Courage",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A05J",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115",
+              "originalText": "|cffFAED7D Increases the attack power of allies with a courageous shout that changed the fate of the world.|r\n\n|cffffdead◎Activation Condition|r : Mana 115\n|cffffdead◎Range|r : 900 range around itself\n|cffffdead◎Rage|r : Increases friendly unit attack power by 20% + increases health and mana regeneration by 1\n|cffffdead　▶|r Cannot stack with other Rage skills\n|cffffdead◎Duration|r : 5 seconds"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "legendary_sanji": {
+      "rawUnitIds": [
+        "h034"
+      ],
+      "baseUnitIds": [
+        "h034"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_shinobu": {
+      "rawUnitIds": [
+        "h042",
+        "h0A8"
+      ],
+      "baseUnitIds": [
+        "h042",
+        "h0A8"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_zoro": {
+      "rawUnitIds": [
+        "h02S"
+      ],
+      "baseUnitIds": [
+        "h02S"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "legendary_hancock": {
+      "rawUnitIds": [
+        "h032"
+      ],
+      "baseUnitIds": [
+        "h032"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_bonkurei": {
+      "rawUnitIds": [
+        "h03O"
+      ],
+      "baseUnitIds": [
+        "h03O"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_aokiji": {
+      "rawUnitIds": [
+        "h041"
+      ],
+      "baseUnitIds": [
+        "h041"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_ivankov": {
+      "rawUnitIds": [
+        "h076",
+        "h03Y"
+      ],
+      "baseUnitIds": [
+        "h076",
+        "h03Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_tiger": {
+      "rawUnitIds": [
+        "h047"
+      ],
+      "baseUnitIds": [
+        "h047"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "sky",
+            "detail": "Ignores terrain",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0DZ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "Move ignoring terrain",
+              "originalText": "|cffFAED7D He is a legendary figure who climbed the Red Line with his bare hands.|r\n\n|cffffdead◎Basic Effect|r : Move ignoring terrain\n|cffffdead◎Activation Condition|r : 22% chance on attack to stun a single enemy for 0.75 seconds (ignores resistance)",
+              "classification": "Flying classification confirmed by user; map verifies terrain-ignoring movement"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_rebecca": {
+      "rawUnitIds": [
+        "h03T"
+      ],
+      "baseUnitIds": [
+        "h03T"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_ryokugyu": {
+      "rawUnitIds": [
+        "h03N"
+      ],
+      "baseUnitIds": [
+        "h03N"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "85 Mana · Geumjeung Forest",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0GG",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 85 Mana",
+              "originalText": "|cffFAED7DCover the area with forest to deform the ground and bury enemies.|r\n\n|cffffdead◎Activation Condition|r : 85 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cffF15F5F1.5 million(x1~1.5) physical damage|r\n|cffffdead　▶|r Adds |cffA566FF225% additional fixed damage to story|r\n\n|cffc68a12Forestry Lv.1|r\n|cffffdead◎Activation Condition|r : When Gold Forest is activated\n|cffffdead◎range|r : 600\n|cffffdead◎Basic Effect|r: Reduces defense by 15 for 3.5 seconds within the targeted area."
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_mihawk": {
+      "rawUnitIds": [
+        "h043"
+      ],
+      "baseUnitIds": [
+        "h043"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_vergo": {
+      "rawUnitIds": [
+        "h03W"
+      ],
+      "baseUnitIds": [
+        "h03W"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Maximum Swing",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0GQ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DPours all his strength into delivering a powerful swing.|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9125 million Magic Damage|r\n|cffffdead◎Additional Effect|r : 2.5 second stun in the affected area and |cffff8c004's Armor Break|r\n|cffffdead　▶|r 800 range reduces armor by 18 for 5 seconds"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_sabo": {
+      "rawUnitIds": [
+        "h03M"
+      ],
+      "baseUnitIds": [
+        "h03M"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_killer": {
+      "rawUnitIds": [
+        "h045"
+      ],
+      "baseUnitIds": [
+        "h045"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_ryuma": {
+      "rawUnitIds": [
+        "h044"
+      ],
+      "baseUnitIds": [
+        "h044"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_stussy": {
+      "rawUnitIds": [
+        "h055"
+      ],
+      "baseUnitIds": [
+        "h055"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_shiryu": {
+      "rawUnitIds": [
+        "h03J"
+      ],
+      "baseUnitIds": [
+        "h03J"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Hemophilia",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0C4",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DIt is the Strike of the Rain Current, named because blood pours down like rain.|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9225 million Magic Damage|r\n|cffffdead　▶|r Exclude Story |cff4374D9 1.75% of Total Health Bonus Magic Damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_akainu": {
+      "rawUnitIds": [
+        "h03Z"
+      ],
+      "baseUnitIds": [
+        "h03Z"
+      ],
+      "additions": [],
+      "unverified": [
+        {
+          "category": "hp-skill",
+          "originalNote": "Command: akainu. Siege; HP skill; single-target stun; triggered movement slow 10; fixed damage amplification +5%; triggered magic resistance reduction 10; additional damage against berserk enemies.",
+          "reason": "Previous annotation has no explicit resource activation requirement in readable map object data; war3map.j is unavailable. No filter category or value is guessed."
+        }
+      ]
+    },
+    "hidden_carrot": {
+      "rawUnitIds": [
+        "h07L"
+      ],
+      "baseUnitIds": [
+        "h07L"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_kiku": {
+      "rawUnitIds": [
+        "h046"
+      ],
+      "baseUnitIds": [
+        "h046"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "35 Mana · Remaining Snow",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0FY",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 35 Mana",
+              "originalText": "|cffFAED7D Fires multiple circular slashes to cut down the enemy.|r\n\n|cffffdead◎Activation Condition|r : 35 Mana\n|cffffdead◎Damage|r : |cff4374D945 million Magic Damage|r\n|cffffdead◎Additional Effect|r : Damage proportional to total HP of a single enemy of that type |cff4374D9Magic Damage|r\n|cffffdead　▶|r Normal, Enraged : |cff4374D935% of total health magic damage|r\n|cffffdead　▶|r Boss : |cff4374D97% of total health magic damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_redforce": {
+      "rawUnitIds": [
+        "h03U"
+      ],
+      "baseUnitIds": [
+        "h03U"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_mobydick": {
+      "rawUnitIds": [
+        "h03Q"
+      ],
+      "baseUnitIds": [
+        "h03Q"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_decken": {
+      "rawUnitIds": [
+        "h03R"
+      ],
+      "baseUnitIds": [
+        "h03R"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 95 · Target Target Fruit :: Noah",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0DV",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 95",
+              "originalText": "|cffFAED7DUsing the power of the Target Target Fruit, throw Noir to target and attack enemies wherever they are.|r\n\n|cffffdead◎Activation Condition|r : Mana 95\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D93 million + 4% of missing health magic damage|r\n|cffffdead◎Additional Effect|r : 1.5 second stun in the affected area"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "swimming",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3u",
+              "rawUnitIds": [
+                "h03R"
+              ],
+              "field": "umvt",
+              "value": "amph",
+              "originalValues": [
+                "amph"
+              ]
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_baratie": {
+      "rawUnitIds": [
+        "h03P"
+      ],
+      "baseUnitIds": [
+        "h03P"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "hidden_maxim": {
+      "rawUnitIds": [
+        "h03X"
+      ],
+      "baseUnitIds": [
+        "h03X"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Brain Spirit",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0BG",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7DGod Enel's power combines with the massive engine of Ark Maxim to generate a thundercloud that falls to the ground.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D92150,000 Magic Damage|r\n|cffffdead◎Additional Effect|r : 1.2 second stun in the affected area and |cff4374D9reduce Magic Defense by 10%|r + |cff66cdaaAmplify Explosive Damage by 10%|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "hidden_sunny": {
+      "rawUnitIds": [
+        "h03L"
+      ],
+      "baseUnitIds": [
+        "h03L"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana while Vegapunk's Knowledge is active · Roar!",
+            "source": "warcraft-map",
+            "condition": "Vegapunk's Knowledge"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0HD",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana while Vegapunk's Knowledge is active",
+              "originalText": "|cffFAED7DFill the Sunny with the maximum amount of cola and fire the Roar Cannon.|r\n\n|cffffdead◎Activation Condition|r : 10% on attack when not knowing Vegapunk\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D920 million Magic Damage|r\n|cffffdead◎Additional Effect|r : 1.4 second stun in the affected area\n\n|cffc68a12Roar Cannon MAX|r\n|cffFAED7D Roar Cannon that gets stronger when with Franky|r\n\n|cffffdead◎Activation Condition|r : 100 Mana while Vegapunk's Knowledge is active\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9185 million Magic Damage|r\n|cffffdead◎Additional Effect|r: Stuns a single enemy for 3 seconds and stuns the area for 3 seconds (ignores 70% resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "distortion_blackmaria": {
+      "rawUnitIds": [
+        "h04U"
+      ],
+      "baseUnitIds": [
+        "h04U"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "distortion_koala": {
+      "rawUnitIds": [
+        "h03V"
+      ],
+      "baseUnitIds": [
+        "h03V"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "135 Mana · Fishman Karate :: Rogue Type. Koala",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0DL",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 135 Mana",
+              "originalText": "|cffFAED7DAlthough it is less polished than Jinbe's, he still uses the powerful Fishman Karate Secret Technique, Muraikan.|r\n\n|cffffdead◎Activation Condition|r : 135 Mana\n|cffffdead◎range|r : 625\n|cffffdead◎Damage|r : |cffA566FF600,000 Fixed Damage|rx 6 times + |cff4374D91,000,000 Magic Damage|r\n|cffffdead◎Additional Effect|r : 1.25 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "distortion_queen": {
+      "rawUnitIds": [
+        "h0CI"
+      ],
+      "baseUnitIds": [
+        "h0CI"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 65 · Brachio Bomber",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0H8",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 65",
+              "originalText": "|cffFAED7D Diving Headbutt, delivers a powerful headbutt in mid-air as a massive Brachiosaurus.|r\n\n|cffffdead◎Activation Condition|r : Mana 65\n|cffffdead◎Quick: |r Bosses and Berserk Units |cffff69b41 times limited condition-ignoring activation|r\n|cffffdead　▶|r Does not overlap with other fast breaks.\n|cffffdead◎Range|r : 600 range centered on the enemy\n|cffffdead◎Damage|r : |cffF15F5F1.65 million(x1~1.2) Physical Damage|r + |cff4374D9.65 million Magical Damage|r\n|cffffdead◎Additional Effect|r : |cffff8c003's Armor Break|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "distortion_perona": {
+      "rawUnitIds": [
+        "h000",
+        "h048",
+        "h08F"
+      ],
+      "baseUnitIds": [
+        "h048"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Kamikaze Rap",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0BI",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DCreates a giant phantom and self-destructs.|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cff66cdaa225k Explosive Damage|r\n|cffffdead◎Additional Effect|r : 1.5 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "distortion_burgess": {
+      "rawUnitIds": [
+        "h09V"
+      ],
+      "baseUnitIds": [
+        "h09V"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "swimming",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3u",
+              "rawUnitIds": [
+                "h09V"
+              ],
+              "field": "umvt",
+              "value": "amph",
+              "originalValues": [
+                "amph"
+              ]
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "distortion_ace": {
+      "rawUnitIds": [
+        "h05V"
+      ],
+      "baseUnitIds": [
+        "h05V"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "alternate_doflamingo": {
+      "rawUnitIds": [
+        "h05S"
+      ],
+      "baseUnitIds": [
+        "h05S"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "alternate_baby5": {
+      "rawUnitIds": [
+        "h07N"
+      ],
+      "baseUnitIds": [
+        "h07N"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "alternate_vivi": {
+      "rawUnitIds": [
+        "h05W"
+      ],
+      "baseUnitIds": [
+        "h05W"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "alternate_carrot": {
+      "rawUnitIds": [
+        "h07J"
+      ],
+      "baseUnitIds": [
+        "h07J"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "alternate_kaku": {
+      "rawUnitIds": [
+        "h0CK"
+      ],
+      "baseUnitIds": [
+        "h0CK"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "seraphim_ssnake": {
+      "rawUnitIds": [
+        "h09Y"
+      ],
+      "baseUnitIds": [
+        "h09Y"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "seraphim_shawk": {
+      "rawUnitIds": [
+        "h0A3"
+      ],
+      "baseUnitIds": [
+        "h0A3"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "seraphim_sshark": {
+      "rawUnitIds": [
+        "h0A0"
+      ],
+      "baseUnitIds": [
+        "h0A0"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 60 (Base healing 1 / +1 on attack) · Ocean Current One-Shot Throw :: Shark",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A147",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 60 (Base healing 1 / +1 on attack)",
+              "originalText": "|cffFAED7DReplaces the ground with ocean currents to create massive waves and deliver a powerful shock to enemies.|r\n\n|cffffdead◎Activation Condition|r : Health 60 (Base healing 1 / +1 on attack)\n|cffffdead◎Cast Time|r : 0.8 seconds\n|cffffdead◎range|r : 625\n|cffffdead◎Damage|r : |cffF15F5F210 million physical damage|r\n|cffffdead　▶|r Deals |cffA566FF250% fixed damage to a single enemy|r\n|cffffdead◎Additional Effect|r : |cffff8c003's Armor Break|r (Stacks up to 75)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "seraphim_sbear": {
+      "rawUnitIds": [
+        "h0A1"
+      ],
+      "baseUnitIds": [
+        "h0A1"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "transcendence_doflamingo": {
+      "rawUnitIds": [
+        "H09E"
+      ],
+      "baseUnitIds": [
+        "H09E"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Awaken for 4.5 seconds when mana reaches 150 · Awakening",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0BM",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition: Awaken for 4.5 seconds when mana reaches 150",
+              "originalText": "|cffFAED7D Awaken the fruit to use even more powerful abilities.|r\n\n|cffffdead◎Activation Condition|r: Awaken for 4.5 seconds when mana reaches 150\n|cffffdead　▶|r Change attack type to Barrage and reduce base attack speed by 0.03 seconds\n|cffffdead　▶|r Change skill from String-String Fruit - Rainbow Thread → Deadly Bullet\n|cffffdead　▶|r String String Fruit - Spiderweb → Changed to Haewon White Snake\n|cffffdead　▶|r Increase Multi-Slice skill activation chance by 20%\n|cffffdead　▶|r Reduces enemy armor by 60 in an 850 radius for 7.5 seconds\n|cffffdead◎Penalty|r : Removes mana recovery on basic attacks"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_robin": {
+      "rawUnitIds": [
+        "H098",
+        "H08E"
+      ],
+      "baseUnitIds": [
+        "H098",
+        "H08E"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 40 (Base healing 0.5 / +1 on attack) · Mill Fleur Gigantesco Mano",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0B3",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 40 (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7DRobin attacks the opponent with his giant foot.|r\n|cffa0a0a0- \"I think... it's going to come out a little... the 'devil' part of me!!\"|r\n\n|cffffdead◎Activation Condition|r : Health 40 (Base healing 0.5 / +1 on attack)\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cffF15F5F2.25 million + 1% of total HP physical damage|r\n|cffffdead◎Additional Effect|r : 1.15 second stun in the affected area (ignores resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_ryokugyu": {
+      "rawUnitIds": [
+        "H0BO",
+        "H0BL"
+      ],
+      "baseUnitIds": [
+        "H0BO",
+        "H0BL"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 130 (Base recovery 0.25 / +1 on attack) · Geumjeung Forest",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A15F",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 130 (Base recovery 0.25 / +1 on attack)",
+              "originalText": "|cffFAED7DA giant forest takes on a human form and rapidly transforms the surrounding nature into a forest.|r\n\n|cffffdead◎Activation Condition|r : Mana 130 (Base recovery 0.25 / +1 on attack)\n|cffffdead◎Basic Effect|r : Transform into a forest human and cast Forest Transformation|r\n|cffffdead◎Additional Effect|r : Base Attack Damage, Attack Speed Change|r\n|cffffdead　▶|r Basic attack 400 range splash\n|cffffdead　▶|r Duration 7 seconds\n|cffffdead◎Additional Effect 2|r : When triggered |cffff69b4 Gain 1 stack of Nutrient|r\n\n|cffc68a12Forestry|r\n|cffffdead◎Range|r : Self-centered 600 range + straight line 405 range\n|cffffdead◎Damage|r : Every 1 second |cffF15F5F1.45 million (x1~1.5) physical damage per second|r\n|cffffdead　▶|r Duration 3 seconds\n|cffffdead　▶|r Damage increased by 14,500 per 1 Intelligence / Damage increased by 10,000 per Nutrient stack"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_luffy": {
+      "rawUnitIds": [
+        "H099",
+        "H0C9"
+      ],
+      "baseUnitIds": [
+        "H099",
+        "H0C9"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "160 Mana · Redhawk",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A048",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 160 Mana",
+              "originalText": "|cffFAED7DAfter wrapping himself in Armament Haki, he surrounds himself with flames generated by high-speed friction to deliver a powerful punch.|r\n|cffa0a0a0- \"I won't lose anyone again!\"|r\n\n|cffffdead◎Activation Condition|r : 160 Mana\n|cffffdead◎Cast Time|r : 0.625 seconds\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cffF15F5F2.25 million (x1~1.5) physical damage|r + |cff4374D94.25 million (x1~1.5) + 1.5% of total HP magical damage|r\n|cffffdead　▶|r Deals |cff4374D9 damage plus 200% of bonus magic damage|r to a single target\n|cffffdead　▶|r Increases Redhawk base damage by 30,000 per 1 Strength|r\n|cffffdead◎Additional Effect|r : 2.5 second stun in the affected area\n|cffffdead◎Additional Effect 2|r : |cffff8c007's Armor Break|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_hawkins": {
+      "rawUnitIds": [
+        "H094"
+      ],
+      "baseUnitIds": [
+        "H094"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Joker",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0PI",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DPlay all cards to unleash a powerful attack on the surroundings.|r\n|cffa0a0a0- \"Then, shall we start the game?\"|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎Range|r : Self-centered 800 range\n|cffffdead◎Damage|r : |cff4374D92 million(x1~1.5) Magic Damage|r + |cffF15F5F1.35 million(x1~1.5) Physical Damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 40 (Base healing 0.33 / +1 on attack) · The Curse of Strowman",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0PJ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 40 (Base healing 0.33 / +1 on attack)",
+              "originalText": "|cffFAED7DNo one can escape the Curse of Strowman.|r\n\n|cffffdead◎Activation Condition|r : Health 40 (Base healing 0.33 / +1 on attack)\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : Deals |cffF15F5F150,000 physical damage on every hit|r\n|cffffdead◎Hit Count|r : Base 4 hits + |cffff69b450%|r of debuff count added"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_sabo": {
+      "rawUnitIds": [
+        "H092"
+      ],
+      "baseUnitIds": [
+        "H092"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "125 Mana · Dragon's Breath",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0M4",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 125 Mana",
+              "originalText": "|cffFAED7DA technology that delivers a shock to the core of all things to inflict massive damage|r\n\n|cffffdead◎Activation Condition|r : 125 Mana\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cffF15F5F3.75 million(x1~2) + 1% of total HP Physical Damage|r\n|cffffdead◎Additional Effect|r : 1.25 second stun in the affected area (ignores resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_usopp": {
+      "rawUnitIds": [
+        "H09C",
+        "H09B"
+      ],
+      "baseUnitIds": [
+        "H09B"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "140 Mana · Firebird Star",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0OW",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 140 Mana",
+              "originalText": "|cffFAED7D Usopp fires a fireball shaped like a phoenix, dealing massive damage to enemies. |r\n\n|cffffdead◎Activation Condition|r : 140 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D92.25 million Magic Damage|r + |cffF15F5F1 million + 2% of Total Health Physical Damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_zoro": {
+      "rawUnitIds": [
+        "H0BT",
+        "H09F"
+      ],
+      "baseUnitIds": [
+        "H0BT",
+        "H09F"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "145 Mana · 1080 Bonnoe Peak",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0QB",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 145 Mana",
+              "originalText": "|cffFAED7DReleases a powerful spiral slash.|r\n\n|cffffdead◎Activation Condition|r : 145 Mana\n|cffffdead◎range|r : 525\n|cffffdead◎Damage|r : |cff4374D92 million(x1.0 ~ 2.5) Magic Damage|r\n|cffffdead　▶|r Deals |cffF15F5F120,000 physical damage every 0.1 seconds for 1.15 seconds|r\n|cffffdead◎Additional Effect|r : 3-second stun in the affected area (ignores resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_jinbe": {
+      "rawUnitIds": [
+        "H09A"
+      ],
+      "baseUnitIds": [
+        "H09A"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Fishman Karate Secret Techniques :: Rogue Hall",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0P7",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DUses the Fishman Karate secret technique, the Rogue's Gate.|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cffF15F5F2.5 million physical damage |r\n|cffffdead◎Additional Effect|r : 2.4 second stun in the affected area and |cffff8c003's Armor Break|r\n|cffffdead◎Additional Effect 2|r : Target area |cffff8c00Armor Break|r Enemies with 10 or more |cffff69b4Defense reduced by 25|r\n|cffffdead　▶|r This effect applies only once and does not stack with Jinbe Legend."
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "swimming",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3u",
+              "rawUnitIds": [
+                "H09A"
+              ],
+              "field": "umvt",
+              "value": "amph",
+              "originalValues": [
+                "amph"
+              ]
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_chopper": {
+      "rawUnitIds": [
+        "H0B6",
+        "H093",
+        "H091"
+      ],
+      "baseUnitIds": [
+        "H091"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Rumble Ball Rampage",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0ON",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7D Rumble Ball enters berserk state.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎Basic Effect|r : Transforms into Chopper Monster Point state\n|cffffdead　▶|r Attack speed reduction and attack power increase\n|cffffdead　▶|r Basic attack 400 range splash|r\n|cffffdead　▶|r Duration 4 seconds|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_fujitora": {
+      "rawUnitIds": [
+        "H08X"
+      ],
+      "baseUnitIds": [
+        "H08X"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "140 Mana · High-density gravity :: Sinkhole",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0CM",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 140 Mana",
+              "originalText": "|cffFAED7DCreates a sinkhole through gravity of tremendous density.|r\n|cffa0a0a0\"Isn't the number of people to protect what needs to be considered first, rather than the number of enemies?\"|r\n\n|cffffdead◎Activation Condition|r : 140 Mana\n|cffffdead◎range|r : 650\n|cffffdead◎Damage|r : |cff4374D9625 million Magic Damage|r\n|cffffdead◎Aftershock|r : Reduces movement speed by 99% for 4 seconds within the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_yamato": {
+      "rawUnitIds": [
+        "H0BE",
+        "H0BD",
+        "H0BZ",
+        "H0C0"
+      ],
+      "baseUnitIds": [
+        "H0BD"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 95 (Base healing 0.33 / +1 on attack) · Factorization",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A12B",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 95 (Base healing 0.33 / +1 on attack)",
+              "originalText": "|cffFAED7DTransforms using the fruit's ability.|r\n\n|cffffdead◎Activation Condition|r : Health 95 (Base healing 0.33 / +1 on attack)\n|cffffdead　▶|r Increase Attack Power by 75000|r\n|cffffdead　▶|r Reduces basic attack cooldown by 0.07 seconds|r\n|cffffdead　▶|r Increased the activation chance of Imperial Wrap to 25%|r\n|cffffdead　▶|r Activate Magic Seal on every hit|r\n|cffffdead　▶|r Duration 3.5 seconds|r\n\n|cffc68a12Musibinga|r\n|cffffdead◎Activation Condition|r : Cast Mushibinga on the first attack of Incarnation\n|cffffdead◎Range|r : Enemy center 800\n|cffffdead◎First Hit Damage|r : |cff4374D9215 million(x0.8~1.5) Magic Damage|r\n|cffffdead◎Follow-up Damage|r : |cffF15F5F700,000(x0.8~1.5) x 9 Physical Damage|r\n|cffffdead◎Additional Effect|r : 2.25 second stun in the affected area (ignores resistance)\n|cffffdead◎Cast Time|r : 0.9 seconds"
+            }
+          ]
+        }
+      ],
+      "unverified": [
+        {
+          "rawAbilityId": "A0OC",
+          "reason": "Non-base form; acquisition route is not verified.",
+          "requirements": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0OC",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 95 (Base healing 0.33 / +1 on attack)",
+              "originalText": "|cffFAED7DTransforms using the fruit's ability.|r\n\n|cffffdead◎Activation Condition|r : Health 95 (Base healing 0.33 / +1 on attack)\n|cffffdead　▶|r Increase Attack Power by 75000|r\n|cffffdead　▶|r Reduces basic attack cooldown by 0.07 seconds|r\n|cffffdead　▶|r Increased the activation chance of Imperial Wrap to 25%|r\n|cffffdead　▶|r Activate Magic Seal on every hit|r\n|cffffdead　▶|r Duration 3.5 seconds|r\n\n|cffc68a12Musibinga|r\n|cffffdead◎Activation Condition|r : Cast Mushibinga on the first attack of Incarnation\n|cffffdead◎Range|r : Enemy center 800\n|cffffdead◎First Hit Damage|r : |cff4374D9215 million(x0.8~1.5) Magic Damage|r\n|cffffdead◎Follow-up Damage|r : |cffF15F5F700,000(x0.8~1.5) x 9 Physical Damage|r\n|cffffdead◎Additional Effect|r : 2.25 second stun in the affected area (ignores resistance)\n|cffffdead◎Cast Time|r : 0.9 seconds"
+            }
+          ]
+        }
+      ]
+    },
+    "transcendence_bonney": {
+      "rawUnitIds": [
+        "H0BX",
+        "H0BY"
+      ],
+      "baseUnitIds": [
+        "H0BX",
+        "H0BY"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · A future like Nika",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0V8",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7DRealizes a future that would normally be impossible into reality.|r\n|cffa0a0a0\"Actually, I wanted to live with the three of us. If I were a loner, I even thought I'd just want to die!\"|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎Basic Effect|r: Transforms into Nika, basic attack speed increases and the chance of all skills activating increases\n|cffffdead　▶|r Near Death Experience: Changed to reduce mana by 4 when activated\n|cffffdead　▶|r Oil Shock: Changed to reduce mana by 2 upon activation\n|cffffdead　▶|r Returns to Bonnie when mana reaches 0.\n\n|cffc68a12Liberation Nika Punch|r\n|cffffdead◎Activation Condition|r : Immediately upon transforming into Nika\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D93 million magic damage|r\n|cffffdead　▶|r Deals |cffF15F5F200% additional physical damage to enemies with 40 stacks of 'Age Manipulation'|r\n|cffffdead◎Additional Effect|r : 3-second stun in the affected area (ignores resistance)"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "Bonnie's HP 10 or less · Big Eater",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0VA",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Bonnie's HP 10 or less",
+              "originalText": "|cffFAED7D Bonnie recovers stamina lost through meals.|r\n\n|cffffdead◎Activation Condition|r : Bonnie's HP 10 or less\n|cffffdead◎Basic Effect|r : Bonnie quickly recovers health and is incapacitated until 150 health is recovered.\n|cffffdead◎Additional Effect|r : Mana Recovery 45"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_tashigi": {
+      "rawUnitIds": [
+        "H0A5",
+        "H05N"
+      ],
+      "baseUnitIds": [
+        "H0A5",
+        "H05N"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "135 Mana · Nanhyangjeop",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0JG",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 135 Mana",
+              "originalText": "|cffFAED7DSwordsmanship that cuts down enemies so fast they are mistaken for clones|r\n|cffa0a0a0- \"Discern the enemy with your own eyes!\"|r\n\n|cffffdead◎Activation Condition|r : 135 Mana\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : Per hit |cff4374D936 million + Strength x 4000 Magic Damage|r\n|cffffdead◎Attack Count|r : 14 times\n|cffffdead◎Additional Effect|r : When skill is activated, |cff4374D910% of total HP magic damage|r to lane monsters"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_vegapunk_ssnake": {
+      "rawUnitIds": [
+        "H0AA"
+      ],
+      "baseUnitIds": [
+        "H0AA"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "200 Mana · Mother Flame :: Vegapunk",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06K",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 200 Mana",
+              "originalText": "|cffFAED7DUnleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.|r\n\n|cffffdead◎Activation Condition|r : 200 Mana\n|cffffdead◎range|r : 575\n|cffffdead◎Damage|r : |cffF15F5F4.25 million Physical Damage|r + |cffA566FF4.25 million Fixed Damage|r\n|cffffdead◎Basic Effect|r : Stuns the area for 2.75 seconds\n|cffffdead◎Replay|r : Restores 90 mana to your 'Satellites' for 3 seconds\n|cffffdead　▶|r Cannot stack with other regeneration skills"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_vegapunk_shawk": {
+      "rawUnitIds": [
+        "H0AA"
+      ],
+      "baseUnitIds": [
+        "H0AA"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "200 Mana · Mother Flame :: Vegapunk",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06K",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 200 Mana",
+              "originalText": "|cffFAED7DUnleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.|r\n\n|cffffdead◎Activation Condition|r : 200 Mana\n|cffffdead◎range|r : 575\n|cffffdead◎Damage|r : |cffF15F5F4.25 million Physical Damage|r + |cffA566FF4.25 million Fixed Damage|r\n|cffffdead◎Basic Effect|r : Stuns the area for 2.75 seconds\n|cffffdead◎Replay|r : Restores 90 mana to your 'Satellites' for 3 seconds\n|cffffdead　▶|r Cannot stack with other regeneration skills"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_vegapunk_sshark": {
+      "rawUnitIds": [
+        "H0AA"
+      ],
+      "baseUnitIds": [
+        "H0AA"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "200 Mana · Mother Flame :: Vegapunk",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06K",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 200 Mana",
+              "originalText": "|cffFAED7DUnleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.|r\n\n|cffffdead◎Activation Condition|r : 200 Mana\n|cffffdead◎range|r : 575\n|cffffdead◎Damage|r : |cffF15F5F4.25 million Physical Damage|r + |cffA566FF4.25 million Fixed Damage|r\n|cffffdead◎Basic Effect|r : Stuns the area for 2.75 seconds\n|cffffdead◎Replay|r : Restores 90 mana to your 'Satellites' for 3 seconds\n|cffffdead　▶|r Cannot stack with other regeneration skills"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_vegapunk_sbear": {
+      "rawUnitIds": [
+        "H0AA"
+      ],
+      "baseUnitIds": [
+        "H0AA"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "200 Mana · Mother Flame :: Vegapunk",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A06K",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 200 Mana",
+              "originalText": "|cffFAED7DUnleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.|r\n\n|cffffdead◎Activation Condition|r : 200 Mana\n|cffffdead◎range|r : 575\n|cffffdead◎Damage|r : |cffF15F5F4.25 million Physical Damage|r + |cffA566FF4.25 million Fixed Damage|r\n|cffffdead◎Basic Effect|r : Stuns the area for 2.75 seconds\n|cffffdead◎Replay|r : Restores 90 mana to your 'Satellites' for 3 seconds\n|cffffdead　▶|r Cannot stack with other regeneration skills"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_blackbeard": {
+      "rawUnitIds": [
+        "H090"
+      ],
+      "baseUnitIds": [
+        "H090"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 85 (Base healing 0.5 / +1 on attack) · Dark-Dark Fruit :: Black Gu",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0GX",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 85 (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7D Strikes the enemy with darkness strong enough to subdue the Sun of Ace, the Great Flame Emperor.|r\n\n|cffffdead◎Activation Condition|r : Health 85 (Base healing 0.5 / +1 on attack)\n|cffffdead◎Range|r : 925 range around itself\n|cffffdead◎Damage|r : |cff4374D9175 million + 2.5% of current HP Magic Damage|r\n|cffffdead　▶|r Damage increases by 60,000 per 1 Strength"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_nami": {
+      "rawUnitIds": [
+        "H08V",
+        "H08B"
+      ],
+      "baseUnitIds": [
+        "H08V",
+        "H08B"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "transcendence_law": {
+      "rawUnitIds": [
+        "H096",
+        "H0BN"
+      ],
+      "baseUnitIds": [
+        "H096",
+        "H0BN"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "135 Mana · Surgery Surgery Fruit :: Room",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0IZ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 135 Mana",
+              "originalText": "|cffFAED7DThrows a sphere of room to envelop the opponent.|r\n|cffa0a0a0- \"The conditions are the same. The winner gets to eat it all!\"|r\n\n|cffffdead◎Activation Condition|r : 135 Mana\n|cffffdead◎range|r : Self-centered 825 range\n|cffffdead◎Basic Effect|r : Increases your Attack by 30,000 + Increases the Attack of all allied units in the room by 20% for 9 seconds\n|cffffdead　▶|r Room duration 5 seconds\n|cffffdead　▶|r Health continuously recovers when Room is activated\n|cffffdead◎Aftershock|r : Reduces movement speed by 45% for 5 seconds within the affected area\n|cffffdead　▶|r does not overlap with the aftershocks of Gamma Knife.\n\n|cffc68a12cut|r\n|cffffdead◎Activation Condition|r : HP 250 (Recovers 50 when Room is activated)\n|cffffdead◎Range|r : 600 range centered on the enemy\n|cffffdead◎Damage|r : |cff4374D9250 million Magic Damage|r\n|cffffdead　▶|r Activates only once during the room duration."
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 250 (Recovers 50 when Room is activated) · Surgery Surgery Fruit :: Room · Activates only once during the room duration.",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0IZ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : HP 250 (Recovers 50 when Room is activated)",
+              "originalText": "|cffFAED7DThrows a sphere of room to envelop the opponent.|r\n|cffa0a0a0- \"The conditions are the same. The winner gets to eat it all!\"|r\n\n|cffffdead◎Activation Condition|r : 135 Mana\n|cffffdead◎range|r : Self-centered 825 range\n|cffffdead◎Basic Effect|r : Increases your Attack by 30,000 + Increases the Attack of all allied units in the room by 20% for 9 seconds\n|cffffdead　▶|r Room duration 5 seconds\n|cffffdead　▶|r Health continuously recovers when Room is activated\n|cffffdead◎Aftershock|r : Reduces movement speed by 45% for 5 seconds within the affected area\n|cffffdead　▶|r does not overlap with the aftershocks of Gamma Knife.\n\n|cffc68a12cut|r\n|cffffdead◎Activation Condition|r : HP 250 (Recovers 50 when Room is activated)\n|cffffdead◎Range|r : 600 range centered on the enemy\n|cffffdead◎Damage|r : |cff4374D9250 million Magic Damage|r\n|cffffdead　▶|r Activates only once during the room duration."
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_lucci": {
+      "rawUnitIds": [
+        "H0CL",
+        "H08W"
+      ],
+      "baseUnitIds": [
+        "H0CL",
+        "H08W"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "transcendence_brook": {
+      "rawUnitIds": [
+        "H09I"
+      ],
+      "baseUnitIds": [
+        "H09I"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 · Party Music :: Kint Pias Fantasia",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0LT",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115",
+              "originalText": "|cffFAED7DDelivers a powerful blow to enemies who let their guard down, lulled into a corner by party music.|r\n|cffa0a0a0- \"Yes, I have already cut it.\"|r\n\n|cffffdead◎Activation Condition|r : Mana 115\n|cffffdead◎range|r : 525\n|cffffdead◎Damage : |cff4374D93 million magic damage |r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area\n|cffffdead　▶|r Enemies hit by Kint Pias Fantasia |cff87cefa Magic damage amplified by 10%|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_sanji": {
+      "rawUnitIds": [
+        "H09H",
+        "H09G"
+      ],
+      "baseUnitIds": [
+        "H09H",
+        "H09G"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 · Meteor Soba Kick",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A04V",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115",
+              "originalText": "|cffFAED7D Sanji delivers a meteor-like kick to the enemy while in Diable Jambe.|r\n|cffa0a0a0- \"My passion!!! surpasses the temperature of the flame!\"|r\n\n|cffffdead◎Activation Condition|r : Mana 115\n|cffffdead◎Damage|r : |cff4374D9333 million magic damage in a 600 range|r\n|cffffdead　▶|r Deals |cff4374D92 million additional magic damage to a single enemy|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_shanks": {
+      "rawUnitIds": [
+        "H08Z"
+      ],
+      "baseUnitIds": [
+        "H08Z"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Activates when 35 mana is filled (Base healing 1.35) · Automatically activates every 14.25 seconds · Manifestation of Spirit",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XO",
+              "field": "aub1",
+              "level": 1,
+              "quote": "▶ Activates when 35 mana is filled (Base healing 1.35)",
+              "originalText": "|cffFAED7D Manifests immense power.|r\n\n|cffffdead◎Activation Condition|r : Automatically activates every 14.25 seconds\n|cffffdead　▶|r Activates when 35 mana is filled (Base healing 1.35)\n|cffffdead◎range|r : 1100\n|cffffdead◎Damage|r : |cff4374D9150 million Magic Damage|r\n|cffffdead◎Additional Effect|r : Stun for 3 seconds in the affected area (ignores resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_snakeman": {
+      "rawUnitIds": [
+        "H0B2"
+      ],
+      "baseUnitIds": [
+        "H0B2"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "85 Mana · Gum Gum :: King Cobra",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XI",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 85 Mana",
+              "originalText": "|cffFAED7DSubdue enemies with a fist shaped like a king cobra.|r\n\n|cffffdead◎Activation Condition|r : 85 Mana\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cff4374D93.5 million(x1~1.5) Magic Damage |r\n|cffffdead　▶|r Single enemy |cff4374D950% bonus magic damage|r and 2-second stun"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_shirahoshi": {
+      "rawUnitIds": [
+        "H08U",
+        "H0C1"
+      ],
+      "baseUnitIds": [
+        "H08U",
+        "H0C1"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "120 Mana · Sea King Dive",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0KZ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 120 Mana",
+              "originalText": "|cffFAED7D The Sea King dives with its massive body and inflicts tremendous damage.|r\n\n|cffffdead◎Activation Condition|r : 120 Mana\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D9335 million + 6% of missing health(x1~1.5) magic damage|r\n|cffffdead　▶|r Deals more powerful damage the lower the enemy's current health.\n|cffffdead◎Additional Effect|r : 3-second stun in the affected area (ignores resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_aokiji": {
+      "rawUnitIds": [
+        "H0B1",
+        "H097"
+      ],
+      "baseUnitIds": [
+        "H0B1",
+        "H097"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Consumes 40 mana when mana is 50 or more · Ice Age :: Lv.1",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0ZG",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition 2 : Consumes 40 mana when mana is 50 or more",
+              "originalText": "|cffFAED7D Freezes the surroundings, turning them into a vast land of ice.|r\n\n|cffffdead◎Activation Condition|r : 12.5% chance on attack\n|cffffdead◎Activation Condition 2|r : Consumes 40 mana when mana is 50 or more\n|cffffdead◎Cast Time|r : 0.5 seconds\n|cffffdead◎Range|r : 700 range centered on the enemy\n|cffffdead◎Damage|r : |cff4374D9225 million Magic Damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_akainu": {
+      "rawUnitIds": [
+        "H095"
+      ],
+      "baseUnitIds": [
+        "H095"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "135 Mana · Lava Fruit :: Meteor Volcano",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0HG",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 135 Mana",
+              "originalText": "|cffFAED7DStorms fist-shaped magma from the air to deal damage to enemies.|r\n\n|cffffdead◎Activation Condition|r : 135 Mana\n|cffffdead◎Range|r : Drop point range 465\n|cffffdead◎Damage|r : |cff4374D9999999 Magic Damage|r\n|cffffdead◎Number of meteors|r : 7|r"
+            }
+          ]
+        }
+      ],
+      "unverified": [
+        {
+          "category": "hp-skill",
+          "originalNote": "Command: akainu tr (Marine Fleet Admiral Red Dog). Siege; triggered movement slow 12; HP and mana skills; single-target stun; triggered magic resistance reduction 10; additional damage against berserk enemies. One skill does not stack with Eternal Ace. Upgrade 4 adjusts meteor density and adds strength-based damage.",
+          "reason": "Previous annotation has no explicit resource activation requirement in readable map object data; war3map.j is unavailable. No filter category or value is guessed."
+        }
+      ]
+    },
+    "transcendence_kid": {
+      "rawUnitIds": [
+        "H0B4"
+      ],
+      "baseUnitIds": [
+        "H0B4"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 40 (Base healing 0.2 / +1 on attack) · Punk Gibson",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A10F",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 40 (Base healing 0.2 / +1 on attack)",
+              "originalText": "|cffFAED7DCreates a massive steel hand to grab and crush enemies.|r\n\n|cffffdead◎Activation Condition|r : Health 40 (Base healing 0.2 / +1 on attack)\n|cffffdead◎Cast Time|r : 0.5 seconds\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cff4374D9444000 Magic Damage|r\n|cffffdead　▶|r Deals |cff4374D950% additional magic damage|r to enemies within a 250 radius of the center\n|cffffdead　▶|r Damage increases by 50,000 per 1 Strength\n|cffffdead◎Additional Effect|r : 2.2 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_kizaru": {
+      "rawUnitIds": [
+        "H0B5",
+        "H08J"
+      ],
+      "baseUnitIds": [
+        "H0B5",
+        "H08J"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Consumes 50 mana if mana is 75 or higher · Eight-foot-tall curved jade",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0ME",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition 2 : Consumes 50 mana if mana is 75 or higher",
+              "originalText": "|cffFAED7DFires a massive number of light spheres to obliterate the area.|r\n\n|cffffdead◎Activation Condition|r : 6% chance on attack\n|cffffdead◎Activation Condition 2|r : Consumes 50 mana if mana is 75 or higher\n|cffffdead◎Range|r : 575 range centered on the enemy\n|cffffdead◎Damage|r : |cff4374D9.25 million + Dexterity x2500(x1~1.5) Magic Damage per hit|r\n|cffffdead◎Hit Count|r : 15 hits"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_franky": {
+      "rawUnitIds": [
+        "H0BV",
+        "H08Y"
+      ],
+      "baseUnitIds": [
+        "H08Y"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Radical Beam",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0G6",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7DFranky fires a powerful destructive beam forward.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎Range|r : Straight line 425 range\n|cffffdead◎Damage|r : |cff4374D9250 million Magic Damage|r"
+            }
+          ]
+        },
+        {
+          "previous": [
+            {
+              "category": "mana-skill",
+              "detail": "150 Mana · Radical Beam",
+              "source": "warcraft-map"
+            }
+          ],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · General Franky BF-38",
+            "source": "warcraft-map",
+            "condition": "Upgrade 4"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A188",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7DTransforms into Franky's general.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead　▶|r Duration 6 seconds\n|cffffdead　▶|r General Sword Skill Added\n|cffffdead　▶|r Cou de Vent! → General Beam Skill Change\n\n|cffc68a12General Press|r\n|cffffdead◎Activation Condition|r : Activates immediately after Franky transforms into General\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D94 million magic damage|r",
+              "acquisition": {
+                "rawAbilityId": "A12D",
+                "field": "aub1",
+                "level": 1,
+                "quote": "Requires 4 Attribute Points",
+                "originalText": "|cffFAED7DBoard the robot formed by combining the Black Rhinoceros FR-U No. 4 and the Brachio Tank No. 5.|r\n\n|cffffdead◎Basic Effect|r : Skill |cffff69b4'General Franky'|r Add\n|cffffdead◎Cost|r : Requires 4 Attribute Points"
+              }
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "transcendence_koby": {
+      "rawUnitIds": [
+        "H0CO"
+      ],
+      "baseUnitIds": [
+        "H0CO"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 150 (+1 on attack) · Honesty Impact",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A1CV",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 150 (+1 on attack)",
+              "originalText": "|cffFAED7DUnleashes a powerful shockwave enveloped in Armament Haki to obliterate the enemy.|r\n\n|cffffdead◎Activation Condition|r : Health 150 (+1 on attack)\n|cffffdead◎range|r : 700\n|cffffdead◎Damage|r : |cff4374D9355 million Magic Damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_rebecca": {
+      "rawUnitIds": [
+        "h05I"
+      ],
+      "baseUnitIds": [
+        "h05I"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "120 Mana · Repetitive Training",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0TD",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 120 Mana",
+              "originalText": "|cffffdead◎Activation Condition|r : 120 Mana\n|cffffdead◎Basic Effect|r : |cffc68a12Crush|r Skill Activation\n|cffffdead　▶|r Changes to |cff1e90ffTrueno Sentencia|r skill upon reaching level 20 of Descendant of Legend and meeting the level-up conditions."
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_katakuri": {
+      "rawUnitIds": [
+        "h07I"
+      ],
+      "baseUnitIds": [
+        "h07I"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "When HP is 35 or higher, 15% chance to consume 17 HP on attack (base healing 1.5) · Musou Donut",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0RO",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : When HP is 35 or higher, 15% chance to consume 17 HP on attack (base healing 1.5)",
+              "originalText": "|cffFAED7D Create multiple fists out of rice cakes to crush enemies.|r\n\n|cffffdead◎Activation Condition|r : When HP is 35 or higher, 15% chance to consume 17 HP on attack (base healing 1.5)\n|cffffdead◎Basic Effect|r : Max Attack Speed for 1.25 seconds\n|cffffdead◎Damage|r : 415 range on each attack |cffF15F5F75% of base attack damage + 100,000 physical damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_crocodile": {
+      "rawUnitIds": [
+        "h05F"
+      ],
+      "baseUnitIds": [
+        "h05F"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "limited_king": {
+      "rawUnitIds": [
+        "h0AI"
+      ],
+      "baseUnitIds": [
+        "h0AI"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Enemy Armor Break 50 or more + Mana 35 or more · Execution",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0S4",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Enemy Armor Break 50 or more + Mana 35 or more",
+              "originalText": "|cffFAED7DPrepare to execute the enemy.|r\n\n|cffffdead◎Activation Condition|r : Enemy |cffff8c00Armor Break|r 50 or more + Mana 35 or more\n|cffffdead◎Basic Effect|r : Consumes 33 mana and becomes Executioner for 1.25 seconds\n|cffffdead　▶|r Increases attack speed by 25% while in Executioner form\n|cffffdead　▶|r Does not activate if you are already in Executioner state.\n\n|cffc68a12Decapitation|r\n|cffffdead◎Activation Condition|r : Executioner State\n|cffffdead◎Basic Effect|r : 'Brutal Swordsmanship' skill is enhanced and activates with a 100% probability\n|cffffdead　▶|r Range and damage increase by 1.5x, and |cffff8c001 Armor Break|r to nearby enemies (decrease up to 75)\n|cffffdead　▶|r |cffA566FF10 million fixed damage to a single enemy|r (|cffA566FF100 million fixed damage|r to bosses, story enemies, and enraged enemies)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_alvida": {
+      "rawUnitIds": [
+        "h08Q"
+      ],
+      "baseUnitIds": [
+        "h08Q"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 55 · Buggy's Delivery",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0MV",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 55",
+              "originalText": "|cffFAED7D She dispatches Buggy's Delivery to help her. But it seems Alvida has a different objective?|r\n|cffa0a0a0- \"It's time to set sail!\"|r\n\n|cffffdead◎Activation Condition|r : Mana 55\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D92.5 million Magic Damage|r + |cffF15F5F10% of Missed Health Bonus Physical Damage|r\n|cffffdead　▶|r 3-second stun in the affected area\n|cffffdead◎Additional Effect|r : |cffff8c0010's Armor Break|r\n|cffffdead◎Rage|r : Increases the attack power of allied units within a 750 range by 33% for 4.5 seconds.\n|cffffdead　▶|r Cannot stack with other Rage skills"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_marco": {
+      "rawUnitIds": [
+        "h09Q",
+        "h08O"
+      ],
+      "baseUnitIds": [
+        "h08O"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "When HP is 15 or higher, 15% chance to consume 7 HP on attack (base healing 0.5) · Phoenix Man",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A15N",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : When HP is 15 or higher, 15% chance to consume 7 HP on attack (base healing 0.5)",
+              "originalText": "|cffFAED7DUses a kick that emits a shockwave.|r\n\n|cffffdead◎Activation Condition|r : When HP is 15 or higher, 15% chance to consume 7 HP on attack (base healing 0.5)\n|cffffdead◎range|r : 450\n|cffffdead◎Damage|r : |cff4374D975 million Magic Damage|r\n|cffffdead　▶|r If the single target is a lane monster |cff66cdaa 30% of current health explosive damage|r\n|cffffdead　▶|r Boss, |cff4374D9.2 million magic damage|r to Story\n|cffffdead　▶|r When activated, |cff4374D975 million magic damage to 8 additional targets|r\n|cffffdead◎Additional Effect|r : Stun single enemy for 2 seconds"
+            }
+          ]
+        },
+        {
+          "previous": [
+            {
+              "category": "hp-skill",
+              "detail": "When HP is 15 or higher, 15% chance to consume 7 HP on attack (base healing 0.5) · Phoenix Man",
+              "source": "warcraft-map"
+            }
+          ],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "When HP is 15 or higher, 18% chance to consume 10 HP on attack (Base healing 0.5 / +1 on attack) · The Flame of the Phoenix",
+            "source": "warcraft-map",
+            "condition": "Phoenix form"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A17K",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : When HP is 15 or higher, 18% chance to consume 10 HP on attack (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7D Attacks enemies with blue flames.|r\n\n|cffffdead◎Activation Condition|r : When HP is 15 or higher, 18% chance to consume 10 HP on attack (Base healing 0.5 / +1 on attack)\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cffF15F5F400% of base attack damage + 500,000 physical damage|r\n|cffffdead　▶|r When activated, |cff4374D975 million magic damage to 8 additional targets|r\n|cffffdead　▶|r |cffA566FF40% additional fixed damage to a single enemy|r\n|cffffdead　▶|r Critical hits may apply.|r",
+              "acquisition": {
+                "rawAbilityId": "A172",
+                "field": "aub1",
+                "level": 1,
+                "quote": "Phoenix Form",
+                "originalText": "|cffFAED7DMarco can transform.|r\n\n|cffffdead◎Human Form|r : Attack Speed increased by 125% / Attack Power decreased / 10% chance on attack to deal 20% of |cff66cdaaCurrent HP additional explosive damage to a single enemy|r (200,000 against special monsters)\n|cffffdead◎Phoenix Form|r : Attack Speed Decrease / Attack Power Increase / |cff1e90ffMythical Beast - Phoenix Fruit|r Enhancement\n|cffffdead◎Cooldown|r : 10.75 seconds"
+              }
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_redfield": {
+      "rawUnitIds": [
+        "h05G"
+      ],
+      "baseUnitIds": [
+        "h05G"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "limited_shinobu": {
+      "rawUnitIds": [
+        "h084"
+      ],
+      "baseUnitIds": [
+        "h084"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 50 (Base healing 0.25 / +1 on attack) · Undercover",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0UJ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 50 (Base healing 0.25 / +1 on attack)",
+              "originalText": "|cffFAED7D Act stealthily to silence the enemy.|r\n\n|cffffdead◎Activation Condition|r : 12.5% chance on attack\n|cffffdead◎Damage|r : |cff4374D9.6 million magic damage|r to a single enemy\n|cffffdead　▶|r Deals |cff66cdaa7.5% of total health as additional explosive damage to lane monsters|r\n|cffffdead　▶|r Deals |cff4374D91.5% of total health as additional magic damage to bosses|r\n|cffffdead◎Additional Effect|r : Uses clones, but the activation probability and effect are halved.\n\n|cffc68a12Ambush|r\n|cffffdead◎Activation Condition|r : Health 50 (Base healing 0.25 / +1 on attack)\n|cffffdead◎Quick: |r Bosses and Berserk Units |cffff69b41 times limited condition-ignoring activation|r\n|cffffdead　▶|r Does not overlap with other fast breaks.\n|cffffdead◎Basic Effect|r : Use 'Stealth' skill with 300% increased damage\n|cffffdead◎Additional Effect|r : Guaranteed summon of a clone"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "limited_ain": {
+      "rawUnitIds": [
+        "h040"
+      ],
+      "baseUnitIds": [
+        "h040"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "limited_enel": {
+      "rawUnitIds": [
+        "h05E"
+      ],
+      "baseUnitIds": [
+        "h05E"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "145 Mana · Brain Spirit :: Lv.2",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0E6",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 145 Mana",
+              "originalText": "|cffFAED7DDrops a giant thundercloud unleashed at maximum power by God Enel to completely devastate the area.|r\n\n|cffffdead◎Activation Condition|r : 145 Mana\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D94.5 million + 2% of total HP Magic Damage|r\n|cffffdead　▶|r Enemies hit by Lightning Shadow |cff87cefa Magic Defense reduced by 18%|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_garp": {
+      "rawUnitIds": [
+        "h04C"
+      ],
+      "baseUnitIds": [
+        "h04C"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "160 Mana · Special Cannonball",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0SN",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 160 Mana",
+              "originalText": "|cffFAED7DGarp throws a giant special cannonball.|r\n\n|cffffdead◎Activation Condition|r : 160 Mana\n|cffffdead◎range|r : 650\n|cffffdead◎Damage|r : |cffF15F5F6 million + 5% of total HP physical damage|r\n|cffffdead◎Additional Effect|r : 2.5 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_rayleigh": {
+      "rawUnitIds": [
+        "h049"
+      ],
+      "baseUnitIds": [
+        "h049"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 · Pluto's Haunting Spirit :: Lv.2",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0J7",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115",
+              "originalText": "|cffFAED7DUses a powerful Haki that even ordinary people find difficult to handle.|r\n\n|cffffdead◎Basic Effect|r: Reduces enemy defense by 20 within a 900 range\n\n|cffc68a12Empowerment|r\n|cffffdead◎Activation Condition|r : Mana 115\n|cffffdead◎Range|r : 800 range centered on the enemy\n|cffffdead◎Damage|r : |cffF15F5F2.75 million(x1 ~ 1.5) Physical Damage|r + |cff4374D91.25 million Magical Damage|r\n|cffffdead　▶|r If the target is a line monster, there is a 40% chance of instant death.\n|cffffdead◎Additional Effect|r: 3-second stun in the affected area (1 second for boss) and |cffff8c005's Armor Break|r (stacks up to 75)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_roger": {
+      "rawUnitIds": [
+        "h04J"
+      ],
+      "baseUnitIds": [
+        "h04J"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Ancient Weapons",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0JM",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7DInflicts powerful damage using the power of ancient weapons.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D91.7 million Magic Damage|r + |cffF15F5F7.25 million(x1~1.5) Physical Damage|r\n|cffffdead◎Dizziness|r : Reduces the movement speed of enemies hit by the skill by 200% for 3.25 seconds."
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_gaban": {
+      "rawUnitIds": [
+        "h04F"
+      ],
+      "baseUnitIds": [
+        "h04F"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 45 · Bucheonrak",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0IM",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 45",
+              "originalText": "|cffFAED7DSwings an axe wrapped in Conqueror's Haki to slice the enemy in two.|r\n\n|cffffdead◎Activation Condition|r : Mana 45\n|cffffdead◎Damage|r : Single enemy type, proportional to total HP |cffA566FFFixed Damage|r\n|cffffdead　▶|r Line Monster, Enraged : |cffA566FF 55% of Total Health Fixed Damage|r\n|cffffdead　▶|r Boss : |cffA566FF 15% of total health fixed damage|r\n|cffffdead　▶|r Story : |cffA566FF 10% of total HP fixed damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_kaido": {
+      "rawUnitIds": [
+        "h0AD",
+        "h07O",
+        "h07M",
+        "h0BW"
+      ],
+      "baseUnitIds": [
+        "h07M"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 100 (Base healing 0.33 / +1 on attack) · Sequence",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0PY",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 100 (Base healing 0.33 / +1 on attack)",
+              "originalText": "|cffFAED7DAfter transforming into a dragon, it devastates the area in front with a powerful breath attack.|r\n\n|cffffdead◎Activation Condition|r : Health 100 (Base healing 0.33 / +1 on attack)\n|cffffdead◎range|r : 900\n|cffffdead◎Damage|r : |cff4374D9285k Magic Damage|r + |cffF15F5F111k 1111(x 1~1.5) * 9 times Physical Damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the affected area (ignores resistance)\n|cffffdead　▶|r Units do not disappear in human form"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_whitebeard": {
+      "rawUnitIds": [
+        "h04A"
+      ],
+      "baseUnitIds": [
+        "h04A"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 115 (Base healing 0.5 / +1 on attack) · Shake-Shake Fruit :: Great Earthquake",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0SC",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 115 (Base healing 0.5 / +1 on attack)",
+              "originalText": "|cffFAED7DCauses a massive earthquake with the power of the Tremor-Tremor Fruit.|r\n\n|cffffdead◎Activation Condition|r : Health 115 (Base healing 0.5 / +1 on attack)\n|cffffdead◎range|r : 700\n|cffffdead◎Damage|r : |cff4374D9.5 million Magic Damage (1 hit)|r + |cffF15F5F2.75 million (x1 ~ 1.5) Physical Damage (2 hits)|r\n|cffffdead◎Additional Effect|r : Stun for 3 seconds in the affected area (ignores 50% resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_bullet": {
+      "rawUnitIds": [
+        "h081"
+      ],
+      "baseUnitIds": [
+        "h081"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Der Sterkste Strike :: Lv.1",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0WU",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7D Bullet's hardened fist barrage|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : First hit |cffF15F5F1.5 million x (Armada :: Attack Power Level x 50%) Physical Damage|r\n|cffffdead◎Bonus Damage|r : Multi-hit |cffF15F5F100,000 x (Armada :: Attack Power Level x 10%) * 12 hits Physical Damage|r\n|cffffdead◎Additional Effect|r : Stuns the area for 2 seconds"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_dragon": {
+      "rawUnitIds": [
+        "h04D"
+      ],
+      "baseUnitIds": [
+        "h04D"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "160 Mana · Storm",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0KE",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 160 Mana",
+              "originalText": "|cffFAED7D Forms a storm accompanied by lightning, causing massive damage.|r\n\n|cffffdead◎Activation Condition|r : 160 Mana\n|cffffdead◎Range|r : 425 range centered on the enemy\n|cffffdead◎Damage|r : Magic damage per lightning strike |cff4374D9.3 million(x1~2)|r\n|cffffdead　▶|r Lightning strikes a total of 11 times\n|cffffdead◎Duration|r : 3 seconds"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_bigmom": {
+      "rawUnitIds": [
+        "h04Q"
+      ],
+      "baseUnitIds": [
+        "h04Q"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 115 (Base healing 0.25 / +1 on attack) · Great Self-Existent Heavenly God",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0RV",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 115 (Base healing 0.25 / +1 on attack)",
+              "originalText": "|cffFAED7D lets out a frenzied roar like a bolt of lightning.|r\n\n|cffffdead◎Activation Condition|r : Health 115 (Base healing 0.25 / +1 on attack)\n|cffffdead◎range|r : 900\n|cffffdead◎Damage|r : |cff4374D91% of Total Health Magic Damage + 900,000 Magic Damage|r (6 times)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_sengoku": {
+      "rawUnitIds": [
+        "h0BM",
+        "h04E"
+      ],
+      "baseUnitIds": [
+        "h0BM",
+        "h04E"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 75 (Base healing 1 / +1 on attack) · Shockwave",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0LY",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 75 (Base healing 1 / +1 on attack)",
+              "originalText": "|cffFAED7DUses a shockwave of immense pressure to obliterate the area.|r\n\n|cffffdead◎Activation Condition|r : Health 75 (Base healing 1 / +1 on attack)\n|cffffdead◎Range|r : 450 range centered on enemy + 300 range instant cast\n|cffffdead◎Damage|r : |cff4374D9Total 4 million magic damage (2 million over 1 second + 2 million instant damage)|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_shiki": {
+      "rawUnitIds": [
+        "h04B"
+      ],
+      "baseUnitIds": [
+        "h04B"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "125 Mana · Dropping the Lion :: Snow",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0QK",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 125 Mana",
+              "originalText": "|cffFAED7D Forms lions in six directions to pounce and deal massive damage.|r\n\n|cffffdead◎Activation Condition|r : 125 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9325 million(x1 ~ 1.5) Magic Damage|r\n|cffffdead　▶|r Enemies damaged by eye damage |cff87cefa Magic damage amplified by 15%|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "immortal_z": {
+      "rawUnitIds": [
+        "h04G"
+      ],
+      "baseUnitIds": [
+        "h04G"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "160 Mana · Dyna Stone",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0QP",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 160 Mana",
+              "originalText": "|cffFAED7DFires a Dyna Stone with power comparable to ancient weapons through the Battle Smasher.|r\n\n|cffffdead◎Activation Condition|r : 160 Mana\n|cffffdead◎range|r : 725\n|cffffdead◎Damage|r : |cff4374D9505 million + 8% of missing health magic damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_nikaluffy": {
+      "rawUnitIds": [
+        "H0BK"
+      ],
+      "baseUnitIds": [
+        "H0BK"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 115 (Base healing 0.25 / +1 on attack) · Gigantification",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0UF",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 115 (Base healing 0.25 / +1 on attack)",
+              "originalText": "|cffFAED7DMakes the body larger.|r\n\n|cffffdead◎Activation Condition|r : Health 115 (Base healing 0.25 / +1 on attack)\n|cffffdead　▶|r Duration 4.25 seconds\n|cffffdead　▶|r Attack speed reduced by 225%\n|cffffdead　▶|r 450 range on every attack |cffF15F5F 200% of base attack damage + 200,000 physical damage|r"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Gum Gum Baz and Gun",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0UM",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7D He slams his massive fist, enveloped in Haki, into the ground.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎range|r : 750\n|cffffdead◎Damage|r : |cff4374D92.5 million Magic Damage|r + |cffF15F5F8.5 million(x1~1.5) Physical Damage|r\n|cffffdead◎Additional Effect|r : 2.5 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_nikasnakeman": {
+      "rawUnitIds": [
+        "H0BK"
+      ],
+      "baseUnitIds": [
+        "H0BK"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 115 (Base healing 0.25 / +1 on attack) · Gigantification",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0UF",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 115 (Base healing 0.25 / +1 on attack)",
+              "originalText": "|cffFAED7DMakes the body larger.|r\n\n|cffffdead◎Activation Condition|r : Health 115 (Base healing 0.25 / +1 on attack)\n|cffffdead　▶|r Duration 4.25 seconds\n|cffffdead　▶|r Attack speed reduced by 225%\n|cffffdead　▶|r 450 range on every attack |cffF15F5F 200% of base attack damage + 200,000 physical damage|r"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Gum Gum Baz and Gun",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0UM",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7D He slams his massive fist, enveloped in Haki, into the ground.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎range|r : 750\n|cffffdead◎Damage|r : |cff4374D92.5 million Magic Damage|r + |cffF15F5F8.5 million(x1~1.5) Physical Damage|r\n|cffffdead◎Additional Effect|r : 2.5 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_buggy": {
+      "rawUnitIds": [
+        "h05A"
+      ],
+      "baseUnitIds": [
+        "h05A"
+      ],
+      "additions": [],
+      "unverified": []
+    },
+    "eternal_cavendish": {
+      "rawUnitIds": [
+        "h06H",
+        "h05B"
+      ],
+      "baseUnitIds": [
+        "h05B"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · narcolepsy",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0TI",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "TRIGSTR_11094"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_hancock": {
+      "rawUnitIds": [
+        "h05C"
+      ],
+      "baseUnitIds": [
+        "h05C"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "175 Mana · Charm Charm Fruit :: Parfum Femur",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0NQ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 175 Mana",
+              "originalText": "|cffFAED7D A technique utilizing the power of the Charm Charm Fruit and taijutsu to strike the enemy and simultaneously turn them into stone, crushing them.|r\n\n|cffffdead◎Activation Condition|r : 175 Mana\n|cffffdead◎Range|r : Self-centered 750 range\n|cffffdead◎Damage|r : |cffF15F5F360kPhysicalDamage|r + |cff4374D950kMagicalDamage|r\n|cffffdead　▶|r First and last hits stun the area for 2.5 seconds (ignores resistance)\n|cffffdead　▶|r Deals |cff4374D9 16% of total HP as magic damage to a single enemy on hit|r (Story / Boss |cff4374D9 30 million magic damage|r)\n|cffffdead◎Hit Count|r : 25 hits"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_mihawk": {
+      "rawUnitIds": [
+        "h058"
+      ],
+      "baseUnitIds": [
+        "h058"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "175 Mana · The Ultimate Slash",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0OF",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 175 Mana",
+              "originalText": "|cffFAED7D Delivers the ultimate slash.|r\n|cffa0a0a0- \"I'm sorry, but Redhead... I won't restrain this power!\"|r\n\n|cffffdead◎Activation Condition|r : 175 Mana\n|cffffdead◎range|r : 750\n|cffffdead◎Damage|r : |cffA566FF525k + 5% of total HP fixed damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_vivi": {
+      "rawUnitIds": [
+        "h057"
+      ],
+      "baseUnitIds": [
+        "h057"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · Rampant fire",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0LA",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7D Fires indiscriminately.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎Damage|r : Deals |cffA566FF300,000|r + |cffA566FF8% of total HP fixed damage|r to 2 random enemies per hit\n|cffffdead　▶|r Boss / Enraged / Deals |cff4374D9.5 million magic damage to Story |r\n|cffffdead◎Activation Count|r : 20 times"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_ace": {
+      "rawUnitIds": [
+        "h059"
+      ],
+      "baseUnitIds": [
+        "h059"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "185 Mana · Flame-Flame Fruit :: Great Flame Emperor",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0HV",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 185 Mana",
+              "originalText": "|cffFAED7DUses the ultimate technique of the Flame-Flame Fruit, Great Flame-Energy Flame.|r\n\n|cffffdead◎Activation Condition|r : 185 Mana\n|cffffdead◎range|r : 850\n|cffffdead◎Damage|r : Initial 3-second stun + after 2 seconds |cff4374D9450 million + 3% of total HP (x1~2) magic damage|r\n|cffffdead　▶|r Additional 3-second stun after damage is dealt"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_oden": {
+      "rawUnitIds": [
+        "h08R"
+      ],
+      "baseUnitIds": [
+        "h08R"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "145 Mana · Totsuka Dowon",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XZ",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 145 Mana",
+              "originalText": "|cffFAED7D This is the Cross Slash that left the only major wound on Kaido.|r\n\n|cffffdead◎Activation Condition|r : 145 Mana\n|cffffdead◎range|r : 700\n|cffffdead◎Damage|r : |cff4374D9420 million Magic Damage|r\n|cffffdead　▶|r 3.25 second stun in the affected area (ignores resistance)\n|cffffdead◎Additional Effect|r : Activates Unextinguishable Wound effect for 3.25 seconds\n|cffffdead　▶|r Enemies with the Wound effect take 28,000 magic damage in a 175 radius|cff4374D9 area every time they are hit by a basic attack|r\n|cffffdead　▶|r 6.25x additional magic damage to a single enemy\n|cffffdead　▶|r Splash effects do not trigger on all targets, but only on a single target.\n|cffffdead　▶|r Does not apply to rare units or lower"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_uta": {
+      "rawUnitIds": [
+        "h0AF",
+        "h067"
+      ],
+      "baseUnitIds": [
+        "h0AF",
+        "h067"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 100 (Base recovery 1.25 / +2 when skill is activated) · Live :: New Era",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0D2",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 100 (Base recovery 1.25 / +2 when skill is activated)",
+              "originalText": "|cffFAED7DContinuing the New Era Live.|r\n\n|cffffdead◎Activation Condition|r : Mana 100 (Base recovery 1.25 / +2 when skill is activated)\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D92.5 million(x1~1.5) Magic Damage|r\n|cffffdead　▶|r |cff87cefa10% Magic Defense Reduction|r\n|cffffdead　▶|r |cff66cdaa10% Explosive Damage Amplification|r\n|cffffdead◎Additional Effect|r : Restores 10 HP to Uta\n\n|cffc68a12Tot Musica|r\n|cffffdead◎Activation Condition|r : 18% chance when Live is activated\n|cffffdead◎Basic Effect|r : Straight line range 450 |cff4374D9450 million magic damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_ryuma": {
+      "rawUnitIds": [
+        "h0CJ",
+        "h0C7"
+      ],
+      "baseUnitIds": [
+        "h0CJ"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "150 Mana · One-sided decision",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A1BI",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 150 Mana",
+              "originalText": "|cffFAED7DDelivers a powerful blow that cuts down even a dragon in a single stroke.|r\n\n|cffffdead◎Activation Condition|r : 150 Mana\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cff4374D92.5 million Magic Damage + Total Health (Stacks x 0.005%) Magic Damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "eternal_tesoro": {
+      "rawUnitIds": [
+        "h06A"
+      ],
+      "baseUnitIds": [
+        "h06A"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 90 (+1 on attack) · Gon Lila Di Dio",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A11K",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 90 (+1 on attack)",
+              "originalText": "|cffFAED7DA massive pile of gold soaring from the ground crushes the enemy to pieces.|r\n\n|cffffdead◎Activation Condition|r : Health 90 (+1 on attack)\n|cffffdead◎range|r : 625\n|cffffdead◎Damage|r : |cff4374D92 million(x1~1.5) magic damage|r\n|cffffdead　▶|r Deals additional explosive damage equal to |cff66cdaa up to 9% of missing health based on your gold |r\n|cffffdead　▶|r The more gold you hold, the greater the damage increase (max. 250,000 gold)\n|cffffdead◎Additional Effect|r : 2.4 second stun in the affected area"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_jotaro": {
+      "rawUnitIds": [
+        "h09R"
+      ],
+      "baseUnitIds": [
+        "h09R"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 45 (Base healing 1 / Attack +0.8) · Rush",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XE",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 45 (Base healing 1 / Attack +0.8)",
+              "originalText": "|cffFAED7D Crush enemies with a barrage of iron fist strikes.|r\n\n|cffffdead◎Activation Condition|r : Health 45 (Base healing 1 / Attack +0.8)\n|cffffdead◎range|r : 400\n|cffffdead◎Damage|r : |cffF15F5F850,000 Physical Damage per Hit|r\n|cffffdead　▶|r Deals |cffA566FF1 million additional fixed damage on each hit to a single target|r\n|cffffdead◎Additional Effect|r : Every time a skill hits, |cffff8c001 Armor Break|r\n|cffffdead　▶|r Can stack up to 10 times per skill activation\n|cffffdead　▶|r |cffff8c00Armor Break|r Damage increases by 1.25% for every 1 stack"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 145 (Base recovery 1 / +1 on attack) · Star Platinum :: The World",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XF",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 145 (Base recovery 1 / +1 on attack)",
+              "originalText": "|cffFAED7DStops time. When time moves again, the enemy is strangely crushed.|r\n\n|cffffdead◎Activation Condition|r : Mana 145 (Base recovery 1 / +1 on attack)\n|cffffdead◎Cast Time|r : 1.3 seconds\n|cffffdead◎Range|r : 850 range around itself\n|cffffdead◎Damage|r : 4 seconds after skill cast |cffF15F5F9.25 million(x1~1.5) Physical Damage|r + |cffF15F5F2%(x1~1.5) Missing Health Physical Damage|r\n|cffffdead◎Additional Effect|r: Stun enemies within range for 4 seconds and |cffff8c0015's Armor Break|r\n|cffffdead◎Additional Effect 2|r : Recovers 5 HP upon activation"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_shiki": {
+      "rawUnitIds": [
+        "h0A2"
+      ],
+      "baseUnitIds": [
+        "h0A2"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "Mana 115 (+1 on attack / +5 on skill activation) · Yusik :: Mystic Eyes of Death Perception",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0W3",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Mana 115 (+1 on attack / +5 on skill activation)",
+              "originalText": "|cffFAED7DD Draw a line of death to split enemies and bring them to their death.|r\n\n|cffffdead◎Activation Condition|r : Mana 115 (+1 on attack / +5 on skill activation)\n|cffffdead◎range|r : 500\n|cffffdead◎Damage|r : |cffA566FF5 million fixed damage|r\n|cffffdead◎Bonus Effect|r : Single Enemy |cffF15F5F45% of Max HP Bonus Physical Damage|r (Boss / Story 4.5%)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_tatsumaki": {
+      "rawUnitIds": [
+        "h0BC"
+      ],
+      "baseUnitIds": [
+        "h0BC"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 45 (+1 on attack) · ☐☐☐☐☐☐☐",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0WX",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 45 (+1 on attack)",
+              "originalText": "|cffFAED7DCreates a whirlwind with telekinesis.|r\n\n|cffffdead◎Activation Condition|r : Health 45 (+1 on attack)\n|cffffdead◎range|r : 525\n|cffffdead◎Damage|r : |cff4374D9.25 million Magic Damage|r + |cffF15F5F3 million Physical Damage|r\n|cffffdead◎Additional Effect|r : Armor Break of the corresponding range |cffff8c0010|r"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "75 Mana · Psychic :: Meteorite Fall",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0WY",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 75 Mana",
+              "originalText": "|cffFAED7DCreates and drops a meteor using telekinesis.|r\n\n|cffffdead◎Activation Condition|r : 75 Mana\n|cffffdead◎range|r : 625\n|cffffdead◎Damage|r : |cff4374D91.5 million Magic Damage|r + |cffF15F5F4 million Physical Damage|r\n|cffffdead◎Additional Effect|r : Armor Break of the corresponding range |cffff8c0015|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_youmu": {
+      "rawUnitIds": [
+        "h0CC"
+      ],
+      "baseUnitIds": [
+        "h0CC"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 200 (Base healing 1 / +1 on attack) · Soul Vessel \"The Law of Intelligence of the Famous Nine Gates\"",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0ZD",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 200 (Base healing 1 / +1 on attack)",
+              "originalText": "|cffFAED7D Summons a half-spirit floating beside Youmu.|r\n\n|cffffdead◎Activation Condition|r : Health 200 (Base healing 1 / +1 on attack)\n|cffffdead◎Basic Effect|r : Summons a half-spirit that performs at 50% of the main body's power for 25 seconds\n|cffffdead　▶|r Uses the skills Banryeongdo |cff1e90ffDanryeonggeom|r and |cff1e90ffDanmigeom|r.\n|cffffdead　▶|r It is affected by the same upgrade effects and buffs as the main body.\n|cffffdead◎Absolute Cooldown|r : 25 seconds\n|cffffdead　▶|r Will not use skills even if health is full within 25 seconds."
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "120 Mana · Ingwi \"Future Eternal Slash\"",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0ZH",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 120 Mana",
+              "originalText": "|cffFAED7D Splits the opponent's future and eternity in a single blow.|r\n\n|cffffdead◎Activation Condition|r : 120 Mana\n|cffffdead◎Range|r : 800 range around itself\n|cffffdead◎Damage|r : First hit |cff4374D9.5 million magic damage|r Subsequent hits |cffF15F5F1% of total HP physical damage|r * 25 times\n|cffffdead　▶|r Final blow |cff4374D91 million magic damage|r + |cffF15F5F10% of total HP physical damage|r\n|cffffdead◎Additional Effect|r : 3-second stun on the first and last hits within the affected area (ignores resistance)"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_sans": {
+      "rawUnitIds": [
+        "h083"
+      ],
+      "baseUnitIds": [
+        "h083"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Gaster Blaster",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XA",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7DSans fires a powerful laser using his blaster.|r\n|cffa0a0a0- \"I really don't understand why everyone doesn't use strong attacks from the start...\"|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 800\n|cffffdead◎Damage|r : |cff4374D935 million Magic Damage|r * 24 times"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_bronya": {
+      "rawUnitIds": [
+        "h09N"
+      ],
+      "baseUnitIds": [
+        "h09N"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "145 Mana · Creatures of Reason",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XL",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 145 Mana",
+              "originalText": "|cffFAED7DMaterializes multiple weapons to attack.|r\n\n|cffffdead◎Activation Condition|r : 145 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D9750 million Magic Damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_minato": {
+      "rawUnitIds": [
+        "h09W"
+      ],
+      "baseUnitIds": [
+        "h09W"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "100 Mana · Spiral Flash First Wheel Empress Three Forms",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0VX",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 100 Mana",
+              "originalText": "|cffFAED7D Attacks the enemy by using Flying Thunder God consecutively.|r\n\n|cffffdead◎Activation Condition|r : 100 Mana\n|cffffdead◎range|r : 525\n|cffffdead◎Damage|r : |cffA566FF1 million fixed damage|r * 8 times"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_nezuko": {
+      "rawUnitIds": [
+        "h0BF"
+      ],
+      "baseUnitIds": [
+        "h0BF"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "60 Mana · Blood Demon Art :: Blood Explosion",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0X6",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 60 Mana",
+              "originalText": "|cffFAED7DBurning Blood, Explosive Ability|r\n\n|cffffdead◎Activation Condition|r : 60 Mana\n|cffffdead◎Range|r : All enemies affected by 'Wound'\n|cffffdead◎Damage|r : |cff4374D9150 million Magic Damage|r\n|cffffdead　▶|r If it is a lane monster |cff66cdaa 10% of total health additional explosive damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_byakuya": {
+      "rawUnitIds": [
+        "h08I"
+      ],
+      "baseUnitIds": [
+        "h08I"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "145 Mana · Jonggyeong Baekje Sword",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0WD",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 145 Mana",
+              "originalText": "|cffFAED7DI use the Emperor's sword that shines white.|r\n\n|cffffdead◎Activation Condition|r : 145 Mana\n|cffffdead◎Range|r : 700 range centered on the enemy\n|cffffdead◎Damage|r : |cff4374D95 million(x1~1.5) Magic Damage|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_higuma": {
+      "rawUnitIds": [
+        "h0AC"
+      ],
+      "baseUnitIds": [
+        "h0AC"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 75 (Base healing 0.3 / +1 on attack) · Plunder",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0XR",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 75 (Base healing 0.3 / +1 on attack)",
+              "originalText": "|cffFAED7DThey habitually commit robbery as their nature as bandits.|r\n\n|cffffdead◎Activation Condition|r : Health 75 (Base healing 0.3 / +1 on attack)\n|cffffdead◎Damage|r : Single enemy |cffA566FF5 million fixed damage|r\n|cffffdead◎Additional Effect|r : Gain resources when using a skill.\n|cffffdead　▶|r 55% chance to get |cffffd7001500 Gold|r\n|cffffdead　▶|r 45% chance to get |cff7ad8231 wood|r"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_yukari": {
+      "rawUnitIds": [
+        "h0A6"
+      ],
+      "baseUnitIds": [
+        "h0A6"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "125 Mana · A spontaneous trip to get off at an abandoned station",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0ZB",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 125 Mana",
+              "originalText": "|cffFAED7D We present a train journey where you disembark at a closed station. |r\n\n|cffffdead◎Activation Condition|r : 125 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D95 million magic damage|r\n|cffffdead◎Additional Effect|r : 3-second stun in the targeted area\n\n|cffc68a12Missing|r\n|cffffdead◎Basic Effect|r : Deletes 1 random normal round unit within the specified range"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_gojo": {
+      "rawUnitIds": [
+        "h09M"
+      ],
+      "baseUnitIds": [
+        "h09M"
+      ],
+      "additions": [],
+      "unverified": [
+        {
+          "category": "mana-skill",
+          "originalNote": "Stun 0.6s; movement slow 30; triggered movement slow 20; mana skill: total-HP damage. Requires K, 1 additional Random unit, Pirate Ship, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
+          "reason": "Previous annotation has no explicit resource activation requirement in readable map object data; war3map.j is unavailable. No filter category or value is guessed."
+        }
+      ]
+    },
+    "mystic_anya": {
+      "rawUnitIds": [
+        "h08M"
+      ],
+      "baseUnitIds": [
+        "h08M"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 45 (+1 on attack) · Spy Family",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A10J",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 45 (+1 on attack)",
+              "originalText": "|cffFAED7D A spy family consisting of a top-tier spy, an assassin from the shadows, and a girl with superpowers |r\n\n|cffffdead◎Basic Effect|r : Parents assist when activating a Health or Mana skill.\n|cffffdead　▶|r Does not trigger when attacking level 1~3 creeps.\n|cffffdead◎Additional Effect|r : Allows aerial movement\n\n|cffc68a12Lloyd Poser|r\n|cffffdead◎Activation Condition|r : Health 45 (+1 on attack)\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D910 million Magic Damage|r * 5 times\n|cffffdead◎Dizziness|r : Reduces the movement speed of enemies hit by the skill by 30% for 3 seconds.\n\n|cffc68a12Yor Poser|r\n|cffffdead◎Activation Condition|r : 75 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D930 million Magic Damage|r * 11 times"
+            }
+          ]
+        },
+        {
+          "previous": [],
+          "replacement": {
+            "category": "mana-skill",
+            "detail": "75 Mana · Spy Family",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A10J",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : 75 Mana",
+              "originalText": "|cffFAED7D A spy family consisting of a top-tier spy, an assassin from the shadows, and a girl with superpowers |r\n\n|cffffdead◎Basic Effect|r : Parents assist when activating a Health or Mana skill.\n|cffffdead　▶|r Does not trigger when attacking level 1~3 creeps.\n|cffffdead◎Additional Effect|r : Allows aerial movement\n\n|cffc68a12Lloyd Poser|r\n|cffffdead◎Activation Condition|r : Health 45 (+1 on attack)\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D910 million Magic Damage|r * 5 times\n|cffffdead◎Dizziness|r : Reduces the movement speed of enemies hit by the skill by 30% for 3 seconds.\n\n|cffc68a12Yor Poser|r\n|cffffdead◎Activation Condition|r : 75 Mana\n|cffffdead◎range|r : 600\n|cffffdead◎Damage|r : |cff4374D930 million Magic Damage|r * 11 times"
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    },
+    "mystic_yujiro": {
+      "rawUnitIds": [
+        "h0C2"
+      ],
+      "baseUnitIds": [
+        "h0C2"
+      ],
+      "additions": [
+        {
+          "previous": [],
+          "replacement": {
+            "category": "hp-skill",
+            "detail": "HP 150 (+1 on attack) · I'll kill you",
+            "source": "warcraft-map"
+          },
+          "evidence": [
+            {
+              "file": "war3map.w3a",
+              "rawAbilityId": "A0S1",
+              "field": "aub1",
+              "level": 1,
+              "quote": "◎Activation Condition : Health 150 (+1 on attack)",
+              "originalText": "|cffFAED7D He swings his fist with all his might, driven solely by the determination to kill the target.|r\n\n|cffffdead◎Activation Condition|r : Health 150 (+1 on attack)\n|cffffdead◎range|r : 1050\n|cffffdead◎Damage|r : |cffF15F5F3.75 million Physical Damage|r + |cffA566FF3.75 million Fixed Damage|r\n|cffffdead◎Additional Effect|r : When target's defense is less than 0, |cffff8c0020's Armor Break|r\n|cffffdead◎Cast Time|r : 1 second\n|cffffdead　▶|r When activated, an 8-second absolute cooldown is applied to the 'Stop Earthquake' skill."
+            }
+          ]
+        }
+      ],
+      "unverified": []
+    }
+  }
+}

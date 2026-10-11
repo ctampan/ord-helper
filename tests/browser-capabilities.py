@@ -47,12 +47,12 @@ with sync_playwright() as playwright:
 
     expect(rows).to_have_count(278)
     expect(panel).to_be_visible()
-    expect(panel.get_by_role("checkbox")).to_have_count(25)
+    expect(panel.get_by_role("checkbox")).to_have_count(28)
     assert page.locator(".dashboard > .column").count() == 7
     assert page.locator("[data-rarity='Legendary'] h4").all_text_contents() == ["Stun", "Physical Damage", "Magic Damage", "Single Target", "Finisher"]
     page.screenshot(path=str(ARTIFACTS / "expanded.png"))
     expect(panel).to_be_visible()
-    expect(panel.get_by_role("checkbox")).to_have_count(25)
+    expect(panel.get_by_role("checkbox")).to_have_count(28)
     category("Armor reduction").check()
     expect(rows).to_have_count(expected(["shield"]))
     category("Area stun").check()
@@ -100,17 +100,32 @@ with sync_playwright() as playwright:
     expect(header).to_have_attribute("aria-expanded", "true")
     page.reload()
     expect(header).to_have_attribute("aria-expanded", "true")
-    expect(panel.get_by_role("checkbox")).to_have_count(25)
+    expect(panel.get_by_role("checkbox")).to_have_count(28)
     clear()
     expect(rows).to_have_count(278)
     category("Armor reduction").check()
     page.reload()
-    expect(panel.get_by_role("checkbox")).to_have_count(25)
+    expect(panel.get_by_role("checkbox")).to_have_count(28)
     expect(rows).to_have_count(expected(["shield"]))
     expect(category("Armor reduction")).to_be_checked()
     expect(mode).to_have_value("any")
     clear()
     expect(rows).to_have_count(278)
+
+    # Resource activation is independent from regeneration and supports All/Any.
+    for label, key in [("HP skill", "hp-skill"), ("Mana skill", "mana-skill"), ("Swimming", "swimming")]:
+        category(label).check()
+        expect(rows).to_have_count(expected([key]))
+        if key == "swimming":
+            expect(page.locator("main [data-unit-id='distortion_burgess']")).to_have_count(1)
+        clear()
+    category("HP skill").check()
+    category("Mana skill").check()
+    mode.select_option("all")
+    expect(rows).to_have_count(expected(["hp-skill", "mana-skill"]))
+    mode.select_option("any")
+    expect(rows).to_have_count(expected(["hp-skill", "mana-skill"], "any"))
+    clear()
 
     # Empty categories must not clear inventory or remove the Config toggle.
     category("Single-target missing-HP damage").check()
@@ -144,6 +159,18 @@ with sync_playwright() as playwright:
     assert "Group reference:" not in modal.inner_text()
     assert modal.locator("[aria-label='Unit capabilities']").evaluate("el => !el.parentElement.className.includes('recipeContent')")
     page.get_by_role("button", name="Close recipe", exact=True).click()
+    for uid, values in [
+        ("transcendence_law", ["HP skill", "HP 250", "Mana skill", "135 Mana", "only once"]),
+        ("limited_katakuri", ["HP skill", "35", "consume 17 HP"]),
+        ("legendary_jinbe", ["Swimming", "Mana skill", "85 Mana"]),
+        ("hidden_tiger", ["Flying", "Ignores terrain"]),
+    ]:
+        page.locator(f"[data-unit-id='{uid}']").get_by_title("Show Recipe", exact=True).click()
+        caps = modal.locator("[aria-label='Unit capabilities']")
+        for value in values:
+            expect(caps).to_contain_text(value)
+        assert not re.search(r"ORDSearch|Sions|Warcraft map|−", caps.inner_text())
+        page.get_by_role("button", name="Close recipe", exact=True).click()
     doflamingo = page.locator("[data-unit-id='transcendence_doflamingo']")
     doflamingo.get_by_title("Show Recipe", exact=True).click()
     assert modal.evaluate("el => { const caps = el.querySelector('[aria-label=\"Unit capabilities\"]'); const note = [...el.querySelectorAll('div')].find(n => n.textContent.startsWith('Command: joker tr') && !n.querySelector('div')); return note && !!(note.compareDocumentPosition(caps) & Node.DOCUMENT_POSITION_FOLLOWING); }")
@@ -157,6 +184,8 @@ with sync_playwright() as playwright:
     tooltip = page.locator("[data-tooltip-unit-id='transcendence_doflamingo']")
     expect(tooltip).to_be_visible()
     expect(tooltip).to_contain_text("-250%")
+    expect(tooltip).to_contain_text("Mana skill")
+    expect(tooltip).to_contain_text("150")
     expect(tooltip.get_by_role("complementary", name="Ability panel")).to_be_visible()
     assert not re.search(r"ORDSearch|Sions|−", tooltip.inner_text())
     assert tooltip.get_by_text("Movement slow", exact=True).count() == 1
@@ -229,7 +258,7 @@ with sync_playwright() as playwright:
     page.get_by_title("Select Game Version", exact=True).select_option("Custom")
     expect(rows).to_have_count(0)
     page.reload()
-    expect(panel.get_by_role("checkbox")).to_have_count(25)
+    expect(panel.get_by_role("checkbox")).to_have_count(28)
     expect(rows).to_have_count(0)
     clear()
     page.get_by_title("Select Game Version", exact=True).select_option("2.323")
@@ -303,7 +332,7 @@ with sync_playwright() as playwright:
     # Existing users with saved choices but no visibility preference see the panel.
     page.evaluate("localStorage.removeItem('ord_capability_filters_expanded')")
     page.reload()
-    expect(panel.get_by_role("checkbox")).to_have_count(25)
+    expect(panel.get_by_role("checkbox")).to_have_count(28)
     assert not errors, errors
     browser.close()
     print("Browser checks passed: layout, All/Any, persistence, empty states, modal/tooltip values, hidden-material crafting, bans/tree, export/Custom switching, light/narrow keyboard controls.")

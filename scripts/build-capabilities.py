@@ -12,6 +12,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 from map_capabilities import MAP_AUDIT, SNAPSHOT, apply_map, audit_map
+from map_skill_requirements import SKILL_AUDIT, supplement_skills
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "public/data/2.323.json"
@@ -350,6 +351,8 @@ def main():
     audit = migrate(data, soup, json.loads(sions_bytes), previous)
     if SNAPSHOT.exists():
         map_audit = apply_map(data, audit_map(data))
+        skill_audit = supplement_skills(data, json.loads(SNAPSHOT.read_text(encoding="utf8")), map_audit, original_notes=audit)
+        SKILL_AUDIT.write_text(json.dumps(skill_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
         MAP_AUDIT.write_text(json.dumps(map_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
     else:
         raise FileNotFoundError("Extract ref/map-2.323.json first; do not silently remove verified map corrections.")

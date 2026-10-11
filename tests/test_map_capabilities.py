@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from map_capabilities import apply_map, extract_effects  # noqa: E402
+from map_skill_requirements import extract_skill_requirements, supplement_skills  # noqa: E402
 
 spec = importlib.util.spec_from_file_location("map_reader", ROOT / "scripts/extract-warcraft-map.py")
 reader = importlib.util.module_from_spec(spec)
@@ -20,6 +21,64 @@ def ability(text, level=1):
 
 
 class MapTests(unittest.TestCase):
+    def test_resource_triggers_keep_threshold_cost_and_alternative_activation(self):
+        texts = [
+            ("◎Activation Condition : When HP is 35 or higher, 15% chance to consume 17 HP on attack (base healing 1.5)", "hp-skill", "35", "17"),
+            ("◎Activation Condition : 8.8% chance on attack or 35 Health (+1 on attack)", "hp-skill", "8.8%", "35 HP"),
+            ("◎Activation Condition 2 : Consumes 50 mana if mana is 75 or higher", "mana-skill", "50", "75"),
+            ("◎Activation Condition : Enemy Armor Break 50 or more + Mana 35 or more", "mana-skill", "Armor Break 50", "Mana 35"),
+        ]
+        for text, category, first, second in texts:
+            records = extract_skill_requirements(ability(text))
+            self.assertEqual(len(records), 1)
+            effect, evidence = records[0]
+            self.assertEqual(effect["category"], category)
+            self.assertIn(first, effect["detail"])
+            self.assertIn(second, effect["detail"])
+            self.assertNotIn("condition", effect)
+            self.assertEqual(evidence["quote"], text)
+
+    def test_resource_damage_regeneration_capacity_and_higher_levels_are_not_triggers(self):
+        for text in ["◎Damage : 35% of current HP", "◎Basic Effect : Mana regeneration 2.5",
+                     "◎Basic Effect : Maximum Mana 150", "◎Activation Condition : Enemy HP 35 or less",
+                     "◎Activation Condition : 150 Mana\n◎Cost : Requires 4 Attribute Points"]:
+            self.assertEqual(extract_skill_requirements(ability(text)), [])
+        self.assertEqual(extract_skill_requirements(ability("◎Activation Condition : 150 Mana", level=2)), [])
+
+    def test_resource_subsections_and_acquired_skill_are_kept_separate(self):
+        text = "◎Activation Condition : 135 Mana\n◎Activation Condition : HP 250 (Recovers 50 when Room is activated)\n▶ Activates only once during the room duration."
+        records = extract_skill_requirements(ability(text))
+        self.assertEqual([e["category"] for e, _ in records], ["mana-skill", "hp-skill"])
+        self.assertNotIn("only once", records[0][0]["detail"])
+        self.assertIn("only once", records[1][0]["detail"])
+        record = extract_skill_requirements(ability("◎Activation Condition : 100 Mana while Vegapunk's Knowledge is active"))[0][0]
+        self.assertEqual(record["condition"], "Vegapunk's Knowledge")
+        records = extract_skill_requirements(ability("◎Activation Condition : Automatically activates every 14.25 seconds\n▶ Activates when 35 mana is filled (Base healing 1.35)"))
+        self.assertIn("14.25 seconds", records[0][0]["detail"])
+
+    def test_resource_supplement_ignores_non_base_objects_and_is_idempotent(self):
+        from copy import deepcopy
+        data = {"units": [{"id": "fixture", "note": "Command: keep", "recipe": {"u": 2}}]}
+        snapshot = {"sha256": "fixture", "map": "fixture", "unavailable": {}, "files": {"war3map.w3u": {"objects": [
+            {"id": "u001", "modifications": [{"field": "uabi", "value": "A001"}, {"field": "umvt", "value": "amph"}]},
+            {"id": "u002", "modifications": [{"field": "uabi", "value": "A002"}]},
+        ]}}}
+        mana = ability("◎Activation Condition : 100 Mana")
+        mana["shared"] = False
+        audit = {"sha256": "fixture", "units": {"fixture": {"objects": [{"rawId": "u001"}, {"rawId": "u002"}], "abilities": [mana]}}}
+        first = supplement_skills(data, snapshot, audit)
+        self.assertNotIn("capabilities", data["units"][0])
+        self.assertEqual(len(first["units"]["fixture"]["unverified"]), 1)
+        audit["units"]["fixture"]["objects"].pop()
+        first = supplement_skills(data, snapshot, audit)
+        saved = deepcopy(data)
+        second = supplement_skills(data, snapshot, audit, first)
+        self.assertEqual(data, saved)
+        self.assertEqual(second, first)
+        self.assertEqual(data["units"][0]["note"], "Command: keep")
+        self.assertEqual(data["units"][0]["recipe"], {"u": 2})
+        self.assertEqual([c["category"] for c in data["units"][0]["capabilities"]], ["mana-skill", "swimming"])
+
     def test_object_reader_preserves_levels_and_original_text(self):
         packed = struct.pack("<iii", 2, 0, 1) + b"AHtbA001" + struct.pack("<i", 1)
         packed += b"aub1" + struct.pack("<iii", 3, 2, 0) + b"|cffff0000Stun|r\0A001"

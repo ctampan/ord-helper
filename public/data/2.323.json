@@ -337,6 +337,11 @@
           "category": "docking",
           "detail": "+10% · Area · 100 mana · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Super Paimon Whirlwind",
+          "source": "warcraft-map"
         }
       ]
     },
@@ -1727,6 +1732,10 @@
           "category": "sstun",
           "detail": "0.3 s · 20% on attack",
           "source": "warcraft-map"
+        },
+        {
+          "category": "swimming",
+          "source": "warcraft-map"
         }
       ]
     },
@@ -2553,6 +2562,10 @@
           "category": "stun",
           "detail": "2.25 s · 27% on attack · range 575",
           "source": "warcraft-map"
+        },
+        {
+          "category": "swimming",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. 100% area damage. swimming."
@@ -2775,6 +2788,11 @@
           "category": "stun",
           "detail": "1.05 s · 115 mana · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 · Ursus Shock",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. W: area magnet, cooldown 60s.",
@@ -2830,6 +2848,11 @@
           "category": "stun",
           "detail": "3 s · 115 mana",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 · Pluto's Haunting Spirit :: Lv.1",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing.",
@@ -2869,6 +2892,11 @@
         {
           "category": "slow",
           "detail": "-30% · Area · range 875",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 25 (Base healing 0.5 / +1 on attack) · Feather Bombardment",
           "source": "warcraft-map"
         }
       ],
@@ -2963,6 +2991,11 @@
         {
           "category": "sstun",
           "detail": "0.85 s · Ignores resistance",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 50 (Base recovery 0.5 / Attack +0.5) · White Out",
           "source": "warcraft-map"
         }
       ],
@@ -3075,6 +3108,11 @@
           "category": "shield",
           "detail": "-27 · Aura · range 900",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 35 (Base healing 0.5 / +1 on attack) · Wool Hood",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege."
@@ -3132,6 +3170,11 @@
         {
           "category": "shield",
           "detail": "-40 · Boss · Basic attack · 20 s",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "40 Mana · Shandian's Spear(Q)",
           "source": "warcraft-map"
         }
       ],
@@ -3299,6 +3342,11 @@
           "category": "stun",
           "detail": "3 s · ignores 50% resistance · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 115 (Base healing 0.8 / +1 on attack) · Seizing the initiative",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. supporting damage. HP skill. Sions — Armor reduction: Additional armor reduction 30 against bosses and story enemies. Sions — Movement slow: triggered movement slow 35.",
@@ -3462,6 +3510,11 @@
           "category": "docking",
           "detail": "+8% · Single-target · 17.5% on attack",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 40 (Base healing 0.5 / +1 on attack) · Dark-Dark Fruit :: Debrision",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. all damage received +10. Removes berserk armor buffs and deals additional damage."
@@ -3495,6 +3548,11 @@
         {
           "category": "slow",
           "detail": "-42% · Area · 3 s · range 575",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "8.8% chance on attack or 35 HP (+1 on attack) · Clima Tect :: Lv.2",
           "source": "warcraft-map"
         }
       ],
@@ -3548,6 +3606,11 @@
         {
           "category": "slow",
           "detail": "-30% · Area · range 800",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 30 (Base Recovery 2) · Light",
           "source": "warcraft-map"
         }
       ],
@@ -3832,6 +3895,15 @@
           "category": "sstun",
           "detail": "0.6 s",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "85 Mana · The Ultimate Fishman Karate",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "swimming",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. mana skill: area magic damage. swimming."
@@ -4010,6 +4082,11 @@
         {
           "category": "sstun",
           "detail": "0.3 s · 20% on attack",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 · Cry of Courage",
           "source": "warcraft-map"
         }
       ],
@@ -4331,6 +4408,11 @@
           "category": "stun",
           "detail": "2 s · 10% on attack · range 515",
           "source": "warcraft-map"
+        },
+        {
+          "category": "sky",
+          "detail": "Ignores terrain",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. ignores all terrain.",
@@ -4416,6 +4498,11 @@
           "category": "slow",
           "detail": "-20% · Additional effect",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "85 Mana · Geumjeung Forest",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Ryokugyu combination. Sions — Armor reduction: mana skill: armor reduction 15. Sions — Movement slow: triggered movement slow 20."
@@ -4518,6 +4605,11 @@
         {
           "category": "sstun",
           "detail": "0.6 s · ignores resistance",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Maximum Swing",
           "source": "warcraft-map"
         }
       ],
@@ -4736,6 +4828,11 @@
         {
           "category": "rangetlpd",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Hemophilia",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. mana skill.",
@@ -4881,6 +4978,11 @@
         {
           "category": "sstun",
           "detail": "2 s · 20% on attack",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "35 Mana · Remaining Snow",
           "source": "warcraft-map"
         }
       ],
@@ -5035,6 +5137,15 @@
           "category": "sstun",
           "detail": "0.4 s · 20% on attack",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 95 · Target Target Fruit :: Noah",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "swimming",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. supporting magic damage. swimming.",
@@ -5124,6 +5235,11 @@
           "category": "slow",
           "detail": "-30% · Area · 3 s · 14% on attack · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Brain Spirit",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. Sions — Movement slow: triggered movement slow 30.",
@@ -5167,6 +5283,12 @@
           "category": "sstun",
           "detail": "3 s · ignores 70% resistance · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana while Vegapunk's Knowledge is active · Roar!",
+          "source": "warcraft-map",
+          "condition": "Vegapunk's Knowledge"
         }
       ],
       "abilityDetails": "Transcendence Franky enables the Gaon Cannon mana skill.",
@@ -5292,6 +5414,11 @@
           "category": "stun",
           "detail": "1.25 s · 135 mana · range 625",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "135 Mana · Fishman Karate :: Rogue Type. Koala",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Revolutionary Army's Acting Instructor.",
@@ -5355,6 +5482,11 @@
           "category": "stun",
           "detail": "0.95 s · 15% on attack · range 500",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 65 · Brachio Bomber",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Cyborg of the Plague. Sions — Armor reduction: triggered armor reduction 20.",
@@ -5411,6 +5543,11 @@
           "category": "bombup",
           "detail": "+10",
           "source": "sions"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Kamikaze Rap",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Ghost Princess. mana skill. All skills deal explosion damage. amplification also applies to Eternal Mihawk.",
@@ -5458,6 +5595,10 @@
         {
           "category": "stun",
           "detail": "2.5 s · range 425",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "swimming",
           "source": "warcraft-map"
         }
       ],
@@ -5788,6 +5929,11 @@
           "category": "shield",
           "detail": "-20 · Aura · range 825",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 60 (Base healing 1 / +1 on attack) · Ocean Current One-Shot Throw :: Shark",
+          "source": "warcraft-map"
         }
       ]
     },
@@ -5912,6 +6058,11 @@
           "category": "slow",
           "detail": "-75% · Aftershock · 2 s · Area",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Awaken for 4.5 seconds when mana reaches 150 · Awakening",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. 50% area damage. Sions — Armor reduction: Mana skill: armor reduction 60 for 4.5s. Sions — Movement slow: triggered movement slow 136 and a separate ground-area triggered slow 45.",
@@ -5973,6 +6124,11 @@
         {
           "category": "sstun",
           "detail": "3 s · 5% on attack · range 400",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 40 (Base healing 0.5 / +1 on attack) · Mill Fleur Gigantesco Mano",
           "source": "warcraft-map"
         }
       ],
@@ -6036,6 +6192,11 @@
           "category": "slow",
           "detail": "-25% · Skill",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 130 (Base recovery 0.25 / +1 on attack) · Geumjeung Forest",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. special upgrade available. Sions — Armor reduction: triggered armor reduction 15. Sions — Armor reduction: Mana skill: transformation and armor reduction 10. Sions — Movement slow: Triggered movement slow 35 from a specific skill and 12 from all skills.",
@@ -6105,6 +6266,11 @@
         {
           "category": "slow",
           "detail": "-33% · Area · 2 s · 17.5% on attack · range 425",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "160 Mana · Redhawk",
           "source": "warcraft-map"
         }
       ],
@@ -6176,6 +6342,16 @@
         {
           "category": "stun",
           "detail": "3 s · 100 mana",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Joker",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 40 (Base healing 0.33 / +1 on attack) · The Curse of Strowman",
           "source": "warcraft-map"
         }
       ],
@@ -6259,6 +6435,11 @@
           "category": "shield",
           "detail": "-35 · Aura · range 850",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "125 Mana · Dragon's Breath",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. damage increases per buff. Upgrade 4. Sions — Armor reduction: -30. Sions — Movement slow: triggered movement slow 30.",
@@ -6333,6 +6514,11 @@
         {
           "category": "udelete",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "140 Mana · Firebird Star",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. W: Usopp Hammer. Upgrade 4 summons plants. Sions — Armor reduction: global armor reduction 8.",
@@ -6390,6 +6576,11 @@
         {
           "category": "shield",
           "detail": "-30 · Aura · range 815",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "145 Mana · 1080 Bonnoe Peak",
           "source": "warcraft-map"
         }
       ],
@@ -6468,6 +6659,15 @@
           "category": "stun",
           "detail": "2.4 s · 100 mana · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Fishman Karate Secret Techniques :: Rogue Hall",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "swimming",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. mana skill. swimming. special upgrade available. Sions — Movement slow: triggered movement slow 50.",
@@ -6515,6 +6715,11 @@
         {
           "category": "shield",
           "detail": "-50 · Aura · range 825",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Rumble Ball Rampage",
           "source": "warcraft-map"
         }
       ],
@@ -6578,6 +6783,11 @@
           "category": "stun",
           "detail": "2.6 s · 15% on attack · range 475",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "140 Mana · High-density gravity :: Sinkhole",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. 80% area damage. Upgrade 4. Sions — Movement slow: Mana skill: triggered movement slow 99.",
@@ -6628,6 +6838,11 @@
         {
           "category": "shield",
           "detail": "-25 · Aura · range 900",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 95 (Base healing 0.33 / +1 on attack) · Factorization",
           "source": "warcraft-map"
         }
       ],
@@ -6689,6 +6904,16 @@
           "category": "stun",
           "detail": "1.05 s · 12% on attack · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · A future like Nika",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "Bonnie's HP 10 or less · Big Eater",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "current-HP damage. Mana skill: Nika transformation with a 2s incapacitation penalty. Upgrade 4 removes the penalty. Sions — Armor reduction: stacking armor reduction up to 40.",
@@ -6747,6 +6972,11 @@
         {
           "category": "sstun",
           "detail": "2 s",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "135 Mana · Nanhyangjeop",
           "source": "warcraft-map"
         }
       ],
@@ -6831,6 +7061,11 @@
           "detail": "2.75 s · 200 mana · range 575",
           "source": "warcraft-map",
           "condition": "Upgrade 4"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "200 Mana · Mother Flame :: Vegapunk",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
@@ -6914,6 +7149,11 @@
           "detail": "2.75 s · 200 mana · range 575",
           "source": "warcraft-map",
           "condition": "Upgrade 4"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "200 Mana · Mother Flame :: Vegapunk",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
@@ -6997,6 +7237,11 @@
           "detail": "2.75 s · 200 mana · range 575",
           "source": "warcraft-map",
           "condition": "Upgrade 4"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "200 Mana · Mother Flame :: Vegapunk",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
@@ -7080,6 +7325,11 @@
           "detail": "2.75 s · 200 mana · range 575",
           "source": "warcraft-map",
           "condition": "Upgrade 4"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "200 Mana · Mother Flame :: Vegapunk",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
@@ -7141,6 +7391,11 @@
         {
           "category": "sstun",
           "detail": "3 s · 17.5% on attack",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 85 (Base healing 0.5 / +1 on attack) · Dark-Dark Fruit :: Black Gu",
           "source": "warcraft-map"
         }
       ],
@@ -7253,6 +7508,16 @@
           "category": "slow",
           "detail": "-40% · Skill",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "135 Mana · Surgery Surgery Fruit :: Room",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 250 (Recovers 50 when Room is activated) · Surgery Surgery Fruit :: Room · Activates only once during the room duration.",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. explosion damage. Upgrade 4. Sions — Movement slow: triggered movement slow 35. Sions — Movement slow: single-target boss slow 99. Sions — Movement slow: Mana skill: movement slow 45 and attack +20.",
@@ -7398,6 +7663,11 @@
           "category": "sstun",
           "detail": "1.75 s · 17.5% on attack",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 · Party Music :: Kint Pias Fantasia",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. creep-related effect. Upgrade 4 summons Baby Laboon. Sions — Movement slow: global slow 5.",
@@ -7454,6 +7724,11 @@
         {
           "category": "slow",
           "detail": "-50% · Area · 3.5 s · 5% on attack · range 500",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 · Meteor Soba Kick",
           "source": "warcraft-map"
         }
       ],
@@ -7541,6 +7816,11 @@
           "category": "stun",
           "detail": "3 s · ignores resistance · range 1100",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Activates when 35 mana is filled (Base healing 1.35) · Automatically activates every 14.25 seconds · Manifestation of Spirit",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. Haki stun. mana skill. Upgrade 4 unlocks Divine Departure.",
@@ -7600,6 +7880,11 @@
         {
           "category": "boss",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "85 Mana · Gum Gum :: King Cobra",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. explosion damage. mana skill. damage increases with enemy movement speed.",
@@ -7654,6 +7939,11 @@
           "category": "splash",
           "detail": "splash",
           "source": "sions"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "120 Mana · Sea King Dive",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. special upgrade available.",
@@ -7731,6 +8021,11 @@
           "detail": "+10% · Your lane",
           "source": "warcraft-map",
           "condition": "Upgrade 4"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Consumes 40 mana when mana is 50 or more · Ice Age :: Lv.1",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. mana skill. Sions — Movement slow: -70 (80). Sions — Movement slow: single-target slow 15.",
@@ -7789,6 +8084,11 @@
           "category": "slow",
           "detail": "-12% · Area · 2 s",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "135 Mana · Lava Fruit :: Meteor Volcano",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Siege. HP and mana skills. Upgrade 4 adjusts meteor density and adds strength-based damage. Sions — Movement slow: triggered movement slow 12.",
@@ -7845,6 +8145,11 @@
         {
           "category": "stun",
           "detail": "2.2 s · range 500",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 40 (Base healing 0.2 / +1 on attack) · Punk Gibson",
           "source": "warcraft-map"
         }
       ],
@@ -7906,6 +8211,11 @@
           "category": "stun",
           "detail": "2.75 s · 8.25% on attack · range 500",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Consumes 50 mana if mana is 75 or higher · Eight-foot-tall curved jade",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. mana skill. special upgrade available.",
@@ -7964,6 +8274,17 @@
         {
           "category": "boss",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Radical Beam",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · General Franky BF-38",
+          "source": "warcraft-map",
+          "condition": "Upgrade 4"
         }
       ],
       "abilityDetails": "Siege. Mana skill: General Franky transformation lasting 6s. Damage increases per nearby Sunny. Upgrade 4.",
@@ -8018,6 +8339,11 @@
         {
           "category": "sstun",
           "detail": "0.1 s · ignores resistance",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 150 (+1 on attack) · Honesty Impact",
           "source": "warcraft-map"
         }
       ],
@@ -8076,6 +8402,11 @@
         {
           "category": "slow",
           "detail": "-60% · Area · 2.5 s · 8% on attack",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "120 Mana · Repetitive Training",
           "source": "warcraft-map"
         }
       ],
@@ -8137,6 +8468,11 @@
         {
           "category": "shield",
           "detail": "-30 · Aura · range 850",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "When HP is 35 or higher, 15% chance to consume 17 HP on attack (base healing 1.5) · Musou Donut",
           "source": "warcraft-map"
         }
       ],
@@ -8254,6 +8590,11 @@
           "category": "slow",
           "detail": "-45% · Single-target",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Enemy Armor Break 50 or more + Mana 35 or more · Execution",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. Upgrade 4 upgrades Wildfire to Karyudon. Sions — Armor reduction: triggered armor reduction 34. Sions — Armor reduction: poison-style armor reduction 25 plus area reduction 10. Sions — Movement slow: single-target slow 15%.",
@@ -8311,6 +8652,11 @@
         {
           "category": "shield",
           "detail": "-25 · Aura · range 800",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 55 · Buggy's Delivery",
           "source": "warcraft-map"
         }
       ],
@@ -8379,6 +8725,17 @@
           "category": "slow",
           "detail": "-45% · Area · range 875",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "When HP is 15 or higher, 15% chance to consume 7 HP on attack (base healing 0.5) · Phoenix Man",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "When HP is 15 or higher, 18% chance to consume 10 HP on attack (Base healing 0.5 / +1 on attack) · The Flame of the Phoenix",
+          "source": "warcraft-map",
+          "condition": "Phoenix form"
         }
       ],
       "abilityDetails": "Piercing. single-target damage. HP skill.",
@@ -8483,6 +8840,11 @@
         {
           "category": "slow",
           "detail": "-30% · Area · range 850",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 50 (Base healing 0.25 / +1 on attack) · Undercover",
           "source": "warcraft-map"
         }
       ],
@@ -8605,6 +8967,11 @@
           "category": "sstun",
           "detail": "2 s · 50% on attack",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "145 Mana · Brain Spirit :: Lv.2",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. Normal upgrades strengthen skills. Upgrade 4 enhances Discharge.",
@@ -8653,6 +9020,11 @@
         {
           "category": "sstun",
           "detail": "3 s · 20% on attack",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "160 Mana · Special Cannonball",
           "source": "warcraft-map"
         }
       ],
@@ -8716,6 +9088,11 @@
         {
           "category": "sstun",
           "detail": "0.6 s · ignores resistance · 2.5% on attack · range 415",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 · Pluto's Haunting Spirit :: Lv.2",
           "source": "warcraft-map"
         }
       ],
@@ -8785,6 +9162,11 @@
           "category": "sstun",
           "detail": "0.75 s · ignores resistance",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Ancient Weapons",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Roger). Haki. special upgrade: Divine Departure. Sions — Movement slow: Mana skill: movement slow 115.",
@@ -8843,6 +9225,11 @@
         {
           "category": "sstun",
           "detail": "3 s",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 45 · Bucheonrak",
           "source": "warcraft-map"
         }
       ],
@@ -8905,6 +9292,11 @@
           "category": "slow",
           "detail": "-60% · Aura",
           "source": "ordsearch"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 100 (Base healing 0.33 / +1 on attack) · Sequence",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. percentage area damage. F: transformation. HP skill. Debuff reduces attack by 75%, excluding Kaido. Sions — Armor reduction: single-target armor reduction 45. Sions — Armor reduction: Skill procs apply armor reduction 3, up to single-target reduction 145 and area reduction 30.",
@@ -8977,6 +9369,11 @@
           "category": "stun",
           "detail": "3 s · ignores 50% resistance · 5% on attack · range 625",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 115 (Base healing 0.5 / +1 on attack) · Shake-Shake Fruit :: Great Earthquake",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. HP skill. Upgrade 4 enhances Quake Strike. Sions — Movement slow: triggered movement slow 60.",
@@ -9041,6 +9438,11 @@
           "category": "stun",
           "detail": "2 s · 150 mana · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Der Sterkste Strike :: Lv.1",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "feeding Common units randomly enhances items.",
@@ -9094,6 +9496,11 @@
         {
           "category": "bombup",
           "detail": "+20% · Your lane",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "160 Mana · Storm",
           "source": "warcraft-map"
         }
       ],
@@ -9158,6 +9565,11 @@
           "category": "slow",
           "detail": "-70% · Area · range 888",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 115 (Base healing 0.25 / +1 on attack) · Great Self-Existent Heavenly God",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Gluttonous Iron Balloon. Siege. 66% area magic damage. One Docking allows defeating Burgess. special upgrade available."
@@ -9206,6 +9618,11 @@
         {
           "category": "stun",
           "detail": "2.85 s · 10% on attack · range 525",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 75 (Base healing 1 / +1 on attack) · Shockwave",
           "source": "warcraft-map"
         }
       ],
@@ -9272,6 +9689,11 @@
           "category": "armorbreak",
           "detail": "1 · Area · max 75 · 10% on attack · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "125 Mana · Dropping the Lion :: Snow",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. Upgrade 4 enables skill enhancement by consuming Pirate Ships, up to 3 enhancements.",
@@ -9334,6 +9756,11 @@
         {
           "category": "sstun",
           "detail": "2.25 s",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "160 Mana · Dyna Stone",
           "source": "warcraft-map"
         }
       ],
@@ -9413,6 +9840,16 @@
           "category": "shield",
           "detail": "-35 · Aura · range 900",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 115 (Base healing 0.25 / +1 on attack) · Gigantification",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Gum Gum Baz and Gun",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. HP and mana skills. ignores terrain. Damage increases with enemy movement speed. uses Transcendence upgrades.",
@@ -9490,6 +9927,16 @@
         {
           "category": "shield",
           "detail": "-35 · Aura · range 900",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 115 (Base healing 0.25 / +1 on attack) · Gigantification",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Gum Gum Baz and Gun",
           "source": "warcraft-map"
         }
       ],
@@ -9653,6 +10100,11 @@
         {
           "category": "udelete",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · narcolepsy",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Normal. mana skill. special upgrade available.",
@@ -9737,6 +10189,11 @@
           "category": "stun",
           "detail": "2.75 s · 7.5% on attack · range 650",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "175 Mana · Charm Charm Fruit :: Parfum Femur",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Haki. mana skill. Sions — Armor reduction: -35 (40). Sions — Movement slow: triggered movement slow 60.",
@@ -9794,6 +10251,11 @@
         {
           "category": "bombup",
           "detail": "+10% · Your lane",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "175 Mana · The Ultimate Slash",
           "source": "warcraft-map"
         }
       ],
@@ -9858,6 +10320,11 @@
         {
           "category": "blink",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · Rampant fire",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Piercing. mana skill. special upgrade available. Enhance skills with 3 Random Wisps and 2 wood. description also mentions basic Wisps and wood.",
@@ -9903,6 +10370,11 @@
         {
           "category": "slow",
           "detail": "-45% · Area · range 900",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "185 Mana · Flame-Flame Fruit :: Great Flame Emperor",
           "source": "warcraft-map"
         }
       ],
@@ -9956,6 +10428,11 @@
         {
           "category": "sstun",
           "detail": "0.45 s · ignores resistance",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "145 Mana · Totsuka Dowon",
           "source": "warcraft-map"
         }
       ],
@@ -10041,6 +10518,11 @@
           "category": "stun",
           "detail": "1.5 s · 10% on attack · range 500",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 100 (Base recovery 1.25 / +2 when skill is activated) · Live :: New Era",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill. special upgrade available. Loses HP when attacking. sleeps for 3s when HP falls to 10 or below.",
@@ -10078,6 +10560,11 @@
         {
           "category": "boss",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "150 Mana · One-sided decision",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Legendary Samurai. finisher. mana skill. stack-based damage. Wano synergy. Upgrade 4 enhances Shadow Swordsmanship.",
@@ -10148,6 +10635,11 @@
           "category": "stun",
           "detail": "2.4 s · range 625",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 90 (+1 on attack) · Gon Lila Di Dio",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "can deal single-target damage.",
@@ -10206,6 +10698,16 @@
           "category": "stun",
           "detail": "4 s",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 45 (Base healing 1 / Attack +0.8) · Rush",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 145 (Base recovery 1 / +1 on attack) · Star Platinum :: The World",
+          "source": "warcraft-map"
         }
       ],
       "note": "Requires Kamijou Touma, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
@@ -10243,6 +10745,11 @@
         {
           "category": "shield",
           "detail": "-44 · Aura · range 925",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "Mana 115 (+1 on attack / +5 on skill activation) · Yusik :: Mystic Eyes of Death Perception",
           "source": "warcraft-map"
         }
       ],
@@ -10296,6 +10803,16 @@
           "category": "armorbreak",
           "detail": "15 · Area · 75 mana · range 625",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 45 (+1 on attack) · ☐☐☐☐☐☐☐",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "75 Mana · Psychic :: Meteorite Fall",
+          "source": "warcraft-map"
         }
       ],
       "note": "Requires Yotsuba, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
@@ -10342,6 +10859,16 @@
         {
           "category": "slow",
           "detail": "-50% · Area · 3 s · 10% on attack",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 200 (Base healing 1 / +1 on attack) · Soul Vessel \"The Law of Intelligence of the Famous Nine Gates\"",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "120 Mana · Ingwi \"Future Eternal Slash\"",
           "source": "warcraft-map"
         }
       ],
@@ -10397,6 +10924,11 @@
           "category": "slow",
           "detail": "-40% · Aura",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Gaster Blaster",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Moves across all terrain. Sions — Armor reduction: -20 (30). Sions — Movement slow: -30 (40).",
@@ -10441,6 +10973,11 @@
           "category": "regen",
           "detail": "mana regeneration",
           "source": "sions"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "145 Mana · Creatures of Reason",
+          "source": "warcraft-map"
         }
       ],
       "note": "Requires Herrscher of Reason, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
@@ -10494,6 +11031,11 @@
           "category": "mshield",
           "detail": "-3% · 13.5% on attack · range 600",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "100 Mana · Spiral Flash First Wheel Empress Three Forms",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Docking.",
@@ -10546,6 +11088,11 @@
           "category": "bombup",
           "detail": "+4% · Single-target · Stacks",
           "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "60 Mana · Blood Demon Art :: Blood Explosion",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "Single-target damage.",
@@ -10589,6 +11136,11 @@
           "category": "slow",
           "detail": "-20% · Aura",
           "source": "ordsearch"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "145 Mana · Jonggyeong Baekje Sword",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill.",
@@ -10618,6 +11170,11 @@
         {
           "category": "slow",
           "detail": "-30% · Area · range 800",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 75 (Base healing 0.3 / +1 on attack) · Plunder",
           "source": "warcraft-map"
         }
       ],
@@ -10668,6 +11225,11 @@
         {
           "category": "stun",
           "detail": "3 s · 125 mana · range 600",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "125 Mana · A spontaneous trip to get off at an abandoned station",
           "source": "warcraft-map"
         }
       ],
@@ -10786,6 +11348,16 @@
           "category": "docking",
           "detail": "+1% · 6.25% on attack · range 500",
           "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 45 (+1 on attack) · Spy Family",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "mana-skill",
+          "detail": "75 Mana · Spy Family",
+          "source": "warcraft-map"
         }
       ],
       "abilityDetails": "mana skill: damage. Docking. Sions — Movement slow: HP skill: movement slow 30.",
@@ -10833,6 +11405,11 @@
         {
           "category": "slow",
           "detail": "-20%",
+          "source": "warcraft-map"
+        },
+        {
+          "category": "hp-skill",
+          "detail": "HP 150 (+1 on attack) · I'll kill you",
           "source": "warcraft-map"
         }
       ],

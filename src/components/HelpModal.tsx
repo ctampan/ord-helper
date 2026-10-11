@@ -30,7 +30,9 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
               active; show the panel and use Clear to show every unit.
             </p>
             <p>
-              Filters use base abilities. Compact ability panels show effect values
+              Filters use base abilities, including Swimming and HP/Mana skill activation.
+              HP/Mana skill filters are separate from regeneration and HP-based damage.
+              Compact ability panels show effect values
               and upgrade or form requirements beside recipe tooltips. On narrow screens,
               expand Abilities below the recipe. Longer descriptions are already open in
               tooltips; use More ability details to expand them in the recipe modal.
