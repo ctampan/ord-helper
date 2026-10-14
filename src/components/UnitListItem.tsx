@@ -55,11 +55,13 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
 
     const handleLeftClick = (e: React.MouseEvent) => {
       e.preventDefault();
+      inputCountRef.current = null;
       onAction(unit.id, false, e.ctrlKey, e.altKey);
     };
 
     const handleRightClick = (e: React.MouseEvent) => {
       e.preventDefault();
+      inputCountRef.current = null;
       onAction(unit.id, true, e.ctrlKey, false);
     };
 
@@ -69,20 +71,32 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       id: number;
     } | null>(null);
     const prevCountRef = useRef(count);
+    const inputCountRef = useRef<number | null>(null);
+    const inputFeedbackStartRef = useRef<number | null>(null);
     const feedbackSequence = useRef(0);
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
       if (count !== prevCountRef.current) {
-        const diff = count - prevCountRef.current;
+        const isInputChange = inputCountRef.current === count;
+        inputCountRef.current = null;
+        if (isInputChange) {
+          inputFeedbackStartRef.current ??= prevCountRef.current;
+        } else {
+          inputFeedbackStartRef.current = null;
+        }
+        const diff = count - (inputFeedbackStartRef.current ?? prevCountRef.current);
         const type = diff > 0 ? "add" : "remove";
         const text = diff > 0 ? `+${diff}` : `${diff}`;
 
-        // Use setTimeout to avoid synchronous state update during render phase
-        // and to ensure the animation triggers after the render
+        // Debounce only typed changes, using the net difference for the burst.
+        // Clicks and other updates keep their existing immediate feedback.
         const timeoutId = setTimeout(() => {
-          setFeedback({ text, type, id: ++feedbackSequence.current });
-        }, 0);
+          inputFeedbackStartRef.current = null;
+          if (diff !== 0) {
+            setFeedback({ text, type, id: ++feedbackSequence.current });
+          }
+        }, isInputChange ? 300 : 0);
 
         prevCountRef.current = count;
         return () => clearTimeout(timeoutId);
@@ -181,7 +195,9 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
               value={count}
               onChange={(e) => {
                 const val = parseInt(e.target.value, 10);
-                onCountChange(unit.id, isNaN(val) ? 0 : val);
+                const newCount = Math.max(0, isNaN(val) ? 0 : val);
+                inputCountRef.current = newCount !== count ? newCount : null;
+                onCountChange(unit.id, newCount);
               }}
               onFocus={(e) => e.target.select()}
               className={styles.input}
