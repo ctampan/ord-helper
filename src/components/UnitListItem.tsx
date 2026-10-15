@@ -65,11 +65,11 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
       onAction(unit.id, true, e.ctrlKey, false);
     };
 
-    const [feedback, setFeedback] = useState<{
+    const [feedbacks, setFeedbacks] = useState<{
       text: string;
       type: "add" | "remove";
       id: number;
-    } | null>(null);
+    }[]>([]);
     const prevCountRef = useRef(count);
     const inputCountRef = useRef<number | null>(null);
     const inputFeedbackStartRef = useRef<number | null>(null);
@@ -86,7 +86,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
           inputFeedbackStartRef.current = null;
         }
         const diff = count - (inputFeedbackStartRef.current ?? prevCountRef.current);
-        const type = diff > 0 ? "add" : "remove";
+        const type: "add" | "remove" = diff > 0 ? "add" : "remove";
         const text = diff > 0 ? `+${diff}` : `${diff}`;
 
         // Debounce only typed changes, using the net difference for the burst.
@@ -94,7 +94,8 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
         const timeoutId = setTimeout(() => {
           inputFeedbackStartRef.current = null;
           if (diff !== 0) {
-            setFeedback({ text, type, id: ++feedbackSequence.current });
+            const feedback = { text, type, id: ++feedbackSequence.current };
+            setFeedbacks((current) => [...current, feedback]);
           }
         }, isInputChange ? 300 : 0);
 
@@ -216,9 +217,9 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
             )}
           </div>
         </div>
-        {feedback && <CountFeedback key={feedback.id} anchor={inputRef} unitId={unit.id}
-          text={feedback.text} type={feedback.type} onComplete={() => setFeedback((current) =>
-            current?.id === feedback.id ? null : current)} />}
+        {feedbacks.map((feedback) => <CountFeedback key={feedback.id} anchor={inputRef} unitId={unit.id}
+          text={feedback.text} type={feedback.type} onComplete={() => setFeedbacks((current) =>
+            current.filter((item) => item.id !== feedback.id))} />)}
       </div>
     );
   },
