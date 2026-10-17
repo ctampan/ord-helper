@@ -12,6 +12,7 @@ const data = await readJson('../public/data/2.323.json');
 const audit = await readJson('../docs/capability-audit-2.323.json');
 const mapAudit = await readJson('../docs/capability-map-audit-2.323.json');
 const skillAudit = await readJson('../docs/capability-map-skills-2.323.json');
+const sourceAudit = await readJson('../docs/capability-source-audit-2.323.json');
 const units = new Map(data.units.map((unit) => [unit.id, unit]));
 const effects = (id, category) => (units.get(id).capabilities || []).filter((effect) => effect.category === category);
 
@@ -24,7 +25,10 @@ test('all 278 units are audited and preserve their subgroups and original numeri
     const original = audit.units[unit.id];
     assert.equal(unit.subGroup, original.subGroup ?? undefined, unit.id);
     const text = JSON.stringify({ capabilities: unit.capabilities, abilityDetails: unit.abilityDetails, note: unit.note });
-    const previous = JSON.stringify(mapAudit.units[unit.id].corrections.map(({ previous }) => previous));
+    const previous = JSON.stringify([
+      mapAudit.units[unit.id].corrections.map(({ previous }) => previous),
+      sourceAudit.units[unit.id].previous,
+    ]);
     const numbers = new Set((text + previous).match(/\d+(?:\.\d+)?/g) || []);
     const unitNote = original.originalNote.replace(/Group reference:\s*.*?(?:\.(?=\s|$)|$)/gi, '');
     for (const number of unitNote.match(/\d+(?:\.\d+)?/g) || []) {
@@ -43,8 +47,9 @@ test('verified source values have signs, units, distinct targets and timing', ()
   assert.deepEqual(effects('legendary_kalgara', 'shield').map(({ detail }) => detail), ['-20 · Aura · range 825', '-20 · Story / lane · Basic attack · 20 s', '-40 · Boss · Basic attack · 20 s']);
   assert.match(effects('transcendence_doflamingo', 'shield')[0].detail, /-60.*150 mana.*7\.5 s.*850/);
   assert.deepEqual(effects('transcendence_doflamingo', 'slow').map(({ detail }) => detail), ['-250% · Skill · 4.5 s · 18% on attack · range 525', '-75% · Aftershock · 2 s · Area']);
-  assert.match(units.get('transcendence_doflamingo').abilityDetails, /136.*45/);
-  assert.match(units.get('transcendence_doflamingo').note, /differs between references/);
+  assert.doesNotMatch(units.get('transcendence_doflamingo').abilityDetails, /136|ground-area triggered slow/);
+  assert.doesNotMatch(units.get('transcendence_doflamingo').note, /differs between references/);
+  assert.match(sourceAudit.units.transcendence_doflamingo.previous.abilityDetails, /136.*45/);
   assert.equal(effects('seraphim_ssnake', 'bombup')[0].detail, '+3% · Area · max 25% · Pistol Kiss hits 6 times');
   assert.equal(effects('eternal_uta', 'bombup')[0].source, 'warcraft-map');
 });
@@ -56,7 +61,7 @@ test('source gaps are supplemented without guessing single-target missing HP or 
   assert.ok(hasBaseCapability(units.get('legendary_blackbeard'), 'boss'));
   assert.equal(data.units.flatMap((unit) => unit.capabilities || []).some((effect) => effect.category === 'singlelost'), false);
   assert.equal(effects('transcendence_koby', 'ignore').length, 0);
-  assert.match(units.get('transcendence_koby').note, /source title.*description lists armor-ignoring/);
+  assert.match(units.get('transcendence_koby').note, /60%.*explosion damage.*60,000 magic damage/);
   assert.equal(effects('seraphim_sshark', 'shield').length, 1);
   assert.match(effects('seraphim_sshark', 'shield')[0].detail, /-20/);
   assert.ok(hasBaseCapability(units.get('seraphim_sshark'), 'armorbreak'));
@@ -214,12 +219,64 @@ test('all map corrections retain exact evidence and previous values without assu
   assert.ok(effects('immortal_roger', 'slow').some(({ detail }) => detail.includes('99%')));
 });
 
-test('display strips source labels and normalizes legacy minus without hiding conditions or conflicts', () => {
+test('display strips source labels, obsolete conflict warnings and normalizes legacy minus', () => {
   assert.equal(displayAbilityText('−60 · Mana skill (Sions) · 4.5 s (Sions)'), '-60 · Mana skill · 4.5 s');
-  assert.equal(displayAbilityText('Sions — Movement slow: 136; Upgrade 4'), 'Alternative detail: Movement slow: 136; Upgrade 4');
+  assert.equal(displayAbilityText('Sions — Movement slow: 136; Upgrade 4'), 'Movement slow: 136; Upgrade 4');
+  assert.equal(displayAbilityText('Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details.'), '');
+  assert.equal(displayAbilityText('Values differ between references; alternative values/context are retained in ability details.'), '');
   assert.equal(displayAbilityText('Command: joker tr. Group reference: reduction 201; poison 20.'), 'Command: joker tr. ');
   for (const unit of data.units) {
     const text = displayAbilityText(JSON.stringify({ capabilities: unit.capabilities?.map(({ source, ...rest }) => rest), note: unit.note, details: unit.abilityDetails }));
     assert.doesNotMatch(text, /ORDSearch|Sions|Warcraft map|−|Group reference:/i, unit.id);
   }
+});
+
+test('each effect and condition uses one source; superseded claims stay in the audit', () => {
+  assert.deepEqual(sourceAudit.priority, ['warcraft-map', 'ordsearch', 'sions']);
+  assert.equal(Object.keys(sourceAudit.units).length, data.units.length);
+  for (const unit of data.units) {
+    const record = sourceAudit.units[unit.id];
+    for (const selected of record.selected) {
+      const actual = (unit.capabilities || []).filter((effect) => effect.category === selected.category &&
+        effect.condition === selected.condition);
+      assert.ok(actual.length, unit.id);
+      assert.ok(actual.every(({ source }) => source === selected.source), unit.id);
+    }
+    if (record.previous) {
+      assert.deepEqual(record.replacement, Object.fromEntries(
+        ['capabilities', 'abilityDetails', 'note'].filter((key) => key in unit).map((key) => [key, unit[key]])), unit.id);
+    }
+    const text = JSON.stringify(unit);
+    assert.doesNotMatch(text, /values differ|differs between references|alternative values\/context|Sions — (Armor reduction|Movement slow)|\(Sions\)/i, unit.id);
+    assert.doesNotMatch(unit.note || '', /source|reference|ORDSearch|Sions|Warcraft map/i, unit.id);
+    assert.doesNotMatch(unit.abilityDetails || '', /source|reference|ORDSearch|Sions|Warcraft map/i, unit.id);
+    for (const selection of record.textSelections || []) {
+      const evidence = selection.evidence;
+      const mapRecord = mapAudit.units[unit.id];
+      const ability = mapRecord.abilities.find(({ rawId }) => rawId === evidence.rawAbilityId);
+      assert.ok(ability.textFields.some((field) => field.field === evidence.field && field.level === evidence.level &&
+        evidence.quotes.every((quote) => field.text.includes(quote))), unit.id);
+      for (const id of evidence.rawUnitIds) {
+        assert.ok(mapRecord.objects.some((obj) => obj.rawId === id && obj.abilityIds.includes(evidence.rawAbilityId)), unit.id);
+      }
+      assert.ok(unit[selection.field].includes(selection.replacement), unit.id);
+    }
+  }
+  assert.equal(effects('transcendence_hawkins', 'shield').filter(({ condition }) => condition === 'Upgrade 4').length, 1);
+  assert.equal(effects('eternal_hancock', 'shield').filter(({ condition }) => condition === 'Upgrade 4').length, 1);
+  // Separate acquired effects still fall back to Sions when higher sources have no matching condition.
+  assert.equal(effects('immortal_gaban', 'shield').find(({ condition }) => condition === 'special upgrade').source, 'sions');
+  assert.equal(effects('transcendence_aokiji', 'slow').find(({ condition }) => condition === 'Upgrade 4').source, 'sions');
+  for (const id of ['legendary_kuma', 'legendary_kalgara', 'hidden_sunny']) {
+    assert.doesNotMatch(units.get(id).note || '', /source title|description lists/);
+  }
+  assert.match(units.get('legendary_zoro').note, /15% HP/);
+  assert.match(units.get('legendary_hibari').note, /7\.5%.*22\.5%.*2,000,000/);
+  assert.match(units.get('transcendence_franky').note, /2 Sunny ships for 8 wood/);
+  assert.match(units.get('transcendence_doflamingo').note, /Upgrade 4 extends awakening by 1\.5s/);
+  assert.equal(effects('transcendence_aokiji', 'sky')[0].detail, 'Flying');
+  assert.equal(effects('transcendence_aokiji', 'regen')[0].detail, 'Self mana regeneration');
+  assert.equal(effects('transcendence_aokiji', 'slow').find(({ condition }) => condition === 'Upgrade 4').detail, '-10');
+  assert.doesNotMatch(effects('limited_enel', 'rangetlpd')[0].detail, /resistance reduction|stun/);
+  assert.doesNotMatch(effects('hidden_vergo', 'shield').map(({ detail }) => detail).join(' '), /stun/);
 });

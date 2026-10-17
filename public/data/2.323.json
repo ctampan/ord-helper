@@ -381,7 +381,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Long-range sniper. Sions — Armor reduction: single-target armor reduction 50 and magic damage amplification 18."
+      "abilityDetails": "Long-range sniper."
     },
     {
       "id": "random_touma",
@@ -450,9 +450,7 @@
           "detail": "-15 · Aura · range 800",
           "source": "warcraft-map"
         }
-      ],
-      "abilityDetails": "Sions — Armor reduction: -20.",
-      "note": "Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      ]
     },
     {
       "id": "random_ichigo",
@@ -482,8 +480,7 @@
           "detail": "-70% · Area · 3 s · 4% on attack · range 500",
           "source": "warcraft-map"
         }
-      ],
-      "abilityDetails": "Sions — Movement slow: Movement slow."
+      ]
     },
     {
       "id": "random_light",
@@ -496,7 +493,7 @@
           "source": "ordsearch"
         }
       ],
-      "abilityDetails": "Single-target effect 0.5 (source does not specify the effect's unit)."
+      "abilityDetails": "Single-target effect 0.5 (unit unspecified)."
     },
     {
       "id": "random_yan",
@@ -598,7 +595,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Clima-Tact. Sions — Movement slow: triggered movement slow 5."
+      "abilityDetails": "Clima-Tact."
     },
     {
       "id": "special_robin",
@@ -2526,7 +2523,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. Sions — Armor reduction: Additional armor reduction 45 against story enemies."
+      "abilityDetails": "Normal."
     },
     {
       "id": "legendary_laboon",
@@ -2795,8 +2792,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. W: area magnet, cooldown 60s.",
-      "note": "Source title lists stun 0.5s; description lists 0.4s."
+      "abilityDetails": "Siege. W: area magnet, cooldown 60s."
     },
     {
       "id": "legendary_rayleigh",
@@ -2945,8 +2941,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. supporting damage. Sions — Armor reduction: triggered armor reduction 18.",
-      "note": "Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Siege. supporting damage."
     },
     {
       "id": "legendary_smoker",
@@ -3178,8 +3173,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. Sions — Armor reduction: boss armor reduction 40.",
-      "note": "Source title lists armor reduction 20 and story/lane armor reduction 20; description lists armor reduction 15 and story/lane armor reduction 25. Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Piercing."
     },
     {
       "id": "legendary_cracker",
@@ -3277,8 +3271,7 @@
           "source": "ordsearch"
         }
       ],
-      "abilityDetails": "Normal. Sions — Armor reduction: triggered armor reduction 30 (poison-style 20 plus area 10). Sions — Movement slow: single-target slow 45%.",
-      "note": "Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Normal."
     },
     {
       "id": "legendary_whitebeard",
@@ -3349,8 +3342,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Haki. supporting damage. HP skill. Sions — Armor reduction: Additional armor reduction 30 against bosses and story enemies. Sions — Movement slow: triggered movement slow 35.",
-      "note": "Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details. Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Haki. supporting damage. HP skill."
     },
     {
       "id": "legendary_hibari",
@@ -3397,7 +3389,7 @@
         }
       ],
       "abilityDetails": "activates every 4 basic attacks.",
-      "note": "Source title lists total-HP damage 7.5% against bosses/berserk enemies and 22.5% against normal enemies; description lists additional boss damage 6% of total HP and 2,000,000 magic damage against story enemies."
+      "note": "Total-HP damage: 7.5% against bosses/berserk enemies and 22.5% against lane enemies; 2,000,000 magic damage against story enemies."
     },
     {
       "id": "legendary_chopper",
@@ -3556,7 +3548,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. HP skill. Larger treasure search radius, more treasure chests, 50% chance for double treasure rewards, and gold income +60%. Sions — Movement slow: triggered movement slow 42."
+      "abilityDetails": "Normal. HP skill. Larger treasure search radius, more treasure chests, 50% chance for double treasure rewards, and gold income +60%."
     },
     {
       "id": "legendary_neko",
@@ -3662,7 +3654,7 @@
           "source": "ordsearch"
         }
       ],
-      "abilityDetails": "Piercing. cooldown 50s. Sions — Movement slow: single-target slow 99%."
+      "abilityDetails": "Piercing. cooldown 50s."
     },
     {
       "id": "legendary_blackmaria",
@@ -4015,7 +4007,7 @@
       "capabilities": [
         {
           "category": "single",
-          "detail": "single-target current-HP damage and stun",
+          "detail": "Single-target current-HP damage",
           "source": "sions"
         },
         {
@@ -4195,7 +4187,7 @@
         }
       ],
       "abilityDetails": "Piercing. finisher 10.",
-      "note": "Source title lists execution of lane enemies below 13% HP; description lists guaranteed execution/deletion of a single enemy at 12% HP or below."
+      "note": "Guaranteed execution of a single lane enemy at 15% HP or below."
     },
     {
       "id": "legendary_hancock",
@@ -4267,7 +4259,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. Sions — Armor reduction: Armor reduction does not stack with Ivankov.",
+      "abilityDetails": "Siege.",
       "note": "Command: bonkurei. Armor reduction does not stack with Ivankov."
     },
     {
@@ -4312,7 +4304,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. Sions — Movement slow: single-target slow 50.",
+      "abilityDetails": "Normal.",
       "note": "Command: aokiji."
     },
     {
@@ -4357,7 +4349,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. while holding position, buffs the farthest unit in range. Sions — Armor reduction: Armor reduction does not stack with Bonkurei.",
+      "abilityDetails": "Normal. while holding position, buffs the farthest unit in range.",
       "note": "Command: ivankov. Armor reduction does not stack with Bonkurei."
     },
     {
@@ -4481,7 +4473,7 @@
       "capabilities": [
         {
           "category": "shield",
-          "detail": "-15 · Skill · Mana skill (Sions)",
+          "detail": "-15 · Skill",
           "source": "ordsearch"
         },
         {
@@ -4505,7 +4497,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Ryokugyu combination. Sions — Armor reduction: mana skill: armor reduction 15. Sions — Movement slow: triggered movement slow 20."
+      "abilityDetails": "Ryokugyu combination."
     },
     {
       "id": "hidden_mihawk",
@@ -4569,12 +4561,12 @@
       "capabilities": [
         {
           "category": "shield",
-          "detail": "single-target stun and armor reduction",
+          "detail": "Single-target armor reduction",
           "source": "sions"
         },
         {
           "category": "shield",
-          "detail": "Mana skill: armor reduction 30 for 5s and stun 2.5s",
+          "detail": "Mana skill: armor reduction 30 for 5s",
           "source": "sions"
         },
         {
@@ -4888,7 +4880,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. HP skill. fixed damage amplification +5%. Sions — Movement slow: triggered movement slow 10.",
+      "abilityDetails": "Siege. HP skill. fixed damage amplification +5%.",
       "note": "Command: akainu."
     },
     {
@@ -5125,7 +5117,7 @@
       "capabilities": [
         {
           "category": "rangellpd",
-          "detail": "mana skill: damage equal to 4% of missing HP and stun 1.5s",
+          "detail": "Mana skill: damage equal to 4% of missing HP",
           "source": "sions"
         },
         {
@@ -5218,7 +5210,7 @@
         },
         {
           "category": "mshield",
-          "detail": "Mana skill: magic resistance reduction 6 and stun 1.2s",
+          "detail": "Mana skill: magic resistance reduction 6",
           "source": "sions"
         },
         {
@@ -5242,7 +5234,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. Sions — Movement slow: triggered movement slow 30.",
+      "abilityDetails": "Normal.",
       "note": "Command: maxim."
     },
     {
@@ -5292,7 +5284,7 @@
         }
       ],
       "abilityDetails": "Transcendence Franky enables the Gaon Cannon mana skill.",
-      "note": "Command: sunny. Normal; area stun (source title: 0.7s; description: 0.5s)."
+      "note": "Command: sunny. Normal."
     },
     {
       "id": "distortion_blackmaria",
@@ -5489,7 +5481,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Cyborg of the Plague. Sions — Armor reduction: triggered armor reduction 20.",
+      "abilityDetails": "Cyborg of the Plague.",
       "note": "Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18)."
     },
     {
@@ -5805,7 +5797,7 @@
       "capabilities": [
         {
           "category": "sky",
-          "detail": "All Seraphim have single-target stun and can fly",
+          "detail": "Flying",
           "source": "sions"
         },
         {
@@ -5848,7 +5840,7 @@
       "capabilities": [
         {
           "category": "sky",
-          "detail": "All Seraphim have single-target stun and can fly",
+          "detail": "Flying",
           "source": "sions"
         },
         {
@@ -5876,9 +5868,7 @@
           "detail": "2 · Single-target · max 75 · 10% on attack · range 500",
           "source": "warcraft-map"
         }
-      ],
-      "abilityDetails": "Sions — Armor reduction: -32.",
-      "note": "Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      ]
     },
     {
       "id": "seraphim_sshark",
@@ -5903,7 +5893,7 @@
         },
         {
           "category": "sky",
-          "detail": "All Seraphim have single-target stun and can fly",
+          "detail": "Flying",
           "source": "sions"
         },
         {
@@ -5955,7 +5945,7 @@
       "capabilities": [
         {
           "category": "sky",
-          "detail": "All Seraphim have single-target stun and can fly",
+          "detail": "Flying",
           "source": "sions"
         },
         {
@@ -6065,8 +6055,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. 50% area damage. Sions — Armor reduction: Mana skill: armor reduction 60 for 4.5s. Sions — Movement slow: triggered movement slow 136 and a separate ground-area triggered slow 45.",
-      "note": "Command: joker tr (Dark Joker). Upgrade 4 adds critical hits; source description lists Upgrade 3 extending awakening from 4.5s to 6s. Movement slow differs between references. Alternative values/context are retained in ability details."
+      "abilityDetails": "Piercing. 50% area damage.",
+      "note": "Command: joker tr (Dark Joker). Upgrade 4 adds critical hits; Upgrade 4 extends awakening by 1.5s."
     },
     {
       "id": "transcendence_robin",
@@ -6199,8 +6189,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. special upgrade available. Sions — Armor reduction: triggered armor reduction 15. Sions — Armor reduction: Mana skill: transformation and armor reduction 10. Sions — Movement slow: Triggered movement slow 35 from a specific skill and 12 from all skills.",
-      "note": "Command: ryokugyu tr (New Marine Admiral Green Bull). Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details. Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Normal. special upgrade available.",
+      "note": "Command: ryokugyu tr (New Marine Admiral Green Bull)."
     },
     {
       "id": "transcendence_luffy",
@@ -6274,8 +6264,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. percentage area damage. Upgrade 4 strengthens stun. Sions — Movement slow: triggered movement slow 35.",
-      "note": "Command: luffy tr (The Man Who Will Become Pirate King). Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Siege. percentage area damage. Upgrade 4 strengthens stun.",
+      "note": "Command: luffy tr (The Man Who Will Become Pirate King)."
     },
     {
       "id": "transcendence_hawkins",
@@ -6310,12 +6300,6 @@
           "category": "shield",
           "detail": "-25 · Aura",
           "source": "ordsearch"
-        },
-        {
-          "category": "shield",
-          "detail": "Upgrade 4 summons a cursed doll with fortune-telling, movement slow and armor reduction 7, and single-target slow 7",
-          "source": "sions",
-          "condition": "Upgrade 4"
         },
         {
           "category": "shield",
@@ -6393,7 +6377,7 @@
         },
         {
           "category": "rangenlpd",
-          "detail": "Mana skill: physical area damage equal to 1.5% of current HP and stun 3s",
+          "detail": "Mana skill: physical area damage equal to 1.5% of current HP",
           "source": "sions"
         },
         {
@@ -6442,8 +6426,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. damage increases per buff. Upgrade 4. Sions — Armor reduction: -30. Sions — Movement slow: triggered movement slow 30.",
-      "note": "Command: sabo tr (Revolutionary Army Chief of Staff). Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Siege. damage increases per buff. Upgrade 4.",
+      "note": "Command: sabo tr (Revolutionary Army Chief of Staff)."
     },
     {
       "id": "transcendence_usopp",
@@ -6521,7 +6505,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. W: Usopp Hammer. Upgrade 4 summons plants. Sions — Armor reduction: global armor reduction 8.",
+      "abilityDetails": "Piercing. W: Usopp Hammer. Upgrade 4 summons plants.",
       "note": "Command: usopp tr (Warrior of the Sea)."
     },
     {
@@ -6584,7 +6568,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. Upgrade 4 enhances abilities. acquiring Shusui strengthens him and changes skills. Sions — Armor reduction: -30 (35-42). Sions — Movement slow: -30 (35-42).",
+      "abilityDetails": "Piercing. Upgrade 4 enhances abilities. acquiring Shusui strengthens him and changes skills.",
       "note": "Command: zoro tr (Strongest Swordsman)."
     },
     {
@@ -6670,7 +6654,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. mana skill. swimming. special upgrade available. Sions — Movement slow: triggered movement slow 50.",
+      "abilityDetails": "Siege. mana skill. swimming. special upgrade available.",
       "note": "Command: jinbe tr (Knight of the Sea)."
     },
     {
@@ -6790,7 +6774,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. 80% area damage. Upgrade 4. Sions — Movement slow: Mana skill: triggered movement slow 99.",
+      "abilityDetails": "Siege. 80% area damage. Upgrade 4.",
       "note": "Command: fujitora tr (Raging Tiger)."
     },
     {
@@ -6916,7 +6900,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "current-HP damage. Mana skill: Nika transformation with a 2s incapacitation penalty. Upgrade 4 removes the penalty. Sions — Armor reduction: stacking armor reduction up to 40.",
+      "abilityDetails": "current-HP damage. Mana skill: Nika transformation with a 2s incapacitation penalty. Upgrade 4 removes the penalty.",
       "note": "Command: bonney tr (Distorted Future)."
     },
     {
@@ -7399,8 +7383,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. pull. Removes berserk buffs and deals additional damage. Upgrade 4 strengthens Black Vortex. Sions — Movement slow: triggered movement slow 70.",
-      "note": "Command: teach tr (Cunning and Despicable Darkness). Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Piercing. pull. Removes berserk buffs and deals additional damage. Upgrade 4 strengthens Black Vortex.",
+      "note": "Command: teach tr (Cunning and Despicable Darkness)."
     },
     {
       "id": "transcendence_nami",
@@ -7447,7 +7431,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. total-HP damage. gold income +20%. Upgrade 4. Sions — Movement slow: triggered movement slow 45.",
+      "abilityDetails": "Normal. total-HP damage. gold income +20%. Upgrade 4.",
       "note": "Command: nami tr (Clear Weather)."
     },
     {
@@ -7520,8 +7504,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. explosion damage. Upgrade 4. Sions — Movement slow: triggered movement slow 35. Sions — Movement slow: single-target boss slow 99. Sions — Movement slow: Mana skill: movement slow 45 and attack +20.",
-      "note": "Command: law tr (The Man Who Offered One Hundred Hearts). Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Piercing. explosion damage. Upgrade 4.",
+      "note": "Command: law tr (The Man Who Offered One Hundred Hearts)."
     },
     {
       "id": "transcendence_lucci",
@@ -7670,7 +7654,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. creep-related effect. Upgrade 4 summons Baby Laboon. Sions — Movement slow: global slow 5.",
+      "abilityDetails": "Normal. creep-related effect. Upgrade 4 summons Baby Laboon.",
       "note": "Command: brook tr (Soul King)."
     },
     {
@@ -7732,7 +7716,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. single-target magic damage. mana skill. Upgrade 4. Sions — Movement slow: triggered movement slow 50 (55).",
+      "abilityDetails": "Siege. single-target magic damage. mana skill. Upgrade 4.",
       "note": "Command: sanji tr (The Man Returned from Hell)."
     },
     {
@@ -7980,13 +7964,13 @@
       "capabilities": [
         {
           "category": "sky",
-          "detail": "Upgrade 4 adds slow 10, explosion damage amplification 5, flying, and self mana regeneration",
+          "detail": "Flying",
           "source": "sions",
           "condition": "Upgrade 4"
         },
         {
           "category": "regen",
-          "detail": "Upgrade 4 adds slow 10, explosion damage amplification 5, flying, and self mana regeneration",
+          "detail": "Self mana regeneration",
           "source": "sions",
           "condition": "Upgrade 4"
         },
@@ -8002,7 +7986,7 @@
         },
         {
           "category": "slow",
-          "detail": "Upgrade 4 adds slow 10, explosion damage amplification 5, flying, and self mana regeneration",
+          "detail": "-10",
           "source": "sions",
           "condition": "Upgrade 4"
         },
@@ -8028,7 +8012,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. mana skill. Sions — Movement slow: -70 (80). Sions — Movement slow: single-target slow 15.",
+      "abilityDetails": "Piercing. mana skill.",
       "note": "Command: aokiji tr (Former Marine Admiral Blue Pheasant)."
     },
     {
@@ -8091,7 +8075,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. HP and mana skills. Upgrade 4 adjusts meteor density and adds strength-based damage. Sions — Movement slow: triggered movement slow 12.",
+      "abilityDetails": "Siege. HP and mana skills. Upgrade 4 adjusts meteor density and adds strength-based damage.",
       "note": "Command: akainu tr (Marine Fleet Admiral Red Dog). One skill does not stack with Eternal Ace."
     },
     {
@@ -8288,7 +8272,7 @@
         }
       ],
       "abilityDetails": "Siege. Mana skill: General Franky transformation lasting 6s. Damage increases per nearby Sunny. Upgrade 4.",
-      "note": "Command: franky tr (Invincible Iron Pirates). Shipwright can craft 2 Sunny ships; source title lists cost 8 wood, description lists 10 wood."
+      "note": "Command: franky tr (Invincible Iron Pirates). Shipwright crafts 2 Sunny ships for 8 wood."
     },
     {
       "id": "transcendence_koby",
@@ -8348,7 +8332,7 @@
         }
       ],
       "abilityDetails": "lane explosion-damage reduction debuff 10%. self attack speed increases every 5 rounds, up to level 6. Upgrade 4.",
-      "note": "Command: koby tr (Future of the Marines). Summons clones; source title lists explosion damage and description lists armor-ignoring damage."
+      "note": "Command: koby tr (Future of the Marines). Summons clones that deal 60% of their attack power as explosion damage within range 400 and 60,000 magic damage to a single enemy per attack."
     },
     {
       "id": "limited_rebecca",
@@ -8410,8 +8394,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. leveling. Upgrade 4 adds Repeated Training. gains 2 levels when using the mana skill. Sions — Movement slow: triggered movement slow 50.",
-      "note": "Additional crafting cost: 5,000 gold and 5 wood. Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Piercing. leveling. Upgrade 4 adds Repeated Training. gains 2 levels when using the mana skill.",
+      "note": "Additional crafting cost: 5,000 gold and 5 wood."
     },
     {
       "id": "limited_katakuri",
@@ -8597,8 +8581,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Normal. Upgrade 4 upgrades Wildfire to Karyudon. Sions — Armor reduction: triggered armor reduction 34. Sions — Armor reduction: poison-style armor reduction 25 plus area reduction 10. Sions — Movement slow: single-target slow 15%.",
-      "note": "Additional crafting cost: 5,000 gold and 5 wood. Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Normal. Upgrade 4 upgrades Wildfire to Karyudon.",
+      "note": "Additional crafting cost: 5,000 gold and 5 wood."
     },
     {
       "id": "limited_alvida",
@@ -8631,12 +8615,12 @@
         },
         {
           "category": "rangellpd",
-          "detail": "mana skill: missing-HP damage, Armor Break 10, and area stun",
+          "detail": "Mana skill: missing-HP damage",
           "source": "sions"
         },
         {
           "category": "armorbreak",
-          "detail": "mana skill: missing-HP damage, Armor Break 10, and area stun",
+          "detail": "Mana skill: Armor Break 10",
           "source": "sions"
         },
         {
@@ -8927,7 +8911,7 @@
         },
         {
           "category": "last",
-          "detail": "single-target stun and total-HP damage",
+          "detail": "Single-target total-HP damage",
           "source": "sions"
         },
         {
@@ -8937,7 +8921,7 @@
         },
         {
           "category": "rangetlpd",
-          "detail": "Mana skill: area damage equal to 2% of total HP, magic resistance reduction 18, and stun 3s",
+          "detail": "Mana skill: area damage equal to 2% of total HP",
           "source": "sions"
         },
         {
@@ -9028,7 +9012,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Siege. armor +15. percentage area damage. single-target physical damage. damage increases per buff. ORDSearch — Enemy armor increase: +15; separate from armor reductions.",
+      "abilityDetails": "Siege. armor +15. percentage area damage. single-target physical damage. damage increases per buff. Enemy armor increase: +15; separate from armor reductions.",
       "note": "Command: garp im (Marine Hero Garp)."
     },
     {
@@ -9096,7 +9080,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Piercing. 100% area damage. persuades allied units. Sions — Armor reduction: -20 (25).",
+      "abilityDetails": "Piercing. 100% area damage. persuades allied units.",
       "note": "Command: rayleigh im (Dark King Silvers Rayleigh). Can sell junk; special upgrade available."
     },
     {
@@ -9169,8 +9153,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Roger). Haki. special upgrade: Divine Departure. Sions — Movement slow: Mana skill: movement slow 115.",
-      "note": "Command: roger im (Pirate King Gol D. Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Roger). Haki. special upgrade: Divine Departure.",
+      "note": "Command: roger im (Pirate King Gol D."
     },
     {
       "id": "immortal_gaban",
@@ -9233,7 +9217,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Mountain Eater. Piercing. Upgrade 4 enhances skills and adds high-speed movement. Sions — Armor reduction: single-target armor reduction 60."
+      "abilityDetails": "Mountain Eater. Piercing. Upgrade 4 enhances skills and adds high-speed movement."
     },
     {
       "id": "immortal_kaido",
@@ -9299,8 +9283,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Haki. percentage area damage. F: transformation. HP skill. Debuff reduces attack by 75%, excluding Kaido. Sions — Armor reduction: single-target armor reduction 45. Sions — Armor reduction: Skill procs apply armor reduction 3, up to single-target reduction 145 and area reduction 30.",
-      "note": "Command: kaido im (King of the Beasts). Armor reduction: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Haki. percentage area damage. F: transformation. HP skill. Debuff reduces attack by 75%, excluding Kaido.",
+      "note": "Command: kaido im (King of the Beasts)."
     },
     {
       "id": "immortal_whitebeard",
@@ -9376,8 +9360,8 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Haki. HP skill. Upgrade 4 enhances Quake Strike. Sions — Movement slow: triggered movement slow 60.",
-      "note": "Command: newgate im (Great Pirate Whitebeard). Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details."
+      "abilityDetails": "Haki. HP skill. Upgrade 4 enhances Quake Strike.",
+      "note": "Command: newgate im (Great Pirate Whitebeard)."
     },
     {
       "id": "immortal_bullet",
@@ -10033,7 +10017,7 @@
           "source": "ordsearch"
         }
       ],
-      "abilityDetails": "Piercing. gold enhancement. Listed stats include the summoned Ivankov. Upgrade 4 adds summons. Sions — Armor reduction: -30 (41).",
+      "abilityDetails": "Piercing. gold enhancement. Listed stats include the summoned Ivankov. Upgrade 4 adds summons.",
       "note": "Command: buggy et (Thousand-Coin Clown)."
     },
     {
@@ -10156,12 +10140,6 @@
         },
         {
           "category": "shield",
-          "detail": "Upgrade 4 strengthens stun, adds area explosion damage, and adds armor reduction 5",
-          "source": "sions",
-          "condition": "Upgrade 4"
-        },
-        {
-          "category": "shield",
           "detail": "-5 · Aura",
           "source": "ordsearch",
           "condition": "Upgrade 4"
@@ -10196,7 +10174,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Haki. mana skill. Sions — Armor reduction: -35 (40). Sions — Movement slow: triggered movement slow 60.",
+      "abilityDetails": "Haki. mana skill.",
       "note": "Command: hancock et (Empress of Amazon Lily)."
     },
     {
@@ -10872,7 +10850,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "HP and mana skills. Sions — Armor reduction: Single-target armor reduction 40. Sions — Movement slow: triggered movement slow 50.",
+      "abilityDetails": "HP and mana skills.",
       "note": "Requires Yan, 1 additional Random unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
@@ -10931,7 +10909,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Moves across all terrain. Sions — Armor reduction: -20 (30). Sions — Movement slow: -30 (40).",
+      "abilityDetails": "Moves across all terrain.",
       "note": "Requires Megumin, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
@@ -11286,7 +11264,6 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "Sions — Movement slow: triggered movement slow 20.",
       "note": "Requires K, 1 additional Random unit, Pirate Ship, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {
@@ -11360,7 +11337,7 @@
           "source": "warcraft-map"
         }
       ],
-      "abilityDetails": "mana skill: damage. Docking. Sions — Movement slow: HP skill: movement slow 30.",
+      "abilityDetails": "mana skill: damage. Docking.",
       "note": "Requires Elizabeth, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients."
     },
     {

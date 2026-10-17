@@ -59,10 +59,10 @@ export function displayAbilityText(text: string): string {
   return text.replace(/−/g, "-")
     .replace(/\bGroup reference:\s*.*?(?:\.(?=\s|$)|$)/gi, "")
     .replace(/\s*\((?:Sions|ORDSearch|Warcraft map)\)/gi, "")
-    .replace(/(?:Sions|ORDSearch|Warcraft map)\s*[—–:-]\s*/gi, "Alternative detail: ")
-    .replace(/ORDSearch values are shown in the tags; Sions values\/context are retained in ability details\./gi,
-      "Values differ between references; alternative values/context are retained in ability details.")
-    .replace(/\b(?:ORDSearch|Sions|Warcraft map)\b/gi, "reference");
+    .replace(/(?:(?:Armor reduction|Movement slow): )?ORDSearch values are shown in the tags; Sions values\/context are retained in ability details\./gi, "")
+    .replace(/(?:Movement slow|Values) differs? between references[.;]\s*(?:Alternative values\/context are retained in ability details\.)?/gi, "")
+    .replace(/(?:Sions|ORDSearch|Warcraft map)\s*[—–:-]\s*/gi, "")
+    .replace(/\b(?:ORDSearch|Sions|Warcraft map)\b\s*/gi, "");
 }
 
 export function isCapabilityId(value: unknown): value is CapabilityId {

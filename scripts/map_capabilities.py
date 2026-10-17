@@ -290,11 +290,6 @@ def apply_map(data, audit):
                                           "evidence": [e for _, e in replacements]})
         if current:
             unit["capabilities"] = current
-        # A resolved disagreement must not continue to advertise stale tags.
-        if unit["id"] == "transcendence_doflamingo":
-            unit["note"] = unit.get("note", "").replace(
-                "Movement slow: ORDSearch values are shown in the tags; Sions values/context are retained in ability details.",
-                "Movement slow differs between references. Alternative values/context are retained in ability details.")
     return audit
 
 

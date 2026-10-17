@@ -58,7 +58,9 @@ test('new recipes and all four independent Vegapunk variants use the source ingr
     });
     assert.equal(unit.image, 'images/transcendence_vegapunk.png');
     assert.match(unit.abilityDetails, /Punk Records/);
-    assert.match(JSON.stringify(units.get(`seraphim_${form}`).capabilities), /single-target stun and can fly/);
+    const capabilities = units.get(`seraphim_${form}`).capabilities;
+    assert.ok(capabilities.some(({ category, condition }) => category === 'sstun' && !condition));
+    assert.ok(capabilities.some(({ category, condition }) => category === 'sky' && !condition));
   }
 });
 
