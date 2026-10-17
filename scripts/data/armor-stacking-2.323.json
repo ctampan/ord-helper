@@ -1,0 +1,971 @@
+{
+  "version": "2.323",
+  "mapSha256": "6de87277d89edccb359b442f1498f69a5e675c0c3d7479bb37c91dabd30ab8ca",
+  "engineReferences": [
+    "https://classic.battle.net/war3/basics/spellbasics.shtml",
+    "https://www.hiveworkshop.com/threads/do-auras-with-same-base-id-stack.252555/",
+    "https://www.hiveworkshop.com/threads/negative-aura-overriding.370373/"
+  ],
+  "scope": "Native level-1 flat enemy AHad armor auras only; identical values sharing a buff count once, different buffs add. Unequal same-buff values and trigger effects remain unverified.",
+  "review": {
+    "unavailable": {
+      "war3map.j": "[Errno 1392] Cannot read war3map.j"
+    },
+    "sameBuffConflicts": [
+      {
+        "stackGroup": "armor-aura:B011",
+        "members": [
+          {
+            "unitId": "special_hawkins",
+            "value": -3.0
+          },
+          {
+            "unitId": "rare_hawkins",
+            "value": -10.0
+          }
+        ],
+        "status": "Unequal negative values: winner unverified; omit group from subtotal."
+      },
+      {
+        "stackGroup": "armor-aura:B025",
+        "members": [
+          {
+            "unitId": "legendary_chopper",
+            "value": -18.0
+          },
+          {
+            "unitId": "transcendence_chopper",
+            "value": -50.0
+          }
+        ],
+        "status": "Unequal negative values: winner unverified; omit group from subtotal."
+      },
+      {
+        "stackGroup": "armor-aura:B02B",
+        "members": [
+          {
+            "unitId": "hidden_sabo",
+            "value": -20.0
+          },
+          {
+            "unitId": "transcendence_sabo",
+            "value": -35.0
+          }
+        ],
+        "status": "Unequal negative values: winner unverified; omit group from subtotal."
+      }
+    ],
+    "categories": {
+      "damageb": {
+        "effects": 38,
+        "numeric": 36
+      },
+      "slow": {
+        "effects": 110,
+        "numeric": 109
+      },
+      "docking": {
+        "effects": 14,
+        "numeric": 12
+      },
+      "regen": {
+        "effects": 15,
+        "numeric": 12
+      },
+      "shield": {
+        "effects": 103,
+        "numeric": 49
+      },
+      "life": {
+        "effects": 11,
+        "numeric": 9
+      },
+      "speedb": {
+        "effects": 36,
+        "numeric": 29
+      },
+      "mshield": {
+        "effects": 12,
+        "numeric": 12
+      },
+      "bombup": {
+        "effects": 12,
+        "numeric": 12
+      }
+    },
+    "movementSpeedBounds": {
+      "MinUnitSpeed": 89.0,
+      "MaxUnitSpeed": 490.0
+    },
+    "slowStatus": "Movement-speed bounds are absolute speeds, not a verified percentage cap. Slow, regeneration, buffs and amplification have no verified cross-effect aggregation rules.",
+    "buffObjects": [
+      {
+        "id": "B00C",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Giant reptiles",
+          "fube": "This unit is affected by Giant Reptile. Defense is reduced.",
+          "fnam": "!0535_Giant Reptile"
+        }
+      },
+      {
+        "id": "B00K",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Shandian Great Warrior",
+          "fube": "This unit is affected by Shandian Warlord. Defense is reduced.",
+          "fnam": "!0533_The Great Warrior of Shandia"
+        }
+      },
+      {
+        "id": "B011",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "straw fruit",
+          "fube": "Defense is reduced by the ability of the Straw Straw Fruit.",
+          "fnam": "!0110_!0214_!0722_straw-straw fruit"
+        }
+      },
+      {
+        "id": "B017",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Jangseong Cracker",
+          "fube": "This unit is affected by the Great Wall Cracker. Defense is reduced.",
+          "fnam": "!0519_Jangseong Cracker"
+        }
+      },
+      {
+        "id": "B01B",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Brutality",
+          "fube": "This unit is affected by Brutality. Defense is reduced.",
+          "fnam": "!0514_Brutal"
+        }
+      },
+      {
+        "id": "B01H",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "staff",
+          "fube": "This unit's defense is reduced by the influence of the staff.",
+          "fnam": "!0220_Staff"
+        }
+      },
+      {
+        "id": "B01L",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "heat haze",
+          "fube": "This unit is affected by heat haze. Defense is reduced.",
+          "fnam": "!0503!1306_Haze"
+        }
+      },
+      {
+        "id": "B01Q",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Manos Gigantes",
+          "fube": "Defense is reduced by the Manos Gigantes effect.",
+          "fnam": "!0707_Manos_Gigantes"
+        }
+      },
+      {
+        "id": "B025",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "diagnosis",
+          "fube": "This unit is affected by the diagnosis. Defense is reduced.",
+          "fnam": "!0501_!0727_Diagnosis"
+        }
+      },
+      {
+        "id": "B029",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "New Cara",
+          "fube": "This unit is affected by Newkama. Defense is reduced.",
+          "fnam": "!Newkama"
+        }
+      },
+      {
+        "id": "B02B",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "speculation",
+          "fube": "Defense power decreases due to the influence of speculation.",
+          "fnam": "!0404_!0718_Speculation"
+        }
+      },
+      {
+        "id": "B02G",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Weakness analysis",
+          "fube": "This unit's defense is reduced as its weakness is analyzed.",
+          "fnam": "!0124_Weakness Analysis"
+        }
+      },
+      {
+        "id": "B02I",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Critical point analysis",
+          "fube": "This unit's defense is reduced due to the influence of Critical Hit Analysis.",
+          "fnam": "!0408_!0603_Critical Point Analysis"
+        }
+      },
+      {
+        "id": "B02Q",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Virtual Slash",
+          "fube": "Defense power decreases due to the effect of virtual slash.",
+          "fnam": "!0414_VirtualSlash"
+        }
+      },
+      {
+        "id": "B02R",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Living",
+          "fube": "Defense power decreases due to the influence of killing intent.",
+          "fnam": "!0415_Living"
+        }
+      },
+      {
+        "id": "B02W",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Flower",
+          "fube": "Defense power is reduced by the ability due to the influence of Flower.",
+          "fnam": "!0538_Flower"
+        }
+      },
+      {
+        "id": "B04B",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "slippery fruit",
+          "fube": "This unit is affected by the Slippery Fruit. Defense is reduced.",
+          "fnam": "!0610_Slippery Fruit"
+        }
+      },
+      {
+        "id": "B05M",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Ghost",
+          "fube": "Defense power decreases due to the evil spirit.",
+          "fnam": "!0702_Guigi"
+        }
+      },
+      {
+        "id": "B05Q",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Enchanting perfume",
+          "fube": "Defense is reduced by the perfume of enchantment.",
+          "fnam": "!0303_Enchanting Perfume"
+        }
+      },
+      {
+        "id": "B05T",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "The influence of the 3 Generals, Katakuri",
+          "fube": "Defense power decreases due to Katakuri's influence.",
+          "fnam": "!0605_Jangseong Katakuri"
+        }
+      },
+      {
+        "id": "B061",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "The intimidation of the great pirate",
+          "fube": "Defense is reduced due to Edward's intimidation.",
+          "fnam": "!0904_Great Pirate's Intimidation"
+        }
+      },
+      {
+        "id": "B06K",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Mystic Eyes of Death Perception",
+          "fube": "This unit's defense is reduced due to the influence of the Mystic Eyes of Death Perception.",
+          "fnam": "!1205_Mystic Eyes of Death Perception"
+        }
+      },
+      {
+        "id": "B072",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Killing stone",
+          "fube": "This unit's defense is reduced by the influence of the Killing Stone.",
+          "fnam": "!1110_Slaying Stone"
+        }
+      },
+      {
+        "id": "B084",
+        "baseId": "BHad",
+        "fields": {
+          "ftip": "Full-body bladed weapon",
+          "fube": "This unit is affected by Full Body Blade. Defense is reduced.",
+          "fnam": "!1402_Full-body blade transformation"
+        }
+      }
+    ]
+  },
+  "rules": [
+    {
+      "unitId": "random_yomi",
+      "rawUnitIds": [
+        "h070"
+      ],
+      "detail": "-15 · Aura · range 800",
+      "value": -15.0,
+      "abilities": [
+        {
+          "abilityId": "A0YX",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -15.0,
+            "abuf": "B072",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B072",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "special_hawkins",
+      "rawUnitIds": [
+        "h016"
+      ],
+      "detail": "-3 · Aura · range 800",
+      "value": -3.0,
+      "abilities": [
+        {
+          "abilityId": "A08N",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -3.0,
+            "abuf": "B011",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B011",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "special_chopperbrain",
+      "rawUnitIds": [
+        "h01E"
+      ],
+      "detail": "-3 · Aura · range 800",
+      "value": -3.0,
+      "abilities": [
+        {
+          "abilityId": "A0EO",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -3.0,
+            "abuf": "B02G",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02G",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "rare_xdrake",
+      "rawUnitIds": [
+        "h09X"
+      ],
+      "detail": "-5 · Aura · range 825",
+      "value": -5.0,
+      "abilities": [
+        {
+          "abilityId": "A132",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -5.0,
+            "abuf": "B00C",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B00C",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "rare_hawkins",
+      "rawUnitIds": [
+        "h01U"
+      ],
+      "detail": "-10 · Aura · range 800",
+      "value": -10.0,
+      "abilities": [
+        {
+          "abilityId": "A0FM",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -10.0,
+            "abuf": "B011",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B011",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "rare_sabo",
+      "rawUnitIds": [
+        "h05L"
+      ],
+      "detail": "-10 · Aura · range 800",
+      "value": -10.0,
+      "abilities": [
+        {
+          "abilityId": "A0FW",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -10.0,
+            "abuf": "B01H",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B01H",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "legendary_bartolomeo",
+      "rawUnitIds": [
+        "h02Z"
+      ],
+      "detail": "-12 · Aura · range 850",
+      "value": -12.0,
+      "abilities": [
+        {
+          "abilityId": "A09H",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -12.0,
+            "abuf": "B01B",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B01B",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "legendary_ace",
+      "rawUnitIds": [
+        "h02O"
+      ],
+      "detail": "-33 · Aura · range 825",
+      "value": -33.0,
+      "abilities": [
+        {
+          "abilityId": "A0AP",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -33.0,
+            "abuf": "B01L",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B01L",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "legendary_kalgara",
+      "rawUnitIds": [
+        "h03F"
+      ],
+      "detail": "-20 · Aura · range 825",
+      "value": -20.0,
+      "abilities": [
+        {
+          "abilityId": "A060",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -20.0,
+            "abuf": "B00K",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B00K",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "legendary_cracker",
+      "rawUnitIds": [
+        "h03H"
+      ],
+      "detail": "-25 · Aura · range 725",
+      "value": -25.0,
+      "abilities": [
+        {
+          "abilityId": "A08W",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -25.0,
+            "abuf": "B017",
+            "aare": 725.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B017",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "legendary_hibari",
+      "rawUnitIds": [
+        "h0CM"
+      ],
+      "detail": "-22 · Aura · range 2000",
+      "value": -22.0,
+      "abilities": [
+        {
+          "abilityId": "A0HK",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -22.0,
+            "abuf": "B02W",
+            "aare": 2000.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02W",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "legendary_chopper",
+      "rawUnitIds": [
+        "h03K"
+      ],
+      "detail": "-18 · Aura · range 825",
+      "value": -18.0,
+      "abilities": [
+        {
+          "abilityId": "A0CU",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -18.0,
+            "abuf": "B025",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B025",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "hidden_bonkurei",
+      "rawUnitIds": [
+        "h03O"
+      ],
+      "detail": "-11 · Aura · range 850",
+      "value": -11.0,
+      "abilities": [
+        {
+          "abilityId": "A0DF",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -11.0,
+            "abuf": "B029",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B029",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "hidden_ivankov",
+      "rawUnitIds": [
+        "h076",
+        "h03Y"
+      ],
+      "detail": "-11 · Aura · range 850",
+      "value": -11.0,
+      "abilities": [
+        {
+          "abilityId": "A0DF",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -11.0,
+            "abuf": "B029",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B029",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "hidden_rebecca",
+      "rawUnitIds": [
+        "h03T"
+      ],
+      "detail": "-18 · Aura · range 850",
+      "value": -18.0,
+      "abilities": [
+        {
+          "abilityId": "A0G4",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -18.0,
+            "abuf": "B02I",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02I",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "hidden_mihawk",
+      "rawUnitIds": [
+        "h043"
+      ],
+      "detail": "-25 · Aura · range 825",
+      "value": -25.0,
+      "abilities": [
+        {
+          "abilityId": "A0GW",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -25.0,
+            "abuf": "B02Q",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02Q",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "hidden_sabo",
+      "rawUnitIds": [
+        "h03M"
+      ],
+      "detail": "-20 · Aura · range 800",
+      "value": -20.0,
+      "abilities": [
+        {
+          "abilityId": "A0DN",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -20.0,
+            "abuf": "B02B",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02B",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "hidden_killer",
+      "rawUnitIds": [
+        "h045"
+      ],
+      "detail": "-12 · Aura · range 800",
+      "value": -12.0,
+      "abilities": [
+        {
+          "abilityId": "A0H5",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -12.0,
+            "abuf": "B02R",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02R",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "alternate_vivi",
+      "rawUnitIds": [
+        "h05W"
+      ],
+      "detail": "-11 · Aura · range 750",
+      "value": -11.0,
+      "abilities": [
+        {
+          "abilityId": "A0R8",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -11.0,
+            "abuf": "B05Q",
+            "aare": 750.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B05Q",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "seraphim_shawk",
+      "rawUnitIds": [
+        "h0A3"
+      ],
+      "detail": "-35 · Aura · range 825",
+      "value": -35.0,
+      "abilities": [
+        {
+          "abilityId": "A13U",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -35.0,
+            "abuf": "B084",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B084",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "transcendence_robin",
+      "rawUnitIds": [
+        "H098",
+        "H08E"
+      ],
+      "detail": "-45 · Aura · range 850",
+      "value": -45.0,
+      "abilities": [
+        {
+          "abilityId": "A0B0",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -45.0,
+            "abuf": "B01Q",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B01Q",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "transcendence_sabo",
+      "rawUnitIds": [
+        "H092"
+      ],
+      "detail": "-35 · Aura · range 850",
+      "value": -35.0,
+      "abilities": [
+        {
+          "abilityId": "A0M4",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -35.0,
+            "abuf": "B02B",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B02B",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "transcendence_zoro",
+      "rawUnitIds": [
+        "H0BT",
+        "H09F"
+      ],
+      "detail": "-30 · Aura · range 815",
+      "value": -30.0,
+      "abilities": [
+        {
+          "abilityId": "A0QE",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -30.0,
+            "abuf": "B05M",
+            "aare": 815.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B05M",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "transcendence_chopper",
+      "rawUnitIds": [
+        "H0B6",
+        "H093",
+        "H091"
+      ],
+      "detail": "-50 · Aura · range 825",
+      "value": -50.0,
+      "abilities": [
+        {
+          "abilityId": "A0OI",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -50.0,
+            "abuf": "B025",
+            "aare": 825.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B025",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "limited_katakuri",
+      "rawUnitIds": [
+        "h07I"
+      ],
+      "detail": "-30 · Aura · range 850",
+      "value": -30.0,
+      "abilities": [
+        {
+          "abilityId": "A0VR",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -30.0,
+            "abuf": "B05T",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B05T",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "limited_alvida",
+      "rawUnitIds": [
+        "h08Q"
+      ],
+      "detail": "-25 · Aura · range 800",
+      "value": -25.0,
+      "abilities": [
+        {
+          "abilityId": "A0MZ",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -25.0,
+            "abuf": "B04B",
+            "aare": 800.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B04B",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "immortal_whitebeard",
+      "rawUnitIds": [
+        "h04A"
+      ],
+      "detail": "-45 · Aura · range 850",
+      "value": -45.0,
+      "abilities": [
+        {
+          "abilityId": "A0SB",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -45.0,
+            "abuf": "B061",
+            "aare": 850.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B061",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    },
+    {
+      "unitId": "mystic_shiki",
+      "rawUnitIds": [
+        "h0A2"
+      ],
+      "detail": "-44 · Aura · range 925",
+      "value": -44.0,
+      "abilities": [
+        {
+          "abilityId": "A0W2",
+          "baseId": "AHad",
+          "fields": {
+            "Had1": -44.0,
+            "abuf": "B06K",
+            "aare": 925.0,
+            "atar": "air,enemies,ground"
+          }
+        }
+      ],
+      "stackGroup": "armor-aura:B06K",
+      "additiveGroup": "enemy-armor-aura",
+      "stacking": "once"
+    }
+  ]
+}

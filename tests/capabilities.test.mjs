@@ -15,6 +15,7 @@ const skillAudit = await readJson('../docs/capability-map-skills-2.323.json');
 const sourceAudit = await readJson('../docs/capability-source-audit-2.323.json');
 const units = new Map(data.units.map((unit) => [unit.id, unit]));
 const effects = (id, category) => (units.get(id).capabilities || []).filter((effect) => effect.category === category);
+const originalEffect = ({ numeric, exclusiveGroup, ...effect }) => effect;
 
 test('all 278 units are audited and preserve their subgroups and original numeric information', () => {
   assert.equal(CAPABILITIES.length, 28);
@@ -40,7 +41,7 @@ test('all 278 units are audited and preserve their subgroups and original numeri
 });
 
 test('verified source values have signs, units, distinct targets and timing', () => {
-  assert.deepEqual(effects('rare_hawkins', 'shield'), [{ category: 'shield', detail: '-10 · Aura · range 800', source: 'warcraft-map' }]);
+  assert.deepEqual(effects('rare_hawkins', 'shield').map(originalEffect), [{ category: 'shield', detail: '-10 · Aura · range 800', source: 'warcraft-map' }]);
   assert.equal(effects('hidden_bonkurei', 'shield')[0].detail, '-11 · Aura · range 850');
   assert.equal(effects('hidden_bonkurei', 'stun')[0].detail, '1.65 s · 12% on attack · range 500');
   assert.match(units.get('hidden_bonkurei').note, /does not stack with Ivankov/);
@@ -135,7 +136,7 @@ test('restored skill annotations retain map identity, field, level and original 
   }
   for (const [id, record] of Object.entries(skillAudit.units)) {
     for (const addition of record.additions) {
-      assert.ok(effects(id, addition.replacement.category).some((c) => JSON.stringify(c) === JSON.stringify(addition.replacement)), id);
+      assert.ok(effects(id, addition.replacement.category).some((c) => JSON.stringify(originalEffect(c)) === JSON.stringify(addition.replacement)), id);
       assert.ok(addition.evidence.length, id);
       for (const evidence of addition.evidence) {
         if (evidence.file === 'war3map.w3u') {
@@ -208,7 +209,7 @@ test('all map corrections retain exact evidence and previous values without assu
         assert.ok(ability.textFields.some((field) => field.field === evidence.field && field.level === evidence.level && field.text.includes(evidence.quote)), id);
       }
       for (const effect of correction.replacement) {
-        assert.ok(effects(id, correction.category).some((actual) => JSON.stringify(actual) === JSON.stringify(effect)), id);
+        assert.ok(effects(id, correction.category).some((actual) => JSON.stringify(originalEffect(actual)) === JSON.stringify(effect)), id);
         assert.equal(effect.source, 'warcraft-map');
       }
     }
@@ -232,7 +233,7 @@ test('display strips source labels, obsolete conflict warnings and normalizes le
 });
 
 test('each effect and condition uses one source; superseded claims stay in the audit', () => {
-  assert.deepEqual(sourceAudit.priority, ['warcraft-map', 'ordsearch', 'sions']);
+  assert.deepEqual(sourceAudit.priority, ['warcraft-map', 'tmo', 'ordsearch', 'sions']);
   assert.equal(Object.keys(sourceAudit.units).length, data.units.length);
   for (const unit of data.units) {
     const record = sourceAudit.units[unit.id];

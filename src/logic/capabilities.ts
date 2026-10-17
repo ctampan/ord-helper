@@ -34,11 +34,26 @@ export const CAPABILITIES = [
 ] as const;
 
 export type CapabilityId = typeof CAPABILITIES[number]["id"];
+export interface CapabilityNumeric {
+  value: number;
+  unit: "armor" | "%" | "HP/s" | "mana/s" | "s" | "points";
+  target: "area" | "single" | "boss" | "lane" | "allies" | "self" | "unknown";
+  activation: "aura" | "attack" | "skill" | "proc" | "passive" | "unknown";
+  duration?: number;
+  cap?: number;
+  stacking: "sum" | "highest" | "once" | "unknown";
+  stackGroup?: string;
+  /** Explicitly permits adding separate exclusion groups within this scope. */
+  additiveGroup?: string;
+}
 export interface Capability {
   category: CapabilityId;
   detail?: string;
   condition?: string;
-  source?: "ordsearch" | "sions" | "warcraft-map";
+  source?: "ordsearch" | "sions" | "warcraft-map" | "tmo";
+  numeric?: CapabilityNumeric;
+  /** At most one condition in this group may be active. */
+  exclusiveGroup?: string;
 }
 export type FilterMode = "all" | "any";
 export interface CapabilityFilterPreferences {
@@ -58,11 +73,25 @@ export function readCapabilityVisible(saved: string | null): boolean {
 export function displayAbilityText(text: string): string {
   return text.replace(/−/g, "-")
     .replace(/\bGroup reference:\s*.*?(?:\.(?=\s|$)|$)/gi, "")
-    .replace(/\s*\((?:Sions|ORDSearch|Warcraft map)\)/gi, "")
+    .replace(/\s*\((?:Sions|ORDSearch|Warcraft map|TMO)\)/gi, "")
     .replace(/(?:(?:Armor reduction|Movement slow): )?ORDSearch values are shown in the tags; Sions values\/context are retained in ability details\./gi, "")
     .replace(/(?:Movement slow|Values) differs? between references[.;]\s*(?:Alternative values\/context are retained in ability details\.)?/gi, "")
-    .replace(/(?:Sions|ORDSearch|Warcraft map)\s*[—–:-]\s*/gi, "")
-    .replace(/\b(?:ORDSearch|Sions|Warcraft map)\b\s*/gi, "");
+    .replace(/(?:Sions|ORDSearch|Warcraft map|TMO)\s*[—–:-]\s*/gi, "")
+    .replace(/\b(?:ORDSearch|Sions|Warcraft map|TMO)\b\s*/gi, "");
+}
+
+export function isCapabilityNumeric(value: unknown): value is CapabilityNumeric {
+  if (!value || typeof value !== "object") return false;
+  const n = value as CapabilityNumeric;
+  return Number.isFinite(n.value) && ["armor", "%", "HP/s", "mana/s", "s", "points"].includes(n.unit) &&
+    ["area", "single", "boss", "lane", "allies", "self", "unknown"].includes(n.target) &&
+    ["aura", "attack", "skill", "proc", "passive", "unknown"].includes(n.activation) &&
+    ["sum", "highest", "once", "unknown"].includes(n.stacking) &&
+    (n.duration === undefined || (Number.isFinite(n.duration) && n.duration > 0)) &&
+    (n.cap === undefined || (Number.isFinite(n.cap) && n.cap > 0 && Math.abs(n.value) <= n.cap)) &&
+    (n.stackGroup === undefined || (typeof n.stackGroup === "string" && !!n.stackGroup.trim())) &&
+    (n.additiveGroup === undefined || (typeof n.additiveGroup === "string" && !!n.additiveGroup.trim() && n.stacking !== "unknown")) &&
+    (n.stacking === "unknown" || (typeof n.stackGroup === "string" && !!n.stackGroup.trim()));
 }
 
 export function isCapabilityId(value: unknown): value is CapabilityId {
@@ -74,7 +103,10 @@ export function isCapability(value: unknown): value is Capability {
   const capability = value as Capability;
   return isCapabilityId(capability.category) &&
     (capability.source === undefined || capability.source === "ordsearch" ||
-      capability.source === "sions" || capability.source === "warcraft-map") &&
+      capability.source === "sions" || capability.source === "warcraft-map" || capability.source === "tmo") &&
+    (capability.numeric === undefined || isCapabilityNumeric(capability.numeric)) &&
+    (capability.exclusiveGroup === undefined || (typeof capability.exclusiveGroup === "string" &&
+      !!capability.exclusiveGroup.trim() && typeof capability.condition === "string")) &&
     (capability.detail === undefined || typeof capability.detail === "string") &&
     (capability.condition === undefined ||
       (typeof capability.condition === "string" && capability.condition.trim().length > 0));

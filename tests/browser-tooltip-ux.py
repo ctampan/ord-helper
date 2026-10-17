@@ -83,7 +83,9 @@ with sync_playwright() as playwright:
 
     page.set_viewport_size({"width": 1920, "height": 1080})
     a.locator("input").fill("1")
-    feedback = page.locator("[data-count-feedback='rare_hawkins']")
+    # Feedback intentionally queues concurrent changes; inspect the newest
+    # notification while older animations finish independently.
+    feedback = page.locator("[data-count-feedback='rare_hawkins']").last
     expect(feedback).to_have_text("+1")
     assert feedback.evaluate("el => el.parentElement === document.body && getComputedStyle(el).pointerEvents === 'none'")
     animation = feedback.locator("span")
@@ -102,6 +104,7 @@ with sync_playwright() as playwright:
     expect(feedback).to_have_text("-2")
     animation.evaluate("el => { const animation = el.getAnimations()[0]; animation.pause(); animation.currentTime = 650; }")
     expect(feedback).to_be_visible()
+    animation.evaluate("el => el.getAnimations()[0].play()")
     page.emulate_media(reduced_motion="reduce")
     a.locator("input").fill("3")
     expect(feedback).to_have_text("+1")

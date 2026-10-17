@@ -10,7 +10,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_AUDIT = ROOT / "docs/capability-source-audit-2.323.json"
-SOURCE_PRIORITY = ("warcraft-map", "ordsearch", "sions")
+SOURCE_PRIORITY = ("warcraft-map", "tmo", "ordsearch", "sions")
 DISPLAY_FIELDS = ("capabilities", "abilityDetails", "note")
 SENTENCES = re.compile(r"(?<=[.!?])\s+")
 WARNING = re.compile(
@@ -67,6 +67,12 @@ def rank(source):
 
 def resolve_sources(data, previous_audit=None, map_audit=None):
     audit = {"priority": list(SOURCE_PRIORITY), "scope": "category and condition", "units": {}}
+    if previous_audit and "tmoSnapshot" in previous_audit:
+        audit["tmoSnapshot"] = deepcopy(previous_audit["tmoSnapshot"])
+    if previous_audit and "armorStackingSnapshot" in previous_audit:
+        audit["armorStackingSnapshot"] = deepcopy(previous_audit["armorStackingSnapshot"])
+    if previous_audit and "supportNumericSnapshot" in previous_audit:
+        audit["supportNumericSnapshot"] = deepcopy(previous_audit["supportNumericSnapshot"])
     for unit in data["units"]:
         before = {key: deepcopy(unit[key]) for key in DISPLAY_FIELDS if key in unit}
         prior = (previous_audit or {}).get("units", {}).get(unit["id"], {})
@@ -157,6 +163,10 @@ def resolve_sources(data, previous_audit=None, map_audit=None):
                                  "source": source} for (category, condition), source in selected.items()]}
         if text_selections:
             record["textSelections"] = text_selections
+        if "tmoSelections" in prior:
+            record["tmoSelections"] = deepcopy(prior["tmoSelections"])
+        if "numericSelections" in prior:
+            record["numericSelections"] = deepcopy(prior["numericSelections"])
         if before != after:
             record["previous"] = prior.get("previous", before)
             record["replacement"] = after

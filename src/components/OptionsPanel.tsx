@@ -4,6 +4,8 @@ import { BanToggle } from "./BanToggle";
 import { HelpModal } from "./HelpModal";
 
 interface OptionsPanelProps {
+  showTeamStats: boolean;
+  onToggleTeamStats: () => void;
   showCapabilityFilters: boolean;
   activeFilterCount: number;
   onToggleFilter: () => void;
@@ -33,6 +35,8 @@ interface OptionsPanelProps {
 }
 
 export const OptionsPanel: React.FC<OptionsPanelProps> = ({
+  showTeamStats,
+  onToggleTeamStats,
   showCapabilityFilters,
   activeFilterCount,
   onToggleFilter,
@@ -171,6 +175,13 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
             <div className={styles.dividerVertical} />
 
             {/* Group 4: Sorting & Grouping */}
+            <button type="button" className={`${styles.iconBtn} ${showTeamStats ? styles.active : ""}`}
+              onClick={onToggleTeamStats} aria-label="Toggle team stats" aria-pressed={showTeamStats}
+              aria-controls="team-stats" title={`Team Stats: ${showTeamStats ? "shown" : "hidden"}`}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M4 20V10h4v10m2 0V4h4v16m2 0v-7h4v7M2 20h20" />
+              </svg>
+            </button>
             <button
               type="button"
               className={`${styles.iconBtn} ${showCapabilityFilters ? styles.active : ""}`}

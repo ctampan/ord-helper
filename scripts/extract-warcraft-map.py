@@ -114,6 +114,7 @@ def extract(map_path, library):
     try:
         for name, extended in [("war3map.w3u", False), ("war3map.w3a", True),
                                ("war3map.w3q", True), ("war3map.w3t", False),
+                               ("war3map.w3h", False), ("war3mapMisc.txt", None),
                                ("war3map.wts", None), ("war3map.j", None)]:
             try:
                 raw = archive.read(name)

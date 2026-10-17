@@ -1,0 +1,4320 @@
+{
+  "version": "2.323",
+  "mapSha256": "6de87277d89edccb359b442f1498f69a5e675c0c3d7479bb37c91dabd30ab8ca",
+  "rules": [
+    {
+      "unitId": "uncommon_chopper",
+      "category": "damageb",
+      "detail": "+5",
+      "numeric": {
+        "value": 5.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "uncommon_tashigi",
+      "category": "slow",
+      "detail": "-6",
+      "numeric": {
+        "value": -6.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "random_paimon",
+      "category": "docking",
+      "detail": "+10% · Area · 100 mana · range 600",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "random_yotsuba",
+      "category": "regen",
+      "detail": "+1.5",
+      "numeric": {
+        "value": 1.5,
+        "unit": "mana/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:regen:B075"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0YY",
+          "baseId": "AHab",
+          "field": "Hab1",
+          "value": 1.5,
+          "buffId": "B075",
+          "targets": "friend (explicit tooltip; native target field inherited)",
+          "targetFromTooltip": true,
+          "text": "The innocence of children uplifts the spirits of surrounding units.\n\n◎Basic Effect: Increases the mana of allies within a 700 range by 1.5 per second"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "random_sento",
+      "category": "docking",
+      "detail": "+18% · Single-target · 17% on attack · range 375",
+      "numeric": {
+        "value": 18.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "random_elizabeth",
+      "category": "slow",
+      "detail": "-20% · Area · range 800",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B03V"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0YT",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.20000000298023224,
+          "buffId": "B03V",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "In fact, penguins are very ferocious animals that slow down the enemy's movement speed with their powerful spirit.\n\n◎Basic Effect: Reduces enemy movement speed by 20% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "random_tsubasa",
+      "category": "slow",
+      "detail": "-70% · Area · 3 s · 4% on attack · range 500",
+      "numeric": {
+        "value": -70.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 3.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "random_tsubasa",
+      "category": "speedb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "special_nami",
+      "category": "slow",
+      "detail": "-5% · Area · 3 s",
+      "numeric": {
+        "value": -5.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 3.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "special_law",
+      "category": "speedb",
+      "detail": "W: single-target attack speed +100% for 7s",
+      "numeric": {
+        "value": 100.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "skill",
+        "stacking": "unknown",
+        "duration": 7.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "special_smoker",
+      "category": "slow",
+      "detail": "-5% · Area · range 800",
+      "numeric": {
+        "value": -5.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B012"
+      },
+      "evidence": [
+        {
+          "abilityId": "A08F",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.05000000074505806,
+          "buffId": "B012",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Uses Smoker's Smoke-Smoke Fruit ability.\n\n◎Basic Effect: Reduces enemy movement speed by 5% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "special_chopperguard",
+      "category": "damageb",
+      "detail": "+7",
+      "numeric": {
+        "value": 7.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B00V"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0EM",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.07000000029802322,
+          "buffId": "B00V",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Boosts morale of nearby units by acting cute.\n\n◎Basic Effect : Increases the attack power of allies in an 850 range by 7%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "special_crocodile",
+      "category": "slow",
+      "detail": "-5% · Area · range 850",
+      "numeric": {
+        "value": -5.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B001"
+      },
+      "evidence": [
+        {
+          "abilityId": "A08E",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.05000000074505806,
+          "buffId": "B001",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Slows down nearby enemies with the power of the Sand-Sand Fruit.\n\n◎Basic Effect : Reduces enemy movement speed by 5% within an 850 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "special_kid",
+      "category": "slow",
+      "detail": "-5% · Area · range 800",
+      "numeric": {
+        "value": -5.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B004"
+      },
+      "evidence": [
+        {
+          "abilityId": "A08H",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.05000000074505806,
+          "buffId": "B004",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Uses the ability of the Magnet-Magnet Fruit to pull in nearby units, hindering their movement.\n\n◎Basic Effect: Reduces enemy movement speed by 5% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "special_docking",
+      "category": "mshield",
+      "detail": "-10%",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "item_nika",
+      "category": "damageb",
+      "detail": "+15",
+      "numeric": {
+        "value": 15.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "item_uta",
+      "category": "speedb",
+      "detail": "+12",
+      "numeric": {
+        "value": 12.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "item_marco",
+      "category": "life",
+      "detail": "+0.3",
+      "numeric": {
+        "value": 0.3,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "rare_xdrake",
+      "category": "slow",
+      "detail": "-10% · Area · range 825",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "rare_blackbeard",
+      "category": "docking",
+      "detail": "+4% · Single-target · 12% on attack",
+      "numeric": {
+        "value": 4.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "rare_law",
+      "category": "speedb",
+      "detail": "W: single-target attack speed +120% for 8s",
+      "numeric": {
+        "value": 120.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "skill",
+        "stacking": "unknown",
+        "duration": 8.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "rare_brook",
+      "category": "speedb",
+      "detail": "+10",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B01E"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0FT",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.10000000149011612,
+          "buffId": "B01E",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Boosts the morale of nearby friendly units with a humming tune.\n\n◎Basic Effect : Increases attack speed of allied units within a 900 range by 10%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_sugar",
+      "category": "regen",
+      "detail": "+0.6",
+      "numeric": {
+        "value": 0.6,
+        "unit": "mana/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:regen:B003"
+      },
+      "evidence": [
+        {
+          "abilityId": "A022",
+          "baseId": "AHab",
+          "field": "Hab1",
+          "value": 0.6000000238418579,
+          "buffId": "B003",
+          "targets": "friend (explicit tooltip; native target field inherited)",
+          "targetFromTooltip": true,
+          "text": "Boosts the morale of allied forces with the status of a special officer.\n\n◎Basic Effect: Increases the mana of allies within an 800 range by 0.6 per second"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_aokiji",
+      "category": "slow",
+      "detail": "-10% · Area · range 800 · 10% on attack · range 405",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "rare_ivankov",
+      "category": "damageb",
+      "detail": "+35",
+      "numeric": {
+        "value": 35.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "skill",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B02D",
+        "duration": 25.0
+      },
+      "evidence": [
+        {
+          "abilityId": "A03I",
+          "baseId": "Ainf",
+          "field": "Inf1",
+          "value": 0.3499999940395355,
+          "buffId": "B02D",
+          "targets": "air,invulnerable,self,ground,friend",
+          "targetFromTooltip": false,
+          "text": "Injects hormones into friendly units to enhance their combat abilities.\n\n◎Fighting Spirit : Increases target unit's attack power by 35%\n◎Duration : 25 seconds\n　▶ Cannot stack with other Tenacity skills\n◎Cooldown : 50 seconds\n\nDeath Wink\n◎Basic Effect : 7% chance on attack to deal 500 range 13,000 magic damage\n◎Additional Effect : 1.4 second stun"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_chopper",
+      "category": "damageb",
+      "detail": "+25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B00V"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0EN",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.25,
+          "buffId": "B00V",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " Chopper's cuteness boosts the morale of allies.\n\n◎Basic Effect: Increases the attack power of allied units within a 900 range by 25%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_kid",
+      "category": "slow",
+      "detail": "-15% · Area · range 800",
+      "numeric": {
+        "value": -15.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B004"
+      },
+      "evidence": [
+        {
+          "abilityId": "A03S",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.15000000596046448,
+          "buffId": "B004",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Using the power of the Magnet-Magnet Fruit, pull nearby enemies in to hinder their movement.\n\n◎Basic Effect: Reduces enemy movement speed by 15% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_crocodile",
+      "category": "slow",
+      "detail": "-15% · Area · range 600",
+      "numeric": {
+        "value": -15.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B001"
+      },
+      "evidence": [
+        {
+          "abilityId": "A03W",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.15000000596046448,
+          "buffId": "B001",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Uses the Sand-Sand Fruit's ability to slow down nearby enemies or absorb moisture.\n\n◎Basic Effect: Reduces enemy movement speed by 15% within a 600 range\n\nmoisture absorption\n◎Activation Condition : 7.5% chance on attack\n◎Damage : Single target 17,500(x1~1.5) Magic Damage"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_crocodile",
+      "category": "damageb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "skill",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B06Z",
+        "duration": 15.0
+      },
+      "evidence": [
+        {
+          "abilityId": "A03V",
+          "baseId": "Aroa",
+          "field": "Roa1",
+          "value": 0.20000000298023224,
+          "buffId": "B06Z",
+          "targets": "air,invulnerable,self,ground,friend",
+          "targetFromTooltip": false,
+          "text": "Issues orders to subordinates with the authority of the leader of the criminal organization Baroque Works.\n\n◎Rage : Increases the attack power of allied units within a 500 range by 20% for 15 seconds\n　▶ Cannot stack with the same Rage skill\n◎Cooldown : 35 seconds"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "rare_perona",
+      "category": "slow",
+      "detail": "-20% · Area · range 600",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B005"
+      },
+      "evidence": [
+        {
+          "abilityId": "A03R",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.20000000298023224,
+          "buffId": "B005",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Lowers the enemy's morale with Perona's ability.\n\n◎Basic Effect : Reduces enemy movement speed by 20% within a 600 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_dragon",
+      "category": "slow",
+      "detail": "-10%",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B01F"
+      },
+      "evidence": [
+        {
+          "abilityId": "A09M",
+          "field": "aub1",
+          "quote": "Reduces enemy armor and movement speed by 10 and 10% within an 800 range.",
+          "auraAbilityId": "A09N",
+          "auraBaseId": "Aasl",
+          "buffId": "B01F"
+        }
+      ],
+      "basis": "Reviewed compound map tooltip and native aura identity"
+    },
+    {
+      "unitId": "legendary_dragon",
+      "category": "damageb",
+      "detail": "+25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B047"
+      },
+      "evidence": [
+        {
+          "abilityId": "A09M",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.25,
+          "buffId": "B047",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " I am Revolutionary Dragon.\n\n◎Basic Effect: Increases attack speed and damage of allies within an 800 range by 5% and 25%, respectively.\n◎Additional Effect: Reduces enemy armor and movement speed by 10 and 10% within an 800 range."
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_dragon",
+      "category": "speedb",
+      "detail": "+5",
+      "numeric": {
+        "value": 5.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B048"
+      },
+      "evidence": [
+        {
+          "abilityId": "A09M",
+          "field": "aub1",
+          "quote": "Increases attack speed and damage of allies within an 800 range by 5% and 25%, respectively.",
+          "auraAbilityId": "A09L",
+          "auraBaseId": "AOae",
+          "buffId": "B048"
+        }
+      ],
+      "basis": "Reviewed compound map tooltip and native aura identity"
+    },
+    {
+      "unitId": "legendary_laboon",
+      "category": "speedb",
+      "detail": "+17",
+      "numeric": {
+        "value": 17.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B01I"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0AD",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.17000000178813934,
+          "buffId": "B01I",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "It is a steadfast whale that protects friendship.\n\n◎Basic Effect: Increases the attack speed of allied units within a 600 range by 17%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_fujitora",
+      "category": "slow",
+      "detail": "-25% · Area · range 850",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B00G"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05K",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.25,
+          "buffId": "B00G",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Crushes surrounding enemies with the power of the Gravity Gravity Fruit.\n\n◎Basic Effect : Reduces enemy movement speed by 25% within an 850 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_fujitora",
+      "category": "mshield",
+      "detail": "-1",
+      "numeric": {
+        "value": -1.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_rayleigh",
+      "category": "damageb",
+      "detail": "+30",
+      "numeric": {
+        "value": 30.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_marco",
+      "category": "slow",
+      "detail": "-30% · Area · range 875",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B01G"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0A4",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B01G",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " In Phoenix form, the wind pressure from the wings hinders enemies from maintaining their stance.\n\n◎Basic Effect : Reduces enemy movement speed by 30% in an 875 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_sengoku",
+      "category": "slow",
+      "detail": "-20% · Area · range 800",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B00W"
+      },
+      "evidence": [
+        {
+          "abilityId": "A072",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.20000000298023224,
+          "buffId": "B00W",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " Sengoku's sense of justice overwhelms his enemies.\n\n◎Basic Effect: Reduces enemy movement speed by 20% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_sengoku",
+      "category": "damageb",
+      "detail": "+30 · Proc",
+      "numeric": {
+        "value": 30.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "proc",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_smoker",
+      "category": "slow",
+      "detail": "-50% · Area · range 800",
+      "numeric": {
+        "value": -50.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B012"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06X",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.5,
+          "buffId": "B012",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Uses Smoker's Smoke-Smoke Fruit ability.\n\n◎Basic Effect: Reduces enemy movement speed by 50% within an 800 range\n\nWhiteVine\n◎Activation Condition : 24% chance on attack\n◎range : 500\n◎Damage : 15 million(x1~1.5) Magic Damage\n◎Additional Effect : Armor Break of the corresponding range 1 (Stacks up to 75)"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_cracker",
+      "category": "damageb",
+      "detail": "B: permanent attack +19 and attack speed +9",
+      "numeric": {
+        "value": 19.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_cracker",
+      "category": "speedb",
+      "detail": "B: permanent attack +19 and attack speed +9",
+      "numeric": {
+        "value": 9.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_king",
+      "category": "slow",
+      "detail": "-10% · Aura",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_king",
+      "category": "slow",
+      "detail": "-45% · Single-target",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_whitebeard",
+      "category": "slow",
+      "detail": "-25% · Skill",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_whitebeard",
+      "category": "slow",
+      "detail": "-10% · Additional effect",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_chopper",
+      "category": "speedb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B026"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0CV",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.20000000298023224,
+          "buffId": "B026",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Boosts the speed of nearby units with a rumble ball.\n\n◎Basic Effect : Increases the attack speed of allied units in an 825 range by 20%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_blackbeard",
+      "category": "docking",
+      "detail": "+8% · Single-target · 17.5% on attack",
+      "numeric": {
+        "value": 8.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_nami",
+      "category": "slow",
+      "detail": "-42% · Area · 3 s · range 575",
+      "numeric": {
+        "value": -42.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 3.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_nami",
+      "category": "docking",
+      "detail": "+1",
+      "numeric": {
+        "value": 1.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_neko",
+      "category": "slow",
+      "detail": "-30% · Area · range 800",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B01K"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0AH",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B01K",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " You are angry.\n\n◎Activation Condition : Health 30 (Base Recovery 2)\n◎Target : Use Frenzy immediately upon attacking a boss\n◎range : 600\n◎Damage : 2 million + 5% of total HP fixed damage\n　▶ Target range .5 million + 0.25% of total HP magic damage"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_neko",
+      "category": "damageb",
+      "detail": "+32",
+      "numeric": {
+        "value": 32.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B01J"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0AG",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.3199999928474426,
+          "buffId": "B01J",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " This is Nekomamushi's alias.\n\n◎Basic Effect : Increases the attack power of allies in an 825 range by 32%\n◎Additional Effect : Reduces enemy movement speed by 30% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_law",
+      "category": "slow",
+      "detail": "-99% · Single-target",
+      "numeric": {
+        "value": -99.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_law",
+      "category": "speedb",
+      "detail": "+150",
+      "numeric": {
+        "value": 150.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_moria",
+      "category": "slow",
+      "detail": "-30% · Area · range 850",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B01M"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0AT",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B01M",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Crop shadows.\n\n◎Basic Effect : Reduces enemy movement speed by 30% within an 850 range\n◎Activation Condition : 10% chance on attack\n◎range : 400\n◎Damage : 25 million magic damage\n◎Additional Effect : Deals .2 million magic damage per second to a single enemy for 2 seconds\n\nGeneralZombie\n◎Basic Effect : When General Zombie attacks, de 50% of current attack power as explosive damage to enemies within a 375 range\n　▶ General Zombie has the same attack speed and attack power as Moria and is affected by buffs.\n◎Duration : 18 seconds"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_sugar",
+      "category": "regen",
+      "detail": "+1.25",
+      "numeric": {
+        "value": 1.25,
+        "unit": "mana/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:regen:B003"
+      },
+      "evidence": [
+        {
+          "abilityId": "A070",
+          "baseId": "AHab",
+          "field": "Hab1",
+          "value": 1.25,
+          "buffId": "B003",
+          "targets": "friend (explicit tooltip; native target field inherited)",
+          "targetFromTooltip": true,
+          "text": "Boosts the morale of allied forces with the status of a special officer.\n\n◎Basic Effect: Increases the mana of allies within an 800 range by 1.25 per second."
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_jinbe",
+      "category": "regen",
+      "detail": "+2.5",
+      "numeric": {
+        "value": 2.5,
+        "unit": "mana/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:regen:B00L"
+      },
+      "evidence": [
+        {
+          "abilityId": "A067",
+          "baseId": "AHab",
+          "field": "Hab1",
+          "value": 2.5,
+          "buffId": "B00L",
+          "targets": "friend (explicit tooltip; native target field inherited)",
+          "targetFromTooltip": true,
+          "text": "◎Basic Effect : Increases your mana by 2 per second\n◎Additional Effect : Increases mana of allies within a 700 range by 2.5 per second (including yourself)"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_toki",
+      "category": "speedb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B00Q"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06L",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.20000000298023224,
+          "buffId": "B00Q",
+          "targets": "air,invulnerable,notself,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "I am acting as the deputy of the absent Lord.\n\n◎Basic Effect : Increases the attack speed of allied units within an 800 range by 20% (excluding yourself)\n◎Additional Effect: Reduces the movement speed of enemy units within an 800 range by 25%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_toki",
+      "category": "speedb",
+      "detail": "Every 9s, grants attack speed +35 to 2 random units within 450 range",
+      "numeric": {
+        "value": 35.0,
+        "unit": "points",
+        "target": "area",
+        "activation": "proc",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_toki",
+      "category": "slow",
+      "detail": "-25% · Area · range 800",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B00R"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06M",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.25,
+          "buffId": "B00R",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "I am a user of the Time-Time Fruit, capable of sending myself or others into the future.\n\n◎Activation Condition : 10% chance on attack\n◎range : 400\n◎Damage : 25 million magic damage\n　▶ Single enemy 25 bonus magic damage\n◎Acceleration: Every 9 seconds, increase Attack Speed by 35% for yourself and 2 Legendary or higher units within 450 range for 6 seconds.\n　▶ The buff target persists even if they move out of range, and the target is refreshed when a new unit appears within range.\n　▶ Cannot stack with other acceleration skills"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_reiju",
+      "category": "slow",
+      "detail": "-35% · Aura",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B019"
+      },
+      "evidence": [
+        {
+          "abilityId": "A092",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.3499999940395355,
+          "buffId": "B019",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " Hinders the enemy's movement with poison.\n\n◎Basic Effect: Reduces enemy movement speed by 35% within an 800 range\n◎Additional Effect: Deals .2 million magic damage per second to the attacking unit for 6 seconds and reduces movement speed by 15%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "legendary_reiju",
+      "category": "slow",
+      "detail": "-15% · Additional effect",
+      "numeric": {
+        "value": -15.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_koby",
+      "category": "damageb",
+      "detail": "Mana skill: attack +20, mana regeneration +1, HP regeneration +1",
+      "numeric": {
+        "value": 20.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_koby",
+      "category": "regen",
+      "detail": "Mana skill: attack +20, mana regeneration +1, HP regeneration +1",
+      "numeric": {
+        "value": 1.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "legendary_koby",
+      "category": "life",
+      "detail": "Mana skill: attack +20, mana regeneration +1, HP regeneration +1",
+      "numeric": {
+        "value": 1.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_aokiji",
+      "category": "slow",
+      "detail": "-35% · Aura",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B002"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0G9",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.3499999940395355,
+          "buffId": "B002",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Effectively attacks enemies with the power of the Ice-Ice Fruit.\n\n◎Activation Condition : 10% chance on attack\n◎range : 415\n◎Damage : 120k Magic Damage\n　▶ Deals 275% additional magic damage to a single enemy\n◎Additional Effect : 1.7 second stun in the affected area"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_aokiji",
+      "category": "slow",
+      "detail": "-15% · Single-target",
+      "numeric": {
+        "value": -15.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_aokiji",
+      "category": "bombup",
+      "detail": "+10% · Your lane",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "lane",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_ivankov",
+      "category": "life",
+      "detail": "Q: single-target attack +45 and HP regeneration +1",
+      "numeric": {
+        "value": 1.0,
+        "unit": "HP/s",
+        "target": "single",
+        "activation": "skill",
+        "stacking": "once",
+        "stackGroup": "support:life:B02D",
+        "duration": 50.0
+      },
+      "evidence": [
+        {
+          "abilityId": "A0DP",
+          "baseId": "Ainf",
+          "field": "Inf4",
+          "value": 1.0,
+          "buffId": "B02D",
+          "targets": "air,invulnerable,self,ground,friend",
+          "targetFromTooltip": false,
+          "text": "Injects hormones into friendly units to enhance their combat abilities.\n\n◎Fighting Spirit : Target unit's Attack 45% + Health regeneration increases by 1 per second\n◎Duration : 50 seconds\n　▶ Cannot stack with other Tenacity skills\n◎Cooldown : 30 seconds\n\nDeath Wink\n◎Basic Effect : 11% chance on attack to deal 10 million magic damage in a 500 range\n◎Additional Effect : 1.65 second stun in the affected area"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_ivankov",
+      "category": "damageb",
+      "detail": "+45",
+      "numeric": {
+        "value": 45.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "skill",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B02D",
+        "duration": 50.0
+      },
+      "evidence": [
+        {
+          "abilityId": "A0DP",
+          "baseId": "Ainf",
+          "field": "Inf1",
+          "value": 0.44999998807907104,
+          "buffId": "B02D",
+          "targets": "air,invulnerable,self,ground,friend",
+          "targetFromTooltip": false,
+          "text": "Injects hormones into friendly units to enhance their combat abilities.\n\n◎Fighting Spirit : Target unit's Attack 45% + Health regeneration increases by 1 per second\n◎Duration : 50 seconds\n　▶ Cannot stack with other Tenacity skills\n◎Cooldown : 30 seconds\n\nDeath Wink\n◎Basic Effect : 11% chance on attack to deal 10 million magic damage in a 500 range\n◎Additional Effect : 1.65 second stun in the affected area"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_tiger",
+      "category": "damageb",
+      "detail": "+35",
+      "numeric": {
+        "value": 35.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B02E"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0E1",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.3499999940395355,
+          "buffId": "B02E",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Fisher Tiger's hatred is embodied to make allies stronger.\n\n◎Basic Effect : Increases the attack power of allied units in a 915 range by 35%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_ryokugyu",
+      "category": "slow",
+      "detail": "-15% · Single-target",
+      "numeric": {
+        "value": -15.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_ryokugyu",
+      "category": "slow",
+      "detail": "-20% · Additional effect",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_sabo",
+      "category": "slow",
+      "detail": "-25% · Area · range 800",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B02C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0DO",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.25,
+          "buffId": "B02C",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Gives up strong speculation.\n\n◎Basic Effect: Reduces enemy defense by 20 within an 800 range\n◎Additional Effect : Reduces enemy movement speed by 25% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_akainu",
+      "category": "mshield",
+      "detail": "triggered magic resistance reduction 10",
+      "numeric": {
+        "value": -10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "proc",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_akainu",
+      "category": "slow",
+      "detail": "-10% · Area · 2 s · range 500",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 2.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_carrot",
+      "category": "docking",
+      "detail": "+1% · 15% on attack · range 425",
+      "numeric": {
+        "value": 1.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_redforce",
+      "category": "damageb",
+      "detail": "+35",
+      "numeric": {
+        "value": 35.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_mobydick",
+      "category": "slow",
+      "detail": "-40%",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B01Z"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0C1",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B01Z",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "This is a message from Whitebeard.\n\n◎Basic Effect : Reduces enemy movement speed by 40% in a range of 925"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_mobydick",
+      "category": "life",
+      "detail": "+1.25",
+      "numeric": {
+        "value": 1.25,
+        "unit": "HP/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:life:B020"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0C2",
+          "baseId": "AUau",
+          "field": "Uau2",
+          "value": 1.25,
+          "buffId": "B020",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Whitebeard encourages the allies.\n\n◎Basic Effect: Restores 1.25 health per second to allies within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "hidden_baratie",
+      "category": "speedb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_baratie",
+      "category": "speedb",
+      "detail": "Q: single-target attack speed +200",
+      "numeric": {
+        "value": 200.0,
+        "unit": "points",
+        "target": "single",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_maxim",
+      "category": "bombup",
+      "detail": "+10% · Area · 150 mana · range 800",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_maxim",
+      "category": "slow",
+      "detail": "-30% · Area · 3 s · 14% on attack · range 600",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 3.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "hidden_maxim",
+      "category": "mshield",
+      "detail": "-10",
+      "numeric": {
+        "value": -10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "distortion_blackmaria",
+      "category": "slow",
+      "detail": "Movement slow 40",
+      "condition": "Black Maria: Movement slow",
+      "numeric": {
+        "value": -40.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "distortion_koala",
+      "category": "regen",
+      "detail": "+3.25",
+      "numeric": {
+        "value": 3.25,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "distortion_queen",
+      "category": "regen",
+      "detail": "+1",
+      "numeric": {
+        "value": 1.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "distortion_queen",
+      "category": "life",
+      "detail": "+1",
+      "numeric": {
+        "value": 1.0,
+        "unit": "HP/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:life:B02T"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0H7",
+          "baseId": "AUau",
+          "field": "Uau2",
+          "value": 1.0,
+          "buffId": "B02T",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Queen dances to boost the morale of allies.\n\n◎Basic Effect: Increases the health and mana of allies within a 700 range by 1 per second."
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "distortion_perona",
+      "category": "bombup",
+      "detail": "+10",
+      "numeric": {
+        "value": 10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "distortion_perona",
+      "category": "slow",
+      "detail": "-45%",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "distortion_ace",
+      "category": "slow",
+      "detail": "-25% · Area · range 900",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B05R"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0R9",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.25,
+          "buffId": "B05R",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " Ace's flame brings despair to enemies and hope to allies.\n\n◎Basic Effect : Reduces enemy movement speed by 25% within a 900 range\n◎Additional Effect : Increases attack power of allies within a 900 range by 25%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "distortion_ace",
+      "category": "damageb",
+      "detail": "+25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B086"
+      },
+      "evidence": [
+        {
+          "abilityId": "A13J",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.25,
+          "buffId": "B086",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Uses the power of the Flame-Flame Fruit to unleash flames upon attacking.\n\n◎Activation Condition : 10% chance on attack\n◎Range : Straight line 320 range\n◎Damage : 35 million Magic Damage\n　▶ Single target 50 million bonus magic damage "
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "alternate_vivi",
+      "category": "slow",
+      "detail": "-20% · Area · range 750",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B05P"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0R7",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.20000000298023224,
+          "buffId": "B05P",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " Throws a powerful chakram.\n\n◎Basic Effect : 10% chance on attack to deal 25 million magic damage to a single enemy"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "alternate_carrot",
+      "category": "bombup",
+      "detail": "+1% · Area · max 25%",
+      "numeric": {
+        "value": 1.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "cap": 25.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "alternate_kaku",
+      "category": "speedb",
+      "detail": "self attack speed +33",
+      "numeric": {
+        "value": 33.0,
+        "unit": "points",
+        "target": "self",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "seraphim_ssnake",
+      "category": "bombup",
+      "detail": "+3% · Area · max 25% · Pistol Kiss hits 6 times",
+      "numeric": {
+        "value": 3.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "cap": 25.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "seraphim_sshark",
+      "category": "damageb",
+      "detail": "+55",
+      "numeric": {
+        "value": 55.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "seraphim_sshark",
+      "category": "life",
+      "detail": "+1.75",
+      "numeric": {
+        "value": 1.75,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "seraphim_sbear",
+      "category": "slow",
+      "detail": "-30% · Area · 4 s · range 725",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 4.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "seraphim_sbear",
+      "category": "mshield",
+      "detail": "-1",
+      "numeric": {
+        "value": -1.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "seraphim_sbear",
+      "category": "docking",
+      "detail": "+3",
+      "numeric": {
+        "value": 3.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_doflamingo",
+      "category": "slow",
+      "detail": "-250% · Skill · 4.5 s · 18% on attack · range 525",
+      "numeric": {
+        "value": -250.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown",
+        "duration": 4.5
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_doflamingo",
+      "category": "slow",
+      "detail": "-75% · Aftershock · 2 s · Area",
+      "numeric": {
+        "value": -75.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown",
+        "duration": 2.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_robin",
+      "category": "damageb",
+      "detail": "+25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_ryokugyu",
+      "category": "slow",
+      "detail": "-25% · Additional effect",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_ryokugyu",
+      "category": "slow",
+      "detail": "-85% · Single-target",
+      "numeric": {
+        "value": -85.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_ryokugyu",
+      "category": "slow",
+      "detail": "-25% · Skill",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_luffy",
+      "category": "slow",
+      "detail": "-33% · Area · 2 s · 17.5% on attack · range 425",
+      "numeric": {
+        "value": -33.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 2.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_sabo",
+      "category": "slow",
+      "detail": "-30% · Additional effect",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_sabo",
+      "category": "slow",
+      "detail": "-30% · Skill",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_sabo",
+      "category": "slow",
+      "detail": "-35% · Aura",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B02C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0M5",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.3499999940395355,
+          "buffId": "B02C",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "The intense fighting spirit emanating from the Revolutionary Army's second-in-command\n\n◎Basic Effect : Reduces enemy defense by 35 within an 850 range\n◎Additional Effect : Reduces enemy movement speed by 35% in an 850 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_zoro",
+      "category": "slow",
+      "detail": "-30% · Aura",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B05K"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0QC",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B05K",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "A killing intent that transcends killing intent; subdue enemies with overwhelming fear through demonic energy.\n\n◎Basic Effect : Reduces enemy defense by 30 in an 815 range\n◎Additional Effect : Movement speed in range 815 reduced by 30%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_jinbe",
+      "category": "speedb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B054"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0P3",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.20000000298023224,
+          "buffId": "B054",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Shakes the inside with a heavy blow.\n\n◎Basic Effect : When Transcending Upgrade, Attack Power Increase Rate Rises to 3500▲\n　▶ Base attack speed increase reduced to 150%▼\n◎Additional Effect : Skill damage increases by 1% for every armor reduction from the enemy's Armor Break"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_jinbe",
+      "category": "regen",
+      "detail": "+3",
+      "numeric": {
+        "value": 3.0,
+        "unit": "mana/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:regen:B055"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0P5",
+          "baseId": "AHab",
+          "field": "Hab1",
+          "value": 3.0,
+          "buffId": "B055",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "He is respected by many for practicing righteousness and cooperation.\n- \"What hurts is... my heart that failed to uphold benevolence and righteousness!\"\n\n◎range : 850\n◎Basic Effect: Increases allies' mana by 3 per second and attack speed by 20%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_jinbe",
+      "category": "slow",
+      "detail": "-50% · Area · 3 s · 6.25% on attack · range 625",
+      "numeric": {
+        "value": -50.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 3.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_chopper",
+      "category": "damageb",
+      "detail": "+80",
+      "numeric": {
+        "value": 80.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_chopper",
+      "category": "speedb",
+      "detail": "+30",
+      "numeric": {
+        "value": 30.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_fujitora",
+      "category": "slow",
+      "detail": "-99% · Additional effect",
+      "numeric": {
+        "value": -99.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_fujitora",
+      "category": "slow",
+      "detail": "-55% · Aura",
+      "numeric": {
+        "value": -55.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B00G"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0CN",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.550000011920929,
+          "buffId": "B00G",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Crushes surrounding enemies with the power of the Gravity Gravity Fruit.\n\n◎Basic Effect: Reduces enemy movement speed by 55% within a 900 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_ssnake",
+      "category": "damageb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B08C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06K",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.4000000059604645,
+          "buffId": "B08C",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Unleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.\n\n◎Activation Condition : 200 Mana\n◎range : 575\n◎Damage : 4.25 million Physical Damage + 4.25 million Fixed Damage\n◎Basic Effect : Stuns the area for 2.75 seconds\n◎Replay : Restores 90 mana to your 'Satellites' for 3 seconds\n　▶ Cannot stack with other regeneration skills"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_ssnake",
+      "category": "speedb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B08B"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05M",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.4000000059604645,
+          "buffId": "B08B",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " A device that absorbs surrounding energy and converts it into other energy to help allies.\n\n◎Basic Effect : Increases the attack power of allies in an 825 range by 40%\n◎Additional Effect : Increases attack speed of allies in an 825 range by 40%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_ssnake",
+      "category": "slow",
+      "detail": "-40% · Area · range 825",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B08D"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05G",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B08D",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " An invention that artificially manipulates the climate to hinder the opponent's movements.\n\n◎Basic Effect : Reduces enemy movement speed by 40% in an 825 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_shawk",
+      "category": "damageb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B08C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06K",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.4000000059604645,
+          "buffId": "B08C",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Unleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.\n\n◎Activation Condition : 200 Mana\n◎range : 575\n◎Damage : 4.25 million Physical Damage + 4.25 million Fixed Damage\n◎Basic Effect : Stuns the area for 2.75 seconds\n◎Replay : Restores 90 mana to your 'Satellites' for 3 seconds\n　▶ Cannot stack with other regeneration skills"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_shawk",
+      "category": "speedb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B08B"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05M",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.4000000059604645,
+          "buffId": "B08B",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " A device that absorbs surrounding energy and converts it into other energy to help allies.\n\n◎Basic Effect : Increases the attack power of allies in an 825 range by 40%\n◎Additional Effect : Increases attack speed of allies in an 825 range by 40%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_shawk",
+      "category": "slow",
+      "detail": "-40% · Area · range 825",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B08D"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05G",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B08D",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " An invention that artificially manipulates the climate to hinder the opponent's movements.\n\n◎Basic Effect : Reduces enemy movement speed by 40% in an 825 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_sshark",
+      "category": "damageb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B08C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06K",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.4000000059604645,
+          "buffId": "B08C",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Unleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.\n\n◎Activation Condition : 200 Mana\n◎range : 575\n◎Damage : 4.25 million Physical Damage + 4.25 million Fixed Damage\n◎Basic Effect : Stuns the area for 2.75 seconds\n◎Replay : Restores 90 mana to your 'Satellites' for 3 seconds\n　▶ Cannot stack with other regeneration skills"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_sshark",
+      "category": "speedb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B08B"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05M",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.4000000059604645,
+          "buffId": "B08B",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " A device that absorbs surrounding energy and converts it into other energy to help allies.\n\n◎Basic Effect : Increases the attack power of allies in an 825 range by 40%\n◎Additional Effect : Increases attack speed of allies in an 825 range by 40%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_sshark",
+      "category": "slow",
+      "detail": "-40% · Area · range 825",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B08D"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05G",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B08D",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " An invention that artificially manipulates the climate to hinder the opponent's movements.\n\n◎Basic Effect : Reduces enemy movement speed by 40% in an 825 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_sbear",
+      "category": "damageb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B08C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A06K",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.4000000059604645,
+          "buffId": "B08C",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Unleash the energy of the infinite power source 'Mother Flame' to annihilate enemies.\n\n◎Activation Condition : 200 Mana\n◎range : 575\n◎Damage : 4.25 million Physical Damage + 4.25 million Fixed Damage\n◎Basic Effect : Stuns the area for 2.75 seconds\n◎Replay : Restores 90 mana to your 'Satellites' for 3 seconds\n　▶ Cannot stack with other regeneration skills"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_sbear",
+      "category": "speedb",
+      "detail": "+40%",
+      "numeric": {
+        "value": 40.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B08B"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05M",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.4000000059604645,
+          "buffId": "B08B",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " A device that absorbs surrounding energy and converts it into other energy to help allies.\n\n◎Basic Effect : Increases the attack power of allies in an 825 range by 40%\n◎Additional Effect : Increases attack speed of allies in an 825 range by 40%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_vegapunk_sbear",
+      "category": "slow",
+      "detail": "-40% · Area · range 825",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B08D"
+      },
+      "evidence": [
+        {
+          "abilityId": "A05G",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B08D",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " An invention that artificially manipulates the climate to hinder the opponent's movements.\n\n◎Basic Effect : Reduces enemy movement speed by 40% in an 825 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_blackbeard",
+      "category": "slow",
+      "detail": "-75% · Skill",
+      "numeric": {
+        "value": -75.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_blackbeard",
+      "category": "slow",
+      "detail": "-10% · Additional effect",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_blackbeard",
+      "category": "docking",
+      "detail": "+10% · Single-target · 17.5% on attack",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_nami",
+      "category": "slow",
+      "detail": "-45% · Area · range 800 · 5 s · 4.15% on attack · range 525",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 5.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_nami",
+      "category": "slow",
+      "detail": "-45% · Area · range 800 · 2.5 s · range 600",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 2.5
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_nami",
+      "category": "docking",
+      "detail": "+2",
+      "numeric": {
+        "value": 2.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_law",
+      "category": "damageb",
+      "detail": "Mana skill: movement slow 45 and attack +20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_law",
+      "category": "slow",
+      "detail": "-99% · Single-target",
+      "numeric": {
+        "value": -99.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_law",
+      "category": "slow",
+      "detail": "-45% · Additional effect",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_law",
+      "category": "slow",
+      "detail": "-40% · Skill",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_lucci",
+      "category": "bombup",
+      "detail": "+10",
+      "numeric": {
+        "value": 10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_brook",
+      "category": "mshield",
+      "detail": "-3",
+      "numeric": {
+        "value": -3.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_brook",
+      "category": "slow",
+      "detail": "-7% · Aura",
+      "numeric": {
+        "value": -7.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_brook",
+      "category": "slow",
+      "detail": "-15% · Aura",
+      "numeric": {
+        "value": -15.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B04D"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0SR",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.15000000596046448,
+          "buffId": "B04D",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Sends out a sword wind generated by a powerful thrust.\n\n◎Activation Condition : 14% chance on attack\n◎Range : 360-degree range centered on the enemy\n◎Damage : 35 million(x1~1.5) Magic Damage \n◎Additional Effect : 40% chance to trigger an additional effect when skill is activated"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_brook",
+      "category": "slow",
+      "detail": "-5% · Aura",
+      "numeric": {
+        "value": -5.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B03X"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0Q7",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.05000000074505806,
+          "buffId": "B03X",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " Continuously puts enemies to sleep with Song of Sleep Flam.\n\n◎Basic Effect : Reduces your lane monsters'  Magic Defense by 3%\n◎Additional Effect : Reduces enemy movement speed by 15% within a 750 range\n　▶ Reduces the movement speed of all enemy units on the map by 5%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_brook",
+      "category": "docking",
+      "detail": "+10% · 115 mana · range 525",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_sanji",
+      "category": "slow",
+      "detail": "-50% · Area · 3.5 s · 5% on attack · range 500",
+      "numeric": {
+        "value": -50.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 3.5
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_shanks",
+      "category": "speedb",
+      "detail": "self attack speed +20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "points",
+        "target": "self",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_shanks",
+      "category": "slow",
+      "detail": "-99% · Additional effect",
+      "numeric": {
+        "value": -99.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_aokiji",
+      "category": "slow",
+      "detail": "-20% · Single-target",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_aokiji",
+      "category": "slow",
+      "detail": "-70% · Aura",
+      "numeric": {
+        "value": -70.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B002"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0FR",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.699999988079071,
+          "buffId": "B002",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Reduces the movement speed of nearby units using the power of the Ice-Ice Fruit.\n\n◎Basic Effect : Reduces enemy movement speed by 70% within an 800 range\n◎Additional Effect : Your lane zone Explosive damage amplified by 10%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_aokiji",
+      "category": "slow",
+      "detail": "-10",
+      "condition": "Upgrade 4",
+      "numeric": {
+        "value": -10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_aokiji",
+      "category": "bombup",
+      "detail": "+10% · Your lane",
+      "condition": "Upgrade 4",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "lane",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_akainu",
+      "category": "mshield",
+      "detail": "triggered magic resistance reduction 10",
+      "numeric": {
+        "value": -10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "proc",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_akainu",
+      "category": "slow",
+      "detail": "-12% · Area · 2 s",
+      "numeric": {
+        "value": -12.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 2.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "transcendence_kid",
+      "category": "slow",
+      "detail": "-35% · Area · range 850",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B004"
+      },
+      "evidence": [
+        {
+          "abilityId": "A10D",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.3499999940395355,
+          "buffId": "B004",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Uses the ability of the Self-Self Fruit to pull nearby units in, hindering their movement, and deals greater damage the closer they are to you.\n\n◎Basic Effect: Reduces enemy movement speed by 35% within an 850 range\n◎Additional Effect: When the skill is activated, damage increases by 0.25% for each enemy within the skill's range."
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "transcendence_franky",
+      "category": "regen",
+      "detail": "+5",
+      "numeric": {
+        "value": 5.0,
+        "unit": "mana/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:regen:B02V"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0E3",
+          "baseId": "AHab",
+          "field": "Hab1",
+          "value": 5.0,
+          "buffId": "B02V",
+          "targets": "air,invulnerable,notself,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " Increases efficiency by utilizing Vegapunk's knowledge.\n\n◎Basic Effect: Increases the mana of nearby allied units (excluding yourself) by 5 per second\n◎range : 700"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "limited_rebecca",
+      "category": "slow",
+      "detail": "-60% · Area · 2.5 s · 8% on attack",
+      "numeric": {
+        "value": -60.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 2.5
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "limited_katakuri",
+      "category": "life",
+      "detail": "+2.85",
+      "numeric": {
+        "value": 2.85,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "limited_crocodile",
+      "category": "slow",
+      "detail": "-40% · Aura",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B001"
+      },
+      "evidence": [
+        {
+          "abilityId": "A02U",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B001",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Ddries out the surroundings and devastates them.\n\n◎Basic Effect: Reduces enemy armor by 25 and movement speed by 40% within an 850 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "limited_king",
+      "category": "slow",
+      "detail": "-45% · Single-target",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "limited_marco",
+      "category": "life",
+      "detail": "+3",
+      "numeric": {
+        "value": 3.0,
+        "unit": "HP/s",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:life:B080"
+      },
+      "evidence": [
+        {
+          "abilityId": "A174",
+          "baseId": "AUau",
+          "field": "Uau2",
+          "value": 3.0,
+          "buffId": "B080",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Scatters feathers that heal allies.\n\n◎Basic Effect: Increases allies' health by 3 per second"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "limited_marco",
+      "category": "slow",
+      "detail": "-45% · Area · range 875",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B063"
+      },
+      "evidence": [
+        {
+          "abilityId": "A173",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.44999998807907104,
+          "buffId": "B063",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "The wind pressure from the wings hinders enemies from assuming their stance.\n\n◎Basic Effect : Reduces enemy movement speed by 45% in an 875 range\n◎Additional Effect : Allows aerial movement"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "limited_shinobu",
+      "category": "slow",
+      "detail": "-30% · Area · range 850",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B04P"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0UJ",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B04P",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " Act stealthily to silence the enemy.\n\n◎Activation Condition : 12.5% chance on attack\n◎Damage : .6 million magic damage to a single enemy\n　▶ Deals 7.5% of total health as additional explosive damage to lane monsters\n　▶ Deals 1.5% of total health as additional magic damage to bosses\n◎Additional Effect : Uses clones, but the activation probability and effect are halved.\n\nAmbush\n◎Activation Condition : Health 50 (Base healing 0.25 / +1 on attack)\n◎Quick:  Bosses and Berserk Units 1 times limited condition-ignoring activation\n　▶ Does not overlap with other fast breaks.\n◎Basic Effect : Use 'Stealth' skill with 300% increased damage\n◎Additional Effect : Guaranteed summon of a clone"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "limited_enel",
+      "category": "regen",
+      "detail": "+1.5",
+      "numeric": {
+        "value": 1.5,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "limited_enel",
+      "category": "slow",
+      "detail": "-35% · Skill",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "limited_enel",
+      "category": "mshield",
+      "detail": "-18% · 145 mana · range 800",
+      "numeric": {
+        "value": -18.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_rayleigh",
+      "category": "speedb",
+      "detail": "+45",
+      "numeric": {
+        "value": 45.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B06I"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0J8",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.44999998807907104,
+          "buffId": "B06I",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Efficiency increases through the teachings of Pluto.\n\n◎Basic Effect : Increases the attack speed of allied units in an 825 range by 45%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "immortal_roger",
+      "category": "damageb",
+      "detail": "+60",
+      "numeric": {
+        "value": 60.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B039"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0JN",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.6000000238418579,
+          "buffId": "B039",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Roger possesses a mysterious power to communicate with all things.\n\n◎Basic Effect: Increases the attack power of allied units in an 850 range by 60%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "immortal_roger",
+      "category": "slow",
+      "detail": "-200% · Skill",
+      "numeric": {
+        "value": -200.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_roger",
+      "category": "slow",
+      "detail": "-99% · Single-target",
+      "numeric": {
+        "value": -99.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_roger",
+      "category": "slow",
+      "detail": "-50% · Aura",
+      "numeric": {
+        "value": -50.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_roger",
+      "category": "slow",
+      "detail": "-99% · Additional effect",
+      "numeric": {
+        "value": -99.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_kaido",
+      "category": "slow",
+      "detail": "-60% · Aura",
+      "numeric": {
+        "value": -60.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_whitebeard",
+      "category": "slow",
+      "detail": "-45% · Skill",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_whitebeard",
+      "category": "slow",
+      "detail": "-10% · Additional effect",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_bullet",
+      "category": "slow",
+      "detail": "-20% · Aura",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_dragon",
+      "category": "speedb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B03D"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0KH",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.20000000298023224,
+          "buffId": "B03D",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "I am the leader of the revolutionary army standing at the forefront of the revolution.\n\n◎Basic Effect: Increases the attack speed of allied units within a 900 range by 20%\n◎Additional Effect : Monsters in your lane zone Explosive damage amplified by 20%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "immortal_dragon",
+      "category": "bombup",
+      "detail": "+20% · Your lane",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "lane",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_bigmom",
+      "category": "slow",
+      "detail": "-70% · Area · range 888",
+      "numeric": {
+        "value": -70.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B08L"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0RY",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.699999988079071,
+          "buffId": "B08L",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Big Mom's madness instills fear to the point of being threatening even to allies.\n\n◎Basic Effect : Reduces enemy movement speed by 70% in an 888 range\n◎Additional Effect: When casting Soul Eater or Great Deity, Attack Speed increases by 175% for 2 seconds"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "immortal_sengoku",
+      "category": "damageb",
+      "detail": "global attack +11",
+      "numeric": {
+        "value": 11.0,
+        "unit": "points",
+        "target": "allies",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_sengoku",
+      "category": "damageb",
+      "detail": "+22",
+      "numeric": {
+        "value": 22.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B06W"
+      },
+      "evidence": [
+        {
+          "abilityId": "A142",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.2199999988079071,
+          "buffId": "B06W",
+          "targets": "air,invulnerable,organic,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " I am the former head of the Navy.\n\n◎Basic Effect : High base attack damage\n◎Additional Effect : Increases the attack power of allies in an 850 range by 22% (excluding self)"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "immortal_shiki",
+      "category": "slow",
+      "detail": "-35% · Additional effect",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_shiki",
+      "category": "docking",
+      "detail": "+15% · 125 mana · range 600",
+      "numeric": {
+        "value": 15.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "immortal_z",
+      "category": "slow",
+      "detail": "-35% · Area · range 900",
+      "numeric": {
+        "value": -35.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B05N"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0QT",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.3499999940395355,
+          "buffId": "B05N",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "He possessed a powerful conviction to destroy evil.\n\n◎Basic Effect: Reduces enemy movement speed by 35% within a 900 range\n◎Damage : Deals 5 additional physical damage to a single enemy on every attack\n　▶ If target is enraged, deal  2.5% of total health as magic damage on every attack\n◎Additional Effect : Stuns a single enemy for 2.25 seconds"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "eternal_nikaluffy",
+      "category": "damageb",
+      "detail": "+15",
+      "numeric": {
+        "value": 15.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_nikaluffy",
+      "category": "damageb",
+      "detail": "self attack +25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "points",
+        "target": "self",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_nikaluffy",
+      "category": "speedb",
+      "detail": "+25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B06E"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0UF",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.25,
+          "buffId": "B06E",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Makes the body larger.\n\n◎Activation Condition : Health 115 (Base healing 0.25 / +1 on attack)\n　▶ Duration 4.25 seconds\n　▶ Attack speed reduced by 225%\n　▶ 450 range on every attack  200% of base attack damage + 200,000 physical damage"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "eternal_nikasnakeman",
+      "category": "damageb",
+      "detail": "+15",
+      "numeric": {
+        "value": 15.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_nikasnakeman",
+      "category": "damageb",
+      "detail": "self attack +25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "points",
+        "target": "self",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_nikasnakeman",
+      "category": "speedb",
+      "detail": "+25",
+      "numeric": {
+        "value": 25.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B06E"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0UF",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.25,
+          "buffId": "B06E",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Makes the body larger.\n\n◎Activation Condition : Health 115 (Base healing 0.25 / +1 on attack)\n　▶ Duration 4.25 seconds\n　▶ Attack speed reduced by 225%\n　▶ 450 range on every attack  200% of base attack damage + 200,000 physical damage"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "eternal_buggy",
+      "category": "damageb",
+      "detail": "+78",
+      "numeric": {
+        "value": 78.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_buggy",
+      "category": "damageb",
+      "detail": "additional attack +15,000",
+      "numeric": {
+        "value": 15000.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_buggy",
+      "category": "speedb",
+      "detail": "+65",
+      "numeric": {
+        "value": 65.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_buggy",
+      "category": "slow",
+      "detail": "-25% · Aura",
+      "numeric": {
+        "value": -25.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_hancock",
+      "category": "mshield",
+      "detail": "-5",
+      "numeric": {
+        "value": -5.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_hancock",
+      "category": "slow",
+      "detail": "-60% · Area · 2.5 s",
+      "numeric": {
+        "value": -60.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown",
+        "duration": 2.5
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_mihawk",
+      "category": "slow",
+      "detail": "-45% · Area · range 900",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B04X"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0OB",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.44999998807907104,
+          "buffId": "B04X",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "It delivers an intense sense of pressure that feels like it could cut you just by looking at it.\n\n◎Basic Effect: Increases your mana by 2 per second and reduces the movement speed of enemies within a 900 range by 45%\n◎Additional Effect: 100% chance to stun a single enemy for 1.2 seconds on attack\n◎Additional Effect 2 : Your lane zone  Explosive damage amplified by 10%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "eternal_mihawk",
+      "category": "bombup",
+      "detail": "+10% · Your lane",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "lane",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_ace",
+      "category": "slow",
+      "detail": "-45% · Area · range 900",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B02Y"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0HT",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.44999998807907104,
+          "buffId": "B02Y",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Greatly enhances firepower while enveloped in intense flames.\n\n◎Basic Effect: Reduces enemy movement speed by 45% within a 900 range\n\n◎Additional Effect : When skill is activated, stun a single enemy for 3.5 seconds (ignores resistance) + additional damage to the affected area  over time magic damage\n　▶ Fire Fist: Deals 12 million magic damage per 0.2 seconds in the affected area for 2 seconds\n　▶ Pillar of Fire: Deals .2 million magic damage per 0.2 seconds in the affected area for 1.6 seconds\n　▶ Great Flame Emperor: Deals .25 million magic damage per 0.2 seconds in the affected area for 3 seconds\n　▶ For Great Flame System sustained damage, only the highest damage is applied."
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "eternal_oden",
+      "category": "damageb",
+      "detail": "+50",
+      "numeric": {
+        "value": 50.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B05H"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0Y2",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.5,
+          "buffId": "B05H",
+          "targets": "air,invulnerable,organic,ground,vulnerable,friend,notself",
+          "targetFromTooltip": false,
+          "text": " I am the man who became a legend in Wano Country.\n\n◎Basic Effect: Increases the attack power of nearby allies (excluding yourself) by 50%\n◎Additional Effect : When your attack skill is activated, damage to enemies within range is amplified by  Magic Damage by 1%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "eternal_uta",
+      "category": "damageb",
+      "detail": "+30",
+      "numeric": {
+        "value": 30.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_uta",
+      "category": "speedb",
+      "detail": "+27",
+      "numeric": {
+        "value": 27.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_uta",
+      "category": "mshield",
+      "detail": "-10% · range 800",
+      "numeric": {
+        "value": -10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_uta",
+      "category": "bombup",
+      "detail": "+10% · range 800",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "eternal_uta",
+      "category": "slow",
+      "detail": "-45% · Area",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_jotaro",
+      "category": "damageb",
+      "detail": "+20",
+      "numeric": {
+        "value": 20.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:damageb:B00Z"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0XJ",
+          "baseId": "ACac",
+          "field": "Cac1",
+          "value": 0.20000000298023224,
+          "buffId": "B00Z",
+          "targets": "air,invulnerable,organic,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": "Possesses a strong spirit in pursuing the goal of justice.\n\n◎Basic Effect : Increases the attack power of allies in an 850 range by 20%"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_tatsumaki",
+      "category": "slow",
+      "detail": "-50% · Area · range 900",
+      "numeric": {
+        "value": -50.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B06X"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0WW",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.5,
+          "buffId": "B06X",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Wields powerful telekinesis.\n\n◎Basic Effect: Reduces enemy movement speed by 50% within a 900 range and enables air movement.\n\nCrush\n◎Activation Condition : 18% chance on attack\n◎Range : 525 range centered on the enemy\n◎Damage : 275000 Magic Damage\n◎Additional Effect : 1.75 second stun in the affected area"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_youmu",
+      "category": "slow",
+      "detail": "-50% · Area · 3 s · 10% on attack",
+      "numeric": {
+        "value": -50.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown",
+        "duration": 3.0
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_sans",
+      "category": "slow",
+      "detail": "-30% · Aura",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_sans",
+      "category": "slow",
+      "detail": "-40% · Aura",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B00X"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0X9",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B00X",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Sans attacks enemies using bones.\n\n◎Activation Condition : 12% chance on attack\n◎range : 600\n◎Damage : 200,000 Physical Damage + 200,000 Magical Damage\n◎Bonus Effect : Cast an additional time once for every 5 bones"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_bronya",
+      "category": "regen",
+      "detail": "+5",
+      "numeric": {
+        "value": 5.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_minato",
+      "category": "mshield",
+      "detail": "-3% · 13.5% on attack · range 600",
+      "numeric": {
+        "value": -3.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_nezuko",
+      "category": "bombup",
+      "detail": "+4% · Single-target · Stacks",
+      "numeric": {
+        "value": 4.0,
+        "unit": "%",
+        "target": "single",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_byakuya",
+      "category": "slow",
+      "detail": "-20%",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B06L"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0WB",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.20000000298023224,
+          "buffId": "B06L",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Transforms the sword into a scattering flower petal shape to subdue the enemy.\n\n◎Basic Effect: Reduces your attack speed by 25% and reduces the movement speed of enemies within a 950 range by 20%\n◎Additional Effect : Activates Senbonzakura every time a skill is activated (Stacks up to 2 times)\n◎Range : 750 around itself\n◎Damage : Every 0.16 seconds 18 million magic damage\n　▶ Deals 425,000 + 1.75% of total HP fixed damage to a random single enemy within range (Boss / Enraged / Story 600,000)\n◎Duration : 4 seconds"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_higuma",
+      "category": "slow",
+      "detail": "-30% · Area · range 800",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B01W"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0XV",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B01W",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": " He is the king of bandits who habitually engage in plunder and intimidation. \n\n◎Basic Effect: Reduces enemy movement speed by 30% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_yukari",
+      "category": "bombup",
+      "detail": "+10% · Your lane",
+      "numeric": {
+        "value": 10.0,
+        "unit": "%",
+        "target": "lane",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_yukari",
+      "category": "slow",
+      "detail": "-45% · Area · range 900",
+      "numeric": {
+        "value": -45.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B07L"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0Z9",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.44999998807907104,
+          "buffId": "B07L",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Opens countless rifts with the ability to manipulate boundaries.\n\n◎Basic Effect : Units in your lane zone Explosive damage amplified by 10%\n◎Additional Effect : Reduces enemy movement speed by 45% within a 900 range\n\nBi-Gwang-Chung\n◎Activation Condition : 15% chance on attack\n◎range : 450\n◎Damage : 40 million Magic Damage"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_gojo",
+      "category": "slow",
+      "detail": "-30% · Aura",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B07C"
+      },
+      "evidence": [
+        {
+          "abilityId": "A0ZU",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.30000001192092896,
+          "buffId": "B07C",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "Ability to manipulate space using the concept of infinity\n\n◎Basic Effect: Reduces enemy movement speed by 30% within an 800 range"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_gojo",
+      "category": "slow",
+      "detail": "-20% · Additional effect",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "slow",
+      "detail": "-30% · Skill",
+      "numeric": {
+        "value": -30.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "skill",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "slow",
+      "detail": "-40% · Aura",
+      "numeric": {
+        "value": -40.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:slow:B07M"
+      },
+      "evidence": [
+        {
+          "abilityId": "A10N",
+          "baseId": "AOae",
+          "field": "Oae1",
+          "value": -0.4000000059604645,
+          "buffId": "B07M",
+          "targets": "air,enemies,ground",
+          "targetFromTooltip": false,
+          "text": "It is time to open the gift box, Anya's favorite time.\n\n◎Basic Effect: Reduces enemy movement speed by 40% within an 850 range\n◎Bonus Effect : Spy Family When skill activates, 7.5% chance to obtainGift Box\n\ngift box\n◎Sales Effect : You gain a 'Lucky Token' when opening a gift box.\n　▶ 70% chance to get 2500 Gold\n　▶ 30% chance to get 1 wood"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "docking",
+      "detail": "+1% · 6.25% on attack · range 500",
+      "numeric": {
+        "value": 1.0,
+        "unit": "%",
+        "target": "area",
+        "activation": "attack",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "speedb",
+      "detail": "+30",
+      "numeric": {
+        "value": 30.0,
+        "unit": "%",
+        "target": "allies",
+        "activation": "aura",
+        "stacking": "once",
+        "stackGroup": "support:speedb:B07G"
+      },
+      "evidence": [
+        {
+          "abilityId": "A10J",
+          "baseId": "AOae",
+          "field": "Oae2",
+          "value": 0.30000001192092896,
+          "buffId": "B07G",
+          "targets": "air,invulnerable,self,ground,vulnerable,friend",
+          "targetFromTooltip": false,
+          "text": " A spy family consisting of a top-tier spy, an assassin from the shadows, and a girl with superpowers \n\n◎Basic Effect : Parents assist when activating a Health or Mana skill.\n　▶ Does not trigger when attacking level 1~3 creeps.\n◎Additional Effect : Allows aerial movement\n\nLloyd Poser\n◎Activation Condition : Health 45 (+1 on attack)\n◎range : 600\n◎Damage : 10 million Magic Damage * 5 times\n◎Dizziness : Reduces the movement speed of enemies hit by the skill by 30% for 3 seconds.\n\nYor Poser\n◎Activation Condition : 75 Mana\n◎range : 600\n◎Damage : 30 million Magic Damage * 11 times"
+        }
+      ],
+      "basis": "Native field agrees with selected value"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "regen",
+      "detail": "+1.75",
+      "numeric": {
+        "value": 1.75,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "life",
+      "detail": "+2",
+      "numeric": {
+        "value": 2.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_anya",
+      "category": "mshield",
+      "detail": "-10",
+      "numeric": {
+        "value": -10.0,
+        "unit": "points",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    },
+    {
+      "unitId": "mystic_yujiro",
+      "category": "slow",
+      "detail": "-20%",
+      "numeric": {
+        "value": -20.0,
+        "unit": "%",
+        "target": "unknown",
+        "activation": "unknown",
+        "stacking": "unknown"
+      },
+      "evidence": [],
+      "basis": "Selected value; unspecified units remain points and stacking remains unverified"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 from map_capabilities import MAP_AUDIT, SNAPSHOT, apply_map, audit_map
 from map_skill_requirements import SKILL_AUDIT, supplement_skills
 from capability_sources import SOURCE_AUDIT, resolve_sources
+from team_metadata import TMO_SNAPSHOT, enrich_team_data
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "public/data/2.323.json"
@@ -366,6 +367,7 @@ def main():
                 if key in capability:
                     capability[key] = capability[key].replace("−", "-")
     source_audit = resolve_sources(data, map_audit=map_audit)
+    enrich_team_data(data, map_audit, source_audit, json.loads(TMO_SNAPSHOT.read_text(encoding="utf8")))
     SOURCE_AUDIT.write_text(json.dumps(source_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
     DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
     AUDIT.write_text(json.dumps({

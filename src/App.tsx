@@ -9,6 +9,7 @@ import { UnitOverlays } from "./components/UnitOverlays";
 import { UnitGroup } from "./components/UnitGroup";
 import { OptionsPanel } from "./components/OptionsPanel";
 import { CapabilityFilters } from "./components/CapabilityFilters";
+import { TeamStatsPanel } from "./components/TeamStatsPanel";
 import {
   CAPABILITY_FILTER_STORAGE_KEY, CAPABILITY_VISIBLE_STORAGE_KEY,
   filterUnitsByCapabilities, readCapabilityFilters, readCapabilityVisible,
@@ -28,6 +29,7 @@ function App() {
     ),
   );
   const [data, setData] = useState<Data>(initialLoad.data);
+  const [teamVisibility, setTeamVisibility] = useState<Record<string, boolean>>({});
   const [inventory, setInventory] = useState<Inventory>(() => {
     const saved = localStorage.getItem("ord_inventory");
     const previous = saved ? JSON.parse(saved) : {};
@@ -569,6 +571,10 @@ function App() {
         unitsMap={unitsMap}
       />
 
+      <TeamStatsPanel key={currentVersion} dataset={currentVersion} units={unitsMap} inventory={inventory}
+        bans={bans} allowWisp={isWispEnabled}
+        visible={teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false"}
+        onRecipe={(id) => overlayStore.showRecipe(id)} />
       {showCapabilityFilters && (
         <CapabilityFilters
           units={data.units}
@@ -584,6 +590,12 @@ function App() {
         {/* Column 1: Options + Common + Uncommon + Random */}
         <div className="column">
           <OptionsPanel
+            showTeamStats={teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false"}
+            onToggleTeamStats={() => {
+              const next = !(teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false");
+              localStorage.setItem(`ord_team_stats_visible:${currentVersion}`, String(next));
+              setTeamVisibility((previous) => ({ ...previous, [currentVersion]: next }));
+            }}
             showCapabilityFilters={showCapabilityFilters}
             activeFilterCount={capabilityFilters.selected.length}
             onToggleFilter={() => {

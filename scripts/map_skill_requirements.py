@@ -141,7 +141,7 @@ def supplement_skills(data, snapshot, map_audit=None, previous_audit=None, origi
             prior_effect = next((p for p in prior if p["replacement"] == effect), None)
             if prior_effect:
                 previous = prior_effect["previous"]
-            if effect not in caps:
+            if not any({k: v for k, v in existing.items() if k not in {"numeric", "exclusiveGroup"}} == effect for existing in caps):
                 # A bare Flying tag carries no additional context to retain.
                 if uid == "hidden_tiger" and effect["category"] == "sky":
                     caps[:] = [c for c in caps if c["category"] != "sky"]
