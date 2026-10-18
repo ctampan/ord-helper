@@ -7,6 +7,7 @@ import {
 } from "../logic/teamStats";
 import styles from "./TeamStatsPanel.module.css";
 import { CachedImage } from "./CachedImage";
+import { damageLabel, isProfileCore } from "../logic/damage";
 
 const label = (category: CapabilityId) => CAPABILITIES.find((c) => c.id === category)?.label || category;
 const labels = (categories: CapabilityId[]) => categories.map(label).join(", ");
@@ -81,11 +82,18 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
     <span>{r.craftable ? "Ready to craft" : `Materials ${Math.round(r.materialProgress)}% ready`}
       {r.wispCost > 0 && <> · <span className={styles.wisp}>{r.wispCost}</span> Wisp</>}
       <span className={styles.cost}> · Cost: {r.totalCost} base materials</span></span>
+    <span>{damageLabel(r.unit)}</span>
     <span className={styles.changes}>
+      {r.addsCore && <span>{preferences.profile} core.</span>}
+      {!isProfileCore(r.unit, preferences.profile) && r.netGain > 0 &&
+        <span>{preferences.profile} support.</span>}
+      {tab === "easy" && r.damageFit > 0 && !r.addsCore &&
+        <span>{preferences.profile === "Hybrid" ? "Hybrid build" : preferences.profile} damage match.</span>}
       {tab === "complete" && r.fills.length > 0 && <span>Fills: {roleLabels(r.fills)}.</span>}
       {tab === "easy" && r.gained.some((id) => id !== "mana-skill" && id !== "hp-skill") &&
         <span>Adds coverage: {labels(r.gained.filter((id) => id !== "mana-skill" && id !== "hp-skill"))}.</span>}
       {r.lost.length > 0 && <span className={styles.loss}>Loses coverage: {labels(r.lost)}.</span>}
+      {r.losesCore && <span className={styles.loss}>Consumes the last {preferences.profile} core.</span>}
     </span>
     {r.projected && <span className={styles.missing}>Missing: {Object.entries(r.missing).map(([id, n]) =>
       `${n} × ${units.get(id)?.name || id} (${units.get(id)?.rarity || ""})`).join(", ") || "requirements unavailable"}.</span>}
@@ -178,16 +186,22 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
                 document.getElementById(`${tabId}-${tabs[next][0]}`)?.focus();
               }}>{name}</button>)}
         </div>
-        <p className={styles.hint}>{tab === "complete" && recommendations?.profileFallback
-          ? `${preferences.profile} support suggestions. Still required: ${roleLabels(recommendations.missingRequired)}. Highest material cost first.`
+        <p className={styles.hint}>{tab === "easy"
+          ? "Relevant units first by crafting readiness and fewest missing materials."
+          : recommendations?.corePhase
+          ? `${preferences.profile} core first, then team coverage and crafting readiness.`
+          : recommendations?.profileFallback
+          ? `${preferences.profile} support suggestions. Still required: ${roleLabels(recommendations.missingRequired)}.`
           : tab === "complete" && recommendations?.missingRequired.length
-          ? `Required first: ${roleLabels(recommendations.missingRequired)}. Highest material cost within matches.`
-          : "Highest material cost first."}</p>
+          ? `Required first: ${roleLabels(recommendations.missingRequired)}. Team coverage, damage fit, then crafting readiness.`
+          : "Team coverage, damage fit, then crafting readiness."}</p>
+        {tab === "complete" && recommendations?.missingCore && !recommendations.corePhase &&
+          <p className={styles.hint}>No eligible {preferences.profile} core available. Showing support suggestions.</p>}
         {recommendations?.missingCategories.length ? <p className={styles.hint}>Missing for {preferences.profile}: {roleLabels(recommendations.missingCategories)}.</p> : null}
         <div role="tabpanel" id={`${tabId}-results`} aria-labelledby={`${tabId}-${tab}`}>
           {recommendations?.[tab].length ? <ol className={styles.results}>{recommendations[tab].map(renderRecommendation)}</ol> :
-            <p>{tab === "complete" ? "No eligible recipe adds support for this profile. Check Easy to craft for other recipes."
-              : "No eligible recipes are available."}</p>}
+            <p>{tab === "complete" ? "No eligible recipe adds a core or support for this profile. Check Easy to craft for other recipes."
+              : "No relevant recipes are available for this profile."}</p>}
         </div>
       </div>
     </div>}

@@ -1,5 +1,6 @@
 import type { Bans, Data, Inventory } from "./combination";
 import { isCapability } from "./capabilities.ts";
+import { isDamageProfile } from "./damage.ts";
 
 /** Validate imported data before recipe traversal or treating Custom as available. */
 export function isGameData(value: unknown): value is Data {
@@ -22,6 +23,7 @@ export function isGameData(value: unknown): value is Data {
       !data.rarities.includes(unit.rarity) ||
       (unit.note !== undefined && typeof unit.note !== "string") ||
       (unit.abilityDetails !== undefined && typeof unit.abilityDetails !== "string") ||
+      (unit.damageProfile !== undefined && !isDamageProfile(unit.damageProfile)) ||
       (unit.capabilities !== undefined &&
         (!Array.isArray(unit.capabilities) || !unit.capabilities.every(isCapability))) ||
       (unit.subGroup !== undefined && typeof unit.subGroup !== "string") ||

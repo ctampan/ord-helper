@@ -442,6 +442,9 @@ def main():
     audit = enrich_team_data(data,
         json.loads((ROOT / "docs/capability-map-audit-2.323.json").read_text(encoding="utf8")),
         json.loads(audit_path.read_text(encoding="utf8")), json.loads(TMO_SNAPSHOT.read_text(encoding="utf8")))
+    from damage_profiles import enrich_damage_profiles, write_json, AUDIT as DAMAGE_AUDIT
+    damage_audit = enrich_damage_profiles(data, json.loads((ROOT / "docs/capability-map-audit-2.323.json").read_text(encoding="utf8")))
+    write_json(DAMAGE_AUDIT, damage_audit)
     for path, value in ((data_path, data), (audit_path, audit)):
         newline = "\r\n" if b"\r\n" in path.read_bytes() else "\n"
         path.write_bytes((json.dumps(value, ensure_ascii=False, indent=2) + "\n").replace("\n", newline).encode("utf8"))

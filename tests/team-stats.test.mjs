@@ -8,7 +8,7 @@ import {
   readTeamPreferences, teamStorageKey,
 } from '../src/logic/teamStats.ts';
 
-const unit = (id, capabilities = [], extra = {}) => ({ id, name: id, rarity: 'Rare', image: '', capabilities, ...extra });
+const unit = (id, capabilities = [], extra = {}) => ({ id, name: id, rarity: 'Legendary', image: '', capabilities, ...extra });
 const effect = (category, value, extra = {}) => ({ category, source: 'tmo', detail: `${value}`,
   numeric: { value, unit: category === 'shield' ? 'armor' : '%', target: 'area', activation: 'aura',
     stacking: 'sum', stackGroup: category, ...extra } });
@@ -196,8 +196,7 @@ test('every profile requires slow/stun first, never treats mana activation as ma
     const ownedSlow = getRecommendations(units, { control: 1 }, new Set(), false, profile);
     assert.ok(!ownedSlow.complete.some((r) => r.unit.id === 'bad_trade'));
     assert.deepEqual(ownedSlow.complete.map((r) => r.unit.id), ['stun']);
-    assert.ok(ownedSlow.easy.some((r) => r.unit.id === 'mana'));
-    assert.ok(ownedSlow.easy.find((r) => r.unit.id === 'mana').netGain <= 0);
+    assert.ok(!ownedSlow.easy.some((r) => r.unit.id === 'mana'));
   }
   const bothControls = { control: 1, stun: 1 };
   const magic = getRecommendations(units, bothControls, new Set(), false, 'Magic');
@@ -238,8 +237,8 @@ test('missing control falls back to the active profile supports without treating
     ...[['armor', 'shield', 8], ['attack', 'damageb', 6], ['speed', 'speedb', 4],
       ['mr', 'mshield', 9], ['amp', 'docking', 7], ['explosion', 'bombup', 5], ['mana', 'mana-skill', 99]]
       .map(([id, category, cost]) => unit(id, [{ category }], { recipe: [{ unitId: 'common', count: cost }] })));
-  for (const [profile, expected] of [['Physical', ['armor', 'attack', 'speed']],
-    ['Magic', ['mr', 'amp']], ['Explosion', ['mr', 'explosion']], ['Hybrid', ['mr', 'armor', 'attack', 'speed']]]) {
+  for (const [profile, expected] of [['Physical', ['speed', 'attack', 'armor']],
+    ['Magic', ['amp', 'mr']], ['Explosion', ['explosion', 'mr']], ['Hybrid', ['speed', 'attack', 'armor', 'mr']]]) {
     const result = getRecommendations(units, {}, new Set(), false, profile);
     assert.equal(result.profileFallback, true, profile);
     assert.deepEqual(result.missingRequired, ['slow', 'stun']);
@@ -253,7 +252,7 @@ test('missing control falls back to the active profile supports without treating
   assert.deepEqual(prioritized.complete.map((r) => r.unit.id), ['stun']);
   const bannedControl = getRecommendations(units, {}, new Set(['stun']), false, 'Physical');
   assert.equal(bannedControl.profileFallback, true);
-  assert.deepEqual(bannedControl.complete.map((r) => r.unit.id), ['armor', 'attack', 'speed']);
+  assert.deepEqual(bannedControl.complete.map((r) => r.unit.id), ['speed', 'attack', 'armor']);
 });
 
 test('profile fallback preserves control providers and special-material requirements', () => {
@@ -287,15 +286,15 @@ test('recommendations are deterministic, limit each tab to five, and empty inven
   assert.equal(result.easy[0].projected, true);
 });
 
-test('both recommendation tabs rank full recursive material cost descending before readiness and the five-result limit', () => {
+test('equally useful candidates rank readiness and missing recursive material cost before total price and the five-result limit', () => {
   const units = map(unit('common', [], { rarity: 'Common' }),
     unit('part', [], { recipe: [{ unitId: 'common', count: 2 }] }),
     ...Array.from({ length: 8 }, (_, i) => unit(`u${i + 1}`, [{ category: 'slow' }],
       { recipe: [{ unitId: 'part', count: i + 1 }] })));
   const result = getRecommendations(units, { common: 2 }, new Set(), false, 'Hybrid');
   for (const tab of ['complete', 'easy']) {
-    assert.deepEqual(result[tab].map((r) => r.unit.id), ['u8', 'u7', 'u6', 'u5', 'u4']);
-    assert.deepEqual(result[tab].map((r) => r.totalCost), [16, 14, 12, 10, 8]);
+    assert.deepEqual(result[tab].map((r) => r.unit.id), ['u1', 'u2', 'u3', 'u4', 'u5']);
+    assert.deepEqual(result[tab].map((r) => r.totalCost), [2, 4, 6, 8, 10]);
   }
 });
 
@@ -333,7 +332,7 @@ test('special-material gates consume shared quantities across nested recipes and
 });
 
 test('numeric metadata round-trips through Custom and malformed or guessed metrics are rejected', () => {
-  const data = { version: 'Custom', rarities: ['Rare'], units: [unit('a', [effect('shield', -10, { additiveGroup: 'armor' })])] };
+  const data = { version: 'Custom', rarities: ['Legendary'], units: [unit('a', [effect('shield', -10, { additiveGroup: 'armor' })])] };
   assert.ok(isGameData(data));
   assert.deepEqual(readCustomData(JSON.stringify(data)), data);
   for (const numeric of [{ value: NaN }, { ...effect('shield', -10).numeric, stacking: 'sum', stackGroup: undefined },

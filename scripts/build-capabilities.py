@@ -368,6 +368,8 @@ def main():
                     capability[key] = capability[key].replace("−", "-")
     source_audit = resolve_sources(data, map_audit=map_audit)
     enrich_team_data(data, map_audit, source_audit, json.loads(TMO_SNAPSHOT.read_text(encoding="utf8")))
+    from damage_profiles import enrich_damage_profiles, write_json, AUDIT as DAMAGE_AUDIT
+    write_json(DAMAGE_AUDIT, enrich_damage_profiles(data, map_audit))
     SOURCE_AUDIT.write_text(json.dumps(source_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
     DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
     AUDIT.write_text(json.dumps({

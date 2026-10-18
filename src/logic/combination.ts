@@ -1,4 +1,5 @@
 import type { Capability } from "./capabilities";
+import type { DamageProfile } from "./damage";
 import { getRecipeIndex } from "./recipeIndex.ts";
 
 export interface Unit {
@@ -11,6 +12,7 @@ export interface Unit {
   note?: string;
   capabilities?: Capability[];
   abilityDetails?: string;
+  damageProfile?: DamageProfile;
 }
 
 export interface Data {

@@ -94,8 +94,8 @@ with sync_playwright() as p:
     panel.get_by_role("tab", name="Easy to craft", exact=True).click()
     cards = panel.get_by_role("tabpanel").locator("[data-recommendation-id]")
     expect(cards).to_have_count(5)
-    costs = cards.evaluate_all("cards => cards.map(c => Number(c.dataset.materialCost))")
-    assert costs == sorted(costs, reverse=True), costs
+    expect(panel).to_contain_text("crafting readiness and fewest missing materials")
+    expect(cards.first).to_contain_text(re.compile("dominant|unclassified"))
     boxes = [cards.nth(i).bounding_box() for i in range(2)]
     assert abs(boxes[0]["y"] - boxes[1]["y"]) < 1, boxes
     assert boxes[1]["x"] > boxes[0]["x"]
@@ -131,14 +131,14 @@ with sync_playwright() as p:
     # A small Custom graph exercises consumed support, exclusive forms and
     # actual crafting without depending on a particular shipped recommendation.
     portrait = "images/common_luffy.jpg"
-    fixture = {"version": "fixture", "rarities": ["Common", "Rare"], "units": [
+    fixture = {"version": "fixture", "rarities": ["Common", "Rare", "Legendary"], "units": [
         {"id": "common_luffy", "name": "Luffy", "rarity": "Common", "image": portrait},
         {"id": "support", "name": "Support", "rarity": "Rare", "image": portrait,
          "capabilities": [{"category": "shield", "detail": "-10"}]},
         {"id": "form", "name": "Forms", "rarity": "Rare", "image": portrait, "capabilities": [
             {"category": "damageb", "condition": "Human form", "exclusiveGroup": "form", "detail": "+5"},
             {"category": "docking", "condition": "Phoenix form", "exclusiveGroup": "form", "detail": "+10%"}]},
-        {"id": "target", "name": "Target", "rarity": "Rare", "image": portrait,
+        {"id": "target", "name": "Target", "rarity": "Legendary", "image": portrait,
          "recipe": [{"unitId": "support", "count": 1}, {"unitId": "common_luffy", "count": 1}],
          "capabilities": [{"category": "slow", "detail": "-20%"}, {"category": "stun", "detail": "1 s"}]},
     ]}
@@ -217,15 +217,15 @@ with sync_playwright() as p:
     expect(panel).to_contain_text("Add units to your inventory")
 
     # Special materials gate both tabs and update as inventory changes.
-    gate_fixture = {"version": "gates", "rarities": ["Common", "Random", "Combination Item", "Other", "Rare", "Mystic"], "units": [
+    gate_fixture = {"version": "gates", "rarities": ["Common", "Random", "Combination Item", "Other", "Legendary", "Mystic"], "units": [
         {"id": "common_luffy", "name": "Luffy", "rarity": "Common", "image": portrait},
         {"id": "common_wisp", "name": "Wisp", "rarity": "Common", "image": "images/common_wisp.png"},
         *[{"id": key, "name": key.title(), "rarity": rarity, "image": portrait}
           for key, rarity in [("random", "Random"), ("item", "Combination Item"), ("other", "Other")]],
-        *[{"id": f"needs_{key}", "name": f"Needs {key}", "rarity": "Mystic" if key == "random" else "Rare",
+        *[{"id": f"needs_{key}", "name": f"Needs {key}", "rarity": "Mystic" if key == "random" else "Legendary",
            "image": portrait, "recipe": [{"unitId": key, "count": 1}, {"unitId": "common_luffy", "count": 1}],
            "capabilities": [{"category": "slow"}]} for key in ["random", "item", "other"]],
-        {"id": "plain", "name": "Plain", "rarity": "Rare", "image": portrait,
+        {"id": "plain", "name": "Plain", "rarity": "Legendary", "image": portrait,
          "recipe": [{"unitId": "common_luffy", "count": 2}], "capabilities": [{"category": "stun"}]},
     ]}
     page.evaluate("""data => {
@@ -257,9 +257,9 @@ with sync_playwright() as p:
         expect(panel.locator("[data-recommendation-id='needs_item']")).to_be_visible()
         expect(panel.locator("[data-recommendation-id='needs_other']")).to_be_visible()
     # Profile support remains available even when no recipe can add slow/stun.
-    support_fixture = {"version": "supports", "rarities": ["Common", "Rare"], "units": [
+    support_fixture = {"version": "supports", "rarities": ["Common", "Legendary"], "units": [
         {"id": "common_luffy", "name": "Luffy", "rarity": "Common", "image": portrait},
-        *[{"id": key, "name": key.title(), "rarity": "Rare", "image": portrait,
+        *[{"id": key, "name": key.title(), "rarity": "Legendary", "image": portrait,
            "recipe": [{"unitId": "common_luffy", "count": cost}], "capabilities": [{"category": category}]}
           for key, category, cost in [("armor", "shield", 8), ("attack", "damageb", 6),
                                       ("speed", "speedb", 4), ("mr", "mshield", 9),
@@ -273,8 +273,8 @@ with sync_playwright() as p:
     }""", support_fixture)
     page.reload()
     panel.get_by_role("tab", name="Complete team", exact=True).click()
-    for profile, expected in [("Physical", ["armor", "attack", "speed"]), ("Magic", ["mr", "amp"]),
-                              ("Explosion", ["mr", "bomb"]), ("Hybrid", ["mr", "armor", "attack", "speed"])]:
+    for profile, expected in [("Physical", ["speed", "attack", "armor"]), ("Magic", ["amp", "mr"]),
+                              ("Explosion", ["bomb", "mr"]), ("Hybrid", ["speed", "attack", "armor", "mr"])]:
         panel.get_by_role("combobox", name="Build profile").select_option(profile)
         expect(panel).to_contain_text(f"{profile} support suggestions. Still required: Movement slow, Stun.")
         cards = panel.get_by_role("tabpanel").locator("[data-recommendation-id]")
@@ -290,6 +290,52 @@ with sync_playwright() as p:
     page.set_viewport_size({"width": 390, "height": 844})
     assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
     panel.screenshot(path=str(ARTIFACTS / "profile-support-fallback.png"))
+
+    # Pure-damage cores are eligible; magical Sengoku remains a Physical support.
+    damage_fixture = {"version": "damage", "rarities": ["Common", "Uncommon", "Special", "Rare", "Legendary", "Immortal"], "units": [
+        {"id": "common_luffy", "name": "Luffy", "rarity": "Common", "image": portrait},
+        {"id": "core", "name": "Physical Core", "rarity": "Legendary", "image": portrait,
+         "recipe": [{"unitId": "common_luffy", "count": 30}],
+         "damageProfile": {"types": ["Physical"], "dominant": "Physical", "core": True}},
+        {"id": "cheap", "name": "Affordable Physical", "rarity": "Legendary", "image": portrait,
+         "recipe": [{"unitId": "common_luffy", "count": 1}],
+         "damageProfile": {"types": ["Physical"], "dominant": "Physical", "core": False}},
+        *[{"id": f"early_{rarity}", "name": f"Early {rarity}", "rarity": rarity, "image": portrait,
+           "recipe": [{"unitId": "common_luffy", "count": 1}],
+           "damageProfile": {"types": ["Physical"], "dominant": "Physical", "core": True},
+           "capabilities": [{"category": "slow"}, {"category": "stun"}]}
+          for rarity in ["Uncommon", "Special", "Rare"]],
+        {"id": "sengoku", "name": "Sengoku", "rarity": "Immortal", "image": portrait,
+         "recipe": [{"unitId": "common_luffy", "count": 100}],
+         "damageProfile": {"types": ["Magic", "Explosion"], "dominant": "Magic", "core": True},
+         "capabilities": [{"category": "stun"}, {"category": "damageb"}]},
+    ]}
+    page.evaluate("""data => {
+      localStorage.setItem('ord_custom_data', JSON.stringify(data));
+      localStorage.setItem('ord_inventory', '{}');
+      localStorage.setItem('ord_team_stats:Custom', JSON.stringify({expanded:true, profile:'Physical', conditions:{}}));
+    }""", damage_fixture)
+    page.reload()
+    panel.get_by_role("tab", name="Complete team", exact=True).click()
+    expect(panel.locator("[data-recommendation-id]")).to_have_count(1)
+    expect(panel.locator("[data-recommendation-id='core']")).to_contain_text("Physical core.")
+    expect(panel).not_to_contain_text("Highest material cost")
+    panel.get_by_role("combobox", name="Build profile").select_option("Magic")
+    expect(panel.locator("[data-recommendation-id='sengoku']")).to_contain_text("Magic core.")
+    panel.get_by_role("combobox", name="Build profile").select_option("Physical")
+    page.locator("main [data-unit-id='core']").click()
+    expect(panel.locator("[data-recommendation-id='sengoku']")).to_contain_text("Physical support.")
+    expect(panel.locator("[data-recommendation-id='sengoku']")).to_contain_text("Magic dominant")
+    page.locator("main [data-unit-id='common_luffy']").click()
+    panel.get_by_role("tab", name="Easy to craft", exact=True).click()
+    expect(panel.locator("[data-recommendation-id]").first).to_have_attribute("data-recommendation-id", "cheap")
+    expect(panel.locator("[data-recommendation-id='cheap']")).to_contain_text("Ready to craft")
+    for tab in ["Complete team", "Easy to craft"]:
+        panel.get_by_role("tab", name=tab, exact=True).click()
+        expect(panel.locator("[data-recommendation-id^='early_']")).to_have_count(0)
+    no_sources(panel)
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    panel.screenshot(path=str(ARTIFACTS / "damage-aware-recommendations.png"))
     assert not errors, errors
     context.close()
     browser.close()

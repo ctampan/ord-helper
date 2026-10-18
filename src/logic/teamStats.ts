@@ -1,4 +1,5 @@
 import { CAPABILITIES, type Capability, type CapabilityId, type CapabilityNumeric } from "./capabilities.ts";
+import { damageFit, isProfileCore } from "./damage.ts";
 import {
   calculateConsumption, calculateMissingBaseUnits, calculateTotalCost, getEffectiveBans,
   type Bans, type Inventory, type Unit,
@@ -230,6 +231,7 @@ function teamCoverage(units: Map<string, Unit>, inventory: Inventory, conditions
 }
 const satisfies = (coverage: Set<CapabilityId>, category: CapabilityId) => coverage.has(category) ||
   (category === "stun" && coverage.has("sstun")) || (category === "boss" && coverage.has("berserk"));
+const recommendationExcludedRarities = new Set(["Common", "Uncommon", "Special", "Rare"]);
 
 export interface Recommendation {
   unit: Unit;
@@ -246,6 +248,9 @@ export interface Recommendation {
   requiredLost: CapabilityId[];
   fills: CapabilityId[];
   projected: boolean;
+  damageFit: number;
+  addsCore: boolean;
+  losesCore: boolean;
 }
 
 /** Simulates one recipe without manufacturing missing ingredients. A projected
@@ -284,6 +289,8 @@ export function getRecommendations(units: Map<string, Unit>, inventory: Inventor
   const desired = PROFILE_CATEGORIES[profile];
   const required: CapabilityId[] = ["slow", "stun"];
   const missingRequired = required.filter((c) => !satisfies(before, c));
+  const hasCore = (stock: Inventory) => [...units.values()].some((u) => count(stock[u.id]) > 0 && isProfileCore(u, profile));
+  const missingCore = !hasCore(inventory);
   const results: Recommendation[] = [];
   // Stop at special ingredients even when Custom supplies a recipe for them.
   // The shared traversal respects quantities and already-owned intermediates.
@@ -291,7 +298,7 @@ export function getRecommendations(units: Map<string, Unit>, inventory: Inventor
   const materialStops = new Set([...bans, ...[...units.values()]
     .filter((u) => specialRarities.has(u.rarity)).map((u) => u.id)]);
   for (const unit of units.values()) {
-    if (unit.rarity === "Common" || !unit.recipe?.length || !unit.capabilities?.length || effectiveBans.has(unit.id)) continue;
+    if (recommendationExcludedRarities.has(unit.rarity) || !unit.recipe?.length || effectiveBans.has(unit.id)) continue;
     const stops = materialStops.has(unit.id) ? new Set([...materialStops].filter((id) => id !== unit.id)) : materialStops;
     const requiredMaterials = calculateMissingBaseUnits(unit.id, units, inventory, stops);
     if (Object.keys(requiredMaterials).some((id) => specialRarities.has(units.get(id)?.rarity || ""))) continue;
@@ -303,6 +310,9 @@ export function getRecommendations(units: Map<string, Unit>, inventory: Inventor
     const rawMissing = calculateMissingBaseUnits(unit.id, units, inventory, bans);
     const rawCost = Object.entries(rawMissing).reduce((sum, [id, quantity]) => sum + calculateTotalCost(id, units) * quantity, 0);
     results.push({ unit, totalCost: calculateTotalCost(unit.id, units), ...simulation, missingCost, gained, lost, projected: !simulation.craftable,
+      damageFit: damageFit(unit, profile),
+      addsCore: missingCore && hasCore(simulation.after),
+      losesCore: !missingCore && !hasCore(simulation.after),
       requiredGained: required.filter((c) => !satisfies(before, c) && satisfies(after, c)),
       requiredLost: required.filter((c) => satisfies(before, c) && !satisfies(after, c)),
       fills: desired.filter((c) => !satisfies(before, c) && satisfies(after, c)),
@@ -310,18 +320,28 @@ export function getRecommendations(units: Map<string, Unit>, inventory: Inventor
       netGain: desired.filter((c) => satisfies(after, c) && !satisfies(before, c)).length -
         desired.filter((c) => satisfies(before, c) && !satisfies(after, c)).length });
   }
-  const tie = (a: Recommendation, b: Recommendation) => Number(b.craftable) - Number(a.craftable) ||
-    a.missingCost - b.missingCost || a.wispCost - b.wispCost || a.unit.id.localeCompare(b.unit.id);
-  const profileImprovements = results.filter((r) => r.netGain > 0 && r.requiredLost.length === 0);
+  const readiness = (a: Recommendation, b: Recommendation) => Number(b.craftable) - Number(a.craftable) || a.missingCost - b.missingCost;
+  const tie = (a: Recommendation, b: Recommendation) => a.wispCost - b.wispCost ||
+    b.totalCost - a.totalCost || a.unit.id.localeCompare(b.unit.id);
+  const safe = results.filter((r) => r.requiredLost.length === 0 && !r.losesCore);
+  const coreImprovements = safe.filter((r) => r.addsCore);
+  const profileImprovements = safe.filter((r) => r.netGain > 0);
   const controlImprovements = missingRequired.length ? profileImprovements.filter((r) => r.requiredGained.length > 0) : [];
-  const profileFallback = missingRequired.length > 0 && controlImprovements.length === 0 && profileImprovements.length > 0;
-  const complete = controlImprovements.length ? controlImprovements : profileImprovements;
+  const corePhase = missingCore && coreImprovements.length > 0;
+  const profileFallback = !corePhase && missingRequired.length > 0 && controlImprovements.length === 0 && profileImprovements.length > 0;
+  const complete = corePhase ? coreImprovements : controlImprovements.length ? controlImprovements : profileImprovements;
   return {
-    complete: complete.sort((a, b) => b.totalCost - a.totalCost || b.netGain - a.netGain || tie(a, b)).slice(0, 5),
-    easy: results.sort((a, b) => b.totalCost - a.totalCost || Number(b.craftable) - Number(a.craftable) || a.missingCost - b.missingCost ||
-      b.materialProgress - a.materialProgress || a.unit.id.localeCompare(b.unit.id)).slice(0, 5),
+    complete: complete.sort((a, b) => (corePhase
+      ? b.damageFit - a.damageFit || b.netGain - a.netGain
+      : b.requiredGained.length - a.requiredGained.length || b.netGain - a.netGain || b.damageFit - a.damageFit) ||
+      readiness(a, b) || tie(a, b)).slice(0, 5),
+    easy: results.filter((r) => r.damageFit > 0 || r.netGain > 0).sort((a, b) => readiness(a, b) ||
+      b.damageFit - a.damageFit || b.netGain - a.netGain || b.materialProgress - a.materialProgress ||
+      a.wispCost - b.wispCost || a.unit.id.localeCompare(b.unit.id)).slice(0, 5),
     missingCategories: desired.filter((c) => !satisfies(before, c)),
     missingRequired,
     profileFallback,
+    missingCore,
+    corePhase,
   };
 }
