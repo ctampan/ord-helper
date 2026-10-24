@@ -69,8 +69,10 @@ export const RecipeTooltip: React.FC<RecipeTooltipProps> = ({
       onContextMenu={(event) => event.stopPropagation()}
       onMouseEnter={() => onHoverChange?.(unit.id)}
       onMouseLeave={(event) => {
-        if (event.relatedTarget instanceof Element &&
-          event.relatedTarget.closest("[data-unit-id]")?.getAttribute("data-unit-id") === unit.id) return;
+        if (event.relatedTarget instanceof Element) {
+          const anchor = event.relatedTarget.closest<HTMLElement>("[data-unit-id], [data-unit-preview-id]");
+          if ((anchor?.dataset.unitId || anchor?.dataset.unitPreviewId) === unit.id) return;
+        }
         onHoverChange?.(null);
       }}>
       <div className={styles.recipePanel}>

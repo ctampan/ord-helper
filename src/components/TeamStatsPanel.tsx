@@ -8,6 +8,7 @@ import {
 import styles from "./TeamStatsPanel.module.css";
 import { CachedImage } from "./CachedImage";
 import { damageLabel, isProfileCore } from "../logic/damage";
+import { getRarityColor } from "../logic/rarityColors";
 
 const label = (category: CapabilityId) => CAPABILITIES.find((c) => c.id === category)?.label || category;
 const labels = (categories: CapabilityId[]) => categories.map(label).join(", ");
@@ -40,9 +41,10 @@ interface Props {
   allowWisp: boolean;
   visible: boolean;
   onRecipe: (id: string) => void;
+  onHoverChange: (unitId: string | null, anchor?: HTMLElement) => void;
 }
 
-export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, visible, onRecipe }: Props) {
+export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, visible, onRecipe, onHoverChange }: Props) {
   const [preferences, setPreferences] = useState(() => readTeamPreferences(localStorage.getItem(teamStorageKey(dataset))));
   const [previousInputs, setPreviousInputs] = useState({ units, inventory });
   // Discard unavailable copies immediately so they cannot reappear as upgraded
@@ -72,17 +74,26 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
   if (!visible) return null;
 
   const renderRecommendation = (r: Recommendation) => <li key={r.unit.id} className={styles.recommendation}
-    data-recommendation-id={r.unit.id} data-material-cost={r.totalCost}>
+    data-recommendation-id={r.unit.id} data-unit-preview-id={r.unit.id} data-material-cost={r.totalCost}
+    onMouseEnter={(event) => onHoverChange(r.unit.id, event.currentTarget)}
+    onMouseLeave={(event) => {
+      if (event.relatedTarget instanceof Element &&
+        event.relatedTarget.closest("[data-tooltip-unit-id]")?.getAttribute("data-tooltip-unit-id") === r.unit.id) return;
+      onHoverChange(null);
+    }}>
     <div className={styles.resultHeader}>
-      <span className={styles.portrait} aria-hidden="true">{r.unit.name.charAt(0)}
+      <span className={styles.portrait} style={{ borderColor: getRarityColor(r.unit.rarity) }} aria-hidden="true">{r.unit.name.charAt(0)}
         {r.unit.image && <CachedImage src={r.unit.image} alt="" onError={(e) => { e.currentTarget.style.display = "none"; }} />}
       </span>
       <strong>{r.unit.name} <small>({r.unit.rarity})</small></strong>
-      <button type="button" onClick={() => onRecipe(r.unit.id)} aria-label={`View recipe for ${r.unit.name} (${r.unit.rarity})`}>Recipe</button></div>
-    <span>{r.craftable ? "Ready to craft" : `Materials ${Math.round(r.materialProgress)}% ready`}
+      <button type="button" onClick={() => onRecipe(r.unit.id)} title="Show Recipe"
+        aria-label={`View recipe for ${r.unit.name} (${r.unit.rarity})`}><span aria-hidden="true">📖</span></button></div>
+    <div className={styles.metadata}>
+      <span>{r.craftable ? "Ready to craft" : `Materials ${Math.round(r.materialProgress)}% ready`}
       {r.wispCost > 0 && <> · <span className={styles.wisp}>{r.wispCost}</span> Wisp</>}
       <span className={styles.cost}> · Cost: {r.totalCost} base materials</span></span>
-    <span>{damageLabel(r.unit)}</span>
+      <span>{damageLabel(r.unit)}</span>
+    </div>
     <span className={styles.changes}>
       {r.addsCore && <span>{preferences.profile} core.</span>}
       {!isProfileCore(r.unit, preferences.profile) && r.netGain > 0 &&
@@ -95,8 +106,6 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
       {r.lost.length > 0 && <span className={styles.loss}>Loses coverage: {labels(r.lost)}.</span>}
       {r.losesCore && <span className={styles.loss}>Consumes the last {preferences.profile} core.</span>}
     </span>
-    {r.projected && <span className={styles.missing}>Missing: {Object.entries(r.missing).map(([id, n]) =>
-      `${n} × ${units.get(id)?.name || id} (${units.get(id)?.rarity || ""})`).join(", ") || "requirements unavailable"}.</span>}
   </li>;
 
   return <section className={styles.panel} id="team-stats" aria-label="Team Stats">
@@ -197,7 +206,6 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
           : "Team coverage, damage fit, then crafting readiness."}</p>
         {tab === "complete" && recommendations?.missingCore && !recommendations.corePhase &&
           <p className={styles.hint}>No eligible {preferences.profile} core available. Showing support suggestions.</p>}
-        {recommendations?.missingCategories.length ? <p className={styles.hint}>Missing for {preferences.profile}: {roleLabels(recommendations.missingCategories)}.</p> : null}
         <div role="tabpanel" id={`${tabId}-results`} aria-labelledby={`${tabId}-${tab}`}>
           {recommendations?.[tab].length ? <ol className={styles.results}>{recommendations[tab].map(renderRecommendation)}</ol> :
             <p>{tab === "complete" ? "No eligible recipe adds a core or support for this profile. Check Easy to craft for other recipes."

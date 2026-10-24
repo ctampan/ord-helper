@@ -186,9 +186,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -251,9 +249,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -340,9 +336,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -419,9 +413,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -438,9 +430,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -469,10 +459,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -498,9 +485,7 @@
       ],
       "abilityDetails": "Sage Mode.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -534,9 +519,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -613,10 +596,7 @@
       ],
       "abilityDetails": "Long-range sniper.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -734,9 +714,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -774,9 +752,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -794,9 +770,7 @@
       ],
       "abilityDetails": "Single-target effect 0.5 (unit unspecified).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -807,9 +781,7 @@
       "rarity": "Random",
       "image": "images/random_yan.png",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -820,9 +792,7 @@
       "rarity": "Random",
       "image": "images/random_bronya.png",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -865,9 +835,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -892,9 +860,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -949,9 +915,7 @@
       ],
       "abilityDetails": "Clima-Tact.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1038,9 +1002,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1071,9 +1033,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1098,9 +1058,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1172,9 +1130,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1199,9 +1155,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1218,9 +1172,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1285,9 +1237,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1322,9 +1272,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1364,9 +1312,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1383,9 +1329,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1419,9 +1363,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1460,9 +1402,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1487,9 +1427,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1647,9 +1585,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1768,9 +1704,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1822,9 +1756,7 @@
       ],
       "abilityDetails": "Pirate Docking 5.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -1849,9 +1781,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -1955,9 +1885,7 @@
       ],
       "abilityDetails": "Hidden Rayleigh.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2000,18 +1928,6 @@
       "name": "Green Blood",
       "rarity": "Other",
       "image": "images/other_greenblood.png",
-      "damageProfile": {
-        "types": [],
-        "dominant": null,
-        "core": false
-      }
-    },
-    {
-      "id": "other_seraphim",
-      "name": "Seraphim [Vegapunk Material]",
-      "rarity": "Other",
-      "image": "images/other_seraphim.png",
-      "note": "Seraphim material for crafting Vegapunk.",
       "damageProfile": {
         "types": [],
         "dominant": null,
@@ -2066,9 +1982,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Explosion"
-        ],
+        "types": ["Explosion"],
         "dominant": "Explosion",
         "core": false
       }
@@ -2119,10 +2033,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -2162,9 +2073,7 @@
       ],
       "abilityDetails": "Pulls enemies.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2196,9 +2105,7 @@
       ],
       "abilityDetails": "Can transform into Alternate Doflamingo.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2244,9 +2151,7 @@
       ],
       "abilityDetails": "cooldown 50s.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2289,10 +2194,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -2331,10 +2233,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -2359,9 +2258,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2386,9 +2283,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2427,9 +2322,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2460,9 +2353,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2493,10 +2384,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -2539,9 +2427,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2625,10 +2511,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -2654,9 +2537,7 @@
       ],
       "abilityDetails": "Can transform into Alternate Baby 5.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2696,10 +2577,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -2751,9 +2629,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -2792,9 +2668,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -2860,9 +2734,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2901,9 +2773,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -2934,9 +2804,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -2980,9 +2848,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -3025,10 +2891,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Explosion"
-        ],
+        "types": ["Physical", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -3072,9 +2935,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3099,9 +2960,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3165,9 +3024,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3211,9 +3068,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3259,9 +3114,7 @@
       ],
       "abilityDetails": "Stun 0.15s.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3286,9 +3139,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -3327,9 +3178,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3368,9 +3217,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3411,9 +3258,7 @@
       ],
       "abilityDetails": "Horn Point.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -3438,10 +3283,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -3493,10 +3335,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -3550,9 +3389,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3584,9 +3421,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3611,9 +3446,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3700,11 +3533,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Physical", "Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -3794,9 +3623,7 @@
       ],
       "abilityDetails": "Normal.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3858,9 +3685,7 @@
       ],
       "abilityDetails": "Siege. 100% area damage. swimming.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -3924,10 +3749,7 @@
       ],
       "abilityDetails": "Normal.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -4003,10 +3825,7 @@
       "abilityDetails": "Haki.",
       "note": "Can defeat Burgess with the departure skill at 20 armor reduction.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -4082,10 +3901,7 @@
       ],
       "abilityDetails": "Normal.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -4151,10 +3967,7 @@
       ],
       "abilityDetails": "Siege. stun 0.7s.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -4220,9 +4033,7 @@
       ],
       "abilityDetails": "Siege. W: area magnet, cooldown 60s.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -4323,10 +4134,7 @@
       "abilityDetails": "Piercing.",
       "note": "Additional crafting cost: 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -4384,10 +4192,7 @@
       "abilityDetails": "Piercing. supporting damage. HP skill. 80% area damage. critical hits.",
       "note": "Can defeat Burgess at 15 armor reduction.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -4458,10 +4263,7 @@
       ],
       "abilityDetails": "Siege. supporting damage.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -4534,10 +4336,7 @@
       ],
       "abilityDetails": "Siege.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -4583,9 +4382,7 @@
       ],
       "abilityDetails": "Normal.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -4633,9 +4430,7 @@
       ],
       "abilityDetails": "Normal. can transform.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -4695,9 +4490,7 @@
       ],
       "abilityDetails": "Siege.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -4857,9 +4650,7 @@
       ],
       "abilityDetails": "Siege.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -4937,9 +4728,7 @@
       ],
       "abilityDetails": "Normal.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -5036,10 +4825,7 @@
       ],
       "abilityDetails": "Haki. supporting damage. HP skill.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -5107,10 +4893,7 @@
       "abilityDetails": "activates every 4 basic attacks.",
       "note": "Total-HP damage: 7.5% against bosses/berserk enemies and 22.5% against lane enemies; 2,000,000 magic damage against story enemies.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -5175,9 +4958,7 @@
       "abilityDetails": "Heavy Point.",
       "note": "Attack speed effect does not stack with Transcendence Chopper.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -5271,9 +5052,7 @@
       ],
       "abilityDetails": "Piercing. all damage received +10. Removes berserk armor buffs and deals additional damage.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -5332,9 +5111,7 @@
       ],
       "abilityDetails": "Normal. HP skill. Larger treasure search radius, more treasure chests, 50% chance for double treasure rewards, and gold income +60%.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -5413,9 +5190,7 @@
       ],
       "abilityDetails": "Normal. HP skill.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -5482,9 +5257,7 @@
       ],
       "abilityDetails": "Piercing. cooldown 50s.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -5529,10 +5302,7 @@
       ],
       "abilityDetails": "Explosion damage.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -5583,9 +5353,7 @@
       ],
       "abilityDetails": "Piercing. Additional fixed damage against bosses and berserk enemies: 0.5% of total HP.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -5632,10 +5400,7 @@
       ],
       "abilityDetails": "Normal. explosion damage. absolute cooldown 8.5s.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -5692,9 +5457,7 @@
       "abilityDetails": "Normal.",
       "note": "Can sell junk.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -5750,10 +5513,7 @@
       ],
       "abilityDetails": "Siege.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -5816,10 +5576,7 @@
       ],
       "abilityDetails": "Siege. mana skill: area magic damage. swimming.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -5887,9 +5644,7 @@
       "abilityDetails": "Normal.",
       "note": "Additional crafting cost: 5 wood.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -5953,10 +5708,7 @@
       ],
       "abilityDetails": "Piercing. Attack story enemies from a little distance.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -6006,10 +5758,7 @@
       ],
       "abilityDetails": "Siege.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -6104,10 +5853,7 @@
       ],
       "abilityDetails": "Siege.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -6141,9 +5887,7 @@
       ],
       "abilityDetails": "Siege. single-target magic damage.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -6193,10 +5937,7 @@
       ],
       "abilityDetails": "Normal. R: treasure search within 1800 range of the player's own area.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -6246,10 +5987,7 @@
       "abilityDetails": "Piercing. finisher 10.",
       "note": "Guaranteed execution of a single lane enemy at 15% HP or below.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -6295,11 +6033,7 @@
       ],
       "abilityDetails": "Haki.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Physical", "Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -6359,9 +6093,7 @@
       "abilityDetails": "Siege.",
       "note": "Command: bonkurei. Armor reduction does not stack with Ivankov.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -6440,9 +6172,7 @@
       "abilityDetails": "Normal.",
       "note": "Command: aokiji.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -6526,9 +6256,7 @@
       "abilityDetails": "Normal. while holding position, buffs the farthest unit in range.",
       "note": "Command: ivankov. Armor reduction does not stack with Bonkurei.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -6613,9 +6341,7 @@
       "abilityDetails": "Siege. ignores all terrain.",
       "note": "Command: tiger.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -6672,9 +6398,7 @@
       "abilityDetails": "Piercing.",
       "note": "Command: rebecca.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -6746,10 +6470,7 @@
       ],
       "abilityDetails": "Ryokugyu combination.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -6798,9 +6519,7 @@
       "abilityDetails": "Piercing.",
       "note": "Command: mihawk.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -6915,10 +6634,7 @@
       "abilityDetails": "Siege.",
       "note": "Command: vergo.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -6987,10 +6703,7 @@
       "abilityDetails": "Haki.",
       "note": "Command: sabo. Easter egg: defeats Burgess in one hit.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -7070,9 +6783,7 @@
       "abilityDetails": "Piercing.",
       "note": "Command: killer.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": null,
         "core": false
       }
@@ -7122,10 +6833,7 @@
       "abilityDetails": "Piercing. single-target effect 0.8. single-target damage value 19.",
       "note": "Command: ryuma. Upgrade material for Transcendence Zoro.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -7164,10 +6872,7 @@
       ],
       "note": "Command: stussy.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -7216,9 +6921,7 @@
       "abilityDetails": "Piercing. mana skill.",
       "note": "Command: shiryu. Can defeat Burgess with Wood Upgrade 2 + Docking 1, or Docking 2 + Wood Upgrade 1.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -7298,9 +7001,7 @@
       "abilityDetails": "Siege. HP skill. fixed damage amplification +5%.",
       "note": "Command: akainu.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -7362,10 +7063,7 @@
       "abilityDetails": "Piercing.",
       "note": "Command: carrot.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -7432,10 +7130,7 @@
       "abilityDetails": "Normal. mana skill.",
       "note": "Command: kiku.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -7526,9 +7221,7 @@
       "abilityDetails": "Haki.",
       "note": "Command: redforce.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -7665,10 +7358,7 @@
       "abilityDetails": "Normal. supporting magic damage. swimming.",
       "note": "Command: decken.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -7722,9 +7412,7 @@
       "abilityDetails": "Normal.",
       "note": "Command: baratie. Upgrade material for Transcendence Sanji.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -7817,9 +7505,7 @@
       "abilityDetails": "Normal.",
       "note": "Command: maxim.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -7887,9 +7573,7 @@
       "abilityDetails": "Transcendence Franky enables the Gaon Cannon mana skill.",
       "note": "Command: sunny. Normal.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -7983,10 +7667,7 @@
       ],
       "note": "Command: blackmaria (Bewitching Marionette). Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -8077,9 +7758,7 @@
       "abilityDetails": "Revolutionary Army's Acting Instructor.",
       "note": "Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -8181,10 +7860,7 @@
       "abilityDetails": "Cyborg of the Plague.",
       "note": "Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -8264,9 +7940,7 @@
       "abilityDetails": "Ghost Princess. mana skill. All skills deal explosion damage. amplification also applies to Eternal Mihawk.",
       "note": "Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
       "damageProfile": {
-        "types": [
-          "Explosion"
-        ],
+        "types": ["Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -8330,10 +8004,7 @@
       "abilityDetails": "Champion of Great Strength. stun. single-target damage. underwater movement.",
       "note": "Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -8401,9 +8072,7 @@
       "abilityDetails": "Son of the Pirate King.",
       "note": "Additional crafting cost: 3 wood for the first Distortion, then +5 wood each time (8, 13, 18).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -8432,9 +8101,7 @@
       ],
       "abilityDetails": "Piercing. single-target effect 0.6 and damage value 20.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -8480,9 +8147,7 @@
       ],
       "abilityDetails": "Normal. physical damage. same performance as Baratie plus an acceleration skill.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -8529,10 +8194,7 @@
       ],
       "abilityDetails": "Piercing.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -8582,10 +8244,7 @@
       ],
       "abilityDetails": "Piercing. randomly moves when attacking.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Explosion"
-        ],
+        "types": ["Physical", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -8627,10 +8286,7 @@
       ],
       "note": "Transformation costs an additional 10 wood.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -8693,10 +8349,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -8773,9 +8426,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -8865,9 +8516,7 @@
         }
       ],
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -8974,9 +8623,7 @@
       ],
       "abilityDetails": "W: area magnet.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -9070,11 +8717,7 @@
       "abilityDetails": "Piercing. 50% area damage.",
       "note": "Command: joker tr (Dark Joker). Upgrade 4 adds critical hits; Upgrade 4 extends awakening by 1.5s.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Physical", "Magic", "Explosion"],
         "dominant": "Physical",
         "core": true
       }
@@ -9183,10 +8826,7 @@
       "abilityDetails": "Normal. HP skill: physical damage equal to 1% of current HP. Upgrade 4.",
       "note": "Command: robin tr (Devil Child).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9279,10 +8919,7 @@
       "abilityDetails": "Normal. special upgrade available.",
       "note": "Command: ryokugyu tr (New Marine Admiral Green Bull).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9391,10 +9028,7 @@
       "abilityDetails": "Siege. percentage area damage. Upgrade 4 strengthens stun.",
       "note": "Command: luffy tr (The Man Who Will Become Pirate King).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9495,10 +9129,7 @@
       "abilityDetails": "Normal. damage +8% per enemy buff/debuff. HP and mana skills.",
       "note": "Command: hawkins tr (Magician of Fate).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9642,10 +9273,7 @@
       "abilityDetails": "Siege. damage increases per buff. Upgrade 4.",
       "note": "Command: sabo tr (Revolutionary Army Chief of Staff).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9729,10 +9357,7 @@
       "abilityDetails": "Piercing. W: Usopp Hammer. Upgrade 4 summons plants.",
       "note": "Command: usopp tr (Warrior of the Sea).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9817,10 +9442,7 @@
       "abilityDetails": "Piercing. Upgrade 4 enhances abilities. acquiring Shusui strengthens him and changes skills.",
       "note": "Command: zoro tr (Strongest Swordsman).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -9949,10 +9571,7 @@
       "abilityDetails": "Siege. mana skill. swimming. special upgrade available.",
       "note": "Command: jinbe tr (Knight of the Sea).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -10134,10 +9753,7 @@
       "abilityDetails": "Siege. 80% area damage. Upgrade 4.",
       "note": "Command: fujitora tr (Raging Tiger).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -10212,10 +9828,7 @@
       "abilityDetails": "Haki. enemy movement speed +15. percentage area damage and fixed area damage. HP skill. Thunder Bagua damage and percentage area magic damage increase near maximum slow. special upgrade available.",
       "note": "Command: yamato tr (Oni Princess).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -10240,6 +9853,10 @@
         },
         {
           "unitId": "special_capone",
+          "count": 1
+        },
+        {
+          "unitId": "other_kuma",
           "count": 1
         }
       ],
@@ -10304,10 +9921,7 @@
       "abilityDetails": "current-HP damage. Mana skill: Nika transformation with a 2s incapacitation penalty. Upgrade 4 removes the penalty.",
       "note": "Command: bonney tr (Distorted Future).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }
@@ -10391,9 +10005,7 @@
       "abilityDetails": "Piercing. area magic damage. mana skill. Upgrade 4 enhances skill damage.",
       "note": "Command: tashigi tr (Marine Heroine).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": false
       }
@@ -10521,9 +10133,7 @@
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
       "note": "Command: vegapunk tr (World's Greatest Scientist).",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -10651,9 +10261,7 @@
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
       "note": "Command: vegapunk tr (World's Greatest Scientist).",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -10781,9 +10389,7 @@
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
       "note": "Command: vegapunk tr (World's Greatest Scientist).",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -10911,9 +10517,7 @@
       "abilityDetails": "mana skill. D: Punk Records. choose physical Lilith (armor reduction 40, mana skill, effective against berserk enemies and bosses) or magic Atlas (armor-ignoring damage), costing 2 special upgrade points and 7 wood.",
       "note": "Command: vegapunk tr (World's Greatest Scientist).",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": false
       }
@@ -11013,9 +10617,7 @@
       "abilityDetails": "Piercing. pull. Removes berserk buffs and deals additional damage. Upgrade 4 strengthens Black Vortex.",
       "note": "Command: teach tr (Cunning and Despicable Darkness).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -11091,9 +10693,7 @@
       "abilityDetails": "Normal. total-HP damage. gold income +20%. Upgrade 4.",
       "note": "Command: nami tr (Clear Weather).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -11199,10 +10799,7 @@
       "abilityDetails": "Piercing. explosion damage. Upgrade 4.",
       "note": "Command: law tr (The Man Who Offered One Hundred Hearts).",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Magic",
         "core": true
       }
@@ -11280,11 +10877,7 @@
       "abilityDetails": "Siege. single-target magic damage (values 23, 40). Upgrade 4 awakens the Devil Fruit.",
       "note": "Command: lucci tr (White Bird Pursuing Dark Justice).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Physical", "Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -11431,11 +11024,7 @@
       "abilityDetails": "Normal. creep-related effect. Upgrade 4 summons Baby Laboon.",
       "note": "Command: brook tr (Soul King).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Physical", "Magic", "Explosion"],
         "dominant": null,
         "core": true
       }
@@ -11517,9 +11106,7 @@
       "abilityDetails": "Siege. single-target magic damage. mana skill. Upgrade 4.",
       "note": "Command: sanji tr (The Man Returned from Hell).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -11664,10 +11251,7 @@
       "abilityDetails": "Haki. Haki stun. mana skill. Upgrade 4 unlocks Divine Departure.",
       "note": "Command: shanks tr (The Man Who Ended the Paramount War). Departure can defeat Burgess with some luck.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -11736,11 +11320,7 @@
       "abilityDetails": "Haki. explosion damage. mana skill. damage increases with enemy movement speed.",
       "note": "Command: snakeman tr (Fifth Emperor).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Physical", "Magic", "Explosion"],
         "dominant": null,
         "core": true
       }
@@ -11804,10 +11384,7 @@
       "abilityDetails": "Normal. special upgrade available.",
       "note": "Command: shirahoshi tr (Mermaid Princess Who Rules the Sea Kings).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -11937,9 +11514,7 @@
       "abilityDetails": "Piercing. mana skill.",
       "note": "Command: aokiji tr (Former Marine Admiral Blue Pheasant).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -12036,9 +11611,7 @@
       "abilityDetails": "Siege. HP and mana skills. Upgrade 4 adjusts meteor density and adds strength-based damage.",
       "note": "Command: akainu tr (Marine Fleet Admiral Red Dog). One skill does not stack with Eternal Ace.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -12134,10 +11707,7 @@
       "abilityDetails": "Siege. HP skill. Deals more damage to clustered enemies. Upgrade 4.",
       "note": "Command: kid tr (Heretic of the New Generation).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -12221,9 +11791,7 @@
       "abilityDetails": "Piercing. mana skill. special upgrade available.",
       "note": "Command: kizaru tr (Marine Admiral Yellow Monkey).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -12305,9 +11873,7 @@
       "abilityDetails": "Siege. Mana skill: General Franky transformation lasting 6s. Damage increases per nearby Sunny. Upgrade 4.",
       "note": "Command: franky tr (Invincible Iron Pirates). Shipwright crafts 2 Sunny ships for 8 wood.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -12379,10 +11945,7 @@
       "abilityDetails": "lane explosion-damage reduction debuff 10%. self attack speed increases every 5 rounds, up to level 6. Upgrade 4.",
       "note": "Command: koby tr (Future of the Marines). Summons clones that deal 60% of their attack power as explosion damage within range 400 and 60,000 magic damage to a single enemy per attack.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -12479,10 +12042,7 @@
       "abilityDetails": "Piercing. leveling. Upgrade 4 adds Repeated Training. gains 2 levels when using the mana skill.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -12576,10 +12136,7 @@
       "abilityDetails": "Siege. 75% area damage. HP skill. Every attack deals 6x critical damage to bosses/story enemies. Upgrade 4 enhances skills.",
       "note": "Additional crafting cost: 35,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -12645,10 +12202,7 @@
       "abilityDetails": "Piercing.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -12735,10 +12289,7 @@
       "abilityDetails": "Normal. Upgrade 4 upgrades Wildfire to Karyudon.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -12829,10 +12380,7 @@
       "abilityDetails": "all skills knock back.",
       "note": "Crafting consumes 4 additional special upgrade points.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -12934,10 +12482,7 @@
       "abilityDetails": "Piercing. single-target damage. HP skill.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Magic",
         "core": true
       }
@@ -13001,10 +12546,7 @@
       "abilityDetails": "Haki. total-HP damage. Upgrade 4 adds the Blood Explosion skill.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood; can only be crafted before round 41.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -13082,10 +12624,7 @@
       "abilityDetails": "Normal. HP skill. Upgrade 4 strengthens clones.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -13141,9 +12680,7 @@
       "abilityDetails": "Piercing. reduces enemy level and deletes enemies. special upgrade available.",
       "note": "Requires 3 Absalom, 5,000 gold, and 5 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -13265,10 +12802,7 @@
       "abilityDetails": "Normal. Normal upgrades strengthen skills. Upgrade 4 enhances Discharge.",
       "note": "Additional crafting cost: 5,000 gold and 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -13348,9 +12882,7 @@
       "abilityDetails": "Siege. armor +15. percentage area damage. single-target physical damage. damage increases per buff. Enemy armor increase: +15; separate from armor reductions.",
       "note": "Command: garp im (Marine Hero Garp).",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -13467,10 +12999,7 @@
       "abilityDetails": "Piercing. 100% area damage. persuades allied units.",
       "note": "Command: rayleigh im (Dark King Silvers Rayleigh). Can sell junk; special upgrade available.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -13591,10 +13120,7 @@
       "abilityDetails": "Roger). Haki. special upgrade: Divine Departure.",
       "note": "Command: roger im (Pirate King Gol D.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -13669,9 +13195,7 @@
       ],
       "abilityDetails": "Mountain Eater. Piercing. Upgrade 4 enhances skills and adds high-speed movement.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -13750,10 +13274,7 @@
       "abilityDetails": "Haki. percentage area damage. F: transformation. HP skill. Debuff reduces attack by 75%, excluding Kaido.",
       "note": "Command: kaido im (King of the Beasts).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -13872,10 +13393,7 @@
       "abilityDetails": "Haki. HP skill. Upgrade 4 enhances Quake Strike.",
       "note": "Command: newgate im (Great Pirate Whitebeard).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -13978,10 +13496,7 @@
       "abilityDetails": "feeding Common units randomly enhances items.",
       "note": "Command: bullet im (Heir of the Monster).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -14060,10 +13575,7 @@
       "abilityDetails": "Normal. mana skill. skill damage scales with attack speed. Cutting Wind is a single-target skill dealing 40% less damage to non-lane enemies.",
       "note": "Command: dragon im (Wind That Brings the Storm). Without the upgrade, requires Docking twice to defeat Burgess.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Magic",
         "core": true
       }
@@ -14164,9 +13676,7 @@
       ],
       "abilityDetails": "Gluttonous Iron Balloon. Siege. 66% area magic damage. One Docking allows defeating Burgess. special upgrade available.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -14248,10 +13758,7 @@
       "abilityDetails": "Haki. explosion damage. special upgrade increases this by 0.5%.",
       "note": "Command: sengoku im (Buddha Sengoku).",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Magic",
         "core": true
       }
@@ -14369,10 +13876,7 @@
       "abilityDetails": "Normal. Upgrade 4 enables skill enhancement by consuming Pirate Ships, up to 3 enhancements.",
       "note": "Command: shiki im (Heavenly Golden Lion).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -14467,10 +13971,7 @@
       "abilityDetails": "Siege. special upgrade available.",
       "note": "Command: z im (Black Arm Zephyr of Conviction).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -14620,10 +14121,7 @@
       "abilityDetails": "Haki. HP and mana skills. ignores terrain. Damage increases with enemy movement speed. uses Transcendence upgrades.",
       "note": "Command: nika et (Sun God).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -14773,10 +14271,7 @@
       "abilityDetails": "Haki. HP and mana skills. ignores terrain. Damage increases with enemy movement speed. uses Transcendence upgrades.",
       "note": "Command: nika et (Sun God).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -14902,9 +14397,7 @@
       "abilityDetails": "Piercing. gold enhancement. Listed stats include the summoned Ivankov. Upgrade 4 adds summons.",
       "note": "Command: buggy et (Thousand-Coin Clown).",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -14983,10 +14476,7 @@
       "abilityDetails": "Normal. mana skill. special upgrade available.",
       "note": "Command: cavendish et (Pirate Prince). Requires Legendary Law, Hidden Killer, Hidden Rebecca, Captain Kuro, and an additional 5 wood.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -15110,10 +14600,7 @@
       "abilityDetails": "Haki. mana skill.",
       "note": "Command: hancock et (Empress of Amazon Lily).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": true
       }
@@ -15203,10 +14690,7 @@
       "abilityDetails": "Piercing. explosion and magic damage. mana skill. Upgrade 4.",
       "note": "Command: mihawk et (Hawk-Eyes).",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": null,
         "core": false
       }
@@ -15279,9 +14763,7 @@
       "abilityDetails": "Piercing. mana skill. special upgrade available. Enhance skills with 3 Random Wisps and 2 wood. description also mentions basic Wisps and wood.",
       "note": "Command: vivi et (Pirate Princess).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -15345,9 +14827,7 @@
       "abilityDetails": "Normal.",
       "note": "Command: ace et (Fire Fist Ace).",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -15432,10 +14912,7 @@
       "abilityDetails": "Haki. mana skill. additional basic-attack damage for Legendary and higher units. Upgrade 4 summons Legendary Kinemon.",
       "note": "Command: oden et (True Hero).",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -15571,10 +15048,7 @@
       "abilityDetails": "mana skill. special upgrade available. Loses HP when attacking. sleeps for 3s when HP falls to 10 or below.",
       "note": "Command: u-ta et (Diva of the World).",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Magic",
         "core": true
       }
@@ -15621,10 +15095,7 @@
       "abilityDetails": "Legendary Samurai. finisher. mana skill. stack-based damage. Wano synergy. Upgrade 4 enhances Shadow Swordsmanship.",
       "note": "Requires Legendary Law, Hidden Shiryu, Hidden Ryuma, and an additional 5 wood.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Magic",
         "core": true
       }
@@ -15718,10 +15189,7 @@
       "abilityDetails": "can deal single-target damage.",
       "note": "Command: tesoro et (Greatest Entertainer). Additional crafting cost: 5 wood.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -15829,9 +15297,7 @@
       ],
       "note": "Requires Kamijou Touma, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -15895,9 +15361,7 @@
       ],
       "note": "Requires Isayama Yomi, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Physical"
-        ],
+        "types": ["Physical"],
         "dominant": "Physical",
         "core": true
       }
@@ -15993,10 +15457,7 @@
       ],
       "note": "Requires Yotsuba, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -16081,10 +15542,7 @@
       "abilityDetails": "HP and mana skills.",
       "note": "Requires Yan, 1 additional Random unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": "Physical",
         "core": true
       }
@@ -16163,10 +15621,7 @@
       "abilityDetails": "Moves across all terrain.",
       "note": "Requires Megumin, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": true
       }
@@ -16226,9 +15681,7 @@
       ],
       "note": "Requires Herrscher of Reason, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16313,9 +15766,7 @@
       "abilityDetails": "Docking.",
       "note": "Requires Naruto Sage Mode, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16391,10 +15842,7 @@
       "abilityDetails": "Single-target damage.",
       "note": "Requires Hanekawa Tsubasa, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic",
-          "Explosion"
-        ],
+        "types": ["Magic", "Explosion"],
         "dominant": "Explosion",
         "core": true
       }
@@ -16455,9 +15903,7 @@
       "abilityDetails": "mana skill.",
       "note": "Requires Kurosaki Ichigo, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16505,9 +15951,7 @@
       "abilityDetails": "Bandit King. HP skill: wood +1.",
       "note": "Requires Sento Isuzu, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16589,9 +16033,7 @@
       "abilityDetails": "mana skill: damage and stun. explosion damage 10%.",
       "note": "Requires Yagami Light, 1 additional Random-exclusive unit, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16670,9 +16112,7 @@
       ],
       "note": "Requires K, 1 additional Random unit, Pirate Ship, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16802,9 +16242,7 @@
       "abilityDetails": "mana skill: damage. Docking.",
       "note": "Requires Elizabeth, 1 Lucky Token, 10,000 gold, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Magic"
-        ],
+        "types": ["Magic"],
         "dominant": "Magic",
         "core": true
       }
@@ -16875,10 +16313,7 @@
       ],
       "note": "Requires over-reduction of armor to 250 for maximum damage. Requires Paimon, 1 additional Random unit, 10,000 gold, 1 Lucky Token, and 7 wood in addition to the other recipe ingredients.",
       "damageProfile": {
-        "types": [
-          "Physical",
-          "Magic"
-        ],
+        "types": ["Physical", "Magic"],
         "dominant": null,
         "core": false
       }

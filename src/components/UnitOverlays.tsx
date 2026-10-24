@@ -24,7 +24,8 @@ export const UnitOverlays = memo(function UnitOverlays({
     if (current.recipeUnitId && !unitsMap.has(current.recipeUnitId)) store.clear();
     else if (current.hovered && (!current.hovered.anchor.isConnected ||
       !unitsMap.has(current.hovered.unitId) ||
-      (visibleUnitIds && !visibleUnitIds.has(current.hovered.unitId)))) store.clearHover();
+      (visibleUnitIds && !current.hovered.anchor.hasAttribute("data-unit-preview-id") &&
+        !visibleUnitIds.has(current.hovered.unitId)))) store.clearHover();
   }, [store, unitsMap, visibleUnitIds, hovered]);
   const hoveredUnit = hovered && unitsMap.get(hovered.unitId);
   const recipeUnit = recipeUnitId && unitsMap.get(recipeUnitId);

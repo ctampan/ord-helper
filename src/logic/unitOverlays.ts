@@ -36,7 +36,7 @@ export function createUnitOverlayStore() {
     synchronizeHover: (anchor: HTMLElement | null, tooltipUnitId: string | null = null) => {
       clearTimeout(timer);
       if (snapshot.recipeUnitId) return;
-      const unitId = anchor?.dataset.unitId;
+      const unitId = anchor?.dataset.unitId || anchor?.dataset.unitPreviewId;
       if (unitId && anchor) {
         if (snapshot.hovered?.unitId !== unitId || snapshot.hovered.anchor !== anchor) {
           publish({ ...snapshot, hovered: { unitId, anchor } });

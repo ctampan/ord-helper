@@ -109,7 +109,7 @@ function App() {
         // Resolve the actual pointer target before enabling a Shift-only tooltip.
         // A pending handoff timer must never resurrect the previous unit.
         overlayStore.synchronizeHover(
-          document.querySelector<HTMLElement>("main [data-unit-id]:hover"),
+          document.querySelector<HTMLElement>("main [data-unit-id]:hover, [data-unit-preview-id]:hover"),
           document.querySelector<HTMLElement>("[data-tooltip-unit-id]:hover")?.dataset.tooltipUnitId || null,
         );
         setIsShiftPressed(true);
@@ -475,6 +475,11 @@ function App() {
       // Check for Unit Shortcuts
       const unitId = getUnitIdByKey(key);
       if (unitId && unitsMap.has(unitId)) {
+        // Recommendation previews only expose inspection, including while hovering their tooltip.
+        const hoveredPreview = overlayStore.getSnapshot().hovered?.anchor.closest("[data-unit-preview-id]");
+        if (document.querySelector("[data-unit-preview-id]:hover") ||
+          target.closest("[data-unit-preview-id]") ||
+          (hoveredPreview && document.querySelector("[data-tooltip-unit-id]:hover"))) return;
         e.preventDefault();
         // Ctrl + Key = Remove (Right Click Logic with Ctrl)
         // Key = Add (Left Click Logic)
@@ -484,7 +489,7 @@ function App() {
 
     window.addEventListener("keydown", handleGlobalKeyDown);
     return () => window.removeEventListener("keydown", handleGlobalKeyDown);
-  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, unitsMap]);
+  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, unitsMap, overlayStore]);
 
   const handleCountChange = useCallback((unitId: string, newCount: number) => {
     setInventory((prev) => ({
@@ -574,7 +579,7 @@ function App() {
       <TeamStatsPanel key={currentVersion} dataset={currentVersion} units={unitsMap} inventory={inventory}
         bans={bans} allowWisp={isWispEnabled}
         visible={teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false"}
-        onRecipe={(id) => overlayStore.showRecipe(id)} />
+        onRecipe={overlayStore.showRecipe} onHoverChange={overlayStore.hover} />
       {showCapabilityFilters && (
         <CapabilityFilters
           units={data.units}

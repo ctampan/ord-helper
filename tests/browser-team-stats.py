@@ -81,7 +81,10 @@ with sync_playwright() as p:
     expect(panel.get_by_role("combobox", name="Build profile")).to_have_value("Magic")
 
     # Native buff exclusions apply across rarities and duplicate units.
-    page.evaluate("localStorage.setItem('ord_inventory', JSON.stringify({rare_sabo:3, hidden_sabo:2, transcendence_sabo:1}))")
+    page.evaluate("""() => {
+      localStorage.setItem('ord_inventory', JSON.stringify({rare_sabo:3, hidden_sabo:2, transcendence_sabo:1}));
+      localStorage.setItem('ord_shortcuts', JSON.stringify({unitShortcuts:{rare_sabo:'q'}}));
+    }""")
     page.reload()
     expect(armor).to_contain_text("~-45…-30")
     armor.click()
@@ -103,6 +106,56 @@ with sync_playwright() as p:
     expect(cards.first.locator("img")).to_have_js_property("complete", True)
     assert cards.first.locator("img").evaluate("image => image.naturalWidth > 0")
     saved = page.evaluate("localStorage.getItem('ord_inventory')")
+    saved_bans = page.evaluate("localStorage.getItem('ord_bans')")
+    expect(panel.get_by_role("tabpanel")).not_to_contain_text("Missing:")
+    expect(panel).not_to_contain_text("Missing for")
+    expect(cards.first.get_by_role("button")).to_have_count(1)
+    expect(cards.first.get_by_role("button")).to_have_text("📖")
+    assert cards.first.locator("img").evaluate("image => getComputedStyle(image.parentElement).borderColor !== getComputedStyle(image.closest('li')).borderColor")
+    assert cards.first.bounding_box()["height"] < 145
+
+    # Recommendation previews stay inspectable when dashboard filters hide the unit.
+    filters.get_by_role("checkbox", name=re.compile("^Flying")).check()
+    uid = cards.first.get_attribute("data-recommendation-id")
+    cards.first.hover()
+    page.keyboard.down("Shift")
+    tip = page.locator(f"[data-tooltip-unit-id='{uid}']")
+    expect(tip).to_be_visible()
+    tip.hover()
+    page.keyboard.press("q")
+    assert page.evaluate("localStorage.getItem('ord_inventory')") == saved
+    cards.first.hover()
+    expect(tip).to_be_visible()
+    page.keyboard.up("Shift")
+    expect(tip).to_have_count(0)
+    # Repeated Shift inspection resolves the preview under the pointer.
+    page.keyboard.down("Shift")
+    expect(tip).to_be_visible()
+    page.keyboard.up("Shift")
+    page.mouse.move(0, 0)
+    page.evaluate("document.activeElement.blur()")
+    page.keyboard.press("t")
+    cards.first.hover()
+    expect(tip).to_be_visible()
+    page.mouse.move(0, 0)
+    expect(tip).to_have_count(0)
+    cards.first.hover()
+    expect(tip).to_be_visible()
+    page.keyboard.press("t")
+    expect(tip).to_have_count(0)
+    filters.get_by_role("button", name="Clear", exact=True).click()
+
+    # Mouse gestures and configured unit shortcuts never craft or alter these previews.
+    portrait = cards.first.locator("img")
+    portrait.click()
+    portrait.dblclick()
+    portrait.click(button="right")
+    portrait.click(modifiers=["Control"])
+    portrait.click(modifiers=["Alt"])
+    page.keyboard.press("q")
+    page.keyboard.press("Control+q")
+    assert page.evaluate("localStorage.getItem('ord_inventory')") == saved
+    assert page.evaluate("localStorage.getItem('ord_bans')") == saved_bans
     cards.first.get_by_role("button", name=re.compile("^View recipe")).click()
     expect(page.get_by_role("dialog", name="Recipe details")).to_be_visible()
     page.get_by_role("button", name="Close recipe", exact=True).click()
