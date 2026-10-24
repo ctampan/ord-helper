@@ -16,7 +16,7 @@ LABELS = ["Help", "Shortcuts", "Theme", "UI Size", "Team Stats", "Filters",
 
 with sync_playwright() as p:
     browser = p.chromium.launch(channel="chrome", headless=True)
-    context = browser.new_context(viewport={"width": 1440, "height": 1000}, accept_downloads=True)
+    context = browser.new_context(viewport={"width": 1440, "height": 1000}, accept_downloads=True, color_scheme="dark")
     context.add_init_script("""if (!localStorage.getItem('config_test_initialized')) {
       localStorage.setItem('config_test_initialized', 'true');
       localStorage.setItem('ord_has_seen_help', 'true');
@@ -189,10 +189,25 @@ with sync_playwright() as p:
                 })""")
                 assert abs(metrics["icon"] - 18 * scale) < 0.1
                 assert abs(metrics["label"] - 10 * scale) < 0.1
+                # App light mode must keep recipe glyphs visible even with a dark OS preference.
+                expect(recipe.locator("svg")).to_be_visible()
+                contrast = recipe.locator("svg").evaluate("""svg => {
+                  const foreground = getComputedStyle(svg).color.match(/[\\d.]+/g).slice(0, 3).map(Number);
+                  const background = getComputedStyle(svg.closest('[data-unit-id]')).backgroundColor.match(/[\\d.]+/g).slice(0, 3).map(Number);
+                  const luminance = rgb => rgb.map(c => {
+                    c /= 255;
+                    return c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4;
+                  }).reduce((sum, c, i) => sum + c * [.2126, .7152, .0722][i], 0);
+                  const fg = luminance(foreground), bg = luminance(background);
+                  return (Math.max(fg, bg) + .05) / (Math.min(fg, bg) + .05);
+                }""")
+                assert contrast >= 3, (theme, contrast)
                 if size == 50:
                     assert abs(metrics["icon"] - 18) < 0.1
                 measurements.append(metrics)
                 config.screenshot(path=str(ARTIFACTS / f"config-{width}-{theme}-{size}.png"))
+                if size == 50:
+                    recipe.locator("xpath=ancestor::*[@data-unit-id]").screenshot(path=str(ARTIFACTS / f"recipe-icon-{width}-{theme}.png"))
             for metric in measurements[0]:
                 assert measurements[0][metric] < measurements[1][metric] < measurements[2][metric], (metric, measurements)
     assert not errors, errors

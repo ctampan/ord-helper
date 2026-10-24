@@ -349,6 +349,7 @@
 .recipeBtn {
   background: none;
   border: none;
+  color: var(--text-secondary);
   padding: 0 0 0 4px;
   cursor: pointer;
   font-size: calc(var(--unit-font-size-name) * 1.1);
@@ -361,5 +362,11 @@
 }
 
 .recipeBtn:hover {
+  color: var(--text-primary);
   transform: scale(1.2);
+}
+
+.recipeBtn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 1px;
 }
