@@ -8,6 +8,7 @@ import { getRarityColor } from "../logic/rarityColors";
 import { CachedImage } from "./CachedImage";
 import { CountFeedback } from "./CountFeedback";
 import styles from "./UnitListItem.module.css";
+import { Icon } from "./Icon";
 
 interface UnitListItemProps {
   unit: Unit;
@@ -184,7 +185,7 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
             )}
 
           {status === "orange" && wispCost > 0 && (
-            <span className={styles.wispCost}>{wispCost} 👻</span>
+            <span className={styles.wispCost} aria-label={`${wispCost} Wisp`}>{wispCost} <Icon name="wisp" size={14} /></span>
           )}
 
           <div className={styles.controls} onClick={(e) => e.stopPropagation()}>
@@ -211,8 +212,10 @@ export const UnitListItem: React.FC<UnitListItemProps> = React.memo(
                   onShowRecipe(unit.id);
                 }}
                 title="Show Recipe"
+                aria-label={`View recipe for ${unit.name} (${unit.rarity})`}
+                type="button"
               >
-                📖
+                <Icon name="recipe" size={14} />
               </button>
             )}
           </div>

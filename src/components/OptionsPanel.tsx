@@ -2,8 +2,12 @@ import React from "react";
 import styles from "./OptionsPanel.module.css";
 import { BanToggle } from "./BanToggle";
 import { HelpModal } from "./HelpModal";
+import { ConfigButton } from "./ConfigButton";
+import { Icon } from "./Icon";
+import type { ShortcutMap } from "../hooks/useShortcuts";
 
 interface OptionsPanelProps {
+  globalShortcuts: ShortcutMap;
   showTeamStats: boolean;
   onToggleTeamStats: () => void;
   showCapabilityFilters: boolean;
@@ -35,6 +39,7 @@ interface OptionsPanelProps {
 }
 
 export const OptionsPanel: React.FC<OptionsPanelProps> = ({
+  globalShortcuts,
   showTeamStats,
   onToggleTeamStats,
   showCapabilityFilters,
@@ -97,194 +102,73 @@ export const OptionsPanel: React.FC<OptionsPanelProps> = ({
   };
 
   const [isConfigCollapsed, setIsConfigCollapsed] = React.useState(false);
+  const contentId = React.useId();
 
   return (
-    <div className={styles.panel}>
-      <div
-        className={styles.header}
-        onClick={() => setIsConfigCollapsed(!isConfigCollapsed)}
-      >
+    <section className={styles.panel} aria-label="Configuration">
+      <button type="button" className={styles.header} aria-expanded={!isConfigCollapsed}
+        aria-controls={contentId} onClick={() => setIsConfigCollapsed(!isConfigCollapsed)}>
         <span className={styles.headerTitle}>Config</span>
-        <span className={styles.collapseIcon}>
-          {isConfigCollapsed ? "▼" : "▲"}
-        </span>
-      </div>
-      {!isConfigCollapsed && (
-        <div className={styles.row}>
-          <div className={styles.leftGroup}>
-            {/* Group 1: Interactions */}
-            <BanToggle isBanMode={isBanMode} onToggle={onToggleBanMode} />
-            <button
-              className={styles.iconBtn}
-              onClick={onOpenShortcuts}
-              title="Keyboard Shortcuts"
-            >
-              ⌨️
-            </button>
+        <Icon name={isConfigCollapsed ? "down" : "up"} size={14} className={styles.collapseIcon} />
+      </button>
+      {!isConfigCollapsed && <div id={contentId} className={styles.content}>
+        <div className={styles.grid}>
+          <ConfigButton icon="help" label="Help" onClick={() => setIsHelpOpen(true)} title="Help & Features" />
+          <ConfigButton icon="keyboard" label="Shortcuts" onClick={onOpenShortcuts} title="Keyboard Shortcuts" />
+          <ConfigButton icon={theme === "dark" ? "moon" : "sun"} label="Theme"
+            status={theme === "dark" ? "Dark" : "Light"} onClick={onToggleTheme}
+            title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`} aria-label="Toggle theme" />
 
-            <div className={styles.dividerVertical} />
+          <ConfigButton icon="size" label="UI Size" status={`${uiSize}%`} aria-label="Adjust UI size"
+            onClick={(e) => cycleUiSize(false, e.ctrlKey)}
+            onContextMenu={(e) => { e.preventDefault(); cycleUiSize(true, e.ctrlKey); }}
+            title={`UI Zoom: ${uiSize}%\nLeft Click: +1% | Right Click: -1%\nCtrl + Click: ±5%`} />
+          <ConfigButton icon="stats" label="Team Stats" status={showTeamStats ? "On" : "Off"}
+            shortcut={globalShortcuts.TOGGLE_TEAM_STATS}
+            active={showTeamStats} aria-pressed={showTeamStats} aria-label="Toggle team stats"
+            aria-controls="team-stats" onClick={onToggleTeamStats}
+            title={`Team Stats: ${showTeamStats ? "shown" : "hidden"}`} />
+          <ConfigButton icon="filter" label="Filters" status={`${showCapabilityFilters ? "On" : "Off"} · ${activeFilterCount}`}
+            shortcut={globalShortcuts.TOGGLE_FILTERS}
+            active={showCapabilityFilters} aria-pressed={showCapabilityFilters} aria-label="Toggle ability filters"
+            aria-controls="capability-filters" onClick={onToggleFilter}
+            title={`Ability filters: ${showCapabilityFilters ? "shown" : "hidden"}${activeFilterCount ? ` · ${activeFilterCount} active` : ""}`} />
 
-            {/* Group 2: Appearance */}
-            <button
-              className={styles.iconBtn}
-              onClick={onToggleTheme}
-              title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
-            >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </button>
-            <button
-              className={styles.iconBtn}
-              onClick={(e) => cycleUiSize(false, e.ctrlKey)}
-              onContextMenu={(e) => {
-                e.preventDefault();
-                cycleUiSize(true, e.ctrlKey);
-              }}
-              title={`UI Zoom: ${uiSize}%\nLeft Click: +1% | Right Click: -1%\nCtrl + Click: ±5%`}
-            >
-              <span style={{ fontSize: "0.75rem", fontWeight: "bold" }}>
-                {uiSize}%
-              </span>
-            </button>
+          <ConfigButton icon={removeSubGroup ? "flat" : "groups"} label="Subgroups" status={removeSubGroup ? "Flat" : "Grouped"}
+            active={!removeSubGroup} aria-pressed={!removeSubGroup} aria-label="Toggle subgroups"
+            onClick={onToggleRemoveSubGroup} title={`Remove Subgroups: ${removeSubGroup ? "ON" : "OFF"}`} />
+          <ConfigButton icon="sort" label="Sort" status={sortByAlphabetical ? "A–Z" : "Default"}
+            active={sortByAlphabetical} aria-pressed={sortByAlphabetical} aria-label="Toggle alphabetical sort"
+            onClick={onToggleSortByAlphabetical} title={`Alphabetical Sort: ${sortByAlphabetical ? "ON" : "OFF"}`} />
+          <ConfigButton icon="recipe" label="Recipes" status={showRecipeButtons ? "On" : "Off"}
+            active={showRecipeButtons} aria-pressed={showRecipeButtons} aria-label="Toggle recipe icons"
+            onClick={onToggleRecipeButtons} title={`Recipe Icons: ${showRecipeButtons ? "ON" : "OFF"}`} />
 
-            <div className={styles.dividerVertical} />
+          <ConfigButton icon="tooltip" label="Tooltips" status={isTooltipEnabled ? "Always" : "Shift"}
+            active={isTooltipEnabled} aria-pressed={isTooltipEnabled} aria-label="Toggle tooltips"
+            onClick={onToggleTooltip}
+            title={`Tooltips: ${isTooltipEnabled ? "Always ON" : "Shift to Show"}\nClick to toggle default visibility.`} />
+          <BanToggle isBanMode={isBanMode} onToggle={onToggleBanMode} />
+          <ConfigButton icon="wisp" label="Wisp" status={isWispEnabled ? "On" : "Off"}
+            active={isWispEnabled} aria-pressed={isWispEnabled} aria-label="Toggle Wisp calculation"
+            onClick={onToggleWisp}
+            title={`Wisp Calculation: ${isWispEnabled ? "ON" : "OFF"}\nClick to toggle wisp usage in calculations.`} />
 
-            {/* Group 3: Game Settings */}
-            <button
-              className={`${styles.iconBtn} ${
-                isTooltipEnabled ? styles.active : ""
-              }`}
-              onClick={onToggleTooltip}
-              title={`Tooltips: ${
-                isTooltipEnabled ? "Always ON" : "Shift to Show"
-              }\nClick to toggle default visibility.`}
-            >
-              {isTooltipEnabled ? "👁️" : "🗨️"}
-            </button>
-            <button
-              className={`${styles.iconBtn} ${
-                isWispEnabled ? styles.active : ""
-              }`}
-              onClick={onToggleWisp}
-              title={`Wisp Calculation: ${
-                isWispEnabled ? "ON" : "OFF"
-              }\nClick to toggle wisp usage in calculations.`}
-            >
-              {isWispEnabled ? "👻" : "🚫"}
-            </button>
-
-            <div className={styles.dividerVertical} />
-
-            {/* Group 4: Sorting & Grouping */}
-            <button type="button" className={`${styles.iconBtn} ${showTeamStats ? styles.active : ""}`}
-              onClick={onToggleTeamStats} aria-label="Toggle team stats" aria-pressed={showTeamStats}
-              aria-controls="team-stats" title={`Team Stats: ${showTeamStats ? "shown" : "hidden"}`}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M4 20V10h4v10m2 0V4h4v16m2 0v-7h4v7M2 20h20" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              className={`${styles.iconBtn} ${showCapabilityFilters ? styles.active : ""}`}
-              onClick={onToggleFilter}
-              aria-label="Toggle ability filters"
-              aria-pressed={showCapabilityFilters}
-              aria-controls="capability-filters"
-              title={`Ability filters: ${showCapabilityFilters ? "shown" : "hidden"}${activeFilterCount ? ` · ${activeFilterCount} active` : ""}`}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M3 4h18l-7 8v7l-4 2v-9z" />
-              </svg>
-            </button>
-            <button
-              className={`${styles.iconBtn} ${
-                removeSubGroup ? styles.active : ""
-              }`}
-              onClick={onToggleRemoveSubGroup}
-              title={`Remove Subgroups: ${removeSubGroup ? "ON" : "OFF"}`}
-            >
-              {removeSubGroup ? "📦" : "📁"}
-            </button>
-            <button
-              className={`${styles.iconBtn} ${
-                sortByAlphabetical ? styles.active : ""
-              }`}
-              onClick={onToggleSortByAlphabetical}
-              title={`Alphabetical Sort: ${sortByAlphabetical ? "ON" : "OFF"}`}
-            >
-              {sortByAlphabetical ? "🔤" : "🔢"}
-            </button>
-            <button
-              className={`${styles.iconBtn} ${
-                showRecipeButtons ? styles.active : ""
-              }`}
-              onClick={onToggleRecipeButtons}
-              title={`Recipe Icons: ${showRecipeButtons ? "ON" : "OFF"}`}
-            >
-              {showRecipeButtons ? "📖" : "📕"}
-            </button>
-
-            <div className={styles.dividerVertical} />
-
-            {/* Group 4: Data Management */}
-            <button
-              className={styles.iconBtn}
-              onClick={onExport}
-              title="Export Game Version"
-            >
-              💾
-            </button>
-            <button
-              className={styles.iconBtn}
-              onClick={() => fileInputRef.current?.click()}
-              title="Import Game Version"
-            >
-              📂
-            </button>
-            <input
-              type="file"
-              ref={fileInputRef}
-              style={{ display: "none" }}
-              accept=".json"
-              onChange={handleFileChange}
-            />
-            <button
-              className={styles.iconBtn}
-              onClick={onReset}
-              title="Reset Inventory & Bans"
-            >
-              🗑️
-            </button>
-
-            <div className={styles.dividerVertical} />
-
-            {/* Group 5: Help */}
-            <button
-              className={styles.iconBtn}
-              onClick={() => setIsHelpOpen(true)}
-              title="Help & Features"
-            >
-              ❓
-            </button>
-          </div>
-
-          <div className={styles.rightGroup}>
-            <select
-              className={styles.select}
-              value={currentVersion}
-              onChange={(e) => onVersionChange(e.target.value)}
-              title="Select Game Version"
-            >
-              {versions.map((v) => (
-                <option key={v} value={v}>
-                  {v}
-                </option>
-              ))}
-            </select>
-          </div>
+          <ConfigButton icon="export" label="Export" onClick={onExport} title="Export Game Version" />
+          <ConfigButton icon="import" label="Import" onClick={() => fileInputRef.current?.click()} title="Import Game Version" />
+          <ConfigButton icon="reset" label="Reset" danger shortcut={globalShortcuts.RESET_INVENTORY}
+            onClick={onReset} title="Reset Inventory & Bans" />
         </div>
-      )}
-
+        <input type="file" ref={fileInputRef} hidden accept=".json" onChange={handleFileChange} aria-label="Import game data" />
+        <label className={styles.version}>
+          <span>Game version</span>
+          <select className={styles.select} value={currentVersion} onChange={(e) => onVersionChange(e.target.value)}
+            title="Select Game Version">
+            {versions.map((v) => <option key={v} value={v}>{v}</option>)}
+          </select>
+        </label>
+      </div>}
       <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
-    </div>
+    </section>
   );
 };

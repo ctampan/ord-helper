@@ -1,107 +1,56 @@
 .panel {
-  background-color: var(--bg-panel);
-  border-radius: 8px;
-  padding: 8px;
-  margin-bottom: 8px;
-}
-
-.row {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.leftGroup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.rightGroup {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.iconBtn {
-  background: none;
-  border: 1px solid transparent;
-  color: var(--text-primary);
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 4px;
-  border-radius: 4px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    background-color 0.2s,
-    transform 0.1s;
-}
-
-.iconBtn:hover {
-  background-color: var(--bg-secondary);
-  border-color: var(--border-color);
-}
-
-.iconBtn:active {
-  transform: scale(0.95);
-  background-color: var(--bg-secondary);
-}
-
-.iconBtn.active {
-  background-color: rgba(255, 0, 0, 0.2);
-  border-color: var(--status-red);
-  color: var(--status-red);
-}
-
-.dividerVertical {
-  width: 1px;
-  height: 20px;
-  background-color: var(--border-color);
-  margin: 0;
-}
-
-.select {
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 2px 4px;
-  font-size: 0.8rem;
-  height: 28px;
-  width: 100%;
+  border-radius: 6px;
+  padding: calc(4px * var(--config-scale));
+  margin-bottom: calc(4px * var(--config-scale));
+  box-sizing: border-box;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 8px;
+  width: 100%;
+  padding: calc(2px * var(--config-scale));
+  border: 0;
+  background: none;
+  color: var(--text-primary);
   cursor: pointer;
-  user-select: none;
-  background-color: var(--bg-secondary);
+  font: inherit;
+}
+.headerTitle { font-size: calc(12px * var(--config-scale)); font-weight: 700; }
+.collapseIcon { width: calc(14px * var(--config-scale)); height: calc(14px * var(--config-scale)); }
+.content { margin-top: calc(2px * var(--config-scale)); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(2px * var(--config-scale)); }
+.iconBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(1px * var(--config-scale));
+  min-width: 0;
+  min-height: calc(44px * var(--config-scale));
+  padding: calc(2px * var(--config-scale)) calc(1px * var(--config-scale));
+  border: 1px solid transparent;
   border-radius: 4px;
-  margin-bottom: 4px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: background-color 0.15s, border-color 0.15s;
 }
-
-.headerTitle {
-  font-size: 0.85rem;
-  font-weight: bold;
-  opacity: 0.8;
-}
-
-.collapseIcon {
-  font-size: 0.7rem;
-  opacity: 0.6;
-}
-
-.select option {
-  background-color: #ffffff;
-  color: #000000;
-}
+.buttonIcon { width: calc(18px * var(--config-scale)); height: calc(18px * var(--config-scale)); }
+.buttonLabel { max-width: 100%; font: calc(10px * var(--config-scale))/1.1 Arial, sans-serif; white-space: nowrap; }
+.buttonStatus { max-width: 100%; font: calc(9px * var(--config-scale))/1.1 Arial, sans-serif; color: var(--text-secondary); white-space: nowrap; }
+.iconBtn:hover { background: var(--card-hover); border-color: var(--border-color); }
+.iconBtn:active { background: var(--bg-input); }
+.iconBtn.active { border-color: var(--accent-color); }
+.iconBtn.active > svg { color: var(--accent-color); }
+.iconBtn.active .buttonStatus { color: var(--text-primary); }
+.iconBtn.danger { color: var(--status-red); }
+.iconBtn.danger.active { border-color: var(--status-red); background: color-mix(in srgb, var(--status-red) 12%, var(--bg-card)); }
+.iconBtn.danger.active > svg, .iconBtn.danger.active .buttonStatus { color: inherit; }
+.version { display: flex; flex-direction: column; gap: calc(2px * var(--config-scale)); margin-top: calc(4px * var(--config-scale)); font-size: calc(10px * var(--config-scale)); color: var(--text-secondary); }
+.select { width: 100%; min-width: 0; height: calc(25px * var(--config-scale)); padding: calc(2px * var(--config-scale)) calc(4px * var(--config-scale)); border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-input); color: var(--text-primary); font: inherit; font-size: calc(11px * var(--config-scale)); }
+.panel :focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }

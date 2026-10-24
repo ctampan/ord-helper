@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BanToggle.module.css";
+import { ConfigButton } from "./ConfigButton";
 
 interface BanToggleProps {
   isBanMode: boolean;
@@ -11,14 +11,11 @@ export const BanToggle: React.FC<BanToggleProps> = ({
   onToggle,
 }) => {
   return (
-    <div
-      className={styles.container}
+    <ConfigButton
+      icon={isBanMode ? "ban" : "unban"} label="Ban Mode" status={isBanMode ? "On" : "Off"}
+      active={isBanMode} danger={isBanMode} aria-label="Toggle ban mode" aria-pressed={isBanMode}
       onClick={onToggle}
       title={isBanMode ? "Ban Mode: ON" : "Ban Mode: OFF"}
-    >
-      <span style={{ fontSize: "1.2rem", marginLeft: "4px" }}>
-        {isBanMode ? "🔒" : "🔓"}
-      </span>
-    </div>
+    />
   );
 };

@@ -4,6 +4,7 @@ import { getRarityColor } from "../logic/rarityColors";
 import styles from "./UnitIcon.module.css";
 import { RecipeTooltip } from "./RecipeTooltip";
 import { CachedImage } from "./CachedImage";
+import { Icon } from "./Icon";
 
 interface UnitIconProps {
   unit: Unit;
@@ -92,7 +93,7 @@ export const UnitIcon: React.FC<UnitIconProps> = ({
         )}
 
         {status === "orange" && wispCost > 0 && (
-          <div className={styles.wispBadge}>{wispCost} 👻</div>
+          <div className={styles.wispBadge} aria-label={`${wispCost} Wisp`}>{wispCost} <Icon name="wisp" size={14} /></div>
         )}
 
         {progress > 0 && materialProgress < 100 && !isBanned && (

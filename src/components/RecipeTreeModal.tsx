@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import type { Unit } from "../logic/combination";
 import { RecipeTreeNode } from "./RecipeTreeNode";
 import styles from "./RecipeTreeModal.module.css";
+import { Icon } from "./Icon";
 
 interface RecipeTreeModalProps {
   unitId: string;
@@ -34,8 +35,8 @@ export const RecipeTreeModal: React.FC<RecipeTreeModalProps> = ({
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <span className={styles.title}>Recipe Tree: {unit.name}</span>
-          <button className={styles.closeButton} onClick={onClose}>
-            ✕
+          <button className={styles.closeButton} onClick={onClose} aria-label="Close recipe tree">
+            <Icon name="close" />
           </button>
         </div>
         <div className={styles.content}>

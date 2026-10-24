@@ -10,6 +10,8 @@ export const GLOBAL_ACTIONS = {
   TOGGLE_TOOLTIP: "Toggle Tooltip",
   TOGGLE_BAN_MODE: "Toggle Ban Mode",
   TOGGLE_WISP_MODE: "Toggle Wisp Mode",
+  TOGGLE_TEAM_STATS: "Toggle Team Stats",
+  TOGGLE_FILTERS: "Toggle Ability Filters",
   RESET_INVENTORY: "Reset Inventory",
 };
 
@@ -17,37 +19,32 @@ const DEFAULT_GLOBAL_SHORTCUTS: ShortcutMap = {
   TOGGLE_TOOLTIP: "t",
   TOGGLE_BAN_MODE: "b",
   TOGGLE_WISP_MODE: "w",
+  TOGGLE_TEAM_STATS: "s",
+  TOGGLE_FILTERS: "f",
+  RESET_INVENTORY: "r",
 };
 
-export function useShortcuts() {
-  const [unitShortcuts, setUnitShortcuts] = useState<ShortcutMap>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        return parsed.unitShortcuts || {};
-      } catch (e) {
-        console.error("Failed to load shortcuts:", e);
-      }
+function readShortcuts() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    const unitShortcuts: ShortcutMap = parsed.unitShortcuts || {};
+    const globalShortcuts: ShortcutMap = { ...parsed.globalShortcuts };
+    // Add new defaults without replacing a user's existing key assignments.
+    const claimed = new Set([...Object.values(unitShortcuts), ...Object.values(globalShortcuts)]);
+    for (const [action, key] of Object.entries(DEFAULT_GLOBAL_SHORTCUTS)) {
+      if (!(action in globalShortcuts) && !claimed.has(key)) globalShortcuts[action] = key;
     }
-    return {};
-  });
+    return { unitShortcuts, globalShortcuts };
+  } catch (e) {
+    console.error("Failed to load shortcuts:", e);
+    return { unitShortcuts: {} as ShortcutMap, globalShortcuts: { ...DEFAULT_GLOBAL_SHORTCUTS } };
+  }
+}
 
-  const [globalShortcuts, setGlobalShortcuts] = useState<ShortcutMap>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        return {
-          ...DEFAULT_GLOBAL_SHORTCUTS,
-          ...(parsed.globalShortcuts || {}),
-        };
-      } catch (e) {
-        console.error("Failed to load shortcuts:", e);
-      }
-    }
-    return DEFAULT_GLOBAL_SHORTCUTS;
-  });
+export function useShortcuts() {
+  const [initial] = useState(readShortcuts);
+  const [unitShortcuts, setUnitShortcuts] = useState<ShortcutMap>(initial.unitShortcuts);
+  const [globalShortcuts, setGlobalShortcuts] = useState<ShortcutMap>(initial.globalShortcuts);
 
   // Save to localStorage whenever changes occur
   useEffect(() => {
@@ -71,7 +68,7 @@ export function useShortcuts() {
     setGlobalShortcuts((prev) => {
       const next = { ...prev };
       Object.keys(next).forEach((k) => {
-        if (next[k] === key) delete next[k];
+        if (next[k] === key) next[k] = "";
       });
       return next;
     });
@@ -82,7 +79,7 @@ export function useShortcuts() {
       const next = { ...prev };
       // Remove key if assigned to another global action
       Object.keys(next).forEach((k) => {
-        if (next[k] === key) delete next[k];
+        if (next[k] === key) next[k] = "";
       });
       next[actionId] = key;
       return next;
@@ -108,7 +105,8 @@ export function useShortcuts() {
   const removeGlobalShortcut = useCallback((actionId: string) => {
     setGlobalShortcuts((prev) => {
       const next = { ...prev };
-      delete next[actionId];
+      // Keep an explicit disabled value so defaults stay removed after reload.
+      next[actionId] = "";
       return next;
     });
   }, []);

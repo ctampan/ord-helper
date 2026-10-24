@@ -37,6 +37,7 @@
   --text-muted: #aaa;
 
   /* UI Sizing Defaults (Medium) */
+  --config-scale: 1;
   --unit-height: 36px;
   --unit-icon-size: 30px;
   --unit-font-size-name: 0.85rem;

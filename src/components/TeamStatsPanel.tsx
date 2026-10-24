@@ -9,6 +9,7 @@ import styles from "./TeamStatsPanel.module.css";
 import { CachedImage } from "./CachedImage";
 import { damageLabel, isProfileCore } from "../logic/damage";
 import { getRarityColor } from "../logic/rarityColors";
+import { Icon } from "./Icon";
 
 const label = (category: CapabilityId) => CAPABILITIES.find((c) => c.id === category)?.label || category;
 const labels = (categories: CapabilityId[]) => categories.map(label).join(", ");
@@ -87,7 +88,7 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
       </span>
       <strong>{r.unit.name} <small>({r.unit.rarity})</small></strong>
       <button type="button" onClick={() => onRecipe(r.unit.id)} title="Show Recipe"
-        aria-label={`View recipe for ${r.unit.name} (${r.unit.rarity})`}><span aria-hidden="true">📖</span></button></div>
+        aria-label={`View recipe for ${r.unit.name} (${r.unit.rarity})`}><Icon name="recipe" /></button></div>
     <div className={styles.metadata}>
       <span>{r.craftable ? "Ready to craft" : `Materials ${Math.round(r.materialProgress)}% ready`}
       {r.wispCost > 0 && <> · <span className={styles.wisp}>{r.wispCost}</span> Wisp</>}
@@ -112,7 +113,7 @@ export function TeamStatsPanel({ dataset, units, inventory, bans, allowWisp, vis
     <div className={styles.toolbar}>
       <button type="button" className={styles.heading} aria-expanded={preferences.expanded} aria-controls="team-stats-content"
         onClick={() => setPreferences({ ...preferences, expanded: !preferences.expanded })}>
-        <span aria-hidden="true">{preferences.expanded ? "▾" : "▸"}</span> Team Stats
+        <Icon name={preferences.expanded ? "down" : "right"} size={14} /> Team Stats
       </button>
       <span role="status">{owned} units · {stats.length} abilities</span>
       <label><span className={styles.profileLabel}>Build profile</span><select aria-label="Build profile" value={preferences.profile} onChange={(e) =>

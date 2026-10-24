@@ -110,7 +110,7 @@ with sync_playwright() as p:
     expect(panel.get_by_role("tabpanel")).not_to_contain_text("Missing:")
     expect(panel).not_to_contain_text("Missing for")
     expect(cards.first.get_by_role("button")).to_have_count(1)
-    expect(cards.first.get_by_role("button")).to_have_text("📖")
+    expect(cards.first.get_by_role("button", name=re.compile("^View recipe")).locator("svg")).to_be_visible()
     assert cards.first.locator("img").evaluate("image => getComputedStyle(image.parentElement).borderColor !== getComputedStyle(image.closest('li')).borderColor")
     assert cards.first.bounding_box()["height"] < 145
 
@@ -265,7 +265,7 @@ with sync_playwright() as p:
     panel.screenshot(path=str(ARTIFACTS / "team-stats-collapsed-narrow.png"))
     no_sources(panel)
     page.once("dialog", lambda dialog: dialog.accept())
-    page.get_by_title("Reset Inventory & Bans", exact=True).click()
+    page.get_by_role("button", name="Reset", exact=True).click()
     expect(panel).to_contain_text("0 units")
     expect(panel).to_contain_text("Add units to your inventory")
 

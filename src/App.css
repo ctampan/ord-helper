@@ -32,6 +32,8 @@
   height: 100%;
 }
 
+.column:first-child { min-width: calc(184px * var(--config-scale)); }
+
 .header-hover {
   position: fixed;
   top: 0;

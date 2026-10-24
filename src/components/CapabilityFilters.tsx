@@ -6,6 +6,7 @@ import {
 } from "../logic/capabilities";
 import type { Unit } from "../logic/combination";
 import styles from "./CapabilityFilters.module.css";
+import { Icon } from "./Icon";
 
 const groups = CAPABILITY_GROUPS.map((group) => ({
   name: group, capabilities: CAPABILITIES.filter((capability) => capability.group === group),
@@ -45,7 +46,7 @@ export function CapabilityFilters({ units, preferences, resultCount, onChange }:
       <div className={styles.toolbar}>
         <button type="button" className={styles.expand} aria-expanded={expanded}
           aria-controls="capability-filter-choices" onClick={() => setExpanded((previous) => !previous)}>
-          <span aria-hidden="true">{expanded ? "▾" : "▸"}</span> Ability filters
+          <Icon name={expanded ? "down" : "right"} size={14} /> Ability filters
         </button>
         <span className={styles.selection}>{preferences.selected.length} selected</span>
         <button type="button" onClick={() => onChange({ ...preferences, selected: [] })}>Clear</button>

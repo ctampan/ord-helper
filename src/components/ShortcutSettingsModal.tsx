@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ShortcutSettingsModal.module.css";
 import { GLOBAL_ACTIONS } from "../hooks/useShortcuts";
+import { Icon } from "./Icon";
 import type { Unit } from "../logic/combination";
 
 interface ShortcutSettingsModalProps {
@@ -37,6 +38,7 @@ export const ShortcutSettingsModal: React.FC<ShortcutSettingsModalProps> = ({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (recordingId && recordingType) {
+        if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey || e.repeat || e.isComposing) return;
         e.preventDefault();
         e.stopPropagation();
 
@@ -81,8 +83,8 @@ export const ShortcutSettingsModal: React.FC<ShortcutSettingsModalProps> = ({
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <span className={styles.title}>Shortcut Settings</span>
-          <button className={styles.closeButton} onClick={onClose}>
-            &times;
+          <button className={styles.closeButton} onClick={onClose} aria-label="Close shortcuts">
+            <Icon name="close" />
           </button>
         </div>
 
@@ -90,6 +92,7 @@ export const ShortcutSettingsModal: React.FC<ShortcutSettingsModalProps> = ({
           {/* Global Shortcuts */}
           <div className={styles.section}>
             <div className={styles.sectionTitle}>Global Shortcuts</div>
+            <p>Use a single key without Ctrl, Alt, Shift, or Meta.</p>
             <div className={styles.shortcutList}>
               {Object.entries(GLOBAL_ACTIONS).map(([id, label]) => (
                 <div key={id} className={styles.shortcutItem}>
@@ -112,8 +115,9 @@ export const ShortcutSettingsModal: React.FC<ShortcutSettingsModalProps> = ({
                       <button
                         className={styles.removeButton}
                         onClick={() => removeGlobalShortcut(id)}
+                        aria-label={`Remove shortcut for ${label}`}
                       >
-                        &times;
+                        <Icon name="close" size={14} />
                       </button>
                     )}
                   </div>
@@ -188,8 +192,9 @@ export const ShortcutSettingsModal: React.FC<ShortcutSettingsModalProps> = ({
                       <button
                         className={styles.removeButton}
                         onClick={() => removeUnitShortcut(unitId)}
+                        aria-label={`Remove shortcut for ${unit.name} (${unit.rarity})`}
                       >
-                        &times;
+                        <Icon name="close" size={14} />
                       </button>
                     </div>
                   </div>

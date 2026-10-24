@@ -235,6 +235,7 @@ function App() {
     localStorage.setItem("ord_ui_size", String(uiSize));
     const root = document.documentElement;
     const p = uiSize / 100;
+    root.style.setProperty("--config-scale", String(0.9 + 0.2 * p));
 
     const h = 18 + 24 * p;
     const icon = 14 + 18 * p;
@@ -430,6 +431,7 @@ function App() {
   // Global Shortcut Listener
   useEffect(() => {
     const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (isShortcutsModalOpen || e.defaultPrevented || e.isComposing) return;
       // Ignore if typing in an input
       const target = e.target as HTMLElement;
       if (
@@ -446,6 +448,8 @@ function App() {
       // Check for Global Shortcuts
       const actionId = getActionIdByKey(key);
       if (actionId) {
+        // Global bindings are single keys; browser/system combinations keep their behavior.
+        if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey || e.repeat) return;
         e.preventDefault();
         switch (actionId) {
           case "TOGGLE_TOOLTIP":
@@ -459,6 +463,18 @@ function App() {
           case "TOGGLE_WISP_MODE":
             setIsWispEnabled((prev) => !prev);
             showNotification("Wisp Mode toggled", "info");
+            break;
+          case "TOGGLE_TEAM_STATS": {
+            const next = !(teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false");
+            localStorage.setItem(`ord_team_stats_visible:${currentVersion}`, String(next));
+            setTeamVisibility((previous) => ({ ...previous, [currentVersion]: next }));
+            showNotification("Team Stats toggled", "info");
+            break;
+          }
+          case "TOGGLE_FILTERS":
+            overlayStore.clear();
+            setShowCapabilityFilters((previous) => !previous);
+            showNotification("Ability filters toggled", "info");
             break;
           case "RESET_INVENTORY":
             if (confirm("Reset inventory and bans?")) {
@@ -489,7 +505,8 @@ function App() {
 
     window.addEventListener("keydown", handleGlobalKeyDown);
     return () => window.removeEventListener("keydown", handleGlobalKeyDown);
-  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, unitsMap, overlayStore]);
+  }, [getUnitIdByKey, getActionIdByKey, handleUnitClick, unitsMap, overlayStore,
+    isShortcutsModalOpen, currentVersion, teamVisibility]);
 
   const handleCountChange = useCallback((unitId: string, newCount: number) => {
     setInventory((prev) => ({
@@ -595,6 +612,7 @@ function App() {
         {/* Column 1: Options + Common + Uncommon + Random */}
         <div className="column">
           <OptionsPanel
+            globalShortcuts={globalShortcuts}
             showTeamStats={teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false"}
             onToggleTeamStats={() => {
               const next = !(teamVisibility[currentVersion] ?? localStorage.getItem(`ord_team_stats_visible:${currentVersion}`) !== "false");

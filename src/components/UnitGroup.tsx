@@ -2,6 +2,7 @@ import React from "react";
 import type { Unit, UnitDetails } from "../logic/combination";
 import { UnitListItem } from "./UnitListItem";
 import styles from "./UnitGroup.module.css";
+import { Icon } from "./Icon";
 
 interface UnitGroupProps {
   title: string;
@@ -95,9 +96,7 @@ export const UnitGroup: React.FC<UnitGroupProps> = React.memo(
           }}
         >
           {title}
-          <span style={{ fontSize: "0.8em", opacity: 0.7 }}>
-            {isCollapsed ? "▼" : "▲"}
-          </span>
+          <Icon name={isCollapsed ? "down" : "up"} size={14} style={{ opacity: 0.7 }} />
         </h3>
         {!isCollapsed && visibleGroups.map((group) => group.name === null ?
           <div key="ungrouped" className={styles.list}>{group.units.map(renderUnit)}</div> :

@@ -1,6 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import styles from "./HelpModal.module.css";
+import { Icon } from "./Icon";
 
 interface HelpModalProps {
   isOpen: boolean;
@@ -12,11 +13,11 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
 
   return createPortal(
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.modal} role="dialog" aria-modal="true" aria-label="ORD Helper Features" onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <h2>ORD Helper Features</h2>
-          <button className={styles.closeBtn} onClick={onClose}>
-            ×
+          <button className={styles.closeBtn} onClick={onClose} aria-label="Close help">
+            <Icon name="close" size={20} />
           </button>
         </div>
         <div className={styles.content}>
@@ -65,26 +66,28 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 (if disabled).
               </li>
               <li>
-                <strong>Recipe Button (📖):</strong> Open the interactive recipe
+                <strong><Icon name="recipe" /> Recipe Button:</strong> Open the interactive recipe
                 modal for detailed navigation and history.
               </li>
             </ul>
           </section>
 
           <section>
-            <h3>⌨️ Keyboard Shortcuts</h3>
+            <h3><Icon name="keyboard" /> Keyboard Shortcuts</h3>
             <ul>
               <li>
-                <strong>Customizable Shortcuts:</strong> Click the keyboard icon
-                (⌨️) in the options panel to configure custom shortcuts
+                <strong>Customizable Shortcuts:</strong> Click Shortcuts in Config
+                to configure custom shortcuts.
               </li>
               <li>
                 <strong>Unit Shortcuts:</strong> Assign keys to quickly
                 add/remove units. Press the key to add, Ctrl+Key to remove
               </li>
               <li>
-                <strong>Global Shortcuts:</strong> Default shortcuts include T
-                (tooltip), B (ban mode), W (wisp mode)
+                <strong>Global Shortcuts:</strong> T (tooltip), B (ban mode),
+                W (wisp mode), S (show/hide Team Stats), F (show/hide filters),
+                and R (reset inventory and bans, with confirmation). Press these
+                keys without Ctrl, Alt, Shift, or Meta.
               </li>
               <li>
                 <strong>Visual Indicators:</strong> Units with assigned
@@ -108,14 +111,14 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           </section>
 
           <section>
-            <h3>🔍 Recipe Explorer</h3>
+            <h3><Icon name="search" /> Recipe Explorer</h3>
             <ul>
               <li>
                 <strong>Interactive Recipes:</strong> Click any unit icon inside
                 a tooltip or modal to instantly view its recipe.
               </li>
               <li>
-                <strong>Navigation History (↩):</strong> Use the back button in
+                <strong><Icon name="back" /> Navigation History:</strong> Use the back button in
                 the recipe modal to return to previously viewed units.
               </li>
             </ul>
@@ -125,11 +128,11 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             <h3>Options</h3>
             <ul>
               <li>
-                <strong>Ban Mode (🔒/🔓):</strong> Click units to ban them.
+                <strong><Icon name="ban" /> Ban Mode:</strong> Click units to ban them.
                 Banned units won't be used in calculations.
               </li>
               <li>
-                <strong>Theme (☀️/🌙):</strong> Toggle between Light and Dark
+                <strong><Icon name="sun" /> Theme:</strong> Toggle between Light and Dark
                 mode.
               </li>
               <li>
@@ -139,30 +142,30 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 <strong>Ctrl + Click:</strong> ±5% (Power Zoom).
               </li>
               <li>
-                <strong>Tooltips (👁️/🗨️):</strong> Toggle always-on tooltips vs
+                <strong><Icon name="tooltip" /> Tooltips:</strong> Toggle always-on tooltips vs
                 Shift-to-show.
               </li>
               <li>
-                <strong>Wisp Mode (👻/🚫):</strong> Toggle whether Common Wisps
+                <strong><Icon name="wisp" /> Wisp Mode:</strong> Toggle whether Common Wisps
                 are used in calculations.
               </li>
             </ul>
           </section>
 
           <section>
-            <h3>🗄️ Sorting & Grouping</h3>
+            <h3><Icon name="collection" /> Sorting & Grouping</h3>
             <ul>
               <li>
-                <strong>Remove Subgroups (📦/📁):</strong> Toggle between
+                <strong><Icon name="groups" /> Subgroups:</strong> Toggle between
                 viewing units in sub-categories (like Straw Hat, Navy, etc.) or
                 as a single flat list.
               </li>
               <li>
-                <strong>Sort Order (🔤/🔢):</strong> Toggle between Alphabetical
+                <strong><Icon name="sort" /> Sort Order:</strong> Toggle between Alphabetical
                 sort and the Default game order.
               </li>
               <li>
-                <strong>Recipe Icons (📖/📕):</strong> Show or hide the tiny
+                <strong><Icon name="recipe" /> Recipe Icons:</strong> Show or hide the tiny
                 book icons used to manually open recipe modals.
               </li>
             </ul>
@@ -178,14 +181,14 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                 is remembered on your next visit.
               </li>
               <li>
-                <strong>Export (💾):</strong> Save your current game
+                <strong><Icon name="export" /> Export:</strong> Save your current game
                 data/version to a JSON file.
               </li>
               <li>
-                <strong>Import (📂):</strong> Load a custom game data JSON file.
+                <strong><Icon name="import" /> Import:</strong> Load a custom game data JSON file.
               </li>
               <li>
-                <strong>Reset (🗑️):</strong> Clear all inventory and bans.
+                <strong><Icon name="reset" /> Reset:</strong> Clear all inventory and bans.
               </li>
             </ul>
           </section>
@@ -216,7 +219,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                   gap: "4px",
                 }}
               >
-                ☕ Support on Ko-fi
+                <Icon name="support" /> Support on Ko-fi
               </a>
             </div>
           </div>

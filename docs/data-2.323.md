@@ -106,6 +106,10 @@ The two recommendation tabs are Complete team and Easy to craft. No build-guide 
 
 ## Dataset compatibility and verification
 
+Config uses a three-column grid of solid SVG icons with always-visible labels and control states. UI Size also scales its icons, text, spacing, controls and column minimum width from 90% to 110%; at UI Size 50%, the base layout uses 18px icons, at least 44px button height and a 184px column minimum. Controls are ordered by function: Help (index 0), Shortcuts (index 1), Theme; UI Size, Team Stats, Filters; Subgroups, Sort, Recipes; Tooltips, Ban Mode, Wisp; Export, Import, Reset. The Game version selector follows the grid. Dashboard scrolling contains overflow on narrow screens. Toggle states use the theme accent; active Ban Mode and Reset use red. Existing preferences and UI Size click/right-click/Ctrl gestures are preserved. The shared icon module uses Heroicons solid glyphs and a matching keyboard SVG.
+
+Global shortcuts default to T (tooltips), B (ban mode), W (Wisp), S (Team Stats visibility), F (filter panel visibility) and R (reset inventory and bans with confirmation). They trigger only on a single unmodified key press, excluding held-key repeats and text input. Ctrl/Alt/Shift/Meta combinations retain their browser/system behavior; existing Ctrl+unit shortcuts still remove units. New defaults respect saved custom key assignments, and removed global bindings stay disabled after reload. Config tooltips show the current S/F/R bindings, including user remaps.
+
 All `public/data/*.json` files are bundled automatically, sorted by numeric version. New visitors receive the newest version; returning users keep an available selection. Retired versions migrate while retaining valid inventory IDs and bans. Custom import/export preserves capabilities and optional metadata. Invalid metadata is rejected before calculations. No network request or dashboard unmount is needed for switching datasets.
 
 Ability filters apply only to the dashboard, preserve their selections while hidden and exclude acquired capabilities from base filtering. Unit ability details and recipe navigation continue to use the complete unit graph. Performance architecture and profiling commands are documented in [performance.md](performance.md).
@@ -119,6 +123,8 @@ node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4173
 # In another terminal:
 python tests/browser-capabilities.py
 python tests/browser-team-stats.py
+python tests/browser-config.py
+python tests/browser-shortcuts.py
 python tests/browser-performance.py
 python tests/browser-tooltip-ux.py
 ```

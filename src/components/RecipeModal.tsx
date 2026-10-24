@@ -4,6 +4,7 @@ import type { Unit } from "../logic/combination";
 import { RecipeContent, RecipeHeader } from "./RecipeContent";
 import { UnitCapabilities } from "./UnitCapabilities";
 import styles from "./RecipeModal.module.css";
+import { Icon } from "./Icon";
 
 interface RecipeModalProps {
   unit: Unit;
@@ -71,12 +72,13 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               className={styles.backBtn}
               onClick={handleUndo}
               title="Go Back"
+              aria-label="Go back to previous recipe"
             >
-              ↩
+              <Icon name="back" />
             </button>
           )}
           <button className={styles.closeBtn} aria-label="Close recipe" onClick={handleClose}>
-            ×
+            <Icon name="close" />
           </button>
         </div>
         <RecipeHeader unit={currentUnit} size="large" />
